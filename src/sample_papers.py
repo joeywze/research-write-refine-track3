@@ -1,9 +1,9 @@
 import pandas as pd
 
-INPUT_FILE = "data/raw/emnlp2025_papers.csv"
+INPUT_FILE = "data/emnlp_2025_main.xlsx"
 OUTPUT_FILE = "data/samples/sample_10_papers.csv"
 
-df = pd.read_csv(INPUT_FILE)
+df = pd.read_excel(INPUT_FILE)
 
 sample = df.sample(
     n=10,
