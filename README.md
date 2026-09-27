@@ -45,7 +45,27 @@ notebooks/     # Experiments and analysis
 src/           # Detection and processing scripts
 drafts/        # Draft versions of the paper
 results/       # Results, figures and tables
+
 ```
+
+## Getting Started
+
+1. Clone this repository.
+
+2. Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+3. Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+As the project develops, additional setup instructions will be added here.
 
 ## Final Deliverables
 
