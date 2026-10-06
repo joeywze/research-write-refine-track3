@@ -23,8 +23,8 @@ client = OpenAI(api_key=api_key)
 # FILE PATHS AND SETTINGS
 # --------------------------------------------------
 
-INPUT_FILE = "data/samples/sample_10_papers.csv"
-OUTPUT_FILE = "data/generated/ai_generated_sections_v1.csv"
+INPUT_FILE = "data/samples/sample_30_papers.csv"
+OUTPUT_FILE = "data/generated/ai_generated_sections_stratified_30_v1.csv"
 
 MODEL = "gpt-5.6-luna"
 
@@ -93,6 +93,7 @@ Requirements:
             results.append({
                 "paper_id": row["paper_id"],
                 "title": row["title"],
+                "topic_family": row["topic_family"],
                 "section": section,
                 "text": generated_text,
                 "source_type": "ai",
