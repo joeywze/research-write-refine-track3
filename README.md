@@ -47,9 +47,6 @@ drafts/        # Draft versions of the paper
 results/       # Results, figures and tables
 
 ```
-
-## Dataset and Stratified Sampling
-30 EMNLP 2025 main-conference papers using equal-allocation stratified sampling: five papers from each of six topic groups. Selection within each eligible group used deterministic SHA-256 ranking with seed 20261006. The original ten papers were excluded and retained as pilot data. Eligibility required abstracts of 90–320 words, 2–9 authors, and an unambiguous keyword-derived topic assignment. These filters restrict the sampling population; topic labels and PDF section availability still require review.
  
 ## Getting Started
 
