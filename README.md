@@ -48,6 +48,18 @@ results/       # Results, figures and tables
 
 ```
 
+## Cluster 7 Source Evidence Review
+
+The [source-cited review of all 18 Cluster 7 papers](docs/cluster7_source_evidence_review.md)
+records 52 short author quotations with PDF page and section links. Each quotation
+was checked against the saved extracted text and the local paper PDF. The
+[verification manifest](data/processed/cluster7_source_evidence_manifest.json)
+records paper IDs, source hashes, page locations and quotation hashes.
+
+This is a targeted source-passage review, not an independent reproduction of the
+papers' results or approval of a research-gap claim. Dimensions not established by
+the cited evidence remain unclear. The original automated review files are retained.
+
 ## Getting Started
 
 1. Clone this repository.
