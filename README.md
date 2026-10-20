@@ -60,6 +60,17 @@ This is a targeted source-passage review, not an independent reproduction of the
 papers' results or approval of a research-gap claim. Dimensions not established by
 the cited evidence remain unclear. The original automated review files are retained.
 
+## Part A Research Development and Provisional V0
+
+The [working Part A handover](docs/part_a_research_development/README.md) follows
+the literature-verification, evidence-table, candidate-gap and proposed-study steps.
+It includes 18 claim records with 38 checked excerpts, external counterevidence,
+an evaluation plan and a six-section provisional V0.
+
+This is an evidence-backed proposal, not a completed experiment or a confirmed
+novelty claim. Language selection, raters, data source, judge configuration and
+Team A approval remain unresolved. The original automated review files are retained.
+
 ## Getting Started
 
 1. Clone this repository.
