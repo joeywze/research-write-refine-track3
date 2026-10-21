@@ -1,6 +1,6 @@
 # Track 3 Part A: working handover
 
-Prepared 20 October 2026. Follow the four requested steps in order:
+Evidence package prepared 20 October 2026; paper draft revised 21 October 2026. Follow the four requested steps in order:
 
 1. [Methods, experiments and limitations review](review_scope.md) — all 18 Cluster 7 papers; targeted source review, not independent experimental validation.
 2. [Claim-to-evidence table](claim_evidence_table.md) — 18 records, 38 checked excerpts, exact pages/sections, verification boundaries and Unclear labels where appropriate. [Audit ledger](claim_evidence_ledger.json).
@@ -8,6 +8,14 @@ Prepared 20 October 2026. Follow the four requested steps in order:
 4. [Proposed study and evaluation plan](research_development.md) — task, language criteria, judge selection constraints, human labels, rubric, controls, workload and measures. Choices are marked as proposed or unresolved, not attributed to the user as final decisions.
 
 After these steps, read [provisional Draft V0](draft_v0.md), organized into the six sections required by the supplied brief. It is a proposal and contains no experimental results.
+
+## Current paper revision
+
+The 21 October revision develops V0 into a cohesive academic draft: it states three research questions, compares the closest studies, adds a clearly labeled synthetic example and condition/rubric tables, and expands the evaluation rationale and limitations. Administrative approval and input-format notes stay in this handover rather than the paper. The operational-agreement calculation is retained, with technical failures explicitly distinguished from factual judgment errors in interpretation.
+
+This remains V0, the initial paper for subsequent writing refinement—not V1 or V2 from the generic/guided revision workflow. The 21 October revision replaces the earlier contents of `draft_v0.md`; there is only one current V0 file. The 20 October version remains recoverable in GitHub commit `3b0613b`. The revision does not finalize the language pair, item source, model version or raters.
+
+For citation checking, the introduction and closest-work comparison use external records E01–E04. Section 2.1 also uses Cluster 7 records C02, C09 and C16. Their exact passages remain in the linked evidence tables. The research questions, synthetic example, pilot size and analysis protocol are proposed design choices, not findings attributed to those papers. No new experimental findings or externally verified novelty claim have been added in this revision.
 
 ## What is ready
 
