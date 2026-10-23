@@ -1,21 +1,21 @@
 import os
 import time
-import hashlib
-import json
 from pathlib import Path
 
 import pandas as pd
 from dotenv import load_dotenv
 from openai import OpenAI
 
-# Input, output and generation settings.
+# --------------------------------------------------
+# PATHS AND SETTINGS
+# --------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-INPUT_FILE = PROJECT_ROOT / "data/samples/sample_10_papers.csv"
+INPUT_FILE = PROJECT_ROOT / "data/samples/sample_30_papers.csv"
 OUTPUT_FILE = (
     PROJECT_ROOT
-    / "data/generated/ai_generated_sections_pilot_v2.csv"
+    / "data/generated/ai_generated_sections_stratified_30_v1.csv"
 )
 
 MODEL = "gpt-5.6-luna"
@@ -39,16 +39,17 @@ OUTPUT_COLUMNS = [
     "source_type",
     "model",
     "prompt_version",
-    "input_hash",
 ]
 
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-# Read and check the paper sample.
+# --------------------------------------------------
+# LOAD INPUT AND VALIDATE
+# --------------------------------------------------
 
 df = pd.read_csv(INPUT_FILE, keep_default_na=False)
 
-required_columns = ["paper_id", "title", "abstract"]
+required_columns = ["paper_id", "title", "abstract", "topic_family"]
 missing_columns = set(required_columns) - set(df.columns)
 
 if missing_columns:
@@ -63,19 +64,11 @@ for column in required_columns:
 if df["paper_id"].duplicated().any():
     raise ValueError("Input CSV contains duplicate paper IDs.")
 
-# The committed sample has no topic labels.
-if "topic_family" not in df.columns:
-    df["topic_family"] = "unspecified"
-df["input_hash"] = df.apply(
-    lambda row: hashlib.sha256(json.dumps(
-        {key: str(row[key]) for key in ["paper_id", "title", "abstract", "topic_family"]},
-        sort_keys=True, ensure_ascii=False,
-    ).encode("utf-8")).hexdigest(), axis=1,
-)
-
 print(f"Loaded {len(df)} papers.")
 
-# Resume from compatible saved sections.
+# --------------------------------------------------
+# LOAD PREVIOUS RESULTS FOR RESUMING
+# --------------------------------------------------
 
 results = []
 
@@ -104,10 +97,6 @@ if OUTPUT_FILE.exists():
             "Choose a different OUTPUT_FILE."
         )
 
-    expected_hashes = dict(zip(df["paper_id"], df["input_hash"]))
-    if any(expected_hashes.get(row["paper_id"]) != row["input_hash"] for _, row in saved.iterrows()):
-        raise ValueError("Input content changed; choose a new OUTPUT_FILE.")
-
     if not set(saved["section"]).issubset(set(SECTIONS)):
         raise ValueError("Existing output contains unexpected section names.")
 
@@ -127,7 +116,9 @@ completed = {
     for result in results
 }
 
-# Read API credentials.
+# --------------------------------------------------
+# LOAD API KEY
+# --------------------------------------------------
 
 load_dotenv(PROJECT_ROOT / ".env")
 
@@ -138,9 +129,11 @@ if not api_key:
         "OPENAI_API_KEY not found. Check the project's .env file."
     )
 
-client = OpenAI(api_key=api_key, max_retries=0, timeout=90)
+client = OpenAI(api_key=api_key)
 
-# Generate and save each section.
+# --------------------------------------------------
+# GENERATE SECTIONS
+# --------------------------------------------------
 
 failures = []
 
@@ -180,23 +173,15 @@ Requirements:
             response = client.responses.create(
                 model=MODEL,
                 input=prompt,
-                max_output_tokens=2000,
-                store=False,
             )
 
             generated_text = (response.output_text or "").strip()
 
-            if response.status != "completed" or not generated_text:
-                raise ValueError("The model returned incomplete or empty text.")
+            if not generated_text:
+                raise ValueError("The model returned empty text.")
 
         except Exception as error:
             failures.append(key)
-            with OUTPUT_FILE.with_suffix(".failures.jsonl").open("a", encoding="utf-8") as handle:
-                handle.write(json.dumps({
-                    "paper_id": row["paper_id"], "section": section, "input_hash": row["input_hash"],
-                    "model": MODEL, "prompt_version": PROMPT_VERSION,
-                    "error_type": type(error).__name__, "reason": str(error),
-                }, ensure_ascii=False) + "\n")
             print(
                 f"Error generating {section} "
                 f"for {row['paper_id']}: {error}"
@@ -212,10 +197,10 @@ Requirements:
             "source_type": "ai",
             "model": MODEL,
             "prompt_version": PROMPT_VERSION,
-            "input_hash": row["input_hash"],
         })
 
-        # Replace the output only after the temporary file is written successfully.
+        # Write to a temporary file, then replace the output.
+        # Save failures stop execution instead of being silently ignored.
         temporary_file = OUTPUT_FILE.with_suffix(".tmp")
         pd.DataFrame(results, columns=OUTPUT_COLUMNS).to_csv(
             temporary_file,
@@ -227,7 +212,9 @@ Requirements:
         print(f"Saved {section}.")
         time.sleep(1)
 
-# Report saved sections and failed requests.
+# --------------------------------------------------
+# FINAL SUMMARY
+# --------------------------------------------------
 
 output_df = pd.DataFrame(results, columns=OUTPUT_COLUMNS)
 expected = len(df) * len(SECTIONS)
