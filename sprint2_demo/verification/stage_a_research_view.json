@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-26",
+  "scope": "Approved Stage A Research interface; preparation happens before the demo",
+  "stage_a_revision": "01915001d9490914eb2f1a316c1ea06053adfaef",
+  "offline_tests": {
+    "suite": "test_app test_research",
+    "count": 20,
+    "result": "PASS",
+    "source": "deployment/team-review-checkout/sprint2_demo/ui"
+  },
+  "local_browser": {
+    "workflow_rendered": true,
+    "topic_papers": 18,
+    "cited_papers": 7,
+    "pilot_claims": 7,
+    "supported": 3,
+    "further_review": 4,
+    "D002_insufficient_evidence_visible": true,
+    "D002_source_not_verified_visible": true
+  },
+  "hosted_browser": "PENDING",
+  "new_model_calls": 0,
+  "unchanged": [
+    "backend",
+    "research package",
+    "initial draft",
+    "support labels",
+    "revision thresholds",
+    "saved runs",
+    "budget ledger"
+  ],
+  "ui_hashes": {
+    "app.py": "6f792596a3db6a0d03b302e7068825a7729a028cbd3ee6f135d0f6488af571f1",
+    "research.py": "c06cfbbaf296b6f7a7866226a72cf42b75b024bd58ae6133422c987e16e88219",
+    "research_context.json": "7d027923c9848f75d28efc045c871bcb80cdd07be48c1d6e380920174d7c7aa3",
+    "test_app.py": "6216b8e33d07bcb52aa889625d6cdd8ec08dba06e5603c85f417ca31a1d8862e",
+    "test_research.py": "d3bb6af5b0c6b247d8bab2758d5a9de921a5a7dd4d7492bcd4fde2897bc2ab91"
+  }
+}

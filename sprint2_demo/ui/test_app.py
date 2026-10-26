@@ -11,6 +11,7 @@ from streamlit.testing.v1 import AppTest
 import core
 import jobs
 import launch
+import research
 from contextlib import redirect_stdout
 from io import StringIO
 
@@ -27,7 +28,7 @@ class InterfaceTests(unittest.TestCase):
     def test_research_to_draft_to_refinement_to_results(self):
         app = self.app()
         self.assertIn("Research Write Refine", [e.value for e in app.title])
-        self.assertTrue(any("approval is pending" in e.value for e in app.warning))
+        self.assertTrue(any("7 draft claims: 3 supported; 4 need further review" in e.value for e in app.warning))
         app.button(key="to_draft").click().run()
         self.assertFalse(app.exception)
         self.assertEqual(app.session_state["stage"], "Draft")
@@ -75,14 +76,47 @@ class InterfaceTests(unittest.TestCase):
         self.assertTrue(any("has not been refined" in e.value for e in app.info))
         self.assertFalse(app.download_button)
 
-    def test_topic_generation_is_clearly_planned_and_cannot_start_a_job(self):
+    def test_prepared_project_is_default_and_topic_entry_is_absent(self):
         app = self.app()
         with patch.object(jobs, "start_live") as start:
-            app.radio(key="_project_choice").set_value("Start from a research topic (planned)").run()
-            self.assertFalse(app.exception)
-            self.assertTrue(any("are planned" in e.value for e in app.info))
-            self.assertFalse(app.dataframe)
+            self.assertEqual(app.session_state["project_mode"], "Explore the example project")
+            self.assertEqual(len(app.radio(key="_project_choice").options), 2)
+            self.assertFalse(any("topic" in str(value).lower() for value in app.radio(key="_project_choice").options))
+            self.assertIn("Use another prepared project", [e.label for e in app.expander])
             start.assert_not_called()
+
+    def test_research_uses_a_finding_and_one_source_panel(self):
+        app = self.app()
+        self.assertEqual(app.selectbox(key="research_finding").value, "D001")
+        content = "\n".join(e.value for e in app.markdown)
+        self.assertIn("Fu and Liu use ground-truth answers as evaluation candidates", content)
+        self.assertIn("we select ground truth as evaluated answers", content)
+        self.assertIn("How this finding informs the proposal", content)
+        self.assertNotIn("Technical source record", [e.label for e in app.expander])
+        self.assertIn("Preparation details", [e.label for e in app.expander])
+        self.assertEqual([e.value for e in app.metric], ["18", "7"])
+
+    def test_selecting_an_insufficient_finding_keeps_its_original_status(self):
+        app = self.app()
+        app.selectbox(key="research_finding").set_value("D002").run()
+        self.assertFalse(app.exception)
+        self.assertTrue(any("Not verified" in e.value for e in app.caption))
+        self.assertTrue(any("interpretation was not recorded" in e.value for e in app.caption))
+        context = research.prepared_context(core.open_run(core.DEFAULT_RUN))
+        selected = next(f for f in context["pilot_findings"] if f["finding_id"] == "D002")
+        self.assertEqual(selected["status"], "INSUFFICIENT_EVIDENCE")
+
+    def test_upload_does_not_inherit_the_prepared_proposals_review(self):
+        app = self.app()
+        base = core.ROOT / "inputs/converted"
+        data = core.uploaded_project((base / "research_package.json").read_bytes(), (base / "v0.json").read_bytes())
+        app.session_state["uploaded_project"] = data
+        app.session_state["project_mode"] = "Upload your research project"
+        app.run()
+        self.assertFalse(app.exception)
+        self.assertFalse(app.metric)
+        self.assertFalse(any("7 draft claims" in e.value for e in app.warning))
+        self.assertTrue(any("Source check: not recorded" in e.value for e in app.caption))
 
     def test_uploaded_job_uses_its_checked_input_directory(self):
         base = core.ROOT / "inputs/converted"

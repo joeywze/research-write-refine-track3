@@ -6,10 +6,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import streamlit as st
 import core
 import jobs
+import research
 
 EXAMPLE = "Explore the example project"
 UPLOAD = "Upload your research project"
-TOPIC = "Start from a research topic (planned)"
 
 st.set_page_config(page_title="Research Write Refine", page_icon=":material/edit_document:",
                    layout="wide", initial_sidebar_state="collapsed")
@@ -79,6 +79,8 @@ def live_control(project=None):
 st.session_state.setdefault("stage", "Research")
 st.session_state.setdefault("job_id", None)
 st.session_state.setdefault("project_mode", EXAMPLE)
+if st.session_state["project_mode"] not in {EXAMPLE, UPLOAD}:
+    st.session_state["project_mode"] = EXAMPLE
 runs = core.available_runs()
 if st.session_state.get("pending_run_id"):
     finished = st.session_state.pop("pending_run_id")
@@ -105,38 +107,34 @@ st.segmented_control("Your workspace", ["Research", "Draft", "Refine", "Results"
                      width="stretch", label_visibility="collapsed")
 
 if st.session_state["stage"] == "Research":
-    st.header("Review your research")
-    st.session_state["_project_choice"] = st.session_state["project_mode"]
-    mode = st.radio("How would you like to begin?", [EXAMPLE, UPLOAD, TOPIC], key="_project_choice", on_change=select_project)
-    if mode == TOPIC:
-        st.info("Topic-based literature search and idea generation are planned. For now, explore the example or upload an existing research project.")
-        st.stop()
-    if mode == UPLOAD:
-        st.markdown("Upload the research package and its matching six-section draft. The package contains the research question, claims and supporting evidence.")
-        with st.expander("File format and example files"):
-            st.caption("Use schema 0.1 JSON files: research_package.json and v0.json. Each file can be up to 1 MB; drafts can contain up to 60 content blocks and 12,000 words. Uploading checks the format, linked claims and citations; it does not verify that the research is correct.")
-            for name, label in (("research_package.json", "Download example research package"), ("v0.json", "Download example draft")):
-                st.download_button(label, (core.ROOT / "inputs/converted" / name).read_bytes(), file_name=name,
-                                   mime="application/json", key="example_" + name)
-        package_file = st.file_uploader("Research package", type=["json"], key="package_upload", max_upload_size=1)
-        draft_file = st.file_uploader("Matching draft", type=["json"], key="draft_upload", max_upload_size=1)
-        if st.button("Check and open project", key="check_upload", type="primary", disabled=package_file is None or draft_file is None):
-            try:
-                checked = core.uploaded_project(package_file.getvalue(), draft_file.getvalue())
-                st.session_state["uploaded_project"] = checked
-                st.session_state.pop("uploaded_result", None)
-                st.session_state["upload_error"] = None
-                st.success("The files match and include all six sections. Your project is ready to review.")
-            except (ValueError, TypeError, KeyError) as error:
-                st.session_state["upload_error"] = str(error)
-        if st.session_state.get("upload_error"):
-            st.error("The new files could not be opened: " + st.session_state["upload_error"])
-        st.caption("Files stay in this browser session until you start a local refinement, which saves them with that run. They are not added to the shared example.")
+    st.header("Explore the research proposal")
+    st.caption("Prepared from a literature review. Explore the proposed gap and supporting evidence, then continue to the draft.")
+    with st.expander("Use another prepared project", expanded=st.session_state["project_mode"] == UPLOAD):
+        st.session_state["_project_choice"] = st.session_state["project_mode"]
+        mode = st.radio("Project to open", [EXAMPLE, UPLOAD], key="_project_choice", on_change=select_project,
+                        format_func=lambda value: "Prepared proposal" if value == EXAMPLE else "Upload another project")
+        if mode == UPLOAD:
+            st.markdown("Upload the research package and its matching six-section draft. The package contains the research question, claims and supporting evidence.")
+            with st.container():
+                st.caption("Use schema 0.1 JSON files: research_package.json and v0.json. Each file can be up to 1 MB; drafts can contain up to 60 content blocks and 12,000 words. Uploading checks the format, linked claims and citations; it does not verify that the research is correct.")
+                for name, label in (("research_package.json", "Download example research package"), ("v0.json", "Download example draft")):
+                    st.download_button(label, (core.ROOT / "inputs/converted" / name).read_bytes(), file_name=name,
+                                       mime="application/json", key="example_" + name)
+            package_file = st.file_uploader("Research package", type=["json"], key="package_upload", max_upload_size=1)
+            draft_file = st.file_uploader("Matching draft", type=["json"], key="draft_upload", max_upload_size=1)
+            if st.button("Check and open project", key="check_upload", type="primary", disabled=package_file is None or draft_file is None):
+                try:
+                    checked = core.uploaded_project(package_file.getvalue(), draft_file.getvalue())
+                    st.session_state["uploaded_project"] = checked
+                    st.session_state.pop("uploaded_result", None)
+                    st.session_state["upload_error"] = None
+                    st.success("The files match and include all six sections. Your project is ready to review.")
+                except (ValueError, TypeError, KeyError) as error:
+                    st.session_state["upload_error"] = str(error)
+            if st.session_state.get("upload_error"):
+                st.error("The new files could not be opened: " + st.session_state["upload_error"])
+            st.caption("Files stay in this browser session until you start a local refinement, which saves them with that run. They are not added to the shared example.")
 
-if st.session_state["project_mode"] == TOPIC:
-    st.info("Topic-based generation is planned. Choose the example or upload a project in Research to continue.")
-    st.button("Go to Research", on_click=go, args=("Research",))
-    st.stop()
 uploaded = st.session_state["project_mode"] == UPLOAD
 if uploaded:
     data = st.session_state.get("uploaded_project")
@@ -169,45 +167,10 @@ st.badge("Viewing saved results" if data["summary"] else "Uploaded project · no
 st.caption("Proposed study — no experimental results" if package.study_status == "proposed" else "Study marked as completed in the supplied package; not independently verified.")
 
 if st.session_state["stage"] == "Research":
-    st.subheader(package.title)
-    st.markdown("**Research question:** " + package.research_question)
-    left, right = st.columns([3, 2], gap="large")
-    with left:
-        with st.container(border=True):
-            st.subheader("What this study aims to add")
-            st.markdown(package.contribution)
-        st.subheader("Explore the supporting evidence")
-        evidence_by_id = {e.evidence_id: e for e in package.evidence}
-        sources = {s.source_id: s for s in package.sources}
-        evidence_id = st.selectbox("Choose a source passage", list(evidence_by_id), key="evidence_id",
-            format_func=lambda eid: sources[evidence_by_id[eid].source_id].title + " · " + eid)
-        if evidence_id not in evidence_by_id:
-            st.stop()
-        evidence = evidence_by_id[evidence_id]
-        provenance = next(p for p in manifest["evidence_provenance"] if p["evidence_id"] == evidence_id)
-        is_context = provenance["source_kind"].startswith("reviewer_context")
-        with st.container(border=True):
-            st.badge("Researcher’s interpretation" if is_context else "Supplied source excerpt", color="gray")
-            st.markdown(evidence.excerpt)
-            st.caption(core.source_location(evidence))
-            st.link_button("Open source", sources[evidence.source_id].url, icon=":material/open_in_new:")
-        with st.expander("Technical source record"):
-            st.caption(evidence.locator)
-        st.caption("Evidence is supplied with the project. This app has not independently checked it against the original papers.")
-    with right:
-        st.metric("Source records" if uploaded else "Cited papers", len(package.sources) if uploaded else len({p["paper_id"] for p in manifest["evidence_provenance"]}), border=True)
-        if uploaded:
-            st.warning("The file checks passed. The supporting evidence and research claims still need independent review.")
-            if package.unknowns:
-                with st.expander("Details still to be resolved"):
-                    for unknown in package.unknowns:
-                        st.markdown("- " + unknown)
-        else:
-            st.warning("Research-team approval is pending. Four claims still need stronger supporting evidence.")
-            with st.expander("Claims that need further checking"):
-                for warning in manifest["source_support_warnings"]:
-                    st.markdown("**" + warning["verification_status"].replace("_", " ").lower() + "** — " + warning["draft_claim"])
-            st.caption("The study language, evaluator model and assessment of novelty still need to be finalised.")
+    try:
+        research.show(data, uploaded=uploaded)
+    except (OSError, ValueError, KeyError):
+        st.error("The research display could not be matched to the prepared package. Its saved draft is still available.")
     st.button("Continue to draft", icon=":material/arrow_forward:", type="primary", key="to_draft", on_click=go, args=("Draft",))
 
 elif st.session_state["stage"] == "Draft":
