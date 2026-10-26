@@ -1,0 +1,16 @@
+{
+  "edits": [
+    {
+      "paragraph_id": "P002",
+      "text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]]."
+    },
+    {
+      "paragraph_id": "P007",
+      "text": "An English-focused study can motivate extending that study without establishing an absence elsewhere. For example, Wang et al. explicitly limit their evaluation to English and identify multilingual judging as future work. Conversely, Wu et al. examine translation evaluation across six target languages. The relevant comparison is therefore between specific tasks and evaluation protocols, rather than English-only and multilingual research as mutually exclusive categories. [[S03]]; [[S04]]."
+    },
+    {
+      "paragraph_id": "P008",
+      "text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]]."
+    }
+  ]
+}

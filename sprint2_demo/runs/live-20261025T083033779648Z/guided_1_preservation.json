@@ -1,0 +1,348 @@
+{
+  "status": "CITATION_MISMATCH",
+  "reasons": [
+    "The candidate is substantively aligned with the package and reference drafts for all checked claims, but source citation placement is inconsistent with the requirement to keep literal [[source_id]] tokens beside supported claims. In P002, P007 and P008 the source tokens are embedded immediately after the corresponding source-specific clauses, whereas the accepted reference places them after the sentence/claim group; this alters the direct citation-to-claim linkage. In P010, punctuation is placed between the supported clause and [[S01]] ('tests. [[S01]].'), so the token is not kept cleanly beside the claim as in the references.",
+    "P002: Content matches the package, but citation placement differs from the accepted reference: [[S01]] and [[S02]] are inserted within the sentence immediately after the source-specific clauses rather than kept after the full supported sentence group. This changes the explicit citation-to-claim linkage.",
+    "P007: Substantive meaning is preserved, but citation placement differs from the accepted reference: [[S03]] and [[S04]] are attached to individual clauses instead of being kept after the full supported statement block, altering attribution placement.",
+    "P008: Substantive meaning is preserved, but citation placement differs from the accepted reference: [[S05]] and [[S06]] are embedded after the corresponding clauses rather than placed after the sentence group they support.",
+    "P010: The table content is supported, but citation formatting/placement is not fully preserved. In the first row the claim ends 'tests. [[S01]].', inserting an extra full stop before the token and leaving punctuation both before and after it, unlike the accepted reference's clean claim-to-token linkage."
+  ],
+  "semantic": {
+    "global_status": "CITATION_MISMATCH",
+    "global_reasons": [
+      "The candidate is substantively aligned with the package and reference drafts for all checked claims, but source citation placement is inconsistent with the requirement to keep literal [[source_id]] tokens beside supported claims. In P002, P007 and P008 the source tokens are embedded immediately after the corresponding source-specific clauses, whereas the accepted reference places them after the sentence/claim group; this alters the direct citation-to-claim linkage. In P010, punctuation is placed between the supported clause and [[S01]] ('tests. [[S01]].'), so the token is not kept cleanly beside the claim as in the references."
+    ],
+    "paragraphs": [
+      {
+        "paragraph_id": "P001",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P001"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P002",
+        "status": "CITATION_MISMATCH",
+        "checked_claim_ids": [
+          "C_P002",
+          "C_P002_S1",
+          "C_P002_S2"
+        ],
+        "reasons": [
+          "Content matches the package, but citation placement differs from the accepted reference: [[S01]] and [[S02]] are inserted within the sentence immediately after the source-specific clauses rather than kept after the full supported sentence group. This changes the explicit citation-to-claim linkage."
+        ]
+      },
+      {
+        "paragraph_id": "P003",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P003"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P004",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P004"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P005",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P005"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P006",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P006"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P007",
+        "status": "CITATION_MISMATCH",
+        "checked_claim_ids": [
+          "C_P007",
+          "C_P007_S1",
+          "C_P007_S2"
+        ],
+        "reasons": [
+          "Substantive meaning is preserved, but citation placement differs from the accepted reference: [[S03]] and [[S04]] are attached to individual clauses instead of being kept after the full supported statement block, altering attribution placement."
+        ]
+      },
+      {
+        "paragraph_id": "P008",
+        "status": "CITATION_MISMATCH",
+        "checked_claim_ids": [
+          "C_P008",
+          "C_P008_S1",
+          "C_P008_S2"
+        ],
+        "reasons": [
+          "Substantive meaning is preserved, but citation placement differs from the accepted reference: [[S05]] and [[S06]] are embedded after the corresponding clauses rather than placed after the sentence group they support."
+        ]
+      },
+      {
+        "paragraph_id": "P009",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P009"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P010",
+        "status": "CITATION_MISMATCH",
+        "checked_claim_ids": [
+          "C_P010",
+          "C_P010_S1",
+          "C_P010_S2",
+          "C_P010_S3",
+          "C_P010_S4"
+        ],
+        "reasons": [
+          "The table content is supported, but citation formatting/placement is not fully preserved. In the first row the claim ends 'tests. [[S01]].', inserting an extra full stop before the token and leaving punctuation both before and after it, unlike the accepted reference's clean claim-to-token linkage."
+        ]
+      },
+      {
+        "paragraph_id": "P011",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P011"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P012",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P012"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P013",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P013"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P014",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P014"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P015",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P015"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P016",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P016"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P017",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P017"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P018",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P018"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P019",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P019"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P020",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P020"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P021",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P021"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P022",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P022"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P023",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P023"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P024",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P024"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P025",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P025"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P026",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P026"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P027",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P027"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P028",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P028"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P029",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P029"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P030",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P030"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P031",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P031"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P032",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P032"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P033",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P033"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P034",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P034"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P035",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P035"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P036",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P036"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P037",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P037"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P038",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P038"
+        ],
+        "reasons": []
+      },
+      {
+        "paragraph_id": "P039",
+        "status": "PASS",
+        "checked_claim_ids": [
+          "C_P039"
+        ],
+        "reasons": []
+      }
+    ]
+  }
+}

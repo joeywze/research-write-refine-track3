@@ -1,0 +1,41 @@
+{
+  "commit": "01915001d9490914eb2f1a316c1ea06053adfaef",
+  "files": [
+    {
+      "path": "data/facts/pilot/draft_v0_atomic_claims.csv",
+      "sha": "57d737fcc1c5aaa12d74b2414c6843d88cc224ff"
+    },
+    {
+      "path": "data/facts/pilot/draft_v0_pilot_verification.csv",
+      "sha": "17a766250795ecf2fb001645aa181d191873e31c"
+    },
+    {
+      "path": "docs/part_a_research_development/README.md",
+      "sha": "2f3a5b128cd5b6cc0acbbdbf99aadfe8a6c33afe"
+    },
+    {
+      "path": "docs/part_a_research_development/claim_evidence_ledger.json",
+      "sha": "74bc5e27552068e8070e232908d0328e30fd03d7"
+    },
+    {
+      "path": "docs/part_a_research_development/claim_evidence_table.md",
+      "sha": "1d70ae9512a68f8e929c60a5ab3a7c6b4ad85360"
+    },
+    {
+      "path": "docs/part_a_research_development/draft_v0.md",
+      "sha": "3eecc6180b2c1e1f73b941206b70e7fb2af2c5e9"
+    },
+    {
+      "path": "docs/part_a_research_development/external_evidence.md",
+      "sha": "08fe33513ca4f143e52d871ebfe76e1fa45bb44d"
+    },
+    {
+      "path": "docs/part_a_research_development/research_development.md",
+      "sha": "a4bb313c602a854a5cb8e0732ff6a0cf78ab06fe"
+    },
+    {
+      "path": "docs/part_a_research_development/review_scope.md",
+      "sha": "e0d777370b865c1eb673449ca80a8d49cd72780a"
+    }
+  ]
+}

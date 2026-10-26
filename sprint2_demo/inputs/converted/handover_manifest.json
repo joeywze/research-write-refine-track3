@@ -1,0 +1,1135 @@
+{
+  "status": "PROVISIONAL_NOT_TEAM_A_APPROVED",
+  "stage_a_revision": "01915001d9490914eb2f1a316c1ea06053adfaef",
+  "stage_b_revision": "f108a13eb6625fccc80bc5d57d435797519a1255",
+  "source_file_sha256": "8e874a58bc3bfd5297bb3bb1da70975aeac4968551f2e0f3e07b16569c7c30ee",
+  "layout": [
+    "# Human–Judge Agreement and Decision Stability in Bilingual Question Answering: A Controlled Evaluation Proposal",
+    "\n\n",
+    "Draft V0 — revised 21 October 2026. Proposed study; no experimental results are reported.",
+    "\n\n",
+    "## Abstract",
+    "\n\n",
+    {
+      "paragraph_id": "P001"
+    },
+    "\n\n",
+    "## 1. Introduction",
+    "\n\n",
+    {
+      "paragraph_id": "P002"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P003"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P004"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P005"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P006"
+    },
+    "\n\n",
+    "## 2. Related Work",
+    "\n\n",
+    "### 2.1 Language coverage and judging instructions",
+    "\n\n",
+    {
+      "paragraph_id": "P007"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P008"
+    },
+    "\n\n",
+    "### 2.2 Closest evaluation designs",
+    "\n\n",
+    {
+      "paragraph_id": "P009"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P010"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P011"
+    },
+    "\n\n",
+    "## 3. Methodology",
+    "\n\n",
+    "### 3.1 Task and language selection",
+    "\n\n",
+    {
+      "paragraph_id": "P012"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P013"
+    },
+    "\n\n",
+    "### 3.2 Matched candidate construction",
+    "\n\n",
+    {
+      "paragraph_id": "P014"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P015"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P016"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P017"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P018"
+    },
+    "\n\n",
+    "### 3.3 Human reference and shared rubric",
+    "\n\n",
+    {
+      "paragraph_id": "P019"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P020"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P021"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P022"
+    },
+    "\n\n",
+    "### 3.4 Judge and instruction conditions",
+    "\n\n",
+    {
+      "paragraph_id": "P023"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P024"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P025"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P026"
+    },
+    "\n\n",
+    "## 4. Experiments: Evaluation Plan",
+    "\n\n",
+    "### 4.1 Pilot scope and comparison units",
+    "\n\n",
+    {
+      "paragraph_id": "P027"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P028"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P029"
+    },
+    "\n\n",
+    "### 4.2 Human agreement and non-decisions",
+    "\n\n",
+    {
+      "paragraph_id": "P030"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P031"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P032"
+    },
+    "\n\n",
+    "### 4.3 Within-condition and cross-language stability",
+    "\n\n",
+    {
+      "paragraph_id": "P033"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P034"
+    },
+    "\n\n",
+    "### 4.4 Uncertainty and interpretation",
+    "\n\n",
+    {
+      "paragraph_id": "P035"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P036"
+    },
+    "\n\n",
+    "### 4.5 Limitations and responsible use",
+    "\n\n",
+    {
+      "paragraph_id": "P037"
+    },
+    "\n\n",
+    {
+      "paragraph_id": "P038"
+    },
+    "\n\n",
+    "## 5. Conclusion",
+    "\n\n",
+    {
+      "paragraph_id": "P039"
+    },
+    "\n\n",
+    "## References",
+    "\n\n",
+    "- Isaac Chung and Linda Freienthal. 2026. [Cross-Lingual Stability of LLM Judges Under Controlled Generation: Evidence from Finno-Ugric Languages](https://aclanthology.org/2026.mme-main.8/). MME, 133–148.\n- Rajashik Datta and Sanjan Baitalik. 2026. [Confidence as a Tie-Breaker: Reassessing Multilingual Hedging Bias in LLM-as-a-Judge Evaluation](https://aclanthology.org/2026.acl-srw.33/). ACL Student Research Workshop, 393–402.\n- Xiyan Fu and Wei Liu. 2025. [How Reliable is Multilingual LLM-as-a-Judge?](https://aclanthology.org/2025.findings-emnlp.587/). Findings of EMNLP, 11040–11053.\n- Srishti Gureja, Lester James V. Miranda, Shayekh Bin Islam, Rishabh Maheshwary, Drishti Sharma, Gusti Winata, Nathan Lambert, Sebastian Ruder, Sara Hooker and Marzieh Fadaee. 2025. [M-RewardBench: Evaluating Reward Models in Multilingual Settings](https://aclanthology.org/2025.acl-long.3/). ACL, 43–58.\n- Peifeng Wang, Austin Xu, Yilun Zhou, Caiming Xiong and Shafiq Joty. 2025. [Direct Judgement Preference Optimization](https://aclanthology.org/2025.emnlp-main.103/). EMNLP, 1979–2009.\n- Ling-I Wu, Weijie Wu, Minyu Chen, Jianxin Xue and Guoqiang Li. 2025. [Co-Eval: Augmenting LLM-based Evaluation with Machine Metrics](https://aclanthology.org/2025.emnlp-main.1307/). EMNLP, 25754–25776.\n- Jiachen Yu, Shaoning Sun, Xiaohui Hu, Jiaxu Yan, Kaidong Yu and Xuelong Li. 2025. [Improve LLM-as-a-Judge Ability as a General Ability](https://aclanthology.org/2025.emnlp-main.712/). EMNLP, 14099–14115.\n"
+  ],
+  "blocks": [
+    {
+      "paragraph_id": "P001",
+      "source_block_index": 3,
+      "piece_index": 6,
+      "section": "abstract",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "4192b5f2dc7f2ae3ac43564ca513cec49a2aee0c94afe734f68714e40c8c5713",
+      "converted_sha256": "4192b5f2dc7f2ae3ac43564ca513cec49a2aee0c94afe734f68714e40c8c5713",
+      "original_text": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+      "converted_text": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P002",
+      "source_block_index": 5,
+      "piece_index": 10,
+      "section": "introduction",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "c7373d73264f5e35c83768eb4a57501c871573afea1c113ef1b66b1e841d0598",
+      "converted_sha256": "43b312874a0da3b7513005c467e2b4d251bfea518a8b6be0a0f12aab4c9ba1c7",
+      "original_text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [Fu and Liu, 2025, §§3.2–3.4](https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3); [Chung and Freienthal, 2026](https://aclanthology.org/2026.mme-main.8/).",
+      "converted_text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+      "citation_occurrences": [
+        {
+          "source_id": "S01",
+          "original_markdown": "[Fu and Liu, 2025, §§3.2–3.4](https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3)"
+        },
+        {
+          "source_id": "S02",
+          "original_markdown": "[Chung and Freienthal, 2026](https://aclanthology.org/2026.mme-main.8/)"
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "source_block_index": 6,
+      "piece_index": 12,
+      "section": "introduction",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "af6e7e7aa3514e9d14233ee2f19b687860a1294bada3cda394912e9fa67ea33a",
+      "converted_sha256": "af6e7e7aa3514e9d14233ee2f19b687860a1294bada3cda394912e9fa67ea33a",
+      "original_text": "For a particular judge and task, however, three questions remain distinct. Does the judge agree with a human reference? Does it preserve its decision when equivalent content is presented in another language? Does it repeat its own decision under the same settings? None logically guarantees the others. A judge that always accepts an incorrect answer is stable but wrong. A disagreement between language versions could reflect judge behavior, an imperfect translation or an ambiguous reference label. Our study therefore combines human assessment of the test material with separate measurements of agreement and stability.",
+      "converted_text": "For a particular judge and task, however, three questions remain distinct. Does the judge agree with a human reference? Does it preserve its decision when equivalent content is presented in another language? Does it repeat its own decision under the same settings? None logically guarantees the others. A judge that always accepts an incorrect answer is stable but wrong. A disagreement between language versions could reflect judge behavior, an imperfect translation or an ambiguous reference label. Our study therefore combines human assessment of the test material with separate measurements of agreement and stability.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P004",
+      "source_block_index": 7,
+      "piece_index": 14,
+      "section": "introduction",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "b33b8887893f7553ec9ae85c057a70bf982d35c19c96bd0fc697b0ce859889e3",
+      "converted_sha256": "b33b8887893f7553ec9ae85c057a70bf982d35c19c96bd0fc697b0ce859889e3",
+      "original_text": "We focus on short answers evaluated against a supplied passage. This bounded task allows answer correctness to be checked against explicit evidence rather than an unrestricted judgment of writing quality. The proposed pilot addresses three research questions:",
+      "converted_text": "We focus on short answers evaluated against a supplied passage. This bounded task allows answer correctness to be checked against explicit evidence rather than an unrestricted judgment of writing quality. The proposed pilot addresses three research questions:",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P005",
+      "source_block_index": 8,
+      "piece_index": 16,
+      "section": "introduction",
+      "subsection": null,
+      "kind": "list",
+      "locked": false,
+      "original_sha256": "65de87c91f47a2b21d7a888560caf5d41d3ec57aff0bc736edec251f6deef055",
+      "converted_sha256": "65de87c91f47a2b21d7a888560caf5d41d3ec57aff0bc736edec251f6deef055",
+      "original_text": "1. **RQ1—Human agreement:** Under the same English judging instructions, how does agreement with adjudicated human correctness labels differ between English and a second language on matched QA content?\n2. **RQ2—Decision stability:** How often do judgments differ across matched language versions, and how often does a judge repeat its decision across calls with fixed settings?\n3. **RQ3—Instruction sensitivity:** For target-language content, does using meaning-matched target-language instructions change agreement or stability relative to English instructions?",
+      "converted_text": "1. **RQ1—Human agreement:** Under the same English judging instructions, how does agreement with adjudicated human correctness labels differ between English and a second language on matched QA content?\n2. **RQ2—Decision stability:** How often do judgments differ across matched language versions, and how often does a judge repeat its decision across calls with fixed settings?\n3. **RQ3—Instruction sensitivity:** For target-language content, does using meaning-matched target-language instructions change agreement or stability relative to English instructions?",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P006",
+      "source_block_index": 9,
+      "piece_index": 18,
+      "section": "introduction",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "ecbe01cd6b4e4f17905a50e0025a93beb103d0f12dccaca62d231ec4d58d2ee9",
+      "converted_sha256": "ecbe01cd6b4e4f17905a50e0025a93beb103d0f12dccaca62d231ec4d58d2ee9",
+      "original_text": "The intended contribution is a transparent replication-and-extension protocol with human reference labels in both selected languages, explicit language controls and separate error and stability measures. Its value does not depend on finding a language disadvantage: similar agreement, stable errors or problems in the test material would require different interpretations. The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.",
+      "converted_text": "The intended contribution is a transparent replication-and-extension protocol with human reference labels in both selected languages, explicit language controls and separate error and stability measures. Its value does not depend on finding a language disadvantage: similar agreement, stable errors or problems in the test material would require different interpretations. The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P007",
+      "source_block_index": 12,
+      "piece_index": 24,
+      "section": "related_work",
+      "subsection": "2.1 Language coverage and judging instructions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "7e9d59fc1caccc364164f7983d9feaf260f0afbbfc1f84d9da0e94b6486e4f01",
+      "converted_sha256": "ef87840bb07a822270d8c4a7ebd3de37808d84f4a41f50a1ce167aa149a97bd8",
+      "original_text": "An English-focused study can motivate extending that study without establishing an absence elsewhere. For example, Wang et al. explicitly limit their evaluation to English and identify multilingual judging as future work. Conversely, Wu et al. examine translation evaluation across six target languages. The relevant comparison is therefore between specific tasks and evaluation protocols, rather than English-only and multilingual research as mutually exclusive categories. [Wang et al., 2025, limitations](https://aclanthology.org/2025.emnlp-main.103.pdf#page=10); [Wu et al., 2025, §4.2](https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5).",
+      "converted_text": "An English-focused study can motivate extending that study without establishing an absence elsewhere. For example, Wang et al. explicitly limit their evaluation to English and identify multilingual judging as future work. Conversely, Wu et al. examine translation evaluation across six target languages. The relevant comparison is therefore between specific tasks and evaluation protocols, rather than English-only and multilingual research as mutually exclusive categories. [[S03]]; [[S04]].",
+      "citation_occurrences": [
+        {
+          "source_id": "S03",
+          "original_markdown": "[Wang et al., 2025, limitations](https://aclanthology.org/2025.emnlp-main.103.pdf#page=10)"
+        },
+        {
+          "source_id": "S04",
+          "original_markdown": "[Wu et al., 2025, §4.2](https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5)"
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "source_block_index": 13,
+      "piece_index": 26,
+      "section": "related_work",
+      "subsection": "2.1 Language coverage and judging instructions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "6f2afc2012ce5f94c902e1f460bcfbcfff36df19a652202a2f8189c0dfaba52b",
+      "converted_sha256": "c943f16c8da4befc680f8aca9c434eb4f1cc8df844eefcf9f5c4978b3cade3e5",
+      "original_text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language. [Yu et al., 2025, §4.3.3](https://aclanthology.org/2025.emnlp-main.712.pdf#page=7); [Chung and Freienthal, 2026, §3.5](https://aclanthology.org/2026.mme-main.8.pdf#page=4).",
+      "converted_text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]].",
+      "citation_occurrences": [
+        {
+          "source_id": "S05",
+          "original_markdown": "[Yu et al., 2025, §4.3.3](https://aclanthology.org/2025.emnlp-main.712.pdf#page=7)"
+        },
+        {
+          "source_id": "S06",
+          "original_markdown": "[Chung and Freienthal, 2026, §3.5](https://aclanthology.org/2026.mme-main.8.pdf#page=4)"
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "source_block_index": 15,
+      "piece_index": 30,
+      "section": "related_work",
+      "subsection": "2.2 Closest evaluation designs",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "83967d395f70aee2a60e9755071d9002e0daa64d76f7d058ab442c262e31af4f",
+      "converted_sha256": "83967d395f70aee2a60e9755071d9002e0daa64d76f7d058ab442c262e31af4f",
+      "original_text": "The following studies directly constrain the proposed contribution. The final column describes our intended comparison, not a claim that its components are unprecedented.",
+      "converted_text": "The following studies directly constrain the proposed contribution. The final column describes our intended comparison, not a claim that its components are unprecedented.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P010",
+      "source_block_index": 16,
+      "piece_index": 32,
+      "section": "related_work",
+      "subsection": "2.2 Closest evaluation designs",
+      "kind": "table",
+      "locked": true,
+      "original_sha256": "de4cde019dcbefab3c3a56f7f3dc1f5ac8d567426648d8c2fef6ccbf5fb78218",
+      "converted_sha256": "139b689fcda6bf5ddbbf1dce6db25a5566d76debfc47801e3fab65233c5d8f7c",
+      "original_text": "| Study | Relevant verified design feature | Relationship to this proposal |\n|---|---|---|\n| Fu and Liu (2025) | Ground-truth answers used as evaluation candidates in parallel multilingual tests. [§3.3](https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3). | Include both correct and deliberately incorrect candidates in the proposed QA test. |\n| Chung and Freienthal (2026) | Controlled dialogue evaluation; human calibration restricted to Estonian. [Limitations](https://aclanthology.org/2026.mme-main.8.pdf#page=5). | Use a different, passage-grounded task with human reference labels in each selected language. |\n| Datta and Baitalik (2026) | Multilingual factual QA already includes correct/incorrect variants; completed human validation remains a limitation of the final rerun. [§3.2](https://aclanthology.org/2026.acl-srw.33.pdf#page=3), [limitations](https://aclanthology.org/2026.acl-srw.33.pdf#page=8). | Treat mixed-quality multilingual QA as an existing design and emphasize human validation in the proposed extension. |\n| Gureja et al. (2025) | Multilingual preference evaluation includes sampled native-speaker validation. [§6.3](https://aclanthology.org/2025.acl-long.3.pdf#page=8). | Distinguish preference agreement from the proposed passage-supported correctness labels. |",
+      "converted_text": "| Study | Relevant verified design feature | Relationship to this proposal |\n|---|---|---|\n| Fu and Liu (2025) | Ground-truth answers used as evaluation candidates in parallel multilingual tests. [[S01]]. | Include both correct and deliberately incorrect candidates in the proposed QA test. |\n| Chung and Freienthal (2026) | Controlled dialogue evaluation; human calibration restricted to Estonian. [[S07]]. | Use a different, passage-grounded task with human reference labels in each selected language. |\n| Datta and Baitalik (2026) | Multilingual factual QA already includes correct/incorrect variants; completed human validation remains a limitation of the final rerun. [[S08]], [[S09]]. | Treat mixed-quality multilingual QA as an existing design and emphasize human validation in the proposed extension. |\n| Gureja et al. (2025) | Multilingual preference evaluation includes sampled native-speaker validation. [[S10]]. | Distinguish preference agreement from the proposed passage-supported correctness labels. |",
+      "citation_occurrences": [
+        {
+          "source_id": "S01",
+          "original_markdown": "[§3.3](https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3)"
+        },
+        {
+          "source_id": "S07",
+          "original_markdown": "[Limitations](https://aclanthology.org/2026.mme-main.8.pdf#page=5)"
+        },
+        {
+          "source_id": "S08",
+          "original_markdown": "[§3.2](https://aclanthology.org/2026.acl-srw.33.pdf#page=3)"
+        },
+        {
+          "source_id": "S09",
+          "original_markdown": "[limitations](https://aclanthology.org/2026.acl-srw.33.pdf#page=8)"
+        },
+        {
+          "source_id": "S10",
+          "original_markdown": "[§6.3](https://aclanthology.org/2025.acl-long.3.pdf#page=8)"
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "source_block_index": 17,
+      "piece_index": 34,
+      "section": "related_work",
+      "subsection": "2.2 Closest evaluation designs",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "be3882aecc449e6ac633a64a922d7b626ce2a70acf18622caa0b7241d64485b3",
+      "converted_sha256": "be3882aecc449e6ac633a64a922d7b626ce2a70acf18622caa0b7241d64485b3",
+      "original_text": "These precedents support a narrowly scoped study, not the assertion that multilingual human-reference evaluation is missing. We propose to examine the selected QA setting through an integrated protocol that makes human agreement, language-related decision changes and repeated-call behavior independently observable.",
+      "converted_text": "These precedents support a narrowly scoped study, not the assertion that multilingual human-reference evaluation is missing. We propose to examine the selected QA setting through an integrated protocol that makes human agreement, language-related decision changes and repeated-call behavior independently observable.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P012",
+      "source_block_index": 20,
+      "piece_index": 40,
+      "section": "methodology",
+      "subsection": "3.1 Task and language selection",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "139d622bca53d5fc4038a4d185b026c16bca3e0133355bf8090e88eefc931b6d",
+      "converted_sha256": "139d622bca53d5fc4038a4d185b026c16bca3e0133355bf8090e88eefc931b6d",
+      "original_text": "The task is pointwise evaluation: given a passage, a question and one candidate answer, the judge determines whether the answer is supported by the passage. It does not rate fluency, persuasiveness or overall response quality. This restriction makes the object of evaluation explicit and avoids interpreting a factual-correctness label as a general quality score.",
+      "converted_text": "The task is pointwise evaluation: given a passage, a question and one candidate answer, the judge determines whether the answer is supported by the passage. It does not rate fluency, persuasiveness or overall response quality. This restriction makes the object of evaluation explicit and avoids interpreting a factual-correctness label as a general quality score.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P013",
+      "source_block_index": 21,
+      "piece_index": 42,
+      "section": "methodology",
+      "subsection": "3.1 Task and language selection",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "13ffc27cbf41d1f7a5b2ab24faf4f5662365d5d12bb888e7f734e32ef855123b",
+      "converted_sha256": "13ffc27cbf41d1f7a5b2ab24faf4f5662365d5d12bb888e7f734e32ef855123b",
+      "original_text": "The study will compare English with a second language, denoted L. Selection of L will require access to two fluent raters, bilingual equivalence review and suitable reusable material. The language and item source have not yet been selected. They will be fixed before test construction and documented with data provenance and licensing. Language selection is feasibility-driven; the study is not designed to estimate a general effect of language-resource availability.",
+      "converted_text": "The study will compare English with a second language, denoted L. Selection of L will require access to two fluent raters, bilingual equivalence review and suitable reusable material. The language and item source have not yet been selected. They will be fixed before test construction and documented with data provenance and licensing. Language selection is feasibility-driven; the study is not designed to estimate a general effect of language-resource availability.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P014",
+      "source_block_index": 23,
+      "piece_index": 46,
+      "section": "methodology",
+      "subsection": "3.2 Matched candidate construction",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "8d6329608600e05e269216f5c25f276644925318f9adfc6cc5406714ef630e40",
+      "converted_sha256": "8d6329608600e05e269216f5c25f276644925318f9adfc6cc5406714ef630e40",
+      "original_text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+      "converted_text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P015",
+      "source_block_index": 24,
+      "piece_index": 48,
+      "section": "methodology",
+      "subsection": "3.2 Matched candidate construction",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "b85eb8359b33f4d378703d7e6fe28594966b43d64876177a7f0a84cdd6c6aa6d",
+      "converted_sha256": "b85eb8359b33f4d378703d7e6fe28594966b43d64876177a7f0a84cdd6c6aa6d",
+      "original_text": "The following **synthetic illustration** explains the construction; it is not a sampled item or experimental evidence:",
+      "converted_text": "The following **synthetic illustration** explains the construction; it is not a sampled item or experimental evidence:",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P016",
+      "source_block_index": 25,
+      "piece_index": 50,
+      "section": "methodology",
+      "subsection": "3.2 Matched candidate construction",
+      "kind": "table",
+      "locked": true,
+      "original_sha256": "d2ef3d7291cf0b549f40051b438dd129a9133974daf5c750ecde5806728d699e",
+      "converted_sha256": "d2ef3d7291cf0b549f40051b438dd129a9133974daf5c750ecde5806728d699e",
+      "original_text": "| Component | Illustrative English text |\n|---|---|\n| Passage | The community library opens at 9 a.m. on Saturdays. |\n| Question | What time does the library open on Saturdays? |\n| Correct candidate | It opens at 9 a.m. |\n| Incorrect candidate | It opens at 10 a.m. |",
+      "converted_text": "| Component | Illustrative English text |\n|---|---|\n| Passage | The community library opens at 9 a.m. on Saturdays. |\n| Question | What time does the library open on Saturdays? |\n| Correct candidate | It opens at 9 a.m. |\n| Incorrect candidate | It opens at 10 a.m. |",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P017",
+      "source_block_index": 26,
+      "piece_index": 52,
+      "section": "methodology",
+      "subsection": "3.2 Matched candidate construction",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "25fd2c86907e70936af1c20a759ae635e5a83533053bea87eed69c95cb576dbc",
+      "converted_sha256": "25fd2c86907e70936af1c20a759ae635e5a83533053bea87eed69c95cb576dbc",
+      "original_text": "For a paired language version, the passage, question and both candidates would be translated together. Bilingual review would check preservation of the opening time and the deliberately altered time. Naturally worded translations are required; literal similarity alone will not qualify an item as equivalent.",
+      "converted_text": "For a paired language version, the passage, question and both candidates would be translated together. Bilingual review would check preservation of the opening time and the deliberately altered time. Naturally worded translations are required; literal similarity alone will not qualify an item as equivalent.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P018",
+      "source_block_index": 27,
+      "piece_index": 54,
+      "section": "methodology",
+      "subsection": "3.2 Matched candidate construction",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "de656c92de6977a9d035df5ea26d6cbeb198cacd1143b284c6352ec6dcaea0ea",
+      "converted_sha256": "de656c92de6977a9d035df5ea26d6cbeb198cacd1143b284c6352ec6dcaea0ea",
+      "original_text": "Practice items will be used to clarify instructions and will remain outside the analysis sample. The reviewed test texts and exclusion rules will be frozen before judge outcomes are examined. Any later discovery of an item defect will be logged rather than silently repaired to change a result.",
+      "converted_text": "Practice items will be used to clarify instructions and will remain outside the analysis sample. The reviewed test texts and exclusion rules will be frozen before judge outcomes are examined. Any later discovery of an item defect will be logged rather than silently repaired to change a result.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P019",
+      "source_block_index": 29,
+      "piece_index": 58,
+      "section": "methodology",
+      "subsection": "3.3 Human reference and shared rubric",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "ab5bada55c9dd1abe5ee7a9c1893a9a623bf48ad7249aedfb918a2c85a7a2058",
+      "converted_sha256": "ab5bada55c9dd1abe5ee7a9c1893a9a623bf48ad7249aedfb918a2c85a7a2058",
+      "original_text": "Humans and judges will use the same three task definitions:",
+      "converted_text": "Humans and judges will use the same three task definitions:",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P020",
+      "source_block_index": 30,
+      "piece_index": 60,
+      "section": "methodology",
+      "subsection": "3.3 Human reference and shared rubric",
+      "kind": "table",
+      "locked": true,
+      "original_sha256": "42315a61d65e591e8761f21b978681748d3bf3971da18bb1fa7e974387d83290",
+      "converted_sha256": "42315a61d65e591e8761f21b978681748d3bf3971da18bb1fa7e974387d83290",
+      "original_text": "| Label | Decision rule |\n|---|---|\n| Correct | The answer addresses the question, is supported by the passage and contains no material contradiction or unsupported addition. Meaning-preserving paraphrases are acceptable. |\n| Incorrect | The answer makes a material contradicted or unsupported claim, or fails to provide the requested answer. External knowledge does not override the supplied passage. |\n| Insufficient evidence | Ambiguity, missing information or unreadability prevents a defensible correctness decision. A reason must be recorded. |",
+      "converted_text": "| Label | Decision rule |\n|---|---|\n| Correct | The answer addresses the question, is supported by the passage and contains no material contradiction or unsupported addition. Meaning-preserving paraphrases are acceptable. |\n| Incorrect | The answer makes a material contradicted or unsupported claim, or fails to provide the requested answer. External knowledge does not override the supplied passage. |\n| Insufficient evidence | Ambiguity, missing information or unreadability prevents a defensible correctness decision. A reason must be recorded. |",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P021",
+      "source_block_index": 31,
+      "piece_index": 62,
+      "section": "methodology",
+      "subsection": "3.3 Human reference and shared rubric",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "62e73ba2c929e97515f23025bffb5d38bff9049a3a310ce50c8ab0ab26910f3d",
+      "converted_sha256": "62e73ba2c929e97515f23025bffb5d38bff9049a3a310ce50c8ab0ab26910f3d",
+      "original_text": "Two raters fluent in the response language will assess each text independently, blinded to the intended condition and all model outputs. Presentation order will be randomized, with paired variants separated where practical. Raw labels and reasons will be retained. Disagreements will be adjudicated against the passage, with a third fluent reviewer if required. Human reference labels will not be replaced by the output of another language model.",
+      "converted_text": "Two raters fluent in the response language will assess each text independently, blinded to the intended condition and all model outputs. Presentation order will be randomized, with paired variants separated where practical. Raw labels and reasons will be retained. Disagreements will be adjudicated against the passage, with a third fluent reviewer if required. Human reference labels will not be replaced by the output of another language model.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P022",
+      "source_block_index": 32,
+      "piece_index": 64,
+      "section": "methodology",
+      "subsection": "3.3 Human reference and shared rubric",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "e7609c6253ba2d740c14bcb6a93ffa1f02d2e9d9946af3334367bc05760770ae",
+      "converted_sha256": "e7609c6253ba2d740c14bcb6a93ffa1f02d2e9d9946af3334367bc05760770ae",
+      "original_text": "Unresolved underlying items will be removed, together with all their answer and language variants, from the primary paired analysis. Counts and reasons will be reported. The same two bilingual people may serve both languages if necessary, but any reviewer overlap will be documented. Agreement before adjudication will describe the initial labeling process, not be substituted for agreement against the final reference.",
+      "converted_text": "Unresolved underlying items will be removed, together with all their answer and language variants, from the primary paired analysis. Counts and reasons will be reported. The same two bilingual people may serve both languages if necessary, but any reviewer overlap will be documented. Agreement before adjudication will describe the initial labeling process, not be substituted for agreement against the final reference.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P023",
+      "source_block_index": 34,
+      "piece_index": 68,
+      "section": "methodology",
+      "subsection": "3.4 Judge and instruction conditions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "1f8268df0610bfd0ca5ee2fb600ce23d9a92e15c31e6ca133c6b57183be1b98c",
+      "converted_sha256": "1f8268df0610bfd0ca5ee2fb600ce23d9a92e15c31e6ca133c6b57183be1b98c",
+      "original_text": "The minimum study uses one fixed judge, J1. Selection will require support for both languages, accessible inference and recordable settings. Its exact model version and configuration remain to be selected and frozen before collection. An optional second judge from another model family would repeat the protocol as a separate robustness check; the one-judge pilot will not support claims across judge families.",
+      "converted_text": "The minimum study uses one fixed judge, J1. Selection will require support for both languages, accessible inference and recordable settings. Its exact model version and configuration remain to be selected and frozen before collection. An optional second judge from another model family would repeat the protocol as a separate robustness check; the one-judge pilot will not support claims across judge families.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P024",
+      "source_block_index": 35,
+      "piece_index": 70,
+      "section": "methodology",
+      "subsection": "3.4 Judge and instruction conditions",
+      "kind": "table",
+      "locked": true,
+      "original_sha256": "37fc2b4a7935050bb3a95882914b05a8c37322f18ec1ecc49e7d0f60905096de",
+      "converted_sha256": "37fc2b4a7935050bb3a95882914b05a8c37322f18ec1ecc49e7d0f60905096de",
+      "original_text": "| Condition | Passage, question and answer | Judging instructions | Purpose |\n|---|---|---|---|\n| A | English | English | Reference condition |\n| B | Language L | English | Primary matched language contrast: B versus A |\n| C | Language L | Language L | Instruction sensitivity: C versus B |",
+      "converted_text": "| Condition | Passage, question and answer | Judging instructions | Purpose |\n|---|---|---|---|\n| A | English | English | Reference condition |\n| B | Language L | English | Primary matched language contrast: B versus A |\n| C | Language L | Language L | Instruction sensitivity: C versus B |",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P025",
+      "source_block_index": 36,
+      "piece_index": 72,
+      "section": "methodology",
+      "subsection": "3.4 Judge and instruction conditions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "163e811a9d345aa9c042c8d5209dbc82ec5efb20de35e87e73f536681c307884",
+      "converted_sha256": "163e811a9d345aa9c042c8d5209dbc82ec5efb20de35e87e73f536681c307884",
+      "original_text": "Conditions A and B change the language of the complete QA material, not answer language alone. Conditions B and C hold that material fixed while changing instruction language. The translated instructions will preserve rubric meaning and use the same output-label codes. This three-condition design does not estimate every possible content-language × instruction-language interaction.",
+      "converted_text": "Conditions A and B change the language of the complete QA material, not answer language alone. Conditions B and C hold that material fixed while changing instruction language. The translated instructions will preserve rubric meaning and use the same output-label codes. This three-condition design does not estimate every possible content-language × instruction-language interaction.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P026",
+      "source_block_index": 37,
+      "piece_index": 74,
+      "section": "methodology",
+      "subsection": "3.4 Judge and instruction conditions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "44db332a8d1d458b39b588989169a0ba7c097e9d6bcbf7a75f75e35df093d145",
+      "converted_sha256": "44db332a8d1d458b39b588989169a0ba7c097e9d6bcbf7a75f75e35df093d145",
+      "original_text": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+      "converted_text": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P027",
+      "source_block_index": 40,
+      "piece_index": 80,
+      "section": "experiments",
+      "subsection": "4.1 Pilot scope and comparison units",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "c268d5ac313fc4cb8a8a19fc734bdef10c0e0ea3f73df7b09e20214e45753ae8",
+      "converted_sha256": "c268d5ac313fc4cb8a8a19fc734bdef10c0e0ea3f73df7b09e20214e45753ae8",
+      "original_text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication and any technical retries add workload. An optional J2 would require another 360 calls.",
+      "converted_text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication and any technical retries add workload. An optional J2 would require another 360 calls.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P028",
+      "source_block_index": 41,
+      "piece_index": 82,
+      "section": "experiments",
+      "subsection": "4.1 Pilot scope and comparison units",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "abae69cd0052614861857c3c09164ec12f280422126b7c2d516430b351935706",
+      "converted_sha256": "abae69cd0052614861857c3c09164ec12f280422126b7c2d516430b351935706",
+      "original_text": "Twenty items and three calls are planning choices for a feasibility pilot, not statistically derived requirements. They allow the proposed workflow and measures to be examined with a bounded annotation and inference workload. Three calls provide only a coarse stability check. A confirmatory design would require a separate sample-size justification based on a specified effect and variability estimate.",
+      "converted_text": "Twenty items and three calls are planning choices for a feasibility pilot, not statistically derived requirements. They allow the proposed workflow and measures to be examined with a bounded annotation and inference workload. Three calls provide only a coarse stability check. A confirmatory design would require a separate sample-size justification based on a specified effect and variability estimate.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P029",
+      "source_block_index": 42,
+      "piece_index": 84,
+      "section": "experiments",
+      "subsection": "4.1 Pilot scope and comparison units",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "d4779bccbe1b7e3a97435def9e0aaa565a30336c99f9bf9ad103c2a83ca39d9e",
+      "converted_sha256": "d4779bccbe1b7e3a97435def9e0aaa565a30336c99f9bf9ad103c2a83ca39d9e",
+      "original_text": "The underlying passage–question item is the paired comparison unit. Translations, answer variants and repeated calls derived from that item will not be treated as independent observations.",
+      "converted_text": "The underlying passage–question item is the paired comparison unit. Translations, answer variants and repeated calls derived from that item will not be treated as independent observations.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P030",
+      "source_block_index": 44,
+      "piece_index": 88,
+      "section": "experiments",
+      "subsection": "4.2 Human agreement and non-decisions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "a9ccfa5293199a2e356c1b536228626d68a176f8a49c9714dc356a759d169a73",
+      "converted_sha256": "a9ccfa5293199a2e356c1b536228626d68a176f8a49c9714dc356a759d169a73",
+      "original_text": "The primary measure for RQ1 will be **unconditional operational agreement**: the proportion of scheduled calls that produce the adjudicated Correct/Incorrect reference label. Agreement indicators will first be averaged across calls for each response and then across responses within a condition. Abstentions, invalid outputs and technical failures count as non-matches in this operational measure; they are not all interpreted as factual reasoning errors.",
+      "converted_text": "The primary measure for RQ1 will be **unconditional operational agreement**: the proportion of scheduled calls that produce the adjudicated Correct/Incorrect reference label. Agreement indicators will first be averaged across calls for each response and then across responses within a condition. Abstentions, invalid outputs and technical failures count as non-matches in this operational measure; they are not all interpreted as factual reasoning errors.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P031",
+      "source_block_index": 45,
+      "piece_index": 90,
+      "section": "experiments",
+      "subsection": "4.2 Human agreement and non-decisions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "eaf30623ed277b8590f72a82176ab1865abfa45d325458e9bcbb7f920ebfb259",
+      "converted_sha256": "eaf30623ed277b8590f72a82176ab1865abfa45d325458e9bcbb7f920ebfb259",
+      "original_text": "To separate these mechanisms, we will also report binary decision coverage, agreement conditional on a valid binary decision, and rates of abstention, invalid output and technical failure. Conditional Cohen's kappa will be reported beside coverage; it will be marked undefined when its denominator is zero. The primary paired contrast is agreement in B minus agreement in A. A contrast caused by technical failures will be described as an operational difference, not automatically a language-understanding deficit.",
+      "converted_text": "To separate these mechanisms, we will also report binary decision coverage, agreement conditional on a valid binary decision, and rates of abstention, invalid output and technical failure. Conditional Cohen's kappa will be reported beside coverage; it will be marked undefined when its denominator is zero. The primary paired contrast is agreement in B minus agreement in A. A contrast caused by technical failures will be described as an operational difference, not automatically a language-understanding deficit.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P032",
+      "source_block_index": 46,
+      "piece_index": 92,
+      "section": "experiments",
+      "subsection": "4.2 Human agreement and non-decisions",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "2359eec3878e57eccc6181d80bb25462533153ce7849fe58f8403c62fab44e5c",
+      "converted_sha256": "2359eec3878e57eccc6181d80bb25462533153ce7849fe58f8403c62fab44e5c",
+      "original_text": "Error analysis will distinguish accepting a human-incorrect answer from rejecting a human-correct answer. For each type, the denominator is all scheduled calls on responses with the corresponding reference label. Non-decision rates will be shown alongside these error rates. Human raw agreement and kappa before adjudication will be reported separately for each language.",
+      "converted_text": "Error analysis will distinguish accepting a human-incorrect answer from rejecting a human-correct answer. For each type, the denominator is all scheduled calls on responses with the corresponding reference label. Non-decision rates will be shown alongside these error rates. Human raw agreement and kappa before adjudication will be reported separately for each language.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P033",
+      "source_block_index": 48,
+      "piece_index": 96,
+      "section": "experiments",
+      "subsection": "4.3 Within-condition and cross-language stability",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "433a32bb063d70b82a4e0fb335f66bfc088b3cb4ef618a39f376040f95532eaf",
+      "converted_sha256": "433a32bb063d70b82a4e0fb335f66bfc088b3cb4ef618a39f376040f95532eaf",
+      "original_text": "For RQ2, repeated-call stability will be the proportion of response/condition cells with three identical valid labels. Three repeated abstentions will be distinguished from three repeated Correct/Incorrect decisions. A missing or invalid output will not qualify as a stable cell. Agreement with the human reference will be examined alongside stability so that consistently wrong judgments remain visible.",
+      "converted_text": "For RQ2, repeated-call stability will be the proportion of response/condition cells with three identical valid labels. Three repeated abstentions will be distinguished from three repeated Correct/Incorrect decisions. A missing or invalid output will not qualify as a stable cell. Agreement with the human reference will be examined alongside stability so that consistently wrong judgments remain visible.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P034",
+      "source_block_index": 49,
+      "piece_index": 98,
+      "section": "experiments",
+      "subsection": "4.3 Within-condition and cross-language stability",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "c320f80fb4c969cb19a236f4ef6838f2f829d9f3506bc93b2d17c5108a12f3d1",
+      "converted_sha256": "c320f80fb4c969cb19a236f4ef6838f2f829d9f3506bc93b2d17c5108a12f3d1",
+      "original_text": "Cross-language decision changes will be assessed between conditions A and B for the same item, answer variant and repeat index. The change rate will be calculated where both outputs are binary decisions, with paired coverage and non-decision mismatches reported. Repeat-index matching defines this pilot's descriptive comparison; it does not make the two calls shared random draws or independent item samples. For RQ3, the same agreement and stability measures will compare C with B.",
+      "converted_text": "Cross-language decision changes will be assessed between conditions A and B for the same item, answer variant and repeat index. The change rate will be calculated where both outputs are binary decisions, with paired coverage and non-decision mismatches reported. Repeat-index matching defines this pilot's descriptive comparison; it does not make the two calls shared random draws or independent item samples. For RQ3, the same agreement and stability measures will compare C with B.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P035",
+      "source_block_index": 51,
+      "piece_index": 102,
+      "section": "experiments",
+      "subsection": "4.4 Uncertainty and interpretation",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "3dde16cdbb3c4098f8aaafd0a418bd6837bb7b3dcf1ff25cd9b201c6a8d9e829",
+      "converted_sha256": "3dde16cdbb3c4098f8aaafd0a418bd6837bb7b3dcf1ff25cd9b201c6a8d9e829",
+      "original_text": "Exploratory 95% bootstrap intervals will resample whole underlying items, retaining their translations, answer variants and repeated calls together. With a small sample, intervals may be wide or degenerate; such outcomes and undefined statistics will be reported rather than replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+      "converted_text": "Exploratory 95% bootstrap intervals will resample whole underlying items, retaining their translations, answer variants and repeated calls together. With a small sample, intervals may be wide or degenerate; such outcomes and undefined statistics will be reported rather than replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P036",
+      "source_block_index": 52,
+      "piece_index": 104,
+      "section": "experiments",
+      "subsection": "4.4 Uncertainty and interpretation",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "183b14765fbe33eb121a5ae0ca0a16aed6c9cc17f2a9a5b0aaabcb5dfabcf194",
+      "converted_sha256": "183b14765fbe33eb121a5ae0ca0a16aed6c9cc17f2a9a5b0aaabcb5dfabcf194",
+      "original_text": "The analysis permits several interpretations. Stable decisions with poor human agreement would indicate consistent error in the tested setting. Decision changes with acceptable translation review would motivate closer examination of language-dependent judging. Translation or reference-label defects would instead require qualification of the evaluation material. These are prospective interpretation rules, not observed findings.",
+      "converted_text": "The analysis permits several interpretations. Stable decisions with poor human agreement would indicate consistent error in the tested setting. Decision changes with acceptable translation review would motivate closer examination of language-dependent judging. Translation or reference-label defects would instead require qualification of the evaluation material. These are prospective interpretation rules, not observed findings.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P037",
+      "source_block_index": 54,
+      "piece_index": 108,
+      "section": "experiments",
+      "subsection": "4.5 Limitations and responsible use",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "1e75d9c9787456fa29b9a0b577ea57cc6e3703f6eb7d7c90f347646ca3069e7d",
+      "converted_sha256": "1e75d9c9787456fa29b9a0b577ea57cc6e3703f6eb7d7c90f347646ca3069e7d",
+      "original_text": "The design is limited to one selected language pair, one primary judge, a small sample and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety or performance across model families. Minimal errors may be too easy or unrepresentative of naturally generated answers, creating ceiling effects that this pilot would need to identify.",
+      "converted_text": "The design is limited to one selected language pair, one primary judge, a small sample and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety or performance across model families. Minimal errors may be too easy or unrepresentative of naturally generated answers, creating ceiling effects that this pilot would need to identify.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P038",
+      "source_block_index": 55,
+      "piece_index": 110,
+      "section": "experiments",
+      "subsection": "4.5 Limitations and responsible use",
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "a57fc093051ea8d93ede8c0b09b2d95dd7fdeb11287598d5ebe8a2b9f342d342",
+      "converted_sha256": "a57fc093051ea8d93ede8c0b09b2d95dd7fdeb11287598d5ebe8a2b9f342d342",
+      "original_text": "Human adjudication is a reference procedure, not infallible ground truth. Translation artifacts, reviewer overlap, familiarity with paired variants and exclusion of unresolved items may affect the sample and its labels. Exclusion counts and reasons will therefore accompany the results. Model drift and prior exposure to reused material are additional threats. Reusable public or original non-sensitive passages will be preferred, and provenance and licensing will be recorded before data collection.",
+      "converted_text": "Human adjudication is a reference procedure, not infallible ground truth. Translation artifacts, reviewer overlap, familiarity with paired variants and exclusion of unresolved items may affect the sample and its labels. Exclusion counts and reasons will therefore accompany the results. Model drift and prior exposure to reused material are additional threats. Reusable public or original non-sensitive passages will be preferred, and provenance and licensing will be recorded before data collection.",
+      "citation_occurrences": []
+    },
+    {
+      "paragraph_id": "P039",
+      "source_block_index": 57,
+      "piece_index": 114,
+      "section": "conclusion",
+      "subsection": null,
+      "kind": "prose",
+      "locked": false,
+      "original_sha256": "dc3aa1a4a9ae524fdf73f69e38dded555f6107d0c4f10892b441ab1aefaf2b62",
+      "converted_sha256": "dc3aa1a4a9ae524fdf73f69e38dded555f6107d0c4f10892b441ab1aefaf2b62",
+      "original_text": "We propose a controlled bilingual QA study that evaluates human–judge agreement, cross-language decision changes and repeated-call stability as distinct outcomes. Matched correct and incorrect candidates, human review in each language and a separate instruction-language contrast make the intended comparisons explicit. The contribution is a bounded, auditable replication-and-extension design. The evaluation plan does not presume a language disadvantage or an improvement from translated instructions; its purpose is to determine which conclusions the selected data and protocol can support. Experimental performance remains to be measured.",
+      "converted_text": "We propose a controlled bilingual QA study that evaluates human–judge agreement, cross-language decision changes and repeated-call stability as distinct outcomes. Matched correct and incorrect candidates, human review in each language and a separate instruction-language contrast make the intended comparisons explicit. The contribution is a bounded, auditable replication-and-extension design. The evaluation plan does not presume a language disadvantage or an improvement from translated instructions; its purpose is to determine which conclusions the selected data and protocol can support. Experimental performance remains to be measured.",
+      "citation_occurrences": []
+    }
+  ],
+  "evidence_provenance": [
+    {
+      "evidence_id": "E_S01_01",
+      "paper_id": "2025.findings-emnlp.587",
+      "citation_url": "https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "735dcfd9f4d01891ec782c9e1a7af7b51b2088c84023f1e12bc5978294c32b1e",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S01_02",
+      "paper_id": "2025.findings-emnlp.587",
+      "citation_url": "https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "de7048a3edfa0e509e5e494f38cde1aaa75a8c4f2518c6278003b592f72d3bea",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S01_03",
+      "paper_id": "2025.findings-emnlp.587",
+      "citation_url": "https://aclanthology.org/2025.findings-emnlp.587.pdf#page=3",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "70c5b834bacabbfc2e033be8c3f363b28ae9ee8419856d7279a6cbe9bf27aabb",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S02_01",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8/",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "ac1696cae3e9ce462522e40de4e0cd4592e498bb2638ff23b4c2d874dd028bec",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S02_02",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8/",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "f7b5edc07a0f32bf330066015748231312fbae481faec41092c4110bba1969bd",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S02_03",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8/",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "a96ff3ccb0a041b297512b9c6c771778cd470efacf1f833eaea71462aa752382",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S03_01",
+      "paper_id": "2025.emnlp-main.103",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "15887dc99b060e8172bf548c880c6f9965fe3f1b9c49f0ec26e050300e0a8431",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S03_02",
+      "paper_id": "2025.emnlp-main.103",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "1f7545e01394ea55d1591e20527e2b771f7c1b51aeb02f47bc37bea54c351068",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S04_01",
+      "paper_id": "2025.emnlp-main.1307",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "6d4a29a547c17432cf5db866a884544a25a21e1f0a10955ff95fb4e10dadb8f3",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S04_02",
+      "paper_id": "2025.emnlp-main.1307",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "4b0a513573dda9d65c5e5da1ba23c2da7f6894435940c111ac5a32a87e923c51",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S05_01",
+      "paper_id": "2025.emnlp-main.712",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "2166b1a139a1e1086d42e02fcae04dce2e7881bf3f0d25cb25e0e1f8d02e6663",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S05_02",
+      "paper_id": "2025.emnlp-main.712",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "4f7b289a97ac0455aba43fc0d5004e1715e54da7cabc0db524a81c42daff5ce6",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S05_03",
+      "paper_id": "2025.emnlp-main.712",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "200750f83b234929504e12840d1a33240f6824d920ade63f93440d0c52673910",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S05_04",
+      "paper_id": "2025.emnlp-main.712",
+      "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "ea3b122cacdefa3a5437b69d6f651a3444ad72922aecec32c08c11fb85885811",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S06_01",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=4",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "ac1696cae3e9ce462522e40de4e0cd4592e498bb2638ff23b4c2d874dd028bec",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S06_02",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=4",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "f7b5edc07a0f32bf330066015748231312fbae481faec41092c4110bba1969bd",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S06_03",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=4",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "a96ff3ccb0a041b297512b9c6c771778cd470efacf1f833eaea71462aa752382",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S07_01",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=5",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "ac1696cae3e9ce462522e40de4e0cd4592e498bb2638ff23b4c2d874dd028bec",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S07_02",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=5",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "f7b5edc07a0f32bf330066015748231312fbae481faec41092c4110bba1969bd",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S07_03",
+      "paper_id": "2026.mme-main.8",
+      "citation_url": "https://aclanthology.org/2026.mme-main.8.pdf#page=5",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "a96ff3ccb0a041b297512b9c6c771778cd470efacf1f833eaea71462aa752382",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S08_01",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=3",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "756aaa3fb85cf6b9108cf12f280e22cfb1f137f1b385bafc3215a759f4bea111",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S08_02",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=3",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "b8db21b64fd78cddeb95282623b94c17c1a6e4320614a9f460f7f04db156604f",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S08_03",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=3",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "930b2c45f69e1835e0cab13daf58240dfe56884e801daab1e0621feb0f0927ab",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S08_04",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=3",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "6671b0c4b015f83bae900bb9a8425a53760586f0540f391c2033b485b548e9e3",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S09_01",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=8",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "756aaa3fb85cf6b9108cf12f280e22cfb1f137f1b385bafc3215a759f4bea111",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S09_02",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=8",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "b8db21b64fd78cddeb95282623b94c17c1a6e4320614a9f460f7f04db156604f",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S09_03",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=8",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "930b2c45f69e1835e0cab13daf58240dfe56884e801daab1e0621feb0f0927ab",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S09_04",
+      "paper_id": "2026.acl-srw.33",
+      "citation_url": "https://aclanthology.org/2026.acl-srw.33.pdf#page=8",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "6671b0c4b015f83bae900bb9a8425a53760586f0540f391c2033b485b548e9e3",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S10_01",
+      "paper_id": "2025.acl-long.3",
+      "citation_url": "https://aclanthology.org/2025.acl-long.3.pdf#page=8",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "88afd6c035f44ee6f7f3c25d6b8e322349139a6e8332d4ddc2e968349a1f2f71",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S10_02",
+      "paper_id": "2025.acl-long.3",
+      "citation_url": "https://aclanthology.org/2025.acl-long.3.pdf#page=8",
+      "source_kind": "passage_transcribed_in_stage_a_review",
+      "excerpt_sha256": "60e8ec6a7f720c5cc18bd8c319f72c462164c2e0ca1aba43daadcd24cb6ac064",
+      "independently_reverified_in_this_integration": false
+    },
+    {
+      "evidence_id": "E_S10_03",
+      "paper_id": "2025.acl-long.3",
+      "citation_url": "https://aclanthology.org/2025.acl-long.3.pdf#page=8",
+      "source_kind": "reviewer_context_not_independently_reverified",
+      "excerpt_sha256": "3217bf56dff7ba23400d97d2af2597588a962846e3b0ecf230749f2057d2d9a8",
+      "independently_reverified_in_this_integration": false
+    }
+  ],
+  "source_pilot_labels": [
+    {
+      "draft_claim_id": "D001",
+      "draft_claim": "Fu and Liu use ground-truth answers as evaluation candidates.",
+      "paper_id": "2025.findings-emnlp.587",
+      "verification_status": "SUPPORTED",
+      "supporting_evidence_ids": "E001"
+    },
+    {
+      "draft_claim_id": "D002",
+      "draft_claim": "Fu and Liu conduct parallel multilingual evaluation.",
+      "paper_id": "2025.findings-emnlp.587",
+      "verification_status": "INSUFFICIENT_EVIDENCE",
+      "supporting_evidence_ids": "C038"
+    },
+    {
+      "draft_claim_id": "D003",
+      "draft_claim": "Chung and Freienthal evaluate controlled customer-support dialogues.",
+      "paper_id": "2026.mme-main.8",
+      "verification_status": "PROVISIONALLY_SUPPORTED",
+      "supporting_evidence_ids": "C040"
+    },
+    {
+      "draft_claim_id": "D004",
+      "draft_claim": "Human calibration is restricted to Estonian.",
+      "paper_id": "2026.mme-main.8",
+      "verification_status": "SUPPORTED",
+      "supporting_evidence_ids": "E003"
+    },
+    {
+      "draft_claim_id": "D005",
+      "draft_claim": "Datta and Baitalik include correct and incorrect answers in multilingual factual QA.",
+      "paper_id": "2026.acl-srw.33",
+      "verification_status": "PARTIALLY_SUPPORTED",
+      "supporting_evidence_ids": "E005; C044"
+    },
+    {
+      "draft_claim_id": "D006",
+      "draft_claim": "The final rerun lacks completed human validation.",
+      "paper_id": "2026.acl-srw.33",
+      "verification_status": "SUPPORTED",
+      "supporting_evidence_ids": "E006"
+    },
+    {
+      "draft_claim_id": "D007",
+      "draft_claim": "Gureja and colleagues include native-speaker validation in multilingual preference evaluation.",
+      "paper_id": "2025.acl-long.3",
+      "verification_status": "PARTIALLY_SUPPORTED",
+      "supporting_evidence_ids": "E009"
+    }
+  ],
+  "source_support_warnings": [
+    {
+      "draft_claim_id": "D002",
+      "draft_claim": "Fu and Liu conduct parallel multilingual evaluation.",
+      "paper_id": "2025.findings-emnlp.587",
+      "verification_status": "INSUFFICIENT_EVIDENCE",
+      "supporting_evidence_ids": "C038"
+    },
+    {
+      "draft_claim_id": "D003",
+      "draft_claim": "Chung and Freienthal evaluate controlled customer-support dialogues.",
+      "paper_id": "2026.mme-main.8",
+      "verification_status": "PROVISIONALLY_SUPPORTED",
+      "supporting_evidence_ids": "C040"
+    },
+    {
+      "draft_claim_id": "D005",
+      "draft_claim": "Datta and Baitalik include correct and incorrect answers in multilingual factual QA.",
+      "paper_id": "2026.acl-srw.33",
+      "verification_status": "PARTIALLY_SUPPORTED",
+      "supporting_evidence_ids": "E005; C044"
+    },
+    {
+      "draft_claim_id": "D007",
+      "draft_claim": "Gureja and colleagues include native-speaker validation in multilingual preference evaluation.",
+      "paper_id": "2025.acl-long.3",
+      "verification_status": "PARTIALLY_SUPPORTED",
+      "supporting_evidence_ids": "E009"
+    }
+  ],
+  "note": "Format conversion and traceability are tested separately from semantic grounding and source correctness.",
+  "table_policy": "All four tables are retained verbatim and locked during refinement.",
+  "protected_term_selection": "Provisional adapter choices: the exact named agreement metrics; not Team A sign-off."
+}

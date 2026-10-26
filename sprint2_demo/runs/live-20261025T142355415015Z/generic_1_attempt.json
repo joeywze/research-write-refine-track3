@@ -1,0 +1,21 @@
+{
+  "arm": "generic",
+  "attempt": 1,
+  "allowed_paragraph_ids": [
+    "P002",
+    "P007",
+    "P008"
+  ],
+  "parent_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "v0_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "score_before": 0,
+  "score_after": 0,
+  "accepted": false,
+  "preservation": null,
+  "critic_count_before": 3,
+  "critic_count_after": null,
+  "candidate_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "reason": "UNCHANGED_OR_REPEATED",
+  "elapsed_seconds": 1.7480508000589907,
+  "last_accepted_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97"
+}

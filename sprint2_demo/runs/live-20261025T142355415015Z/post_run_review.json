@@ -1,0 +1,12 @@
+{
+  "reviewed_utc": "2026-10-25T14:31:46.390368+00:00",
+  "runtime_snapshot_matches": true,
+  "writer_followed_citation_move_advice": false,
+  "new_critic_flags_in_unchanged_paragraphs": [
+    "P001",
+    "P006",
+    "P039"
+  ],
+  "interpretation": "Critic repeatability and writer feedback adherence need development. No accepted rewriting gain.",
+  "report_sha256": "62e922564221b888f9ba14b59add91d685c514ec709af06e329b3668afe772ad"
+}
