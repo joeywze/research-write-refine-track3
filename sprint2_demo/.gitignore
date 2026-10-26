@@ -1,0 +1,9 @@
+.venv/
+**/.venv/
+**/__pycache__/
+**/.streamlit/secrets.toml
+.env
+*.lock
+ui/logs/
+verification/ui-jobs/
+verification/ui-safety/

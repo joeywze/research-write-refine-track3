@@ -1,0 +1,523 @@
+{
+  "ceiling_usd": "10",
+  "pricing": {
+    "checked_date": "2026-10-25",
+    "currency": "USD",
+    "basis": "Standard uncached text token rates per million; cached discounts ignored",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+      "https://developers.openai.com/api/docs/models/gpt-5.4"
+    ],
+    "scope": "Only calls made through this runner. Provider invoices, taxes and other applications are outside this ledger."
+  },
+  "records": [
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.4516775",
+      "status": "RESERVED_UNKNOWN_USAGE"
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.0555175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16015,
+        "output_tokens": 1032
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 85255,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6931375",
+      "charged_estimate_usd": "0.6931375",
+      "status": "RESERVED_UNKNOWN_USAGE"
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.0553525",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16015,
+        "output_tokens": 1021
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 85255,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6931375",
+      "charged_estimate_usd": "0.19282",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16102,
+        "output_tokens": 10171
+      }
+    },
+    {
+      "task": "revision_generic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 83548,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.134661",
+      "charged_estimate_usd": "0.015",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 15770,
+        "output_tokens": 705
+      }
+    },
+    {
+      "task": "revision_guided",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 90475,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.13985625",
+      "charged_estimate_usd": "0.01605825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17253,
+        "output_tokens": 693
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 127317,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5582925",
+      "charged_estimate_usd": "0.0810825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 24435,
+        "output_tokens": 1333
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130030,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565075",
+      "charged_estimate_usd": "0.0776275",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25159,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130574,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.566435",
+      "charged_estimate_usd": "0.0780575",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25331,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130143,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5653575",
+      "charged_estimate_usd": "0.0777175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25195,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130206,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565515",
+      "charged_estimate_usd": "0.565515",
+      "status": "RESERVED_UNKNOWN_USAGE"
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130030,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565075",
+      "charged_estimate_usd": "0.0787975",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25159,
+        "output_tokens": 1060
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130574,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.566435",
+      "charged_estimate_usd": "0.0780575",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25331,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130143,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5653575",
+      "charged_estimate_usd": "0.0777175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25195,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130206,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565515",
+      "charged_estimate_usd": "0.0802",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25210,
+        "output_tokens": 1145
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130139,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5653475",
+      "charged_estimate_usd": "0.0794175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25191,
+        "output_tokens": 1096
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 86162,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.455405",
+      "charged_estimate_usd": "0.0554675",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16295,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 86165,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6954125",
+      "charged_estimate_usd": "0.1827625",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16273,
+        "output_tokens": 9472
+      }
+    },
+    {
+      "task": "revision_generic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 84104,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.135078",
+      "charged_estimate_usd": "0.01323825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 15863,
+        "output_tokens": 298
+      }
+    },
+    {
+      "task": "revision_guided",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 89159,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.13886925",
+      "charged_estimate_usd": "0.01399125",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16945,
+        "output_tokens": 285
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130318,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565795",
+      "charged_estimate_usd": "0.0779",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25268,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_guided_1",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 86089,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6952225",
+      "charged_estimate_usd": "0.19333",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16264,
+        "output_tokens": 10178
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130030,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565075",
+      "charged_estimate_usd": "0.0789025",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25159,
+        "output_tokens": 1067
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130574,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.566435",
+      "charged_estimate_usd": "0.0791225",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25331,
+        "output_tokens": 1053
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130143,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5653575",
+      "charged_estimate_usd": "0.0777175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25195,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130206,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.565515",
+      "charged_estimate_usd": "0.080125",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25210,
+        "output_tokens": 1140
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130139,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5653475",
+      "charged_estimate_usd": "0.0794625",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25191,
+        "output_tokens": 1099
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 86162,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.455405",
+      "charged_estimate_usd": "0.0554675",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16295,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 87248,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.69812",
+      "charged_estimate_usd": "0.1912125",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16569,
+        "output_tokens": 9986
+      }
+    },
+    {
+      "task": "revision_generic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 84094,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.1350705",
+      "charged_estimate_usd": "0.01282125",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 15859,
+        "output_tokens": 206
+      }
+    },
+    {
+      "task": "revision_guided",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 92297,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.14122275",
+      "charged_estimate_usd": "0.01529175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17653,
+        "output_tokens": 456
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130449,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5661225",
+      "charged_estimate_usd": "0.077935",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25282,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_guided_1",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 93232,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.71308",
+      "charged_estimate_usd": "0.0554225",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17705,
+        "output_tokens": 744
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 86162,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.455405",
+      "charged_estimate_usd": "0.0554675",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16295,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 87248,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.69812",
+      "charged_estimate_usd": "0.1893975",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16569,
+        "output_tokens": 9865
+      }
+    },
+    {
+      "task": "revision_generic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 84094,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.1350705",
+      "charged_estimate_usd": "0.01284825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 15859,
+        "output_tokens": 212
+      }
+    },
+    {
+      "task": "revision_guided",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 92395,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.14129625",
+      "charged_estimate_usd": "0.01524075",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17699,
+        "output_tokens": 437
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 130432,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.56608",
+      "charged_estimate_usd": "0.07794",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 25284,
+        "output_tokens": 982
+      }
+    },
+    {
+      "task": "style_critic_guided_1",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 93308,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.71327",
+      "charged_estimate_usd": "0.0547925",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17729,
+        "output_tokens": 698
+      }
+    }
+  ]
+}

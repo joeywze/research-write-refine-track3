@@ -1,0 +1,294 @@
+{
+  "reviewed_utc": "2026-10-25T15:19:50.772301+00:00",
+  "run": "C:\\Users\\Guan Hong\\.codex\\.chatgpt-projects\\g-p-6a8fa694eba08191bb7613b87972cd45\\output\\sprint2-integration-20261025\\runs\\live-20261025T151429587392Z",
+  "calibration_status": "PASS",
+  "development_cases": [
+    {
+      "case": "unchanged",
+      "expected": [
+        "PASS"
+      ],
+      "actual": "PASS",
+      "matched": true,
+      "reasons": [],
+      "paragraph_failures": []
+    },
+    {
+      "case": "citation_moves",
+      "expected": [
+        "PASS"
+      ],
+      "actual": "PASS",
+      "matched": true,
+      "reasons": [],
+      "paragraph_failures": []
+    },
+    {
+      "case": "safe_paraphrase",
+      "expected": [
+        "PASS"
+      ],
+      "actual": "PASS",
+      "matched": true,
+      "reasons": [],
+      "paragraph_failures": []
+    },
+    {
+      "case": "swapped_attribution",
+      "expected": [
+        "CITATION_MISMATCH"
+      ],
+      "actual": "CITATION_MISMATCH",
+      "matched": true,
+      "reasons": [
+        "Paragraph P002 swaps the source-to-claim links for the two cited studies. The candidate states that Fu and Liu are cited as [[S02]] and Chung and Freienthal as [[S01]], but the package supports the opposite mapping: Fu and Liu with S01 and Chung and Freienthal with S02. This is a changed attribution, not a harmless citation move.",
+        "P002: The prose claims 'Fu and Liu evaluate judgments on parallel language versions [[S02]], while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues [[S01]]'. In the package, Fu and Liu correspond to S01 and Chung and Freienthal to S02. The candidate therefore reverses the source-to-claim links."
+      ],
+      "paragraph_failures": [
+        {
+          "paragraph_id": "P002",
+          "status": "CITATION_MISMATCH",
+          "reasons": [
+            "The prose claims 'Fu and Liu evaluate judgments on parallel language versions [[S02]], while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues [[S01]]'. In the package, Fu and Liu correspond to S01 and Chung and Freienthal to S02. The candidate therefore reverses the source-to-claim links."
+          ]
+        }
+      ]
+    },
+    {
+      "case": "overstated_certainty",
+      "expected": [
+        "MAJOR_DRIFT",
+        "UNSUPPORTED_ADDITION"
+      ],
+      "actual": "MAJOR_DRIFT",
+      "matched": true,
+      "reasons": [
+        "Paragraph P006 changes the claim about novelty from uncertain/unconfirmed to stronger status language ('is established pending a broader literature comparison'), which is not supported by the package and reverses the caution preserved in the references and package contribution/gap text.",
+        "P006: The package and both reference drafts state: 'The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.' The candidate instead says: 'The novelty of the combined protocol is established pending a broader literature comparison.' This strengthens an explicitly unresolved proposal qualification into an established claim and changes uncertainty/polarity."
+      ],
+      "paragraph_failures": [
+        {
+          "paragraph_id": "P006",
+          "status": "MAJOR_DRIFT",
+          "reasons": [
+            "The package and both reference drafts state: 'The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.' The candidate instead says: 'The novelty of the combined protocol is established pending a broader literature comparison.' This strengthens an explicitly unresolved proposal qualification into an established claim and changes uncertainty/polarity."
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_human_validation": "PENDING",
+  "held_out_evaluation": "PENDING",
+  "writing_run_status": "COMPLETED",
+  "cost": {
+    "model_calls_started": 11,
+    "completed_call_records": 11,
+    "usage_unknown_calls": 0,
+    "interrupted_request": null,
+    "interrupted_reservation_usd": null,
+    "reported_input_tokens": 235449,
+    "reported_output_tokens": 18697,
+    "summed_model_seconds": 163.45093580021057,
+    "known_token_cost_estimate_usd": "0.80348050",
+    "cumulative_estimate_and_reservations_usd": "4.09392325",
+    "calls_by_stage": {
+      "calibration_unchanged": 1,
+      "calibration_citation_moves": 1,
+      "calibration_safe_paraphrase": 1,
+      "calibration_swapped_attribution": 1,
+      "calibration_overstated_certainty": 1,
+      "v0": 1,
+      "critique": 2,
+      "generic": 1,
+      "guided": 2
+    },
+    "groups": {
+      "calibration": {
+        "calls": 5,
+        "input_tokens": 126086,
+        "output_tokens": 5341,
+        "summed_model_seconds": 41.03546580008697,
+        "estimated_usd": "0.3953300"
+      },
+      "core": {
+        "calls": 6,
+        "input_tokens": 109363,
+        "output_tokens": 13356,
+        "summed_model_seconds": 122.4154700001236,
+        "estimated_usd": "0.40815050"
+      }
+    }
+  },
+  "arms": {
+    "generic": {
+      "attempts": 1,
+      "accepted_attempts": 0,
+      "stop_reason": "UNCHANGED_OR_REPEATED",
+      "changed_paragraphs": [],
+      "final_equals_v0": true,
+      "fixed_content_check": {
+        "status": "PASS",
+        "reasons": [],
+        "semantic": null
+      },
+      "locked_tables_unchanged": true,
+      "final_rules_review_points": 0,
+      "final_llm_review_points": 2,
+      "attempt_decisions": [
+        {
+          "attempt": 1,
+          "accepted": false,
+          "reason": "UNCHANGED_OR_REPEATED",
+          "score_before": 0,
+          "score_after": 0,
+          "critic_count_before": 2,
+          "critic_count_after": null,
+          "review_responses": null
+        }
+      ],
+      "candidate_audits": []
+    },
+    "guided": {
+      "attempts": 1,
+      "accepted_attempts": 1,
+      "stop_reason": "NO_ACTIONABLE_DIAGNOSTICS",
+      "changed_paragraphs": [
+        {
+          "paragraph_id": "P002",
+          "before": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+          "after": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine language-dependent evaluation by language-model judges: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]]."
+        },
+        {
+          "paragraph_id": "P008",
+          "before": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]].",
+          "after": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this instruction-language sensitivity work but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]]."
+        }
+      ],
+      "final_equals_v0": false,
+      "fixed_content_check": {
+        "status": "PASS",
+        "reasons": [],
+        "semantic": null
+      },
+      "locked_tables_unchanged": true,
+      "final_rules_review_points": 0,
+      "final_llm_review_points": 0,
+      "attempt_decisions": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "reason": "PRESERVED_AND_IMPROVED",
+          "score_before": 0,
+          "score_after": 0,
+          "critic_count_before": 2,
+          "critic_count_after": 0,
+          "review_responses": [
+            {
+              "finding_id": "L:P002:specificity",
+              "decision": "EDITED",
+              "explanation": "I replaced the vague referent with a more explicit phrase supported by the paragraph, while keeping the claim and citation links unchanged. The citation still supports the same multilingual-evaluation precedent.",
+              "before_quote": "Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues.",
+              "after_quote": "Multilingual studies already examine language-dependent evaluation by language-model judges: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues."
+            },
+            {
+              "finding_id": "L:P008:specificity",
+              "decision": "EDITED",
+              "explanation": "I replaced the less specific referent with a clearer phrase already supported by the paragraph, without changing the underlying claim or citation attribution. The sentence now names the inquiry more directly as instruction-language sensitivity work.",
+              "before_quote": "Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language.",
+              "after_quote": "Our secondary condition follows this instruction-language sensitivity work but aims to preserve rubric meaning while changing instruction language."
+            }
+          ]
+        }
+      ],
+      "candidate_audits": [
+        {
+          "attempt": 1,
+          "changes_from_v0": [
+            {
+              "paragraph_id": "P002",
+              "before": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+              "after": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine language-dependent evaluation by language-model judges: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]]."
+            },
+            {
+              "paragraph_id": "P008",
+              "before": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]].",
+              "after": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this instruction-language sensitivity work but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]]."
+            }
+          ],
+          "actionable_findings": [],
+          "assessment_scope": {
+            "mode": "changed_paragraphs",
+            "reassessed_paragraph_ids": [
+              "P002",
+              "P008"
+            ],
+            "retained_paragraph_ids": [
+              "P001",
+              "P003",
+              "P004",
+              "P005",
+              "P006",
+              "P007",
+              "P009",
+              "P010",
+              "P011",
+              "P012",
+              "P013",
+              "P014",
+              "P015",
+              "P016",
+              "P017",
+              "P018",
+              "P019",
+              "P020",
+              "P021",
+              "P022",
+              "P023",
+              "P024",
+              "P025",
+              "P026",
+              "P027",
+              "P028",
+              "P029",
+              "P030",
+              "P031",
+              "P032",
+              "P033",
+              "P034",
+              "P035",
+              "P036",
+              "P037",
+              "P038",
+              "P039"
+            ],
+            "parent_draft_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+            "model_call_made": true,
+            "limitation": "Unchanged paragraph findings are retained. Context-dependent style effects outside changed paragraphs need separate validation; semantic preservation still covers the whole document."
+          },
+          "new_flags_on_unchanged_paragraphs": []
+        }
+      ]
+    }
+  },
+  "initial_review_points": {
+    "rules": 0,
+    "llm": 2
+  },
+  "hard_case": {
+    "kind": "DELIBERATE_INJECTED_EDIT_NOT_LLM_OUTPUT",
+    "source_live_run": "live-20261025T151429587392Z",
+    "source_accepted_hash": "69febc557e0585a486ead117e05ed21e097ea53a8f6d0335ecc11415ba94e638",
+    "paragraph_id": "P014",
+    "original": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+    "injected": "The planned pilot contains 21 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+    "result": "MAJOR_DRIFT: numbers changed",
+    "candidate_rejected": true,
+    "rollback_verified": true,
+    "final_hash_matches_newly_accepted_guided_output": true,
+    "api_calls": 0,
+    "directory": "C:\\Users\\Guan Hong\\.codex\\.chatgpt-projects\\g-p-6a8fa694eba08191bb7613b87972cd45\\output\\sprint2-integration-20261025\\verification\\feedback-safety-20261025T151950803994Z"
+  },
+  "runtime_snapshot_matches_live_run": true,
+  "citation_token_sequences_unchanged": true,
+  "independently_verified_writing_improvement": false
+}

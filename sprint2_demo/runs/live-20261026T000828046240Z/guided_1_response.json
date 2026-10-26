@@ -1,0 +1,28 @@
+{
+  "edits": [
+    {
+      "paragraph_id": "P002",
+      "text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine language-dependent evaluation: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]]."
+    },
+    {
+      "paragraph_id": "P008",
+      "text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language. Chung and Freienthal include an Estonian instruction-language sensitivity check. Our secondary condition follows this existing work on instruction-language effects but aims to preserve rubric meaning while changing instruction language. [[S05]]; [[S06]]."
+    }
+  ],
+  "review_responses": [
+    {
+      "finding_id": "L:P002:specificity",
+      "decision": "EDITED",
+      "explanation": "I replaced the vague local phrase with a more explicit one while preserving the study descriptions and the precedent claim, and I kept the same citation links with the same supported claims.",
+      "before_quote": "Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues.",
+      "after_quote": "Multilingual studies already examine language-dependent evaluation: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues."
+    },
+    {
+      "finding_id": "L:P008:specificity",
+      "decision": "EDITED",
+      "explanation": "I replaced the less specific reference with a clearer phrase naming the relevant area of prior work, without changing the claim or the citation support.",
+      "before_quote": "Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language.",
+      "after_quote": "Our secondary condition follows this existing work on instruction-language effects but aims to preserve rubric meaning while changing instruction language."
+    }
+  ]
+}

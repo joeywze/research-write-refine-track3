@@ -1,0 +1,28 @@
+{
+  "edits": [
+    {
+      "paragraph_id": "P001",
+      "text": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed."
+    },
+    {
+      "paragraph_id": "P002",
+      "text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions [[S01]], while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues [[S02]]. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked."
+    },
+    {
+      "paragraph_id": "P006",
+      "text": "The contribution is a transparent replication-and-extension protocol with human reference labels in both selected languages, explicit language controls and separate error and stability measures. Its value does not depend on finding a language disadvantage: similar agreement, stable errors or problems in the test material would require different interpretations. The novelty of the combined protocol remains unconfirmed pending a broader literature comparison."
+    },
+    {
+      "paragraph_id": "P007",
+      "text": "An English-focused study can motivate extending that study without establishing an absence elsewhere. For example, Wang et al. explicitly limit their evaluation to English and identify multilingual judging as future work [[S03]]. Conversely, Wu et al. examine translation evaluation across six target languages [[S04]]. The relevant comparison is therefore between specific tasks and evaluation protocols, rather than English-only and multilingual research as mutually exclusive categories."
+    },
+    {
+      "paragraph_id": "P008",
+      "text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language [[S05]]. Chung and Freienthal include an Estonian instruction-language sensitivity check [[S06]]. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language."
+    },
+    {
+      "paragraph_id": "P039",
+      "text": "We propose a controlled bilingual QA study that evaluates human–judge agreement, cross-language decision changes and repeated-call stability as distinct outcomes. Matched correct and incorrect candidates, human review in each language and a separate instruction-language contrast make the intended comparisons explicit. This is a bounded, auditable replication-and-extension design. The evaluation plan does not presume a language disadvantage or an improvement from translated instructions; its purpose is to determine which conclusions the selected data and protocol can support. Experimental performance remains to be measured."
+    }
+  ]
+}

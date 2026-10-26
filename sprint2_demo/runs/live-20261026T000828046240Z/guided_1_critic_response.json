@@ -1,0 +1,98 @@
+{
+  "paragraphs": [
+    {
+      "paragraph_id": "P002",
+      "findings": [
+        {
+          "criterion": "specificity",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The previous actionable issue has been resolved. The revised wording now names 'language-dependent evaluation' directly, which is more specific than 'this problem' and remains consistent with the approved claim and source support. No further local clarification is needed.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "argument_strength",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph clearly links the cited studies to the claim that there are direct precedents for studying language-dependent evaluation, while explicitly rejecting any inference that multilingual judging has been overlooked. The evidence-to-claim connection is appropriately drawn.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "formulaic_language",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The wording is concise and functional. The contrastive phrasing about precedents versus an 'overlooked' claim is substantive rather than stock.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "inappropriate_hedging",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph is not over-qualified. Its restraint is necessary to avoid unsupported field-wide claims.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "generic_transitions",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The movement from general framing to named precedents is direct and informative. No transition obscures the logic.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "unnatural_symmetry",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The parallel presentation of the two studies does not flatten meaningful differences; each study's distinct relevance is stated clearly.",
+          "safe_action": ""
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "findings": [
+        {
+          "criterion": "specificity",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The previous actionable issue has been resolved. The revised sentence now specifies 'existing work on instruction-language effects', which is clearer than 'this existing line of inquiry' and stays within the approved claim set and citation support.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "argument_strength",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph clearly distinguishes instruction language from evaluated-content language, then shows how the two cited studies motivate the proposed secondary condition. The final sentence makes the proposal-to-precedent link explicit without overstating novelty.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "formulaic_language",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The prose is purposeful and not unnecessarily stock. 'Aims to preserve rubric meaning while changing instruction language' conveys a concrete design intention.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "inappropriate_hedging",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The qualification 'aims to preserve' is appropriate because the work is planned and because preservation of rubric meaning is an intended design property, not an achieved result.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "generic_transitions",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The opening distinction is relevant, and the following sentences develop it with concrete examples and the proposed design response. The transition is useful rather than generic.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "unnatural_symmetry",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph does not force symmetry between Yu et al. and Chung and Freienthal. It notes their different kinds of relevance without masking those differences.",
+          "safe_action": ""
+        }
+      ]
+    }
+  ]
+}

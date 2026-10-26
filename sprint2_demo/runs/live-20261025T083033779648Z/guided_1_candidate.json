@@ -1,0 +1,328 @@
+{
+  "schema_version": "0.1",
+  "package_id": "bilingual_qa_provisional_20261021",
+  "paragraphs": [
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "text": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+      "claim_ids": [
+        "C_P001"
+      ]
+    },
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions [[S01]], while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues [[S02]]. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked.",
+      "claim_ids": [
+        "C_P002",
+        "C_P002_S1",
+        "C_P002_S2"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "section": "introduction",
+      "text": "For a particular judge and task, however, three questions remain distinct. Does the judge agree with a human reference? Does it preserve its decision when equivalent content is presented in another language? Does it repeat its own decision under the same settings? None logically guarantees the others. A judge that always accepts an incorrect answer is stable but wrong. A disagreement between language versions could reflect judge behavior, an imperfect translation or an ambiguous reference label. Our study therefore combines human assessment of the test material with separate measurements of agreement and stability.",
+      "claim_ids": [
+        "C_P003"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "section": "introduction",
+      "text": "We focus on short answers evaluated against a supplied passage. This bounded task allows answer correctness to be checked against explicit evidence rather than an unrestricted judgment of writing quality. The proposed pilot addresses three research questions:",
+      "claim_ids": [
+        "C_P004"
+      ]
+    },
+    {
+      "paragraph_id": "P005",
+      "section": "introduction",
+      "text": "1. **RQ1—Human agreement:** Under the same English judging instructions, how does agreement with adjudicated human correctness labels differ between English and a second language on matched QA content?\n2. **RQ2—Decision stability:** How often do judgments differ across matched language versions, and how often does a judge repeat its decision across calls with fixed settings?\n3. **RQ3—Instruction sensitivity:** For target-language content, does using meaning-matched target-language instructions change agreement or stability relative to English instructions?",
+      "claim_ids": [
+        "C_P005"
+      ]
+    },
+    {
+      "paragraph_id": "P006",
+      "section": "introduction",
+      "text": "The contribution is a transparent replication-and-extension protocol with human reference labels in both selected languages, explicit language controls and separate error and stability measures. Its value does not depend on finding a language disadvantage: similar agreement, stable errors or problems in the test material would require different interpretations. The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.",
+      "claim_ids": [
+        "C_P006"
+      ]
+    },
+    {
+      "paragraph_id": "P007",
+      "section": "related_work",
+      "text": "An English-focused study can motivate extending that study without establishing an absence elsewhere. For example, Wang et al. explicitly limit their evaluation to English and identify multilingual judging as future work [[S03]]. Conversely, Wu et al. examine translation evaluation across six target languages [[S04]]. The relevant comparison is therefore between specific tasks and evaluation protocols, rather than English-only and multilingual research as mutually exclusive categories.",
+      "claim_ids": [
+        "C_P007",
+        "C_P007_S1",
+        "C_P007_S2"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "section": "related_work",
+      "text": "Judging-instruction language also needs to be distinguished from the language of the evaluated content. Yu et al. compare an official English prompt with basic and instructional Chinese prompts, which vary in detail as well as language [[S05]]. Chung and Freienthal include an Estonian instruction-language sensitivity check [[S06]]. Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language.",
+      "claim_ids": [
+        "C_P008",
+        "C_P008_S1",
+        "C_P008_S2"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "section": "related_work",
+      "text": "The following studies directly constrain the proposed contribution. The final column describes our intended comparison, not a claim that its components are unprecedented.",
+      "claim_ids": [
+        "C_P009"
+      ]
+    },
+    {
+      "paragraph_id": "P010",
+      "section": "related_work",
+      "text": "| Study | Relevant verified design feature | Relationship to this proposal |\n|---|---|---|\n| Fu and Liu (2025) | Ground-truth answers used as evaluation candidates in parallel multilingual tests. [[S01]]. | Include both correct and deliberately incorrect candidates in the proposed QA test. |\n| Chung and Freienthal (2026) | Controlled dialogue evaluation; human calibration restricted to Estonian. [[S07]]. | Use a different, passage-grounded task with human reference labels in each selected language. |\n| Datta and Baitalik (2026) | Multilingual factual QA already includes correct/incorrect variants; completed human validation remains a limitation of the final rerun. [[S08]], [[S09]]. | Treat mixed-quality multilingual QA as an existing design and emphasize human validation in the proposed extension. |\n| Gureja et al. (2025) | Multilingual preference evaluation includes sampled native-speaker validation. [[S10]]. | Distinguish preference agreement from the proposed passage-supported correctness labels. |",
+      "claim_ids": [
+        "C_P010",
+        "C_P010_S1",
+        "C_P010_S2",
+        "C_P010_S3",
+        "C_P010_S4"
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "text": "These precedents support a narrowly scoped study, not the assertion that multilingual human-reference evaluation is missing. We propose to examine the selected QA setting through an integrated protocol that makes human agreement, language-related decision changes and repeated-call behavior independently observable.",
+      "claim_ids": [
+        "C_P011"
+      ]
+    },
+    {
+      "paragraph_id": "P012",
+      "section": "methodology",
+      "text": "The task is pointwise evaluation: given a passage, a question and one candidate answer, the judge determines whether the answer is supported by the passage. It does not rate fluency, persuasiveness or overall response quality. This restriction makes the object of evaluation explicit and avoids interpreting a factual-correctness label as a general quality score.",
+      "claim_ids": [
+        "C_P012"
+      ]
+    },
+    {
+      "paragraph_id": "P013",
+      "section": "methodology",
+      "text": "The study will compare English with a second language, denoted L. Selection of L will require access to two fluent raters, bilingual equivalence review and suitable reusable material. The language and item source have not yet been selected. They will be fixed before test construction and documented with data provenance and licensing. Language selection is feasibility-driven; the study is not designed to estimate a general effect of language-resource availability.",
+      "claim_ids": [
+        "C_P013"
+      ]
+    },
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+      "claim_ids": [
+        "C_P014"
+      ]
+    },
+    {
+      "paragraph_id": "P015",
+      "section": "methodology",
+      "text": "The following **synthetic illustration** explains the construction; it is not a sampled item or experimental evidence:",
+      "claim_ids": [
+        "C_P015"
+      ]
+    },
+    {
+      "paragraph_id": "P016",
+      "section": "methodology",
+      "text": "| Component | Illustrative English text |\n|---|---|\n| Passage | The community library opens at 9 a.m. on Saturdays. |\n| Question | What time does the library open on Saturdays? |\n| Correct candidate | It opens at 9 a.m. |\n| Incorrect candidate | It opens at 10 a.m. |",
+      "claim_ids": [
+        "C_P016"
+      ]
+    },
+    {
+      "paragraph_id": "P017",
+      "section": "methodology",
+      "text": "For a paired language version, the passage, question and both candidates would be translated together. Bilingual review would check preservation of the opening time and the deliberately altered time. Naturally worded translations are required; literal similarity alone will not qualify an item as equivalent.",
+      "claim_ids": [
+        "C_P017"
+      ]
+    },
+    {
+      "paragraph_id": "P018",
+      "section": "methodology",
+      "text": "Practice items will be used to clarify instructions and will remain outside the analysis sample. The reviewed test texts and exclusion rules will be frozen before judge outcomes are examined. Any later discovery of an item defect will be logged rather than silently repaired to change a result.",
+      "claim_ids": [
+        "C_P018"
+      ]
+    },
+    {
+      "paragraph_id": "P019",
+      "section": "methodology",
+      "text": "Humans and judges will use the same three task definitions:",
+      "claim_ids": [
+        "C_P019"
+      ]
+    },
+    {
+      "paragraph_id": "P020",
+      "section": "methodology",
+      "text": "| Label | Decision rule |\n|---|---|\n| Correct | The answer addresses the question, is supported by the passage and contains no material contradiction or unsupported addition. Meaning-preserving paraphrases are acceptable. |\n| Incorrect | The answer makes a material contradicted or unsupported claim, or fails to provide the requested answer. External knowledge does not override the supplied passage. |\n| Insufficient evidence | Ambiguity, missing information or unreadability prevents a defensible correctness decision. A reason must be recorded. |",
+      "claim_ids": [
+        "C_P020"
+      ]
+    },
+    {
+      "paragraph_id": "P021",
+      "section": "methodology",
+      "text": "Two raters fluent in the response language will assess each text independently, blinded to the intended condition and all model outputs. Presentation order will be randomized, with paired variants separated where practical. Raw labels and reasons will be retained. Disagreements will be adjudicated against the passage, with a third fluent reviewer if required. Human reference labels will not be replaced by the output of another language model.",
+      "claim_ids": [
+        "C_P021"
+      ]
+    },
+    {
+      "paragraph_id": "P022",
+      "section": "methodology",
+      "text": "Unresolved underlying items will be removed, together with all their answer and language variants, from the primary paired analysis. Counts and reasons will be reported. The same two bilingual people may serve both languages if necessary, but any reviewer overlap will be documented. Agreement before adjudication will describe the initial labeling process, not be substituted for agreement against the final reference.",
+      "claim_ids": [
+        "C_P022"
+      ]
+    },
+    {
+      "paragraph_id": "P023",
+      "section": "methodology",
+      "text": "The minimum study uses one fixed judge, J1. Selection will require support for both languages, accessible inference and recordable settings. Its exact model version and configuration remain to be selected and frozen before collection. An optional second judge from another model family would repeat the protocol as a separate robustness check; the one-judge pilot will not support claims across judge families.",
+      "claim_ids": [
+        "C_P023"
+      ]
+    },
+    {
+      "paragraph_id": "P024",
+      "section": "methodology",
+      "text": "| Condition | Passage, question and answer | Judging instructions | Purpose |\n|---|---|---|---|\n| A | English | English | Reference condition |\n| B | Language L | English | Primary matched language contrast: B versus A |\n| C | Language L | Language L | Instruction sensitivity: C versus B |",
+      "claim_ids": [
+        "C_P024"
+      ]
+    },
+    {
+      "paragraph_id": "P025",
+      "section": "methodology",
+      "text": "Conditions A and B change the language of the complete QA material, not answer language alone. Conditions B and C hold that material fixed while changing instruction language. The translated instructions will preserve rubric meaning and use the same output-label codes. This three-condition design does not estimate every possible content-language × instruction-language interaction.",
+      "claim_ids": [
+        "C_P025"
+      ]
+    },
+    {
+      "paragraph_id": "P026",
+      "section": "methodology",
+      "text": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+      "claim_ids": [
+        "C_P026"
+      ]
+    },
+    {
+      "paragraph_id": "P027",
+      "section": "experiments",
+      "text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication and any technical retries add workload. An optional J2 would require another 360 calls.",
+      "claim_ids": [
+        "C_P027"
+      ]
+    },
+    {
+      "paragraph_id": "P028",
+      "section": "experiments",
+      "text": "Twenty items and three calls are planning choices for a feasibility pilot, not statistically derived requirements. They allow the proposed workflow and measures to be examined with a bounded annotation and inference workload. Three calls provide only a coarse stability check. A confirmatory design would require a separate sample-size justification based on a specified effect and variability estimate.",
+      "claim_ids": [
+        "C_P028"
+      ]
+    },
+    {
+      "paragraph_id": "P029",
+      "section": "experiments",
+      "text": "The underlying passage–question item is the paired comparison unit. Translations, answer variants and repeated calls derived from that item will not be treated as independent observations.",
+      "claim_ids": [
+        "C_P029"
+      ]
+    },
+    {
+      "paragraph_id": "P030",
+      "section": "experiments",
+      "text": "The primary measure for RQ1 will be **unconditional operational agreement**: the proportion of scheduled calls that produce the adjudicated Correct/Incorrect reference label. Agreement indicators will first be averaged across calls for each response and then across responses within a condition. Abstentions, invalid outputs and technical failures count as non-matches in this operational measure; they are not all interpreted as factual reasoning errors.",
+      "claim_ids": [
+        "C_P030"
+      ]
+    },
+    {
+      "paragraph_id": "P031",
+      "section": "experiments",
+      "text": "To separate these mechanisms, we will also report binary decision coverage, agreement conditional on a valid binary decision, and rates of abstention, invalid output and technical failure. Conditional Cohen's kappa will be reported beside coverage; it will be marked undefined when its denominator is zero. The primary paired contrast is agreement in B minus agreement in A. A contrast caused by technical failures will be described as an operational difference, not automatically a language-understanding deficit.",
+      "claim_ids": [
+        "C_P031"
+      ]
+    },
+    {
+      "paragraph_id": "P032",
+      "section": "experiments",
+      "text": "Error analysis will distinguish accepting a human-incorrect answer from rejecting a human-correct answer. For each type, the denominator is all scheduled calls on responses with the corresponding reference label. Non-decision rates will be shown alongside these error rates. Human raw agreement and kappa before adjudication will be reported separately for each language.",
+      "claim_ids": [
+        "C_P032"
+      ]
+    },
+    {
+      "paragraph_id": "P033",
+      "section": "experiments",
+      "text": "For RQ2, repeated-call stability will be the proportion of response/condition cells with three identical valid labels. Three repeated abstentions will be distinguished from three repeated Correct/Incorrect decisions. A missing or invalid output will not qualify as a stable cell. Agreement with the human reference will be examined alongside stability so that consistently wrong judgments remain visible.",
+      "claim_ids": [
+        "C_P033"
+      ]
+    },
+    {
+      "paragraph_id": "P034",
+      "section": "experiments",
+      "text": "Cross-language decision changes will be assessed between conditions A and B for the same item, answer variant and repeat index. The change rate will be calculated where both outputs are binary decisions, with paired coverage and non-decision mismatches reported. Repeat-index matching defines this pilot's descriptive comparison; it does not make the two calls shared random draws or independent item samples. For RQ3, the same agreement and stability measures will compare C with B.",
+      "claim_ids": [
+        "C_P034"
+      ]
+    },
+    {
+      "paragraph_id": "P035",
+      "section": "experiments",
+      "text": "Exploratory 95% bootstrap intervals will resample whole underlying items, retaining their translations, answer variants and repeated calls together. With a small sample, intervals may be wide or degenerate; such outcomes and undefined statistics will be reported rather than replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+      "claim_ids": [
+        "C_P035"
+      ]
+    },
+    {
+      "paragraph_id": "P036",
+      "section": "experiments",
+      "text": "The analysis permits several interpretations. Stable decisions with poor human agreement would indicate consistent error in the tested setting. Decision changes with acceptable translation review would motivate closer examination of language-dependent judging. Translation or reference-label defects would instead require qualification of the evaluation material. These are prospective interpretation rules, not observed findings.",
+      "claim_ids": [
+        "C_P036"
+      ]
+    },
+    {
+      "paragraph_id": "P037",
+      "section": "experiments",
+      "text": "The design is limited to one selected language pair, one primary judge, a small sample and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety or performance across model families. Minimal errors may be too easy or unrepresentative of naturally generated answers, creating ceiling effects that this pilot would need to identify.",
+      "claim_ids": [
+        "C_P037"
+      ]
+    },
+    {
+      "paragraph_id": "P038",
+      "section": "experiments",
+      "text": "Human adjudication is a reference procedure, not infallible ground truth. Translation artifacts, reviewer overlap, familiarity with paired variants and exclusion of unresolved items may affect the sample and its labels. Exclusion counts and reasons will therefore accompany the results. Model drift and prior exposure to reused material are additional threats. Reusable public or original non-sensitive passages will be preferred, and provenance and licensing will be recorded before data collection.",
+      "claim_ids": [
+        "C_P038"
+      ]
+    },
+    {
+      "paragraph_id": "P039",
+      "section": "conclusion",
+      "text": "We propose a controlled bilingual QA study that evaluates human–judge agreement, cross-language decision changes and repeated-call stability as distinct outcomes. Matched correct and incorrect candidates, human review in each language and a separate instruction-language contrast make the intended comparisons explicit. This is a bounded, auditable replication-and-extension design. The evaluation plan does not presume a language disadvantage or an improvement from translated instructions; its purpose is to determine which conclusions the selected data and protocol can support. Experimental performance remains to be measured.",
+      "claim_ids": [
+        "C_P039"
+      ]
+    }
+  ]
+}

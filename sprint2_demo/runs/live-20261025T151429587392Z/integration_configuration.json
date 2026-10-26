@@ -1,0 +1,63 @@
+{
+  "setup": {
+    "writer": "gpt-5.4-mini-2026-03-17",
+    "checker_and_critic": "gpt-5.4-2026-03-05",
+    "maximum_total_estimated_api_spend_usd": 10,
+    "credential_available": true,
+    "openai_sdk_installed": true,
+    "paragraph_blocks": 39,
+    "locked_tables": 4,
+    "team_a_approval": "PENDING",
+    "semantic_grounding": "NOT_CHECKED",
+    "model_calls": 0
+  },
+  "provisional": true,
+  "writer_output_cap": 16000,
+  "preservation_output_cap": 16000,
+  "critic_output_cap": 32000,
+  "per_stage_token_limit": 1000000,
+  "max_attempts": 3,
+  "locked_table_ids": [
+    "P010",
+    "P016",
+    "P020",
+    "P024"
+  ],
+  "explanation": "Output caps raised for the full 39-block report; loop and acceptance rules are unchanged.",
+  "pricing": {
+    "checked_date": "2026-10-25",
+    "currency": "USD",
+    "basis": "Standard uncached text token rates per million; cached discounts ignored",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+      "https://developers.openai.com/api/docs/models/gpt-5.4"
+    ],
+    "scope": "Only calls made through this runner. Provider invoices, taxes and other applications are outside this ledger."
+  },
+  "implementation": {
+    "stage_b_source_revision": "f108a13eb6625fccc80bc5d57d435797519a1255",
+    "research_source_revision": "01915001d9490914eb2f1a316c1ea06053adfaef",
+    "local_patch": "feedback-stability-v1",
+    "prompt_version": "stage-b-0.7-feedback-stability-v1",
+    "sha256": {
+      "backend\\src\\writing\\__init__.py": "c7f33fc7cc886053ad078a956684300be497c3404909bf1d5b8902c533aafef3",
+      "backend\\src\\writing\\__main__.py": "10a1edddd4a5fdc3b5e3fdb0825c8203c4654be3e100c6db8e3cbb53faf3ab03",
+      "backend\\src\\writing\\contracts.py": "5344a52440e0e8990840dfd4765070534ad2b9d830be440184d52942f9d88ca7",
+      "backend\\src\\writing\\critic.py": "cfa7e520b0212b1bee302f23881a28b969bdcd507212b09d3e885e376e0043f7",
+      "backend\\src\\writing\\demo.py": "649bbb15797f32b4248796d190b5bbff0e7576edb77625c1f3bd6370c9e0f04b",
+      "backend\\src\\writing\\diagnostics.py": "13ad93034e7ca19ff9c71f8da0a07bea02d6a44a8856fda763482005f5c0daec",
+      "backend\\src\\writing\\evaluation.py": "06535222e802c15cbb6f7688452aabeb54602711cad6543d11f7c990b0ef897c",
+      "backend\\src\\writing\\features.py": "244a356ae00e630b4641a0fba6692e6cf7f6e8a16e51c80031bf33c69bc00934",
+      "backend\\src\\writing\\pipeline.py": "c0710a8c62d889c5ef58d29bfc9addfd4f80bc565fc394c9e394b4c9e74f2e82",
+      "backend\\src\\writing\\preservation.py": "fdc459ba3c3db3fa0d14b31a16dfe0d42aea63cffff0bd308694cff87b966a50",
+      "backend\\src\\writing\\prompts.py": "278ca80a2172491c044a65e6bb4fd05b0248b00a84bc37f4b283333816b803db",
+      "backend\\src\\writing\\providers.py": "4d8c2f7ebaf7ae092feef83e280ebeb2645a6e919649a190f996507434cb2422",
+      "backend\\src\\writing\\revision.py": "e43ad8ce8103be9bef943be8d02989ceeec2600faafd7ee99dbebd4e179c443b",
+      "backend\\src\\writing\\storage.py": "5867e708bd17afe19f1332491e5ec1f87806c7d3dea9029616f496dd428c9786",
+      "handover.py": "5218b7c8f14bd14b7e3bc4398a127e0774ed75b635b54df54c86c34e9535841c",
+      "run_live.py": "6bf71fb6ad8e5c6833b7e299292e5656783fc7d8fc0629b4a0c778d3b17e9ae7",
+      "citation_calibration.py": "b6db4c70b0f7172f27bf55d4ee584cf72a6e8922785a5ed27c8d9d8a69d7da3a"
+    }
+  },
+  "calibration_required": true
+}

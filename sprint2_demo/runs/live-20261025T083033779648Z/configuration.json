@@ -1,0 +1,22 @@
+{
+  "run": {
+    "max_attempts": 3,
+    "min_improvement": 1.0,
+    "max_output_tokens": 16000,
+    "diagnostics": {
+      "min_words": 20,
+      "long_sentence_words": 35,
+      "uniformity_min_sentences": 4,
+      "uniformity_cv": 0.1,
+      "transition_threshold": 2
+    }
+  },
+  "prompt_version": "stage-b-0.5",
+  "writer_model": "gpt-5.4-mini-2026-03-17",
+  "preservation_model": "gpt-5.4-2026-03-05",
+  "critic_model": "gpt-5.4-2026-03-05",
+  "method": "rules-critic",
+  "acceptance_rule": "surface_and_critic_no_regression",
+  "test_only": false,
+  "package_hash": "458f02e302ebb59b8b378320a8b0674d379870be903074fc110d4864cd12ce56"
+}

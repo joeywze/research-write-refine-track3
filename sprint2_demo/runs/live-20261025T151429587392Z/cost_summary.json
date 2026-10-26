@@ -1,0 +1,39 @@
+{
+  "test_only": false,
+  "stages": {
+    "v0": {
+      "model_calls": 1,
+      "usage_unknown_calls": 0,
+      "reported_input_tokens": 16295,
+      "reported_output_tokens": 982,
+      "charged_tokens": 17277,
+      "elapsed_model_seconds": 7.094346400001086
+    },
+    "generic": {
+      "model_calls": 1,
+      "usage_unknown_calls": 0,
+      "reported_input_tokens": 15859,
+      "reported_output_tokens": 206,
+      "charged_tokens": 16065,
+      "elapsed_model_seconds": 1.8629558000247926
+    },
+    "guided": {
+      "model_calls": 2,
+      "usage_unknown_calls": 0,
+      "reported_input_tokens": 42935,
+      "reported_output_tokens": 1438,
+      "charged_tokens": 44373,
+      "elapsed_model_seconds": 10.463088699965738
+    },
+    "critique": {
+      "model_calls": 2,
+      "usage_unknown_calls": 0,
+      "reported_input_tokens": 34274,
+      "reported_output_tokens": 10730,
+      "charged_tokens": 45004,
+      "elapsed_model_seconds": 102.99507910013199
+    }
+  },
+  "critique_cost_note": "Includes the initial critique and assessments of guided candidates.",
+  "monetary_cost": "NOT_ESTIMATED"
+}

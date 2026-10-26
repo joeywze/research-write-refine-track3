@@ -1,0 +1,367 @@
+{
+  "arm": "guided",
+  "attempt": 1,
+  "allowed_paragraph_ids": [
+    "P002",
+    "P008"
+  ],
+  "parent_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "v0_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "score_before": 0,
+  "score_after": 0,
+  "accepted": true,
+  "preservation": {
+    "status": "PASS",
+    "reasons": [],
+    "semantic": {
+      "global_status": "PASS",
+      "global_reasons": [],
+      "paragraphs": [
+        {
+          "paragraph_id": "P001",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P001"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P002",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P002",
+            "C_P002_S1",
+            "C_P002_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P003",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P003"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P004",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P004"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P005",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P005"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P006",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P006"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P007",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P007",
+            "C_P007_S1",
+            "C_P007_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P008",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P008",
+            "C_P008_S1",
+            "C_P008_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P009",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P009"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P010",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P010",
+            "C_P010_S1",
+            "C_P010_S2",
+            "C_P010_S3",
+            "C_P010_S4"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P011",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P011"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P012",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P012"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P013",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P013"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P014",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P014"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P015",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P015"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P016",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P016"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P017",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P017"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P018",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P018"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P019",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P019"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P020",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P020"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P021",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P021"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P022",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P022"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P023",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P023"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P024",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P024"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P025",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P025"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P026",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P026"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P027",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P027"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P028",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P028"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P029",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P029"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P030",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P030"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P031",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P031"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P032",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P032"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P033",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P033"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P034",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P034"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P035",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P035"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P036",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P036"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P037",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P037"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P038",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P038"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P039",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P039"
+          ],
+          "reasons": []
+        }
+      ]
+    }
+  },
+  "critic_count_before": 2,
+  "critic_count_after": 0,
+  "review_responses": [
+    {
+      "finding_id": "L:P002:specificity",
+      "decision": "EDITED",
+      "explanation": "I replaced the vague referent with a more explicit phrase supported by the paragraph, while keeping the claim and citation links unchanged. The citation still supports the same multilingual-evaluation precedent.",
+      "before_quote": "Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues.",
+      "after_quote": "Multilingual studies already examine language-dependent evaluation by language-model judges: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues."
+    },
+    {
+      "finding_id": "L:P008:specificity",
+      "decision": "EDITED",
+      "explanation": "I replaced the less specific referent with a clearer phrase already supported by the paragraph, without changing the underlying claim or citation attribution. The sentence now names the inquiry more directly as instruction-language sensitivity work.",
+      "before_quote": "Our secondary condition follows this existing line of inquiry but aims to preserve rubric meaning while changing instruction language.",
+      "after_quote": "Our secondary condition follows this instruction-language sensitivity work but aims to preserve rubric meaning while changing instruction language."
+    }
+  ],
+  "candidate_hash": "69febc557e0585a486ead117e05ed21e097ea53a8f6d0335ecc11415ba94e638",
+  "reason": "PRESERVED_AND_IMPROVED",
+  "elapsed_seconds": 18.804506900021806,
+  "last_accepted_hash": "69febc557e0585a486ead117e05ed21e097ea53a8f6d0335ecc11415ba94e638"
+}

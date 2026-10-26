@@ -1,0 +1,111 @@
+{
+  "ceiling_usd": "10",
+  "pricing": {
+    "checked_date": "2026-10-25",
+    "currency": "USD",
+    "basis": "Standard uncached text token rates per million; cached discounts ignored",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+      "https://developers.openai.com/api/docs/models/gpt-5.4"
+    ],
+    "scope": "Only calls made through this runner. Provider invoices, taxes and other applications are outside this ledger."
+  },
+  "records": [
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.4516775",
+      "status": "RESERVED_UNKNOWN_USAGE"
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.0555175",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16015,
+        "output_tokens": 1032
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 85255,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6931375",
+      "charged_estimate_usd": "0.6931375",
+      "status": "RESERVED_UNKNOWN_USAGE"
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 84671,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.4516775",
+      "charged_estimate_usd": "0.0553525",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16015,
+        "output_tokens": 1021
+      }
+    },
+    {
+      "task": "style_critic_v0",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 85255,
+      "output_token_cap": 32000,
+      "reservation_usd": "0.6931375",
+      "charged_estimate_usd": "0.19282",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 16102,
+        "output_tokens": 10171
+      }
+    },
+    {
+      "task": "revision_generic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 83548,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.134661",
+      "charged_estimate_usd": "0.015",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 15770,
+        "output_tokens": 705
+      }
+    },
+    {
+      "task": "revision_guided",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_token_bound": 90475,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.13985625",
+      "charged_estimate_usd": "0.01605825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 17253,
+        "output_tokens": 693
+      }
+    },
+    {
+      "task": "preservation",
+      "model": "gpt-5.4-2026-03-05",
+      "input_token_bound": 127317,
+      "output_token_cap": 16000,
+      "reservation_usd": "0.5582925",
+      "charged_estimate_usd": "0.0810825",
+      "status": "REPORTED_TOKENS_STANDARD_RATE_ESTIMATE",
+      "usage": {
+        "input_tokens": 24435,
+        "output_tokens": 1333
+      }
+    }
+  ]
+}
