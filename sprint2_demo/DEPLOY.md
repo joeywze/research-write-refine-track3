@@ -1,6 +1,6 @@
 # Sprint 2 preview
 
-The current preview is deployed from `tangh86/research-write-refine-track3`, branch `UI-demo`, with entrypoint `sprint2_demo/ui/app.py` and Python 3.12. Leave Secrets empty: the preview uses saved outputs and blocks new paid model runs.
+The current preview is deployed from `tangh86/research-write-refine-track3`, branch `UI-demo`, with entrypoint `sprint2_demo/ui/app.py`. Local checks use Python 3.12; the existing Cloud deployment reports Python 3.14.9. Leave Secrets empty: the preview uses saved outputs and blocks new paid model runs.
 
 [Open the preview](https://7re4qdfrjans8utyap8rch.streamlit.app/).
 

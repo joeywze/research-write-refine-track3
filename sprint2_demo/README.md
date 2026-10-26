@@ -42,7 +42,7 @@ docker build -t track3-sprint2 .
 docker run --rm -p 8501:8501 track3-sprint2
 ```
 
-The current Streamlit Community Cloud preview uses `tangh86/research-write-refine-track3`, branch `UI-demo`, Python 3.12 and main file `sprint2_demo/ui/app.py`. The same source is available for team review on `joeywze/research-write-refine-track3`, branch `sprint2-ui-demo`, in draft PR #5. See `DEPLOY.md` for deployment details.
+The current Streamlit Community Cloud preview uses `tangh86/research-write-refine-track3`, branch `UI-demo` and main file `sprint2_demo/ui/app.py`. Local checks use Python 3.12; the existing Cloud deployment reports Python 3.14.9. The same source is available for team review on `joeywze/research-write-refine-track3`, branch `sprint2-ui-demo`, in draft PR #5. See `DEPLOY.md` for deployment details.
 
 The bundle supplies `.streamlit/config.toml` at both the root and app directory. Its local launcher binds explicitly to loopback; hosted settings use the host's address. Streamlit's [deployment instructions](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy) explain the repository, branch, entrypoint and Python setting. Private-repository deployment requires the appropriate GitHub access and repository administration permissions; see [Cloud access requirements](https://docs.streamlit.io/deploy/streamlit-community-cloud/status).
 

@@ -18,7 +18,24 @@
     "D002_insufficient_evidence_visible": true,
     "D002_source_not_verified_visible": true
   },
-  "hosted_browser": "PENDING",
+  "hosted_browser": {
+    "result": "PASS",
+    "url": "https://7re4qdfrjans8utyap8rch.streamlit.app/~/+/",
+    "source_repository": "tangh86/research-write-refine-track3",
+    "source_branch": "UI-demo",
+    "source_entrypoint": "sprint2_demo/ui/app.py",
+    "cloud_update_log": "2026-10-26 14:56:13 UTC - Updated app",
+    "python_reported_in_cloud_log": "3.14.9",
+    "research_screen_visible": true,
+    "workflow_rendered": true,
+    "topic_papers": 18,
+    "cited_papers": 7,
+    "original_finding_source_link_visible": true,
+    "pilot_summary_visible": true,
+    "research_to_draft": "PASS",
+    "service_restart_performed": false,
+    "note": "The root Cloud wrapper stalled; opening its observed app-frame URL loaded the updated screen. A restart was rejected by automatic approval review and was not performed."
+  },
   "new_model_calls": 0,
   "unchanged": [
     "backend",
@@ -35,5 +52,10 @@
     "research_context.json": "7d027923c9848f75d28efc045c871bcb80cdd07be48c1d6e380920174d7c7aa3",
     "test_app.py": "6216b8e33d07bcb52aa889625d6cdd8ec08dba06e5603c85f417ca31a1d8862e",
     "test_research.py": "d3bb6af5b0c6b247d8bab2758d5a9de921a5a7dd4d7492bcd4fde2897bc2ab91"
-  }
+  },
+  "ui_source_commit": "09200b83cd35b35df9895b0749cdf87b7aeffaeb",
+  "screenshots": [
+    "stage-a-cloud-research.png",
+    "stage-a-cloud-workflow.png"
+  ]
 }
