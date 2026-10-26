@@ -1,5 +1,7 @@
 # Sprint 2 interface
 
+Code review is ready in [draft PR #5](https://github.com/joeywze/research-write-refine-track3/pull/5). Cloud deployment needs a repository admin; see [DEPLOY.md](DEPLOY.md). The review preview needs no OpenAI key.
+
 The four-step journey is Research → Draft → Refine → Results. It loads the full provisional research handover, the inspected real model run and earlier unsuccessful comparisons. It also connects to the existing live backend and runs the actual number-change preservation test.
 
 ## Open locally
