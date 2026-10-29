@@ -7,15 +7,15 @@ gatherUsageStats = false
 
 [theme]
 base = "light"
-primaryColor = "#25634B"
-backgroundColor = "#FCFCF9"
-secondaryBackgroundColor = "#F0F3EC"
-textColor = "#22342A"
+primaryColor = "#0E7C72"
+backgroundColor = "#F7F9FC"
+secondaryBackgroundColor = "#EEF3F9"
+textColor = "#1E2A44"
 font = "sans-serif"
-headingFont = "serif"
+headingFont = "sans-serif"
 baseFontSize = 17
 baseRadius = "medium"
-borderColor = "#D9E0D4"
+borderColor = "#D6DEEA"
 showWidgetBorder = true
 paddingTop = "2rem"
 paddingBottom = "2rem"

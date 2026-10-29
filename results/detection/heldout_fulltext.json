@@ -1,0 +1,11 @@
+{
+  "n_human_body_passages": 344,
+  "n_human_papers": 18,
+  "n_ai_body_paragraphs": 376,
+  "auc_body_text_heldout": 0.831,
+  "mean_score_human_body": 30.3,
+  "mean_score_ai_body": 59.5,
+  "share_human_body_flagged_ai_at_50": 0.169,
+  "share_ai_body_flagged_ai_at_50": 0.665,
+  "note": "PDF text extraction is noisy (two-column layout); passages may mix columns."
+}
