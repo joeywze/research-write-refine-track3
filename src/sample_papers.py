@@ -1,18 +1,6 @@
-import pandas as pd
+"""Compatibility launcher; maintained script: src/research/sample_papers.py."""
+from pathlib import Path
+import runpy
 
-INPUT_FILE = "data/emnlp_2025_main.xlsx"
-OUTPUT_FILE = "data/samples/sample_10_papers.csv"
-
-df = pd.read_excel(INPUT_FILE)
-
-sample = df.sample(
-    n=10,
-    random_state=42
-)
-
-sample.to_csv(
-    OUTPUT_FILE,
-    index=False
-)
-
-print(f"Saved {len(sample)} papers to {OUTPUT_FILE}")
+if __name__ == "__main__":
+    runpy.run_path(str(Path(__file__).parent / "research/sample_papers.py"), run_name="__main__")

@@ -71,7 +71,8 @@ class InterfaceTests(unittest.TestCase):
         rows = app.dataframe[0].value
         self.assertEqual(rows.loc[0, "Before refinement"], 0)
         self.assertTrue(rows["After refinement"].isna().all())
-        self.assertFalse(app.expander)
+        self.assertFalse(any(e.label.startswith("How each review point") for e in app.expander))
+        self.assertFalse(any("Introduction · Paragraph" in e.value for e in app.subheader))
         next(b for b in app.button if b.label == "Continue to results").click().run()
         self.assertTrue(any("has not been refined" in e.value for e in app.info))
         self.assertFalse(app.download_button)
@@ -159,7 +160,8 @@ class InterfaceTests(unittest.TestCase):
         app.session_state["stage"] = "Results"
         app.run()
         self.assertFalse(app.exception)
-        self.assertTrue(any("No guided revision was accepted" in e.value for e in app.info))
+        self.assertTrue(any("No revision was kept" in e.value for e in app.info))
+        self.assertEqual(core.changes(core.open_run("live-20261025T142355415015Z")), [])
         self.assertEqual(app.dataframe[0].value["Review points flagged by the LLM"].tolist(), [3, 3, 3])
 
     def test_whole_paper_download_content_matches_the_saved_accepted_file(self):

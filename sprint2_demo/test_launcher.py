@@ -30,7 +30,12 @@ class LauncherTests(unittest.TestCase):
             kwargs = spawn.call_args.kwargs
             self.assertIn("--calibrate-first", spawn.call_args.args[0])
             self.assertEqual(kwargs["stdin"], start_live.subprocess.DEVNULL)
-            self.assertNotEqual(kwargs["creationflags"], 0)
+            if os.name == "nt":
+                self.assertNotEqual(kwargs["creationflags"], 0)
+                self.assertFalse(kwargs["start_new_session"])
+            else:
+                self.assertEqual(kwargs["creationflags"], 0)
+                self.assertTrue(kwargs["start_new_session"])
             self.assertEqual(kwargs["env"].get("OPENAI_API_KEY"), None)
             worker.wait.assert_called_once_with()
         record = json.loads((self.root / "verification/active_worker.json").read_text(encoding="utf-8"))

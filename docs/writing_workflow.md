@@ -67,9 +67,9 @@ Different model IDs do not guarantee independent judgements. Human assessment ca
 
 ~~~text
 data/                         Literature metadata and pilot generated sections
-emnlp-literature/              Metadata collector
-src/sample_papers.py           Random ten-paper sample with a fixed seed
-src/generate_ai_sections.py    Pilot section generation from titles and abstracts
+src/research/collect_emnlp.py   Metadata collector
+src/research/sample_papers.py   Random ten-paper sample with a fixed seed
+src/research/generate_ai_sections.py  Pilot section generation from titles and abstracts
 src/writing/                  Drafting, diagnostics, revision, checks and commands
 examples/                     Synthetic package and six-section draft
 tests/                        Offline tests

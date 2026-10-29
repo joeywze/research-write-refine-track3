@@ -1,109 +1,111 @@
-# Track 3: Research Paper Ideation and Writing
+# Research Write Refine — Group 17
 
-This project uses published evidence to develop a research idea and draft a paper. Team A reviews the literature and approves the Research Package. Stage B writes or accepts an initial draft, identifies wording problems and revises selected paragraphs while checking that the content stays intact.
+An evidence-grounded research and writing assistant developed for **DSS5105 Capstone — Track 3**.
 
-## Writing workflow
+[Open the live demo](https://research-write-refine-track3-grp17.streamlit.app/)
 
-The module covers Abstract, Introduction, Related Work, Methodology, Experiments and Conclusion. For a proposed study, the experiments section describes the evaluation plan.
+## Project workflow
 
-1. Check the Research Package and draft format.
-2. Check the initial draft against the supplied evidence.
-3. Identify paragraphs to revise.
-4. Produce a generic rewrite and a guided rewrite from the same initial draft.
-5. Allow up to three guided attempts, including rejected attempts.
-6. Check each candidate against the package, original draft and last accepted version. Keep the last accepted draft if a candidate fails.
-7. Save the drafts, diagnostics, checks, usage and timing.
+**Literature collection → Topic clustering → Evidence review → Research proposal → Draft V0 → Writing review → Revision → Evaluation**
 
-Once the inputs and model credentials are supplied, these steps run automatically. Human review is available for assessing output quality and checker accuracy; it is not an approval step in the revision loop.
+The paper follows Abstract, Introduction, Related Work, Methodology, Experiments and Conclusion. For a proposed study, Experiments describes an evaluation plan rather than completed results.
 
-Use V0 for the initial draft, V1 for the final accepted generic rewrite and V2 for the final accepted guided draft. Comparing V2 with V1 assesses the complete workflow, including its extra computation. Comparing the first attempts assesses feedback when both approaches edit the same paragraphs once.
+## Explore the project
 
-## Scores and critic
+| Workstream | Start here |
+|---|---|
+| Research development | [Research guide](src/research/README.md), [analysis notebooks](notebooks/), [proposal and evidence review](docs/research/README.md) |
+| Evidence checking | [Fact-checking guide](src/fact_checking/README.md), [claim ledger](docs/research/claim_evidence_ledger.json), [saved pilot assessments](data/facts/pilot/draft_v0_pilot_verification.csv) |
+| Writing refinement | [Writing workflow](docs/writing_workflow.md), [input contract](docs/stage_b.md), [writing backend](src/writing/) |
+| Detection and evaluation | [Detector guide](src/detection/README.md), [evaluation guide](docs/evaluation.md), [recorded results](results/README.md) |
+| Streamlit application | [Demo guide](sprint2_demo/README.md), [deployment guide](docs/deployment.md) |
 
-The main method combines **Rule-based checks** and **LLM writing review**. Reports show **Review points flagged by rules** and **Review points flagged by the LLM**. A review point marks something to consider; it does not necessarily lead to an edit. Lower counts mean fewer review points, not a higher overall quality mark or a different authorship estimate.
+## Current progress and scope
 
-The module also records sentence-length variance, hedge frequency, repeated trigrams and paragraph-length regularity for analysis. These measurements do not trigger edits. Adjective density is deferred until a suitable part-of-speech tagger has been tested.
+| Capability | Status |
+|---|---|
+| Literature clustering and research development | Initial Cluster 7 case study prepared |
+| Research package and six-section V0 | Prepared; evidence verification, design decisions and team approval remain open |
+| Writing review, revision and rollback | Prototype implemented; recorded model runs available |
+| Streamlit interface and public deployment | Available; this repository does not control the separate hosted copy |
+| Detector experiments, held-out tests and human evaluation | Tools and development outputs available; independent human assessment remains necessary |
+| Reusable paper selection → AI analysis → human-approved package | Planned for Sprint 3; not implemented as a new-topic workflow |
 
-Rule-based checks count long sentences, repeated transitions and unusually uniform sentence lengths. LLM writing review identifies passages that could benefit from clearer, more precise, better-connected or more natural wording. Each point eligible for revision includes a quote, explanation and suggested change. Problems that need more evidence are recorded for review.
+## Repository structure
 
-The LLM uses six detailed criteria: specificity, argument strength, formulaic language, inappropriate hedging, generic transitions and unnatural symmetry. Its count is the number of actionable paragraph-criterion findings, which can exceed six across a full paper. Both methods may flag the same passage, so their counts remain separate.
-## Cluster 7 Source Evidence Review
+```text
+src/
+  research/          Literature collection and pilot generation
+  fact_checking/     Evidence matching and saved pilot reporting
+  detection/         Detector, rewrite experiments and evaluation tools
+  writing/           Writing review, revision and preservation checks
+notebooks/           Corpus mapping, clustering and exploratory analysis
+data/                Corpus, evidence and evaluation inputs
+examples/            Matching synthetic package and V0; links to the real example
+results/             Documented experiment and evaluation outputs
+docs/
+  research/          Evidence review, proposal and research-paper V0
+  architecture.md    Components, handover and pinned demo boundary
+  evaluation.md      Test suites and evaluation limitations
+  deployment.md      Hosted demo and local setup
+  contributions.md   Team workstreams and integration provenance
+sprint2_demo/        Stable Streamlit entrypoint, pinned backend and saved runs
+tests/               Root writing and repository checks
+```
 
-The [source-cited review of all 18 Cluster 7 papers](docs/cluster7_source_evidence_review.md)
-records 52 short author quotations with PDF page and section links. Each quotation
-was checked against the saved extracted text and the local paper PDF. The
-[verification manifest](data/processed/cluster7_source_evidence_manifest.json)
-records paper IDs, source hashes, page locations and quotation hashes.
+Three small launchers remain at their old `src/` paths for compatibility; maintained research and fact-checking code is in the folders above. The moved-file map and branch revisions are recorded in [contributions](docs/contributions.md).
 
-This is a targeted source-passage review, not an independent reproduction of the
-papers' results or approval of a research-gap claim. Dimensions not established by
-the cited evidence remain unclear. The original automated review files are retained.
+## Run locally
 
-## Part A Research Development and Provisional V0
+Use Python 3.12 and a virtual environment. From the repository root:
 
-The [working Part A handover](docs/part_a_research_development/README.md) follows
-the literature-verification, evidence-table, candidate-gap and proposed-study steps.
-It includes 18 claim records with 38 checked excerpts, external counterevidence,
-an evaluation plan and a six-section provisional V0.
+```sh
+python -m venv .venv
+# macOS/Linux:
+source .venv/bin/activate
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+python -m pip install -r sprint2_demo/requirements.txt
+python sprint2_demo/ui/launch.py
+```
 
-This is an evidence-backed proposal, not a completed experiment or a confirmed
-novelty claim. Language selection, raters, data source, judge configuration and
-Team A approval remain unresolved. The original automated review files are retained.
+Open the address printed by the launcher. The default mode removes any ambient API key and disables paid model calls. The hosted preview and default local mode display saved research and writing results; local detector scoring does not call an API. Fresh model refinement requires the explicit local live setup described in the [demo guide](sprint2_demo/README.md).
 
+Install root `requirements.txt` additionally for research notebooks, detector training and the pilot fact checker. Some research dependencies are large. Do not run collection, sampling, training or generation scripts merely to browse the demo: they can download data, overwrite experiment outputs or make paid calls.
 
-Guided candidates must pass preservation, avoid increasing either issue count and reduce at least one. Use `--method rules-only` to run the original three-rule comparison without the LLM critic. See [the writing guide](docs/stage_b.md) and [feature selection](docs/feature_selection.md) for details.
+## Tests and examples
 
-## Try the offline example
-
-Python 3.10 or later is required. The tests and scripted example use only the standard library.
-
-~~~text
+```sh
 python -m unittest discover -s tests -v
 python -m src.writing validate --package examples/research_package.json --v0 examples/v0.json
-python -m src.writing demo --output runs/synthetic-demo
-python -m src.writing measure --package examples/research_package.json --v0 examples/v0.json --output runs/feature-review
-python -m src.writing export-human --runs runs/synthetic-demo --output evaluation-output/synthetic-demo
-~~~
+```
 
-Run commands from the repository root and choose a new output directory each time. The example uses invented research data and scripted model responses. It tests the software; its scores do not show how real models perform.
+See [evaluation](docs/evaluation.md) for the pinned-backend, handover and Streamlit test commands. Offline tests use fixtures or mocked model providers, not paid API calls.
 
-## Run with models
+The root [examples](examples/README.md) are synthetic software-test fixtures. The real prepared research package and matching V0 are pinned under `sprint2_demo/inputs/converted/`. Source snapshots and recorded results remain unchanged so the demonstration is reproducible.
 
-Install the dependencies and set `OPENAI_API_KEY` in the environment. The writing module reads the key through the OpenAI SDK and does not load a `.env` file.
+## Interpretation and limitations
 
-~~~text
-python -m pip install -r requirements.txt
-python -m src.writing run --package PACKAGE.json --v0 V0.json --writer-model WRITER --checker-model CHECKER --output runs/pilot-001
-~~~
+- The case study is a research proposal, not a completed multilingual experiment or a confirmed novelty claim.
+- Seven saved pilot claims were assessed: three supported and four needing further review. These labels are not newly generated on page load or by evidence retrieval.
+- Upload validation checks structure and citation links, not scientific correctness.
+- Writing-review counts and detector scores are different measures. Neither establishes factual accuracy or proves authorship.
+- Preservation checks reduce risk but do not guarantee unchanged meaning.
+- Live runs, dry runs, deliberate safety tests and independent evaluation must be interpreted separately. See the [results index](results/README.md).
+- A detector-generated `final_paper_v3.md` is an experiment output, not team approval or final submission.
+- Historical evaluation keys already committed to a public repository are not private. Never show keys to blinded raters; use fresh evaluation items if raters have seen the keys.
+- Keep credentials and identifiable reviewer responses out of Git. `.private/` is ignored for future local-only materials; ignoring a path does not erase files already in Git history.
 
-Choose model IDs available to the API account that support structured outputs. Omit `--v0` to generate the initial draft. The checker must use a different model ID from the writer. By default, the critic uses the chosen checker model in a separate call with its own prompt. Use `--critic-model CRITIC` to choose another critic model, also different from the writer. The main method includes critique calls and their additional token allowance. Paid calls are separate from the offline tests.
+## Documentation and team
 
-A separate audit uses an evaluator whose ID differs from every model used during refinement:
+- [Architecture and source-of-truth boundaries](docs/architecture.md)
+- [Research proposal, citations and unresolved decisions](docs/research/README.md)
+- [Evaluation and failure analysis](docs/evaluation.md)
+- [Deployment and the separate hosted repository](docs/deployment.md)
+- [Contributions and integration history](docs/contributions.md)
 
-~~~text
-python -m src.writing audit --run runs/pilot-001 --evaluator-model EVALUATOR --output evaluation-output/audit-001
-~~~
-
-Different model IDs do not guarantee independent judgements. Human assessment can check whether the automated decisions are useful and accurate.
-
-## Files
-
-~~~text
-data/                         Literature metadata and pilot generated sections
-emnlp-literature/              Metadata collector
-src/sample_papers.py           Random ten-paper sample with a fixed seed
-src/generate_ai_sections.py    Pilot section generation from titles and abstracts
-src/writing/                  Drafting, diagnostics, revision, checks and commands
-examples/                     Synthetic package and six-section draft
-tests/                        Offline tests
-docs/                         Input format, evaluation and feature-selection guides
-~~~
-
-The existing pilot corpus contains 60 sections generated from ten titles and abstracts. Use it for exploratory style analysis. Its detailed claims have not been checked against full papers.
-
-The pilot generator uses the committed ten-paper sample, labels missing topics `unspecified`, checks input hashes when resuming and writes a new output file. It is separate from package-based drafting. Sampling is random with a fixed seed. Keep the original data and generated corpus intact.
-
-## What has been tested
-
-The offline tests cover input validation, edit scope, rejected changes, checker failures, rollback, stopping rules, token budgets and review exports. Real-package performance, feature calibration, preservation accuracy and human ratings still need evaluation. The literature collector and pilot corpus generator are outside these offline tests.
+| Workstream | Contributors |
+|---|---|
+| Research development, evidence checking and handover | Tabitha / Joey / Silvia |
+| Writing refinement, interface and evaluation tools | Guan Hong / Wan Yun / Lili |
+| Integration, validation and final deliverables | Entire team |
 

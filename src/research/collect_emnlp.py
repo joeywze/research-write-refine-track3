@@ -1,8 +1,12 @@
 import time
+from pathlib import Path
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / "data"
 
 papers = []
 failed_papers = []
@@ -142,7 +146,7 @@ for number in range(1, TOTAL_PAPERS + 1):
         progress_df = pd.DataFrame(papers)
 
         progress_df.to_excel(
-            "./data/emnlp_2025_progress.xlsx",
+            DATA_DIR / "emnlp_2025_progress.xlsx",
             index=False
         )
 
@@ -162,7 +166,7 @@ for number in range(1, TOTAL_PAPERS + 1):
 
 df = pd.DataFrame(papers)
 
-output_file = "./data/emnlp_2025_main.xlsx"
+output_file = DATA_DIR / "emnlp_2025_main.xlsx"
 
 df.to_excel(
     output_file,
@@ -179,7 +183,7 @@ if failed_papers:
     failed_df = pd.DataFrame(failed_papers)
 
     failed_df.to_excel(
-        "./data/emnlp_2025_failed.xlsx",
+        DATA_DIR / "emnlp_2025_failed.xlsx",
         index=False
     )
 
