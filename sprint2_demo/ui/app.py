@@ -7,6 +7,7 @@ import streamlit as st
 import core
 import jobs
 import research
+import detection_view
 
 EXAMPLE = "Explore the example project"
 UPLOAD = "Upload your research project"
@@ -103,8 +104,15 @@ if runs:
 st.caption("DSS5105 · TRACK 3 · SPRINT 2")
 st.title("Research Write Refine")
 st.markdown("Develop a grounded paper and refine its writing while protecting its content.")
-st.segmented_control("Your workspace", ["Research", "Draft", "Refine", "Results"], key="stage", required=True,
+if st.session_state["stage"] == "Research":
+    detection_view.intro()
+detection_view.about()
+st.segmented_control("Your workspace", ["Research", "Draft", "Refine", "Results", "Detect"], key="stage", required=True,
                      width="stretch", label_visibility="collapsed")
+
+if st.session_state["stage"] == "Detect":
+    detection_view.show()
+    st.stop()
 
 if st.session_state["stage"] == "Research":
     st.header("Explore the research proposal")
@@ -250,10 +258,11 @@ elif st.session_state["stage"] == "Results":
     else:
         st.info("No guided revision was accepted. The final draft is the original draft. " + core.stop_explanation(guided["stop_reason"]))
     st.caption("Zero means no remaining review points under these checks. It does not establish writing quality. Independent reader ratings and evaluation on unseen papers are still pending.")
+    detection_view.stage_b_comparison(data)
     with st.container(horizontal=True):
-        st.download_button("Download refined draft", core.paper(data, "guided_final").encode("utf-8"), file_name="accepted_guided_v2.md", mime="text/markdown", key="download_guided", type="primary", icon=":material/download:")
+        st.download_button("Download Stage B draft (V2)", core.paper(data, "guided_final").encode("utf-8"), file_name="accepted_guided_v2.md", mime="text/markdown", key="download_guided", type="primary", icon=":material/download:")
         st.download_button("Download generic rewrite", core.paper(data, "generic_final").encode("utf-8"), file_name="generic_v1.md", mime="text/markdown", key="download_generic")
-    with st.expander("Read the final draft"):
+    with st.expander("Read the Stage B draft (V2)"):
         st.markdown(core.paper(data, "guided_final"))
     if not uploaded:
         st.subheader("Try the content-protection check")
@@ -270,6 +279,8 @@ elif st.session_state["stage"] == "Results":
             st.markdown(core.marked_diff(safety["before"], safety["candidate"]))
             with st.expander("Technical test record"):
                 st.json(safety)
+    st.button("Continue to AI-likeness check", icon=":material/arrow_forward:", type="primary",
+              key="to_detect", on_click=go, args=("Detect",))
     with st.expander("Technical details and limitations"):
         st.caption("Saved result: " + data["name"])
         st.json({"models": {k: data["configuration"].get(k) for k in ("writer_model", "preservation_model", "critic_model")},
