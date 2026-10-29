@@ -161,12 +161,29 @@ def normalise(ans):
 def score_responses(path):
     key = pd.read_csv(OUT / "PRIVATE_answer_key.csv")
     r = pd.read_csv(path)
-    if "item_id" not in r.columns:  # wide Google Forms export
-        item_cols = [c for c in r.columns if re.match(r"\s*Item \d+", str(c))]
-        idc = next((c for c in r.columns if "name" in c.lower() or "rater" in c.lower()), None)
-        r["rater_id"] = r[idc] if idc else [f"R{i+1}" for i in range(len(r))]
-        r = r.melt(id_vars=["rater_id"], value_vars=item_cols, var_name="item_id", value_name="answer")
-        r["item_id"] = r.item_id.str.extract(r"(Item \d+)")[0]
+    if "item_id" not in r.columns:  # wide Google Forms export: one row per rater
+        rows = []
+        for i, resp in enumerate(r.to_dict("records")):
+            rid = f"R{i + 1}"          # anonymised: names are never saved
+            by_item = {}
+            for col, val in resp.items():
+                m = re.search(r"(Item \d+)", str(col))
+                if not m:
+                    continue
+                slot = by_item.setdefault(m.group(1), {})
+                c = str(col).strip()
+                if re.match(r"Item \d+", c):
+                    slot["answer"] = val
+                elif c.lower().startswith("confidence"):
+                    slot["confidence"] = val
+                else:
+                    slot["reason"] = val
+            for item, slot in by_item.items():
+                rows.append({"rater_id": rid, "item_id": item, **slot})
+        r = pd.DataFrame(rows)
+    else:
+        codes = {v: f"R{i + 1}" for i, v in enumerate(dict.fromkeys(r.rater_id))}
+        r["rater_id"] = r.rater_id.map(codes)
     r["answer"] = r.answer.map(normalise)
     r = r.dropna(subset=["answer"]).merge(key[["item_id", "truth", "condition"]], on="item_id")
     r["correct"] = r.answer == r.truth
@@ -199,6 +216,16 @@ def score_responses(path):
               f"of raters who called it generated = {rho:.2f} (over {len(per_item)} items)")
         print(per_item.groupby("condition")[["detector_score", "share_said_generated"]].mean().round(2).to_string())
     per_item.to_csv(OUT / "human_eval_per_item.csv", index=False)
+
+    if "reason" in r.columns:
+        names = {"real": "Real paper", "generated_v0": "First draft (unrevised)",
+                 "generated_revised": "Final paper (detector-guided)"}
+        cols = [c for c in ("item_id", "condition", "rater_id", "answer", "correct", "confidence", "reason") if c in r]
+        reasons = r[cols].copy()
+        reasons["condition"] = reasons.condition.map(names).fillna(reasons.condition)
+        reasons = reasons[reasons.reason.astype(str).str.strip().ne("") & reasons.reason.notna()]
+        reasons.sort_values(["condition", "item_id", "rater_id"]).to_csv(OUT / "human_eval_reasons.csv", index=False)
+        print(f"\nSaved {len(reasons)} rater reasons (anonymised) to human_eval_reasons.csv")
 
 
 if __name__ == "__main__":

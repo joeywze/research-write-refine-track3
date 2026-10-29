@@ -113,9 +113,9 @@ def uploaded_project(package_bytes, draft_bytes):
 def comparison_rows(data):
     initial = data["initial"]
     final = data["summary"]["results"]["guided"]["final_diagnostics"] if data["summary"] else None
-    return [{"Detection method": "Rule-based checks", "Before refinement": initial["score"],
+    return [{"Reviewer": "Simple rules (long sentences, repeated linking words, same-length sentences)", "Before refinement": initial["score"],
              "After refinement": final["score"] if final else None},
-            {"Detection method": "LLM writing review", "Before refinement": initial.get("qualitative_critic", {}).get("actionable_count"),
+            {"Reviewer": "LLM critic (vague wording, weak reasoning, formulaic phrasing ...)", "Before refinement": initial.get("qualitative_critic", {}).get("actionable_count"),
              "After refinement": final.get("qualitative_critic", {}).get("actionable_count") if final else None}]
 
 

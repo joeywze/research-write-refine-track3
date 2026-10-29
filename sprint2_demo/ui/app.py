@@ -7,7 +7,8 @@ import streamlit as st
 import core
 import jobs
 import research
-import detection_view
+import detection_view as dv
+from detection_view import FIRST, PLAIN, REVIEWED, FINAL
 
 EXAMPLE = "Explore the example project"
 UPLOAD = "Upload your research project"
@@ -39,22 +40,22 @@ def counts(data):
         alt="Rule-based and LLM review-point counts before and after refinement.",
         column_config={"Before refinement": st.column_config.NumberColumn(format="%d"),
                        "After refinement": st.column_config.NumberColumn(format="%d")})
-    st.caption("Lower counts mean fewer flagged review points. The two methods may flag the same passage; these are not quality percentages.")
+    st.caption("Number of wording problems each reviewer flagged. Lower is better. The two reviewers can flag the same passage.")
     if not data["summary"]:
-        st.caption("Blank values mean the review has not run yet. LLM writing review runs when refinement begins.")
+        st.caption("Blank values mean the review has not run yet.")
     else:
-        st.caption("After refinement refers to the final accepted draft. Unchanged paragraphs keep their previous LLM assessment.")
+        st.caption(f"\"After\" refers to the {REVIEWED.lower()}.")
 
 
 @st.fragment(run_every="2s")
 def live_control(project=None):
-    st.subheader("Refine your draft")
+    st.subheader("Run a new reviewer-checked edit")
     allowed = jobs.live_allowed(st.get_option("server.address"))
     active_id = st.session_state.get("job_id")
     active = jobs.progress(active_id) if active_id else None
     busy = bool(active and active["status"] == "RUNNING")
     if not allowed:
-        st.info("New refinement is unavailable in this preview. You can explore the example’s saved results.")
+        st.info("Running a new edit needs an API key, so it is switched off in this online preview. The saved results above are from a real run.")
     st.caption("Reviews the original draft and revises flagged passages automatically, with up to three attempts. Changes must pass the content checks before they are kept.")
     if st.button("Refine draft", icon=":material/auto_fix_high:", type="primary", key="start_live", disabled=not allowed or busy):
         try:
@@ -97,26 +98,24 @@ if runs:
     if st.session_state["run_id"] not in runs:
         st.session_state["run_id"] = runs[0]
     with st.sidebar:
-        st.subheader("Previous example results")
-        st.selectbox("Choose a saved refinement", runs, key="run_id")
-        st.caption("Includes earlier attempts where no changes were kept.")
+        st.subheader("Saved runs of step 3")
+        st.selectbox("Choose a saved reviewer-checked edit", runs, key="run_id")
+        st.caption("Includes earlier attempts where no changes were kept. The default is the latest successful run.")
 
-st.caption("DSS5105 · TRACK 3 · SPRINT 2")
-st.title("Research Write Refine")
-st.markdown("Develop a grounded paper and refine its writing while protecting its content.")
-if st.session_state["stage"] == "Research":
-    detection_view.intro()
-detection_view.about()
+dv.header()
+dv.welcome()
+dv.about()
 st.segmented_control("Your workspace", ["Research", "Draft", "Refine", "Results", "Detect"], key="stage", required=True,
-                     width="stretch", label_visibility="collapsed")
+                     format_func=dv.step_label, width="stretch", label_visibility="collapsed")
 
 if st.session_state["stage"] == "Detect":
-    detection_view.show()
+    dv.show()
     st.stop()
 
 if st.session_state["stage"] == "Research":
-    st.header("Explore the research proposal")
-    st.caption("Prepared from a literature review. Explore the proposed gap and supporting evidence, then continue to the draft.")
+    st.header(":material/travel_explore: Research idea")
+    st.caption("The research gap this paper addresses, and the published evidence behind it.")
+    dv.guide("Research")
     with st.expander("Use another prepared project", expanded=st.session_state["project_mode"] == UPLOAD):
         st.session_state["_project_choice"] = st.session_state["project_mode"]
         mode = st.radio("Project to open", [EXAMPLE, UPLOAD], key="_project_choice", on_change=select_project,
@@ -179,11 +178,12 @@ if st.session_state["stage"] == "Research":
         research.show(data, uploaded=uploaded)
     except (OSError, ValueError, KeyError):
         st.error("The research display could not be matched to the prepared package. Its saved draft is still available.")
-    st.button("Continue to draft", icon=":material/arrow_forward:", type="primary", key="to_draft", on_click=go, args=("Draft",))
+    st.button("Continue to step 2: First draft", icon=":material/arrow_forward:", type="primary", key="to_draft", on_click=go, args=("Draft",))
 
 elif st.session_state["stage"] == "Draft":
-    st.header("Review your draft")
-    st.caption("Original draft · All six sections")
+    st.header(":material/article: " + FIRST)
+    st.caption("Written by an LLM from the research package · all six sections · nothing changed yet")
+    dv.guide("Draft")
     section = st.selectbox("Read a section", ["all", *core.SECTIONS], format_func=lambda x: "Whole paper" if x == "all" else core.SECTIONS[x], key="draft_section")
     if section == "all":
         with st.container(height=580, border=True):
@@ -193,25 +193,27 @@ elif st.session_state["stage"] == "Draft":
             if p.section == section:
                 st.markdown(core.citation_links(p.text, package))
     with st.container(horizontal=True):
-        st.download_button("Download original draft", core.paper(data, "v0_input").encode("utf-8"), file_name="original_v0.md", mime="text/markdown", key="download_v0", icon=":material/download:")
-        st.button("Continue to refinement", type="primary", key="to_refine", on_click=go, args=("Refine",))
+        st.download_button("Download first draft", core.paper(data, "v0_input").encode("utf-8"), file_name="first_draft.md", mime="text/markdown", key="download_v0", icon=":material/download:")
+        st.button("Continue to step 3: Reviewer-checked edit", type="primary", key="to_refine", on_click=go, args=("Refine",))
 
 elif st.session_state["stage"] == "Refine":
-    st.header("Review the changes")
+    st.header(":material/rate_review: " + REVIEWED)
+    st.caption("A reviewer flags specific wording problems; the LLM fixes them; content checks protect the facts.")
+    dv.guide("Refine")
     counts(data)
     if data["summary"]:
-        st.subheader("What was flagged in the original draft")
-        st.caption("See what was flagged, what changed and which changes were kept.")
+        st.subheader("What the reviewer flagged in the first draft")
+        st.caption("Open a point to see the problem and the suggested fix. Changed paragraphs follow, original and revised side by side.")
         items = core.findings(data)
         rule_names = {"LONG_SENTENCE": "Long sentence", "REPEATED_TRANSITIONS": "Repeated linking phrases", "UNIFORM_LENGTH": "Similar sentence lengths"}
         for block in data["initial"]["paragraphs"]:
             for point in block["issues"]:
                 with st.expander(core.paragraph_label(data, block["paragraph_id"]) + " · " + rule_names[point["code"]]):
-                    st.caption("Rule-based check")
+                    st.caption("Flagged by the simple rules")
                     st.markdown(point["advice"])
         for index, item in enumerate(items):
             with st.expander(core.paragraph_label(data, item["paragraph_id"]) + " · " + core.point_label(item), expanded=index == 0):
-                st.caption("LLM writing review")
+                st.caption("Flagged by the LLM critic")
                 st.markdown(core.citation_links(item["explanation"], package))
                 st.markdown("**Suggested change:** " + core.citation_links(item["safe_action"], package))
                 st.caption("Original passage")
@@ -229,7 +231,7 @@ elif st.session_state["stage"] == "Refine":
                 with st.expander("Highlight changed words"):
                     st.markdown(core.marked_diff(change["before"], change["after"]))
         if not core.changes(data):
-            st.info("No guided changes were kept. The final draft is the original draft.")
+            st.info(f"No changes were kept, so the {REVIEWED.lower()} is the same as the {FIRST.lower()}.")
         for attempt in data["summary"]["results"]["guided"]["attempts"]:
             state = "Changes kept" if attempt["accepted"] else "Changes not kept"
             st.markdown(f"**Attempt {attempt['attempt']}: {state}** — {core.stop_explanation(attempt['reason'])}")
@@ -241,33 +243,35 @@ elif st.session_state["stage"] == "Refine":
     st.button("Continue to results", on_click=go, args=("Results",))
 
 elif st.session_state["stage"] == "Results":
-    st.header("Compare and download drafts")
+    st.header(":material/compare_arrows: Compare versions")
+    dv.guide("Results")
     if not data["summary"]:
         st.info("This project has not been refined yet. Your original draft is available in Draft.")
-        st.button("Go to refinement", on_click=go, args=("Refine",))
+        st.button("Go to step 3", on_click=go, args=("Refine",))
         st.stop()
     rows = core.score_rows(data)
-    for row, label in zip(rows, ("Original draft", "Generic rewrite", "Guided rewrite")):
+    st.subheader(":material/checklist: How many wording problems does the reviewer still flag?")
+    for row, label in zip(rows, (FIRST, PLAIN, REVIEWED)):
         row["Version"] = label
     st.dataframe(rows, hide_index=True, alt="Separate rule and LLM review-point counts for original, generic and guided drafts.")
-    st.caption("The generic rewrite receives a general writing instruction; the guided rewrite receives the review findings. Both start from the original draft. Blank values mean no assessment is available.")
+    st.caption(f"The {PLAIN.lower()} got only a general \"improve the writing\" instruction; the {REVIEWED.lower()} got the reviewer's flagged points. Both started from the {FIRST.lower()}.")
     guided = data["summary"]["results"]["guided"]
     accepted = [a for a in guided["attempts"] if a["accepted"]]
     if accepted:
-        st.success(f"{len(accepted)} guided revision accepted. {core.stop_explanation(guided['stop_reason'])}")
+        st.success(f"{len(accepted)} reviewer-checked revision kept. {core.stop_explanation(guided['stop_reason'])}")
     else:
-        st.info("No guided revision was accepted. The final draft is the original draft. " + core.stop_explanation(guided["stop_reason"]))
-    st.caption("Zero means no remaining review points under these checks. It does not establish writing quality. Independent reader ratings and evaluation on unseen papers are still pending.")
-    detection_view.stage_b_comparison(data)
+        st.info(f"No revision was kept, so the {REVIEWED.lower()} is the same as the {FIRST.lower()}. " + core.stop_explanation(guided["stop_reason"]))
+    st.caption("Zero means the reviewer found nothing left to fix. It does not tell you how human the writing reads; the next table does.")
+    dv.stage_b_comparison(data)
     with st.container(horizontal=True):
-        st.download_button("Download Stage B draft (V2)", core.paper(data, "guided_final").encode("utf-8"), file_name="accepted_guided_v2.md", mime="text/markdown", key="download_guided", type="primary", icon=":material/download:")
-        st.download_button("Download generic rewrite", core.paper(data, "generic_final").encode("utf-8"), file_name="generic_v1.md", mime="text/markdown", key="download_generic")
-    with st.expander("Read the Stage B draft (V2)"):
+        st.download_button("Download reviewer-checked edit", core.paper(data, "guided_final").encode("utf-8"), file_name="reviewer_checked_edit.md", mime="text/markdown", key="download_guided", type="primary", icon=":material/download:")
+        st.download_button("Download plain rewrite", core.paper(data, "generic_final").encode("utf-8"), file_name="plain_rewrite.md", mime="text/markdown", key="download_generic")
+    with st.expander("Read the reviewer-checked edit"):
         st.markdown(core.paper(data, "guided_final"))
     if not uploaded:
-        st.subheader("Try the content-protection check")
-        st.markdown("Try changing the planned pilot size from **20 to 21**. Will the app keep the original study detail?")
-        st.caption("This test deliberately inserts a wrong number; it was not produced by the writer.")
+        st.subheader(":material/verified_user: Try the content-protection check")
+        st.markdown("What if a rewrite quietly changed a fact? Click below to change the planned pilot size from **20 to 21** and watch the content check reject it.")
+        st.caption("This test inserts the wrong number on purpose; the LLM did not produce it.")
         if st.button("Test a change to a study detail", icon=":material/verified_user:", key="run_safety"):
             try:
                 st.session_state["safety_" + data["name"]] = core.number_challenge(data)
@@ -279,7 +283,7 @@ elif st.session_state["stage"] == "Results":
             st.markdown(core.marked_diff(safety["before"], safety["candidate"]))
             with st.expander("Technical test record"):
                 st.json(safety)
-    st.button("Continue to AI-likeness check", icon=":material/arrow_forward:", type="primary",
+    st.button("Continue to step 5: Make it read human", icon=":material/arrow_forward:", type="primary",
               key="to_detect", on_click=go, args=("Detect",))
     with st.expander("Technical details and limitations"):
         st.caption("Saved result: " + data["name"])
