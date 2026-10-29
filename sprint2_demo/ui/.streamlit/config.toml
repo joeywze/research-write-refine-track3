@@ -1,0 +1,21 @@
+[server]
+headless = true
+port = 8501
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0E7C72"
+backgroundColor = "#F7F9FC"
+secondaryBackgroundColor = "#EEF3F9"
+textColor = "#1E2A44"
+font = "sans-serif"
+headingFont = "sans-serif"
+baseFontSize = 17
+baseRadius = "medium"
+borderColor = "#D6DEEA"
+showWidgetBorder = true
+paddingTop = "2rem"
+paddingBottom = "2rem"

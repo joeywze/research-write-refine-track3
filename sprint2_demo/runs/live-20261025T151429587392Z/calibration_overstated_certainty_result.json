@@ -1,0 +1,350 @@
+{
+  "id": "overstated_certainty",
+  "candidate_hash": "20a21d66eccffeb04431ea5abbb4ce014d9ceda4826d5f55a0c7e328af104882",
+  "expected_statuses": [
+    "MAJOR_DRIFT",
+    "UNSUPPORTED_ADDITION"
+  ],
+  "expected_failure_paragraph": "P006",
+  "deterministic_status": "PASS",
+  "result": {
+    "status": "MAJOR_DRIFT",
+    "reasons": [
+      "Paragraph P006 changes the claim about novelty from uncertain/unconfirmed to stronger status language ('is established pending a broader literature comparison'), which is not supported by the package and reverses the caution preserved in the references and package contribution/gap text.",
+      "P006: The package and both reference drafts state: 'The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.' The candidate instead says: 'The novelty of the combined protocol is established pending a broader literature comparison.' This strengthens an explicitly unresolved proposal qualification into an established claim and changes uncertainty/polarity."
+    ],
+    "semantic": {
+      "global_status": "MAJOR_DRIFT",
+      "global_reasons": [
+        "Paragraph P006 changes the claim about novelty from uncertain/unconfirmed to stronger status language ('is established pending a broader literature comparison'), which is not supported by the package and reverses the caution preserved in the references and package contribution/gap text."
+      ],
+      "paragraphs": [
+        {
+          "paragraph_id": "P001",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P001"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P002",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P002",
+            "C_P002_S1",
+            "C_P002_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P003",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P003"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P004",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P004"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P005",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P005"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P006",
+          "status": "MAJOR_DRIFT",
+          "checked_claim_ids": [
+            "C_P006"
+          ],
+          "reasons": [
+            "The package and both reference drafts state: 'The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.' The candidate instead says: 'The novelty of the combined protocol is established pending a broader literature comparison.' This strengthens an explicitly unresolved proposal qualification into an established claim and changes uncertainty/polarity."
+          ]
+        },
+        {
+          "paragraph_id": "P007",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P007",
+            "C_P007_S1",
+            "C_P007_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P008",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P008",
+            "C_P008_S1",
+            "C_P008_S2"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P009",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P009"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P010",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P010",
+            "C_P010_S1",
+            "C_P010_S2",
+            "C_P010_S3",
+            "C_P010_S4"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P011",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P011"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P012",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P012"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P013",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P013"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P014",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P014"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P015",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P015"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P016",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P016"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P017",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P017"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P018",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P018"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P019",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P019"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P020",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P020"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P021",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P021"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P022",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P022"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P023",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P023"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P024",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P024"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P025",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P025"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P026",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P026"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P027",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P027"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P028",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P028"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P029",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P029"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P030",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P030"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P031",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P031"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P032",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P032"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P033",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P033"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P034",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P034"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P035",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P035"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P036",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P036"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P037",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P037"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P038",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P038"
+          ],
+          "reasons": []
+        },
+        {
+          "paragraph_id": "P039",
+          "status": "PASS",
+          "checked_claim_ids": [
+            "C_P039"
+          ],
+          "reasons": []
+        }
+      ]
+    }
+  },
+  "matches_development_expectation": true
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "file": "claim_evidence_ledger.json",
+    "git_blob_sha": "74bc5e27552068e8070e232908d0328e30fd03d7",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "claim_evidence_table.md",
+    "git_blob_sha": "1d70ae9512a68f8e929c60a5ab3a7c6b4ad85360",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "draft_v0.md",
+    "git_blob_sha": "3eecc6180b2c1e1f73b941206b70e7fb2af2c5e9",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "draft_v0_atomic_claims.csv",
+    "git_blob_sha": "57d737fcc1c5aaa12d74b2414c6843d88cc224ff",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "draft_v0_pilot_verification.csv",
+    "git_blob_sha": "17a766250795ecf2fb001645aa181d191873e31c",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "external_evidence.md",
+    "git_blob_sha": "08fe33513ca4f143e52d871ebfe76e1fa45bb44d",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "README.md",
+    "git_blob_sha": "2f3a5b128cd5b6cc0acbbdbf99aadfe8a6c33afe",
+    "matches_pinned_source": true
+  },
+  {
+    "file": "research_development.md",
+    "git_blob_sha": "a4bb313c602a854a5cb8e0732ff6a0cf78ab06fe",
+    "matches_pinned_source": true
+  }
+]

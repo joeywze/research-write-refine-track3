@@ -1,0 +1,21 @@
+﻿sentence_id,sentence,claim_type,predicted_type,correct
+S013,"Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues.",FACTUAL,FACTUAL,True
+S019,Does it repeat its own decision under the same settings?,OTHER,OTHER,True
+S020,None logically guarantees the others.,OTHER,OTHER,True
+S028,"**RQ1—Human agreement:** Under the same English judging instructions, how does agreement with adjudicated human correctness labels differ between English and a second language on matched QA content?",OTHER,OTHER,True
+S052,"We propose to examine the selected QA setting through an integrated protocol that makes human agreement, language-related decision changes and repeated-call behavior independently observable.",PROPOSED,PROPOSED,True
+S057,The language and item source have not yet been selected.,PROPOSED,OTHER,False
+S065,"For a paired language version, the passage, question and both candidates would be translated together.",PROPOSED,PROPOSED,True
+S066,Bilingual review would check preservation of the opening time and the deliberately altered time.,PROPOSED,OTHER,False
+S067,Naturally worded translations are required; literal similarity alone will not qualify an item as equivalent.,PROPOSED,OTHER,False
+S070,Any later discovery of an item defect will be logged rather than silently repaired to change a result.,PROPOSED,PROPOSED,True
+S074,Raw labels and reasons will be retained.,PROPOSED,PROPOSED,True
+S079,"The same two bilingual people may serve both languages if necessary, but any reviewer overlap will be documented.",PROPOSED,PROPOSED,True
+S083,Its exact model version and configuration remain to be selected and frozen before collection.,PROPOSED,OTHER,False
+S095,"Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings.",PROPOSED,OTHER,False
+S098,"Twenty items and three calls are planning choices for a feasibility pilot, not statistically derived requirements.",PROPOSED,OTHER,False
+S101,A confirmatory design would require a separate sample-size justification based on a specified effect and variability estimate.,OTHER,OTHER,True
+S118,Agreement with the human reference will be examined alongside stability so that consistently wrong judgments remain visible.,PROPOSED,PROPOSED,True
+S126,The analysis permits several interpretations.,OTHER,PROPOSED,False
+S132,"It cannot establish broad multilingual fairness, deployment safety or performance across model families.",PROPOSED,OTHER,False
+S133,"Minimal errors may be too easy or unrepresentative of naturally generated answers, creating ceiling effects that this pilot would need to identify.",PROPOSED,OTHER,False

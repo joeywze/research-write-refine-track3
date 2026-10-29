@@ -1,0 +1,17 @@
+run,version,n_paragraphs,n_changed,mean_paragraph_score
+live-20261025T083033779648Z,V0 (initial draft),30,0,52.4
+live-20261025T083033779648Z,V1 generic rewrite,30,0,52.4
+live-20261025T083033779648Z,V2 guided rewrite,30,0,52.4
+live-20261025T083033779648Z,guided candidate 1,30,6,52.4
+live-20261025T142355415015Z,V0 (initial draft),30,0,52.4
+live-20261025T142355415015Z,V1 generic rewrite,30,0,52.4
+live-20261025T142355415015Z,V2 guided rewrite,30,0,52.4
+live-20261025T142355415015Z,guided candidate 1,30,2,52.6
+live-20261025T151429587392Z,V0 (initial draft),30,0,52.4
+live-20261025T151429587392Z,V1 generic rewrite,30,0,52.4
+live-20261025T151429587392Z,V2 guided rewrite,30,2,52.3
+live-20261025T151429587392Z,guided candidate 1,30,2,52.3
+live-20261026T000828046240Z,V0 (initial draft),30,0,52.4
+live-20261026T000828046240Z,V1 generic rewrite,30,0,52.4
+live-20261026T000828046240Z,V2 guided rewrite,30,2,52.4
+live-20261026T000828046240Z,guided candidate 1,30,2,52.4

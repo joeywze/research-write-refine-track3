@@ -1,0 +1,45 @@
+name: Stage B offline checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline tests (no API credentials or dependencies)
+        run: python -m unittest discover -s tests -v
+      - name: Validate six-section fixture
+        run: python -m src.writing validate --package examples/research_package.json --v0 examples/v0.json
+      - name: Offline bounded-loop demonstration
+        run: python -m src.writing demo --output runs/ci-demo
+
+  demo-and-interface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the saved-demo dependencies
+        run: python -m pip install -r sprint2_demo/requirements.txt
+      - name: Pinned backend checks (no model calls)
+        working-directory: sprint2_demo/backend
+        run: python -m unittest discover -s tests -v
+      - name: Integration, upload and launch checks (mocked providers)
+        working-directory: sprint2_demo
+        run: python -m unittest discover -s . -p 'test_*.py' -v
+      - name: Handover snapshot and content-preservation checks
+        working-directory: sprint2_demo
+        run: python -m unittest verify_handover -v
+      - name: Interface, research records and local detector checks
+        working-directory: sprint2_demo/ui
+        run: python -m unittest test_app test_research test_detection -v

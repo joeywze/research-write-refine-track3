@@ -3,3 +3,11 @@
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+.test-work/
+runs/
+evaluation-output/
+.private/
+
+# Rebuilt by the offline handover check; keep the pinned inputs unchanged.
+sprint2_demo/inputs/converted/conversion_summary.json
+sprint2_demo/inputs/converted/v0_roundtrip.md

@@ -1,0 +1,8 @@
+﻿draft_claim_id,draft_claim,paper_id,verification_status,supporting_evidence_ids
+D001,Fu and Liu use ground-truth answers as evaluation candidates.,2025.findings-emnlp.587,SUPPORTED,E001
+D002,Fu and Liu conduct parallel multilingual evaluation.,2025.findings-emnlp.587,INSUFFICIENT_EVIDENCE,C038
+D003,Chung and Freienthal evaluate controlled customer-support dialogues.,2026.mme-main.8,PROVISIONALLY_SUPPORTED,C040
+D004,Human calibration is restricted to Estonian.,2026.mme-main.8,SUPPORTED,E003
+D005,Datta and Baitalik include correct and incorrect answers in multilingual factual QA.,2026.acl-srw.33,PARTIALLY_SUPPORTED,E005; C044
+D006,The final rerun lacks completed human validation.,2026.acl-srw.33,SUPPORTED,E006
+D007,Gureja and colleagues include native-speaker validation in multilingual preference evaluation.,2025.acl-long.3,PARTIALLY_SUPPORTED,E009

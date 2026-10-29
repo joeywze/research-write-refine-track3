@@ -1,0 +1,488 @@
+{
+  "schema": "track3_claim_evidence_development_v1",
+  "prepared_date": "2026-10-20",
+  "team_a_approval": "pending",
+  "scientific_results_independently_reproduced": false,
+  "claims": [
+    {
+      "claim_id": "C01",
+      "paper_id": "2025.emnlp-main.86",
+      "title": "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+      "attributed_claim": "The WMT19 judging prompt compares English translations of German text; the authors limit the task scope to instruction following and translation.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English translation targets with German source text are explicit.",
+      "reviewer_boundary": "Bilingual source/target material alone does not establish a matched comparison of judging responses in different languages.",
+      "text_sha256": "d4986048aadfae4a14c6ac78cdff17402d4cd2045fb47c61ff11d51b8d120c0e",
+      "pdf_sha256": "816a1769569999c165c9dc512b5d6b2b5ea59fd4316a27dd43c0b4b5d3e0f0ce",
+      "citations": [
+        {
+          "pdf_page": 20,
+          "section": "Table 10",
+          "url": "https://aclanthology.org/2025.emnlp-main.86.pdf#page=20",
+          "normalized_quote_sha256": "371430c85aa9cdef2abdfc04f5b31925ed0858ec0c2c97cd08254903b9f4e178"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.86.pdf#page=9",
+          "normalized_quote_sha256": "df07bdeb7bef646f6737f0b5e0e80726a67ef846f30e41915609937a46a7613d"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C02",
+      "paper_id": "2025.emnlp-main.103",
+      "title": "Direct Judgement Preference Optimization",
+      "attributed_claim": "The authors state an English evaluation focus and identify multilingual judge development as future work.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English evaluation focus is explicit.",
+      "reviewer_boundary": "A limitation of this study is not evidence of absence across the literature.",
+      "text_sha256": "9c57ba25ffaf3ac04bcf5f431d6a524e031dd2e7df15cf4a3f2c8bdd77b40371",
+      "pdf_sha256": "bbc586e1a055a698cb0ec3863517656b26bde8a0dc9dee6c8f6e1b78ca1df45e",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+          "normalized_quote_sha256": "15887dc99b060e8172bf548c880c6f9965fe3f1b9c49f0ec26e050300e0a8431"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+          "normalized_quote_sha256": "1f7545e01394ea55d1591e20527e2b771f7c1b51aeb02f47bc37bea54c351068"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C03",
+      "paper_id": "2025.emnlp-main.138",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "attributed_claim": "This is a survey, and it discusses existing multilingual LLM-as-a-judge research.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Multilingual research is discussed; this excerpt is not an original experiment.",
+      "reviewer_boundary": "Treat surveyed findings as leads to original studies; do not count them as experiments performed by the survey.",
+      "text_sha256": "a22600ad84ff329fe88a762417dbfea3f179ced50a1e232d5b6a3a83e241fa6f",
+      "pdf_sha256": "026d203f5f4b155890905f1ac2c7d560134b07596eff6e5d23b447a82887834f",
+      "citations": [
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.138.pdf#page=9",
+          "normalized_quote_sha256": "746f48a183461b9d65a240fda7f8ec1abae618f281a0c21545ac80febc008f8c"
+        },
+        {
+          "pdf_page": 29,
+          "section": "Appendix C.1.1",
+          "url": "https://aclanthology.org/2025.emnlp-main.138.pdf#page=29",
+          "normalized_quote_sha256": "db60e6d9cc2cddc32da91b421fe81538bb91c0daedfa0ebea9a9ef1bfb15b76c"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C04",
+      "paper_id": "2025.emnlp-main.360",
+      "title": "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+      "attributed_claim": "The stochastic experiment uses English-category Arena preferences; the limitations identify bracket-assignment randomness.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English-category preferences are explicit for the cited setup.",
+      "reviewer_boundary": "The English-category reference applies to the stated stochastic setup. Do not extend it to every experiment without further evidence.",
+      "text_sha256": "cbdb1fb80fa73c640b9cf16374b2eb55f1876b62291dc9ece7fca7f03fe78194",
+      "pdf_sha256": "5d32e6acae9a508573de5843f2a613d7cd6cd72aa64240c5b20258373ccc0e14",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "Section 4.2, initial conditions",
+          "url": "https://aclanthology.org/2025.emnlp-main.360.pdf#page=5",
+          "normalized_quote_sha256": "fe443156f8d7a665a0831e7b72b1e828d0f8bdd994d72a5972187364047030fb"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.360.pdf#page=9",
+          "normalized_quote_sha256": "a0374df0adb63919523b8221e27c7a51660ae9227e1c00f498576b171130420b"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C05",
+      "paper_id": "2025.emnlp-main.538",
+      "title": "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+      "attributed_claim": "The authors identify an English-dataset limitation and report that checklists do not always improve evaluations.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English datasets are explicit for the two stated evaluation tasks.",
+      "reviewer_boundary": "The checklist finding is not a measured cross-language effect.",
+      "text_sha256": "8cc09a9fdf083c5a6ed3ec0ce1b03cca51651b5e2b8a5be5b98928e03cd49c15",
+      "pdf_sha256": "9e42bc8ff7ab64398e642d187ed23e9260e7486daa0ba793317c6c0c0116678d",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=10",
+          "normalized_quote_sha256": "0707a5f717a1df2f1c988143472d9c35e29f9053430b73f037ac80bbb24631ab"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Section 7",
+          "url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=9",
+          "normalized_quote_sha256": "e7adc53b5e508076daa7679f2ccef28da7388ed0e69c017486cf608c5029cdf5"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C06",
+      "paper_id": "2025.emnlp-main.569",
+      "title": "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+      "attributed_claim": "The paper primarily analyses summarization and reasoning, includes a GenAI-Bench appendix experiment, and notes reliance on human calibration annotations.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from these cited passages.",
+      "reviewer_boundary": "Do not describe the paper as exclusively text-only: the appendix records an additional experiment. Test-language coverage remains unresolved here.",
+      "text_sha256": "eb1761b8a0175ceb1acff33ea62fd0c9570122b8a0fe36bbbaac8c15473d1023",
+      "pdf_sha256": "041a649ea53d9f0e8bfa6d25f994724b67e2f8c0514d1fa2d0f85c4ff5c1369b",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=10",
+          "normalized_quote_sha256": "0317e170c65c2061d893151af4360c7d8a90835d59bf1b122cdeaec8c34f5022"
+        },
+        {
+          "pdf_page": 22,
+          "section": "Appendix A.12",
+          "url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=22",
+          "normalized_quote_sha256": "007c40e43490359599bd20a866aaeeebf1dc308d0f7fd4891546d76f7a2c912a"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Ethical Considerations",
+          "url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=10",
+          "normalized_quote_sha256": "d192d66c132c3ebe811515270d909d0924102882aa1b60eb49a1d1fb28769ecd"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C07",
+      "paper_id": "2025.emnlp-main.583",
+      "title": "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge",
+      "attributed_claim": "The authors report persistent meta-judge positional bias as a limitation.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from this cited passage.",
+      "reviewer_boundary": "This is a limitation in the meta-rewarding setup, not a cross-language reliability result.",
+      "text_sha256": "0802c7a15a7c1c2e809997eede6826aa8c6d9b18847eb7082fd63495efd038b0",
+      "pdf_sha256": "0b783b34d32890b6f79a8e86b0fcdab744f571a409a620e8cc2109bcd5aa72b6",
+      "citations": [
+        {
+          "pdf_page": 9,
+          "section": "Section 6",
+          "url": "https://aclanthology.org/2025.emnlp-main.583.pdf#page=9",
+          "normalized_quote_sha256": "94c5b6e9a8ddc5d1b092c19c3f4b737d620f8fb475c4c07f7bb59a879a73792f"
+        }
+      ],
+      "quoted_words": 13
+    },
+    {
+      "claim_id": "C08",
+      "paper_id": "2025.emnlp-main.625",
+      "title": "Self-Augmented Preference Alignment for Sycophancy Reduction in LLMs",
+      "attributed_claim": "The evaluated sycophancy tasks are Answer Suggestion and Are You Sure; the limitations explicitly restrict the study to English.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English-only scope is explicit in the limitations; this resolves the earlier excerpt-level Unclear for this paper.",
+      "reviewer_boundary": "The principal task is sycophancy assessment. Its use of an evaluator should not be conflated with a controlled multilingual judge study.",
+      "text_sha256": "31bd99461225e38460b1d71dea380e2551848ab3389eabee81e57b8a2c816832",
+      "pdf_sha256": "1092798cb649f18c2b509e60f5a95fcce8fc390d50acfbbf6bf10d4ec1f2a43b",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "Section 3",
+          "url": "https://aclanthology.org/2025.emnlp-main.625.pdf#page=4",
+          "normalized_quote_sha256": "2bba3fed7a7d8f0474903454ff4c3d60eb1720934ca4552dce292ba97d575234"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Section 8",
+          "url": "https://aclanthology.org/2025.emnlp-main.625.pdf#page=9",
+          "normalized_quote_sha256": "83302d5321d931722403cc56319d5f63d63b26de9c21b7758e82c1f50712b119"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C09",
+      "paper_id": "2025.emnlp-main.712",
+      "title": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "attributed_claim": "The study evaluates a judge on RewardBench using official English, basic Chinese and instructional Chinese prompt variants.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English and Chinese instruction variants are explicit; a matched response-language comparison is not established by this passage.",
+      "reviewer_boundary": "Instruction-language variation and response-language variation are separate dimensions. These variants also differ in instruction detail.",
+      "text_sha256": "bbcc4277e55fe0b86f56a1837289a82c8b127987c660172c29df04665acbfaa7",
+      "pdf_sha256": "4303dd90fa42b5d0c55c39b840fe79ed043e0484052c5f216b473e9b8ef881fa",
+      "citations": [
+        {
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "2166b1a139a1e1086d42e02fcae04dce2e7881bf3f0d25cb25e0e1f8d02e6663"
+        },
+        {
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "4f7b289a97ac0455aba43fc0d5004e1715e54da7cabc0db524a81c42daff5ce6"
+        },
+        {
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "200750f83b234929504e12840d1a33240f6824d920ade63f93440d0c52673910"
+        },
+        {
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "ea3b122cacdefa3a5437b69d6f651a3444ad72922aecec32c08c11fb85885811"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C10",
+      "paper_id": "2025.emnlp-main.716",
+      "title": "Towards Optimal Evaluation Efficiency for Large Language Models",
+      "attributed_claim": "The experiment compares efficient subset-selection strategies and analyses reliability and semantic preservation.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from this cited passage.",
+      "reviewer_boundary": "Benchmark-subset reliability is a different construct from repeated LLM-judge agreement with human labels.",
+      "text_sha256": "1004ec10cb56b92044d9de1a81d9adab4bacb032c8d8cb84e49c709e041246ff",
+      "pdf_sha256": "56095b24c5584b06fca7f6794625555382635f414616c2b2280f2e6903818808",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "Section 4",
+          "url": "https://aclanthology.org/2025.emnlp-main.716.pdf#page=3",
+          "normalized_quote_sha256": "5672f835d7f70a4b1d6a0bb279eea411c64bffbec2dd8dc2d1750f5758227744"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C11",
+      "paper_id": "2025.emnlp-main.796",
+      "title": "CheckEval: A reliable LLM-as-a-Judge framework for evaluating text generation using checklists",
+      "attributed_claim": "The authors focus on summarization and dialogue response generation and identify limits of binary evaluation questions.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from these cited passages.",
+      "reviewer_boundary": "Do not infer language coverage from benchmark names alone. The proposed QA study below uses binary factual correctness, not a universal quality score.",
+      "text_sha256": "aaf1bf1d5dbb52738d82ea474eae172e547fdd48894dbfa13830de3db20eefc4",
+      "pdf_sha256": "e56135b11cf57ae4bdbab99257ac5e2d70266a20c2060f9d40c014d2f8b5f1f9",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "Section 9",
+          "url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=10",
+          "normalized_quote_sha256": "9390878e3a4b3db5dcdbdb6510b3ce7e3badd1ee443a953b1de67090d56b5e67"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Section 9",
+          "url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=10",
+          "normalized_quote_sha256": "fef0f33653e136dfeded602bcb18d5fce7fddb79d9971a96fc97fe2e488804b5"
+        }
+      ],
+      "quoted_words": 23
+    },
+    {
+      "claim_id": "C12",
+      "paper_id": "2025.emnlp-main.891",
+      "title": "Multi-perspective Analysis of Large Language Model Domain Specialization: An Experiment in Accounting Audit Procedures Generation",
+      "attributed_claim": "The main instruction specifies Japanese, and Appendix B records Portuguese and Chinese evaluation prompts and an English question-answer dataset.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Japanese, Portuguese, Chinese and English are explicitly identified in the cited settings.",
+      "reviewer_boundary": "The appendix changes datasets and domains. Multiple language settings alone do not establish a controlled paired language comparison.",
+      "text_sha256": "cfec716c71ce738b2e3c0744886541629b8b2580587d352e546d24893d3e1bc1",
+      "pdf_sha256": "f1ab04409b3e37387b0e37dd89dcfb0aacc6dcb5d6622d634548e51bd562f972",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "Section 3.7",
+          "url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=4",
+          "normalized_quote_sha256": "06d0ab9c7de2128226e859877eb25e42f9eb81991913b1dcbd097ae22e0343de"
+        },
+        {
+          "pdf_page": 14,
+          "section": "Appendix B.1",
+          "url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "6bf840e419694131bd3d8a8330e0b7ca63a52e8c5c18c0eaff9dae06644034f6"
+        },
+        {
+          "pdf_page": 14,
+          "section": "Appendix B.2",
+          "url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "7db5b9ed4dabd95ddbc7df7efa284b2e0947903a4dacf54fc219df5fab126b08"
+        },
+        {
+          "pdf_page": 14,
+          "section": "Appendix B.3",
+          "url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "c275e41c87ba9919d4f40c244fab40b50fdb9dbdf1b5e743b1f7e709493f4aa8"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C13",
+      "paper_id": "2025.emnlp-main.953",
+      "title": "Debatable Intelligence: Benchmarking LLM Judges via Debate Speech Evaluation",
+      "attributed_claim": "The experiments run multiple LLM judges on debate speeches and measure agreement with humans.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from this cited passage.",
+      "reviewer_boundary": "This supports a human-agreement study in debate evaluation; multilingual coverage is not established by this passage.",
+      "text_sha256": "14fef10b9df1e89105e35834d378020fb386473d28f74eeb897e6e785087b241",
+      "pdf_sha256": "cb1fc37de33b89c779420f86fb0958888a9fe4323dd5269e17d382962416bf18",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "Section 4",
+          "url": "https://aclanthology.org/2025.emnlp-main.953.pdf#page=3",
+          "normalized_quote_sha256": "ad2ef0db69771be1276ea8c05ff284dc61b77019bbb9d07cc0e9fa238b6dabd7"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C14",
+      "paper_id": "2025.emnlp-main.992",
+      "title": "Beyond the Score: Uncertainty-Calibrated LLMs for Automated Essay Assessment",
+      "attributed_claim": "The authors explicitly restrict the study to English and three public essay corpora.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English is explicit.",
+      "reviewer_boundary": "This is an essay-scoring scope limitation, not evidence that multilingual judging is unstudied elsewhere.",
+      "text_sha256": "bb5f7deb032a58bb7e1e4013660b9c6a6a0fabf2e6c4d3b18a7d886db08e2201",
+      "pdf_sha256": "eb5116f56c743b9a398eade0ed09892bbd14e44ee94874a64a9121fea9b84da0",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.992.pdf#page=5",
+          "normalized_quote_sha256": "46d39275acdef6ccbfdcbe864ddddf2179dfd36fa5e9c93a3d8da0876b336431"
+        }
+      ],
+      "quoted_words": 12
+    },
+    {
+      "claim_id": "C15",
+      "paper_id": "2025.emnlp-main.1021",
+      "title": "MR. Judge: Multimodal Reasoner as a Judge",
+      "attributed_claim": "MR. Judge formulates judgment as a reasoning-inspired multiple-choice problem and notes an evaluation-time cost.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from these cited passages.",
+      "reviewer_boundary": "Multimodal content and multilingual evaluation are different dimensions.",
+      "text_sha256": "dff27709628f8d45f58eefe42c1ebd9eee72dada64c6adc2746f8182d4d1d421",
+      "pdf_sha256": "6ad4c93784a1e389792caa343a9b4a828360eb00c7cf2632e67147d84b3df638",
+      "citations": [
+        {
+          "pdf_page": 1,
+          "section": "Abstract",
+          "url": "https://aclanthology.org/2025.emnlp-main.1021.pdf#page=1",
+          "normalized_quote_sha256": "3cb07c5d326e3d6abb6b6a1595f6c2d5652b33ae5d78dbdf81d535cd45d9347d"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Section 9",
+          "url": "https://aclanthology.org/2025.emnlp-main.1021.pdf#page=9",
+          "normalized_quote_sha256": "b5f081fcedd80881dbc8b3eaae61a638702d6e34aae6ea78a9af968394bb7f4a"
+        }
+      ],
+      "quoted_words": 13
+    },
+    {
+      "claim_id": "C16",
+      "paper_id": "2025.emnlp-main.1307",
+      "title": "Co-Eval: Augmenting LLM-based Evaluation with Machine Metrics",
+      "attributed_claim": "The translation experiment explicitly uses six target languages and the limitations mention metric-selection mismatches.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Six target languages are explicit; resource-level classification is not established here.",
+      "reviewer_boundary": "This is evidence that multilingual evaluation exists in the corpus. The quoted setup does not justify assigning universal language-resource categories.",
+      "text_sha256": "c7cb5d15fcc94f9fa1e069b5d68b828205ce4bc5e338147f04af7c2a3a3808ce",
+      "pdf_sha256": "ec2f3683593262358fda5c22e37fd10d5f9eeb3ff7cb2e230d2b65682d270bab",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "Section 4.2",
+          "url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5",
+          "normalized_quote_sha256": "6d4a29a547c17432cf5db866a884544a25a21e1f0a10955ff95fb4e10dadb8f3"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=9",
+          "normalized_quote_sha256": "4b0a513573dda9d65c5e5da1ba23c2da7f6894435940c111ac5a32a87e923c51"
+        }
+      ],
+      "quoted_words": 20
+    },
+    {
+      "claim_id": "C17",
+      "paper_id": "2025.emnlp-main.1534",
+      "title": "Model Consistency as a Cheap yet Predictive Proxy for LLM Elo Scores",
+      "attributed_claim": "The authors state that the dataset human preference annotations were not used and identify difficulty distinguishing top-performing models.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "Unclear from these cited passages.",
+      "reviewer_boundary": "Separate unused item-level human labels from the paper's comparison with Arena Elo scores; do not label the work as having no human-derived reference of any kind.",
+      "text_sha256": "229683235e3e4d020df9a2ce37ef715f32de88367f79e7f7e775e8931491c7b4",
+      "pdf_sha256": "f4cf15e79c7ad8cb3e1d6ec2feff55c5e4fe4ae7b8fd3206430e67ea8b669aae",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "Section 3.1",
+          "url": "https://aclanthology.org/2025.emnlp-main.1534.pdf#page=3",
+          "normalized_quote_sha256": "aaf3d753f307b04dcaa2de7bd7bc49c94961602ac04d10431523cc23e153182f"
+        },
+        {
+          "pdf_page": 5,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1534.pdf#page=5",
+          "normalized_quote_sha256": "207a576b23d94e0db2974402c776e0f22e94e5092703453c1c5e180d574a6910"
+        }
+      ],
+      "quoted_words": 20
+    },
+    {
+      "claim_id": "C18",
+      "paper_id": "2025.emnlp-main.1625",
+      "title": "Can Large Language Models Outperform Non-Experts in Poetry Evaluation? A Comparative Study Using the Consensual Assessment Technique",
+      "attributed_claim": "The study uses 90 English-language poems, includes repeated evaluations, and calls for direct expert validation.",
+      "status": "supported_by_cited_passage",
+      "language_evidence": "English-language poems are explicit.",
+      "reviewer_boundary": "Repeated-run reliability, performance against non-experts and validation by expert raters are distinct claims.",
+      "text_sha256": "980e99a96cf7ff07b6ca09409013b300041392fb0b2ab1921917c62d47f25411",
+      "pdf_sha256": "041913872f1858f113fcecf903dfd0445e573458956b94f99e9a0a7303dc30d5",
+      "citations": [
+        {
+          "pdf_page": 9,
+          "section": "Section 11",
+          "url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=9",
+          "normalized_quote_sha256": "a7fa4023cd54be3c2b280a939c80fa60f744b78cd70681e3c4942d0eca114380"
+        },
+        {
+          "pdf_page": 8,
+          "section": "Section 8",
+          "url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=8",
+          "normalized_quote_sha256": "436be87c9585a637868418cac15179523f2652991a678010af210ff04cf4022b"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Section 11",
+          "url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=9",
+          "normalized_quote_sha256": "a8170ec304c41e0a4949da9725a39b637effc68dbc8e510c9d7f8e59aeadf7e8"
+        }
+      ],
+      "quoted_words": 21
+    }
+  ]
+}
