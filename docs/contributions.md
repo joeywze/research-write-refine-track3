@@ -21,7 +21,7 @@ These are the team's supplied workstream assignments, not a replacement for Git'
 
 `detector-half-2` descends from the UI branch, which descends from the original writing branch. They are not four independent folders to concatenate. The integration branch restores Stage B content previously reverted on `main` and preserves the existing branch histories.
 
-No existing branch was deleted. Uncommitted work in the original research checkout was not included, overwritten or treated as reviewed team code. Pushing or merging this local reorganisation is a separate review step.
+No existing branch was deleted. Uncommitted work in the original research checkout was not included, overwritten or treated as reviewed team code. After local review, the user authorised publication and integration through [pull request #6](https://github.com/joeywze/research-write-refine-track3/pull/6). Its current state is recorded on GitHub; the separate hosted application is not redeployed by the merge.
 
 ## Moved files
 
