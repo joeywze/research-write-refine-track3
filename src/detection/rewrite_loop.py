@@ -37,6 +37,11 @@ from detector import PLAIN_NAMES, score  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "results" / "detection"
+try:
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except ImportError:
+    pass
 CITE = re.compile(r"\[\[[^\]]+\]\]")
 NUM = re.compile(r"(?<![\w])\d+(?:[.,]\d+)*%?")
 
@@ -56,8 +61,9 @@ Flagged sentences:
 Revise the paragraph to fix these specific problems. Rules:
 - Keep every claim, number, citation token like [[S1]] and technical term. Do not add facts, results or citations.
 - Keep a hedge only where the claim really is uncertain; say what is uncertain instead of stacking "may/could/potentially".
-- Vary sentence length a lot: at least one short, blunt sentence (under 10 words) and, where the logic needs it, one long one.
-- Drop "Furthermore/Moreover/Additionally"-style openers when the link is obvious. Break up "X, Y, and Z" lists unless all three items matter.
+- Vary sentence length: one short, blunt sentence is enough where it earns emphasis; let other sentences run long when the logic needs it.
+- Never chop a sentence into fragments ("Competence too. Education matters.") and never add a sentence that carries no content of its own. Every sentence must be a complete, informative clause.
+- Drop "Furthermore/Moreover/Additionally"-style openers when the link is obvious. For an "X, Y, and Z" list, keep it if every item matters or cut the weak items; do not spread it over several sentences.
 - Do not replace one stock phrase with another. Plain words are fine.
 Return only the revised paragraph.
 
@@ -78,6 +84,30 @@ def flagged_text(r):
     for f in r["flagged"][:6]:
         out.append(f'- "{f["sentence"][:220]}" -> {"; ".join(f["reasons"])}')
     return "\n".join(out) or "- none"
+
+
+def sentence_lengths(text):
+    from detector import split_sentences, _WORD
+    return [len(_WORD.findall(x)) for x in split_sentences(text)]
+
+
+def choppy_rate(text):
+    """Share of sentences under 8 words."""
+    lens = sentence_lengths(text)
+    return sum(n < 8 for n in lens) / max(len(lens), 1)
+
+
+def fluency_ok(text):
+    """Guard against gaming the burstiness feature with fragments.
+    Real EMNLP body text: ~6% of sentences are under 8 words, almost none under 4."""
+    lens = sentence_lengths(text)
+    if any(n < 4 for n in lens):
+        return False, "fragment sentence (<4 words)"
+    if sum(n < 8 for n in lens) > max(1, round(0.2 * len(lens))):
+        return False, "too many very short sentences"
+    if any(a < 10 and b < 10 for a, b in zip(lens, lens[1:])):
+        return False, "consecutive short sentences"
+    return True, ""
 
 
 def content_ok(before, after):
@@ -125,8 +155,11 @@ def pick_paragraphs(n):
     ai = oof[(oof.label == 1) & (oof.section.isin(["introduction", "related_work", "conclusion"]))]
     ai = ai[ai.text.str.split().str.len().between(80, 220)].sort_values("p_stylo", ascending=False)
     for i, (_, r) in enumerate(ai.head(n - len(rows)).iterrows()):
-        rows.append({"pid": f"GPT-{r.paper_id[-4:]}-{r.section}-{i}", "source": "GPT pilot", "text": r.text})
+        rows.append({"pid": f"GPT-{str(r.paper_id).split('.')[-1]}-{r.section}-{i}", "source": "GPT pilot", "text": r.text})
     return rows[:n]
+
+
+GUARD = True
 
 
 def main():
@@ -135,7 +168,12 @@ def main():
     ap.add_argument("--iters", type=int, default=4)
     ap.add_argument("--model", default=os.getenv("REWRITE_MODEL", "gpt-5.6-luna"))
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--no-guard", action="store_true",
+                    help="disable the fluency guard (reproduces the first run, which gamed the detector)")
+    ap.add_argument("--tag", default="", help="suffix for output files, e.g. _v1_unguarded")
     args = ap.parse_args()
+    global GUARD
+    GUARD = not args.no_guard
 
     llm = LLM(args.model, args.dry_run)
     paras = pick_paragraphs(args.n)
@@ -145,7 +183,8 @@ def main():
         for cond in ("naive", "guided"):
             cur, cur_r = p["text"], s0
             log.append({**{k: p[k] for k in ("pid", "source")}, "condition": cond, "iteration": 0,
-                        "score": cur_r["score"], "accepted": True, "reason": "start", "text": cur})
+                        "score": cur_r["score"], "accepted": True, "reason": "start",
+                        "choppy_rate": round(choppy_rate(cur), 3), "text": cur})
             for it in range(1, args.iters + 1):
                 if cond == "naive":
                     prompt = NAIVE_PROMPT.format(text=cur)
@@ -154,6 +193,8 @@ def main():
                                                   flagged=flagged_text(cur_r), text=cur)
                 cand = llm(prompt)
                 ok, why = content_ok(cur, cand)
+                if ok and GUARD:
+                    ok, why = fluency_ok(cand)
                 cand_r = score(cand) if cand else None
                 if ok and cond == "guided" and cand_r["score"] > cur_r["score"]:
                     ok, why = False, "score went up"
@@ -161,17 +202,21 @@ def main():
                     cur, cur_r = cand, cand_r
                 log.append({"pid": p["pid"], "source": p["source"], "condition": cond, "iteration": it,
                             "score": cur_r["score"], "candidate_score": cand_r["score"] if cand_r else None,
+                            "choppy_rate": round(choppy_rate(cur), 3),
                             "accepted": ok, "reason": why or "accepted", "text": cur})
                 print(f"{p['pid']:28s} {cond:6s} it{it}: {cur_r['score']:5.1f} "
                       f"({'kept' if ok else 'rejected: ' + why})")
 
     OUT.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(log)
-    suffix = "_dryrun" if args.dry_run else ""
+    suffix = ("_dryrun" if args.dry_run else "") + args.tag
     df.to_csv(OUT / f"loop_log{suffix}.csv", index=False)
 
     curve = df.groupby(["condition", "iteration"]).score.mean().unstack(0)
     print("\nMean detector score per iteration:\n", curve.round(1))
+    print("\nShare of sentences under 8 words (real EMNLP body text is about 0.06):\n",
+          df.groupby(["condition", "iteration"]).choppy_rate.mean().unstack(0).round(3))
+    print("\nRejections by reason:\n", df[~df.accepted.astype(bool)].groupby(["condition", "reason"]).size())
 
     import matplotlib
     matplotlib.use("Agg")
@@ -190,7 +235,8 @@ def main():
     ax.set_xlabel("Iteration")
     ax.set_ylabel("Mean detector score (lower = more human)")
     ax.set_ylim(0, 100)
-    ax.set_title(f"Rewriting loop on {len(paras)} paragraphs", loc="left", fontsize=11)
+    ax.set_title(f"Rewriting loop on {len(paras)} paragraphs" + (" (fluency guard on)" if GUARD else " (no fluency guard)"),
+                 loc="left", fontsize=11)
     ax.legend(frameon=False)
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
