@@ -1,0 +1,19 @@
+{
+  "n_human": 1808,
+  "n_ai": 386,
+  "auc_stylometric_all": 0.741,
+  "auc_tfidf_all": 0.994,
+  "n_ai_abstracts": 10,
+  "auc_stylometric_abstract_only": 0.73,
+  "auc_tfidf_abstract_only": 0.922,
+  "accuracy_stylometric_at_0.5": 0.712,
+  "mean_score_by_section": {
+    "AI abstract": 51.9,
+    "AI conclusion": 73.8,
+    "AI experiments": 53.7,
+    "AI introduction": 64.4,
+    "AI methodology": 48.9,
+    "AI related_work": 66.4,
+    "HUMAN abstract": 40.2
+  }
+}
