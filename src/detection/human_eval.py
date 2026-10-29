@@ -96,8 +96,11 @@ def build():
     if log.exists():
         lg = pd.read_csv(log)
         mx = lg.iteration.max()
-        fin = lg[(lg.condition == "guided") & (lg.iteration == mx) & lg.pid.str.startswith("V0-")]
-        rev_items = [(p, tidy(t)) for p, t in zip(fin.pid, fin.text)]
+        g = lg[(lg.condition == "guided") & lg.pid.str.startswith("V0-")]
+        start = g[g.iteration == 0].set_index("pid").text
+        fin = g[g.iteration == mx]
+        # only paragraphs the loop actually changed (all-rejected ones are still V0)
+        rev_items = [(p, tidy(t)) for p, t in zip(fin.pid, fin.text) if t != start.get(p)]
         rng.shuffle(rev_items)
     used = {p.replace("V0-", "") for p, _ in rev_items[:3]}
     v0_pick = [x for x in v0_items if x[0] not in used][:3]
@@ -109,6 +112,9 @@ def build():
              + [(rev_label, p, t) for p, t in rev_pick])
     rng.shuffle(items)
 
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from detector import score as detector_score
+
     key, form = [], ["# Real or generated?\n",
                      "Each paragraph below is either from a published EMNLP 2025 paper or was generated "
                      "with an LLM for our project. All are about evaluating LLMs as judges; citations were "
@@ -117,7 +123,8 @@ def build():
     for i, (label, src, text) in enumerate(items, 1):
         iid = f"Item {i:02d}"
         key.append({"item_id": iid, "truth": "real" if label == "real" else "generated",
-                    "condition": label, "source": src, "words": len(text.split()), "text": text})
+                    "condition": label, "source": src, "words": len(text.split()),
+                    "detector_score": detector_score(text)["score"], "text": text})
         form.append(f"## {iid}\n\n{text}\n\n- [ ] Real paper   - [ ] Generated   Confidence 1-5: ___   Tell: ________\n")
     (OUT / "form_for_raters.md").write_text("\n".join(form), encoding="utf-8")
     pd.DataFrame(key).to_csv(OUT / "PRIVATE_answer_key.csv", index=False)
@@ -125,10 +132,11 @@ def build():
                              for r in range(1, 4) for k in key])
     template.to_csv(OUT / "responses_template.csv", index=False)
     print(f"Built {len(items)} items -> {OUT}")
-    print(pd.DataFrame(key).condition.value_counts().to_string())
+    print(pd.DataFrame(key).groupby("condition").agg(items=("item_id", "count"),
+                                                     mean_detector_score=("detector_score", "mean")).round(1).to_string())
     if rev_label != "generated_revised":
-        print("NOTE: loop_log.csv not found, so the 'revised' slots use V0 paragraphs. "
-              "Run rewrite_loop.py first, then rebuild.")
+        print("NOTE: fewer than 3 changed paragraphs in loop_log.csv, so the 'revised' slots use V0 "
+              "paragraphs. Run rewrite_loop.py first, then rebuild.")
 
 
 def wilson(k, n, z=1.96):
@@ -180,7 +188,16 @@ def score_responses(path):
     res.to_csv(OUT / "human_eval_results.csv", index=False)
     print(res.to_string(index=False))
     print("\n50% = raters cannot tell (target). For generated items, accuracy = share correctly called 'generated'.")
-    per_item = r.groupby(["item_id", "condition"]).correct.mean().reset_index()
+    r["said_generated"] = r.answer == "generated"
+    per_item = (r.groupby(["item_id", "condition"])
+                .agg(share_said_generated=("said_generated", "mean"), accuracy=("correct", "mean"))
+                .reset_index())
+    if "detector_score" in key.columns:
+        per_item = per_item.merge(key[["item_id", "detector_score"]], on="item_id")
+        rho = per_item[["detector_score", "share_said_generated"]].corr(method="spearman").iloc[0, 1]
+        print(f"\nDetector vs humans: Spearman correlation between an item's detector score and the share "
+              f"of raters who called it generated = {rho:.2f} (over {len(per_item)} items)")
+        print(per_item.groupby("condition")[["detector_score", "share_said_generated"]].mean().round(2).to_string())
     per_item.to_csv(OUT / "human_eval_per_item.csv", index=False)
 
 
