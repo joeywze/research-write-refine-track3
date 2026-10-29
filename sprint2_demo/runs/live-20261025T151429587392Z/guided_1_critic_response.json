@@ -1,0 +1,98 @@
+{
+  "paragraphs": [
+    {
+      "paragraph_id": "P002",
+      "findings": [
+        {
+          "criterion": "specificity",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The previous actionable issue has been addressed. The revised wording replaces the vaguer 'this problem' with the more explicit 'language-dependent evaluation by language-model judges', which is supported by the package and keeps the same claim and citation links intact.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "argument_strength",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph clearly supports its framing claim by giving two concrete precedents and then drawing the limited conclusion that these studies are precedents rather than grounds for an 'overlooked' claim. The evidence-to-claim link is already clear.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "formulaic_language",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The wording is concise and functional. Phrases such as 'direct precedents' and 'rather than a basis for claiming' carry argumentative content rather than sounding stock or redundant.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "inappropriate_hedging",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph does not hedge unnecessarily. Its scope is appropriately limited to the cited precedents and avoids overstating what they establish.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "generic_transitions",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The transition from the general point to the two cited examples is direct and informative. 'While' usefully marks the difference between the two precedents rather than adding empty connective language.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "unnatural_symmetry",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The parallel presentation of the two studies does not flatten their differences. The wording preserves that one concerns parallel language versions and the other cross-language stability in controlled dialogues.",
+          "safe_action": ""
+        }
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "findings": [
+        {
+          "criterion": "specificity",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The previous actionable issue has been addressed. 'This existing line of inquiry' has been replaced by the more explicit 'this instruction-language sensitivity work', which is supported by the package and clarifies the referent without changing the claim or citations.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "argument_strength",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph makes the distinction between instruction language and content language clearly, then uses the two cited studies to motivate the planned secondary condition. The argumentative link is already clear.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "formulaic_language",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The phrasing is specific and economical. The final sentence explains the planned design relation to prior work rather than relying on empty stock language.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "inappropriate_hedging",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The qualification 'aims to preserve rubric meaning' is appropriate because it describes planned work and preserves the proposal's intended, not yet demonstrated, status.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "generic_transitions",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The paragraph progresses logically from conceptual distinction to prior examples to the planned design implication. The transitions are informative rather than generic.",
+          "safe_action": ""
+        },
+        {
+          "criterion": "unnatural_symmetry",
+          "status": "NO_ISSUE",
+          "quote": "",
+          "explanation": "The wording does not force the cited studies into artificial equivalence. It explicitly notes that Yu et al.'s prompts vary in detail as well as language, while Chung and Freienthal contribute an instruction-language sensitivity check.",
+          "safe_action": ""
+        }
+      ]
+    }
+  ]
+}

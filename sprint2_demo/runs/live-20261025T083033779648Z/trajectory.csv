@@ -1,0 +1,5 @@
+arm,attempt,score_before,candidate_score,accepted_score,accepted,reason,critic_count_before,candidate_critic_count,accepted_critic_count
+generic,0,,0,0,True,GROUNDED_V0,,6,6
+generic,1,0,0,0,False,UNCHANGED_OR_REPEATED,6,,6
+guided,0,,0,0,True,GROUNDED_V0,,6,6
+guided,1,0,0,0,False,CITATION_MISMATCH,6,,6

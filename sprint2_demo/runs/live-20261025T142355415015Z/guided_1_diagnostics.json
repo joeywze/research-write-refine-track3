@@ -1,0 +1,2888 @@
+{
+  "version": "surface-0.1",
+  "direction": "lower_is_better",
+  "score_label": "Review points flagged by rules",
+  "interpretation": "Count of rule-based review points; lower is better. These rules still need calibration.",
+  "applicable": true,
+  "score": 0,
+  "word_count": 2320,
+  "paragraphs": [
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "word_count": 170,
+      "sentence_count": 9,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "word_count": 58,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P003",
+      "section": "introduction",
+      "word_count": 93,
+      "sentence_count": 8,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P004",
+      "section": "introduction",
+      "word_count": 37,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P005",
+      "section": "introduction",
+      "word_count": 76,
+      "sentence_count": 6,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P006",
+      "section": "introduction",
+      "word_count": 62,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P007",
+      "section": "related_work",
+      "word_count": 60,
+      "sentence_count": 6,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P008",
+      "section": "related_work",
+      "word_count": 64,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P009",
+      "section": "related_work",
+      "word_count": 23,
+      "sentence_count": 2,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P010",
+      "section": "related_work",
+      "word_count": 118,
+      "sentence_count": 9,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "word_count": 40,
+      "sentence_count": 2,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P012",
+      "section": "methodology",
+      "word_count": 54,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P013",
+      "section": "methodology",
+      "word_count": 69,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "word_count": 66,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P015",
+      "section": "methodology",
+      "word_count": 16,
+      "sentence_count": 1,
+      "applicable": false,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P016",
+      "section": "methodology",
+      "word_count": 40,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P017",
+      "section": "methodology",
+      "word_count": 44,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P018",
+      "section": "methodology",
+      "word_count": 48,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P019",
+      "section": "methodology",
+      "word_count": 10,
+      "sentence_count": 1,
+      "applicable": false,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P020",
+      "section": "methodology",
+      "word_count": 68,
+      "sentence_count": 6,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P021",
+      "section": "methodology",
+      "word_count": 67,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P022",
+      "section": "methodology",
+      "word_count": 61,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P023",
+      "section": "methodology",
+      "word_count": 61,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P024",
+      "section": "methodology",
+      "word_count": 34,
+      "sentence_count": 1,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P025",
+      "section": "methodology",
+      "word_count": 52,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P026",
+      "section": "methodology",
+      "word_count": 56,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P027",
+      "section": "experiments",
+      "word_count": 58,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P028",
+      "section": "experiments",
+      "word_count": 58,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P029",
+      "section": "experiments",
+      "word_count": 27,
+      "sentence_count": 2,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P030",
+      "section": "experiments",
+      "word_count": 63,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P031",
+      "section": "experiments",
+      "word_count": 75,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P032",
+      "section": "experiments",
+      "word_count": 52,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P033",
+      "section": "experiments",
+      "word_count": 58,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P034",
+      "section": "experiments",
+      "word_count": 73,
+      "sentence_count": 4,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P035",
+      "section": "experiments",
+      "word_count": 50,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P036",
+      "section": "experiments",
+      "word_count": 52,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P037",
+      "section": "experiments",
+      "word_count": 54,
+      "sentence_count": 3,
+      "applicable": true,
+      "uniformity_applicable": false,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P038",
+      "section": "experiments",
+      "word_count": 69,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "paragraph_id": "P039",
+      "section": "conclusion",
+      "word_count": 84,
+      "sentence_count": 5,
+      "applicable": true,
+      "uniformity_applicable": true,
+      "issue_count": 0,
+      "issues": []
+    }
+  ],
+  "exploratory_measurements": {
+    "version": "measurements-0.1",
+    "status": "MEASUREMENT_ONLY_UNCALIBRATED",
+    "affects_score_or_targets": false,
+    "limitations": [
+      "Sentence boundaries and hedge phrases use simple English rules.",
+      "Hedge counts include both necessary and redundant qualifications.",
+      "Repeated terms and similar paragraph lengths may suit the passage.",
+      "Compare similar sections. These measurements do not establish authorship."
+    ],
+    "paragraphs": [
+      {
+        "paragraph_id": "P001",
+        "section": "abstract",
+        "word_count": 170,
+        "sentence_count": 9,
+        "sentence_length_variance": 22.320987654320987,
+        "sentence_length_cv": 0.25012107794669763,
+        "hedges": {
+          "may": 1
+        },
+        "hedge_occurrences_per_100_words": 0.5882352941176471,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P002",
+        "section": "introduction",
+        "word_count": 58,
+        "sentence_count": 3,
+        "sentence_length_variance": 2.888888888888889,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P003",
+        "section": "introduction",
+        "word_count": 93,
+        "sentence_count": 8,
+        "sentence_length_variance": 14.984375,
+        "sentence_length_cv": 0.33298629176778544,
+        "hedges": {
+          "could": 1
+        },
+        "hedge_occurrences_per_100_words": 1.075268817204301,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P004",
+        "section": "introduction",
+        "word_count": 37,
+        "sentence_count": 3,
+        "sentence_length_variance": 30.88888888888889,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P005",
+        "section": "introduction",
+        "word_count": 76,
+        "sentence_count": 6,
+        "sentence_length_variance": 143.55555555555554,
+        "sentence_length_cv": 0.9459053029269173,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P006",
+        "section": "introduction",
+        "word_count": 62,
+        "sentence_count": 3,
+        "sentence_length_variance": 29.555555555555557,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P007",
+        "section": "related_work",
+        "word_count": 60,
+        "sentence_count": 6,
+        "sentence_length_variance": 41,
+        "sentence_length_cv": 0.6403124237432849,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P008",
+        "section": "related_work",
+        "word_count": 64,
+        "sentence_count": 5,
+        "sentence_length_variance": 37.76,
+        "sentence_length_cv": 0.480071609241788,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P009",
+        "section": "related_work",
+        "word_count": 23,
+        "sentence_count": 2,
+        "sentence_length_variance": 12.25,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P010",
+        "section": "related_work",
+        "word_count": 118,
+        "sentence_count": 9,
+        "sentence_length_variance": 36.98765432098765,
+        "sentence_length_cv": 0.46386210791200033,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {
+          "in the proposed": 2
+        },
+        "repeated_trigram_excess": 1,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P011",
+        "section": "related_work",
+        "word_count": 40,
+        "sentence_count": 2,
+        "sentence_length_variance": 16,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P012",
+        "section": "methodology",
+        "word_count": 54,
+        "sentence_count": 3,
+        "sentence_length_variance": 38,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P013",
+        "section": "methodology",
+        "word_count": 69,
+        "sentence_count": 5,
+        "sentence_length_variance": 8.56,
+        "sentence_length_cv": 0.21201070780185205,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P014",
+        "section": "methodology",
+        "word_count": 66,
+        "sentence_count": 4,
+        "sentence_length_variance": 23.25,
+        "sentence_length_cv": 0.29223184124221074,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P015",
+        "section": "methodology",
+        "word_count": 16,
+        "sentence_count": 1,
+        "sentence_length_variance": null,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P016",
+        "section": "methodology",
+        "word_count": 40,
+        "sentence_count": 5,
+        "sentence_length_variance": 12.4,
+        "sentence_length_cv": 0.44017042154147523,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {
+          "9 a m": 2,
+          "at 9 a": 2,
+          "candidate it opens": 2,
+          "it opens at": 2,
+          "opens at 9": 2
+        },
+        "repeated_trigram_excess": 5,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P017",
+        "section": "methodology",
+        "word_count": 44,
+        "sentence_count": 3,
+        "sentence_length_variance": 0.2222222222222222,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P018",
+        "section": "methodology",
+        "word_count": 48,
+        "sentence_count": 3,
+        "sentence_length_variance": 2,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P019",
+        "section": "methodology",
+        "word_count": 10,
+        "sentence_count": 1,
+        "sentence_length_variance": null,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P020",
+        "section": "methodology",
+        "word_count": 68,
+        "sentence_count": 6,
+        "sentence_length_variance": 41.888888888888886,
+        "sentence_length_cv": 0.5710731717337529,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P021",
+        "section": "methodology",
+        "word_count": 67,
+        "sentence_count": 5,
+        "sentence_length_variance": 21.04,
+        "sentence_length_cv": 0.34230880421431986,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P022",
+        "section": "methodology",
+        "word_count": 61,
+        "sentence_count": 4,
+        "sentence_length_variance": 28.6875,
+        "sentence_length_cv": 0.3512177915676811,
+        "hedges": {
+          "may": 1
+        },
+        "hedge_occurrences_per_100_words": 1.639344262295082,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P023",
+        "section": "methodology",
+        "word_count": 61,
+        "sentence_count": 4,
+        "sentence_length_variance": 50.6875,
+        "sentence_length_cv": 0.46685347101305386,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P024",
+        "section": "methodology",
+        "word_count": 34,
+        "sentence_count": 1,
+        "sentence_length_variance": null,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P025",
+        "section": "methodology",
+        "word_count": 52,
+        "sentence_count": 4,
+        "sentence_length_variance": 3.5,
+        "sentence_length_cv": 0.14390989949130545,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P026",
+        "section": "methodology",
+        "word_count": 56,
+        "sentence_count": 4,
+        "sentence_length_variance": 8.5,
+        "sentence_length_cv": 0.20824828195876074,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P027",
+        "section": "experiments",
+        "word_count": 58,
+        "sentence_count": 5,
+        "sentence_length_variance": 5.84,
+        "sentence_length_cv": 0.20832837885507885,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P028",
+        "section": "experiments",
+        "word_count": 58,
+        "sentence_count": 4,
+        "sentence_length_variance": 14.25,
+        "sentence_length_cv": 0.26033911845761204,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P029",
+        "section": "experiments",
+        "word_count": 27,
+        "sentence_count": 2,
+        "sentence_length_variance": 12.25,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P030",
+        "section": "experiments",
+        "word_count": 63,
+        "sentence_count": 3,
+        "sentence_length_variance": 4.666666666666667,
+        "sentence_length_cv": null,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P031",
+        "section": "experiments",
+        "word_count": 75,
+        "sentence_count": 4,
+        "sentence_length_variance": 28.6875,
+        "sentence_length_cv": 0.285657137141714,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P032",
+        "section": "experiments",
+        "word_count": 52,
+        "sentence_count": 4,
+        "sentence_length_variance": 6.5,
+        "sentence_length_cv": 0.19611613513818402,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P033",
+        "section": "experiments",
+        "word_count": 58,
+        "sentence_count": 4,
+        "sentence_length_variance": 6.25,
+        "sentence_length_cv": 0.1724137931034483,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P034",
+        "section": "experiments",
+        "word_count": 73,
+        "sentence_count": 4,
+        "sentence_length_variance": 9.6875,
+        "sentence_length_cv": 0.1705465698354621,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P035",
+        "section": "experiments",
+        "word_count": 50,
+        "sentence_count": 3,
+        "sentence_length_variance": 43.55555555555556,
+        "sentence_length_cv": null,
+        "hedges": {
+          "may": 1
+        },
+        "hedge_occurrences_per_100_words": 2.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P036",
+        "section": "experiments",
+        "word_count": 52,
+        "sentence_count": 5,
+        "sentence_length_variance": 11.44,
+        "sentence_length_cv": 0.32522181779399545,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P037",
+        "section": "experiments",
+        "word_count": 54,
+        "sentence_count": 3,
+        "sentence_length_variance": 14,
+        "sentence_length_cv": null,
+        "hedges": {
+          "may": 1
+        },
+        "hedge_occurrences_per_100_words": 1.8518518518518519,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P038",
+        "section": "experiments",
+        "word_count": 69,
+        "sentence_count": 5,
+        "sentence_length_variance": 22.16,
+        "sentence_length_cv": 0.3411189071286904,
+        "hedges": {
+          "may": 1
+        },
+        "hedge_occurrences_per_100_words": 1.4492753623188406,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      },
+      {
+        "paragraph_id": "P039",
+        "section": "conclusion",
+        "word_count": 84,
+        "sentence_count": 5,
+        "sentence_length_variance": 74.16,
+        "sentence_length_cv": 0.5125964319431187,
+        "hedges": {},
+        "hedge_occurrences_per_100_words": 0.0,
+        "repeated_trigrams": {},
+        "repeated_trigram_excess": 0,
+        "transition_occurrences": {},
+        "adjective_density": null,
+        "adjective_density_status": "DEFERRED_REQUIRES_VALIDATED_POS_TAGGER"
+      }
+    ],
+    "section_regularity": {
+      "abstract": {
+        "paragraph_count": 1,
+        "paragraph_length_cv": null
+      },
+      "introduction": {
+        "paragraph_count": 5,
+        "paragraph_length_cv": 0.28667445380260304
+      },
+      "related_work": {
+        "paragraph_count": 5,
+        "paragraph_length_cv": 0.5258182346683136
+      },
+      "methodology": {
+        "paragraph_count": 15,
+        "paragraph_length_cv": 0.355124169188923
+      },
+      "experiments": {
+        "paragraph_count": 12,
+        "paragraph_length_cv": 0.21145847121027161
+      },
+      "conclusion": {
+        "paragraph_count": 1,
+        "paragraph_length_cv": null
+      }
+    }
+  },
+  "qualitative_critic": {
+    "version": "rubric-0.1",
+    "status": "COMPLETE",
+    "draft_hash": "fe25154a8ca33ef495ad0e94f6810c82ddb7a4d32d69ee5ab68976994a1500d2",
+    "score_label": "Review points flagged by the LLM",
+    "interpretation": "Passages that could benefit from clearer, more precise, better-connected or more natural wording. Independent assessment is needed to evaluate the suggestions.",
+    "actionable_count": 4,
+    "paragraphs": [
+      {
+        "paragraph_id": "P001",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is already specific about the proposed design, including item count, rater arrangement, conditions and analysis dimensions. No approved detail from the package is needed to clarify vague wording locally without rewriting for preference rather than necessity.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The internal logic is clear: the opening distinctions motivate a study that measures agreement, cross-language consistency and repeated-call stability separately. The paragraph preserves proposal status and does not overclaim.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "ACTIONABLE",
+            "quote": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+            "explanation": "Most of the paragraph is precise, but 'The proposed contribution is' is slightly stock phrasing and can be made more direct without changing meaning or proposal status.",
+            "safe_action": "Replace 'The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting' with 'The contribution will be a human-validated replication-and-extension protocol for a bounded QA setting'."
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualifications are appropriate because this is a proposal and because the paragraph explicitly avoids novelty and directional-effect claims. The uncertainty is necessary, not excessive.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph moves directly from conceptual distinctions to the planned design and intended contribution. No transition appears empty or obscuring.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The parallel listing of evaluation properties is functional and reflects genuinely separate constructs. It does not flatten meaningful differences.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P002",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph names the two prior studies and states their relevance with sufficient specificity for an introduction paragraph, while keeping the cited claims linked to [[S01]] and [[S02]].",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The reasoning is clear: these studies are presented as precedents for language-dependent evaluation and explicitly not as support for an overlooked-field claim. The citations support the source-specific claims named here.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "ACTIONABLE",
+            "quote": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+            "explanation": "The opening sentence is clear but slightly generic. A more direct formulation would reduce stock framing without changing substance or citation links.",
+            "safe_action": "Replace 'When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment.' with 'When a language model evaluates answers, the evaluator itself must also be assessed.'"
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph does not hedge unnecessarily. Its restraint about what the cited work can and cannot support is appropriate.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The movement from general framing to the two cited precedents is direct and useful.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paired presentation of the two studies reflects a legitimate comparison rather than forced balance.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P003",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph already distinguishes the three constructs and gives concrete examples of how they can diverge. No approved package detail is needed for local clarification.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The argument progresses well from conceptual distinction to methodological consequence. The causal link introduced by 'therefore' is well supported by the preceding examples.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is purposeful and not notably stock or redundant.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification appears. The paragraph states logical possibilities rather than empirical claims, so the level of certainty is appropriate.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The transition 'Our study therefore' clearly links the design choice to the preceding conceptual distinctions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The three questions are parallel because the design intentionally separates them. This symmetry aids rather than obscures meaning.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P004",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is concise but sufficiently specific for a lead-in to the research questions. It identifies the task boundary and why that boundary matters.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The rationale for focusing on passage-grounded short answers is clear and proportionate to the claim being made.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The language is straightforward and functional.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging is present. 'Proposed pilot' is needed to preserve study status.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The final sentence works as an explicit transition into the research questions and does not obscure the connection.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced parallelism is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P005",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The three research questions are already specific about conditions, comparisons and outcomes. No local clarification from the package is required.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Each research question is tightly linked to the proposed design and distinguishes the intended comparisons clearly.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is concise and functional for enumerated research questions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The interrogative form appropriately reflects planned inquiry rather than asserted findings.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Not applicable as a list of questions; no empty transition language is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The parallel structure is appropriate because these are matched research questions by design.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P006",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph specifies the intended contribution and the limits on any novelty claim. It is sufficiently precise for contribution framing.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph clearly argues that the study's value depends on interpretability rather than a particular direction of result, and it preserves the unconfirmed status of novelty.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "ACTIONABLE",
+            "quote": "The intended contribution is a transparent replication-and-extension protocol with human reference labels in both selected languages, explicit language controls and separate error and stability measures. Its value does not depend on finding a language disadvantage: similar agreement, stable errors or problems in the test material would require different interpretations. The novelty of the combined protocol remains unconfirmed pending a broader literature comparison.",
+            "explanation": "'The intended contribution is' is mildly formulaic and can be made more direct without changing meaning or proposal status.",
+            "safe_action": "Replace 'The intended contribution is a transparent replication-and-extension protocol' with 'The study will contribute a transparent replication-and-extension protocol'."
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualification about unconfirmed novelty is necessary and explicitly supported by the package. It should remain.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The colon introduces concrete alternative interpretations effectively. No generic transition problem appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The list of possible outcome patterns reflects meaningful differences in interpretation rather than forced balance.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P007",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph names both cited studies and specifies the contrast being drawn between scope-limited English work and existing multilingual work. It is already appropriately specific.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The logic is clear: one English-only limitation plus one multilingual example undermines a false English-only versus multilingual dichotomy. The paragraph does not overgeneralise beyond that point.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is compact and not unduly stock.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is assertive where supported and cautious where needed. No unnecessary hedging is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The transition 'The relevant comparison is therefore' is substantive because it states the analytical consequence of the preceding examples.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The contrast between study types is not forced into misleading parallelism.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P008",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about what differs in Yu et al. and what existing line of inquiry the secondary condition follows. The distinction between instruction language and content language is explicit.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The evidence-to-claim link is clear: prior work on prompt-language variation motivates, but does not fully duplicate, the proposed instruction-language condition.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is disciplined and not noticeably formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging appears. 'Aims to preserve' is appropriate because the work is planned and because preserving meaning is an intended design property.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The first sentence introduces a real distinction rather than a generic bridge.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph appropriately highlights differences between prompt variation and content-language variation rather than masking them.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P009",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph serves as a brief orienting statement for the table and is sufficiently specific about the function of the final column.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The framing is clear and appropriately limits what the subsequent comparison claims.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Although brief, the wording is useful rather than stock because it sets an important interpretive constraint on the table.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "This is a functional table introduction, not an empty transition.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No symmetry issue arises.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P010",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The table is specific about verified design features and the intended relationship to the proposal. It preserves citation links per row.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The side-by-side structure clearly links existing verified features to the proposed comparison without claiming novelty. The argument is already disciplined.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The table language is compact and functional. No stock wording obstructs meaning.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording appropriately distinguishes verified prior features from intended proposed comparisons.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Not applicable in a problematic sense; the table does not rely on vague transitions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The row structure is naturally parallel for tabular comparison and does not hide meaningful differences, which are explicitly stated in each row.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P011",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph states a narrowly scoped contribution claim and specifies the three independently observable dimensions. It is sufficiently precise.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph draws a careful conclusion from the precedents and explains the study's integrated protocol without overreach.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is direct and not distractingly formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The caution against claiming a missing field is warranted, not excessive.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The opening reference to 'These precedents' is specific and clearly anchored to the preceding section.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The list of observable behaviours is appropriately differentiated.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P012",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The task definition is explicit about inputs, decision target and excluded dimensions. No further package detail is needed locally.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The explanatory link between task restriction and interpretability is clear and proportionate.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is concise and functional.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph stands on its own without generic connective filler.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No problematic symmetry is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P013",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about selection requirements, unresolved choices and the intended scope of inference. This is appropriate for a proposed study with open implementation details.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The argument correctly links feasibility-based language selection to limits on generalisation about language-resource availability.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is clear and not burdened by stock phrases.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The open-choice qualifications are necessary because the language and item source are genuinely unsettled.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph progresses logically from selection requirements to unresolved choices and inferential limits.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced parallelism obscures differences.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P014",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph gives concrete counts, construction rules and a review safeguard. It is already specific.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The construction logic is coherent: minimally altered incorrect variants are paired with human review to ensure actual incorrectness.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The language is practical and precise.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The modal wording is appropriate for planned work.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No generic transition issue appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paired construction across languages and answer types is a real design feature, not forced symmetry.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P015",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sentence clearly labels the example as synthetic and non-evidential. That is the key specific information needed here.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The caveat effectively prevents readers from misreading the illustration as sampled data.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is brief and functional.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualification is necessary and should remain explicit.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "This is a useful set-up for the illustrative table, not an empty transition.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No symmetry issue arises.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P016",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The illustrative table is specific and transparent about the example components.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "As a synthetic illustration, it supports understanding of the construction and does not overstate anything.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The tabular presentation is plain and effective.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Not applicable in a problematic sense for a simple illustrative table.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The table's parallel structure is natural and informative.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P017",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is already specific about joint translation, what bilingual review checks and why literal similarity is insufficient.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The methodological justification is clear and matches the study's concern with preserving meaning across versions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is precise and not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The conditional wording is appropriate because this describes planned paired versions, not completed translations.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No generic transition issue is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The joint treatment of passage, question and candidates is necessary to preserve equivalence and does not mask differences.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P018",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph clearly specifies practice-item exclusion, pre-freezing of materials and how later defects will be handled.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The procedural safeguards are logically linked to protecting against outcome-dependent changes.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is practical and unobtrusive.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sentences are directly connected by procedure rather than generic linking phrases.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced symmetry is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P019",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "This is a short lead-in to the decision-rule table and is sufficiently specific about shared task definitions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sentence prepares the reader for a key comparability feature of the design.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is simple and suitable as a table introduction.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "This is a functional transition into the table.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No symmetry issue arises.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P020",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The label definitions are detailed and operational. They already provide the specificity needed for both human and judge use.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The decision rules are clearly distinguished and align with the bounded passage-supported task.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The tabular rules are concise and functional.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification appears.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Not applicable in a problematic sense for a definitions table.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The parallel table structure helps comparison and does not conceal important differences among labels.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P021",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about rater fluency, blinding, order randomisation, retention of raw labels and adjudication rules.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The steps form a coherent annotation protocol, and the final sentence usefully clarifies that human references will remain human-generated.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is procedural and appropriately direct.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualification 'where practical' is justified because complete separation of paired variants may not always be feasible.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sequence of sentences follows the workflow naturally.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced parallelism is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P022",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph clearly states removal rules, reporting commitments, possible reviewer overlap and the status of pre-adjudication agreement.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The distinctions are methodologically well motivated, especially the separation between initial inter-rater agreement and agreement against final reference labels.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is clear and practical.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The conditional wording around reviewer overlap is necessary because it describes a contingency plan rather than an established fact.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No generic transitional filler is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph distinguishes different procedural issues without forcing them into misleading parallel structure.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P023",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about the minimum design, selection criteria, unresolved model details and the limits of an optional second judge.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The inferential limitation from one judge to judge families is clearly stated and appropriately constrained.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is disciplined and not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The unresolved-selection qualifications are necessary because the model has not yet been fixed.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph develops logically from minimum design to optional extension.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced symmetry issue appears.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P024",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The condition table is already precise about material language, instruction language and the purpose of each condition.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The table clearly operationalises the comparisons needed for the three research questions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The tabular wording is concise and effective.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "Not applicable in a problematic sense for a design table.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The parallel condition layout reflects the experiment's structure and does not obscure differences.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P025",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph clarifies exactly what changes between conditions and what the three-condition design does not cover. This is already specific.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph effectively guards against overinterpretation by explaining both the controlled contrasts and the design's limits.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is precise and not burdened by stock phrasing.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The negative limitation in the final sentence is appropriate and necessary.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sentence sequence is direct and cumulative.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paired contrasts A/B and B/C reflect real design differences and are not artificially symmetrical.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P026",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is already specific about call structure, fixed settings and recorded metadata.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The final sentence clearly distinguishes the purpose of fixed settings from any guarantee of determinism. The methodological logic is strong.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is detailed and functional rather than formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging is present. The caution about deterministic outputs is necessary.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The progression from procedure to record-keeping to interpretive caution is clear.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No problematic symmetry is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P027",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The workload calculations are explicit and numerically clear.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The arithmetic and implications for workload are easy to follow and consistent with the described design.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is practical and not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The optionality of J2 is appropriately marked.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The sentences form a straightforward workload summary.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced symmetry is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P028",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph clearly states that item and call counts are planning choices, what they enable and what a confirmatory design would additionally require.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The argument responsibly limits what can be inferred from the pilot sizing and explains why three calls are only a coarse stability check.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The phrasing is direct and appropriately methodological.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The caution is justified and necessary for a feasibility pilot.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is coherent without generic filler.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No symmetry issue appears.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P029",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is concise but specific about the unit of paired comparison and non-independence of derived observations.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The inferential point about non-independence is clear and methodologically important.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is brief and functional.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No transition issue appears in this stand-alone methodological clarification.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The list of non-independent derived observations is appropriate and not artificially balanced.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P030",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph defines the primary measure clearly, including aggregation order and the treatment of abstentions, invalid outputs and technical failures.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The measure is well motivated and the final sentence correctly limits interpretation of non-matches.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is technical but purposeful, not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The interpretive caution is necessary and not excessive.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is internally coherent and does not rely on empty transitions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The distinctions among non-match types are preserved rather than flattened.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P031",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph specifies additional measures, the handling of undefined kappa and the interpretation of technical-failure-driven contrasts. It is already precise.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The opening rationale 'To separate these mechanisms' is well supported by the measures that follow, and the final sentence appropriately constrains interpretation.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is technical and clear.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging appears. The caution about language-understanding deficits is needed.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The initial transition is substantive because it names the analytical purpose of the extra measures.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced parallelism hides differences; the different metrics and interpretations remain distinct.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P032",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph defines error types, denominators and accompanying reports clearly.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The distinction between accepting incorrect answers and rejecting correct ones is analytically useful and clearly motivated.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is efficient and precise.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary qualification is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph moves directly through the analysis components without generic filler.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The contrasted error types are genuinely parallel and not misleadingly symmetrical.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P033",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The definition of repeated-call stability is clear, and the treatment of repeated abstentions and invalid outputs is explicit.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The final sentence gives a strong reason for examining agreement alongside stability, preventing stable but wrong behaviour from being misread as good performance.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is precise and not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No unnecessary hedging is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is tightly connected without generic transition language.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The distinction between repeated abstentions and repeated binary decisions is preserved clearly.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P034",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about the comparison basis, eligibility for the change-rate calculation, and the extension of the same measures to RQ3.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The methodological caveat about repeat-index matching is well stated and helps prevent overinterpretation of the paired descriptive comparison.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The prose is technical and purposeful.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The limitations are necessary and appropriately framed.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The switch from A/B comparison to the RQ3 analogue is explicit and useful rather than generic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The matched comparisons are structurally parallel because the design requires that, but the paragraph still states their different purposes clearly.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P035",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph specifies the resampling unit, what remains clustered and how problematic interval outcomes will be handled.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The inferential caution is strong and appropriate for a small exploratory bootstrap analysis.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is compact and methodologically clear.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualifications are necessary because the intervals are explicitly exploratory and the sample is small.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No generic transition issue is present.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "No forced symmetry is present.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P036",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph gives concrete prospective interpretation rules for several possible result patterns and explicitly states that these are not observed findings.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The interpretive branches are logically connected to the earlier design choices and maintain the distinction between observed outcomes and planned interpretation.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is clear and not burdened by stock wording.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The final sentence is an essential proposal-status safeguard, not unnecessary hedging.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The opening sentence introduces the interpretation scheme directly and usefully.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The three interpretive possibilities are appropriately contrasted and do not erase meaningful differences.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P037",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about major scope limits and a plausible ceiling-effect risk from minimal constructed errors.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The limitations are directly tied to the design and clearly delimit what conclusions the pilot cannot support.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The limitation wording is concrete and not formulaic.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The modal phrasing around ceiling effects is appropriate because this is a possible risk, not an established problem.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph states limitations directly without filler transitions.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The list of limitations is not artificially balanced; each constraint is distinct and clearly stated.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P038",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph is specific about threats to reference quality and sample construction, and it states the planned mitigation through reporting and provenance documentation.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The causal links are clear: because these factors may affect the sample and labels, exclusion counts and reasons will accompany the results. The paragraph remains appropriately cautious.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The wording is clear and concrete.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The uncertainty markers are necessary because these are potential threats rather than observed failures.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "'Therefore' serves a substantive explanatory function here.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The listed threats are meaningfully different and not masked by forced parallel phrasing.",
+            "safe_action": ""
+          }
+        ]
+      },
+      {
+        "paragraph_id": "P039",
+        "findings": [
+          {
+            "criterion": "specificity",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The conclusion is specific about the three outcomes, the key design features and the study's non-directional purpose. No local clarification is needed.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "argument_strength",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The paragraph accurately restates the planned contribution and limits without overstating what has been shown. The final sentence preserves proposal status clearly.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "formulaic_language",
+            "status": "ACTIONABLE",
+            "quote": "We propose a controlled bilingual QA study that evaluates human–judge agreement, cross-language decision changes and repeated-call stability as distinct outcomes. Matched correct and incorrect candidates, human review in each language and a separate instruction-language contrast make the intended comparisons explicit. The contribution is a bounded, auditable replication-and-extension design. The evaluation plan does not presume a language disadvantage or an improvement from translated instructions; its purpose is to determine which conclusions the selected data and protocol can support. Experimental performance remains to be measured.",
+            "explanation": "The conclusion is strong overall, but 'The contribution is' is slightly formulaic and can be made more direct while preserving proposal status and scope.",
+            "safe_action": "Replace 'The contribution is a bounded, auditable replication-and-extension design.' with 'This study will contribute a bounded, auditable replication-and-extension design.'"
+          },
+          {
+            "criterion": "inappropriate_hedging",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The qualifications are necessary because the work is proposed and because no results yet exist.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "generic_transitions",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The concluding movement from design summary to interpretive purpose is clear and substantive.",
+            "safe_action": ""
+          },
+          {
+            "criterion": "unnatural_symmetry",
+            "status": "NO_ISSUE",
+            "quote": "",
+            "explanation": "The three outcome types are appropriately listed as distinct measured dimensions. The parallel structure supports clarity.",
+            "safe_action": ""
+          }
+        ]
+      }
+    ]
+  }
+}

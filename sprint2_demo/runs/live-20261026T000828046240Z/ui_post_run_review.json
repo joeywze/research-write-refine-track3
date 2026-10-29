@@ -1,0 +1,78 @@
+{
+  "checked_utc": "2026-10-26T00:24:08.856395+00:00",
+  "status": "BROWSER_TO_MODEL_TO_RESULTS_AND_DOWNLOAD_VERIFIED",
+  "run_id": "live-20261026T000828046240Z",
+  "job_id": "b6f8feb0bf2b4d4b9fed800207bd38f0",
+  "local_live_url": "http://127.0.0.1:8502",
+  "read_only_preview_url": "http://127.0.0.1:8501",
+  "one_browser_start_observed": true,
+  "duplicate_start_disabled_while_running": true,
+  "completion_opens_correct_result": true,
+  "download_sha256": "ebde4ddd72b71a8c5f5a43f1e21c54caf61b386f95999afac1c6cf56d55ed88d",
+  "download_matches_accepted_output": true,
+  "scores": [
+    {
+      "Version": "Original V0",
+      "Review points flagged by rules": 0,
+      "Review points flagged by the LLM": 2
+    },
+    {
+      "Version": "Generic V1",
+      "Review points flagged by rules": 0,
+      "Review points flagged by the LLM": 2
+    },
+    {
+      "Version": "Guided V2",
+      "Review points flagged by rules": 0,
+      "Review points flagged by the LLM": 0
+    }
+  ],
+  "accepted_guided_revisions": 1,
+  "changed_blocks": [
+    "P002",
+    "P008"
+  ],
+  "preservation": "PASS_AGAINST_PROVISIONAL_PACKAGE",
+  "all_four_tables_unchanged": true,
+  "protected_content_check": "PASS",
+  "safety_case": {
+    "kind": "DELIBERATE_INJECTED_EDIT_NOT_LLM_OUTPUT",
+    "record_id": "056de77956f748aaa65d76b5426cf364",
+    "number_change": "20 to 21",
+    "rejected": true,
+    "accepted_output_retained": true,
+    "api_calls": 0
+  },
+  "usage": {
+    "core_model_calls": 6,
+    "development_check_calls": 0,
+    "core_model_seconds": 136.9,
+    "reported_input_tokens": 109435,
+    "reported_output_tokens": 13176,
+    "known_core_token_cost_estimate_usd": "0.40568650",
+    "unknown_usage_calls": 0
+  },
+  "new_api_calls_this_ui_run": 6,
+  "run_estimate_usd": "0.40568650",
+  "cumulative_budget_accounted_usd": "4.49960975",
+  "unknown_reservations_usd": "1.7103300",
+  "interface_tests_passed": 10,
+  "navigation_fix": "Full app rerun after completing a fragment-started job; covered by regression test and verified in browser.",
+  "sdk": {
+    "streamlit": "1.66.1",
+    "openai": "2.54.0"
+  },
+  "runtime_backend_snapshot_matches": true,
+  "public_deployment": "NOT_PUBLISHED",
+  "remote_branches_modified": false,
+  "team_repo_connection": "GitHub connector returned 404 for joeywze/research-write-refine-track3",
+  "source_approval": "PENDING",
+  "source_support_warnings": 4,
+  "independent_human_and_held_out_evaluation": "PENDING",
+  "deployment_zip": "C:\\Users\\Guan Hong\\.codex\\.chatgpt-projects\\g-p-6a8fa694eba08191bb7613b87972cd45\\output\\sprint2-integration-20261025\\deployment\\sprint2-demo-20261026-v4.zip",
+  "deployment_zip_sha256": "7d54c3746d2212fae04012060f9b004ce739806d72668f53f6a2718166912a34",
+  "bundle_hashes_verified": 196,
+  "credentials_in_bundle": false,
+  "hosted_paid_calls": "DISABLED",
+  "container_build": "NOT_EXECUTED"
+}
