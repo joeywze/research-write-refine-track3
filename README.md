@@ -27,6 +27,29 @@ The module also records sentence-length variance, hedge frequency, repeated trig
 Rule-based checks count long sentences, repeated transitions and unusually uniform sentence lengths. LLM writing review identifies passages that could benefit from clearer, more precise, better-connected or more natural wording. Each point eligible for revision includes a quote, explanation and suggested change. Problems that need more evidence are recorded for review.
 
 The LLM uses six detailed criteria: specificity, argument strength, formulaic language, inappropriate hedging, generic transitions and unnatural symmetry. Its count is the number of actionable paragraph-criterion findings, which can exceed six across a full paper. Both methods may flag the same passage, so their counts remain separate.
+## Cluster 7 Source Evidence Review
+
+The [source-cited review of all 18 Cluster 7 papers](docs/cluster7_source_evidence_review.md)
+records 52 short author quotations with PDF page and section links. Each quotation
+was checked against the saved extracted text and the local paper PDF. The
+[verification manifest](data/processed/cluster7_source_evidence_manifest.json)
+records paper IDs, source hashes, page locations and quotation hashes.
+
+This is a targeted source-passage review, not an independent reproduction of the
+papers' results or approval of a research-gap claim. Dimensions not established by
+the cited evidence remain unclear. The original automated review files are retained.
+
+## Part A Research Development and Provisional V0
+
+The [working Part A handover](docs/part_a_research_development/README.md) follows
+the literature-verification, evidence-table, candidate-gap and proposed-study steps.
+It includes 18 claim records with 38 checked excerpts, external counterevidence,
+an evaluation plan and a six-section provisional V0.
+
+This is an evidence-backed proposal, not a completed experiment or a confirmed
+novelty claim. Language selection, raters, data source, judge configuration and
+Team A approval remain unresolved. The original automated review files are retained.
+
 
 Guided candidates must pass preservation, avoid increasing either issue count and reduce at least one. Use `--method rules-only` to run the original three-rule comparison without the LLM critic. See [the writing guide](docs/stage_b.md) and [feature selection](docs/feature_selection.md) for details.
 

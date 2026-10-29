@@ -1,0 +1,781 @@
+{
+  "schema": "cluster7_quote_verification_v1",
+  "review_date": "2026-10-20",
+  "review_scope": "Targeted source-passage verification for all 18 papers; not experimental replication or a comprehensive novelty search.",
+  "normalization": "Whitespace collapsed; line-break hyphens either retained for compound names or removed for word wrapping. Words and other punctuation retained.",
+  "research_gap_approval": "not_assessed",
+  "papers": [
+    {
+      "paper_id": "2025.emnlp-main.86",
+      "title": "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.86/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.86.pdf",
+      "pdf_sha256": "816a1769569999c165c9dc512b5d6b2b5ea59fd4316a27dd43c0b4b5d3e0f0ce",
+      "text_sha256": "d4986048aadfae4a14c6ac78cdff17402d4cd2045fb47c61ff11d51b8d120c0e",
+      "quoted_words_total": 19,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.86-q1",
+          "topic": "Judging prompt",
+          "pdf_page": 20,
+          "section": "Table 10",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.86.pdf#page=20",
+          "normalized_quote_sha256": "371430c85aa9cdef2abdfc04f5b31925ed0858ec0c2c97cd08254903b9f4e178",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.86-q2",
+          "topic": "Task-scope limitation",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.86.pdf#page=9",
+          "normalized_quote_sha256": "df07bdeb7bef646f6737f0b5e0e80726a67ef846f30e41915609937a46a7613d",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.103",
+      "title": "Direct Judgement Preference Optimization",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.103/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.103.pdf",
+      "pdf_sha256": "bbc586e1a055a698cb0ec3863517656b26bde8a0dc9dee6c8f6e1b78ca1df45e",
+      "text_sha256": "9c57ba25ffaf3ac04bcf5f431d6a524e031dd2e7df15cf4a3f2c8bdd77b40371",
+      "quoted_words_total": 18,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.103-q1",
+          "topic": "Evaluation language",
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+          "normalized_quote_sha256": "15887dc99b060e8172bf548c880c6f9965fe3f1b9c49f0ec26e050300e0a8431",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.103-q2",
+          "topic": "Future work",
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.103.pdf#page=10",
+          "normalized_quote_sha256": "1f7545e01394ea55d1591e20527e2b771f7c1b51aeb02f47bc37bea54c351068",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.138",
+      "title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.138/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.138.pdf",
+      "pdf_sha256": "026d203f5f4b155890905f1ac2c7d560134b07596eff6e5d23b447a82887834f",
+      "text_sha256": "a22600ad84ff329fe88a762417dbfea3f179ced50a1e232d5b6a3a83e241fa6f",
+      "quoted_words_total": 17,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.138-q1",
+          "topic": "Type of paper",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.138.pdf#page=9",
+          "normalized_quote_sha256": "746f48a183461b9d65a240fda7f8ec1abae618f281a0c21545ac80febc008f8c",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.138-q2",
+          "topic": "Survey statement",
+          "pdf_page": 29,
+          "section": "Appendix C.1.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.138.pdf#page=29",
+          "normalized_quote_sha256": "db60e6d9cc2cddc32da91b421fe81538bb91c0daedfa0ebea9a9ef1bfb15b76c",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.360",
+      "title": "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.360/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.360.pdf",
+      "pdf_sha256": "5d32e6acae9a508573de5843f2a613d7cd6cd72aa64240c5b20258373ccc0e14",
+      "text_sha256": "cbdb1fb80fa73c640b9cf16374b2eb55f1876b62291dc9ece7fca7f03fe78194",
+      "quoted_words_total": 16,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.360-q1",
+          "topic": "Stochastic experiment reference",
+          "pdf_page": 5,
+          "section": "Section 4.2, initial conditions",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.360.pdf#page=5",
+          "normalized_quote_sha256": "fe443156f8d7a665a0831e7b72b1e828d0f8bdd994d72a5972187364047030fb",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.360-q2",
+          "topic": "Limitation",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.360.pdf#page=9",
+          "normalized_quote_sha256": "a0374df0adb63919523b8221e27c7a51660ae9227e1c00f498576b171130420b",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.538",
+      "title": "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.538/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.538.pdf",
+      "pdf_sha256": "9e42bc8ff7ab64398e642d187ed23e9260e7486daa0ba793317c6c0c0116678d",
+      "text_sha256": "8cc09a9fdf083c5a6ed3ec0ce1b03cca51651b5e2b8a5be5b98928e03cd49c15",
+      "quoted_words_total": 25,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.538-q1",
+          "topic": "Pairwise data",
+          "pdf_page": 4,
+          "section": "Section 4.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=4",
+          "normalized_quote_sha256": "b9b147a7ec16ac3e5d04ae9560c0066420491c1fe8ca9335c79b8f63a4718ad3",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.538-q2",
+          "topic": "Direct-scoring data",
+          "pdf_page": 4,
+          "section": "Section 4.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=4",
+          "normalized_quote_sha256": "05a512c82841e895e54039e74746756f0559f1ee51d7c23a86dbacf2b2ed8bb0",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.538-q3",
+          "topic": "Reported conclusion",
+          "pdf_page": 9,
+          "section": "Section 7",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=9",
+          "normalized_quote_sha256": "e7adc53b5e508076daa7679f2ccef28da7388ed0e69c017486cf608c5029cdf5",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.538-q4",
+          "topic": "Limitation",
+          "pdf_page": 10,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.538.pdf#page=10",
+          "normalized_quote_sha256": "5026c7b58d8f0fba49413c390c31dc85460b5f714d5fb0bdf8cec55cb04d63d9",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.569",
+      "title": "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.569/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.569.pdf",
+      "pdf_sha256": "041a649ea53d9f0e8bfa6d25f994724b67e2f8c0514d1fa2d0f85c4ff5c1369b",
+      "text_sha256": "eb1761b8a0175ceb1acff33ea62fd0c9570122b8a0fe36bbbaac8c15473d1023",
+      "quoted_words_total": 17,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.569-q1",
+          "topic": "Main task scope",
+          "pdf_page": 10,
+          "section": "Limitations, continued",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=10",
+          "normalized_quote_sha256": "0317e170c65c2061d893151af4360c7d8a90835d59bf1b122cdeaec8c34f5022",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.569-q2",
+          "topic": "Appendix experiment",
+          "pdf_page": 22,
+          "section": "Appendix A.12",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=22",
+          "normalized_quote_sha256": "007c40e43490359599bd20a866aaeeebf1dc308d0f7fd4891546d76f7a2c912a",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.569-q3",
+          "topic": "Calibration caveat",
+          "pdf_page": 10,
+          "section": "Ethical Considerations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.569.pdf#page=10",
+          "normalized_quote_sha256": "d192d66c132c3ebe811515270d909d0924102882aa1b60eb49a1d1fb28769ecd",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.583",
+      "title": "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.583/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.583.pdf",
+      "pdf_sha256": "0b783b34d32890b6f79a8e86b0fcdab744f571a409a620e8cc2109bcd5aa72b6",
+      "text_sha256": "0802c7a15a7c1c2e809997eede6826aa8c6d9b18847eb7082fd63495efd038b0",
+      "quoted_words_total": 19,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.583-q1",
+          "topic": "Seed model",
+          "pdf_page": 4,
+          "section": "Section 3.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.583.pdf#page=4",
+          "normalized_quote_sha256": "1e1ebdd9ab9f4b2930000864a4012fb8729eb34b715c570e4af0e6b07c767706",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.583-q2",
+          "topic": "Human comparison",
+          "pdf_page": 16,
+          "section": "Table 7 caption",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.583.pdf#page=16",
+          "normalized_quote_sha256": "68fe7c3833adcafff71f34b4695ff6268d62e7e4886c6983689d22c5c4ff9c38",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.583-q3",
+          "topic": "Limitation anchors",
+          "pdf_page": 9,
+          "section": "Section 6",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.583.pdf#page=9",
+          "normalized_quote_sha256": "379efe3c8fe217c6a61926ea0db8da511a68303a8ca8554b7973db9cc4adda8f",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.583-q4",
+          "topic": "Limitation anchors",
+          "pdf_page": 9,
+          "section": "Section 6",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.583.pdf#page=9",
+          "normalized_quote_sha256": "d8ca58579d8a341dfd386916b1174e1b4a0b3c921425bf6f820538b7d2e8f2b5",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.625",
+      "title": "Self-Augmented Preference Alignment for Sycophancy Reduction in LLMs",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.625/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.625.pdf",
+      "pdf_sha256": "1092798cb649f18c2b509e60f5a95fcce8fc390d50acfbbf6bf10d4ec1f2a43b",
+      "text_sha256": "31bd99461225e38460b1d71dea380e2551848ab3389eabee81e57b8a2c816832",
+      "quoted_words_total": 17,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.625-q1",
+          "topic": "Evaluation setting",
+          "pdf_page": 4,
+          "section": "Section 3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.625.pdf#page=4",
+          "normalized_quote_sha256": "7cc55fa930ea725ae047d5e13d1bf570f09f2dc5f7eeea9b20d72072de15157a",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.625-q2",
+          "topic": "Evaluator purpose",
+          "pdf_page": 5,
+          "section": "Section 3.2",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.625.pdf#page=5",
+          "normalized_quote_sha256": "b12238209a1d7f40f28096fb190ba7a2280526e0e226f04e31a1c34f61b8ab7e",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.712",
+      "title": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.712/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.712.pdf",
+      "pdf_sha256": "4303dd90fa42b5d0c55c39b840fe79ed043e0484052c5f216b473e9b8ef881fa",
+      "text_sha256": "bbcc4277e55fe0b86f56a1837289a82c8b127987c660172c29df04665acbfaa7",
+      "quoted_words_total": 19,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.712-q1",
+          "topic": "Judging-instruction variant",
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "2166b1a139a1e1086d42e02fcae04dce2e7881bf3f0d25cb25e0e1f8d02e6663",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.712-q2",
+          "topic": "Judging-instruction variant",
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "4f7b289a97ac0455aba43fc0d5004e1715e54da7cabc0db524a81c42daff5ce6",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.712-q3",
+          "topic": "Judging-instruction variant",
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "200750f83b234929504e12840d1a33240f6824d920ade63f93440d0c52673910",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.712-q4",
+          "topic": "Evaluation benchmark",
+          "pdf_page": 7,
+          "section": "Section 4.3.3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.712.pdf#page=7",
+          "normalized_quote_sha256": "ea3b122cacdefa3a5437b69d6f651a3444ad72922aecec32c08c11fb85885811",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.716",
+      "title": "Towards Optimal Evaluation Efficiency for Large Language Models",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.716/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.716.pdf",
+      "pdf_sha256": "56095b24c5584b06fca7f6794625555382635f414616c2b2280f2e6903818808",
+      "text_sha256": "1004ec10cb56b92044d9de1a81d9adab4bacb032c8d8cb84e49c709e041246ff",
+      "quoted_words_total": 13,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.716-q1",
+          "topic": "Benchmark selection",
+          "pdf_page": 3,
+          "section": "Section 4",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.716.pdf#page=3",
+          "normalized_quote_sha256": "da664bda5d5e0a76d9c46082deabdd137e7a1397d655fdb776def0013a297f88",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.716-q2",
+          "topic": "Benchmark selection",
+          "pdf_page": 3,
+          "section": "Section 4",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.716.pdf#page=3",
+          "normalized_quote_sha256": "c601f806d80336c55caeede61ed6d7dfb1f08a6387d3ceabebdb3ec9f7918035",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.716-q3",
+          "topic": "Benchmark selection",
+          "pdf_page": 3,
+          "section": "Section 4",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.716.pdf#page=3",
+          "normalized_quote_sha256": "07b9e4fd5ea766bf005816aba7aad362b2c570094f499b7b78165e2dcb16412c",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.716-q4",
+          "topic": "Limitation",
+          "pdf_page": 5,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.716.pdf#page=5",
+          "normalized_quote_sha256": "81d86bd2e420c8c41d519811a8b74c8217ed8931440533376422c31e01e29cd6",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.796",
+      "title": "CheckEval: A reliable LLM-as-a-Judge framework for evaluating text generation using checklists",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.796/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.796.pdf",
+      "pdf_sha256": "e56135b11cf57ae4bdbab99257ac5e2d70266a20c2060f9d40c014d2f8b5f1f9",
+      "text_sha256": "aaf1bf1d5dbb52738d82ea474eae172e547fdd48894dbfa13830de3db20eefc4",
+      "quoted_words_total": 18,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.796-q1",
+          "topic": "Benchmark name",
+          "pdf_page": 5,
+          "section": "Section 4.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=5",
+          "normalized_quote_sha256": "f59fde2e9d0801afd8b4acc86187759851453c5450fea00f522f342ae9da6868",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.796-q2",
+          "topic": "Benchmark name",
+          "pdf_page": 5,
+          "section": "Section 4.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=5",
+          "normalized_quote_sha256": "5610e1e396eacf839f04983ace213d7e34a1ca838b43ff0eb33484694ec4c61f",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.796-q3",
+          "topic": "Benchmark name",
+          "pdf_page": 5,
+          "section": "Section 4.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=5",
+          "normalized_quote_sha256": "8572f722a72d0f2e77550f9bd18f3f206cec7b33d66b0ade9df14d815788f4a3",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.796-q4",
+          "topic": "Limitation",
+          "pdf_page": 10,
+          "section": "Section 9, continued",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.796.pdf#page=10",
+          "normalized_quote_sha256": "fef0f33653e136dfeded602bcb18d5fce7fddb79d9971a96fc97fe2e488804b5",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.891",
+      "title": "Multi-perspective Analysis of Large Language Model Domain Specialization: An Experiment in Accounting Audit Procedures Generation",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.891/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.891.pdf",
+      "pdf_sha256": "f1ab04409b3e37387b0e37dd89dcfb0aacc6dcb5d6622d634548e51bd562f972",
+      "text_sha256": "cfec716c71ce738b2e3c0744886541629b8b2580587d352e546d24893d3e1bc1",
+      "quoted_words_total": 22,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.891-q1",
+          "topic": "Main-task instruction anchor",
+          "pdf_page": 4,
+          "section": "Section 3.7",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=4",
+          "normalized_quote_sha256": "06d0ab9c7de2128226e859877eb25e42f9eb81991913b1dcbd097ae22e0343de",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.891-q2",
+          "topic": "MilkQA evaluation instruction",
+          "pdf_page": 14,
+          "section": "Appendix B.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "6bf840e419694131bd3d8a8330e0b7ca63a52e8c5c18c0eaff9dae06644034f6",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.891-q3",
+          "topic": "cMedQA2 evaluation instruction",
+          "pdf_page": 14,
+          "section": "Appendix B.2",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "7db5b9ed4dabd95ddbc7df7efa284b2e0947903a4dacf54fc219df5fab126b08",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.891-q4",
+          "topic": "ELI5-Category description anchor",
+          "pdf_page": 14,
+          "section": "Appendix B.3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.891.pdf#page=14",
+          "normalized_quote_sha256": "c275e41c87ba9919d4f40c244fab40b50fdb9dbdf1b5e743b1f7e709493f4aa8",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.953",
+      "title": "Debatable Intelligence: Benchmarking LLM Judges via Debate Speech Evaluation",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.953/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.953.pdf",
+      "pdf_sha256": "cb1fc37de33b89c779420f86fb0958888a9fe4323dd5269e17d382962416bf18",
+      "text_sha256": "14fef10b9df1e89105e35834d378020fb386473d28f74eeb897e6e785087b241",
+      "quoted_words_total": 19,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.953-q1",
+          "topic": "Human annotations",
+          "pdf_page": 3,
+          "section": "Section 3",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.953.pdf#page=3",
+          "normalized_quote_sha256": "2403d8173a73db69216b3cc8e9f2e96ee49f693abc5332010cc8566879a8b69b",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.953-q2",
+          "topic": "Task-scope limitation",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.953.pdf#page=9",
+          "normalized_quote_sha256": "48a8c65eb9d2e881f3639574ec90d033bb1f12ca835267ac9fbe915a31bea451",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.953-q3",
+          "topic": "Judge-type limitation",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.953.pdf#page=9",
+          "normalized_quote_sha256": "6649e7b22e9a4453609a03c5f5bcd1ec2ca3e0c54a3914baefd9d09a09650be5",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.992",
+      "title": "Beyond the Score: Uncertainty-Calibrated LLMs for Automated Essay Assessment",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.992/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.992.pdf",
+      "pdf_sha256": "eb5116f56c743b9a398eade0ed09892bbd14e44ee94874a64a9121fea9b84da0",
+      "text_sha256": "bb5f7deb032a58bb7e1e4013660b9c6a6a0fabf2e6c4d3b18a7d886db08e2201",
+      "quoted_words_total": 12,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.992-q1",
+          "topic": "Evaluation language",
+          "pdf_page": 5,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.992.pdf#page=5",
+          "normalized_quote_sha256": "58b47c4ede945ba9d311ee9d771f0b64ed61946247807c5af6d7e362de40e697",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.992-q2",
+          "topic": "Calibration condition",
+          "pdf_page": 5,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.992.pdf#page=5",
+          "normalized_quote_sha256": "6e3694d7fa8fc257d09d087c1c13bb3e10a72797171de5364ad6b5f982b83a5f",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.1021",
+      "title": "MR. Judge: Multimodal Reasoner as a Judge",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1021/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.1021.pdf",
+      "pdf_sha256": "6ad4c93784a1e389792caa343a9b4a828360eb00c7cf2632e67147d84b3df638",
+      "text_sha256": "dff27709628f8d45f58eefe42c1ebd9eee72dada64c6adc2746f8182d4d1d421",
+      "quoted_words_total": 16,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.1021-q1",
+          "topic": "Judge formulation",
+          "pdf_page": 1,
+          "section": "Abstract",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1021.pdf#page=1",
+          "normalized_quote_sha256": "3cb07c5d326e3d6abb6b6a1595f6c2d5652b33ae5d78dbdf81d535cd45d9347d",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1021-q2",
+          "topic": "Training control",
+          "pdf_page": 5,
+          "section": "Section 4, continued",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1021.pdf#page=5",
+          "normalized_quote_sha256": "c2579d3c8ccff9151de3b55e4510d22bca0746f558a9880af40ee80d8846ff1b",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1021-q3",
+          "topic": "Limitation",
+          "pdf_page": 9,
+          "section": "Section 9",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1021.pdf#page=9",
+          "normalized_quote_sha256": "b5f081fcedd80881dbc8b3eaae61a638702d6e34aae6ea78a9af968394bb7f4a",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.1307",
+      "title": "Co-Eval: Augmenting LLM-based Evaluation with Machine Metrics",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1307/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.1307.pdf",
+      "pdf_sha256": "ec2f3683593262358fda5c22e37fd10d5f9eeb3ff7cb2e230d2b65682d270bab",
+      "text_sha256": "c7cb5d15fcc94f9fa1e069b5d68b828205ce4bc5e338147f04af7c2a3a3808ce",
+      "quoted_words_total": 20,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.1307-q1",
+          "topic": "Translation experiment",
+          "pdf_page": 5,
+          "section": "Section 4.2",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=5",
+          "normalized_quote_sha256": "6d4a29a547c17432cf5db866a884544a25a21e1f0a10955ff95fb4e10dadb8f3",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1307-q2",
+          "topic": "Retrieval limitation",
+          "pdf_page": 9,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1307.pdf#page=9",
+          "normalized_quote_sha256": "4b0a513573dda9d65c5e5da1ba23c2da7f6894435940c111ac5a32a87e923c51",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.1534",
+      "title": "Model Consistency as a Cheap yet Predictive Proxy for LLM Elo Scores",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1534/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.1534.pdf",
+      "pdf_sha256": "f4cf15e79c7ad8cb3e1d6ec2feff55c5e4fe4ae7b8fd3206430e67ea8b669aae",
+      "text_sha256": "229683235e3e4d020df9a2ce37ef715f32de88367f79e7f7e775e8931491c7b4",
+      "quoted_words_total": 20,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.1534-q1",
+          "topic": "Human-label use",
+          "pdf_page": 3,
+          "section": "Section 3.1",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1534.pdf#page=3",
+          "normalized_quote_sha256": "aaf3d753f307b04dcaa2de7bd7bc49c94961602ac04d10431523cc23e153182f",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1534-q2",
+          "topic": "Limitation",
+          "pdf_page": 5,
+          "section": "Limitations",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1534.pdf#page=5",
+          "normalized_quote_sha256": "207a576b23d94e0db2974402c776e0f22e94e5092703453c1c5e180d574a6910",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    },
+    {
+      "paper_id": "2025.emnlp-main.1625",
+      "title": "Can Large Language Models Outperform Non-Experts in Poetry Evaluation? A Comparative Study Using the Consensual Assessment Technique",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1625/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.1625.pdf",
+      "pdf_sha256": "041913872f1858f113fcecf903dfd0445e573458956b94f99e9a0a7303dc30d5",
+      "text_sha256": "980e99a96cf7ff07b6ca09409013b300041392fb0b2ab1921917c62d47f25411",
+      "quoted_words_total": 21,
+      "quote_verification": "matched_local_pdf_and_extracted_text",
+      "scientific_results_independently_reproduced": false,
+      "language_coverage_classification": "not_assigned_from_missing_evidence",
+      "excerpts": [
+        {
+          "id": "2025.emnlp-main.1625-q1",
+          "topic": "Dataset scope",
+          "pdf_page": 9,
+          "section": "Section 11",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=9",
+          "normalized_quote_sha256": "a7fa4023cd54be3c2b280a939c80fa60f744b78cd70681e3c4942d0eca114380",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1625-q2",
+          "topic": "Repeated-run setting",
+          "pdf_page": 8,
+          "section": "Section 8",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=8",
+          "normalized_quote_sha256": "436be87c9585a637868418cac15179523f2652991a678010af210ff04cf4022b",
+          "text_match": true,
+          "pdf_match": true
+        },
+        {
+          "id": "2025.emnlp-main.1625-q3",
+          "topic": "Validation limitation",
+          "pdf_page": 9,
+          "section": "Section 11",
+          "citation_url": "https://aclanthology.org/2025.emnlp-main.1625.pdf#page=9",
+          "normalized_quote_sha256": "a8170ec304c41e0a4949da9725a39b637effc68dbc8e510c9d7f8e59aeadf7e8",
+          "text_match": true,
+          "pdf_match": true
+        }
+      ]
+    }
+  ]
+}
