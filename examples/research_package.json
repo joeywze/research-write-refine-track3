@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "package_id": "synthetic_energy",
+  "title": "Synthetic fixture: a proposed energy-demand forecasting comparison",
+  "research_question": "How could two forecasting approaches be compared under time-ordered validation?",
+  "gap": "This synthetic exercise leaves comparative predictive performance unknown; no literature novelty is claimed.",
+  "contribution": "A proposed comparison protocol, not an established performance improvement.",
+  "methodology": "Compare two energy-demand forecasting approaches using 20 observations and time-ordered validation. No experiments have been conducted.",
+  "study_status": "proposed",
+  "sources": [
+    {
+      "source_id": "Sdemo",
+      "title": "Synthetic protocol fixture (invented for software testing; not a publication)",
+      "url": "https://example.invalid/synthetic-protocol"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "Edemo",
+      "source_id": "Sdemo",
+      "excerpt": "This synthetic protocol specifies 20 observations for a proposed energy-demand forecasting exercise. Use time-ordered validation. No experiments have been conducted; predictive performance is unknown. This is invented test data, not empirical evidence.",
+      "locator": "Complete synthetic test protocol"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "Cprotocol",
+      "text": "The synthetic protocol specifies 20 observations.",
+      "kind": "source",
+      "evidence_ids": [
+        "Edemo"
+      ],
+      "qualifications": [
+        "Synthetic test data, not empirical evidence."
+      ]
+    },
+    {
+      "claim_id": "Cplan",
+      "text": "We propose to compare two energy-demand forecasting approaches using time-ordered validation.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "No comparative advantage is established."
+      ]
+    },
+    {
+      "claim_id": "Cunknown",
+      "text": "No experiments have been conducted and predictive performance is unknown.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Do not report completed results."
+      ]
+    }
+  ],
+  "technical_terms": [
+    "time-ordered validation"
+  ],
+  "limitations": [
+    "Synthetic software-test fixture; no empirical results or real literature grounding."
+  ],
+  "unknowns": [
+    "Comparative performance and generalisability remain unknown."
+  ]
+}
