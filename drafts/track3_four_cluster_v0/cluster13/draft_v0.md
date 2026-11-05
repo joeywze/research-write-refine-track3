@@ -1,0 +1,149 @@
+# Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors
+
+Draft V0 — revised 5 November 2026 after full-text review of all 22 Cluster 13 papers and four close 2026 papers. Proposed study; no experimental results are reported.
+
+## Abstract
+
+Binary AI-text detection becomes conceptually unstable when a document has both human and model contributors. Existing studies already evaluate sentence-level hybrid text, paraphrase attacks, same-generator rewriting, human-edited AI drafts, realistic web rewrites and cross-dataset failures. The unresolved question is therefore not whether detectors fail on edited text, but what their scores track when origin and latest editor vary independently. We propose a bidirectional revision-history audit built from identical briefs and fully logged trajectories: human-origin texts edited by a model and model-origin texts edited by a human, alongside same-origin editing controls. Copy-editing, structural revision, bounded substantive revision and controlled sentence replacement will be matched across routes. Human reviewers will verify claim preservation and mark changed spans. Document and sentence detectors will be evaluated against three labels kept separate: original drafter, latest editor and sentence provenance. Primary analysis will measure within-lineage score movement, false positives on human-origin material and the extent to which detector outputs correspond to each possible target. The contribution is a process-aware evaluation protocol, not a forensic authorship system or proof of misconduct.
+
+## 1. Introduction
+
+“Human-written” and “AI-written” are often treated as mutually exclusive properties of a final document. Real revision workflows violate that assumption. A human may draft a text and ask a model to reorganize it; a model may produce a first draft that a person rewrites; individual sentences may have different origins. Without a declared target, a detector score could be interpreted as evidence about the initial drafter, the latest editor, the current wording or merely a stylistic resemblance to its training data.
+
+The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. [SenDetEX, 2025, task definition, p. 5](https://aclanthology.org/2025.emnlp-main.268.pdf#page=5); [SenDetEX, context limitation, p. 9](https://aclanthology.org/2025.emnlp-main.268.pdf#page=9); [OpenTuringBench, rewrite design, p. 4](https://aclanthology.org/2025.emnlp-main.1354.pdf#page=4).
+
+The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. [PAWN++, 2026, source-matched evaluation, p. 7](https://aclanthology.org/2026.wac-1.25.pdf#page=7); [PAWN++, limitation on authorship inference, p. 9](https://aclanthology.org/2026.wac-1.25.pdf#page=9); [Shortcut-Controlled Evaluation, 2026, construction, p. 7](https://aclanthology.org/2026.emnlp-main.2177.pdf#page=7); [Shortcut-Controlled Evaluation, limitation, p. 9](https://aclanthology.org/2026.emnlp-main.2177.pdf#page=9).
+
+What remains insufficiently isolated is a matched, bidirectional trajectory where original drafter and latest editor can be varied independently under the same brief and revision instructions. We ask:
+
+1. **RQ1—Trajectory:** How do detector scores move across successive revision stages within the same document lineage?
+2. **RQ2—Target:** Do outputs align more closely with original drafter, latest editor or sentence-level provenance?
+3. **RQ3—Direction:** Are score changes symmetric between human-origin→AI-edit and AI-origin→human-edit routes under matched operations?
+4. **RQ4—False positives:** Which human-origin or human-only revision conditions are incorrectly flagged, and what surface features accompany those errors?
+
+The study does not decide who morally or legally “authored” a collaborative text. It tests the empirical behavior of detectors under known process labels.
+
+## 2. Related Work and Gap Establishment
+
+### 2.1 Hybrid-text and paraphrase evaluation already exist
+
+SenDetEX constructs hybrid documents and performs contextual sentence-level classification. It directly blocks any claim that sentence-level human–AI mixture is absent from the literature. Its target is nevertheless a binary sentence-origin label, not a comparison among original drafter, latest editor and local provenance over a full revision history.
+
+CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. [CoPA, 2025, method, p. 2](https://aclanthology.org/2025.emnlp-main.433.pdf#page=2); [CoPA, limitation, p. 9](https://aclanthology.org/2025.emnlp-main.433.pdf#page=9); [TempParaphraser, primary metric, p. 16](https://aclanthology.org/2025.emnlp-main.1607.pdf#page=16); [TempParaphraser, coherence limitation, p. 9](https://aclanthology.org/2025.emnlp-main.1607.pdf#page=9); [OpenTuringBench, language limitation, p. 9](https://aclanthology.org/2025.emnlp-main.1354.pdf#page=9).
+
+These studies establish fragility under manipulation. Repeating another generic rewrite attack would add little.
+
+### 2.2 Realistic editing and shortcut control narrow the gap
+
+The 2026 papers improve realism. PAWN++ evaluates detector behavior on human and model editing of web text, while AIGT-SignalBench directly studies human-edited AI drafts. Shortcut-Controlled Evaluation matches generations to references to reduce source and topic differences, though its authors do not claim that every shortcut has been removed. Spotlights and Blindspots demonstrates that cross-dataset results and false positives depend on domain and detector.
+
+The proposed design therefore does not claim “the first realistic edited-text benchmark.” Its narrower contribution is a factorial process record:
+
+| Factor | Levels |
+|---|---|
+| Original drafter | Human; model |
+| Latest editor | Same human/model type; opposite type |
+| Revision operation | Copy-edit; structure; bounded substance; sentence replacement |
+| Evaluation target | Original drafter; latest editor; sentence provenance |
+
+Holding the brief and revision specification constant is intended to make these labels separable. It will not eliminate every stylistic difference between human and model labor.
+
+## 3. Methodology
+
+### 3.1 Briefs, writers and base texts
+
+We plan 40 non-sensitive source briefs across two domains, such as public-information explanations and product-neutral summaries. Each brief will contain the same factual source packet, target audience, required claims and length range. Two consenting human writers and two fixed model configurations will independently create base drafts for every assigned brief.
+
+Assignment will be balanced so that each brief yields at least one human-origin and one model-origin text. Human writers will not see model drafts during base drafting. Model prompts, model identifiers, dates and settings will be recorded. Source packets will permit later claim verification and reduce the chance that factual differences are mistaken for origin signals.
+
+### 3.2 Bidirectional revision trajectories
+
+Each base text enters four revision stages:
+
+| Stage | Instruction | Content constraint |
+|---|---|---|
+| S0 Original | No revision | Base draft |
+| S1 Copy-edit | Grammar, punctuation and local fluency | No claim changes |
+| S2 Structural | Reorder and improve transitions | Preserve all claims |
+| S3 Bounded substantive | Implement a fixed edit brief | Only listed additions/deletions |
+| S4 Mixed-sentence | Replace designated sentences using opposite contributor type | Preserve local meaning where specified |
+
+For human-origin drafts, one route uses human edits and one uses AI edits. For model-origin drafts, one route uses model edits and one uses human edits. Same-type routes estimate the effect of revision without changing contributor type; cross-type routes provide the bidirectional comparison.
+
+All versions will be stored with tracked diffs. Two reviewers, blinded to the intended detector label, will mark whether required claims are preserved, whether unauthorized claims were introduced and which spans changed. A stage that violates its constraint will be regenerated once under a frozen rule; persistent failures remain in an operational-failure table and are excluded from the paired semantic-preservation analysis.
+
+### 3.3 Labels kept separate
+
+Each version will carry three noninterchangeable process labels:
+
+1. **Original drafter:** contributor type that produced S0.
+2. **Latest editor:** contributor type responsible for the current transition.
+3. **Sentence provenance:** contributor type responsible for the current sentence wording, based on the tracked history.
+
+At document level, mixed sentence provenance will be represented as proportions rather than collapsed into a binary “AI-written” label. The analysis will ask how detector output relates to each label; it will not select whichever target makes the detector look best.
+
+### 3.4 Detectors and calibration
+
+At least four reproducible detector families will be included where licenses permit:
+
+- likelihood or rank based;
+- supervised document classifier;
+- stylistic-feature based;
+- contextual sentence classifier.
+
+Versions, settings and preprocessing will be frozen. Thresholds will be chosen using separate calibration data that do not share briefs, writers or revision histories with the test set. Raw scores will remain the primary output; binary rates are threshold-dependent secondary summaries. Invalid, truncated and unsupported inputs will be reported as failures.
+
+## 4. Experiments and Evaluation Plan
+
+### 4.1 Within-lineage score movement
+
+The source brief and base draft define the dependency structure. Primary plots will show score trajectories from S0 to S4 for each route. Paired contrasts will compare:
+
+- human-origin→AI-edit versus human-origin→human-edit;
+- model-origin→human-edit versus model-origin→model-edit;
+- the two cross-type directions under the same revision operation.
+
+Brief-cluster bootstrap intervals will retain all versions and routes derived from a brief. Domain and detector-family results will appear before pooled summaries.
+
+### 4.2 Competing target labels
+
+For each detector, we will evaluate association with original drafter, latest editor and sentence-provenance proportion separately. Document AUROC, calibration and fixed-threshold error rates will be reported only for targets for which a binary comparison is meaningful. Sentence models will receive macro-F1 and class-specific recall against known sentence provenance.
+
+The key outcome is not a single leaderboard. It is whether a detector that appears successful under one target fails under another. For example, retaining an “AI” score after extensive human editing might correlate with original origin while being misleading if a user interprets it as the contributor responsible for the final wording.
+
+### 4.3 False positives and shortcut checks
+
+False positives on original human drafts and human-only revisions are a primary safety outcome. We will report them by writer, domain and stage without making individual-level forensic claims. Exploratory models will test associations with length, sentence length variance, lexical diversity, punctuation, formatting and source overlap. These checks can identify possible shortcuts but cannot prove the internal basis of a detector.
+
+A detector score will never be used to accuse a writer or adjudicate misconduct. Texts and writer identities will be separated; reported examples will require consent and redaction.
+
+### 4.4 Prospective interpretation rules
+
+| Pattern | Interpretation |
+|---|---|
+| Scores follow original drafter across later edits | Evidence of origin association in this sample, not proof of authorship |
+| Scores follow latest editor in both directions | Evidence of edit-style sensitivity |
+| Scores move only for human→AI editing | Directional asymmetry or unmatched effort must be examined |
+| Sentence detector succeeds while document target is unstable | Local provenance may be more defensible than binary document labels |
+| Surface baselines explain similar variance | Detector may rely substantially on form shortcuts |
+
+### 4.5 Feasibility and limitations
+
+Forty briefs with multiple drafts, routes and stages create a sizeable human-writing and review burden. A four-brief pilot will test instruction matching, diff capture and reviewer workload before the test protocol is frozen. Pilot texts will be excluded if the instructions change.
+
+The study is limited by the number of writers, domains and model versions. Human and model editing effort cannot be perfectly matched. Logged laboratory revision is more controlled than natural writing, and process histories are rarely available in deployment. Reviewers may miss subtle meaning changes. Model updates and detector API changes may reduce reproducibility. Most importantly, process labels do not settle legal, educational or philosophical definitions of authorship.
+
+## 5. Conclusion
+
+The reviewed literature already covers paraphrase attacks, hybrid sentences, realistic rewrites and human editing of model drafts. The defensible gap is a matched bidirectional history in which original drafter, latest editor and sentence provenance are recorded separately. This proposal uses that structure to test what detector outputs actually follow and where false positives arise. It is an evaluation of detector interpretation, not a mechanism for proving who wrote a final text. Experimental results remain to be collected.
+
+## References
+
+- Jingcheng Jiang et al. 2025. [SenDetEX: Sentence-Level Detection of Human–AI Hybrid Text](https://aclanthology.org/2025.emnlp-main.268/).
+- Zhen Fang et al. 2025. [Contrastive Paraphrase Attacks](https://aclanthology.org/2025.emnlp-main.433/).
+- La Cava and Tagarelli. 2025. [OpenTuringBench](https://aclanthology.org/2025.emnlp-main.1354/).
+- Huang et al. 2025. [TempParaphraser](https://aclanthology.org/2025.emnlp-main.1607/).
+- Stowe and Patil. 2026. [Spotlights and Blindspots](https://aclanthology.org/2026.lrec-1.329/).
+- Chernikov et al. 2026. [PAWN++ in the Wild](https://aclanthology.org/2026.wac-1.25/).
+- Jung et al. 2026. [Shortcut-Controlled Evaluation of AI-Generated Text Detection](https://aclanthology.org/2026.emnlp-main.2177/).
+- 2026. [AIGT-SignalBench](https://aclanthology.org/2026.winlp-main.5/).
