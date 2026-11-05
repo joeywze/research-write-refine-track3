@@ -1,0 +1,409 @@
+{
+  "schema": "track3_claim_evidence_development_v1",
+  "prepared_date": "2026-11-05",
+  "cluster": 18,
+  "scientific_results_independently_reproduced": false,
+  "team_a_approval": "pending",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "paper_id": "2025.emnlp-main.1065",
+      "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Multilingual generation scope” and “White-box access limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that multilingual overrefusal benchmarking or representation-guided boundary sampling is new without distinguishing its contribution from RASS and MORBench.",
+      "text_sha256": "de591ff523cb09475bb4d7e61aca9aaf73d5c406c0f1531ecbca4a11b6a9a9c2",
+      "pdf_sha256": "173e7cccf55a7d7691a55ed7ea228a9c4ffcbf7d050bb40570195d147297dc97",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3.1 Seed Prompt Generation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1065.pdf#page=3",
+          "normalized_quote_sha256": "c5dcde5c181941c7b7e23db9930c3dab1d8cfc5ba0fc4ac85eba6ad43b9c495b"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations & Future Work",
+          "url": "https://aclanthology.org/2025.emnlp-main.1065.pdf#page=9",
+          "normalized_quote_sha256": "870794d2a2333c63e1950ceae07ddbdb8a9e942c8b640f273dff64155ebe058a"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C02",
+      "paper_id": "2025.emnlp-main.1091",
+      "title": "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Intent excluded from survey scope” and “No quantitative comparison”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this survey as experimental proof that interpretation-informed guardrails improve multilingual safety or reduce over-refusal.",
+      "text_sha256": "9606097d0acf08fbcb606f5756075f1e23fe4324531c52d21e8e40eeb5b566ab",
+      "pdf_sha256": "ac59530f4e8b8a5d716fcc351fed427b68ad11c64ed999b627d4fed1dd27a4f6",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "2 Survey Methodology, footnote 3",
+          "url": "https://aclanthology.org/2025.emnlp-main.1091.pdf#page=2",
+          "normalized_quote_sha256": "b30664056766df24866b9903ddbc80af78998f5eb2fa5be28bea482d799c41b6"
+        },
+        {
+          "pdf_page": 10,
+          "section": "9 Potential Risks",
+          "url": "https://aclanthology.org/2025.emnlp-main.1091.pdf#page=10",
+          "normalized_quote_sha256": "d770e9593313b3b44bf0c1888d3b5c15b0717b4baf1b5cd34299bd2f84637e50"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C03",
+      "paper_id": "2025.emnlp-main.1392",
+      "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Unsafe-only benchmark scope” and “Human-review limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim multilingual reasoning guardrails, culturally enriched curricula, code-switching robustness tests, or native-reviewed synthetic-label preservation as unexplored contributions without comparison to this work.",
+      "text_sha256": "3456979f0d6264b8ea81c9f7dec175390593117d8469b451073084bac71b5df1",
+      "pdf_sha256": "572e17c66cdcd7363aeed516aaca9ea8bba1432ff1428d77a2ffcb29640b7109",
+      "citations": [
+        {
+          "pdf_page": 13,
+          "section": "C Dataset Details",
+          "url": "https://aclanthology.org/2025.emnlp-main.1392.pdf#page=13",
+          "normalized_quote_sha256": "ec6e21c7c0c115c5c6c2b2147471889fec55c712b308e6fc162a378d12b98377"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations — Human Annotation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1392.pdf#page=9",
+          "normalized_quote_sha256": "f49e64d252c04c67d54765523cb6df67059a44aec4c1054206f37eec1366135c"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C04",
+      "paper_id": "2025.emnlp-main.1501",
+      "title": "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Toxicity elicitation scope” and “Projection attribution assumption”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present distributed activation editing or the four-group account of DPO toxicity reduction as novel without distinguishing the proposed contribution from this study.",
+      "text_sha256": "be30bfd371686feb5e135c1c3cd5a12de572bd1ed89ff05726c88eca2b5b1366",
+      "pdf_sha256": "8a075935d7d14b6508256b6ba80348329154a3d966436acd7e01318045f74e9e",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "3.1 Data and Models",
+          "url": "https://aclanthology.org/2025.emnlp-main.1501.pdf#page=2",
+          "normalized_quote_sha256": "15268d602786324c572c18c098d8de12080b3ba1038fee1b4db279353b6ef303"
+        },
+        {
+          "pdf_page": 9,
+          "section": "8 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1501.pdf#page=9",
+          "normalized_quote_sha256": "fdaae1a871ddf56db1c0d4eae5d289ed25169fe36aef0c683ffea78f1cb3cc85"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C05",
+      "paper_id": "2025.emnlp-main.1521",
+      "title": "Sparse Autoencoder Features for Classifications and Transferability",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Same-language versus cross-lingual classification scope” and “Distributional robustness caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate toxicity classification F1 with reduced harmful compliance or reduced over-refusal; evaluate generated refusal/compliance behavior separately.",
+      "text_sha256": "68ecbd0344a4f440766865b6e52999b880c82280b31ed7b7ba942c688936ceed",
+      "pdf_sha256": "3f1f6d093082eeddffe9e20705cbe899cb0bd89914177866c698713c9f716de7",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "5.1 Native vs. Cross-Lingual Transfer",
+          "url": "https://aclanthology.org/2025.emnlp-main.1521.pdf#page=6",
+          "normalized_quote_sha256": "52565bc0f2584287526b6c5bd3f0ebf1e1ece9dbd9acb1f1b6b6f06492f7db1d"
+        },
+        {
+          "pdf_page": 9,
+          "section": "8 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1521.pdf#page=9",
+          "normalized_quote_sha256": "5b67c6ab719c2e3270090bc806aa21a69b81684dfade641f29b7b51ed43235a7"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C06",
+      "paper_id": "2025.emnlp-main.1528",
+      "title": "GRAID : Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Language scope” and “Evaluator bias caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite these results as evidence of multilingual safety improvement; evaluate specified languages, dialects, registers, and code-switching with qualified native review.",
+      "text_sha256": "90f99028efe9c2c1d5f53479b5fdef53c3822c0c592ff8e729d30ebfa9323c05",
+      "pdf_sha256": "0fcdd68115cf2aeb9f3fcdf67f6a1f1942a7a2a84b9513a9effe2565bef655ee",
+      "citations": [
+        {
+          "pdf_page": 16,
+          "section": "Appendix C: Label Mapping of BeaverTails and WildGuard Sub-categories",
+          "url": "https://aclanthology.org/2025.emnlp-main.1528.pdf#page=16",
+          "normalized_quote_sha256": "0589cac68c08d6d1e69583bd98dfeb8167ff644b55e39e1049b271a475aab57d"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1528.pdf#page=10",
+          "normalized_quote_sha256": "37347f0227651baf3206af53117b6feb024968aa0262edc490e2b16fc61dc507"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C07",
+      "paper_id": "2025.emnlp-main.1677",
+      "title": "Language Models Identify Ambiguities and Exploit Loopholes",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Low-risk experimental scope” and “Language coverage limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this study as evidence of cross-lingual safety disparities, native-speaker validation, or multilingual over-refusal; those require separate measurements.",
+      "text_sha256": "bd52b260f8e51a7d5180904a255d811757e9cbb4af89ede80054bc03c8e34a26",
+      "pdf_sha256": "4c189a54b99f6031b6847a901d1aa0d773dbc1e39ff2fec8f4f021928ec4d084",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "Ethical Considerations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1677.pdf#page=10",
+          "normalized_quote_sha256": "9154c7491de4257f420ef10285f32580a1f7cf4cdeb63f93f9c5d96aca12b899"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1677.pdf#page=10",
+          "normalized_quote_sha256": "34c264fc1d7f9fadb477bcfe78c90523a273681b720881d494bff95748464946"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C08",
+      "paper_id": "2025.emnlp-main.1781",
+      "title": "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLM s",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Generic harmless data without paired contrasts” and “Insufficient standalone protection”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present non-refusing safety steering or generic-safe-data vector construction as wholly new; compare against SAFE STEER under matched models, extraction data, and intervention budgets.",
+      "text_sha256": "dc31175ee42ac4f67dddaf24f7683c351be34bd759e2561b3e5a1923d0a6b146",
+      "pdf_sha256": "32b44e10716efb183aea90f3830a77ee6557a58b17503a4316e0500ad98fab02",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4.1 Datasets",
+          "url": "https://aclanthology.org/2025.emnlp-main.1781.pdf#page=5",
+          "normalized_quote_sha256": "7d328135cc1f6ca875d36f02994617aa6628713a815cf39b79d2e218a71d11d8"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1781.pdf#page=9",
+          "normalized_quote_sha256": "fe171ae271c93af3d8b41f22646bb8a9ca436ec0c9814cc69e475a60b1f5259b"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C09",
+      "paper_id": "2025.emnlp-main.1788",
+      "title": "Not Your Typical Government Tipline: LLM -Assisted Routing of Environmental Protection Agency Citizen Tips",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Multilingual data scope” and “Historical-label caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe jurisdictional filtering errors as measured LLM refusals or treat criminal/civil labels as harmful/benign request labels.",
+      "text_sha256": "55640a135ff56f8e043d889e429ca2237596093cc30f02e4bffd5acd4613d3a6",
+      "pdf_sha256": "75015ce8de8d2685cb97a4c527088ba744791a07f3d035b1fc496ddbf6259aba",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "4 Methodology",
+          "url": "https://aclanthology.org/2025.emnlp-main.1788.pdf#page=3",
+          "normalized_quote_sha256": "ac3194d572b40bbaafc5ac4b649c8637003c33716544d60037c846acb308159e"
+        },
+        {
+          "pdf_page": 6,
+          "section": "8 Limitations, (4) Labels as proxy for ground truth",
+          "url": "https://aclanthology.org/2025.emnlp-main.1788.pdf#page=6",
+          "normalized_quote_sha256": "da5ac15caa7ea8f41b5a3e19c0444fcd3316de29aa8618dbb787bc7a2e8030b7"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C10",
+      "paper_id": "2025.emnlp-main.197",
+      "title": "DSCD : Large Language Model Detoxification with Self-Constrained Decoding",
+      "attributed_claim": "The verified passages provide explicit source anchors for “MODE-2 retains dynamic safety and hallucination layers” and “Explicit model-generation limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that training-free decoding guardrails or combined harmful/benign evaluations are novel in themselves; compare against DSCD and relevant hybrid baselines.",
+      "text_sha256": "68a77354b8b4b6fd0abd7184b293569d9923df7db12fa755b151541b885ff691",
+      "pdf_sha256": "d4d71d7a3fbf590f30bafc0e7b750bb43b72caea453bd8fa3a9727c96b3de605",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.4 MODE-2: Static Toxic Layer",
+          "url": "https://aclanthology.org/2025.emnlp-main.197.pdf#page=5",
+          "normalized_quote_sha256": "70fe6d538e95bf2ba2f4b99f20fa37f02ba36109f5ae454709031913e34bc1e0"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitation",
+          "url": "https://aclanthology.org/2025.emnlp-main.197.pdf#page=9",
+          "normalized_quote_sha256": "86d42aa08aef5ef1b54ca16a6228c6b2cdfc545f22a50847ce259768b273de6a"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C11",
+      "paper_id": "2025.emnlp-main.298",
+      "title": "Detoxifying Large Language Models via the Diversity of Toxic Samples",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Harm-category scope” and “Multilingual scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty merely for multi-category toxic prompting, self-generated model-specific negatives, or multi-negative preference optimization; DivDetox already combines these elements.",
+      "text_sha256": "60b552cc593f01d2460f2f10f27a14ae443dfc3579a5c2e7bdd17c4494d0c892",
+      "pdf_sha256": "c5c2dbc245339bc52b86be4e75a1e4f9c135090339090476f60d39649b5c71cc",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3.1.1 Personalized Response Generation Based on Multi-Category Prompts",
+          "url": "https://aclanthology.org/2025.emnlp-main.298.pdf#page=3",
+          "normalized_quote_sha256": "f3cdc9d8b640328cf72c9100f6bf664e5adcf9e9a1bfa2e995e898db0fd2035c"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.298.pdf#page=9",
+          "normalized_quote_sha256": "c4d70a50f6744165d269168969649300c274fbcdde813335c34ab0026f610a7e"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C12",
+      "paper_id": "2025.emnlp-main.41",
+      "title": "Automating Steering for Safe Multimodal Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Binary selective steering” and “Non-monotonic safety control”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present selective inference-time multimodal steering with a trained toxicity probe and refusal head as an entirely new mechanism.",
+      "text_sha256": "3add6104b277bb7180124f7a47478c93b8b8bf9b8616855a733f8a9996773da7",
+      "pdf_sha256": "b9b26579209d899985e4746ff1cbaca5c8365a9dd6de506c0c31f8a13e172c3c",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.4 Automatic Adaptive Steering",
+          "url": "https://aclanthology.org/2025.emnlp-main.41.pdf#page=4",
+          "normalized_quote_sha256": "b35f7f67cd5bb6a050618db6e9095b34e886af4986b970da0e8d8f90933af89b"
+        },
+        {
+          "pdf_page": 8,
+          "section": "4.4.5 Impact of Steering Intensity ϵ on Output Behavior",
+          "url": "https://aclanthology.org/2025.emnlp-main.41.pdf#page=8",
+          "normalized_quote_sha256": "13fb9ea7bbfe2bc022cd2edd41a60def5fe6e477febf9f14f27641cd16fa0acb"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C13",
+      "paper_id": "2025.emnlp-main.49",
+      "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Scope includes both refusal error directions” and “Evaluator fallibility”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not treat model–evaluator disagreement as confirmed model error; independently adjudicate prompt harmfulness and response appropriateness, including evaluator mistakes.",
+      "text_sha256": "20b508208bc007c968c220e70c5a2c3e3b1c87915a9bee7a26812759975740c7",
+      "pdf_sha256": "dd824e661b1088532d7d66778292546cec6fe26163662881195947c313b2e0d3",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.1 Problem Formulation",
+          "url": "https://aclanthology.org/2025.emnlp-main.49.pdf#page=4",
+          "normalized_quote_sha256": "e04ec4fe076a66b7a5b69f33b6173539aeaff4a7b712100678113b16e541ae8b"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.49.pdf#page=9",
+          "normalized_quote_sha256": "475ac33921886b982a395e2c90a52f280a5f84dca2558d299a7d443181746476"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C14",
+      "paper_id": "2025.emnlp-main.612",
+      "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Adversarial demonstration design” and “Evaluator fallibility”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that Singapore-localized multilingual toxicity red-teaming or comparisons across conversation, QA, and composition are novel without distinguishing the proposed contribution from SGToxicGuard.",
+      "text_sha256": "751e66358c0b36a773743601f6fedac4747a09dbfb67270fce94592675171d82",
+      "pdf_sha256": "268cfbd5d83bf5243bdbcc5a0c85f36a3c0c606a7123b324c01813441bef9e72",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.1 Toxic Conversation Task",
+          "url": "https://aclanthology.org/2025.emnlp-main.612.pdf#page=4",
+          "normalized_quote_sha256": "eec2aa9d50569c3c1c9d136eb3decfab0d52ca25048850d71f9b021946522762"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.612.pdf#page=9",
+          "normalized_quote_sha256": "04f8731a84559924875d4d504c7fab76811b29d0c8d6c444f102cf6b8f110d13"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C15",
+      "paper_id": "2025.emnlp-main.641",
+      "title": "Breaking Bad Tokens: Detoxification of LLM s Using Sparse Autoencoders",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Non-refusal detoxification objective” and “English-only safety scope”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim this paper demonstrates multilingual safety or culturally valid harm labels; evaluate languages and registers explicitly with native or culturally competent reviewers.",
+      "text_sha256": "01cea2d42af28d57af9b3671b968428d818c762a95117a200e2f5dbaed86cd12",
+      "pdf_sha256": "17e4f6c8b65209982a844642f63091200f5b0fe0d936910135a1863aa0186dc4",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "2.3 Mechanistic Interpretability and Sparse Autoencoders",
+          "url": "https://aclanthology.org/2025.emnlp-main.641.pdf#page=3",
+          "normalized_quote_sha256": "a3d5126150b0b898e06218ea7514a38da5f698705c57e846119eb7acfbdc3dbb"
+        },
+        {
+          "pdf_page": 9,
+          "section": "8 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.641.pdf#page=9",
+          "normalized_quote_sha256": "e82cff7c7a5ac17d65a255bcd0904c1ec772f496f5541b58bca5cbe53dd044c2"
+        }
+      ],
+      "quoted_words": 13
+    },
+    {
+      "claim_id": "C16",
+      "paper_id": "2025.emnlp-main.819",
+      "title": "MULTIGUARD : An Efficient Approach for AI Safety Moderation Across Languages and Modalities",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Representation-based classifier construction” and “External-validity caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that multilingual or multimodal representation-based guardrails are unexplored; it should compare against this layer-selection and lightweight-classifier approach.",
+      "text_sha256": "959f752a90180781e66846fce70f74f41e2df24731845cc8cd7e90c572372fe8",
+      "pdf_sha256": "dc549f6d4b3d9e5c6cf17c43200f86ebeefbfd27270d5da9dc5e7ef561544965",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "2.2 Fitting a harmfulness classifier",
+          "url": "https://aclanthology.org/2025.emnlp-main.819.pdf#page=2",
+          "normalized_quote_sha256": "d0f725ed6a23d08e69df61fa375a95b0d100c07ec3ca40565f283935121e2d7d"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.819.pdf#page=10",
+          "normalized_quote_sha256": "c16b4e2e649ec3bff8057a79efeec9891fc91f59bcf9559a043e12fd117a73cf"
+        }
+      ],
+      "quoted_words": 18
+    }
+  ]
+}

@@ -11,7 +11,15 @@ Prepared 5 November 2026. These are proposal-only research packages. No proposed
 | 18 | Safe and useful across Singapore language settings | Multilingual safety and multilingual over-refusal already exist; the proposal jointly measures unsafe compliance and false refusal on matched boundary pairs in selected Singapore language settings. | `cluster18/draft_v0.md` |
 | 0 | Fact or form? A controlled invariance audit of hallucination detectors | Domain shift and evaluation-label problems already exist; the proposal tests whether detector decisions remain stable when factual status is held fixed and answer form changes. | `cluster0/draft_v0.md` |
 
-Each cluster folder contains the requested `draft_v0.md`, including its abstract, gap establishment, related work, methodology, evaluation plan, limitations and conclusion.
+Each cluster folder now follows the Cluster 7 research-package structure:
+
+- `README.md`: status, boundaries and reading order;
+- `review_scope.md`: full-text methods, experiments and limitations review for every assigned paper;
+- `claim_evidence_table.md`: two page-verified evidence anchors per assigned paper;
+- `claim_evidence_ledger.json`: machine-readable source, PDF, text and quote hashes;
+- `external_evidence.md`: full-text review of the closest 2026 counterevidence;
+- `research_development.md`: defensible gap, research questions, design, analysis and decisions required;
+- `draft_v0.md`: the narrative proposal.
 
 ## Status and boundaries
 

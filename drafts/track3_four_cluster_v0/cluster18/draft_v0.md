@@ -1,6 +1,6 @@
 # Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal
 
-Draft V0 — revised 5 November 2026 after full-text review of all 20 Cluster 18 papers and five close 2026 papers. Proposed study; no experimental results are reported. Harmful prompt content is not reproduced in this draft.
+Draft V0 — revised 5 November 2026 after full-text review of all 16 Cluster 18 papers and 5 close 2026 papers. Proposed study; no experimental results are reported. Harmful prompt content is not reproduced in this draft.
 
 ## Abstract
 

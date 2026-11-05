@@ -1,6 +1,6 @@
 # Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement
 
-Draft V0 — revised 5 November 2026 after full-text review of all 17 Cluster 6 papers and three close 2026 papers. Proposed study; no experimental results are reported.
+Draft V0 — revised 5 November 2026 after full-text review of all 17 Cluster 6 papers and 3 close 2026 papers. Proposed study; no experimental results are reported.
 
 ## Abstract
 

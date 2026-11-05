@@ -1,6 +1,6 @@
 # Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors
 
-Draft V0 — revised 5 November 2026 after full-text review of all 22 Cluster 13 papers and four close 2026 papers. Proposed study; no experimental results are reported.
+Draft V0 — revised 5 November 2026 after full-text review of all 29 Cluster 13 papers and 4 close 2026 papers. Proposed study; no experimental results are reported.
 
 ## Abstract
 

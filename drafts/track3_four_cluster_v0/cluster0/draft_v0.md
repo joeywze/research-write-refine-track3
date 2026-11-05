@@ -1,6 +1,6 @@
 # Fact or Form? A Controlled Invariance Audit of Hallucination Detectors
 
-Draft V0 — revised 5 November 2026 after full-text review of all 26 Cluster 0 papers and three close 2026 papers. Proposed study; no experimental results are reported.
+Draft V0 — revised 5 November 2026 after full-text review of all 23 Cluster 0 papers and 3 close 2026 papers. Proposed study; no experimental results are reported.
 
 ## Abstract
 
