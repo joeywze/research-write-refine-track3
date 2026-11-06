@@ -20,6 +20,8 @@ Use V0 for the initial draft, V1 for the final accepted generic rewrite and V2 f
 
 ## Scores and critic
 
+Three checks in the LLM rubric draw on [GPTZero's public AI Patterns guide](https://gptzero.me/news/ai-patterns). The critic looks for overstated importance, commentary that adds no reasoning, and claims attributed to unnamed sources. An edit is actionable only when it preserves the claim and uses the approved Research Package. When an attribution or claim needs new evidence, the critic records it for Team A as `NEEDS_RESEARCH`.
+
 The main method combines **Rule-based checks** and **LLM writing review**. Reports show **Review points flagged by rules** and **Review points flagged by the LLM**. A review point marks something to consider; it does not necessarily lead to an edit. Lower counts mean fewer review points, not a higher overall quality mark or a different authorship estimate.
 
 The module also records sentence-length variance, hedge frequency, repeated trigrams and paragraph-length regularity for analysis. These measurements do not trigger edits. Adjective density is deferred until a suitable part-of-speech tagger has been tested.
