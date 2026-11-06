@@ -20,6 +20,8 @@ Use V0 for the initial draft, V1 for the final accepted generic rewrite and V2 f
 
 ## Scores and critic
 
+Three checks in the LLM rubric draw on [GPTZero's public AI Patterns guide](https://gptzero.me/news/ai-patterns). The critic looks for overstated importance, commentary that adds no reasoning, and claims attributed to unnamed sources. An edit is actionable only when it preserves the claim and uses the approved Research Package. When an attribution or claim needs new evidence, the critic records it for Team A as `NEEDS_RESEARCH`.
+
 The main method combines **Rule-based checks** and **LLM writing review**. Reports show **Review points flagged by rules** and **Review points flagged by the LLM**. A review point marks something to consider; it does not necessarily lead to an edit. Lower counts mean fewer review points, not a higher overall quality mark or a different authorship estimate.
 
 The module also records sentence-length variance, hedge frequency, repeated trigrams and paragraph-length regularity for analysis. These measurements do not trigger edits. Adjective density is deferred until a suitable part-of-speech tagger has been tested.
@@ -29,6 +31,20 @@ Rule-based checks count long sentences, repeated transitions and unusually unifo
 The LLM uses six detailed criteria: specificity, argument strength, formulaic language, inappropriate hedging, generic transitions and unnatural symmetry. Its count is the number of actionable paragraph-criterion findings, which can exceed six across a full paper. Both methods may flag the same passage, so their counts remain separate.
 
 Guided candidates must pass preservation, avoid increasing either issue count and reduce at least one. Use `--method rules-only` to run the original three-rule comparison without the LLM critic. See [the writing guide](stage_b.md) and [feature selection](feature_selection.md) for details.
+
+## Optional review of accepted V2
+
+The demo backend can review a saved guided draft for one additional edit within the original three-attempt allowance. It verifies the saved draft history and matching research inputs. Preview the local detector hints without credentials.
+
+```text
+python sprint2_demo/refine_accepted.py --run sprint2_demo/runs/live-20261026T000828046240Z --inputs sprint2_demo/inputs/converted --plan
+```
+
+For a live pass, replace `--plan` with `--output` pointing to a new directory and supply `--writer-model` and `--checker-model` with distinct model IDs. `--critic-model` defaults to the checker model in a separate call. `--token-limit` sets a shared token allowance for the pass. The pass checks the original package and both V0 and V2 before accepting a candidate.
+
+The critic receives detector hints for up to eight prose paragraphs and checks how the abstract, conclusion, research questions and experiment plan fit together. Cross-section findings need an exact quote from each passage. The writer can edit only prose with an actionable finding, and it records how it handled each review point. The candidate is checked for preservation and then reviewed in context again. If the edit fails, the exported paper retains the accepted V2.
+
+Compare `accepted_v2.md` with `guided_final_with_layout.md`. The review points, writer responses and preservation verdict are saved alongside them. `detector_comparison.json` reports scores on the same paragraphs before and after. `refinement_summary.json` records the stopping reason, attempt count, model calls, reported tokens and elapsed time. The detector score is descriptive. Use blinded ratings and separate preservation checks to assess quality.
 
 ## Try the offline example
 
