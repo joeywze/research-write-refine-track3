@@ -20,9 +20,13 @@ def review_points(report, allowed):
         if pid in allowed:
             for finding in paragraph["findings"]:
                 if finding["status"] == "ACTIONABLE":
-                    points.append({"finding_id": "L:" + pid + ":" + finding["criterion"], "paragraph_id": pid,
+                    point = {"finding_id": "L:" + pid + ":" + finding["criterion"], "paragraph_id": pid,
                         "method": "llm", "category": finding["criterion"], "quote": finding["quote"],
-                        "explanation": finding["explanation"], "requested_action": finding["safe_action"]})
+                        "explanation": finding["explanation"], "requested_action": finding["safe_action"]}
+                    if finding.get("related_paragraph_id"):
+                        point["related_paragraph_id"] = finding["related_paragraph_id"]
+                        point["related_quote"] = finding["related_quote"]
+                    points.append(point)
     return points
 
 

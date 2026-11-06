@@ -1,11 +1,12 @@
 # AI-likeness detector, rewriting loop and human evaluation (Half 2)
 
-All commands run from the repository root. Only `rewrite_loop.py` (live mode) calls an API.
+Run the commands from the repository root. The live rewriting scripts call an API.
+For a follow-up edit of an accepted Stage B draft, use the [optional review pass](../../docs/writing_workflow.md#optional-review-of-accepted-v2). The historical full-paper experiment starts from V0 and uses its own mechanical checks.
 
 | Step | Command | Output (results/detection/) |
 |---|---|---|
 | Train + validate detector | `python src/detection/train_detector.py` | `detector_model.json`, `detector_validation.json`, `feature_effects.csv` |
-| Held-out test on real body text | `python src/detection/heldout_fulltext.py` | `heldout_fulltext.json` |
+| Historical body-text comparison | `python src/detection/heldout_fulltext.py` | `heldout_fulltext.json` |
 | Score saved Stage B runs | `python src/detection/score_runs.py` | `run_scores.csv`, `paragraph_scores.csv` |
 | Validation chart | `python src/detection/plot_validation.py` | `detector_validation.png` |
 | Score any text | `python src/detection/detector.py --file draft.md` | printed breakdown + flagged sentences |
@@ -29,16 +30,18 @@ The track asks how AI-sounding a draft is. The Stage B rules and critic measure 
   * First-person "we": real abstracts nearly always use it but related-work paragraphs don't, so it measures genre, not style.
 * **What it ended up using:** hedge density, stock phrases, lists of three, too few long sentences, and too-uniform sentence lengths. The lexicon features ("delve", "crucial", promotional adjectives) got zero weight because real EMNLP abstracts use them *more* than our generator did.
 
-## Validation (honest numbers)
+## Recorded detector experiments
 
 | Test | AUC |
 |---|---|
-| 5-fold CV, grouped by paper, all GPT paragraphs vs real abstracts | 0.74 |
+| 5-fold CV with separate human and generated groups, GPT paragraphs vs real abstracts | 0.74 |
 | Like-for-like: 10 GPT abstracts vs real abstracts (small n) | 0.73 |
-| **Held out: 344 passages of real body text from 18 papers it never saw** | **0.83** |
+| Body-text comparison, 344 passages from 18 papers represented in training by their abstracts | 0.83 |
 | TF-IDF baseline (not used) | 0.99 |
 
 TF-IDF wins on paper because it learns topic and genre words. It gives the reviser no actionable feedback, and it would also flag any human paragraph whose topic is unusual.
+
+The body-text comparison uses the final fitted detector for the human passages and out-of-fold predictions for generated text. Treat it as a comparison across text types. For an unseen-paper evaluation, split by the underlying paper ID across both classes and all versions before fitting, then use the same frozen detector for both held-out classes.
 
 ## Known limitations
 

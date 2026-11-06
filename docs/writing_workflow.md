@@ -30,6 +30,20 @@ The LLM uses six detailed criteria: specificity, argument strength, formulaic la
 
 Guided candidates must pass preservation, avoid increasing either issue count and reduce at least one. Use `--method rules-only` to run the original three-rule comparison without the LLM critic. See [the writing guide](stage_b.md) and [feature selection](feature_selection.md) for details.
 
+## Optional review of accepted V2
+
+The demo backend can review a saved guided draft for one additional edit within the original three-attempt allowance. It verifies the saved draft history and matching research inputs. Preview the local detector hints without credentials.
+
+```text
+python sprint2_demo/refine_accepted.py --run sprint2_demo/runs/live-20261026T000828046240Z --inputs sprint2_demo/inputs/converted --plan
+```
+
+For a live pass, replace `--plan` with `--output` pointing to a new directory and supply `--writer-model` and `--checker-model` with distinct model IDs. `--critic-model` defaults to the checker model in a separate call. `--token-limit` sets a shared token allowance for the pass. The pass checks the original package and both V0 and V2 before accepting a candidate.
+
+The critic receives detector hints for up to eight prose paragraphs and checks how the abstract, conclusion, research questions and experiment plan fit together. Cross-section findings need an exact quote from each passage. The writer can edit only prose with an actionable finding, and it records how it handled each review point. The candidate is checked for preservation and then reviewed in context again. If the edit fails, the exported paper retains the accepted V2.
+
+Compare `accepted_v2.md` with `guided_final_with_layout.md`. The review points, writer responses and preservation verdict are saved alongside them. `detector_comparison.json` reports scores on the same paragraphs before and after. `refinement_summary.json` records the stopping reason, attempt count, model calls, reported tokens and elapsed time. The detector score is descriptive. Use blinded ratings and separate preservation checks to assess quality.
+
 ## Try the offline example
 
 Python 3.10 or later is required. The tests and scripted example use only the standard library.
