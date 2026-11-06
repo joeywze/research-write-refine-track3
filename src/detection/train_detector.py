@@ -20,8 +20,7 @@ Design choices (see README "Detector"):
      used for scoring: our generator was told not to invent numbers or
      citations, so those features measure the prompt, not the style, and a
      reviser optimising them would be pushed to fabricate.
-  5. Validation splits AI text by *paper* (GroupKFold) so the same paper never
-     appears in train and test.
+  5. Validation groups real and generated rows by the same underlying paper.
 
 Also fits a TF-IDF + logistic regression baseline to show why we don't use
 it: it separates the classes almost perfectly from topic/genre words, and it
@@ -31,6 +30,7 @@ Outputs: results/detector_model.json, results/detector_validation.json,
          results/feature_effects.csv
 """
 
+import argparse
 import glob
 import json
 import sys
@@ -42,14 +42,13 @@ from scipy.optimize import minimize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import GroupKFold
+from sklearn.model_selection import StratifiedGroupKFold
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from detector import FEATURE_NAMES, analyse, split_paragraphs  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 RESULTS = ROOT / "results" / "detection"
-RESULTS.mkdir(parents=True, exist_ok=True)
 
 # +1: higher value = more AI-like; -1: higher value = more human-like
 DIRECTION = {
@@ -72,18 +71,26 @@ REPORT_ONLY = [f for f in FEATURE_NAMES if f not in DIRECTION]
 L2 = 1.0
 
 
+def paper_ids(values):
+    """Canonical source IDs shared by the real and generated corpora."""
+    if any(not isinstance(value, str) or not value.strip() for value in values):
+        raise ValueError("Each row needs a non-empty source paper ID")
+    return [value.strip().casefold() for value in values]
+
+
 def load_data(min_words: int = 60):
     human = pd.read_excel(ROOT / "data" / "emnlp_2025_main.xlsx")
     human = human[human["abstract"].astype(str).str.split().str.len() >= min_words]
     rows = [
-        {"text": t, "label": 0, "group": f"h_{pid}", "section": "abstract", "paper_id": pid}
-        for pid, t in zip(human["paper_id"], human["abstract"])
+        {"text": t, "label": 0, "section": "abstract", "paper_id": pid}
+        for pid, t in zip(paper_ids(human["paper_id"]), human["abstract"])
     ]
     for f in sorted(glob.glob(str(ROOT / "data" / "generated" / "*.csv"))):
         g = pd.read_csv(f, keep_default_na=False)
+        g["paper_id"] = paper_ids(g["paper_id"])
         for _, r in g.iterrows():
             for p in split_paragraphs(r["text"], min_words):
-                rows.append({"text": p, "label": 1, "group": f"a_{r['paper_id']}",
+                rows.append({"text": p, "label": 1,
                              "section": r["section"], "paper_id": r["paper_id"]})
     df = pd.DataFrame(rows)
     feats = pd.DataFrame([analyse(t).features for t in df["text"]])
@@ -126,17 +133,39 @@ def design(df, mean, std):
     return np.vstack(cols).T
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="New results directory")
+    parser.add_argument("--holdout", type=Path, help="JSON array of source paper IDs to exclude from fitting")
+    args = parser.parse_args(argv)
+    if args.holdout and not args.output:
+        parser.error("Use --output with --holdout to preserve the recorded detector")
+    excluded = []
+    if args.holdout:
+        raw = json.loads(args.holdout.read_text(encoding="utf-8"))
+        if not isinstance(raw, list) or not raw:
+            parser.error("The holdout must be a non-empty JSON array of paper IDs")
+        excluded = sorted(set(paper_ids(raw)))
+    output = args.output or RESULTS
+    if args.output and output.exists():
+        parser.error("--output must be a new directory")
     df = load_data()
+    df = df.loc[~df.paper_id.isin(excluded)].reset_index(drop=True)
+    if df.groupby("label").paper_id.nunique().reindex([0, 1], fill_value=0).min() < 5:
+        parser.error("Five-fold validation needs at least five training papers per class")
     print(f"Human abstracts: {(df.label == 0).sum()}   AI paragraphs: {(df.label == 1).sum()} "
           f"from {df[df.label == 1].paper_id.nunique()} papers")
 
     # ---------------- cross-validation, grouped by paper ----------------
-    gkf = GroupKFold(n_splits=5)
+    gkf = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42)
     oof = np.zeros(len(df))
     oof_tfidf = np.zeros(len(df))
-    for tr, te in gkf.split(df, df.label, df.group):
+    fold_ids = np.zeros(len(df), dtype=int)
+    for fold, (tr, te) in enumerate(gkf.split(df, df.label, df.paper_id), start=1):
         dtr, dte = df.iloc[tr], df.iloc[te]
+        if dtr.label.nunique() != 2 or set(dtr.paper_id) & set(dte.paper_id):
+            raise ValueError("Invalid paper-grouped validation fold")
+        fold_ids[te] = fold
         mean, std = standardise(dtr[dtr.label == 0])
         b, w = fit_monotone(design(dtr, mean, std), dtr.label.values)
         oof[te] = 1 / (1 + np.exp(-(b + design(dte, mean, std) @ w)))
@@ -147,6 +176,7 @@ def main():
         oof_tfidf[te] = clf.predict_proba(vec.transform(dte.text))[:, 1]
 
     df["p_stylo"], df["p_tfidf"] = oof, oof_tfidf
+    df["fold"] = fold_ids
     val = {
         "n_human": int((df.label == 0).sum()),
         "n_ai": int((df.label == 1).sum()),
@@ -177,9 +207,12 @@ def main():
         "mean": mean,
         "std": std,
         "reference": "EMNLP 2025 main abstracts",
+        "training_paper_ids": sorted(df.paper_id.unique()),
+        "heldout_paper_ids": excluded,
     }
-    (RESULTS / "detector_model.json").write_text(json.dumps(model, indent=2))
-    (RESULTS / "detector_validation.json").write_text(json.dumps(val, indent=2))
+    output.mkdir(parents=True, exist_ok=args.output is None)
+    (output / "detector_model.json").write_text(json.dumps(model, indent=2, allow_nan=False), encoding="utf-8")
+    (output / "detector_validation.json").write_text(json.dumps(val, indent=2), encoding="utf-8")
 
     effects = []
     for f in FEATURE_NAMES:
@@ -192,9 +225,9 @@ def main():
             "used_in_score": f in DIRECTION,
             "weight": round(model["coef"].get(f, 0.0), 3),
         })
-    pd.DataFrame(effects).sort_values("cohens_d").to_csv(RESULTS / "feature_effects.csv", index=False)
-    df[["paper_id", "section", "label", "p_stylo", "p_tfidf", "text"]].to_csv(
-        RESULTS / "detector_oof_predictions.csv", index=False)
+    pd.DataFrame(effects).sort_values("cohens_d").to_csv(output / "feature_effects.csv", index=False)
+    df[["paper_id", "section", "label", "fold", "p_stylo", "p_tfidf", "text"]].to_csv(
+        output / "detector_oof_predictions.csv", index=False)
 
     print(json.dumps(val, indent=2))
     print("\nWeights (sign = direction; 0 = data disagreed with the prior):")

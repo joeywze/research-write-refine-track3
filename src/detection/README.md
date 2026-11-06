@@ -43,6 +43,17 @@ TF-IDF wins on paper because it learns topic and genre words. It gives the revis
 
 The body-text comparison uses the final fitted detector for the human passages and out-of-fold predictions for generated text. Treat it as a comparison across text types. For an unseen-paper evaluation, split by the underlying paper ID across both classes and all versions before fitting, then use the same frozen detector for both held-out classes.
 
+## Evaluate a new paper split
+
+Before fitting, record the held-out paper IDs in a JSON array. Use the same source ID for real passages, generated passages and every revision of the same paper. Prepare separate human and generated CSV files with `paper_id` and `text` columns. Match sections and passage lengths where possible, and use papers the team has not inspected or used to tune its prompts or detector.
+
+```text
+python src/detection/train_detector.py --holdout evaluation-output/paper_ids.json --output evaluation-output/detector
+python src/detection/evaluate_holdout.py --model evaluation-output/detector/detector_model.json --human evaluation-output/human.csv --generated evaluation-output/generated.csv --output evaluation-output/holdout
+```
+
+Training excludes the listed papers from both classes. Each training paper has one cross-validation fold across all of its rows. Evaluation requires the recorded held-out IDs and rejects any overlap with training papers. Both classes use the same fitted model. The output records the model and input hashes, sample counts and passage-level AUC. AUC measures separation between the two text groups. Compare writing quality and preservation separately with human reviewers.
+
 ## Known limitations
 
 * The human reference is mostly abstracts. The held-out body-text test checks this, but PDF extraction is noisy.
