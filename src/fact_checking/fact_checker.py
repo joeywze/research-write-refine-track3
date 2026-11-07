@@ -342,7 +342,7 @@ def find_relevant_evidence(sentence, paper_id=None, top_k=3):
             "paper_id": record["paper_id"],
             "factual_claim": record["factual_claim"],
             "evidence_quote": record["evidence_quote"],
-            "verification": record["verification"],
+            ##"verification": record["verification"],
             "similarity": round(float(similarities[index]), 4)
         })
 
@@ -600,7 +600,7 @@ def match_claims_to_evidence(claims_df, top_k=3):
                 "evidence_claim": match["factual_claim"],
                 "evidence_quote": match["evidence_quote"],
                 "page": source_record["page"],
-                "verification": match["verification"],
+                ##"verification": match["verification"],
                 "similarity": match["similarity"]
             })
 
