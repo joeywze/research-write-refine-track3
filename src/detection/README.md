@@ -32,12 +32,16 @@ The track asks how AI-sounding a draft is. The Stage B rules and critic measure 
 
 ## Recorded detector experiments
 
+The all-10-papers row is the number to report; the fixed split confirms it. Reproduce it with the commands in `make_holdout_split.py`; the results are copied to `results/detection/heldout_eval/`.
+
 | Test | AUC |
 |---|---|
 | 5-fold CV with separate human and generated groups, GPT paragraphs vs real abstracts | 0.74 |
 | Like-for-like: 10 GPT abstracts vs real abstracts (small n) | 0.73 |
 | Body-text comparison, 344 passages from 18 papers represented in training by their abstracts | 0.83 |
 | TF-IDF baseline (not used) | 0.99 |
+| **Unseen papers, all 10 AI papers** (paper-grouped 5-fold CV, `make_holdout_split.py cv`) | **0.74** (95% interval by paper 0.72-0.76; single papers 0.67-0.81) |
+| Unseen papers, one fixed split (`make_holdout_split.py`, seed 17): 3 AI papers (118 paragraphs) + 153 real abstracts, detector retrained without them | 0.76 (accuracy at 50: 70%); its 3 held-out papers happen to be among the easier ones |
 
 TF-IDF wins on paper because it learns topic and genre words. It gives the reviser no actionable feedback, and it would also flag any human paragraph whose topic is unusual.
 

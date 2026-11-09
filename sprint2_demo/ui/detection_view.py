@@ -20,6 +20,11 @@ sys.path.insert(0, str(REPO / "src" / "detection"))
 from detector import PLAIN_NAMES, HEDGES, _count_terms, _WORD, score, split_sentences  # noqa: E402
 
 CITE = re.compile(r"\[\[[^\]]+\]\]")
+DEMO = REPO / "sprint2_demo"
+HALF2_RUNS = DEMO / "runs"
+HELDOUT = RESULTS / "heldout_eval" / "report.json"
+SEEDED = (DEMO / "evaluation" / "results_with_llm" / "summary.json", DEMO / "evaluation" / "results_rules_only" / "summary.json")
+HARD_CASE = "P002"   # cites two papers, so the evidence check has to approve any rewrite
 
 # ------------------------------------------------------------------ names used everywhere on the site
 FIRST = "First draft"
@@ -425,6 +430,7 @@ def show():
              ":material/autorenew: 2 · Rewriting loop", ":material/compare: 3 · Before and after"]
     if he is not None:
         names.append(":material/groups: 4 · Human test")
+    names.append(":material/fact_check: Revise with checks")
     tabs = st.tabs(names)
 
     # ---------------- Try it
@@ -468,16 +474,37 @@ def show():
         st.markdown("#### :material/verified: Does it work?")
         val = read_json(RESULTS / "detector_validation.json") or {}
         ho = read_json(RESULTS / "heldout_fulltext.json") or {}
+        hold = read_json(HELDOUT) or {}
+        gcv = read_json(HELDOUT.with_name("grouped_cv.json")) or {}
         cols = st.columns(3)
-        if ho:
-            cols[0].metric("Accuracy on unseen papers (AUC)", f"{ho['auc_body_text_heldout']:.2f}",
-                           help="344 passages from 18 real EMNLP papers it never saw. 0.5 = coin flip, 1.0 = perfect.")
+        if gcv:
+            lo, hi = gcv["auc_95ci_by_paper"]
+            cols[0].metric("AUC on unseen papers", f"{gcv['auc']:.2f}",
+                           help=f"Each of the {gcv['ai_papers']} AI papers was scored by a model trained without it "
+                                f"(paper-grouped cross-validation). 95% interval {lo:.2f}-{hi:.2f}; single papers "
+                                f"range {min(gcv['per_ai_paper_auc'].values()):.2f}-{max(gcv['per_ai_paper_auc'].values()):.2f}. "
+                                "0.5 = coin flip, 1.0 = perfect.")
+        elif hold:
+            cols[0].metric("AUC on unseen papers", f"{hold['passage_auc_all_sections']:.2f}",
+                           help=f"Retrained without 153 papers, then scored them: {hold['ai_caught']} AI paragraphs "
+                                f"caught, {hold['human_flagged_as_ai']} real abstracts wrongly flagged. "
+                                "0.5 = coin flip, 1.0 = perfect.")
+        elif ho:
+            cols[0].metric("Body-text comparison (AUC)", f"{ho['auc_body_text_heldout']:.2f}",
+                           help="Papers whose abstracts were used in training, so not a true unseen-paper test.")
         if val:
             cols[1].metric("Cross-validated AUC", f"{val['auc_stylometric_all']:.2f}")
             cols[2].metric("Word-count baseline (not used)", f"{val['auc_tfidf_all']:.2f}",
                            help="Higher, but it learns topic words rather than style.")
-        st.markdown("In plain terms: given one real and one generated paragraph, the detector picks the generated "
-                    "one as more AI-like about **83% of the time**.")
+        if gcv:
+            st.markdown("In plain terms: given one real and one generated paragraph from papers it never saw, the "
+                        f"detector rates the generated one as more AI-like about **{gcv['auc']:.0%} of the time** "
+                        f"(95% interval {gcv['auc_95ci_by_paper'][0]:.0%}-{gcv['auc_95ci_by_paper'][1]:.0%}). As a "
+                        f"yes/no label at score 50 it is right {gcv['accuracy_at_50']:.0%} of the time.")
+        elif hold:
+            st.markdown("In plain terms: given one real and one generated paragraph from papers it never saw, the "
+                        f"detector rates the generated one as more AI-like about **{hold['passage_auc_all_sections']:.0%} "
+                        f"of the time**. As a yes/no label at score 50 it is right {hold['accuracy_at_50']:.0%} of the time.")
         img = RESULTS / "detector_validation.png"
         if img.exists():
             st.image(str(img), caption="Scores for real paper text, GPT text and our first draft.")
@@ -637,3 +664,137 @@ def show():
                 for cond, sub in rs.groupby("condition"):
                     with st.expander(f"{cond.replace('_', ' ')} paragraphs ({len(sub)} answers)"):
                         st.dataframe(sub.drop(columns=[c for c in ("condition",) if c in sub]), hide_index=True)
+
+    # ---------------- Revise with checks (Half 2, Sprint 3)
+    with tabs[-1]:
+        revise_tab()
+
+
+# ------------------------------------------------------------------ Half 2 pipeline: detector-guided revision with checks
+@st.cache_data(show_spinner=False)
+def half2_candidates():
+    """Paragraphs the pipeline would revise (scored offline), highest score first."""
+    if str(DEMO) not in sys.path:
+        sys.path.insert(0, str(DEMO))
+    import half2_pipeline as hp
+    from project_io import read_input
+    _, v0, manifest = read_input(hp.INPUTS)
+    model = json.loads(hp.MODEL_FILE.read_text(encoding="utf-8"))
+    return [(pid, r["score"]) for pid, r in hp.select(v0, manifest, model)]
+
+
+def latest_half2_run():
+    runs = sorted(p for p in HALF2_RUNS.glob("half2-*") if (p / "change_report.json").exists())
+    return (runs[-1], read_json(runs[-1] / "change_report.json")) if runs else (None, None)
+
+
+def seeded_summary():
+    for path in SEEDED:
+        data = read_json(path)
+        if data:
+            return data
+    return None
+
+
+def revise_tab():
+    st.caption("The full Half 2 system: the detector picks AI-like paragraphs and explains why, a model rewrites "
+               "them, and every rewrite must pass the content checks before it is kept. The detector never "
+               "approves a rewrite.")
+    st.mermaid_chart('''flowchart LR
+    S["Detector picks<br/>AI-like paragraphs"] --> R["Rewrite with<br/>detector feedback"]
+    R --> F{"Fluency, numbers,<br/>citations, terms,<br/>no new facts?"}
+    F -->|no| R
+    F -->|yes| E{"Evidence and<br/>meaning checks<br/>(separate model)"}
+    E -->|no| R
+    E -->|yes| K["Keep the rewrite"]
+    R -.->|"3 failures"| O["Keep the original"]''', width="stretch",
+                     alt="Detector picks paragraphs, rewrite, rule checks, evidence and meaning checks, keep or retry; after three failures keep the original.")
+    seeded = seeded_summary()
+    if seeded:
+        st.markdown("#### :material/verified: How we know the checks work")
+        cols = st.columns(2)
+        cols[0].metric("Planted errors caught", seeded["fault_catch_rate"],
+                       help="Real paragraphs with an error we planted ourselves: a changed number, a dropped citation, "
+                            "a made-up result, a misstated source...")
+        cols[1].metric("Clean rewrites wrongly rejected", seeded["false_alarms_on_clean_rewrites"])
+        st.caption(f"Checks used: {seeded['checks_used']}.")
+    half2_live()
+    run_dir, report = latest_half2_run()
+    if report:
+        half2_result(run_dir, report)
+    else:
+        st.info("No revision run saved yet. Start one above (local launcher with an API key).")
+
+
+@st.fragment(run_every="2s")
+def half2_live():
+    import jobs
+    st.markdown("#### :material/play_circle: Revise paragraphs now")
+    allowed = jobs.live_allowed(st.get_option("server.address"))
+    job_id = st.session_state.get("half2_job")
+    active = jobs.half2_progress(job_id) if job_id else None
+    busy = bool(active and active["status"] == "RUNNING")
+    try:
+        candidates = half2_candidates()
+    except Exception as error:  # the page must still load if the inputs are missing
+        st.warning(f"Could not score the draft: {error}")
+        return
+    labels = {pid: f"{pid} (score {sc:.0f})" for pid, sc in candidates}
+    default = [pid for pid, _ in candidates[:2]] + ([HARD_CASE] if HARD_CASE in labels else [])
+    chosen = st.multiselect("Paragraphs to revise (up to 5)", list(labels), default=list(dict.fromkeys(default)),
+                            format_func=labels.get, max_selections=jobs.HALF2_MAX_PARAGRAPHS, key="half2_pick")
+    st.caption(f"{HARD_CASE} is the hard case: it cites two papers, so the evidence check compares any rewrite "
+               "with the quotes in the team's evidence table.")
+    if not allowed:
+        st.info("Live revision needs an API key, so it is switched off in the online preview. "
+                "The latest saved run is shown below.")
+    if st.button("Revise selected paragraphs", icon=":material/auto_fix_high:", type="primary", key="half2_start",
+                 disabled=not allowed or busy or not chosen):
+        try:
+            st.session_state["half2_job"] = jobs.start_half2(st.get_option("server.address"), chosen)
+            st.rerun(scope="fragment")
+        except (ValueError, RuntimeError) as error:
+            st.error(str(error))
+    if active:
+        if busy:
+            with st.status("Revising: each attempt is rewritten, then checked", expanded=True):
+                for step in active["steps"] or ["Scoring and preparing the first rewrite..."]:
+                    st.caption(step)
+        elif active["status"] == "COMPLETED":
+            st.success("Revision finished. The results below are from this run.")
+            if st.session_state.get("half2_shown") != job_id:
+                st.session_state["half2_shown"] = job_id
+                st.rerun()
+        else:
+            st.warning("The run stopped before finishing. The original draft is unchanged.")
+
+
+def half2_result(run_dir, report):
+    t = report["totals"]
+    st.markdown(f"#### :material/compare: Latest run: `{run_dir.name}`")
+    cols = st.columns(3)
+    cols[0].metric("Paragraphs revised", f"{t['revised']} of {t['selected']}")
+    cols[1].metric("Kept as written", t["kept_original"], help="Every attempt failed a check, so the original stayed.")
+    if t["mean_score_before"] is not None:
+        cols[2].metric("Mean AI-likeness", f"{t['mean_score_after']:.0f}",
+                       f"{t['mean_score_after'] - t['mean_score_before']:+.0f} from {t['mean_score_before']:.0f}",
+                       delta_color="inverse")
+    for r in report["paragraphs"]:
+        icon = ":material/check_circle:" if r["outcome"] == "revised" else ":material/block:"
+        with st.expander(f"{r['paragraph_id']} · {r['section'].replace('_', ' ')} · "
+                         f"{r['score_before']:.0f} → {r['score_after']:.0f} · {r['outcome']}", icon=icon):
+            st.caption("Why it was picked: " + (", ".join(r["top_features"]) or "high overall score"))
+            for a in r["attempts"]:
+                mark = ":green[accepted]" if a["accepted"] else ":red[rejected]"
+                st.markdown(f"**Attempt {a['attempt']}** {mark}: {_esc(a['verdict'])}")
+            if r["outcome"] == "revised":
+                st.markdown(word_diff(clean(r["text_before"]), clean(r["text_after"])))
+            else:
+                st.markdown("**Kept as written:** " + _esc(clean(r["text_before"])))
+    cols = st.columns(2)
+    for col, name, label in ((cols[0], "final_paper.md", "Download revised paper"),
+                             (cols[1], "change_report.md", "Download change report")):
+        path = run_dir / name
+        if path.exists():
+            col.download_button(label, path.read_bytes(), file_name=name, mime="text/markdown",
+                                key="half2_dl_" + name, icon=":material/download:")

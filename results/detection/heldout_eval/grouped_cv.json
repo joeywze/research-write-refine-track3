@@ -1,0 +1,24 @@
+{
+  "auc": 0.741,
+  "auc_95ci_by_paper": [
+    0.722,
+    0.761
+  ],
+  "accuracy_at_50": 0.709,
+  "ai_papers": 10,
+  "ai_passages": 386,
+  "human_papers": 1808,
+  "per_ai_paper_auc": {
+    "2025.emnlp-main.415": 0.67,
+    "2025.emnlp-main.977": 0.694,
+    "2025.emnlp-main.1290": 0.72,
+    "2025.emnlp-main.1371": 0.733,
+    "2025.emnlp-main.1729": 0.736,
+    "2025.emnlp-main.942": 0.74,
+    "2025.emnlp-main.1068": 0.752,
+    "2025.emnlp-main.611": 0.756,
+    "2025.emnlp-main.66": 0.79,
+    "2025.emnlp-main.427": 0.807
+  },
+  "note": "Every AI paper is scored by a model trained without it. The interval resamples whole papers. All AI text comes from one generator and prompt, which the interval does not cover."
+}

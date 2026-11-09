@@ -54,5 +54,17 @@ class DetectionInterfaceTests(unittest.TestCase):
         self.assertGreater(len(paper["revised"]), 0)
 
 
+    def test_revise_tab_offers_paragraphs_but_stays_off_without_a_local_key(self):
+        with patch.dict(os.environ, {"TRACK3_LOCAL_LIVE": "0"}), \
+             patch("src.writing.providers.OpenAIJSON.generate", side_effect=AssertionError("No model calls")):
+            app = AppTest.from_file(str(APP), default_timeout=30).run()
+            app.session_state["stage"] = "Detect"
+            app.run()
+        self.assertFalse(app.exception)
+        picker = app.multiselect(key="half2_pick")
+        self.assertIn(dv.HARD_CASE, picker.value)
+        self.assertTrue(app.button(key="half2_start").disabled)
+
+
 if __name__ == "__main__":
     unittest.main()

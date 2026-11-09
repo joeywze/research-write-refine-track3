@@ -1,0 +1,13 @@
+{
+  "passage_auc_all_sections": 0.7569513681178686,
+  "accuracy_at_50": 0.7047970479704797,
+  "balanced_accuracy": 0.7056054060042096,
+  "human_flagged_as_ai": "46 of 153",
+  "ai_caught": "84 of 118",
+  "abstract_only_auc": 0.7429193899782135,
+  "abstract_only_counts": {
+    "human": 153,
+    "ai": 3
+  },
+  "note": "Abstract-only compares like with like; with only a few AI abstracts it is very noisy."
+}

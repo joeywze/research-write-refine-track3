@@ -1,0 +1,13 @@
+{
+  "model_sha256": "56b8a7673b8557a57c53023a642eb2e09aba851a8e992c72286630bc6e6eee4a",
+  "input_sha256": {
+    "human": "ce62f33ae9a823e33fb1f9068df5ae9623db59c85113a5591ef3e161807df1e8",
+    "generated": "c8d1c742a8ed7885dbf01d37cda3309b26754738fd1403aac368431f809c0fe2"
+  },
+  "passage_auc": 0.7569513681178686,
+  "human_papers": 153,
+  "generated_papers": 3,
+  "human_passages": 153,
+  "generated_passages": 118,
+  "interpretation": "Passage-level authorship discrimination on supplied papers. Check genre, prior exposure and corpus provenance before making generalisation claims."
+}
