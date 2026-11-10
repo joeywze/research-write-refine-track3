@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src" / "detection"))
 import rewrite_loop as rl  # noqa: E402  (fluency guard, prompts, detector feedback)
 
+CHECK_RETRIES = 1   # a malformed checker answer is asked again once before it counts as a failure
 FACTS_FILE = ROOT / "data" / "facts" / "master_facts.xlsx"
 ACL_ID = re.compile(r"aclanthology\.org/([^/#\s]+?)(?:\.pdf)?(?:[/#]|$)")
 
@@ -191,7 +192,14 @@ class EvidenceGate:
         self.provider, self.index, self.max_output_tokens = provider, index, max_output_tokens
         self.model = provider.model
 
-    def check(self, original_text, text):
+    def check(self, original_text, text, retries=CHECK_RETRIES):
+        for attempt in range(retries + 1):
+            result = self._check_once(original_text, text)
+            if result.status != "CHECK_ERROR":
+                return result
+        return result
+
+    def _check_once(self, original_text, text):
         evidence = self.index.for_text(original_text)
         if not evidence:
             return CheckResult("evidence check", "PASS", "no cited sources in this paragraph")
@@ -209,12 +217,21 @@ class EvidenceGate:
         return CheckResult("evidence check", status, reason)
 
 
-def semantic_check(gate, package, v0, current, paragraph_id, text):
-    """Guan Hong's LLM meaning check over the whole draft (catches context changes)."""
+def semantic_check(gate, package, v0, current, paragraph_id, text, retries=CHECK_RETRIES):
+    """Guan Hong's LLM meaning check over the whole draft (catches context changes).
+
+    CHECK_ERROR means the checker's answer was malformed (e.g. a claim listed twice), not that the
+    rewrite is bad, so it is asked once more. A second malformed answer still fails closed."""
     candidate = with_paragraph(current, paragraph_id, text)
     references = (v0,) if current == v0 else (v0, current)
-    verdict = gate.check(package, candidate, references)
-    return CheckResult("meaning check", verdict.status, "; ".join(verdict.reasons))
+    for attempt in range(retries + 1):
+        verdict = gate.check(package, candidate, references)
+        if verdict.status != "CHECK_ERROR":
+            break
+    reason = "; ".join(verdict.reasons)
+    if attempt:
+        reason = (reason + "; " if reason else "") + f"(checker answer was malformed {attempt}x and asked again)"
+    return CheckResult("meaning check", verdict.status, reason)
 
 
 # ---------------------------------------------------------------- all checks in order

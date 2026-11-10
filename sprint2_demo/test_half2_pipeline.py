@@ -120,6 +120,26 @@ class Half2Tests(unittest.TestCase):
         self.assertIn("evidence check", report["paragraphs"][0]["attempts"][0]["verdict"])
         self.assertEqual(final, self.v0)
 
+    def test_malformed_checker_answer_is_asked_again_once(self):
+        answers = []
+
+        def flaky(payload, n):
+            answers.append(n)
+            if n == 1:  # first answer lists a claim twice, as seen in a live run
+                good = meaning_pass(payload, n)
+                good["paragraphs"][0]["checked_claim_ids"] *= 2
+                return good
+            return meaning_pass(payload, n)
+
+        writer = Provider("writer", lambda payload, n: {"paragraph": P002_REWRITE})
+        gate = checks.EvidenceGate(Provider("evidence", evidence("PASS")), checks.EvidenceIndex(self.package))
+        report, _ = pipeline.run(self.package, self.v0, self.manifest, self.model, writer, RunStore(self.output),
+                                 evidence_gate=gate, semantic_gate=SemanticGate(Provider("checker", flaky)),
+                                 only={"P002"})
+        self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
+        self.assertEqual(len(answers), 2)
+        self.assertEqual(len(writer.calls), 1)  # no writer attempt was wasted
+
     def test_evidence_index_maps_citations_to_the_evidence_table(self):
         found = checks.EvidenceIndex(self.package).for_text(checks.paragraph(self.v0, "P008").text)
         self.assertEqual([f["paper_id"] for f in found], ["2025.emnlp-main.712", "2026.mme-main.8"])
