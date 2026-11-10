@@ -59,6 +59,12 @@ class ReviewedTopicExportTests(unittest.TestCase):
                 self.assertEqual(topic["status"], "PROVISIONAL_AUTOMATED_MAPPING")
                 self.assertFalse(topic["production_ready"])
                 self.assertTrue((ROOT / topic["facts"]).is_file())
+                if topic["id"] == "cluster6":
+                    self.assertEqual(topic["fact_check_status"], "COMPLETED")
+                    self.assertTrue((ROOT / topic["fact_check_summary"]).is_file())
+                    self.assertTrue((ROOT / topic["fact_check_results"]).is_file())
+                else:
+                    self.assertEqual(topic["fact_check_status"], "NOT_RUN")
 
 
 if __name__ == "__main__":

@@ -42,3 +42,8 @@ The four new packages use automated citation-context mappings and are marked
 retrospective manual backfill while keeping their unapproved status visible.
 The fact checker is an optional follow-up and does not convert provisional
 mappings into reviewed handovers.
+
+Cluster 6 has a completed automated `gpt-6-sol` fact-check run. It remains
+provisional: 3 factual statements were labelled `SUPPORTED`, none were labelled
+`CONTRADICTED`, and 98 were labelled `INSUFFICIENT_EVIDENCE`. Clusters 0, 13 and
+18 have not been run. These model verdicts are triage output, not human approval.

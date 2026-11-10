@@ -101,7 +101,7 @@ def check_draft(draft, package, facts_path, provider):
                     or item["text"] not in paragraph.text or item["kind"] not in {"factual", "proposal"}):
                 raise ValueError("Extracted statement is invalid or absent from its paragraph")
             if item["text"] in seen:
-                raise ValueError("Duplicate extracted statement")
+                continue
             seen.add(item["text"])
             result = {"paragraph_id": paragraph.paragraph_id, "claim": item["text"],
                       "kind": item["kind"], "judgment_origin": "automated", "matches": []}

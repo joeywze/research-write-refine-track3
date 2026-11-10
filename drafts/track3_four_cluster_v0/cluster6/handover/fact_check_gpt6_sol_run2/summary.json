@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETED",
+  "judgment_origin": "automated",
+  "model": "gpt-6-sol",
+  "factual_claim_count": 101,
+  "proposal_count": 52,
+  "total_results": 153,
+  "counts": {
+    "SUPPORTED": 3,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 98
+  },
+  "model_calls": 62,
+  "input_tokens": 43015,
+  "output_tokens": 15380,
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use the top three passages from cited sources, not full papers.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ]
+}
