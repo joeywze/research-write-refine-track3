@@ -40,7 +40,8 @@ HERE = Path(__file__).resolve().parent
 INPUTS = HERE / "inputs" / "converted"
 MODEL_FILE = HERE.parent / "results" / "detection" / "detector_model.json"
 MAX_ATTEMPTS = 3
-THRESHOLD = 35.0
+THRESHOLD = 35.0          # the target: stop once a safe rewrite scores at or below this
+MIN_GAIN = 5.0            # a rewrite must lower the score by at least this much to count
 MIN_WORDS = 40
 
 REWRITE_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["paragraph"],
@@ -90,47 +91,71 @@ def instructions(result, leads, last_rejection):
         extra.append("A content reviewer also noted (fix these only if you can without adding facts):\n"
                      + "\n".join(f"- {lead}" for lead in leads))
     if last_rejection:
-        extra.append(f"Your previous attempt was rejected: {last_rejection}. Fix that problem this time.")
+        extra.append(f"About your previous attempt: {last_rejection}.")
     extra.append('Keep [[S01]]-style citation tokens exactly. Return JSON: {"paragraph": "<revised paragraph>"}.')
     rules = rules.replace("Return only the revised paragraph.", "").strip()
     return rules + "\n\n" + "\n\n".join(extra)
 
 
 def revise_paragraph(package, v0, current, pid, result, model, writer, *, evidence_gate, semantic_gate,
-                     leads=(), attempts=MAX_ATTEMPTS, progress=None):
+                     leads=(), attempts=MAX_ATTEMPTS, progress=None, target=THRESHOLD, min_gain=MIN_GAIN):
+    """Up to `attempts` rewrites. A rewrite counts only if it lowers the score by at least `min_gain`
+    AND passes every content check. A safe rewrite that still scores above `target` is kept as the
+    best so far and handed back to the writer to improve further; the lowest-scoring safe version wins.
+    Every attempt is checked against the ORIGINAL paragraph, so changes cannot drift step by step."""
     original = checks.paragraph(current, pid).text
     record = {"paragraph_id": pid, "section": checks.paragraph(v0, pid).section,
               "score_before": result["score"],
               "top_features": [rl.PLAIN_NAMES.get(k, k) for k, v in result["contributions"].items() if v > 0.1][:3],
               "critic_leads": list(leads), "attempts": [], "outcome": "kept original",
               "text_before": original, "text_after": original, "score_after": result["score"]}
-    last_rejection = ""
+    best_text, best_result = None, None
+    last_note = ""
     for attempt in range(1, attempts + 1):
+        base_text, base_result = (best_text, best_result) if best_text else (original, result)
+        candidate, new_result = "", None
         try:
-            response = writer.generate("half2_rewrite", instructions(result, leads, last_rejection),
-                                       {"paragraph": original}, REWRITE_SCHEMA, 4000)
+            response = writer.generate("half2_rewrite", instructions(base_result, leads, last_note),
+                                       {"paragraph": base_text}, REWRITE_SCHEMA, 4000)
             candidate = str(response.get("paragraph", "")).strip()
         except Exception as error:  # a failed model call is a failed attempt, never a pass
-            candidate, results = "", [checks.CheckResult("writer", "CHECK_ERROR", f"{type(error).__name__}: {error}")]
+            results = [checks.CheckResult("writer", "CHECK_ERROR", f"{type(error).__name__}: {error}")]
         else:
-            results = checks.check_rewrite(package, v0, current, pid, candidate,
-                                           evidence_gate=evidence_gate, semantic_gate=semantic_gate)
-        if candidate and candidate == original:
-            results = [checks.CheckResult("writer", "NO_CHANGE", "the rewrite was identical to the original")]
-        new_score = score(candidate, model)["score"] if candidate else None
-        passed = bool(results) and all(r.passed for r in results)
-        if passed and new_score is not None and new_score > result["score"]:
-            passed, results = False, results + [checks.CheckResult(
-                "detector", "NO_IMPROVEMENT", f"score went up ({result['score']:.0f} -> {new_score:.0f})")]
+            new_result = score(candidate, model) if candidate else None
+            needed = (best_result or result)["score"] - (min_gain if best_text is None else 0.5)
+            if not candidate or candidate == original or candidate == best_text:
+                results = [checks.CheckResult("writer", "NO_CHANGE", "the rewrite repeated an earlier version")]
+            elif new_result["score"] > needed:
+                # Checked before the model checks, so a rewrite that does not help costs no API call.
+                results = [checks.CheckResult("detector", "NO_IMPROVEMENT",
+                    f"score {new_result['score']:.0f} is not at least {min_gain:.0f} points below "
+                    f"{result['score']:.0f}" if best_text is None else
+                    f"score {new_result['score']:.0f} is not below the best safe version ({best_result['score']:.0f})")]
+            else:
+                results = checks.check_rewrite(package, v0, current, pid, candidate,
+                                               evidence_gate=evidence_gate, semantic_gate=semantic_gate)
+        safe = bool(results) and all(r.passed for r in results)
+        new_score = new_result["score"] if new_result else None
+        if safe:
+            best_text, best_result = candidate, new_result
+        done = safe and new_score <= target
+        verdict = checks.summary(results)
+        if safe and not done:
+            verdict += f"; still scores {new_score:.0f} (target {target:.0f}), trying to lower it further"
         record["attempts"].append({"attempt": attempt, "text": candidate, "score": new_score,
-                                   "accepted": passed, "checks": checks.as_dicts(results),
-                                   "verdict": checks.summary(results)})
+                                   "accepted": safe, "checks": checks.as_dicts(results), "verdict": verdict})
         if progress:
-            progress(pid, attempt, passed, checks.summary(results), new_score)
-        if passed:
-            record.update(outcome="revised", text_after=candidate, score_after=new_score)
-            return record, checks.with_paragraph(current, pid, candidate)
-        last_rejection = checks.summary(results).replace("rejected by ", "")
+            progress(pid, attempt, safe, verdict, new_score)
+        if done:
+            break
+        if safe:
+            last_note = (f"that version passed every content check but still scores {new_score:.0f}. "
+                         "Make further changes to the signals listed above, keeping every fact, hedge and citation")
+        else:
+            last_note = verdict.replace("rejected by ", "")
+    if best_text:
+        record.update(outcome="revised", text_after=best_text, score_after=best_result["score"])
+        return record, checks.with_paragraph(current, pid, best_text)
     return record, current
 
 
@@ -248,7 +273,7 @@ def main(argv=None):
                                    editable_ids=sorted(editable))
 
     def progress(pid, attempt, ok, verdict, new_score):
-        print(f"{datetime.now():%H:%M:%S} {pid} attempt {attempt}: {'ACCEPTED' if ok else 'rejected'} - {verdict}")
+        print(f"{datetime.now():%H:%M:%S} {pid} attempt {attempt}: {'passed checks' if ok else 'rejected'} - {verdict}")
 
     report, _ = run(package, v0, manifest, model, writer, store, evidence_gate=evidence_gate,
                     semantic_gate=semantic_gate, critic=critic, threshold=args.threshold, only=only,

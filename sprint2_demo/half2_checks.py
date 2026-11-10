@@ -78,7 +78,9 @@ def paragraph(draft, paragraph_id):
 
 def plain(text):
     """Paragraph text without [[S01]] citation tokens, for scoring and sentence checks."""
-    return re.sub(r"\s+([.,;:])", r"\1", CITATION.sub("", text)).strip()
+    text = re.sub(r"\s*(?:\[\[[^\]]+\]\]\s*;?\s*)+", " ", text)   # citation groups and their separators
+    text = re.sub(r"\s+([.,;:])", r"\1", text)
+    return re.sub(r"([.!?])\.", r"\1", text).strip()   # "overlooked. [[S01]]." leaves no double full stop
 
 
 # ---------------------------------------------------------------- cheap checks

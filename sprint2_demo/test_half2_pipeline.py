@@ -16,6 +16,13 @@ ROOT = Path(__file__).resolve().parent
 TARGET = "P035"
 BEFORE = "reported rather than replaced by favorable summaries"
 GOOD = "reported as they are, not replaced by favorable summaries"
+# A real rewrite of P002 from the first live run (scores 75 -> 35), with its citation tokens.
+P002_REWRITE = ("When a language model is used to evaluate answers, the evaluator itself becomes an object of "
+                "assessment. Multilingual studies already examine this problem. Fu and Liu evaluate judgments on "
+                "parallel language versions, and Chung and Freienthal investigate cross-language stability in "
+                "controlled customer-support dialogues. Their work gives direct precedents for studying "
+                "language-dependent evaluation, not evidence that multilingual judging has been overlooked. "
+                "[[S01]]; [[S02]].")
 
 
 class Provider:
@@ -59,35 +66,56 @@ class Half2Tests(unittest.TestCase):
                                      evidence_gate=gate, semantic_gate=SemanticGate(checker), only=set(only))
         return report, final, writer
 
-    def test_safe_rewrite_is_accepted_and_reported(self):
+    def test_safe_rewrite_is_kept_and_reported(self):
         report, final, writer = self.run_pipeline([self.text.replace(BEFORE, GOOD)])
         record = report["paragraphs"][0]
         self.assertEqual(record["outcome"], "revised")
-        self.assertLess(record["score_after"], record["score_before"])
-        self.assertEqual(len(writer.calls), 1)
+        self.assertLess(record["score_after"], record["score_before"] - pipeline.MIN_GAIN)
         self.assertIn(GOOD, checks.paragraph(final, TARGET).text)
+        # Still above the target, so the writer was asked to improve the safe version further.
+        self.assertGreater(record["score_after"], pipeline.THRESHOLD)
+        self.assertEqual(len(writer.calls), pipeline.MAX_ATTEMPTS)
+        self.assertIn("still scores", writer.calls[1][1])
+        self.assertEqual(writer.calls[1][2]["paragraph"], self.text.replace(BEFORE, GOOD))
         self.assertTrue((self.output / "change_report.md").exists())
         self.assertTrue((self.output / "final_paper.md").exists())
 
+    def test_rewrite_that_does_not_lower_the_score_is_not_kept(self):
+        same_score = self.text.replace("whole underlying items", "the whole underlying items")
+        report, final, _ = self.run_pipeline([same_score])
+        record = report["paragraphs"][0]
+        self.assertEqual(record["outcome"], "kept original")
+        self.assertIn("not at least", record["attempts"][0]["verdict"])
+        self.assertEqual(final, self.v0)
+
     def test_rejected_attempt_is_explained_to_the_writer_then_fixed(self):
-        bad = self.text.replace("95%", "90%")
-        report, _, writer = self.run_pipeline([bad, self.text.replace(BEFORE, GOOD)])
+        good = self.text.replace(BEFORE, GOOD)
+        bad = good.replace("95%", "90%")
+        report, _, writer = self.run_pipeline([bad, good])
         attempts = report["paragraphs"][0]["attempts"]
-        self.assertEqual([a["accepted"] for a in attempts], [False, True])
+        self.assertEqual([a["accepted"] for a in attempts[:2]], [False, True])
         self.assertIn("numbers changed", attempts[0]["verdict"])
         self.assertIn("numbers changed", writer.calls[1][1])  # the reason is fed back into the next prompt
+        self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
 
     def test_three_failures_keep_the_original(self):
-        bad = self.text + " Pilot results show a clear language gap."
+        bad = self.text.replace(BEFORE, GOOD) + " Pilot results show a clear language gap."
         report, final, writer = self.run_pipeline([bad])
         self.assertEqual(report["paragraphs"][0]["outcome"], "kept original")
         self.assertEqual(len(writer.calls), pipeline.MAX_ATTEMPTS)
         self.assertEqual(final, self.v0)
 
-    def test_evidence_failure_blocks_a_cited_paragraph(self):
+    def test_rewrite_reaching_the_target_stops_early(self):
         text = checks.paragraph(self.v0, "P002").text
-        rewrite = text.replace("becomes an object of assessment", "has to be assessed")
-        report, final, _ = self.run_pipeline([rewrite], evidence_status="UNSUPPORTED_ADDITION", only=("P002",))
+        report, _, writer = self.run_pipeline([P002_REWRITE], only=("P002",))
+        record = report["paragraphs"][0]
+        self.assertEqual(record["outcome"], "revised")
+        self.assertLessEqual(record["score_after"], pipeline.THRESHOLD)
+        self.assertEqual(len(writer.calls), 1)
+        self.assertNotEqual(text, P002_REWRITE)
+
+    def test_evidence_failure_blocks_a_cited_paragraph(self):
+        report, final, _ = self.run_pipeline([P002_REWRITE], evidence_status="UNSUPPORTED_ADDITION", only=("P002",))
         self.assertEqual(report["paragraphs"][0]["outcome"], "kept original")
         self.assertIn("evidence check", report["paragraphs"][0]["attempts"][0]["verdict"])
         self.assertEqual(final, self.v0)

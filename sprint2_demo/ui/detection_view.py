@@ -785,7 +785,7 @@ def half2_result(run_dir, report):
                          f"{r['score_before']:.0f} → {r['score_after']:.0f} · {r['outcome']}", icon=icon):
             st.caption("Why it was picked: " + (", ".join(r["top_features"]) or "high overall score"))
             for a in r["attempts"]:
-                mark = ":green[accepted]" if a["accepted"] else ":red[rejected]"
+                mark = ":green[passed all checks]" if a["accepted"] else ":red[rejected]"
                 st.markdown(f"**Attempt {a['attempt']}** {mark}: {_esc(a['verdict'])}")
             if r["outcome"] == "revised":
                 st.markdown(word_diff(clean(r["text_before"]), clean(r["text_after"])))
