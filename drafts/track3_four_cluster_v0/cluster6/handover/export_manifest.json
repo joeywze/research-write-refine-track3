@@ -1,0 +1,9 @@
+{
+  "status": "SCHEMA_VALID_REVIEW_REQUIRED",
+  "topic_directory": "drafts/track3_four_cluster_v0/cluster6",
+  "paragraphs": 33,
+  "sources": 7,
+  "evidence_records": 14,
+  "production_ready": false,
+  "required_review": "Approve each generated citation-context source claim before production use."
+}

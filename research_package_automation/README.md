@@ -123,3 +123,22 @@ the relevant passage, so evaluate these outputs against human-reviewed examples.
 The prototype accepts 1–20 text-readable PDFs, each up to 25 MB. Scanned PDFs
 need OCR. Candidate gaps are scoped to the selected papers and require a broader
 literature check before novelty can be established.
+
+## Export an existing reviewed topic
+
+`export_reviewed_topic.py` converts an existing six-section Draft V0 and its
+reviewed evidence tables to the same schema without regenerating the research.
+Topic-specific scientific choices, including protected terms, live in a reviewed
+`handover_config.json`; paragraph positions and citations are derived from the
+draft rather than hard-coded.
+
+```bash
+python -m research_package_automation.export_reviewed_topic \
+  drafts/track3_four_cluster_v0/cluster6 \
+  drafts/track3_four_cluster_v0/cluster6/handover
+```
+
+The exporter writes `research_package.json`, `v0.json` and an export manifest.
+The manifest remains `SCHEMA_VALID_REVIEW_REQUIRED` until Half 1 approves the
+generated citation-context claim mappings. Schema validation is not semantic
+approval.
