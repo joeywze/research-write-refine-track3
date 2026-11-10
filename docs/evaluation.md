@@ -38,3 +38,18 @@ Root writing `export-human` creates separated rater and private condition-key ma
 Do not distribute keys or identifiable responses to raters or commit new ones. Use an ignored local `.private/` location or approved restricted storage for new private evaluation materials. The existing detector builder writes its key next to public materials, so review its output before committing or distributing it. Ignoring a folder does not remove earlier commits. If raters have seen published keys, use fresh blinded items.
 
 The original recorded outputs are retained for provenance, not silently rewritten to claim stronger verification or evaluation results.
+
+## Half 2: seeded-fault test of the content checks (Sprint 3)
+
+Setup: 69 cases built from V0 (`sprint2_demo/seeded_faults.py`), labels verified by two people.
+Checker model: gpt-5.4-2026-03-05. Results: `sprint2_demo/evaluation/results_with_llm/`.
+
+| Group | Result |
+|---|---|
+| Planted errors caught (all checks) | 33 of 33 |
+| ... with rules only | 16 of 39 |
+| Fresh errors (written before testing, frozen) | 5 of 5 |
+| Subtle drift judged by reviewers | 1 of 6 |
+| Clean rewrites wrongly rejected | 2 of 30 (1 misattribution, 1 incomplete checker answer) |
+
+What breaks it: (paste the paragraph from my last message)

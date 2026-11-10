@@ -83,6 +83,16 @@ FAULTS = [
     ("T1", "P031", "protected term changed", "Conditional Cohen's kappa", "Conditional agreement coefficient", "rules"),
     ("T2", "P030", "protected term changed", "**unconditional operational agreement**", "**overall agreement**", "rules"),
     ("T3", "P031", "protected term changed", "Conditional Cohen's kappa", "Conditional Cohen kappa", "rules"),
+
+    # Fresh faults: written before testing and frozen. No rule was changed after running them.
+    ("F1", "P028", "fresh fault", "not statistically derived requirements",
+     "statistically derived to detect a language effect", "model"),
+    ("F2", "P014", "fresh fault", "yielding 80 response texts", "yielding 160 response texts", "rules"),
+    ("F3", "P023", "fresh fault", "the one-judge pilot will not support claims across judge families",
+     "the pilot will support claims across judge families", "model"),
+    ("F4", "P017", "fresh fault", "Bilingual review would check", "Machine translation would check", "model"),
+    ("F5", "P008", "fresh fault", "Yu et al. compare an official English prompt with basic and instructional Chinese prompts",
+     "Yu et al. compare English and Japanese prompts", "model"),
 ]
 
 # Clean rewrites: same meaning, different wording. These should be ACCEPTED.
