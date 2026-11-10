@@ -7,6 +7,7 @@
   "proposal_count": 3,
   "total_results": 31,
   "skipped_uncited_paragraph_count": 27,
+  "skipped_uncited_claim_count": 0,
   "counts": {
     "SUPPORTED": 4,
     "CONTRADICTED": 0,

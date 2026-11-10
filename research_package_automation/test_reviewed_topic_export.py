@@ -59,12 +59,10 @@ class ReviewedTopicExportTests(unittest.TestCase):
                 self.assertEqual(topic["status"], "PROVISIONAL_AUTOMATED_MAPPING")
                 self.assertFalse(topic["production_ready"])
                 self.assertTrue((ROOT / topic["facts"]).is_file())
-                if topic["id"] == "cluster6":
-                    self.assertEqual(topic["fact_check_status"], "COMPLETED")
-                    self.assertTrue((ROOT / topic["fact_check_summary"]).is_file())
-                    self.assertTrue((ROOT / topic["fact_check_results"]).is_file())
-                else:
-                    self.assertEqual(topic["fact_check_status"], "NOT_RUN")
+                self.assertEqual(topic["fact_check_status"], "COMPLETED")
+                self.assertEqual(topic["fact_check_scope"], "cited-literature")
+                self.assertTrue((ROOT / topic["fact_check_summary"]).is_file())
+                self.assertTrue((ROOT / topic["fact_check_results"]).is_file())
 
     def test_cited_literature_scope_skips_uncited_paragraphs_and_uses_selected_sources(self):
         root = ROOT / "drafts" / "track3_four_cluster_v0" / "cluster6" / "handover"
@@ -79,8 +77,11 @@ class ReviewedTopicExportTests(unittest.TestCase):
             def generate(self, task, instructions, payload, schema, max_output_tokens):
                 if task == "extract_draft_claims":
                     self.extractions += 1
-                    return {"statements": [{"text": payload["paragraph"], "kind": "factual",
-                                             "source_ids": payload["available_source_ids"][:1]}]}
+                    return {"statements": [
+                        {"text": payload["paragraph"], "kind": "factual",
+                         "source_ids": payload["available_source_ids"][:1]},
+                        {"text": payload["paragraph"], "kind": "factual", "source_ids": []},
+                    ]}
                 if task == "verify_draft_claim":
                     self.verifications += 1
                     self.assert_evidence = bool(payload["evidence"])
@@ -95,6 +96,7 @@ class ReviewedTopicExportTests(unittest.TestCase):
         self.assertEqual(provider.extractions, len(cited))
         self.assertEqual(provider.verifications, len(cited))
         self.assertEqual(len(result["skipped_paragraph_ids"]), len(draft.paragraphs) - len(cited))
+        self.assertEqual(len(result["skipped_uncited_claims"]), len(cited))
         self.assertTrue(provider.assert_evidence)
         self.assertTrue(all(row["source_ids"] for row in result["results"]))
 

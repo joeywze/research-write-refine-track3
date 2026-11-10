@@ -43,12 +43,18 @@ retrospective manual backfill while keeping their unapproved status visible.
 The fact checker is an optional follow-up and does not convert provisional
 mappings into reviewed handovers.
 
-Cluster 6 has a completed automated `gpt-6-sol` fact-check run scoped to cited
-literature. It remains provisional: 28 cited factual statements were checked;
-4 were labelled `SUPPORTED`, none were labelled `CONTRADICTED`, and 24 were
-labelled `INSUFFICIENT_EVIDENCE`. Three prospective statements were separated
-as proposals, and 27 uncited paragraphs were skipped rather than counted as
-evidence failures. The earlier all-draft baseline (3 supported, 98 insufficient)
-is retained for audit history, but is not directly score-comparable because its
-scope differed. Clusters 0, 13 and 18 have not been run. These model verdicts
-are triage output, not human approval.
+All four new topics have completed automated `gpt-6-sol` fact-check runs scoped
+to cited literature:
+
+| Cluster | Cited factual claims | Supported | Contradicted | Insufficient | Proposals separated | Uncited statements skipped | Uncited paragraphs skipped |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 0 | 19 | 8 | 0 | 11 | 1 | 0 | 35 |
+| 6 | 28 | 4 | 0 | 24 | 3 | 0 | 27 |
+| 13 | 23 | 8 | 0 | 15 | 0 | 1 | 34 |
+| 18 | 20 | 4 | 0 | 16 | 1 | 7 | 36 |
+
+These runs check only statements tied to cited literature. Uncited paragraphs
+and statements are outside scope rather than evidence failures. Cluster 6's earlier all-draft
+baseline (3 supported, 98 insufficient) is retained for audit history but is
+not directly score-comparable. Every package remains provisional: model
+verdicts are triage output, not human approval.

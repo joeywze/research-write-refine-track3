@@ -98,7 +98,7 @@ def check_draft(draft, package, facts_path, provider, scope="all"):
     package = ResearchPackage.from_dict(asdict(package))
     draft = Draft.from_dict(asdict(draft), package)
     records = load_facts(facts_path, package)
-    results, skipped = [], []
+    results, skipped, skipped_claims = [], [], []
     for paragraph in draft.paragraphs:
         paragraph_sources = set(CITATION.findall(paragraph.text))
         if scope == "cited-literature" and not paragraph_sources:
@@ -125,6 +125,10 @@ def check_draft(draft, package, facts_path, provider, scope="all"):
             if key in seen:
                 continue
             seen.add(key)
+            if scope == "cited-literature" and item["kind"] == "factual" and not item["source_ids"]:
+                skipped_claims.append({"paragraph_id": paragraph.paragraph_id,
+                                       "claim": item["text"]})
+                continue
             result = {"paragraph_id": paragraph.paragraph_id, "claim": item["text"],
                       "kind": item["kind"], "source_ids": list(key[2]),
                       "judgment_origin": "automated", "matches": []}
@@ -160,6 +164,7 @@ def check_draft(draft, package, facts_path, provider, scope="all"):
         limitations.insert(2, "Uncited paragraphs are outside this run's evaluation scope, not verified.")
     return {"package_id": package.package_id, "judgment_origin": "automated", "scope": scope,
             "skipped_paragraph_ids": skipped,
+            "skipped_uncited_claims": skipped_claims,
             "limitations": limitations,
             "counts": {status: sum(r["status"] == status for r in factual) for status in VERDICTS},
             "factual_claim_count": len(factual), "results": results}

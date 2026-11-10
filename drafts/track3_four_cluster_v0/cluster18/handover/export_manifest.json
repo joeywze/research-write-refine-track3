@@ -6,6 +6,10 @@
   "evidence_records": 14,
   "fact_check_records": 18,
   "production_ready": false,
-  "fact_check_status": "NOT_RUN",
+  "fact_check_status": "COMPLETED",
+  "fact_check_model": "gpt-6-sol",
+  "fact_check_scope": "cited-literature",
+  "fact_check_summary": "fact_check_gpt6_sol_cited/summary.json",
+  "fact_check_results": "fact_check_gpt6_sol_cited/fact_check_results.json",
   "review_boundary": "Automated citation-context mappings are unapproved and intended for demonstration use."
 }

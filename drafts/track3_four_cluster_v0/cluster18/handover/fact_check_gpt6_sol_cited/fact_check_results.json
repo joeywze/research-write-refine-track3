@@ -1,0 +1,1126 @@
+{
+  "package_id": "cluster18_singapore_safety_audit_v0",
+  "judgment_origin": "automated",
+  "scope": "cited-literature",
+  "skipped_paragraph_ids": [
+    "P001",
+    "P002",
+    "P005",
+    "P006",
+    "P007",
+    "P009",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035",
+    "P036",
+    "P037",
+    "P038",
+    "P039",
+    "P040",
+    "P041",
+    "P042"
+  ],
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use the top three passages from cited sources, not full papers.",
+    "Uncited paragraphs are outside this run's evaluation scope, not verified.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ],
+  "counts": {
+    "SUPPORTED": 4,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 16
+  },
+  "factual_claim_count": 20,
+  "results": [
+    {
+      "paragraph_id": "P003",
+      "claim": "The Cluster 18 papers establish that this broad space is already active.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_49",
+        "S_2025_emnlp_main_612"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "might make a wrong judgment.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_02",
+          "similarity": 0.3273557520238052
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "participant B’s response is intentionally crafted to be toxic.",
+          "page": "3.1 Toxic Conversation Task; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_01",
+          "similarity": 0.32270254210784427
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_49",
+          "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+          "factual_claim": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "the Evaluator might yield false positives or negatives",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.49/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_49_02",
+          "similarity": 0.30883922468082137
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe a toxic-conversation task and possible evaluator errors, but do not establish what the Cluster 18 papers collectively cover or that the broader research space is already active.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "RASS evaluates both over- and under-refusal",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_49"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_49",
+          "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+          "factual_claim": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "It captures both over-refusal and under-refusal",
+          "page": "3.1 Problem Formulation; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.49/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_49_01",
+          "similarity": 0.5566739509174709
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_49",
+          "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+          "factual_claim": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "the Evaluator might yield false positives or negatives",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.49/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_49_02",
+          "similarity": 0.442028165386397
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The RASS source says it captures both over-refusal and under-refusal, supporting the statement that it evaluates both.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_49_01"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_49"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_49",
+          "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+          "factual_claim": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "the Evaluator might yield false positives or negatives",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.49/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_49_02",
+          "similarity": 0.33232093491037534
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_49",
+          "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+          "factual_claim": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "It captures both over-refusal and under-refusal",
+          "page": "3.1 Problem Formulation; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.49/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_49_01",
+          "similarity": 0.32802347969104095
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes concern RASS, not SGToxicGuard. They do not establish the dataset’s Singapore focus or its coverage of Singlish, Chinese, Malay and Tamil.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "MrGuard and OMNIGUARD evaluate multilingual guardrails.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_612"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "might make a wrong judgment.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_02",
+          "similarity": 0.261382006202561
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "participant B’s response is intentionally crafted to be toxic.",
+          "page": "3.1 Toxic Conversation Task; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_01",
+          "similarity": 0.25333693399338464
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes discuss a possible wrong judgment and a toxic response, but do not address whether MrGuard or OMNIGUARD evaluate multilingual guardrails.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "model-based safety judges are fallible",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_612"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "might make a wrong judgment.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_02",
+          "similarity": 0.20537157630201225
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "participant B’s response is intentionally crafted to be toxic.",
+          "page": "3.1 Toxic Conversation Task; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_01",
+          "similarity": 0.19905044813765937
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote says something “might make a wrong judgment,” but does not identify model-based safety judges as the subject. The other quote concerns a toxic response, not judge reliability.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "some evaluations contain limited human review",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_612"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "might make a wrong judgment.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_02",
+          "similarity": 0.20537157630201225
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_612",
+          "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+          "factual_claim": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+          "evidence_quote": "participant B’s response is intentionally crafted to be toxic.",
+          "page": "3.1 Toxic Conversation Task; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.612/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_612_01",
+          "similarity": 0.19905044813765937
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "Neither supplied quote states how much human review any evaluation received. A warning that a judge might make a wrong judgment does not establish that human review was limited.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "The close 2026 literature narrows the gap again.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_1403",
+        "S_2026_mrl_1_41"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.3283071422379831
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.3165967244703378
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.3067247799647811
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish limited details about native review and language coverage, but they do not define the gap or show that the 2026 literature narrows it.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "Pag-refuse uses native-reviewed Tagalog and Taglish prompts",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_mrl_1_41"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.4197796286765996
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.41179063066566446
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.14108958205838779
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish that the translations cover Tagalog and Taglish and that native Tagalog-speaking authors audited and revised something. They do not explicitly establish that the authors reviewed the prompts in both varieties.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "BanglaSafe uses native and expert review for culturally grounded harmful requests",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_1403"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.42025457457007914
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+          "page": "3.3 Prompt Construction; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_01",
+          "similarity": 0.40135407463740475
+        },
+        {
+          "claim_id": "C_P010_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+          "page": "3.3 Prompt Construction; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_01",
+          "similarity": 0.06788028359208324
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote supports line-by-line review by native Bangla-speaking annotators, but it does not establish expert review or that the reviewed prompts were culturally grounded harmful requests.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_1403",
+        "S_2026_mrl_1_41"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.46244629376974333
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.45021084047548793
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.45016054983163206
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes support native-speaker review and the inclusion of a Taglish register, but they do not establish the full claim that native review, mixed-language safety, and lower-resource settings have all received attention. The BanglaSafe quote addresses only the absence of a benign control set.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1065"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1065",
+          "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+          "factual_claim": "Draft citation context: MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9. Paragraph context: SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9.",
+          "evidence_quote": "we generate toxic seed prompts in seven languages:",
+          "page": "3.1 Seed Prompt Generation; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1065/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1065_01",
+          "similarity": 0.3295915202448762
+        },
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1065",
+          "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+          "factual_claim": "Draft citation context: MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9. Paragraph context: SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9.",
+          "evidence_quote": "RASS requires white-box access to model representations",
+          "page": "Limitations & Future Work; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1065/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1065_02",
+          "similarity": 0.32089141921993736
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes discuss toxic seed prompts in seven languages and RASS’s white-box access requirement. Neither establishes that OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "Some benchmarks emphasize unsafe prompts without a matched benign control.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1392"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we thus assume all prompts in these datasets are unsafe.",
+          "page": "C Dataset Details; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_01",
+          "similarity": 0.3680007363097148
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we could not scale to multiple annotators or a larger sample size.",
+          "page": "Limitations — Human Annotation; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_02",
+          "similarity": 0.3414851894398501
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The source says the authors assume all prompts in certain datasets are unsafe. That does not establish that the benchmarks lack a matched benign control; the other quote concerns annotation scale, not benchmark composition.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "MrGuard's evaluation assumes harmful inputs for parts of its analysis",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1392"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we could not scale to multiple annotators or a larger sample size.",
+          "page": "Limitations — Human Annotation; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_02",
+          "similarity": 0.32301265156215736
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we thus assume all prompts in these datasets are unsafe.",
+          "page": "C Dataset Details; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_01",
+          "similarity": 0.3213173981135719
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says MrGuard assumes all prompts in the referenced datasets are unsafe, supporting the statement that its evaluation assumes harmful inputs for parts of its analysis.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1392_01"
+      ]
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "reports limited human review.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1392"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we could not scale to multiple annotators or a larger sample size.",
+          "page": "Limitations — Human Annotation; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_02",
+          "similarity": 0.28825670892348315
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1392",
+          "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+          "factual_claim": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "we thus assume all prompts in these datasets are unsafe.",
+          "page": "C Dataset Details; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1392/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1392_01",
+          "similarity": 0.28674386359833215
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "Under its Human Annotation limitations, MrGuard says it could not scale to multiple annotators or a larger sample, supporting the statement that it reports limited human review.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1392_02"
+      ]
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "BanglaSafe's native-reviewed benchmark is valuable",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_1403"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+          "page": "3.3 Prompt Construction; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_01",
+          "similarity": 0.23099621110945204
+        },
+        {
+          "claim_id": "C_P010_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.21370250155120388
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+          "page": "3.3 Prompt Construction; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_01",
+          "similarity": 0.11227928612553985
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote supports that native Bangla-speaking annotators reviewed the prompts, but the supplied quotes do not establish the evaluative claim that the benchmark is valuable.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "does not supply the benign near-boundary control needed to estimate false refusal in the same design.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_1403"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.4719911064699037
+        },
+        {
+          "claim_id": "C_P010_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+          "evidence_quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+          "page": "3.3 Prompt Construction; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_01",
+          "similarity": 0.42900828659922646
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_findings_emnlp_1403",
+          "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+          "factual_claim": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "does not include a benign control set",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_1403_02",
+          "similarity": 0.07863059731547442
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly says the benchmark does not include a benign control set. That rules out a benign near-boundary control within the benchmark for estimating false refusal in the same design.",
+      "evidence_ids": [
+        "E_2026_findings_emnlp_1403_02"
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_mrl_1_41"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.5559867150731853
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.5328223564149162
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.1352256873594683
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish that Pag-refuse covers one Tagalog variety and one Taglish register, but they do not establish that it conducts matched refusal evaluation or is an especially close precedent for it.",
+      "evidence_ids": [
+        "E_2026_mrl_1_41_02"
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "Its authors appropriately limit inference to a particular variety/register.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_mrl_1_41"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.40893660250925107
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+          "evidence_quote": "The authors, who are native Tagalog speakers, then audited and revised",
+          "page": "3.1 Prompt set and translation; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_01",
+          "similarity": 0.4010615518900115
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_41",
+          "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+          "factual_claim": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+          "evidence_quote": "Our translations cover one Tagalog variety and one Taglish register.",
+          "page": "Limitations; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.41/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_41_02",
+          "similarity": 0.022270470907113607
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote specifies that the translations cover one Tagalog variety and one Taglish register, but it does not say that the authors limit their inferences to those varieties or registers.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage.",
+      "kind": "proposal",
+      "source_ids": [],
+      "judgment_origin": "automated",
+      "matches": [],
+      "status": "PROPOSAL",
+      "reason": "Prospective work; requires design review.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "The authors note that causal controls remain incomplete",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_mrl_1_19"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_19",
+          "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+          "factual_claim": "Draft citation context: Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6. Paragraph context: Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6.",
+          "evidence_quote": "We ran the control direction for the geometry",
+          "page": "6 Ethics and limitations: The decisive control we did not run; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.19/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_19_02",
+          "similarity": 0.31043721836642846
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_19",
+          "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+          "factual_claim": "Draft citation context: Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6. Paragraph context: Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6.",
+          "evidence_quote": "315 human-translated unsafe prompts in each of the 10 languages.",
+          "page": "A.2 Prompt sets; PDF p. 8",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.19/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_19_01",
+          "similarity": 0.2913247040641228
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quote says the authors ran a control direction for the geometry. It does not establish whether causal controls remain incomplete. The prompt-count quote does not address causal controls.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "mechanistic similarity should not be substituted for a behavioral safety–usefulness audit",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_mrl_1_19"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_19",
+          "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+          "factual_claim": "Draft citation context: Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6. Paragraph context: Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6.",
+          "evidence_quote": "We ran the control direction for the geometry",
+          "page": "6 Ethics and limitations: The decisive control we did not run; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.19/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_19_02",
+          "similarity": 0.30379375739086295
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_mrl_1_19",
+          "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+          "factual_claim": "Draft citation context: Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6. Paragraph context: Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6.",
+          "evidence_quote": "315 human-translated unsafe prompts in each of the 10 languages.",
+          "page": "A.2 Prompt sets; PDF p. 8",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.mrl-1.19/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_mrl_1_19_01",
+          "similarity": 0.28725003200520577
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe a geometry control and the unsafe-prompt set, but neither establishes whether mechanistic similarity can substitute for a behavioral safety–usefulness audit.",
+      "evidence_ids": []
+    }
+  ],
+  "skipped_uncited_claims": [
+    {
+      "paragraph_id": "P004",
+      "claim": "cross-lingual refusal work studies shared refusal mechanisms"
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "SGToxicGuard directly establishes Singapore relevance"
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "evaluating multilingual and local-language toxicity across conversation, question answering and content composition"
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "MrGuard evaluates multilingual harmful-input detection"
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "reports a seven-language setting"
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "its white-box dependence limits some deployment comparisons"
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "Cross-lingual refusal-direction research studies internal representations using unsafe data."
+    }
+  ]
+}
