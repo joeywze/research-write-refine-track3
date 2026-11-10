@@ -138,7 +138,9 @@ python -m research_package_automation.export_reviewed_topic \
   drafts/track3_four_cluster_v0/cluster6/handover
 ```
 
-The exporter writes `research_package.json`, `v0.json` and an export manifest.
+The exporter writes `research_package.json`, `v0.json`, `master_facts.xlsx` and
+an export manifest. The fact sheet retains every reviewed evidence passage for
+each mapped source claim and is accepted by `evidence_checker.py`.
 The manifest remains `SCHEMA_VALID_REVIEW_REQUIRED` until Half 1 approves the
 generated citation-context claim mappings. Schema validation is not semantic
 approval.

@@ -1,4 +1,5 @@
 """Fresh model judgments for a schema 0.1 draft and its generated Master sheet."""
+from collections import defaultdict
 from dataclasses import asdict
 import json
 from pathlib import Path
@@ -39,22 +40,30 @@ def load_facts(facts_path, package):
     frame = pd.read_excel(facts_path, sheet_name="Master", keep_default_na=False, dtype=str)
     if not set(MASTER_COLUMNS) <= set(frame.columns) or frame.empty:
         raise ValueError("Master sheet is empty or missing required columns")
-    if frame["claim_id"].duplicated().any():
-        raise ValueError("Duplicate claim IDs in Master sheet")
     expected = {c.claim_id: c for c in package.claims if c.kind == "source"}
     if set(frame["claim_id"]) != set(expected):
         raise ValueError("Master sheet claims do not match the research package")
+    duplicate_key = ["claim_id", "paper_id", "evidence_quote", "page"]
+    if frame.duplicated(duplicate_key).any():
+        raise ValueError("Duplicate claim-evidence rows in Master sheet")
     evidence = {e.evidence_id: e for e in package.evidence}
     records = []
     for row in frame.to_dict("records"):
         claim = expected[row["claim_id"]]
-        if len(claim.evidence_ids) != 1:
-            raise ValueError("Each generated fact needs exactly one supporting passage")
-        entry = evidence[claim.evidence_ids[0]]
-        if (row["paper_id"] != entry.source_id or row["factual_claim"] != claim.text
-                or row["evidence_quote"] != entry.excerpt or f"Page {row['page']}" != entry.locator):
+        matches = [evidence[eid] for eid in claim.evidence_ids
+                   if row["paper_id"] == evidence[eid].source_id
+                   and row["evidence_quote"] == evidence[eid].excerpt
+                   and row["page"] in {evidence[eid].locator,
+                                       evidence[eid].locator.removeprefix("Page ")}]
+        if row["factual_claim"] != claim.text or len(matches) != 1:
             raise ValueError("Master sheet evidence differs from the research package")
-        records.append({**row, "evidence_id": entry.evidence_id})
+        records.append({**row, "evidence_id": matches[0].evidence_id})
+    covered = defaultdict(set)
+    for record in records:
+        covered[record["claim_id"]].add(record["evidence_id"])
+    for claim_id, claim in expected.items():
+        if covered[claim_id] != set(claim.evidence_ids):
+            raise ValueError("Master sheet does not cover every claim evidence record")
     return records
 
 

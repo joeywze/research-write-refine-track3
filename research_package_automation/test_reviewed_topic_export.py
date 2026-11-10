@@ -7,6 +7,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from research_package_automation.export_reviewed_topic import export_topic
+from research_package_automation.evidence_checker import load_facts
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,9 @@ class ReviewedTopicExportTests(unittest.TestCase):
             self.assertEqual(set(package.technical_terms), {"neutral rewrite", "answer re-injection"})
             self.assertFalse(manifest["production_ready"])
             self.assertEqual(handover["input_origin"], "uploaded")
+            facts = load_facts(output / "master_facts.xlsx", package)
+            self.assertEqual(len(facts), manifest["fact_check_records"])
+            self.assertGreater(len(facts), len([claim for claim in package.claims if claim.kind == "source"]))
             saved = json.loads((output / "research_package.json").read_text())
             self.assertEqual(saved["schema_version"], "0.1")
 

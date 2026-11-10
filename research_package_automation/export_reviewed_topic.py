@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 
 from research_package_automation.support.contracts import Draft, ResearchPackage
+from research_package_automation.research_package_builder import MASTER_COLUMNS
 
 
 ACL_LINK = re.compile(
@@ -169,7 +170,7 @@ def export_topic(topic_dir: Path, output_dir: Path) -> dict:
             evidence.append({"evidence_id": eid, "source_id": source_id(paper_id),
                              "excerpt": row["excerpt"], "locator": row["locator"]})
 
-    paragraphs, claims = [], []
+    paragraphs, claims, fact_rows = [], [], []
     for number, block in enumerate(raw_blocks, 1):
         pid = f"P{number:03d}"
         cited_papers = []
@@ -198,6 +199,16 @@ def export_topic(topic_dir: Path, output_dir: Path) -> dict:
                     "A verified excerpt does not independently reproduce the cited study.",
                 ],
             })
+            source_record = reviewed[paper_id]
+            evidence_lookup = {row["evidence_id"]: row for row in evidence}
+            for eid in evidence_by_paper[paper_id]:
+                entry = evidence_lookup[eid]
+                fact_rows.append(dict(zip(MASTER_COLUMNS, (
+                    claim_id, source_id(paper_id), source_record["title"],
+                    citation_context(block["raw"], paper_id), entry["excerpt"], entry["locator"],
+                    "UNREVIEWED", source_record["url"], "reviewed_topic_export", "",
+                    "Citation-context mapping requires Half 1 approval.",
+                ))))
         paragraphs.append({"paragraph_id": pid, "section": block["section"],
                            "text": converted, "claim_ids": claim_ids})
 
@@ -227,10 +238,23 @@ def export_topic(topic_dir: Path, output_dir: Path) -> dict:
         json.dumps(asdict(package), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output_dir / "v0.json").write_text(
         json.dumps(asdict(draft), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    from openpyxl import Workbook
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Master"
+    sheet.append(MASTER_COLUMNS)
+    for row in fact_rows:
+        sheet.append([row[column] for column in MASTER_COLUMNS])
+    for cells in sheet:
+        for cell in cells:
+            if isinstance(cell.value, str):
+                cell.data_type = "s"
+    workbook.save(output_dir / "master_facts.xlsx")
     manifest = {
         "status": "SCHEMA_VALID_REVIEW_REQUIRED",
         "topic_directory": str(topic_dir),
         "paragraphs": len(paragraphs), "sources": len(sources), "evidence_records": len(evidence),
+        "fact_check_records": len(fact_rows),
         "production_ready": False,
         "required_review": "Approve each generated citation-context source claim before production use.",
     }
