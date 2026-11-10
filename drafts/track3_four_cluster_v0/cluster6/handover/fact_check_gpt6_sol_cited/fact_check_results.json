@@ -1,0 +1,1656 @@
+{
+  "package_id": "cluster6_faithfulness_audit_v0",
+  "judgment_origin": "automated",
+  "scope": "cited-literature",
+  "skipped_paragraph_ids": [
+    "P001",
+    "P002",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033"
+  ],
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use the top three passages from cited sources, not full papers.",
+    "Uncited paragraphs are outside this run's evaluation scope, not verified.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ],
+  "counts": {
+    "SUPPORTED": 4,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 24
+  },
+  "factual_claim_count": 28,
+  "results": [
+    {
+      "paragraph_id": "P003",
+      "claim": "The reviewed literature rules out a broad novelty claim.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496",
+        "S_2025_emnlp_main_427",
+        "S_2025_emnlp_main_797"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.24320368948656917
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.24116686375411048
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.23836785404033922
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes describe requirements and evaluation approaches for faithfulness metrics, but do not establish what the proposed novelty claim is or show that the literature rules it out.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "Wang and Atanasova already use self-critique to refine natural-language explanations",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_427"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: Wang and Atanasova, 2025, limitation on criterion scope, p. 10. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.42239687509300594
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: Wang and Atanasova, 2025, limitation on criterion scope, p. 10. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "do not contain the intervened word (de- termined by string matching).",
+          "page": "4.3 Evaluation; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_01",
+          "similarity": 0.4209921437441695
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.047692284677061825
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes discuss a limitation of a faithfulness criterion and an intervened word. Neither establishes that Wang and Atanasova use self-critique to refine natural-language explanations.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_797"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how well an explanation supports a given prediction compared to",
+          "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_01",
+          "similarity": 0.4483512975215788
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.44702534371256875
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.08075629636815834
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe measuring explanation support for a prediction and evaluating faithfulness at the system level, but neither states that prediction–explanation consistency is a necessary faithfulness property.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.4509532392415592
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.4434227497905535
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.12061061530918697
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe how diagnosticity is measured and note a requirement concerning externally provided explanations. They do not show that faithfulness metrics behave differently across models and tasks.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "making single-score conclusions unsafe",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.19774428683687276
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.1970527562131821
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.0
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe a requirement for evaluating externally provided explanations and a measure of how often a metric prefers faithful explanations. They do not show that single-score conclusions are unsafe.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "The closest 2026 work further narrows the opening.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_202",
+        "S_2026_eacl_long_177",
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.33315647694364453
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "faithfulness is defined as prediction sensitivity",
+          "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_01",
+          "similarity": 0.32892011801016824
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_acl_long_202",
+          "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+          "factual_claim": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "our notion of faithfulness is framed through the lens of",
+          "page": "Appendix A: Concept Alignment; PDF p. 15",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.202/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_202_01",
+          "similarity": 0.3129595783644147
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes do not establish which 2026 work is closest or show that it narrows the opening described in the paragraph.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "FaithLM already combines intervention-based evaluation with iterative explanation optimization.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_eacl_long_177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.311538944306454
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "faithfulness is defined as prediction sensitivity",
+          "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_01",
+          "similarity": 0.3029658403320127
+        },
+        {
+          "claim_id": "C_P011_SOURCE_02",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.07778798266542541
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes mention prediction sensitivity and fidelity optimization under an intervention, but do not establish that FaithLM combines intervention-based evaluation with iterative explanation optimization.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "Rao and Layek then show why an answer-change effect needs specificity controls",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.3998078121132593
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.38186210895395956
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.1935880785226525
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish that the study used topic-unrelated filler in place of an explanation and did not apply a formal equivalence test. They do not show that answer-change effects require specificity controls or explain why.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "unrelated filler or simply presenting the answer again can also change a later answer",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.4011809123120476
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.38663854676764925
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.0764278264003748
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish that the study used topic-unrelated filler as a control, but they do not say that filler changed a later answer. They also provide no evidence about presenting the answer again or its effect.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "REFLEX broadens refinement across tasks",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_202"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_acl_long_202",
+          "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+          "factual_claim": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "Although internal knowledge may become outdated",
+          "page": "Limitations: Internal Design; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.202/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_202_02",
+          "similarity": 0.22622369896288413
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_acl_long_202",
+          "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+          "factual_claim": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "our notion of faithfulness is framed through the lens of",
+          "page": "Appendix A: Concept Alignment; PDF p. 15",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.202/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_202_01",
+          "similarity": 0.21546992647570642
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes do not say whether REFLEX refines across tasks or broadens that refinement relative to other work.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "explicitly leaves parts of the setting bounded",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_202"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_acl_long_202",
+          "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+          "factual_claim": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "our notion of faithfulness is framed through the lens of",
+          "page": "Appendix A: Concept Alignment; PDF p. 15",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.202/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_202_01",
+          "similarity": 0.30966859083238507
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_acl_long_202",
+          "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+          "factual_claim": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "Although internal knowledge may become outdated",
+          "page": "Limitations: Internal Design; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.202/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_202_02",
+          "similarity": 0.2737883568120196
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes are incomplete and do not establish that REFLEX explicitly limits parts of its setting.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_427"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.45309487953297
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "do not contain the intervened word (de- termined by string matching).",
+          "page": "4.3 Evaluation; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_01",
+          "similarity": 0.4432027322736893
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: Wang and Atanasova, 2025, limitation on criterion scope, p. 10. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.1033435930235251
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes discuss the scope of a faithfulness criterion and a string-matching condition. They do not establish that SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "Its authors caution that the selected criteria do not exhaust faithfulness.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_427"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "do not contain the intervened word (de- termined by string matching).",
+          "page": "4.3 Evaluation; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_01",
+          "similarity": 0.3676921935751286
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.34376202277180995
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: Wang and Atanasova, 2025, limitation on criterion scope, p. 10. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "do not contain the intervened word (de- termined by string matching).",
+          "page": "4.3 Evaluation; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_01",
+          "similarity": 0.05883823659958271
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says the evaluation reflects only one type of faithfulness criterion, supporting the statement that the selected criteria do not exhaust faithfulness.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_427_02"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "PEX measures whether an explanation supports the associated prediction",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_797"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "measures how well an explanation supports a given prediction compared to",
+          "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_01",
+          "similarity": 0.3942929573320613
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.33623811947475557
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how well an explanation supports a given prediction compared to",
+          "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_01",
+          "similarity": 0.09276654075829997
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The PEX source describes a measure of how well an explanation supports a given prediction, which supports the statement about measuring whether an explanation supports the associated prediction.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_797_01"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_797"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.42724746833907723
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "measures how well an explanation supports a given prediction compared to",
+          "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_01",
+          "similarity": 0.39714005083299
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.10728282823249742
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote says the authors evaluate faithfulness at the system level, but it does not state that a system-level consistency score cannot establish faithfulness for every individual explanation or identify this as a reported limitation.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "These papers motivate refinement and evaluation while also bounding what their metrics warrant.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_427",
+        "S_2025_emnlp_main_797"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "We evaluate explanation faithfulness at the system level",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_02",
+          "similarity": 0.3516236258247011
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_797",
+          "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+          "factual_claim": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "measures how well an explanation supports a given prediction compared to",
+          "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.797/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_797_01",
+          "similarity": 0.34343237559845824
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_427",
+          "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+          "factual_claim": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+          "evidence_quote": "it reflects only one type of faithfulness criterion.",
+          "page": "Limitations — Evaluation Method; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.427/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_427_02",
+          "similarity": 0.3419687340984475
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes indicate that the papers evaluate explanation faithfulness and acknowledge limits to their criteria, but they do not establish that both papers motivate refinement and evaluation as the statement claims.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1231"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "does not account for the properties of invalid SCEs.",
+          "page": "7 Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_02",
+          "similarity": 0.34259882865726904
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "Independent evaluation is essential to avoid bias",
+          "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_01",
+          "similarity": 0.3342440901536677
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes discuss invalid counterfactual explanations and the need for independent evaluation, but neither establishes that counterfactual-explanation work asks whether a minimal input change changes the prediction.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "Mayne et al. separate validity from minimality",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1231"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "Independent evaluation is essential to avoid bias",
+          "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_01",
+          "similarity": 0.4966212385590069
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "does not account for the properties of invalid SCEs.",
+          "page": "7 Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_02",
+          "similarity": 0.4914818210760018
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes mention independent evaluation and invalid counterfactual explanations, but neither establishes that Mayne et al. separate validity from minimality.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "invalid generations can be omitted from some minimality calculations",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1231"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "does not account for the properties of invalid SCEs.",
+          "page": "7 Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_02",
+          "similarity": 0.3008518693012468
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "Independent evaluation is essential to avoid bias",
+          "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_01",
+          "similarity": 0.28952178328614364
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes do not establish that any minimality calculation omits invalid generations. One says only that something does not account for properties of invalid SCEs; the other concerns independent evaluation.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "this proposal keeps output validity visible",
+      "kind": "proposal",
+      "source_ids": [],
+      "judgment_origin": "automated",
+      "matches": [],
+      "status": "PROPOSAL",
+      "reason": "Prospective work; requires design review.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1231"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "Independent evaluation is essential to avoid bias",
+          "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_01",
+          "similarity": 0.43559194131520074
+        },
+        {
+          "claim_id": "C_P010_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1231",
+          "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+          "factual_claim": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+          "evidence_quote": "does not account for the properties of invalid SCEs.",
+          "page": "7 Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1231/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1231_02",
+          "similarity": 0.4310841018092881
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes do not mention Dehghanighobadi et al. or establish what their work investigates.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P010",
+      "claim": "These precedents prevent us from treating “counterfactual” as a single gold standard.",
+      "kind": "proposal",
+      "source_ids": [],
+      "judgment_origin": "automated",
+      "matches": [],
+      "status": "PROPOSAL",
+      "reason": "Prospective work; requires design review.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "Causal Lens constructs faithful–unfaithful pairs",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.2699861569146732
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.2397385018205986
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.026814517995303516
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes show that Causal Lens compares faithful and unfaithful explanations, but they do not establish that it constructs faithful–unfaithful pairs.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "to test whether a metric reacts in the intended direction",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.31724679187920596
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.30862426143067573
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.029516543973329923
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says Causal Lens measures how often a faithfulness metric prefers faithful over unfaithful explanations, which supports testing whether the metric responds in the intended direction.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1496_01"
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "its intervention concerns externally stated explanations rather than unrestricted access to internal computation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1496"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.4165281533949688
+        },
+        {
+          "claim_id": "C_P011_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+          "page": "3.1 Diagnosticity; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_01",
+          "similarity": 0.4060926908738222
+        },
+        {
+          "claim_id": "C_P003_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1496",
+          "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+          "factual_claim": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+          "evidence_quote": "the metric must be capable of evaluating externally provided explanations.",
+          "page": "Limitations; PDF p. 10",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1496/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1496_02",
+          "similarity": 0.026764681715794717
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote says the metric must evaluate externally provided explanations, but it does not establish what the intervention accesses or rule out unrestricted access to internal computation.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "FaithLM shows that intervention feedback can drive explanation optimization",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_eacl_long_177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_02",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.3254977223417895
+        },
+        {
+          "claim_id": "C_P011_SOURCE_02",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "faithfulness is defined as prediction sensitivity",
+          "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_01",
+          "similarity": 0.3165188819681982
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.082907918670576
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes mention fidelity optimization stalling when an intervention lacks semantic opposition and define faithfulness as prediction sensitivity. They do not establish that intervention feedback can drive explanation optimization.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P011",
+      "claim": "its reported failure analysis includes cases where semantic opposition did not behave as expected",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_eacl_long_177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P011_SOURCE_02",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.48819420068818786
+        },
+        {
+          "claim_id": "C_P011_SOURCE_02",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+          "evidence_quote": "faithfulness is defined as prediction sensitivity",
+          "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_01",
+          "similarity": 0.48183705207610145
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_eacl_long_177",
+          "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+          "factual_claim": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+          "page": "K.3 contrary hint; PDF p. 23",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.eacl-long.177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_eacl_long_177_02",
+          "similarity": 0.027138974307145267
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source describes a failure case in which an intervention lacks semantic opposition and fidelity optimization stalls, supporting the statement’s characterization of the failure analysis.",
+      "evidence_ids": [
+        "E_2026_eacl_long_177_02"
+      ]
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "Rao and Layek's 2026 audit is the closest methodological constraint.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.43347007872214277
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.4325884906966072
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.23916823560088943
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe a filler condition and the absence of a formal equivalence test, but they do not establish that Rao and Layek’s audit is the closest methodological constraint relative to other work.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.4854093425203349
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.4828425563707248
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.09504519831648564
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes establish that the audit used a matched-length, topic-unrelated filler condition, but they do not describe a re-injection control or report that either control produced answer changes. The statement’s conclusion therefore does not follow from the supplied quotes.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "They do not claim or test statistical equivalence between controls",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_groundlm_1_35"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.4195354219443353
+        },
+        {
+          "claim_id": "C_P012_SOURCE_01",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+          "evidence_quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+          "page": "3.2 Explanation Conditions; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_01",
+          "similarity": 0.3883415623554933
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_groundlm_1_35",
+          "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+          "factual_claim": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+          "evidence_quote": "we apply no formal equivalence test",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.groundlm-1.35/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_groundlm_1_35_02",
+          "similarity": 0.03762506132596194
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The source says the authors apply no formal equivalence test, which supports the testing portion. It does not establish that they make no claim of statistical equivalence between controls.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P012",
+      "claim": "our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test",
+      "kind": "proposal",
+      "source_ids": [],
+      "judgment_origin": "automated",
+      "matches": [],
+      "status": "PROPOSAL",
+      "reason": "Prospective work; requires design review.",
+      "evidence_ids": []
+    }
+  ]
+}

@@ -6,7 +6,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from research_package_automation.export_reviewed_topic import export_topic
-from research_package_automation.evidence_checker import load_facts
+from research_package_automation.evidence_checker import check_draft, load_facts
 from research_package_automation.support.contracts import Draft, ResearchPackage
 
 
@@ -65,6 +65,38 @@ class ReviewedTopicExportTests(unittest.TestCase):
                     self.assertTrue((ROOT / topic["fact_check_results"]).is_file())
                 else:
                     self.assertEqual(topic["fact_check_status"], "NOT_RUN")
+
+    def test_cited_literature_scope_skips_uncited_paragraphs_and_uses_selected_sources(self):
+        root = ROOT / "drafts" / "track3_four_cluster_v0" / "cluster6" / "handover"
+        package = ResearchPackage.from_dict(json.loads((root / "research_package.json").read_text()))
+        draft = Draft.from_dict(json.loads((root / "v0.json").read_text()), package)
+
+        class ScopeProvider:
+            def __init__(self):
+                self.extractions = 0
+                self.verifications = 0
+
+            def generate(self, task, instructions, payload, schema, max_output_tokens):
+                if task == "extract_draft_claims":
+                    self.extractions += 1
+                    return {"statements": [{"text": payload["paragraph"], "kind": "factual",
+                                             "source_ids": payload["available_source_ids"][:1]}]}
+                if task == "verify_draft_claim":
+                    self.verifications += 1
+                    self.assert_evidence = bool(payload["evidence"])
+                    return {"status": "INSUFFICIENT_EVIDENCE", "reason": "Offline scope test.",
+                            "evidence_ids": []}
+                raise AssertionError(task)
+
+        provider = ScopeProvider()
+        result = check_draft(draft, package, root / "master_facts.xlsx", provider,
+                             scope="cited-literature")
+        cited = [paragraph for paragraph in draft.paragraphs if paragraph.text.count("[[S_")]
+        self.assertEqual(provider.extractions, len(cited))
+        self.assertEqual(provider.verifications, len(cited))
+        self.assertEqual(len(result["skipped_paragraph_ids"]), len(draft.paragraphs) - len(cited))
+        self.assertTrue(provider.assert_evidence)
+        self.assertTrue(all(row["source_ids"] for row in result["results"]))
 
 
 if __name__ == "__main__":

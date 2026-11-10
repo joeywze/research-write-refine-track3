@@ -51,8 +51,11 @@ class ScriptedProvider:
                                     "claim_ids": [c["claim_id"] for c in package["claims"]]}
                                    for i, section in enumerate(SECTIONS)]}
         if task == "extract_draft_claims":
-            return {"statements": [{"text": QUOTE, "kind": "factual"},
-                                   {"text": "We will evaluate another dataset.", "kind": "proposal"}]}
+            source_ids = payload["available_source_ids"]
+            return {"statements": [{"text": QUOTE, "kind": "factual",
+                                     "source_ids": source_ids[:1]},
+                                   {"text": "We will evaluate another dataset.", "kind": "proposal",
+                                    "source_ids": []}]}
         if task == "verify_draft_claim":
             return {"status": self.status, "reason": "Synthetic test judgment.",
                     "evidence_ids": ["UNKNOWN" if self.bad_evidence_id else payload["evidence"][0]["evidence_id"]]}

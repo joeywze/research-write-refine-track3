@@ -55,8 +55,14 @@ python -m research_package_automation.evidence_checker \
   --draft /path/to/v0.json \
   --facts /path/to/project/master_facts.xlsx \
   --model YOUR_CHECKING_MODEL \
+  --scope cited-literature \
   --output /path/to/new-check-output
 ```
+
+The `cited-literature` scope checks only paragraphs containing source citations,
+maps each extracted factual claim to the exact cited source IDs selected for it,
+and reports uncited paragraphs as skipped instead of evidence failures. Use
+`--scope all` when the goal is to audit every factual assertion in the draft.
 
 ## Connect from the interface
 

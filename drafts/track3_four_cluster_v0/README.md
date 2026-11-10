@@ -43,7 +43,12 @@ retrospective manual backfill while keeping their unapproved status visible.
 The fact checker is an optional follow-up and does not convert provisional
 mappings into reviewed handovers.
 
-Cluster 6 has a completed automated `gpt-6-sol` fact-check run. It remains
-provisional: 3 factual statements were labelled `SUPPORTED`, none were labelled
-`CONTRADICTED`, and 98 were labelled `INSUFFICIENT_EVIDENCE`. Clusters 0, 13 and
-18 have not been run. These model verdicts are triage output, not human approval.
+Cluster 6 has a completed automated `gpt-6-sol` fact-check run scoped to cited
+literature. It remains provisional: 28 cited factual statements were checked;
+4 were labelled `SUPPORTED`, none were labelled `CONTRADICTED`, and 24 were
+labelled `INSUFFICIENT_EVIDENCE`. Three prospective statements were separated
+as proposals, and 27 uncited paragraphs were skipped rather than counted as
+evidence failures. The earlier all-draft baseline (3 supported, 98 insufficient)
+is retained for audit history, but is not directly score-comparable because its
+scope differed. Clusters 0, 13 and 18 have not been run. These model verdicts
+are triage output, not human approval.
