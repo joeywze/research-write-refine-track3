@@ -1,0 +1,589 @@
+{
+  "schema_version": "0.1",
+  "package_id": "cluster0_hallucination_invariance_audit_v0",
+  "title": "Fact or Form? A Controlled Invariance Audit of Hallucination Detectors",
+  "research_question": "Can hallucination detectors discriminate supported from minimally incorrect answers while remaining stable across meaning-equivalent answer forms?",
+  "gap": "Existing work documents label problems, response-length effects, domain shift and detector-family blind spots. The narrower unresolved question is whether factual discrimination survives controlled changes in answer form within the same human-validated items.",
+  "contribution": "A proposed paired form-invariance audit that evaluates factual discrimination and within-label score stability together under controlled answer transformations.",
+  "methodology": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. Candidate domains will differ in style while keeping answers short and evidence explicit. Dataset versions, licensing and sampling rules will be frozen before answer variants are constructed.\n\nEach item receives a reference evidence span. Items requiring external knowledge, multiple defensible answers or unresolved coreference will be removed before detector testing. A 20-item pilot per domain will test the construction and annotation rules; pilot items will not enter the frozen test set if rules change.\n\nFor every item, annotators will create:\n\n- one concise supported answer; and\n- one minimally incorrect answer that changes a single substantive entity, quantity, time, polarity or relation while keeping syntax and length similar.\n\nThe incorrect answer must remain fluent and responsive to the question. It cannot be made incorrect merely by adding nonsense or obvious formatting artifacts. The changed element and evidence contradiction will be logged.\n\nEach answer then receives three forms:\n\n| Form | Constraint | Purpose |\n|---|---|---|\n| Concise | Minimal complete answer | Reference form |\n| Lengthened | Add discourse or explanation without adding a new factual claim | Test length sensitivity |\n| Paraphrased | Preserve meaning at approximately matched length | Test phrasing sensitivity |\n\nThis yields six variants per item. Lengthening cannot introduce new factual content. Paraphrases may change syntax and wording but must preserve the answer's supported or incorrect status.\n\nTwo annotators independently label every variant against the passage as Supported, Incorrect or Ambiguous/Insufficient Evidence. They also flag added claims, unnatural wording and failed paraphrases. Disagreements are adjudicated by a third reviewer. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.\n\nSubject to reproducible implementations and licenses, the comparison will include representatives of:\n\n- self-consistency or sampling-based detection;\n- uncertainty or likelihood scoring;\n- internal-representation or attention-based detection;\n- supervised cross-encoder/classifier detection.\n\nExact versions, prompts, sampling counts and preprocessing will be frozen. Any threshold will be chosen on separate calibration data, never the test set.\n\nBaselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. Baselines are diagnostic: if a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+  "study_status": "proposed",
+  "sources": [
+    {
+      "source_id": "S_2025_emnlp_main_1761",
+      "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+      "url": "https://aclanthology.org/2025.emnlp-main.1761/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1554",
+      "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+      "url": "https://aclanthology.org/2025.emnlp-main.1554/"
+    },
+    {
+      "source_id": "S_2026_findings_emnlp_113",
+      "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+      "url": "https://aclanthology.org/2026.findings-emnlp.113/"
+    },
+    {
+      "source_id": "S_2026_acl_long_680",
+      "title": "Rethinking Evaluation for LLM Hallucination Detection",
+      "url": "https://aclanthology.org/2026.acl-long.680/"
+    },
+    {
+      "source_id": "S_2026_findings_aacl_164",
+      "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+      "url": "https://aclanthology.org/2026.findings-aacl.164/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1063",
+      "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+      "url": "https://aclanthology.org/2025.emnlp-main.1063/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1124",
+      "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "url": "https://aclanthology.org/2025.emnlp-main.1124/"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E_2025_emnlp_main_1761_01",
+      "source_id": "S_2025_emnlp_main_1761",
+      "excerpt": "we intentionally curated a dataset of instances",
+      "locator": "E Additional Analysis of Human Evaluation; PDF p. 13"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1761_02",
+      "source_id": "S_2025_emnlp_main_1761",
+      "excerpt": "response length itself is not a direct causal factor",
+      "locator": "N Causality Discussion; PDF p. 18"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1554_01",
+      "source_id": "S_2025_emnlp_main_1554",
+      "excerpt": "consistency might be able to predict accuracy but is fundamentally",
+      "locator": "1 Introduction; PDF p. 2"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1554_02",
+      "source_id": "S_2025_emnlp_main_1554",
+      "excerpt": "our findings may not generalize to prompts and responses of all lengths.",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_findings_emnlp_113_01",
+      "source_id": "S_2026_findings_emnlp_113",
+      "excerpt": "incorrect responses are treated as hallucinations.",
+      "locator": "3 Approach & Experimental Setup — Hallucination in QA setting; PDF p. 3"
+    },
+    {
+      "evidence_id": "E_2026_findings_emnlp_113_02",
+      "source_id": "S_2026_findings_emnlp_113",
+      "excerpt": "our evaluation is restricted to short form question answering",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_acl_long_680_01",
+      "source_id": "S_2026_acl_long_680",
+      "excerpt": "keeping the strictest label during aggregation",
+      "locator": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6"
+    },
+    {
+      "evidence_id": "E_2026_acl_long_680_02",
+      "source_id": "S_2026_acl_long_680",
+      "excerpt": "The threshold is optimized to maximize F1 score on the test set.",
+      "locator": "A.2 Model Configuration Details; PDF p. 14"
+    },
+    {
+      "evidence_id": "E_2026_findings_aacl_164_01",
+      "source_id": "S_2026_findings_aacl_164",
+      "excerpt": "All grading is deterministic and requires no additional model calls.",
+      "locator": "Appendix B: Response Grading Procedures; PDF p. 13"
+    },
+    {
+      "evidence_id": "E_2026_findings_aacl_164_02",
+      "source_id": "S_2026_findings_aacl_164",
+      "excerpt": "The test does not control for response correctness",
+      "locator": "Appendix E: External-Signal Validation Protocol; PDF p. 18"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1063_01",
+      "source_id": "S_2025_emnlp_main_1063",
+      "excerpt": "there are no training samples.",
+      "locator": "Appendix A: Details of Datasets; PDF p. 11"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1063_02",
+      "source_id": "S_2025_emnlp_main_1063",
+      "excerpt": "incorrect segmentation of attentive queries (leading to omission of key information)",
+      "locator": "Appendix I: Bad Cases; PDF p. 12"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1124_01",
+      "source_id": "S_2025_emnlp_main_1124",
+      "excerpt": "we utilize the last token’s embeddings at the last layer.",
+      "locator": "2.3 Classifier Training; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1124_02",
+      "source_id": "S_2025_emnlp_main_1124",
+      "excerpt": "single statements with clear-cut truth values",
+      "locator": "Limitations — Data Coverage; PDF p. 9"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C_P001_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P001.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P002_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P002.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P003.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_01",
+      "text": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1761_01",
+        "E_2025_emnlp_main_1761_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_02",
+      "text": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1554_01",
+        "E_2025_emnlp_main_1554_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P004.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_01",
+      "text": "Draft citation context: Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_findings_emnlp_113_01",
+        "E_2026_findings_emnlp_113_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_02",
+      "text": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_acl_long_680_01",
+        "E_2026_acl_long_680_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_03",
+      "text": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_findings_aacl_164_01",
+        "E_2026_findings_aacl_164_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P005_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P005.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P006_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P006.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P007_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P007.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P008.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_SOURCE_01",
+      "text": "Draft citation context: AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1063_01",
+        "E_2025_emnlp_main_1063_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P008_SOURCE_02",
+      "text": "Draft citation context: IRIS, feature design, p. 4; IRIS, scope limitation, p. 9. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1124_01",
+        "E_2025_emnlp_main_1124_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P009_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P009.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P010_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P010.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P011_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P011.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P012_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P012.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P013_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P013.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P014_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P014.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P015_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P015.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P016_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P016.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P017_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P017.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P018_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P018.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P019_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P019.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P020_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P020.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P021_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P021.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P022_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P022.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P023_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P023.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P024_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P024.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P025_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P025.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P026_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P026.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P027_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P027.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P028_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P028.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P029_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P029.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P030_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P030.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P031_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P031.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P032_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P032.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P033_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P033.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P034_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P034.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P035_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P035.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P036_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P036.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P037_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P037.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P038_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P038.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    }
+  ],
+  "technical_terms": [
+    "invariance ratio",
+    "meaning-preserving lengthening"
+  ],
+  "limitations": [
+    "The design covers short passage-grounded answers rather than long-form generation with mixed claims.",
+    "Meaning-preserving lengthening and minimally incorrect answers require human validation.",
+    "A controlled form intervention diagnoses sensitivity but does not prove why a detector uses a feature internally."
+  ],
+  "unknowns": [
+    "The datasets, versions, licences, detectors and calibration procedure remain to be frozen.",
+    "No proposed experiment has been run and no performance result is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

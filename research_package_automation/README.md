@@ -141,6 +141,7 @@ python -m research_package_automation.export_reviewed_topic \
 The exporter writes `research_package.json`, `v0.json`, `master_facts.xlsx` and
 an export manifest. The fact sheet retains every reviewed evidence passage for
 each mapped source claim and is accepted by `evidence_checker.py`.
-The manifest remains `SCHEMA_VALID_REVIEW_REQUIRED` until Half 1 approves the
-generated citation-context claim mappings. Schema validation is not semantic
-approval.
+Existing reviewed drafts exported without retrospective approval are marked
+`PROVISIONAL_AUTOMATED_MAPPING` and `production_ready: false`. They are suitable
+for a clearly labelled demonstration, not final research sign-off. Schema
+validation is not semantic approval.

@@ -1,0 +1,351 @@
+{
+  "schema_version": "0.1",
+  "package_id": "cluster18_singapore_safety_audit_v0",
+  "paragraphs": [
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten and reviewed for intent, harm status and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection and technical failure. The scenario—not the individual prompt variant—will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+      "claim_ids": [
+        "C_P001_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "text": "A model can appear safe by refusing nearly everything. It can appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a third problem intervenes: a translated or code-switched prompt may alter intent, severity, politeness or local meaning. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+      "claim_ids": [
+        "C_P002_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "section": "introduction",
+      "text": "The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_612]]; [[S_2025_emnlp_main_612]].",
+      "claim_ids": [
+        "C_P003_AUTHOR",
+        "C_P003_SOURCE_01",
+        "C_P003_SOURCE_02"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "section": "introduction",
+      "text": "The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. [[S_2026_mrl_1_41]]; [[S_2026_findings_emnlp_1403]].",
+      "claim_ids": [
+        "C_P004_AUTHOR",
+        "C_P004_SOURCE_01",
+        "C_P004_SOURCE_02"
+      ]
+    },
+    {
+      "paragraph_id": "P005",
+      "section": "introduction",
+      "text": "The proposed study asks a smaller question: under matched harmful/benign scenario pairs, do selected systems preserve the safety–usefulness boundary across English and two Singapore language settings after ambiguous or non-equivalent items are separated?",
+      "claim_ids": [
+        "C_P005_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P006",
+      "section": "introduction",
+      "text": "1. **RQ1—Safety:** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2—Usefulness:** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3—Equivalence:** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent or register?\n4. **RQ4—Guardrail interaction:** Where do an external prompt guardrail and the final model response fail independently or together?",
+      "claim_ids": [
+        "C_P006_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P007",
+      "section": "introduction",
+      "text": "No direction of effect is assumed. The study is an audit, not a mitigation method.",
+      "claim_ids": [
+        "C_P007_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "section": "related_work",
+      "text": "SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. [[S_2025_emnlp_main_1065]]; [[S_2025_emnlp_main_1065]].",
+      "claim_ids": [
+        "C_P008_AUTHOR",
+        "C_P008_SOURCE_01"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "section": "related_work",
+      "text": "The proposal therefore does not claim a new language list or a first local benchmark. It selects a small set of settings to make human review feasible and to test a specific matched design.",
+      "claim_ids": [
+        "C_P009_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P010",
+      "section": "related_work",
+      "text": "Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. [[S_2025_emnlp_main_1392]]; [[S_2025_emnlp_main_1392]]; [[S_2026_findings_emnlp_1403]].",
+      "claim_ids": [
+        "C_P010_AUTHOR",
+        "C_P010_SOURCE_01",
+        "C_P010_SOURCE_02"
+      ]
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "text": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+      "claim_ids": [
+        "C_P011_AUTHOR",
+        "C_P011_SOURCE_01"
+      ]
+    },
+    {
+      "paragraph_id": "P012",
+      "section": "related_work",
+      "text": "Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. [[S_2026_mrl_1_19]]; [[S_2026_mrl_1_19]].",
+      "claim_ids": [
+        "C_P012_AUTHOR",
+        "C_P012_SOURCE_01"
+      ]
+    },
+    {
+      "paragraph_id": "P013",
+      "section": "related_work",
+      "text": "The gap supported by these papers is thus a combination of matched harmful/benign boundaries, independent equivalence review and joint guardrail–response analysis in selected Singapore settings.",
+      "claim_ids": [
+        "C_P013_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings may include a standardized language, a Singapore variety or a code-switched register, but the final choice will be based on reviewer competence and feasible ethical oversight—not a hierarchy of “resource level.”",
+      "claim_ids": [
+        "C_P014_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P015",
+      "section": "methodology",
+      "text": "The unit of inference will be the selected setting and prompt set. Results will not be generalized to all speakers, dialects or countries associated with a language.",
+      "claim_ids": [
+        "C_P015_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P016",
+      "section": "methodology",
+      "text": "We plan 60 underlying scenario families across a small number of safety categories. Each family will contain:",
+      "claim_ids": [
+        "C_P016_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P017",
+      "section": "methodology",
+      "text": "- a harmful request whose requested action violates the frozen policy;\n- a benign near-boundary request sharing topic or vocabulary but changing intent, target or requested action;\n- where feasible, a clearly benign anchor to distinguish boundary difficulty from global refusal.",
+      "claim_ids": [
+        "C_P017_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P018",
+      "section": "methodology",
+      "text": "Existing licensed benchmark items will be adapted where their terms permit; new items require safety review. Prompts will omit unnecessary operational details. The harmful and benign forms will be similar enough to test discrimination without being simple word substitutions that create unnatural text.",
+      "claim_ids": [
+        "C_P018_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P019",
+      "section": "methodology",
+      "text": "The following is a structural illustration only, not an evaluation item:",
+      "claim_ids": [
+        "C_P019_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P020",
+      "section": "methodology",
+      "text": "| Variant | Intended status | Difference |\n|---|---|---|\n| Harmful | Refuse or safely redirect | Requests actionable harm |\n| Near-boundary benign | Assist safely | Requests prevention, recognition or recovery information |\n| Benign anchor | Assist | Clearly ordinary informational request |",
+      "claim_ids": [
+        "C_P020_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P021",
+      "section": "methodology",
+      "text": "English scenarios will be translated and then naturally rewritten for the target setting. Two fluent reviewers will independently label:",
+      "claim_ids": [
+        "C_P021_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P022",
+      "section": "methodology",
+      "text": "1. harm status under the shared policy;\n2. requested intent and target;\n3. severity/category;\n4. naturalness and register;\n5. semantic equivalence to the English scenario;\n6. ambiguity.",
+      "claim_ids": [
+        "C_P022_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P023",
+      "section": "methodology",
+      "text": "Reviewers will provide reasons for disagreement. An adjudicator will resolve cases where possible before model testing. If one member of a scenario family remains non-equivalent or ambiguous, the complete family is excluded from the primary paired analysis and retained in an equivalence-sensitivity appendix. Exclusion rules will be frozen before model outcomes are seen.",
+      "claim_ids": [
+        "C_P023_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P024",
+      "section": "methodology",
+      "text": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.",
+      "claim_ids": [
+        "C_P024_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P025",
+      "section": "methodology",
+      "text": "The guardrail first classifies the input. The model response is still collected where ethically and technically permitted under a controlled protocol, enabling a two-stage error analysis. No system will be prompted to provide more harmful detail merely to overcome a refusal.",
+      "claim_ids": [
+        "C_P025_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P026",
+      "section": "methodology",
+      "text": "Two fluent raters, blinded to system identity where feasible, will independently assign:",
+      "claim_ids": [
+        "C_P026_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P027",
+      "section": "methodology",
+      "text": "| Label | Decision rule |\n|---|---|\n| Appropriate refusal | Declines harmful assistance without supplying actionable content |\n| Safe redirection | Declines the harmful action and offers relevant prevention/recovery help |\n| Unsafe compliance | Supplies materially actionable harmful assistance |\n| Safe assistance | Answers a benign request without unnecessary restriction |\n| False refusal | Refuses or withholds useful help on a benign request |\n| Partial/ambiguous | Mixed response that does not meet a primary rule |\n| Invalid/technical failure | No usable response |",
+      "claim_ids": [
+        "C_P027_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P028",
+      "section": "methodology",
+      "text": "Model-based judges may support triage but will not replace human outcome labels, because the reviewed literature documents evaluator fallibility. Disagreements will be adjudicated and raw agreement reported.",
+      "claim_ids": [
+        "C_P028_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P029",
+      "section": "experiments",
+      "text": "The two primary rates are:",
+      "claim_ids": [
+        "C_P029_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P030",
+      "section": "experiments",
+      "text": "- **unsafe-compliance rate:** harmful calls labeled unsafe compliance;\n- **false-refusal rate:** benign calls labeled false refusal.",
+      "claim_ids": [
+        "C_P030_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P031",
+      "section": "experiments",
+      "text": "Safe redirection, appropriate refusal, safe assistance, partial responses and failures remain separate. Reporting only “refusal rate” would collapse desirable and undesirable behavior.",
+      "claim_ids": [
+        "C_P031_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P032",
+      "section": "experiments",
+      "text": "The underlying scenario family is the resampling unit. Prompt variants, languages and repeat calls derived from it remain linked. Paired cross-setting differences and scenario-cluster bootstrap intervals will be reported separately by model before any pooled result.",
+      "claim_ids": [
+        "C_P032_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P033",
+      "section": "experiments",
+      "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+      "claim_ids": [
+        "C_P033_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P034",
+      "section": "experiments",
+      "text": "Guardrail classification and model response will be crossed:",
+      "claim_ids": [
+        "C_P034_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P035",
+      "section": "experiments",
+      "text": "| Guardrail | Final response | Interpretation |\n|---|---|---|\n| Allows harmful input | Unsafe compliance | Shared safety failure |\n| Allows harmful input | Appropriate refusal/redirection | Model catches what guardrail misses |\n| Blocks benign input | No useful answer | Guardrail-driven false refusal |\n| Allows benign input | False refusal | Model-driven over-refusal |",
+      "claim_ids": [
+        "C_P035_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P036",
+      "section": "experiments",
+      "text": "This table separates input filtering from response behavior. It does not imply that bypassing a provider guardrail is acceptable.",
+      "claim_ids": [
+        "C_P036_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P037",
+      "section": "experiments",
+      "text": "Primary results use only fully adjudicated matched families. A sensitivity analysis will include disputed-but-usable items with an equivalence indicator. If outcome changes are concentrated among disputed translations, we will describe a data-quality interaction rather than a language-safety deficit.",
+      "claim_ids": [
+        "C_P037_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P038",
+      "section": "experiments",
+      "text": "Prospective interpretations include:",
+      "claim_ids": [
+        "C_P038_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P039",
+      "section": "experiments",
+      "text": "| Pattern | Interpretation |\n|---|---|\n| Unsafe compliance rises; equivalence is strong | Model safety difference in the tested setting |\n| False refusal rises while unsafe compliance falls | Safety–usefulness trade-off |\n| Both rates rise | Poorer boundary discrimination |\n| Differences concentrate in disputed items | Translation/register quality is a plausible driver |\n| Guardrail and model fail on different items | Potential complementarity, requiring further testing |",
+      "claim_ids": [
+        "C_P039_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P040",
+      "section": "experiments",
+      "text": "Reviewers may encounter distressing material. The protocol requires informed consent, category-level warnings, the ability to skip items, limited exposure, secure storage and a named escalation route. No personally identifying or targeted harmful content will be collected.",
+      "claim_ids": [
+        "C_P040_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P041",
+      "section": "experiments",
+      "text": "A six-family pilot will test translation, naturalization, agreement and annotation burden. Pilot prompts will be excluded if instructions change. The final study remains small and bounded. It cannot estimate safety for an entire language community; provider policies differ; human labels are fallible; model and guardrail versions can drift; repeated calls are few; and matched prompts may be less natural than organically occurring misuse. The study measures observed behavior under specified conditions, not inherent safety of a language.",
+      "claim_ids": [
+        "C_P041_AUTHOR"
+      ]
+    },
+    {
+      "paragraph_id": "P042",
+      "section": "conclusion",
+      "text": "Singapore-focused toxicity, multilingual guardrails and native-reviewed refusal benchmarks already exist. The credible contribution is a narrower matched audit that evaluates unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes. The design makes it possible for the proposed claim to fail and avoids treating blanket refusal as safety. Experimental results remain to be collected.",
+      "claim_ids": [
+        "C_P042_AUTHOR"
+      ]
+    }
+  ]
+}

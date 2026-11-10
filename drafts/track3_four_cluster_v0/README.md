@@ -26,3 +26,19 @@ Each cluster folder now follows the Cluster 7 research-package structure:
 The revised Draft V0s are grounded in full-text review of all 85 papers assigned to Clusters 0, 6, 13 and 18, plus 15 close 2026 comparison papers. The corpus comprises 100 PDFs and 1,923 pages. Two page-level evidence candidates per paper were rechecked against both extracted page text and a fresh read of the original PDF; all 200 checks passed. The candidate contributions are deliberately described as controlled audits or replication-and-extension studies. None is presented as the first study of its broad topic.
 
 Before selecting a final proposal, the team should confirm data licences, participant/reviewer access, model availability and instructor approval. A wider database search beyond the ACL Anthology corpus remains advisable before making a definitive novelty claim.
+
+## Five-topic handover status
+
+`../track3_five_topic_index.json` is the shared selector index. It includes the
+existing reviewed Cluster 7 handover and the four additional topic exports.
+Each new cluster contains a `handover/` directory with:
+
+- `research_package.json` and `v0.json` in the shared schema;
+- `master_facts.xlsx` for automated fact-checking;
+- `export_manifest.json` recording the review boundary.
+
+The four new packages use automated citation-context mappings and are marked
+`PROVISIONAL_AUTOMATED_MAPPING` with `production_ready: false`. This avoids a
+retrospective manual backfill while keeping their unapproved status visible.
+The fact checker is an optional follow-up and does not convert provisional
+mappings into reviewed handovers.

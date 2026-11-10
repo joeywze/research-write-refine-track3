@@ -1,10 +1,11 @@
 {
-  "status": "SCHEMA_VALID_REVIEW_REQUIRED",
+  "status": "PROVISIONAL_AUTOMATED_MAPPING",
   "topic_directory": "drafts/track3_four_cluster_v0/cluster6",
   "paragraphs": 33,
   "sources": 7,
   "evidence_records": 14,
   "fact_check_records": 24,
   "production_ready": false,
-  "required_review": "Approve each generated citation-context source claim before production use."
+  "fact_check_status": "NOT_RUN",
+  "review_boundary": "Automated citation-context mappings are unapproved and intended for demonstration use."
 }

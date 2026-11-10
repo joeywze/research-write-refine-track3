@@ -251,12 +251,13 @@ def export_topic(topic_dir: Path, output_dir: Path) -> dict:
                 cell.data_type = "s"
     workbook.save(output_dir / "master_facts.xlsx")
     manifest = {
-        "status": "SCHEMA_VALID_REVIEW_REQUIRED",
+        "status": "PROVISIONAL_AUTOMATED_MAPPING",
         "topic_directory": str(topic_dir),
         "paragraphs": len(paragraphs), "sources": len(sources), "evidence_records": len(evidence),
         "fact_check_records": len(fact_rows),
         "production_ready": False,
-        "required_review": "Approve each generated citation-context source claim before production use.",
+        "fact_check_status": "NOT_RUN",
+        "review_boundary": "Automated citation-context mappings are unapproved and intended for demonstration use.",
     }
     (output_dir / "export_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
