@@ -1,0 +1,12 @@
+{
+  "v0_hash": "52e1026e2d51685fa8bd493ff862c2519da90454395aa82fa4069727ecb16a97",
+  "final_hash": "11b26a3c234fd18fa6476d29690c2f8695f6854e068ce194e13968ac6e5b0f4c",
+  "package_hash": "458f02e302ebb59b8b378320a8b0674d379870be903074fc110d4864cd12ce56",
+  "detector_model_hash": "9cfe74f36e3e38104926eb9e1666a195a6412d2f190d9c136ac90e9ad5d722a9",
+  "writer_model": "gpt-5.4-mini-2026-03-17",
+  "checker_model": "gpt-5.4-2026-03-05",
+  "evidence_model": "gpt-5.4-2026-03-05",
+  "critic_model": null,
+  "elapsed_seconds": 57.5,
+  "test_only": false
+}

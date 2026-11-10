@@ -1,0 +1,303 @@
+{
+  "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
+  "threshold": 35.0,
+  "paragraphs": [
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "score_before": 65.1,
+      "top_features": [
+        "stock phrases",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity, or relation while keeping the answer form as similar as practical. Human review will verify that a variant is genuinely incorrect, not an alternative valid expression.",
+          "score": 36.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 37 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity, or relation while keeping the answer form as similar as practical. Human review will verify that a variant is genuinely incorrect and not an alternative valid expression.",
+          "score": 37.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 37 is not below the best safe version (37)"
+            }
+          ],
+          "verdict": "rejected by detector: score 37 is not below the best safe version (37)"
+        },
+        {
+          "attempt": 3,
+          "text": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity, or relation while keeping the answer form as similar as practical. Human review will verify that a variant is genuinely incorrect and not an alternative valid expression.",
+          "score": 37.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 37 is not below the best safe version (37)"
+            }
+          ],
+          "verdict": "rejected by detector: score 37 is not below the best safe version (37)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity or relation while keeping the answer form as similar as practical. Human review will verify that a variant is actually incorrect rather than an alternative valid expression.",
+      "text_after": "The planned pilot contains 20 underlying passage–question items. Each item will have a correct answer and a minimally altered incorrect answer in both languages, yielding 80 response texts before exclusions. Incorrect variants will change a substantive entity, quantity, or relation while keeping the answer form as similar as practical. Human review will verify that a variant is genuinely incorrect, not an alternative valid expression.",
+      "score_after": 36.9
+    },
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "score_before": 61.4,
+      "top_features": [
+        "share of very long sentences",
+        "stock phrases",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Agreement with human judgments is one issue. Consistency across languages is another, and stability across repeated calls is a third. These aspects of an automated evaluator can come apart: a judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability, and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, not a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+          "score": 35.0,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Agreement with human judgments, consistency across languages and stability across repeated calls describe different aspects of an automated evaluator. A judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, rather than a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+      "text_after": "Agreement with human judgments is one issue. Consistency across languages is another, and stability across repeated calls is a third. These aspects of an automated evaluator can come apart: a judge may produce stable decisions that are nevertheless incorrect, or agree with humans in one language but not on a meaning-matched version in another. We propose a controlled bilingual study that measures these properties separately in context-grounded short question answering. A feasibility pilot will contain 20 passage–question items, each with a correct and a deliberately incorrect answer in English and one additional language. Two fluent raters will independently assess each response before adjudication. One fixed language-model judge will evaluate the responses under English instructions, with an additional target-language instruction condition and three calls per condition. The analysis will separate human-reference agreement, cross-language decision changes, repeated-call stability, and non-decisions. The proposed contribution is a human-validated replication-and-extension protocol for a bounded QA setting, not a claim to introduce multilingual judging. The study is designed to distinguish incorrect judgments from unstable judgments and data-construction problems; no direction of effect is assumed.",
+      "score_after": 35.0
+    },
+    {
+      "paragraph_id": "P026",
+      "section": "methodology",
+      "score_before": 42.9,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions, and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+          "score": 42.9,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 43 is not at least 5 points below 43"
+            }
+          ],
+          "verdict": "rejected by detector: score 43 is not at least 5 points below 43"
+        },
+        {
+          "attempt": 2,
+          "text": "Each response/condition will receive three calls in separate contexts without previous verdicts. Within a condition, the model configuration and prompt template will be fixed. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions, and technical failures will be recorded. Fixing settings defines the repeatability test, but it does not guarantee deterministic outputs.",
+          "score": 55.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 56 is not at least 5 points below 43"
+            }
+          ],
+          "verdict": "rejected by detector: score 56 is not at least 5 points below 43"
+        },
+        {
+          "attempt": 3,
+          "text": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions, and technical failures will be recorded. Fixing settings defines the repeatability test. It does not guarantee deterministic outputs.",
+          "score": 28.7,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "too many very short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: too many very short sentences"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+      "text_after": "Each response/condition will receive three calls in separate contexts without previous verdicts. The model configuration and prompt template will be fixed within a condition. Full prompts, raw outputs, versions, dates, supported sampling controls, token limits, parsing decisions and technical failures will be recorded. Fixing settings defines the repeatability test; it does not guarantee deterministic outputs.",
+      "score_after": 42.9
+    },
+    {
+      "paragraph_id": "P027",
+      "section": "experiments",
+      "score_before": 42.4,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review and practice add workload; adjudication and any technical retries do too. An optional J2 would require another 360 calls.",
+          "score": 31.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "CHECK_ERROR",
+              "reason": "Semantic check failed: ValueError: checked_claim_ids: duplicate entries"
+            }
+          ],
+          "verdict": "rejected by meaning check: Semantic check failed: ValueError: checked_claim_ids: duplicate entries"
+        },
+        {
+          "attempt": 2,
+          "text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review adds workload, as do practice, adjudication, and any technical retries. An optional J2 would require another 360 calls.",
+          "score": 41.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 42 is not at least 5 points below 42"
+            }
+          ],
+          "verdict": "rejected by detector: score 42 is not at least 5 points below 42"
+        },
+        {
+          "attempt": 3,
+          "text": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication, plus any technical retries, add workload. An optional J2 would require another 360 calls.",
+          "score": 33.4,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication and any technical retries add workload. An optional J2 would require another 360 calls.",
+      "text_after": "With 20 qualifying items, there will be 40 candidate responses per content language. Each of the three conditions requires 40 responses × 3 calls, giving 360 scheduled J1 calls. Initial human annotation requires 80 response texts × 2 ratings, or 160 ratings. Translation review, practice, adjudication, plus any technical retries, add workload. An optional J2 would require another 360 calls.",
+      "score_after": 33.4
+    }
+  ],
+  "totals": {
+    "selected": 4,
+    "revised": 3,
+    "kept_original": 1,
+    "attempts": 10,
+    "mean_score_before": 52.9,
+    "mean_score_after": 37.0
+  },
+  "critic": null
+}
