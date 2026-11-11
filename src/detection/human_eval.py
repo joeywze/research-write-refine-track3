@@ -3,6 +3,7 @@ Human evaluation: can people tell real paper paragraphs from generated ones?
 
     python src/detection/human_eval.py build   # makes the form text + private answer key
     python src/detection/human_eval.py score responses.csv
+    python src/detection/human_eval.py score responses.csv --key .private/human_eval_v2/PRIVATE_answer_key.csv --out results/detection/human_eval_v2
 
 Design
   * 12 paragraphs, all on the same topic (LLM-as-a-judge evaluation) so topic
@@ -158,8 +159,10 @@ def normalise(ans):
     return None
 
 
-def score_responses(path):
-    key = pd.read_csv(OUT / "PRIVATE_answer_key.csv")
+def score_responses(path, key_path=None, out=OUT):
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=True)
+    key = pd.read_csv(key_path or OUT / "PRIVATE_answer_key.csv")
     r = pd.read_csv(path)
     if "item_id" not in r.columns:  # wide Google Forms export: one row per rater
         rows = []
@@ -195,14 +198,14 @@ def score_responses(path):
                 "ci95_low": round(lo, 3), "ci95_high": round(hi, 3)}
 
     rows = [line(r, "ALL items (detection accuracy)")]
-    for c in ["real", "generated_v0", "generated_revised"]:
+    for c in ["real", "generated", "generated_v0", "generated_revised"]:
         sub = r[r.condition == c]
         if len(sub):
             rows.append(line(sub, f"{c} items"))
     for rid, sub in r.groupby("rater_id"):
         rows.append(line(sub, f"rater {rid}"))
     res = pd.DataFrame(rows)
-    res.to_csv(OUT / "human_eval_results.csv", index=False)
+    res.to_csv(out / "human_eval_results.csv", index=False)
     print(res.to_string(index=False))
     print("\n50% = raters cannot tell (target). For generated items, accuracy = share correctly called 'generated'.")
     r["said_generated"] = r.answer == "generated"
@@ -215,7 +218,7 @@ def score_responses(path):
         print(f"\nDetector vs humans: Spearman correlation between an item's detector score and the share "
               f"of raters who called it generated = {rho:.2f} (over {len(per_item)} items)")
         print(per_item.groupby("condition")[["detector_score", "share_said_generated"]].mean().round(2).to_string())
-    per_item.to_csv(OUT / "human_eval_per_item.csv", index=False)
+    per_item.to_csv(out / "human_eval_per_item.csv", index=False)
 
     if "reason" in r.columns:
         names = {"real": "Real paper", "generated_v0": "First draft (unrevised)",
@@ -224,7 +227,7 @@ def score_responses(path):
         reasons = r[cols].copy()
         reasons["condition"] = reasons.condition.map(names).fillna(reasons.condition)
         reasons = reasons[reasons.reason.astype(str).str.strip().ne("") & reasons.reason.notna()]
-        reasons.sort_values(["condition", "item_id", "rater_id"]).to_csv(OUT / "human_eval_reasons.csv", index=False)
+        reasons.sort_values(["condition", "item_id", "rater_id"]).to_csv(out / "human_eval_reasons.csv", index=False)
         print(f"\nSaved {len(reasons)} rater reasons (anonymised) to human_eval_reasons.csv")
 
 
@@ -232,6 +235,13 @@ if __name__ == "__main__":
     if len(sys.argv) >= 2 and sys.argv[1] == "build":
         build()
     elif len(sys.argv) >= 3 and sys.argv[1] == "score":
-        score_responses(sys.argv[2])
+        import argparse
+        ap = argparse.ArgumentParser()
+        ap.add_argument("step")
+        ap.add_argument("responses")
+        ap.add_argument("--key", help="answer key (default: version-1 study)")
+        ap.add_argument("--out", default=str(OUT), help="folder for the result tables")
+        a = ap.parse_args()
+        score_responses(a.responses, a.key, a.out)
     else:
         print(__doc__)

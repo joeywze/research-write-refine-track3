@@ -240,9 +240,12 @@ def full_paper_data():
 
 
 def human_eval_data():
-    d = RESULTS / "human_eval"
-    res = read_csv(d / "human_eval_results.csv")
-    if res is None or res.empty:
+    # The version-2 study (10 real + 10 generated paragraphs) replaces version 1 once it is scored.
+    for d in (RESULTS / "human_eval_v2", RESULTS / "human_eval"):
+        res = read_csv(d / "human_eval_results.csv")
+        if res is not None and not res.empty:
+            break
+    else:
         return None
     return {"results": res, "per_item": read_csv(d / "human_eval_per_item.csv"),
             "reasons": read_csv(d / "human_eval_reasons.csv")}
@@ -646,8 +649,8 @@ def show():
     # ---------------- 4 human test (only once results exist)
     if he is not None:
         with tabs[4]:
-            st.caption("Criterion 3: people saw mixed real and generated paragraphs on the same topic and guessed "
-                       "which was which. 50% means they could not tell.")
+            st.caption("Criterion 3: people saw a mix of real and generated paragraphs, with citations removed, and "
+                       "guessed which was which. 50% means they could not tell.")
             res = he["results"]
             overall = res.iloc[0]
             st.metric("How often people spotted the generated text correctly", f"{overall.accuracy:.0%}",
