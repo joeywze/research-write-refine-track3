@@ -1,4 +1,7 @@
 """
+SPRINT 2 EXPERIMENT (kept to reproduce the reported V3 result, score 51 -> 30). Superseded by
+sprint2_demo/half2_pipeline.py, which adds the content, evidence and meaning checks and the reviewer.
+
 Run the guarded, detector-guided rewrite over every prose paragraph of the V0
 paper and write the full revised paper (V3) with its original layout.
 

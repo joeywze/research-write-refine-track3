@@ -100,6 +100,7 @@ def progress(job_id):
 # ------------------------------------------------------------------ Half 2: detector-guided revision with checks
 HALF2_WRITER = os.environ.get("HALF2_WRITER_MODEL", "gpt-5.4-mini")
 HALF2_CHECKER = os.environ.get("HALF2_CHECKER_MODEL", "gpt-5.4")
+HALF2_CRITIC = os.environ.get("HALF2_CRITIC_MODEL", "gpt-5.6-luna")
 HALF2_MAX_PARAGRAPHS = 5
 
 
@@ -128,7 +129,8 @@ def start_half2(server_address, paragraph_ids):
         with log_path.open("w", encoding="utf-8") as log:
             process = subprocess.Popen([sys.executable, "-u", str(ROOT / "half2_pipeline.py"),
                 "--output", str(ROOT / "runs" / run_name), "--writer-model", HALF2_WRITER,
-                "--checker-model", HALF2_CHECKER, "--paragraphs", ",".join(ids)], cwd=ROOT, env=env,
+                "--checker-model", HALF2_CHECKER, "--critic-model", HALF2_CRITIC,
+                "--paragraphs", ",".join(ids)], cwd=ROOT, env=env,
                 stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,
                 creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         record["pid"] = process.pid

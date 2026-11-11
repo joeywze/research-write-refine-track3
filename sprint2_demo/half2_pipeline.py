@@ -2,7 +2,8 @@
 
     V0 + research package
       -> score every editable paragraph with the stylometric detector
-      -> (optional) Guan Hong's context critic reviews the draft once and gives leads
+      -> Guan Hong's context critic reviews the draft once and gives leads (always on; a failed
+         review is retried once, then the run continues without notes)
       -> for each AI-like paragraph, up to 3 attempts:
            rewrite (detector feedback + critic leads + why the last try failed)
            -> fluency guard -> preservation rules -> no new facts
@@ -17,7 +18,7 @@ whether a rewrite is safe: only the content checks can accept a rewrite.
 Usage (from sprint2_demo/):
   python half2_pipeline.py --plan                                   # offline: which paragraphs would be revised
   python half2_pipeline.py --output runs/half2-<date> --writer-model <m1> --checker-model <m2> \
-      [--critic-model <m3>] [--paragraphs P002,P027] [--max-paragraphs 4]
+      [--critic-model <m3> | --no-critic] [--paragraphs P002,P027] [--max-paragraphs 4]
 """
 
 import argparse
@@ -40,6 +41,7 @@ HERE = Path(__file__).resolve().parent
 INPUTS = HERE / "inputs" / "converted"
 MODEL_FILE = HERE.parent / "results" / "detection" / "detector_model.json"
 MAX_ATTEMPTS = 3
+DEFAULT_CRITIC = "gpt-5.6-luna"   # must differ from the writer and the checker
 THRESHOLD = 35.0          # the target: stop once a safe rewrite scores at or below this
 MIN_GAIN = 5.0            # a rewrite must lower the score by at least this much to count
 MIN_WORDS = 40
@@ -70,6 +72,34 @@ def select(v0, manifest, model, threshold=THRESHOLD, only=None, limit=None):
             rows.append((p.paragraph_id, result))
     rows.sort(key=lambda row: -row[1]["score"])
     return rows[:limit] if limit else rows
+
+
+def review(critic, package, draft, label, store, retries=1):
+    """Run Guan Hong's context critic; a failed review never stops the rewriting.
+
+    Returns (critique or None, note). A malformed answer is asked again once; after that the
+    pipeline carries on without reviewer notes and records why."""
+    from src.writing.providers import BudgetExceeded
+    error = None
+    for _ in range(retries + 1):
+        try:
+            return critic.assess(package, draft, label, store), "ok"
+        except BudgetExceeded:
+            raise
+        except Exception as exc:  # malformed or failed review: retry once, then continue without it
+            error = f"{type(exc).__name__}: {exc}"
+    return None, f"unavailable ({error})"
+
+
+def needs_research(critique):
+    """NEEDS_RESEARCH findings: problems the rewriter must not fix by itself (for Team A)."""
+    out = []
+    for row in (critique or {}).get("paragraphs", []):
+        for f in row["findings"]:
+            if f["status"] == "NEEDS_RESEARCH":
+                out.append({"paragraph_id": row["paragraph_id"], "criterion": f["criterion"],
+                            "explanation": f["explanation"]})
+    return out
 
 
 def critic_leads(critique):
@@ -163,18 +193,20 @@ def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, sema
         threshold=THRESHOLD, only=None, limit=None, progress=None):
     start = perf_counter()
     targets = select(v0, manifest, model, threshold, only, limit)
-    leads = {}
+    leads, before, critic_status = {}, None, "not run"
     if critic is not None:
-        leads = critic_leads(critic.assess(package, v0, "v0_review", store))
+        before, critic_status = review(critic, package, v0, "v0_review", store)
+        leads = critic_leads(before)
     current, records = v0, []
     for pid, result in targets:
         record, current = revise_paragraph(package, v0, current, pid, result, model, writer,
                                            evidence_gate=evidence_gate, semantic_gate=semantic_gate,
                                            leads=leads.get(pid, ()), progress=progress)
         records.append(record)
-    after_leads = None
+    after_leads, after_status = None, "not run"
     if critic is not None and current != v0:
-        after_leads = critic_leads(critic.assess(package, current, "final_review", store))
+        after, after_status = review(critic, package, current, "final_review", store)
+        after_leads = critic_leads(after) if after is not None else None
     store.write("final_draft.json", current)
     (store.directory / "final_paper.md").write_text(render(current, manifest), encoding="utf-8")
     report = {
@@ -188,8 +220,11 @@ def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, sema
                    "mean_score_before": mean([r["score_before"] for r in records]),
                    "mean_score_after": mean([r["score_after"] for r in records])},
         "critic": None if critic is None else {
-            "actionable_before": sum(len(v) for v in leads.values()),
-            "actionable_after": None if after_leads is None else sum(len(v) for v in after_leads.values())},
+            "model": getattr(critic, "model", None),
+            "review_of_v0": critic_status, "review_of_final": after_status,
+            "actionable_before": sum(len(v) for v in leads.values()) if before is not None else None,
+            "actionable_after": None if after_leads is None else sum(len(v) for v in after_leads.values()),
+            "needs_research": needs_research(before)},
     }
     store.write("change_report.json", report)
     (store.directory / "change_report.md").write_text(as_markdown(report), encoding="utf-8")
@@ -217,6 +252,13 @@ def as_markdown(report):
         last = r["attempts"][-1]["verdict"] if r["attempts"] else ""
         lines.append(f"| {r['paragraph_id']} | {r['score_before']:.0f} -> {r['score_after']:.0f} | {r['outcome']} "
                      f"| {len(r['attempts'])} | {last} |")
+    c = report.get("critic")
+    if c:
+        lines += ["", f"Reviewer ({c['model']}): V0 review {c['review_of_v0']}; final review {c['review_of_final']}. "
+                      f"Actionable findings before -> after: {c['actionable_before']} -> {c['actionable_after']}."]
+        if c["needs_research"]:
+            lines += ["", "Needs research (for Team A; the rewriter does not change these):"]
+            lines += [f"- {n['paragraph_id']} ({n['criterion']}): {n['explanation']}" for n in c["needs_research"]]
     for r in report["paragraphs"]:
         lines += ["", f"## {r['paragraph_id']} ({r['section'].replace('_', ' ')})", "",
                   f"Why selected: detector score {r['score_before']:.0f}; "
@@ -238,7 +280,9 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, help="new run directory")
     parser.add_argument("--writer-model")
     parser.add_argument("--checker-model", help="evidence and meaning checks (must differ from the writer)")
-    parser.add_argument("--critic-model", help="optional: Guan Hong's context critic before and after")
+    parser.add_argument("--critic-model", default=DEFAULT_CRITIC,
+                        help=f"Guan Hong's context critic, run before and after (default {DEFAULT_CRITIC})")
+    parser.add_argument("--no-critic", action="store_true", help="skip the critic (quick tests only)")
     parser.add_argument("--paragraphs", help="comma-separated IDs to revise, e.g. P002,P027 (demo / hard case)")
     parser.add_argument("--max-paragraphs", type=int)
     parser.add_argument("--threshold", type=float, default=THRESHOLD)
@@ -255,20 +299,22 @@ def main(argv=None):
         return
     if not (args.output and args.writer_model and args.checker_model):
         parser.error("a live run needs --output, --writer-model and --checker-model")
-    if args.writer_model.strip().casefold() in {m.strip().casefold() for m in (args.checker_model, args.critic_model) if m}:
-        parser.error("use a different model to check the writer's output")
+    critic_model = None if args.no_critic else args.critic_model
+    models = [m.strip().casefold() for m in (args.writer_model, args.checker_model, critic_model) if m]
+    if len(models) != len(set(models)):
+        parser.error("writer, checker and critic must be three different models")
     store = RunStore(args.output)
     budget = TokenBudget(args.token_limit)
     writer = OpenAIJSON(args.writer_model, budget, store, stage="writer")
     evidence_gate = checks.EvidenceGate(OpenAIJSON(args.checker_model, budget, store, stage="evidence"),
-                                        checks.EvidenceIndex(package))
+                                        checks.EvidenceIndex(package).learn_authors(v0))
     semantic_gate = SemanticGate(OpenAIJSON(args.checker_model, budget, store, stage="preservation"))
     critic = None
-    if args.critic_model:
+    if critic_model:
         from src.writing.critic import QualitativeCritic
         from refine_accepted import detector_hints
         editable = editable_ids(manifest)
-        critic = QualitativeCritic(OpenAIJSON(args.critic_model, budget, store, stage="critique"),
+        critic = QualitativeCritic(OpenAIJSON(critic_model, budget, store, stage="critique"),
                                    detector_hints=lambda d: detector_hints(d, model, editable),
                                    editable_ids=sorted(editable))
 

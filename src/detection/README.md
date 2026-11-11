@@ -64,3 +64,14 @@ Training excludes the listed papers from both classes. Each training paper has o
 * Generated text comes from one model (`gpt-5.6-luna`) and one prompt.
 * Real 2025 papers may themselves be LLM-polished, which would make the reference less "human".
 * A reviser optimising this detector can game it. That is why the human evaluation is the real test.
+
+## Which script to use (Sprint 3)
+
+| Purpose | Use |
+|---|---|
+| Revise a draft with all checks | `sprint2_demo/half2_pipeline.py` (detector + reviewer + rewriter + checks) |
+| Test the checks against known errors | `sprint2_demo/seeded_faults.py` |
+| Detector on unseen papers | `make_holdout_split.py` (+ Guan Hong's `train_detector.py --holdout`, `evaluate_holdout.py`) |
+| External check with GPTZero | `gptzero_check.py` |
+| Sprint 2 experiments, kept so reported numbers can be reproduced | `rewrite_loop.py` (helpers still used), `revise_full_paper.py`, `heldout_fulltext.py`, `score_runs.py` |
+

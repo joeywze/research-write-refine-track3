@@ -172,7 +172,7 @@ def run(llm=False, checker_model=None, token_limit=1_500_000, labelled_only=Fals
         store = RunStore(out / datetime.now().strftime("calls-%Y%m%dT%H%M%S"))
         budget = TokenBudget(token_limit)
         evidence_gate = checks.EvidenceGate(OpenAIJSON(checker_model, budget, store, stage="evidence"),
-                                            checks.EvidenceIndex(package))
+                                            checks.EvidenceIndex(package).learn_authors(v0))
         semantic_gate = SemanticGate(OpenAIJSON(checker_model, budget, store, stage="preservation"))
     out.mkdir(parents=True, exist_ok=True)
     records = []

@@ -697,9 +697,9 @@ def seeded_summary():
 
 
 def revise_tab():
-    st.caption("The full Half 2 system: the detector picks AI-like paragraphs and explains why, a model rewrites "
-               "them, and every rewrite must pass the content checks before it is kept. The detector never "
-               "approves a rewrite.")
+    st.caption("The full Half 2 system: the detector picks AI-like paragraphs and explains why, a reviewer adds "
+               "content notes, a model rewrites them, and every rewrite must pass the content checks before it is "
+               "kept. Neither the detector nor the reviewer approves a rewrite.")
     st.mermaid_chart('''flowchart LR
     S["Detector picks<br/>AI-like paragraphs"] --> R["Rewrite with<br/>detector feedback"]
     R --> F{"Fluency, numbers,<br/>citations, terms,<br/>no new facts?"}
@@ -779,11 +779,21 @@ def half2_result(run_dir, report):
         cols[2].metric("Mean AI-likeness", f"{t['mean_score_after']:.0f}",
                        f"{t['mean_score_after'] - t['mean_score_before']:+.0f} from {t['mean_score_before']:.0f}",
                        delta_color="inverse")
+    critic = report.get("critic")
+    if critic:
+        before, after = critic["actionable_before"], critic["actionable_after"]
+        st.caption(f"Reviewer ({critic['model']}): "
+                   + (f"{before} suggested improvements in V0" if before is not None else "V0 review unavailable")
+                   + (f", {after} left after revision." if after is not None else ".")
+                   + (f" {len(critic['needs_research'])} issues need new research, so the rewriter leaves them alone."
+                      if critic["needs_research"] else ""))
     for r in report["paragraphs"]:
         icon = ":material/check_circle:" if r["outcome"] == "revised" else ":material/block:"
         with st.expander(f"{r['paragraph_id']} · {r['section'].replace('_', ' ')} · "
                          f"{r['score_before']:.0f} → {r['score_after']:.0f} · {r['outcome']}", icon=icon):
             st.caption("Why it was picked: " + (", ".join(r["top_features"]) or "high overall score"))
+            for lead in r.get("critic_leads", []):
+                st.caption(":material/rate_review: Reviewer: " + _esc(lead))
             for a in r["attempts"]:
                 mark = ":green[passed all checks]" if a["accepted"] else ":red[rejected]"
                 st.markdown(f"**Attempt {a['attempt']}** {mark}: {_esc(a['verdict'])}")

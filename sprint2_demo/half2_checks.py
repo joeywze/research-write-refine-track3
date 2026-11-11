@@ -35,6 +35,8 @@ import rewrite_loop as rl  # noqa: E402  (fluency guard, prompts, detector feedb
 
 CHECK_RETRIES = 1   # a malformed checker answer is asked again once before it counts as a failure
 FACTS_FILE = ROOT / "data" / "facts" / "master_facts.xlsx"
+# "Wang et al." or "Fu and Liu": how this draft names cited papers in prose.
+AUTHOR = re.compile(r"\b[A-Z][a-z]+(?: et al\.| and [A-Z][a-z]+)(?=[\s,;:)'’]|$)")
 ACL_ID = re.compile(r"aclanthology\.org/([^/#\s]+?)(?:\.pdf)?(?:[/#]|$)")
 
 # Wording that reports a finding. A proposal paragraph (a study not yet run)
@@ -128,7 +130,10 @@ def no_new_facts_check(package, v0, paragraph_id, text):
 
 # ---------------------------------------------------------------- evidence check
 class EvidenceIndex:
-    """Quotes the team collected for each cited paper (package excerpts + evidence table)."""
+    """Quotes the team collected for each cited or named paper (package excerpts + evidence table).
+
+    Call learn_authors(v0) once so paragraphs that name a paper ("Yu et al.") without a citation
+    token, or rewrites that add or swap a name, are checked too."""
 
     def __init__(self, package, facts_file=FACTS_FILE):
         self.paper_of = {}
@@ -138,6 +143,7 @@ class EvidenceIndex:
         self.excerpts = {}
         for e in package.evidence:
             self.excerpts.setdefault(e.source_id, []).append(e.excerpt)
+        self.papers_of_author = {}
         self.facts = {}
         if Path(facts_file).exists():
             table = pd.read_excel(facts_file, sheet_name="Master")
@@ -145,19 +151,55 @@ class EvidenceIndex:
                 self.facts.setdefault(str(row.paper_id), []).append(
                     {"fact": str(row.factual_claim), "quote": str(row.evidence_quote)})
 
+    def learn_authors(self, draft):
+        """Learn which author names refer to which cited paper, from paragraphs where they sit together.
+
+        The package has no author field, so names are paired with citation tokens in order of first
+        appearance ("Fu and Liu ... Chung and Freienthal ... [[S01]]; [[S02]]"). Paragraphs where the
+        counts differ (e.g. tables) are skipped rather than guessed."""
+        for p in draft.paragraphs:
+            names = list(dict.fromkeys(AUTHOR.findall(p.text)))
+            tokens = list(dict.fromkeys(CITATION.findall(p.text)))
+            if names and len(names) == len(tokens):
+                for name, source_id in zip(names, tokens):
+                    self.papers_of_author.setdefault(name, set()).add(self.paper_of.get(source_id, source_id))
+        return self
+
+    def mentions(self, text):
+        """Known author names mentioned in the text, e.g. ["Yu et al."]."""
+        return [n for n in dict.fromkeys(AUTHOR.findall(text)) if n in self.papers_of_author]
+
+    def for_texts(self, *texts):
+        """Evidence for every paper that the texts cite with a token or name by its authors."""
+        papers = {}
+        for text in texts:
+            for source_id in dict.fromkeys(CITATION.findall(text)):
+                paper = self.paper_of.get(source_id, source_id)
+                entry = papers.setdefault(paper, {"paper_id": paper, "cited_as": [], "named_as": [],
+                                                  "package_excerpts": [], "evidence_table": self.facts.get(paper, [])})
+                if source_id not in entry["cited_as"]:
+                    entry["cited_as"].append(source_id)
+                    entry["package_excerpts"] += self.excerpts.get(source_id, [])
+            for name in self.mentions(text):
+                for paper in sorted(self.papers_of_author[name]):
+                    entry = papers.setdefault(paper, {"paper_id": paper, "cited_as": [], "named_as": [],
+                                                      "package_excerpts": [], "evidence_table": self.facts.get(paper, [])})
+                    if name not in entry["named_as"]:
+                        entry["named_as"].append(name)
+                    for sid, pid in self.paper_of.items():
+                        if pid == paper and not entry["package_excerpts"]:
+                            entry["package_excerpts"] = list(self.excerpts.get(sid, []))
+        return list(papers.values())
+
     def for_text(self, text):
-        out = []
-        for source_id in dict.fromkeys(CITATION.findall(text)):
-            paper = self.paper_of.get(source_id, source_id)
-            out.append({"citation": source_id, "paper_id": paper,
-                        "package_excerpts": self.excerpts.get(source_id, []),
-                        "evidence_table": self.facts.get(paper, [])})
-        return out
+        return self.for_texts(text)
 
 
 EVIDENCE_INSTRUCTIONS = """You check one rewritten paragraph of a research proposal against evidence.
-You get the original paragraph, the rewrite, and for each cited paper the quotes the team
-collected. Judge only the factual content of the rewrite, not its style.
+You get the original paragraph, the rewrite, and for each paper that either text cites
+(cited_as) or names by its authors (named_as), the quotes the team collected. Judge only
+the factual content of the rewrite, not its style. A sentence that attributes something to
+named authors must be backed by THAT paper's quotes, even if the paragraph has no citation.
 For every sentence of the rewrite that describes what a cited paper did or found, decide
 SUPPORTED (the quotes back it), UNSUPPORTED (no quote backs it, or it goes beyond them) or
 CONTRADICTED (a quote says otherwise). Sentences about the authors' own proposed study are
@@ -200,9 +242,9 @@ class EvidenceGate:
         return result
 
     def _check_once(self, original_text, text):
-        evidence = self.index.for_text(original_text)
+        evidence = self.index.for_texts(original_text, text)
         if not evidence:
-            return CheckResult("evidence check", "PASS", "no cited sources in this paragraph")
+            return CheckResult("evidence check", "PASS", "no cited or named sources in this paragraph")
         payload = {"original": original_text, "rewrite": text, "evidence": evidence}
         try:
             result = self.provider.generate("evidence", EVIDENCE_INSTRUCTIONS, payload, EVIDENCE_SCHEMA,

@@ -47,6 +47,20 @@ def evidence(status):
                                "pre_existing": []}
 
 
+class Critic:
+    """Stands in for Guan Hong's QualitativeCritic: returns fixed findings or fails."""
+    model = "critic"
+
+    def __init__(self, paragraphs, fail=False):
+        self.paragraphs, self.fail, self.labels = paragraphs, fail, []
+
+    def assess(self, package, draft, label, store):
+        self.labels.append(label)
+        if self.fail:
+            raise ValueError("duplicate finding")
+        return {"paragraphs": self.paragraphs}
+
+
 class Half2Tests(unittest.TestCase):
     def setUp(self):
         self.package, self.v0, self.manifest = read_input(ROOT / "inputs/converted")
@@ -58,12 +72,14 @@ class Half2Tests(unittest.TestCase):
         self.output = Path(directory.name) / "run"
         self.text = checks.paragraph(self.v0, TARGET).text
 
-    def run_pipeline(self, rewrites, evidence_status="PASS", only=(TARGET,)):
+    def run_pipeline(self, rewrites, evidence_status="PASS", only=(TARGET,), critic=None, evidence_provider=None):
         writer = Provider("writer", lambda payload, n: {"paragraph": rewrites[min(n, len(rewrites)) - 1]})
         checker = Provider("checker", meaning_pass)
-        gate = checks.EvidenceGate(Provider("evidence", evidence(evidence_status)), checks.EvidenceIndex(self.package))
+        self.evidence_provider = evidence_provider or Provider("evidence", evidence(evidence_status))
+        gate = checks.EvidenceGate(self.evidence_provider, checks.EvidenceIndex(self.package).learn_authors(self.v0))
         report, final = pipeline.run(self.package, self.v0, self.manifest, self.model, writer, RunStore(self.output),
-                                     evidence_gate=gate, semantic_gate=SemanticGate(checker), only=set(only))
+                                     evidence_gate=gate, semantic_gate=SemanticGate(checker), critic=critic,
+                                     only=set(only))
         return report, final, writer
 
     def test_safe_rewrite_is_kept_and_reported(self):
@@ -139,6 +155,42 @@ class Half2Tests(unittest.TestCase):
         self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
         self.assertEqual(len(answers), 2)
         self.assertEqual(len(writer.calls), 1)  # no writer attempt was wasted
+
+    def test_critic_notes_reach_the_writer_and_the_report(self):
+        critic = Critic([{"paragraph_id": TARGET, "findings": [
+            {"criterion": "formulaic_language", "status": "ACTIONABLE", "quote": BEFORE,
+             "explanation": "Stock contrast.", "safe_action": "State it directly."},
+            {"criterion": "argument_strength", "status": "NEEDS_RESEARCH", "quote": "",
+             "explanation": "Interval method needs a citation.", "safe_action": ""}]}])
+        report, _, writer = self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=critic)
+        self.assertIn("Stock contrast.", writer.calls[0][1])
+        c = report["critic"]
+        self.assertEqual((c["review_of_v0"], c["actionable_before"]), ("ok", 1))
+        self.assertEqual(c["needs_research"][0]["paragraph_id"], TARGET)
+        self.assertEqual(critic.labels, ["v0_review", "final_review"])
+
+    def test_failed_critic_review_does_not_stop_the_run(self):
+        critic = Critic(None, fail=True)
+        report, final, _ = self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=critic)
+        self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
+        self.assertTrue(report["critic"]["review_of_v0"].startswith("unavailable"))
+        self.assertEqual(critic.labels.count("v0_review"), 2)  # asked again once
+
+    def test_named_author_without_citation_triggers_the_evidence_check(self):
+        provider = Provider("evidence", evidence("UNSUPPORTED_ADDITION"))
+        text = checks.paragraph(self.v0, TARGET).text.replace(BEFORE, GOOD)
+        rewrite = text.replace("A non-significant contrast", "As Yu et al. show, a non-significant contrast")
+        report, final, _ = self.run_pipeline([rewrite], evidence_provider=provider)
+        self.assertEqual(report["paragraphs"][0]["outcome"], "kept original")
+        self.assertIn("evidence check", report["paragraphs"][0]["attempts"][0]["verdict"])
+        sent = provider.calls[0][2]["evidence"]
+        self.assertEqual([(e["paper_id"], e["named_as"]) for e in sent], [("2025.emnlp-main.712", ["Yu et al."])])
+
+    def test_authors_are_learned_from_v0(self):
+        index = checks.EvidenceIndex(self.package).learn_authors(self.v0)
+        self.assertEqual(sorted(index.papers_of_author["Wang et al."]), ["2025.emnlp-main.103"])
+        self.assertEqual(sorted(index.papers_of_author["Chung and Freienthal"]), ["2026.mme-main.8"])
+        self.assertNotIn("Datta and Baitalik", index.papers_of_author)  # table row: ambiguous, not guessed
 
     def test_evidence_index_maps_citations_to_the_evidence_table(self):
         found = checks.EvidenceIndex(self.package).for_text(checks.paragraph(self.v0, "P008").text)
