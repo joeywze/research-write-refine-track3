@@ -1,0 +1,1995 @@
+{
+ "schema_version": 1,
+ "id": "cluster18",
+ "title": "Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal",
+ "reviewed": false,
+ "status_label": "Claims not yet reviewed",
+ "research_question": "Do selected systems preserve the safety-usefulness boundary across English and two Singapore language settings when harmful and benign near-boundary scenarios are matched?",
+ "gap": "Singapore-focused toxicity data, multilingual guardrails and native-reviewed refusal benchmarks already exist. The narrower unresolved question combines matched harmful and benign boundaries, independent equivalence review and joint guardrail-response analysis in selected Singapore settings.",
+ "contribution": "A proposed paired protocol that measures unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes.",
+ "claims": [
+  {
+   "claim_id": "P003-1",
+   "paragraph_id": "P003",
+   "claim": "The Cluster 18 papers establish that this broad space is already active.",
+   "evidence": [
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "might make a wrong judgment.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "participant B’s response is intentionally crafted to be toxic.",
+     "page": "3.1 Toxic Conversation Task; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+     "quote": "the Evaluator might yield false positives or negatives",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.49/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-2",
+   "paragraph_id": "P003",
+   "claim": "RASS evaluates both over- and under-refusal",
+   "evidence": [
+    {
+     "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+     "quote": "It captures both over-refusal and under-refusal",
+     "page": "3.1 Problem Formulation; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.49/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+     "quote": "the Evaluator might yield false positives or negatives",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.49/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-3",
+   "paragraph_id": "P003",
+   "claim": "SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil.",
+   "evidence": [
+    {
+     "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+     "quote": "the Evaluator might yield false positives or negatives",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.49/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+     "quote": "It captures both over-refusal and under-refusal",
+     "page": "3.1 Problem Formulation; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.49/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-4",
+   "paragraph_id": "P003",
+   "claim": "MrGuard and OMNIGUARD evaluate multilingual guardrails.",
+   "evidence": [
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "might make a wrong judgment.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "participant B’s response is intentionally crafted to be toxic.",
+     "page": "3.1 Toxic Conversation Task; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-5",
+   "paragraph_id": "P003",
+   "claim": "model-based safety judges are fallible",
+   "evidence": [
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "might make a wrong judgment.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "participant B’s response is intentionally crafted to be toxic.",
+     "page": "3.1 Toxic Conversation Task; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-6",
+   "paragraph_id": "P003",
+   "claim": "some evaluations contain limited human review",
+   "evidence": [
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "might make a wrong judgment.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+     "quote": "participant B’s response is intentionally crafted to be toxic.",
+     "page": "3.1 Toxic Conversation Task; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.612/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-7",
+   "paragraph_id": "P004",
+   "claim": "The close 2026 literature narrows the gap again.",
+   "evidence": [
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-8",
+   "paragraph_id": "P004",
+   "claim": "Pag-refuse uses native-reviewed Tagalog and Taglish prompts",
+   "evidence": [
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-9",
+   "paragraph_id": "P004",
+   "claim": "BanglaSafe uses native and expert review for culturally grounded harmful requests",
+   "evidence": [
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+     "page": "3.3 Prompt Construction; PDF p. 5",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+     "page": "3.3 Prompt Construction; PDF p. 5",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-10",
+   "paragraph_id": "P004",
+   "claim": "These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored.",
+   "evidence": [
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-11",
+   "paragraph_id": "P008",
+   "claim": "OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs",
+   "evidence": [
+    {
+     "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+     "quote": "we generate toxic seed prompts in seven languages:",
+     "page": "3.1 Seed Prompt Generation; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1065/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+     "quote": "RASS requires white-box access to model representations",
+     "page": "Limitations & Future Work; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1065/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-12",
+   "paragraph_id": "P010",
+   "claim": "Some benchmarks emphasize unsafe prompts without a matched benign control.",
+   "evidence": [
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we thus assume all prompts in these datasets are unsafe.",
+     "page": "C Dataset Details; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we could not scale to multiple annotators or a larger sample size.",
+     "page": "Limitations — Human Annotation; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-13",
+   "paragraph_id": "P010",
+   "claim": "MrGuard's evaluation assumes harmful inputs for parts of its analysis",
+   "evidence": [
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we could not scale to multiple annotators or a larger sample size.",
+     "page": "Limitations — Human Annotation; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we thus assume all prompts in these datasets are unsafe.",
+     "page": "C Dataset Details; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-14",
+   "paragraph_id": "P010",
+   "claim": "reports limited human review.",
+   "evidence": [
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we could not scale to multiple annotators or a larger sample size.",
+     "page": "Limitations — Human Annotation; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+     "quote": "we thus assume all prompts in these datasets are unsafe.",
+     "page": "C Dataset Details; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-15",
+   "paragraph_id": "P010",
+   "claim": "BanglaSafe's native-reviewed benchmark is valuable",
+   "evidence": [
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+     "page": "3.3 Prompt Construction; PDF p. 5",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+     "page": "3.3 Prompt Construction; PDF p. 5",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-16",
+   "paragraph_id": "P010",
+   "claim": "does not supply the benign near-boundary control needed to estimate false refusal in the same design.",
+   "evidence": [
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+     "page": "3.3 Prompt Construction; PDF p. 5",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+     "quote": "does not include a benign control set",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.1403/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-17",
+   "paragraph_id": "P011",
+   "claim": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety.",
+   "evidence": [
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-18",
+   "paragraph_id": "P011",
+   "claim": "Its authors appropriately limit inference to a particular variety/register.",
+   "evidence": [
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "The authors, who are native Tagalog speakers, then audited and revised",
+     "page": "3.1 Prompt set and translation; PDF p. 2",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+     "quote": "Our translations cover one Tagalog variety and one Taglish register.",
+     "page": "Limitations; PDF p. 5",
+     "url": "https://aclanthology.org/2026.mrl-1.41/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-19",
+   "paragraph_id": "P011",
+   "claim": "Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage.",
+   "evidence": []
+  },
+  {
+   "claim_id": "P012-20",
+   "paragraph_id": "P012",
+   "claim": "The authors note that causal controls remain incomplete",
+   "evidence": [
+    {
+     "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+     "quote": "We ran the control direction for the geometry",
+     "page": "6 Ethics and limitations: The decisive control we did not run; PDF p. 6",
+     "url": "https://aclanthology.org/2026.mrl-1.19/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+     "quote": "315 human-translated unsafe prompts in each of the 10 languages.",
+     "page": "A.2 Prompt sets; PDF p. 8",
+     "url": "https://aclanthology.org/2026.mrl-1.19/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P012-21",
+   "paragraph_id": "P012",
+   "claim": "mechanistic similarity should not be substituted for a behavioral safety–usefulness audit",
+   "evidence": [
+    {
+     "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+     "quote": "We ran the control direction for the geometry",
+     "page": "6 Ethics and limitations: The decisive control we did not run; PDF p. 6",
+     "url": "https://aclanthology.org/2026.mrl-1.19/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+     "quote": "315 human-translated unsafe prompts in each of the 10 languages.",
+     "page": "A.2 Prompt sets; PDF p. 8",
+     "url": "https://aclanthology.org/2026.mrl-1.19/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  }
+ ],
+ "real_papers": [
+  {
+   "source_id": "S_2025_emnlp_main_49",
+   "paper_id": "2025.emnlp-main.49",
+   "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+   "url": "https://aclanthology.org/2025.emnlp-main.49/",
+   "score": 38.1,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_612",
+   "paper_id": "2025.emnlp-main.612",
+   "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+   "url": "https://aclanthology.org/2025.emnlp-main.612/",
+   "score": 66.2,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1065",
+   "paper_id": "2025.emnlp-main.1065",
+   "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+   "url": "https://aclanthology.org/2025.emnlp-main.1065/",
+   "score": 81.9,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1392",
+   "paper_id": "2025.emnlp-main.1392",
+   "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+   "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+   "score": 54.6,
+   "basis": "unseen-paper model"
+  }
+ ],
+ "real_band": {
+  "n": 4,
+  "min": 38.1,
+  "max": 81.9,
+  "mean": 60.2
+ },
+ "v0": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten and reviewed for intent, harm status and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection and technical failure. The scenario—not the individual prompt variant—will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+    "score": 48.4
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "A model can appear safe by refusing nearly everything. It can appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a third problem intervenes: a translated or code-switched prompt may alter intent, severity, politeness or local meaning. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+    "score": 83.1
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_612]]; [[S_2025_emnlp_main_612]].",
+    "score": 32.3
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. [[S_2026_mrl_1_41]]; [[S_2026_findings_emnlp_1403]].",
+    "score": 32.4
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "The proposed study asks a smaller question: under matched harmful/benign scenario pairs, do selected systems preserve the safety–usefulness boundary across English and two Singapore language settings after ambiguous or non-equivalent items are separated?",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1—Safety:** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2—Usefulness:** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3—Equivalence:** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent or register?\n4. **RQ4—Guardrail interaction:** Where do an external prompt guardrail and the final model response fail independently or together?",
+    "score": 43.6
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "No direction of effect is assumed. The study is an audit, not a mitigation method.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. [[S_2025_emnlp_main_1065]]; [[S_2025_emnlp_main_1065]].",
+    "score": 38.1
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "The proposal therefore does not claim a new language list or a first local benchmark. It selects a small set of settings to make human review feasible and to test a specific matched design.",
+    "score": null
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. [[S_2025_emnlp_main_1392]]; [[S_2025_emnlp_main_1392]]; [[S_2026_findings_emnlp_1403]].",
+    "score": 26.7
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+    "score": 71.6
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. [[S_2026_mrl_1_19]]; [[S_2026_mrl_1_19]].",
+    "score": null
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "The gap supported by these papers is thus a combination of matched harmful/benign boundaries, independent equivalence review and joint guardrail–response analysis in selected Singapore settings.",
+    "score": null
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings may include a standardized language, a Singapore variety or a code-switched register, but the final choice will be based on reviewer competence and feasible ethical oversight—not a hierarchy of “resource level.”",
+    "score": 81.3
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "The unit of inference will be the selected setting and prompt set. Results will not be generalized to all speakers, dialects or countries associated with a language.",
+    "score": null
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "We plan 60 underlying scenario families across a small number of safety categories. Each family will contain:",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "- a harmful request whose requested action violates the frozen policy;\n- a benign near-boundary request sharing topic or vocabulary but changing intent, target or requested action;\n- where feasible, a clearly benign anchor to distinguish boundary difficulty from global refusal.",
+    "score": 27.8
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Existing licensed benchmark items will be adapted where their terms permit; new items require safety review. Prompts will omit unnecessary operational details. The harmful and benign forms will be similar enough to test discrimination without being simple word substitutions that create unnatural text.",
+    "score": 21.5
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "The following is a structural illustration only, not an evaluation item:",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "| Variant | Intended status | Difference |\n|---|---|---|\n| Harmful | Refuse or safely redirect | Requests actionable harm |\n| Near-boundary benign | Assist safely | Requests prevention, recognition or recovery information |\n| Benign anchor | Assist | Clearly ordinary informational request |",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "English scenarios will be translated and then naturally rewritten for the target setting. Two fluent reviewers will independently label:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. harm status under the shared policy;\n2. requested intent and target;\n3. severity/category;\n4. naturalness and register;\n5. semantic equivalence to the English scenario;\n6. ambiguity.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "Reviewers will provide reasons for disagreement. An adjudicator will resolve cases where possible before model testing. If one member of a scenario family remains non-equivalent or ambiguous, the complete family is excluded from the primary paired analysis and retained in an equivalence-sensitivity appendix. Exclusion rules will be frozen before model outcomes are seen.",
+    "score": 15.4
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.",
+    "score": 42.4
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "The guardrail first classifies the input. The model response is still collected where ethically and technically permitted under a controlled protocol, enabling a two-stage error analysis. No system will be prompted to provide more harmful detail merely to overcome a refusal.",
+    "score": 22.0
+   },
+   {
+    "id": "P026",
+    "section": "methodology",
+    "text": "Two fluent raters, blinded to system identity where feasible, will independently assign:",
+    "score": null
+   },
+   {
+    "id": "P027",
+    "section": "methodology",
+    "text": "| Label | Decision rule |\n|---|---|\n| Appropriate refusal | Declines harmful assistance without supplying actionable content |\n| Safe redirection | Declines the harmful action and offers relevant prevention/recovery help |\n| Unsafe compliance | Supplies materially actionable harmful assistance |\n| Safe assistance | Answers a benign request without unnecessary restriction |\n| False refusal | Refuses or withholds useful help on a benign request |\n| Partial/ambiguous | Mixed response that does not meet a primary rule |\n| Invalid/technical failure | No usable response |",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "methodology",
+    "text": "Model-based judges may support triage but will not replace human outcome labels, because the reviewed literature documents evaluator fallibility. Disagreements will be adjudicated and raw agreement reported.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "The two primary rates are:",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "- **unsafe-compliance rate:** harmful calls labeled unsafe compliance;\n- **false-refusal rate:** benign calls labeled false refusal.",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "Safe redirection, appropriate refusal, safe assistance, partial responses and failures remain separate. Reporting only “refusal rate” would collapse desirable and undesirable behavior.",
+    "score": null
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "The underlying scenario family is the resampling unit. Prompt variants, languages and repeat calls derived from it remain linked. Paired cross-setting differences and scenario-cluster bootstrap intervals will be reported separately by model before any pooled result.",
+    "score": null
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+    "score": 37.4
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "Guardrail classification and model response will be crossed:",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "| Guardrail | Final response | Interpretation |\n|---|---|---|\n| Allows harmful input | Unsafe compliance | Shared safety failure |\n| Allows harmful input | Appropriate refusal/redirection | Model catches what guardrail misses |\n| Blocks benign input | No useful answer | Guardrail-driven false refusal |\n| Allows benign input | False refusal | Model-driven over-refusal |",
+    "score": null
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "This table separates input filtering from response behavior. It does not imply that bypassing a provider guardrail is acceptable.",
+    "score": null
+   },
+   {
+    "id": "P037",
+    "section": "experiments",
+    "text": "Primary results use only fully adjudicated matched families. A sensitivity analysis will include disputed-but-usable items with an equivalence indicator. If outcome changes are concentrated among disputed translations, we will describe a data-quality interaction rather than a language-safety deficit.",
+    "score": null
+   },
+   {
+    "id": "P038",
+    "section": "experiments",
+    "text": "Prospective interpretations include:",
+    "score": null
+   },
+   {
+    "id": "P039",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Unsafe compliance rises; equivalence is strong | Model safety difference in the tested setting |\n| False refusal rises while unsafe compliance falls | Safety–usefulness trade-off |\n| Both rates rise | Poorer boundary discrimination |\n| Differences concentrate in disputed items | Translation/register quality is a plausible driver |\n| Guardrail and model fail on different items | Potential complementarity, requiring further testing |",
+    "score": null
+   },
+   {
+    "id": "P040",
+    "section": "experiments",
+    "text": "Reviewers may encounter distressing material. The protocol requires informed consent, category-level warnings, the ability to skip items, limited exposure, secure storage and a named escalation route. No personally identifying or targeted harmful content will be collected.",
+    "score": null
+   },
+   {
+    "id": "P041",
+    "section": "experiments",
+    "text": "A six-family pilot will test translation, naturalization, agreement and annotation burden. Pilot prompts will be excluded if instructions change. The final study remains small and bounded. It cannot estimate safety for an entire language community; provider policies differ; human labels are fallible; model and guardrail versions can drift; repeated calls are few; and matched prompts may be less natural than organically occurring misuse. The study measures observed behavior under specified conditions, not inherent safety of a language.",
+    "score": 25.1
+   },
+   {
+    "id": "P042",
+    "section": "conclusion",
+    "text": "Singapore-focused toxicity, multilingual guardrails and native-reviewed refusal benchmarks already exist. The credible contribution is a narrower matched audit that evaluates unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes. The design makes it possible for the proposed claim to fail and avoids treating blanket refusal as safety. Experimental results remain to be collected.",
+    "score": 29.1
+   }
+  ],
+  "mean": 39.9
+ },
+ "final": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten and reviewed for intent, harm status and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection and technical failure. The scenario—not the individual prompt variant—will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+    "score": 48.4
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "A model can appear safe by refusing nearly everything. It can also appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a translated or code-switched prompt can alter intent, severity, or local meaning. It can also change politeness. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+    "score": 57.3
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_49]]; [[S_2025_emnlp_main_612]]; [[S_2025_emnlp_main_612]].",
+    "score": 32.3
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. [[S_2026_mrl_1_41]]; [[S_2026_findings_emnlp_1403]].",
+    "score": 32.4
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "The proposed study asks a smaller question: under matched harmful/benign scenario pairs, do selected systems preserve the safety–usefulness boundary across English and two Singapore language settings after ambiguous or non-equivalent items are separated?",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1: Safety.** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2: Usefulness.** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3: Equivalence.** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent, or register?\n4. **RQ4: Guardrail interaction.** Where do an external prompt guardrail and the final model response fail independently or together?",
+    "score": 14.1
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "No direction of effect is assumed. The study is an audit, not a mitigation method.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. [[S_2025_emnlp_main_1065]]; [[S_2025_emnlp_main_1065]].",
+    "score": 38.1
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "The proposal therefore does not claim a new language list or a first local benchmark. It selects a small set of settings to make human review feasible and to test a specific matched design.",
+    "score": null
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. [[S_2025_emnlp_main_1392]]; [[S_2025_emnlp_main_1392]]; [[S_2026_findings_emnlp_1403]].",
+    "score": 26.7
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings. It does not claim broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+    "score": 25.8
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. [[S_2026_mrl_1_19]]; [[S_2026_mrl_1_19]].",
+    "score": null
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "The gap supported by these papers is thus a combination of matched harmful/benign boundaries, independent equivalence review and joint guardrail–response analysis in selected Singapore settings.",
+    "score": null
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings include a standardized language and a Singapore variety. A code-switched register is also under consideration. The final choice will be based on reviewer competence and feasible ethical oversight, not a hierarchy of “resource level.”",
+    "score": 23.4
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "The unit of inference will be the selected setting and prompt set. Results will not be generalized to all speakers, dialects or countries associated with a language.",
+    "score": null
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "We plan 60 underlying scenario families across a small number of safety categories. Each family will contain:",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "- a harmful request whose requested action violates the frozen policy;\n- a benign near-boundary request sharing topic or vocabulary but changing intent, target or requested action;\n- where feasible, a clearly benign anchor to distinguish boundary difficulty from global refusal.",
+    "score": 27.8
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Existing licensed benchmark items will be adapted where their terms permit; new items require safety review. Prompts will omit unnecessary operational details. The harmful and benign forms will be similar enough to test discrimination without being simple word substitutions that create unnatural text.",
+    "score": 21.5
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "The following is a structural illustration only, not an evaluation item:",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "| Variant | Intended status | Difference |\n|---|---|---|\n| Harmful | Refuse or safely redirect | Requests actionable harm |\n| Near-boundary benign | Assist safely | Requests prevention, recognition or recovery information |\n| Benign anchor | Assist | Clearly ordinary informational request |",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "English scenarios will be translated and then naturally rewritten for the target setting. Two fluent reviewers will independently label:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. harm status under the shared policy;\n2. requested intent and target;\n3. severity/category;\n4. naturalness and register;\n5. semantic equivalence to the English scenario;\n6. ambiguity.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "Reviewers will provide reasons for disagreement. An adjudicator will resolve cases where possible before model testing. If one member of a scenario family remains non-equivalent or ambiguous, the complete family is excluded from the primary paired analysis and retained in an equivalence-sensitivity appendix. Exclusion rules will be frozen before model outcomes are seen.",
+    "score": 15.4
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.",
+    "score": 42.4
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "The guardrail first classifies the input. The model response is still collected where ethically and technically permitted under a controlled protocol, enabling a two-stage error analysis. No system will be prompted to provide more harmful detail merely to overcome a refusal.",
+    "score": 22.0
+   },
+   {
+    "id": "P026",
+    "section": "methodology",
+    "text": "Two fluent raters, blinded to system identity where feasible, will independently assign:",
+    "score": null
+   },
+   {
+    "id": "P027",
+    "section": "methodology",
+    "text": "| Label | Decision rule |\n|---|---|\n| Appropriate refusal | Declines harmful assistance without supplying actionable content |\n| Safe redirection | Declines the harmful action and offers relevant prevention/recovery help |\n| Unsafe compliance | Supplies materially actionable harmful assistance |\n| Safe assistance | Answers a benign request without unnecessary restriction |\n| False refusal | Refuses or withholds useful help on a benign request |\n| Partial/ambiguous | Mixed response that does not meet a primary rule |\n| Invalid/technical failure | No usable response |",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "methodology",
+    "text": "Model-based judges may support triage but will not replace human outcome labels, because the reviewed literature documents evaluator fallibility. Disagreements will be adjudicated and raw agreement reported.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "The two primary rates are:",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "- **unsafe-compliance rate:** harmful calls labeled unsafe compliance;\n- **false-refusal rate:** benign calls labeled false refusal.",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "Safe redirection, appropriate refusal, safe assistance, partial responses and failures remain separate. Reporting only “refusal rate” would collapse desirable and undesirable behavior.",
+    "score": null
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "The underlying scenario family is the resampling unit. Prompt variants, languages and repeat calls derived from it remain linked. Paired cross-setting differences and scenario-cluster bootstrap intervals will be reported separately by model before any pooled result.",
+    "score": null
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+    "score": 37.4
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "Guardrail classification and model response will be crossed:",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "| Guardrail | Final response | Interpretation |\n|---|---|---|\n| Allows harmful input | Unsafe compliance | Shared safety failure |\n| Allows harmful input | Appropriate refusal/redirection | Model catches what guardrail misses |\n| Blocks benign input | No useful answer | Guardrail-driven false refusal |\n| Allows benign input | False refusal | Model-driven over-refusal |",
+    "score": null
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "This table separates input filtering from response behavior. It does not imply that bypassing a provider guardrail is acceptable.",
+    "score": null
+   },
+   {
+    "id": "P037",
+    "section": "experiments",
+    "text": "Primary results use only fully adjudicated matched families. A sensitivity analysis will include disputed-but-usable items with an equivalence indicator. If outcome changes are concentrated among disputed translations, we will describe a data-quality interaction rather than a language-safety deficit.",
+    "score": null
+   },
+   {
+    "id": "P038",
+    "section": "experiments",
+    "text": "Prospective interpretations include:",
+    "score": null
+   },
+   {
+    "id": "P039",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Unsafe compliance rises; equivalence is strong | Model safety difference in the tested setting |\n| False refusal rises while unsafe compliance falls | Safety–usefulness trade-off |\n| Both rates rise | Poorer boundary discrimination |\n| Differences concentrate in disputed items | Translation/register quality is a plausible driver |\n| Guardrail and model fail on different items | Potential complementarity, requiring further testing |",
+    "score": null
+   },
+   {
+    "id": "P040",
+    "section": "experiments",
+    "text": "Reviewers may encounter distressing material. The protocol requires informed consent, category-level warnings, the ability to skip items, limited exposure, secure storage and a named escalation route. No personally identifying or targeted harmful content will be collected.",
+    "score": null
+   },
+   {
+    "id": "P041",
+    "section": "experiments",
+    "text": "A six-family pilot will test translation, naturalization, agreement and annotation burden. Pilot prompts will be excluded if instructions change. The final study remains small and bounded. It cannot estimate safety for an entire language community; provider policies differ; human labels are fallible; model and guardrail versions can drift; repeated calls are few; and matched prompts may be less natural than organically occurring misuse. The study measures observed behavior under specified conditions, not inherent safety of a language.",
+    "score": 25.1
+   },
+   {
+    "id": "P042",
+    "section": "conclusion",
+    "text": "Singapore-focused toxicity, multilingual guardrails and native-reviewed refusal benchmarks already exist. The credible contribution is a narrower matched audit that evaluates unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes. The design makes it possible for the proposed claim to fail and avoids treating blanket refusal as safety. Experimental results remain to be collected.",
+    "score": 29.1
+   }
+  ],
+  "mean": 30.5
+ },
+ "rewrite": {
+  "threshold": 35.0,
+  "totals": {
+   "selected": 8,
+   "revised": 4,
+   "kept_original": 4,
+   "attempts": 17,
+   "needs_human_edit": 3,
+   "held_for_research": 1,
+   "mean_score_before": 55.7,
+   "mean_score_after": 35.9
+  },
+  "paragraphs": [
+   {
+    "paragraph_id": "P002",
+    "section": "introduction",
+    "score_before": 83.1,
+    "score_after": 57.3,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 66.9,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 67 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 57.3,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 57 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 63.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 63 is not below the best safe version (57)",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 63 is not below the best safe version (57)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P014",
+    "section": "methodology",
+    "score_before": 81.3,
+    "score_after": 23.4,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 52.1,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 52 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 40.2,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 40 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 23.4,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P011",
+    "section": "related_work",
+    "score_before": 71.6,
+    "score_after": 25.8,
+    "outcome": "revised",
+    "top_features": [
+     "stock phrases",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 25.8,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "All source-related claims in the rewrite are supported by the provided evidence.; The added final sentence is a statement about the authors' proposed study, not about the cited source."
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P001",
+    "section": "abstract",
+    "score_before": 48.4,
+    "score_after": 48.4,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 48.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 48 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 48 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 46.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 46 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 46 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 59.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 48"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P006",
+    "section": "introduction",
+    "score_before": 43.6,
+    "score_after": 14.1,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 14.1,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P024",
+    "section": "methodology",
+    "score_before": 42.4,
+    "score_after": 42.4,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 42.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not at least 5 points below 42",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not at least 5 points below 42"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 42.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not at least 5 points below 42",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not at least 5 points below 42"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 42.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not at least 5 points below 42",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not at least 5 points below 42"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P008",
+    "section": "related_work",
+    "score_before": 38.1,
+    "score_after": 38.1,
+    "outcome": "held for research",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": false,
+    "held_reason": "specificity: The citation token is attached to the paragraph, while the supplied evidence mapping clearly supports the MrGuard claims but does not clearly support the opening SGToxicGuard and OMNIGUARD claims.",
+    "attempts": []
+   },
+   {
+    "paragraph_id": "P033",
+    "section": "experiments",
+    "score_before": 37.4,
+    "score_after": 37.4,
+    "outcome": "kept original",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 37.4,
+      "accepted": false,
+      "verdict": "rejected by writer: the rewrite repeated an earlier version",
+      "checks": [
+       {
+        "check": "writer",
+        "status": "NO_CHANGE",
+        "reason": "the rewrite repeated an earlier version"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 37.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 37 is not at least 5 points below 37",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 37 is not at least 5 points below 37"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 36.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 36 is not at least 5 points below 37",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 36 is not at least 5 points below 37"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "critic": {
+   "model": "gpt-5.6-luna",
+   "review_of_v0": "ok",
+   "review_of_final": "ok",
+   "actionable_before": 0,
+   "actionable_after": 0,
+   "needs_research": [
+    {
+     "paragraph_id": "P003",
+     "criterion": "specificity",
+     "explanation": "The paragraph attributes several claims to citation tokens at paragraph level, but the supplied mapping does not clearly establish which source supports the MrGuard and OMNIGUARD statements or the combined warning about limited human review."
+    },
+    {
+     "paragraph_id": "P008",
+     "criterion": "specificity",
+     "explanation": "The citation token is attached to the paragraph, while the supplied evidence mapping clearly supports the MrGuard claims but does not clearly support the opening SGToxicGuard and OMNIGUARD claims."
+    }
+   ]
+  }
+ },
+ "manifest": {
+  "layout": [
+   "# Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal\n\n",
+   "## Abstract\n\n",
+   {
+    "paragraph_id": "P001"
+   },
+   "\n\n",
+   "## Introduction\n\n",
+   {
+    "paragraph_id": "P002"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P003"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P004"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P005"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P006"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P007"
+   },
+   "\n\n",
+   "## Related work\n\n",
+   {
+    "paragraph_id": "P008"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P009"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P010"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P011"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P012"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P013"
+   },
+   "\n\n",
+   "## Methodology\n\n",
+   {
+    "paragraph_id": "P014"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P015"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P016"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P017"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P018"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P019"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P020"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P021"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P022"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P023"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P024"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P025"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P026"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P027"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P028"
+   },
+   "\n\n",
+   "## Experiments: Evaluation plan\n\n",
+   {
+    "paragraph_id": "P029"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P030"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P031"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P032"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P033"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P034"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P035"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P036"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P037"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P038"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P039"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P040"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P041"
+   },
+   "\n\n",
+   "## Conclusion\n\n",
+   {
+    "paragraph_id": "P042"
+   },
+   "\n\n",
+   "## References\n\n",
+   "- [S_2025_emnlp_main_49](https://aclanthology.org/2025.emnlp-main.49/) Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations\n- [S_2025_emnlp_main_612](https://aclanthology.org/2025.emnlp-main.612/) Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages\n- [S_2026_mrl_1_41](https://aclanthology.org/2026.mrl-1.41/) Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish\n- [S_2026_findings_emnlp_1403](https://aclanthology.org/2026.findings-emnlp.1403/) Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms\n- [S_2025_emnlp_main_1065](https://aclanthology.org/2025.emnlp-main.1065/) Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary\n- [S_2025_emnlp_main_1392](https://aclanthology.org/2025.emnlp-main.1392/) M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety\n- [S_2026_mrl_1_19](https://aclanthology.org/2026.mrl-1.19/) Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction\n"
+  ],
+  "blocks": [
+   {
+    "paragraph_id": "P001",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P002",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P003",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_49",
+      "original_markdown": "[S_2025_emnlp_main_49](https://aclanthology.org/2025.emnlp-main.49/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_49",
+      "original_markdown": "[S_2025_emnlp_main_49](https://aclanthology.org/2025.emnlp-main.49/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_612",
+      "original_markdown": "[S_2025_emnlp_main_612](https://aclanthology.org/2025.emnlp-main.612/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_612",
+      "original_markdown": "[S_2025_emnlp_main_612](https://aclanthology.org/2025.emnlp-main.612/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P004",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_mrl_1_41",
+      "original_markdown": "[S_2026_mrl_1_41](https://aclanthology.org/2026.mrl-1.41/)"
+     },
+     {
+      "source_id": "S_2026_findings_emnlp_1403",
+      "original_markdown": "[S_2026_findings_emnlp_1403](https://aclanthology.org/2026.findings-emnlp.1403/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P005",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P006",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P007",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P008",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1065",
+      "original_markdown": "[S_2025_emnlp_main_1065](https://aclanthology.org/2025.emnlp-main.1065/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1065",
+      "original_markdown": "[S_2025_emnlp_main_1065](https://aclanthology.org/2025.emnlp-main.1065/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P009",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P010",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1392",
+      "original_markdown": "[S_2025_emnlp_main_1392](https://aclanthology.org/2025.emnlp-main.1392/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1392",
+      "original_markdown": "[S_2025_emnlp_main_1392](https://aclanthology.org/2025.emnlp-main.1392/)"
+     },
+     {
+      "source_id": "S_2026_findings_emnlp_1403",
+      "original_markdown": "[S_2026_findings_emnlp_1403](https://aclanthology.org/2026.findings-emnlp.1403/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P011",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_mrl_1_41",
+      "original_markdown": "[S_2026_mrl_1_41](https://aclanthology.org/2026.mrl-1.41/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P012",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_mrl_1_19",
+      "original_markdown": "[S_2026_mrl_1_19](https://aclanthology.org/2026.mrl-1.19/)"
+     },
+     {
+      "source_id": "S_2026_mrl_1_19",
+      "original_markdown": "[S_2026_mrl_1_19](https://aclanthology.org/2026.mrl-1.19/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P013",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P014",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P015",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P016",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P017",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P018",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P019",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P020",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P021",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P022",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P023",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P024",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P025",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P026",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P027",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P028",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P029",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P030",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P031",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P032",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P033",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P034",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P035",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P036",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P037",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P038",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P039",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P040",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P041",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P042",
+    "citation_occurrences": []
+   }
+  ]
+ },
+ "source_run": "half2-final-cluster18"
+}

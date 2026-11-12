@@ -18,7 +18,7 @@ whether a rewrite is safe: only the content checks can accept a rewrite.
 Usage (from sprint2_demo/):
   python half2_pipeline.py --plan [--topic cluster0]                # offline: which paragraphs would be revised
   python half2_pipeline.py --output runs/half2-<date> --writer-model <m1> --checker-model <m2> \
-      [--critic-model <m3> | --no-critic] [--paragraphs P002,P027] [--max-paragraphs 4]
+      [--critic-model <m3>] [--paragraphs P002,P027] [--max-paragraphs 4]
 """
 
 import argparse
@@ -44,6 +44,9 @@ MAX_ATTEMPTS = 3
 DEFAULT_CRITIC = "gpt-5.6-luna"   # must differ from the writer and the checker
 THRESHOLD = 35.0          # the target: stop once a safe rewrite scores at or below this
 MIN_GAIN = 5.0            # a rewrite must lower the score by at least this much to count
+CRITIC_RETRIES = 2        # the critic is asked up to three times
+CRITIC_OUTPUT_TOKENS = 20_000  # whole-paper review; 6,000 was too few for 30-40 paragraphs
+CRITIC_TIMEOUT = 300      # seconds per critic call
 MIN_WORDS = 40
 
 REWRITE_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["paragraph"],
@@ -105,21 +108,28 @@ def select(v0, manifest, model, threshold=THRESHOLD, only=None, limit=None):
     return rows[:limit] if limit else rows
 
 
-def review(critic, package, draft, label, store, retries=1):
+class CriticUnavailable(RuntimeError):
+    """The critic could not review V0, so a live run stops before any rewriting (fail closed)."""
+
+
+def review(critic, package, draft, label, store, retries=CRITIC_RETRIES):
     """Run Guan Hong's context critic; a failed review never stops the rewriting.
 
-    Returns (critique or None, note). A malformed answer is asked again once; after that the
-    pipeline carries on without reviewer notes and records why."""
+    Returns (critique or None, note). A failed or malformed answer is asked again (up to `retries`
+    more times); the caller decides what happens if every try fails."""
     from src.writing.providers import BudgetExceeded
-    error = None
-    for _ in range(retries + 1):
+    errors = []
+    for attempt in range(retries + 1):
+        # Each try saves its files under its own name: the run store refuses to overwrite a file, so
+        # reusing the label made every retry fail and hid the first error.
+        name = label if attempt == 0 else f"{label}_retry{attempt}"
         try:
-            return critic.assess(package, draft, label, store), "ok"
+            return critic.assess(package, draft, name, store), "ok" if attempt == 0 else f"ok on retry {attempt}"
         except BudgetExceeded:
             raise
-        except Exception as exc:  # malformed or failed review: retry once, then continue without it
-            error = f"{type(exc).__name__}: {exc}"
-    return None, f"unavailable ({error})"
+        except Exception as exc:  # malformed or failed review: ask again under a new name
+            errors.append(f"try {attempt + 1}: {type(exc).__name__}: {exc}")
+    return None, "unavailable (" + "; ".join(errors) + ")"
 
 
 def needs_research(critique):
@@ -212,24 +222,49 @@ def revise_paragraph(package, v0, current, pid, result, model, writer, *, eviden
         if safe:
             last_note = (f"that version passed every content check but still scores {new_score:.0f}. "
                          "Make further changes to the signals listed above, keeping every fact, hedge and citation")
+        elif results and results[0].status in ("NO_IMPROVEMENT", "NO_CHANGE"):
+            last_note = (verdict.replace("rejected by ", "") + ". That attempt changed too little: punctuation, "
+                         "single-word swaps and reordering a list do not move the score. This time change the sentence "
+                         "structure itself where the signals above point: merge two sentences or split a long one, vary "
+                         "where sentences start, cut a weak list item, and replace stock phrases with plain wording. "
+                         "Keep every fact, number, hedge and citation, and keep every sentence complete")
         else:
             last_note = verdict.replace("rejected by ", "")
     if best_text:
         record.update(outcome="revised", text_after=best_text, score_after=best_result["score"])
         return record, checks.with_paragraph(current, pid, best_text)
+    # Kept as written: the content is still correct, but a person should edit its style by hand.
+    record["needs_human_edit"] = result["score"] >= target
     return record, current
 
 
+def held_record(v0, pid, result, finding):
+    text = checks.paragraph(v0, pid).text
+    return {"paragraph_id": pid, "section": checks.paragraph(v0, pid).section, "score_before": result["score"],
+            "top_features": [rl.PLAIN_NAMES.get(k, k) for k, v in result["contributions"].items() if v > 0.1][:3],
+            "critic_leads": [], "attempts": [], "outcome": "held for research",
+            "held_reason": f'{finding["criterion"]}: {finding["explanation"]}',
+            "text_before": text, "text_after": text, "score_after": result["score"], "needs_human_edit": False}
+
+
 def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, semantic_gate=None, critic=None,
-        threshold=THRESHOLD, only=None, limit=None, progress=None, topic="cluster7"):
+        threshold=THRESHOLD, only=None, limit=None, progress=None, topic="cluster7", require_critic=False):
     start = perf_counter()
     targets = select(v0, manifest, model, threshold, only, limit)
     leads, before, critic_status = {}, None, "not run"
     if critic is not None:
         before, critic_status = review(critic, package, v0, "v0_review", store)
+        if before is None and require_critic:
+            store.event("run_stopped", reason="critic unavailable", detail=critic_status)
+            raise CriticUnavailable(f"The critic could not review V0, so nothing was rewritten: {critic_status}")
         leads = critic_leads(before)
+    # Paragraphs the critic says need new research are not rewritten: a rewrite could hide the gap.
+    held = {n["paragraph_id"]: n for n in needs_research(before)}
     current, records = v0, []
     for pid, result in targets:
+        if pid in held:
+            records.append(held_record(v0, pid, result, held[pid]))
+            continue
         record, current = revise_paragraph(package, v0, current, pid, result, model, writer,
                                            evidence_gate=evidence_gate, semantic_gate=semantic_gate,
                                            leads=leads.get(pid, ()), progress=progress)
@@ -249,6 +284,8 @@ def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, sema
                    "revised": sum(r["outcome"] == "revised" for r in records),
                    "kept_original": sum(r["outcome"] != "revised" for r in records),
                    "attempts": sum(len(r["attempts"]) for r in records),
+                   "needs_human_edit": sum(bool(r.get("needs_human_edit")) for r in records),
+                   "held_for_research": sum(r["outcome"] == "held for research" for r in records),
                    "mean_score_before": mean([r["score_before"] for r in records]),
                    "mean_score_after": mean([r["score_after"] for r in records])},
         "critic": None if critic is None else {
@@ -280,6 +317,11 @@ def as_markdown(report):
     lines = ["# Half 2 change report", "", f"Topic: {report.get('topic', 'cluster7')}", "",
              f"{t['revised']} of {t['selected']} selected paragraphs revised; {t['kept_original']} kept as written. "
              f"Mean detector score on selected paragraphs: {t['mean_score_before']} -> {t['mean_score_after']}.", "",
+             f"Needs a human edit (kept as written, still at or above {report['threshold']:.0f}): "
+             + (", ".join(r["paragraph_id"] for r in report["paragraphs"] if r.get("needs_human_edit")) or "none") + ".", "",
+             "Held for research (the critic found a gap that needs new evidence, so not rewritten): "
+             + (", ".join(r["paragraph_id"] for r in report["paragraphs"] if r["outcome"] == "held for research")
+                or "none") + ".", "",
              "| Paragraph | Score | Outcome | Attempts | Last verdict |", "|---|---|---|---|---|"]
     for r in report["paragraphs"]:
         last = r["attempts"][-1]["verdict"] if r["attempts"] else ""
@@ -298,6 +340,8 @@ def as_markdown(report):
                   + (", ".join(r["top_features"]) or "no single dominant feature") + "."]
         if r["critic_leads"]:
             lines.append("Reviewer leads: " + " | ".join(r["critic_leads"]))
+        if r.get("held_reason"):
+            lines.append("Held for research: " + r["held_reason"])
         for a in r["attempts"]:
             lines.append(f"- Attempt {a['attempt']}: {a['verdict']}")
         lines += ["", f"**Before:** {checks.plain(r['text_before'])}", "",
@@ -316,7 +360,6 @@ def main(argv=None):
     parser.add_argument("--checker-model", help="evidence and meaning checks (must differ from the writer)")
     parser.add_argument("--critic-model", default=DEFAULT_CRITIC,
                         help=f"Guan Hong's context critic, run before and after (default {DEFAULT_CRITIC})")
-    parser.add_argument("--no-critic", action="store_true", help="skip the critic (quick tests only)")
     parser.add_argument("--paragraphs", help="comma-separated IDs to revise, e.g. P002,P027 (demo / hard case)")
     parser.add_argument("--max-paragraphs", type=int)
     parser.add_argument("--threshold", type=float, default=THRESHOLD)
@@ -333,7 +376,9 @@ def main(argv=None):
         return
     if not (args.output and args.writer_model and args.checker_model):
         parser.error("a live run needs --output, --writer-model and --checker-model")
-    critic_model = None if args.no_critic else args.critic_model
+    critic_model = (args.critic_model or "").strip()
+    if not critic_model:
+        parser.error("the critic is always on: give a --critic-model (default %s)" % DEFAULT_CRITIC)
     models = [m.strip().casefold() for m in (args.writer_model, args.checker_model, critic_model) if m]
     if len(models) != len(set(models)):
         parser.error("writer, checker and critic must be three different models")
@@ -343,22 +388,29 @@ def main(argv=None):
     evidence_gate = checks.EvidenceGate(OpenAIJSON(args.checker_model, budget, store, stage="evidence"),
                                         checks.EvidenceIndex(package, facts_file).learn_authors(v0))
     semantic_gate = SemanticGate(OpenAIJSON(args.checker_model, budget, store, stage="preservation"))
-    critic = None
-    if critic_model:
-        from src.writing.critic import QualitativeCritic
-        from refine_accepted import detector_hints
-        editable = editable_ids(manifest)
-        critic = QualitativeCritic(OpenAIJSON(critic_model, budget, store, stage="critique"),
-                                   detector_hints=lambda d: detector_hints(d, model, editable),
-                                   editable_ids=sorted(editable))
+    from src.writing.critic import QualitativeCritic
+    from refine_accepted import detector_hints
+    editable = editable_ids(manifest)
+    # The critic reviews the whole paper in one answer: give it room to finish (6,000 output tokens cut it
+    # off: "The model response did not complete") and time to write that much.
+    critic = QualitativeCritic(OpenAIJSON(critic_model, budget, store, stage="critique", timeout=CRITIC_TIMEOUT),
+                               max_output_tokens=CRITIC_OUTPUT_TOKENS,
+                               detector_hints=lambda d: detector_hints(d, model, editable),
+                               editable_ids=sorted(editable))
 
     def progress(pid, attempt, ok, verdict, new_score):
         print(f"{datetime.now():%H:%M:%S} {pid} attempt {attempt}: {'passed checks' if ok else 'rejected'} - {verdict}")
 
-    report, _ = run(package, v0, manifest, model, writer, store, evidence_gate=evidence_gate,
-                    semantic_gate=semantic_gate, critic=critic, threshold=args.threshold, only=only,
-                    limit=args.max_paragraphs, progress=progress, topic=label)
+    try:
+        report, _ = run(package, v0, manifest, model, writer, store, evidence_gate=evidence_gate,
+                        semantic_gate=semantic_gate, critic=critic, threshold=args.threshold, only=only,
+                        limit=args.max_paragraphs, progress=progress, topic=label, require_critic=True)
+    except CriticUnavailable as error:
+        raise SystemExit(f"STOPPED: {error}\nDetails are in {store.directory / 'events.jsonl'}") from None
     print(json.dumps(report["totals"], indent=2))
+    final = report["critic"]["review_of_final"]
+    if not final.startswith("ok") and final != "not run":
+        print(f"WARNING: the critic reviewed V0 but not the final draft ({final}).")
     print(f"Saved final_paper.md and change_report.md to {store.directory}")
 
 

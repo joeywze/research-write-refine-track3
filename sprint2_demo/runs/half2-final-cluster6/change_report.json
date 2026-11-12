@@ -1,0 +1,890 @@
+{
+  "topic": "cluster6",
+  "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
+  "threshold": 35.0,
+  "paragraphs": [
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "score_before": 93.2,
+      "top_features": [
+        "hedge density",
+        "lists of three",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can look plausible to a reader and still be post-hoc, incomplete, or behaviorally irrelevant. Iterative refinement offers one remedy: generate an explanation, critique it, then revise it until a faithfulness score improves. The score being optimized is itself an imperfect measurement instrument.",
+          "score": 43.0,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 43 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can look plausible to a reader and still be post-hoc, incomplete, or behaviorally irrelevant. One remedy is iterative refinement: generate an explanation, critique it, then revise it until a faithfulness score improves. That score is an imperfect measurement instrument.",
+          "score": 37.5,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 38 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can look plausible to a reader and still be post-hoc, incomplete, or behaviorally irrelevant. One remedy is iterative refinement: generate an explanation, critique it, then revise it until a faithfulness score improves. The score is an imperfect measurement instrument.",
+          "score": 37.5,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 38 is not below the best safe version (38)"
+            }
+          ],
+          "verdict": "rejected by detector: score 38 is not below the best safe version (38)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can be plausible to a reader while remaining post-hoc, incomplete or behaviorally irrelevant. Iterative refinement appears to offer a remedy: generate an explanation, critique it and revise it until a faithfulness score improves. Yet the score being optimized is itself an imperfect measurement instrument.",
+      "text_after": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can look plausible to a reader and still be post-hoc, incomplete, or behaviorally irrelevant. One remedy is iterative refinement: generate an explanation, critique it, then revise it until a faithfulness score improves. That score is an imperfect measurement instrument.",
+      "score_after": 37.5
+    },
+    {
+      "paragraph_id": "P032",
+      "section": "experiments",
+      "score_before": 87.2,
+      "top_features": [
+        "hedge density",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The study is limited to selected classification tasks, model families, and operational metrics. Refinement can learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+          "score": 87.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 87 is not at least 5 points below 87"
+            }
+          ],
+          "verdict": "rejected by detector: score 87 is not at least 5 points below 87"
+        },
+        {
+          "attempt": 2,
+          "text": "The study is limited to selected classification tasks, model families, and operational metrics. Refinement can learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+          "score": 87.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 87 is not at least 5 points below 87"
+            }
+          ],
+          "verdict": "rejected by detector: score 87 is not at least 5 points below 87"
+        },
+        {
+          "attempt": 3,
+          "text": "The study is limited to selected classification tasks and model families. It also uses selected operational metrics. Refinement may learn to exploit evaluators, and the neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+          "score": 82.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "too many very short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: too many very short sentences"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "The study is limited to selected classification tasks, model families and operational metrics. Refinement may learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+      "text_after": "The study is limited to selected classification tasks, model families and operational metrics. Refinement may learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+      "score_after": 87.2,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P031",
+      "section": "experiments",
+      "score_before": 67.3,
+      "top_features": [
+        "lists of three",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The core sample contains 480 item–model cells: two tasks, two models, and 120 eligible items per task–model pair. Five explanation conditions at two revision depths, with intervention controls and repeats, create a substantial inference workload. A 20-item-per-cell pilot will first validate parsing, metric execution, and cost. Pilot items will not be reused in the frozen test set if prompts or rules change.",
+          "score": 68.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 68 is not at least 5 points below 67"
+            }
+          ],
+          "verdict": "rejected by detector: score 68 is not at least 5 points below 67"
+        },
+        {
+          "attempt": 2,
+          "text": "The core sample contains 480 item–model cells, drawn from two tasks, two models, and 120 eligible items per task–model pair. Five explanation conditions span two revision depths; intervention controls and repeats add to the inference workload. A 20-item-per-cell pilot will first validate parsing, metric execution, and cost. Pilot items will not be reused in the frozen test set if prompts or rules change.",
+          "score": 55.1,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 55 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "The core sample contains 480 item–model cells, drawn from two tasks, two models, and 120 eligible items for each task–model pair. Five explanation conditions span two revision depths; intervention controls and repeats add to the inference workload. Before the frozen test set is fixed, a 20-item-per-cell pilot will validate parsing, metric execution, and cost. Pilot items will not be reused if prompts or rules change.",
+          "score": 54.2,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 54 (target 35), trying to lower it further"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "With two tasks, two models and 120 eligible items per task–model pair, the core sample contains 480 item–model cells. Five explanation conditions at two revision depths, plus intervention controls and repeats, create a substantial inference workload. A 20-item-per-cell pilot will first validate parsing, metric execution and cost. Pilot items will not be reused in the frozen test set if prompts or rules change.",
+      "text_after": "The core sample contains 480 item–model cells, drawn from two tasks, two models, and 120 eligible items for each task–model pair. Five explanation conditions span two revision depths; intervention controls and repeats add to the inference workload. Before the frozen test set is fixed, a 20-item-per-cell pilot will validate parsing, metric execution, and cost. Pilot items will not be reused if prompts or rules change.",
+      "score_after": 54.2
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "score_before": 65.5,
+      "top_features": [
+        "stock phrases",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction. It also notes that its intervention concerns externally stated explanations, not unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its failure analysis includes cases where semantic opposition did not behave as expected. [[S_2025_emnlp_main_1496]]; [[S_2026_eacl_long_177]].",
+          "score": 33.2,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. [[S_2025_emnlp_main_1496]]; [[S_2026_eacl_long_177]].",
+      "text_after": "Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction. It also notes that its intervention concerns externally stated explanations, not unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its failure analysis includes cases where semantic opposition did not behave as expected. [[S_2025_emnlp_main_1496]]; [[S_2026_eacl_long_177]].",
+      "score_after": 33.2
+    },
+    {
+      "paragraph_id": "P007",
+      "section": "introduction",
+      "score_before": 65.3,
+      "top_features": [
+        "lists of three",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "1. **RQ1: Cross-metric transfer.** Does refinement optimized with metric M improve a preregistered held-out faithfulness measure H relative to the original explanation and a neutral rewrite?\n2. **RQ2: Specificity.** Does the behavioral effect of the refined explanation exceed effects caused by content-free filler, unrelated text, and answer re-injection?\n3. **RQ3: Trade-offs.** How do any measured gains relate to answer accuracy, explanation validity, length, and human-rated clarity?",
+          "score": 18.1,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "1. **RQ1—Cross-metric transfer:** Does refinement optimized with metric M improve a preregistered held-out faithfulness measure H relative to the original explanation and a neutral rewrite?\n2. **RQ2—Specificity:** Does the behavioral effect of the refined explanation exceed effects caused by content-free filler, unrelated text and answer re-injection?\n3. **RQ3—Trade-offs:** How do any measured gains relate to answer accuracy, explanation validity, length and human-rated clarity?",
+      "text_after": "1. **RQ1: Cross-metric transfer.** Does refinement optimized with metric M improve a preregistered held-out faithfulness measure H relative to the original explanation and a neutral rewrite?\n2. **RQ2: Specificity.** Does the behavioral effect of the refined explanation exceed effects caused by content-free filler, unrelated text, and answer re-injection?\n3. **RQ3: Trade-offs.** How do any measured gains relate to answer accuracy, explanation validity, length, and human-rated clarity?",
+      "score_after": 18.1
+    },
+    {
+      "paragraph_id": "P024",
+      "section": "methodology",
+      "score_before": 62.4,
+      "top_features": [
+        "lists of three",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Two blinded human raters will evaluate a stratified subset for clarity and relevance, and they will also judge usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. We will report inter-rater agreement, adjudication rules, and all exclusions.",
+          "score": 44.3,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 44 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "Two blinded human raters will evaluate a stratified subset for clarity and relevance, and they will also judge usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. We will report inter-rater agreement. We will also report adjudication rules and all exclusions.",
+          "score": 20.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "consecutive short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: consecutive short sentences"
+        },
+        {
+          "attempt": 3,
+          "text": "Two blinded human raters will evaluate a stratified subset for clarity and relevance, and they will also judge usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. We will report inter-rater agreement and adjudication rules, along with all exclusions.",
+          "score": 33.0,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Two blinded human raters will evaluate a stratified subset for clarity, relevance and usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. Inter-rater agreement, adjudication rules and all exclusions will be reported.",
+      "text_after": "Two blinded human raters will evaluate a stratified subset for clarity and relevance, and they will also judge usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. We will report inter-rater agreement and adjudication rules, along with all exclusions.",
+      "score_after": 33.0
+    },
+    {
+      "paragraph_id": "P025",
+      "section": "methodology",
+      "score_before": 60.7,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The model identifiers, dates, prompts, sampling controls, token limits, parsers, and retry rules will be frozen. Coverage tables will still show invalid JSON, missing explanations, changed labels, and technical failures. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+          "score": 59.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 60 is not at least 5 points below 61"
+            }
+          ],
+          "verdict": "rejected by detector: score 60 is not at least 5 points below 61"
+        },
+        {
+          "attempt": 2,
+          "text": "Exact model identifiers, dates, prompts, sampling controls, token limits, parsers, and retry rules will be frozen. Coverage tables will still show invalid JSON, missing explanations, changed labels, and technical failures. The primary paired set requires a valid initial explanation and all preregistered conditions, while an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+          "score": 58.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 58 is not at least 5 points below 61"
+            }
+          ],
+          "verdict": "rejected by detector: score 58 is not at least 5 points below 61"
+        },
+        {
+          "attempt": 3,
+          "text": "We will freeze exact model identifiers, dates, prompts, sampling controls, token limits, parsers, and retry rules. Coverage tables will still show invalid JSON, missing explanations, changed labels, and technical failures. The primary paired set requires a valid initial explanation and all preregistered conditions, while an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+          "score": 58.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 58 is not at least 5 points below 61"
+            }
+          ],
+          "verdict": "rejected by detector: score 58 is not at least 5 points below 61"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Exact model identifiers, dates, prompts, sampling controls, token limits, parsers and retry rules will be frozen. Invalid JSON, missing explanations, changed labels and technical failures will remain visible in coverage tables. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+      "text_after": "Exact model identifiers, dates, prompts, sampling controls, token limits, parsers and retry rules will be frozen. Invalid JSON, missing explanations, changed labels and technical failures will remain visible in coverage tables. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+      "score_after": 60.7,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "score_before": 59.0,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics, and causal tests of faithfulness measures. The defensible gap is narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique, and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text, and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length, and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+          "score": 58.7,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 59 is not at least 5 points below 59"
+            }
+          ],
+          "verdict": "rejected by detector: score 59 is not at least 5 points below 59"
+        },
+        {
+          "attempt": 2,
+          "text": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It could instead come from metric-specific optimization, ordinary re-prompting instability, or sensitivity to added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics, and causal tests of faithfulness measures. The defensible gap is narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique, and a neutral rewrite after one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. To estimate nonspecific answer-change floors, we will use content-free filler, unrelated-text, and answer re-injection controls. Prediction accuracy, valid-output coverage, explanation length, and blinded human ratings of clarity, not faithfulness, will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+          "score": 59.9,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 60 is not at least 5 points below 59"
+            }
+          ],
+          "verdict": "rejected by detector: score 60 is not at least 5 points below 59"
+        },
+        {
+          "attempt": 3,
+          "text": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics, and causal tests of faithfulness measures. The defensible gap is therefore narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique, and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text, and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length, and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+          "score": 58.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 59 is not at least 5 points below 59"
+            }
+          ],
+          "verdict": "rejected by detector: score 59 is not at least 5 points below 59"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to any added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics and causal tests of faithfulness measures. The defensible gap is therefore narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+      "text_after": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to any added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics and causal tests of faithfulness measures. The defensible gap is therefore narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+      "score_after": 59.0,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P012",
+      "section": "related_work",
+      "score_before": 50.2,
+      "top_features": [
+        "stock phrases",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty, not declare controls equivalent after a nonsignificant test. [[S_2026_groundlm_1_35]].",
+          "score": 22.0,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. [[S_2026_groundlm_1_35]].",
+      "text_after": "Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty, not declare controls equivalent after a nonsignificant test. [[S_2026_groundlm_1_35]].",
+      "score_after": 22.0
+    },
+    {
+      "paragraph_id": "P010",
+      "section": "related_work",
+      "score_before": 48.3,
+      "top_features": [
+        "hedge density",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]]",
+          "score": 48.3,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 48 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 48 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 2,
+          "text": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, so this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents do not treat “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]]",
+          "score": 51.1,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 51 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 51 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 3,
+          "text": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, so this proposal keeps output validity visible. Dehghanighobadi et al. investigate whether counterfactual explanations align with model behavior. These precedents do not let us treat “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]].",
+          "score": 51.5,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 52 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 52 is not at least 5 points below 48"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]].",
+      "text_after": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]].",
+      "score_after": 48.3,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "score_before": 48.0,
+      "top_features": [
+        "lists of three",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. Before generation, we will fix the exact datasets, versions, and licenses. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.",
+          "score": 48.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 48 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 48 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 2,
+          "text": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions, and licenses will be fixed before generation. Two instruction-tuned model families will be selected, and both must allow reproducible access and recorded inference settings.",
+          "score": 48.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 48 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 48 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 3,
+          "text": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. Before generation, we will fix the exact datasets, versions, and licenses. Two instruction-tuned model families will be selected on the basis of reproducible access and support for recorded inference settings.",
+          "score": 46.3,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 46 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 46 is not at least 5 points below 48"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions and licenses will be fixed before generation. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.",
+      "text_after": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions and licenses will be fixed before generation. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.",
+      "score_after": 48.0,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P003",
+      "section": "introduction",
+      "score_before": 38.9,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, so single-score conclusions are unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+          "score": 39.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 39 is not at least 5 points below 39"
+            }
+          ],
+          "verdict": "rejected by detector: score 39 is not at least 5 points below 39"
+        },
+        {
+          "attempt": 2,
+          "text": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, and Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, so single-score conclusions are unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+          "score": 39.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 39 is not at least 5 points below 39"
+            }
+          ],
+          "verdict": "rejected by detector: score 39 is not at least 5 points below 39"
+        },
+        {
+          "attempt": 3,
+          "text": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, and Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, so single-score conclusions are unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+          "score": 39.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 39 is not at least 5 points below 39"
+            }
+          ],
+          "verdict": "rejected by detector: score 39 is not at least 5 points below 39"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+      "text_after": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+      "score_after": 38.9,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P015",
+      "section": "methodology",
+      "score_before": 35.3,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is conditional on initial correctness, so the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction. It also limits inference to initially correct decisions.",
+          "score": 21.3,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "consecutive short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: consecutive short sentences"
+        },
+        {
+          "attempt": 2,
+          "text": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness, and we will report the number screened together with the initial accuracy over the screened pool. This design isolates explanation refinement from answer correction. It also limits inference to initially correct decisions.",
+          "score": 20.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "consecutive short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: consecutive short sentences"
+        },
+        {
+          "attempt": 3,
+          "text": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is conditional on initial correctness, so we will report both the number screened and the initial accuracy over the screened pool. This design isolates explanation refinement from answer correction, but it limits inference to initially correct decisions.",
+          "score": 35.9,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 36 is not at least 5 points below 35"
+            }
+          ],
+          "verdict": "rejected by detector: score 36 is not at least 5 points below 35"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness; the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction, but limits inference to initially correct decisions.",
+      "text_after": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness; the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction, but limits inference to initially correct decisions.",
+      "score_after": 35.3,
+      "needs_human_edit": true
+    }
+  ],
+  "totals": {
+    "selected": 13,
+    "revised": 6,
+    "kept_original": 7,
+    "attempts": 33,
+    "needs_human_edit": 7,
+    "held_for_research": 0,
+    "mean_score_before": 60.1,
+    "mean_score_after": 44.3
+  },
+  "critic": {
+    "model": "gpt-5.6-luna",
+    "review_of_v0": "ok",
+    "review_of_final": "ok",
+    "actionable_before": 0,
+    "actionable_after": 1,
+    "needs_research": []
+  }
+}

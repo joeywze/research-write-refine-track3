@@ -249,14 +249,60 @@ class EvidenceGate:
         try:
             result = self.provider.generate("evidence", EVIDENCE_INSTRUCTIONS, payload, EVIDENCE_SCHEMA,
                                             self.max_output_tokens)
-            status = result["status"]
-            if status not in EVIDENCE_SCHEMA["properties"]["status"]["enum"]:
-                raise ValueError(f"unknown status {status!r}")
-        except Exception as error:  # a failed check must never count as a pass
+            return validate_evidence_reply(result, original_text, text)
+        except Exception as error:  # a malformed or inconsistent reply must never count as a pass
             return CheckResult("evidence check", "CHECK_ERROR", f"{type(error).__name__}: {error}")
-        bad = [s for s in result["sentences"] if s["label"] in ("UNSUPPORTED", "CONTRADICTED")]
-        reason = "; ".join(result["reasons"]) or "; ".join(f'{s["label"].lower()}: "{s["sentence"][:90]}"' for s in bad)
-        return CheckResult("evidence check", status, reason)
+
+
+def _words(text):
+    return re.findall(r"[a-z0-9]+", plain(text).casefold())
+
+
+def _contains(text, sentence):
+    """True if `sentence` is in `text`, ignoring case, punctuation and citation tokens (or 80% of its words are)."""
+    words, pool = _words(sentence), _words(text)
+    if not words:
+        return False
+    if " ".join(words) in " ".join(pool):
+        return True
+    return sum(w in set(pool) for w in words) / len(words) >= 0.8
+
+
+def validate_evidence_reply(result, original_text, text):
+    """Check the evidence checker's whole reply before trusting its verdict.
+
+    Rejected (CHECK_ERROR, so asked again once, then fail closed): a missing or mistyped field, an
+    empty audit, an audited sentence that is not in the rewrite, or an overall PASS while a sentence
+    that is NEW in the rewrite is marked unsupported or contradicted."""
+    if not isinstance(result, dict):
+        raise ValueError("reply is not a JSON object")
+    missing = [k for k in EVIDENCE_SCHEMA["required"] if k not in result]
+    if missing:
+        raise ValueError(f"reply is missing {', '.join(missing)}")
+    status, sentences = result["status"], result["sentences"]
+    if status not in EVIDENCE_SCHEMA["properties"]["status"]["enum"]:
+        raise ValueError(f"unknown status {status!r}")
+    if not isinstance(sentences, list) or not all(isinstance(r, str) for r in result["reasons"]):
+        raise ValueError("sentences must be a list and reasons a list of strings")
+    labels = EVIDENCE_SCHEMA["properties"]["sentences"]["items"]["properties"]["label"]["enum"]
+    for row in sentences:
+        if not (isinstance(row, dict) and isinstance(row.get("sentence"), str) and row.get("label") in labels):
+            raise ValueError("every audited sentence needs a sentence and a valid label")
+    if status == "CHECK_ERROR":
+        return CheckResult("evidence check", "CHECK_ERROR", "; ".join(result["reasons"]) or "checker could not decide")
+    if not sentences:
+        raise ValueError("empty audit: no sentence of the rewrite was checked")
+    stray = [r["sentence"] for r in sentences if not _contains(text, r["sentence"])]
+    if stray:
+        raise ValueError(f'audited a sentence that is not in the rewrite: "{stray[0][:80]}"')
+    bad = [r for r in sentences if r["label"] in ("UNSUPPORTED", "CONTRADICTED")]
+    in_original = " ".join(_words(original_text))
+    new_bad = [r for r in bad if " ".join(_words(r["sentence"])) not in in_original]   # exact: any edit makes it new
+    if status == "PASS" and new_bad:
+        raise ValueError(f'PASS overall but a new sentence is {new_bad[0]["label"].lower()}: '
+                         f'"{new_bad[0]["sentence"][:80]}"')
+    reason = "; ".join(result["reasons"]) or "; ".join(f'{r["label"].lower()}: "{r["sentence"][:90]}"' for r in bad)
+    return CheckResult("evidence check", status, reason)
 
 
 def semantic_check(gate, package, v0, current, paragraph_id, text, retries=CHECK_RETRIES):

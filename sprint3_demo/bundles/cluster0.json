@@ -1,0 +1,2288 @@
+{
+ "schema_version": 1,
+ "id": "cluster0",
+ "title": "Fact or Form? A Controlled Invariance Audit of Hallucination Detectors",
+ "reviewed": false,
+ "status_label": "Claims not yet reviewed",
+ "research_question": "Can hallucination detectors discriminate supported from minimally incorrect answers while remaining stable across meaning-equivalent answer forms?",
+ "gap": "Existing work documents label problems, response-length effects, domain shift and detector-family blind spots. The narrower unresolved question is whether factual discrimination survives controlled changes in answer form within the same human-validated items.",
+ "contribution": "A proposed paired form-invariance audit that evaluates factual discrimination and within-label score stability together under controlled answer transformations.",
+ "claims": [
+  {
+   "claim_id": "P003-1",
+   "paragraph_id": "P003",
+   "claim": "broad claims about unexamined robustness are untenable",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "consistency might be able to predict accuracy but is fundamentally",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "our findings may not generalize to prompts and responses of all lengths.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-2",
+   "paragraph_id": "P003",
+   "claim": "lexical-overlap labels can exaggerate progress",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "response length itself is not a direct causal factor",
+     "page": "N Causality Discussion; PDF p. 18",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-3",
+   "paragraph_id": "P003",
+   "claim": "simple length information can be highly predictive",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "response length itself is not a direct causal factor",
+     "page": "N Causality Discussion; PDF p. 18",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-4",
+   "paragraph_id": "P003",
+   "claim": "Their human validation is curated",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "response length itself is not a direct causal factor",
+     "page": "N Causality Discussion; PDF p. 18",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-5",
+   "paragraph_id": "P003",
+   "claim": "length is associated with outcomes",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "response length itself is not a direct causal factor",
+     "page": "N Causality Discussion; PDF p. 18",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-6",
+   "paragraph_id": "P003",
+   "claim": "without establishing it as a direct cause",
+   "evidence": [
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "response length itself is not a direct causal factor",
+     "page": "N Causality Discussion; PDF p. 18",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+     "quote": "we intentionally curated a dataset of instances",
+     "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+     "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-7",
+   "paragraph_id": "P003",
+   "claim": "Wu et al. explicitly distinguish response consistency from factual accuracy",
+   "evidence": [
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "consistency might be able to predict accuracy but is fundamentally",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "our findings may not generalize to prompts and responses of all lengths.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-8",
+   "paragraph_id": "P003",
+   "claim": "identify response length as a limitation",
+   "evidence": [
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "our findings may not generalize to prompts and responses of all lengths.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+     "quote": "consistency might be able to predict accuracy but is fundamentally",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-9",
+   "paragraph_id": "P004",
+   "claim": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies.",
+   "evidence": [
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "keeping the strictest label during aggregation",
+     "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "The threshold is optimized to maximize F1 score on the test set.",
+     "page": "A.2 Model Configuration Details; PDF p. 14",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+     "quote": "The test does not control for response correctness",
+     "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+     "url": "https://aclanthology.org/2026.findings-aacl.164/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-10",
+   "paragraph_id": "P004",
+   "claim": "Fortifying Hallucination Detection studies cross-domain transfer",
+   "evidence": [
+    {
+     "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+     "quote": "incorrect responses are treated as hallucinations.",
+     "page": "3 Approach & Experimental Setup — Hallucination in QA setting; PDF p. 3",
+     "url": "https://aclanthology.org/2026.findings-emnlp.113/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+     "quote": "our evaluation is restricted to short form question answering",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.113/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-11",
+   "paragraph_id": "P004",
+   "claim": "operationally treats incorrect short answers as hallucinations",
+   "evidence": [
+    {
+     "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+     "quote": "incorrect responses are treated as hallucinations.",
+     "page": "3 Approach & Experimental Setup — Hallucination in QA setting; PDF p. 3",
+     "url": "https://aclanthology.org/2026.findings-emnlp.113/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+     "quote": "our evaluation is restricted to short form question answering",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.findings-emnlp.113/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-12",
+   "paragraph_id": "P004",
+   "claim": "A large evaluation of hallucination metrics uses strict response aggregation",
+   "evidence": [
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "keeping the strictest label during aggregation",
+     "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "The threshold is optimized to maximize F1 score on the test set.",
+     "page": "A.2 Model Configuration Details; PDF p. 14",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-13",
+   "paragraph_id": "P004",
+   "claim": "in one analysis, optimizes a threshold on the test set",
+   "evidence": [
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "The threshold is optimized to maximize F1 score on the test set.",
+     "page": "A.2 Model Configuration Details; PDF p. 14",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Rethinking Evaluation for LLM Hallucination Detection",
+     "quote": "keeping the strictest label during aggregation",
+     "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+     "url": "https://aclanthology.org/2026.acl-long.680/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-14",
+   "paragraph_id": "P004",
+   "claim": "DECK maps different hallucination types to consistency and confidence signals",
+   "evidence": [
+    {
+     "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+     "quote": "All grading is deterministic and requires no additional model calls.",
+     "page": "Appendix B: Response Grading Procedures; PDF p. 13",
+     "url": "https://aclanthology.org/2026.findings-aacl.164/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+     "quote": "The test does not control for response correctness",
+     "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+     "url": "https://aclanthology.org/2026.findings-aacl.164/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-15",
+   "paragraph_id": "P004",
+   "claim": "noting correctness-control caveats",
+   "evidence": [
+    {
+     "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+     "quote": "The test does not control for response correctness",
+     "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+     "url": "https://aclanthology.org/2026.findings-aacl.164/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+     "quote": "All grading is deterministic and requires no additional model calls.",
+     "page": "Appendix B: Response Grading Procedures; PDF p. 13",
+     "url": "https://aclanthology.org/2026.findings-aacl.164/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-16",
+   "paragraph_id": "P008",
+   "claim": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples",
+   "evidence": [
+    {
+     "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+     "quote": "there are no training samples.",
+     "page": "Appendix A: Details of Datasets; PDF p. 11",
+     "url": "https://aclanthology.org/2025.emnlp-main.1063/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+     "quote": "incorrect segmentation of attentive queries (leading to omission of key information)",
+     "page": "Appendix I: Bad Cases; PDF p. 12",
+     "url": "https://aclanthology.org/2025.emnlp-main.1063/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-17",
+   "paragraph_id": "P008",
+   "claim": "its failure analysis includes difficulty with query segmentation",
+   "evidence": [
+    {
+     "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+     "quote": "incorrect segmentation of attentive queries (leading to omission of key information)",
+     "page": "Appendix I: Bad Cases; PDF p. 12",
+     "url": "https://aclanthology.org/2025.emnlp-main.1063/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+     "quote": "there are no training samples.",
+     "page": "Appendix A: Details of Datasets; PDF p. 11",
+     "url": "https://aclanthology.org/2025.emnlp-main.1063/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-18",
+   "paragraph_id": "P008",
+   "claim": "IRIS derives features from truth-verification behavior and internal representations",
+   "evidence": [
+    {
+     "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+     "quote": "single statements with clear-cut truth values",
+     "page": "Limitations — Data Coverage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1124/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+     "quote": "we utilize the last token’s embeddings at the last layer.",
+     "page": "2.3 Classifier Training; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1124/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-19",
+   "paragraph_id": "P008",
+   "claim": "its reported scope is bounded to single statements",
+   "evidence": [
+    {
+     "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+     "quote": "single statements with clear-cut truth values",
+     "page": "Limitations — Data Coverage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1124/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+     "quote": "we utilize the last token’s embeddings at the last layer.",
+     "page": "2.3 Classifier Training; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1124/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P008-20",
+   "paragraph_id": "P008",
+   "claim": "These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier",
+   "evidence": []
+  }
+ ],
+ "real_papers": [
+  {
+   "source_id": "S_2025_emnlp_main_1761",
+   "paper_id": "2025.emnlp-main.1761",
+   "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+   "url": "https://aclanthology.org/2025.emnlp-main.1761/",
+   "score": 50.2,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1554",
+   "paper_id": "2025.emnlp-main.1554",
+   "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+   "url": "https://aclanthology.org/2025.emnlp-main.1554/",
+   "score": 56.6,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1063",
+   "paper_id": "2025.emnlp-main.1063",
+   "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+   "url": "https://aclanthology.org/2025.emnlp-main.1063/",
+   "score": 68.9,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1124",
+   "paper_id": "2025.emnlp-main.1124",
+   "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+   "url": "https://aclanthology.org/2025.emnlp-main.1124/",
+   "score": 46.5,
+   "basis": "unseen-paper model"
+  }
+ ],
+ "real_band": {
+  "n": 4,
+  "min": 46.5,
+  "max": 68.9,
+  "mean": 55.6
+ },
+ "v0": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores may also vary with answer length, lexical overlap and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects and detector-family blind spots. The defensible gap is therefore not another broad robustness benchmark but a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form and a similar-length paraphrase. Representative consistency-, uncertainty-, representation- and supervised detectors will be compared with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+    "score": 51.3
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, dataset style or label construction. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+    "score": 36.2
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+    "score": 58.4
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+    "score": 43.0
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "What remains usefully isolated is a paired intervention on answer form:",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1—Discrimination:** Within an item, does a detector rank a supported answer above a minimally incorrect answer?\n2. **RQ2—Invariance:** How much does its score vary among meaning-equivalent forms with the same factual label?\n3. **RQ3—Relative magnitude:** Is within-label form variation small relative to the correct–incorrect score gap?\n4. **RQ4—Shortcuts:** Do simple length, overlap or semantic-similarity baselines explain similar behavior?",
+    "score": 47.7
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "The study is limited to passage-grounded short QA. It does not claim to represent every form of hallucination.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1124]]; [[S_2025_emnlp_main_1124]].",
+    "score": 71.0
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "Cluster 0 also contains uncertainty, reasoning-process, multilingual and long-form approaches. Their existence blocks any claim that hallucination detection relies on one signal or that multilingual evaluation is absent. This proposal instead compares accessible representatives under the same controlled answer transformations.",
+    "score": 42.3
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "The Illusion of Progress provides the closest motivation for including answer length and overlap baselines. Wu et al. warn that consistency is not the same as correctness. Fortifying Hallucination Detection evaluates out-of-distribution transfer, so this proposal cannot claim domain shift as its novelty. DECK shows that different detector signals have different blind spots, which motivates family-stratified reporting.",
+    "score": 37.3
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This differs from ordinary paraphrase augmentation because the design jointly controls evidence, factual label, item identity and approximate length.",
+    "score": 55.8
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "For this study, a response is **supported** when all material claims needed to answer the question are entailed by the supplied passage. It is **incorrect** when it contains a material contradiction or unsupported answer claim. This is a bounded operational definition. It does not cover fabrication in open-ended dialogue, citation correctness, long-form mixtures of supported and unsupported claims or epistemic uncertainty beyond the passage.",
+    "score": 21.5
+   },
+   {
+    "id": "P013",
+    "section": "methodology",
+    "text": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. Candidate domains will differ in style while keeping answers short and evidence explicit. Dataset versions, licensing and sampling rules will be frozen before answer variants are constructed.",
+    "score": 56.9
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "Each item receives a reference evidence span. Items requiring external knowledge, multiple defensible answers or unresolved coreference will be removed before detector testing. A 20-item pilot per domain will test the construction and annotation rules; pilot items will not enter the frozen test set if rules change.",
+    "score": 33.7
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "For every item, annotators will create:",
+    "score": null
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "- one concise supported answer; and\n- one minimally incorrect answer that changes a single substantive entity, quantity, time, polarity or relation while keeping syntax and length similar.",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "The incorrect answer must remain fluent and responsive to the question. It cannot be made incorrect merely by adding nonsense or obvious formatting artifacts. The changed element and evidence contradiction will be logged.",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Each answer then receives three forms:",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "| Form | Constraint | Purpose |\n|---|---|---|\n| Concise | Minimal complete answer | Reference form |\n| Lengthened | Add discourse or explanation without adding a new factual claim | Test length sensitivity |\n| Paraphrased | Preserve meaning at approximately matched length | Test phrasing sensitivity |",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "This yields six variants per item. Lengthening cannot introduce new factual content. Paraphrases may change syntax and wording but must preserve the answer's supported or incorrect status.",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "Two annotators independently label every variant against the passage as Supported, Incorrect or Ambiguous/Insufficient Evidence. They also flag added claims, unnatural wording and failed paraphrases. Disagreements are adjudicated by a third reviewer. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+    "score": 36.5
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "Subject to reproducible implementations and licenses, the comparison will include representatives of:",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "- self-consistency or sampling-based detection;\n- uncertainty or likelihood scoring;\n- internal-representation or attention-based detection;\n- supervised cross-encoder/classifier detection.",
+    "score": null
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Exact versions, prompts, sampling counts and preprocessing will be frozen. Any threshold will be chosen on separate calibration data, never the test set.",
+    "score": null
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. Baselines are diagnostic: if a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+    "score": 42.0
+   },
+   {
+    "id": "P026",
+    "section": "experiments",
+    "text": "For each item and form, we will test whether the detector assigns the supported answer a more favorable score than its minimally incorrect counterpart. Primary measures are within-item ranking accuracy and the paired correct–incorrect score difference. AUROC and fixed-threshold class errors will be secondary summaries because they can conceal item-level reversals.",
+    "score": 28.4
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "Results will be reported separately by domain, detector family and form. Operational failures and unsupported input lengths remain in coverage tables.",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "For each underlying answer, within-label form sensitivity will be measured by:",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "- maximum score range across forms;\n- score standard deviation across forms;\n- binary decision-flip rate under the frozen threshold;\n- rank preservation between supported and incorrect answers across forms.",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "The main diagnostic compares the absolute within-label form change with the absolute correct–incorrect gap for the same item. A preregistered summary may use:",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "**form-sensitivity ratio = within-label score range / (absolute supported–incorrect gap + ε)**,",
+    "score": null
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "where ε is fixed from calibration-scale considerations rather than chosen after viewing test results. Raw numerator and denominator will always accompany the ratio because ratios can become unstable near a zero factual gap.",
+    "score": null
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "The underlying passage–question item is the resampling unit. Item-cluster bootstrap intervals will retain both labels and all forms together. Domain-level estimates precede any pooled average. Multiple detector comparisons will be treated as descriptive unless a smaller confirmatory set is preregistered.",
+    "score": 26.4
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "Lengthened and paraphrased variants will also be compared with their concise sources on length, semantic similarity and reviewer naturalness. If a transformation changes meaning or quality, the item will not be used to attribute score movement to form alone.",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Strong discrimination and low form variation | Desired behavior in this bounded setting |\n| Strong aggregate AUROC but frequent within-item reversals | Benchmark performance masks unstable item behavior |\n| Low form variation and low discrimination | Invariant but uninformative detector |\n| Form variation rivals or exceeds factual gap | Material sensitivity to answer realization |\n| Length/overlap baseline matches detector pattern | Surface shortcut is a plausible explanation requiring further study |\n| Effect appears in one domain only | Domain-bounded finding, not general robustness |",
+    "score": null
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "We will not use a nonsignificant difference to claim equivalence. If invariance is a confirmatory aim, an equivalence margin must be justified before testing.",
+    "score": null
+   },
+   {
+    "id": "P037",
+    "section": "experiments",
+    "text": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult and human validation remains imperfect. Minimal factual errors may be easier than natural hallucinations. Some detector families require white-box access or repeated sampling, making comparisons operationally unequal. Calibration data may not transfer across domains, and proprietary model drift may affect reproduction. A controlled form intervention diagnoses sensitivity but does not prove why a model uses a feature internally.",
+    "score": 88.1
+   },
+   {
+    "id": "P038",
+    "section": "conclusion",
+    "text": "The literature already documents label problems, length effects, domain shift and detector-family blind spots. The defensible next step is a narrower paired test: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. By requiring both discrimination and invariance—and by retaining simple baselines—the proposal avoids mistaking stability, aggregate accuracy or stylistic regularity for factual detection. Experimental results remain to be collected.",
+    "score": 48.7
+   }
+  ],
+  "mean": 45.8
+ },
+ "final": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores vary with answer length, lexical overlap, and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects, and detector-family blind spots. The gap is not another broad robustness benchmark. It is a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form, and a similar-length paraphrase. We will compare representative consistency-, uncertainty-, representation-, and supervised detectors with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+    "score": 35.4
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, dataset style or label construction. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+    "score": 36.2
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+    "score": 58.4
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+    "score": 43.0
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "What remains usefully isolated is a paired intervention on answer form:",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1: Discrimination.** Within an item, does a detector rank a supported answer above a minimally incorrect answer? 2. **RQ2: Invariance.** How much does its score vary among meaning-equivalent forms with the same factual label? 3. **RQ3: Relative magnitude.** Is within-label form variation small relative to the correct–incorrect score gap? 4. **RQ4: Shortcuts.** Do simple length, overlap, or semantic-similarity baselines explain similar behavior?",
+    "score": 15.1
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "The study is limited to passage-grounded short QA. It does not claim to represent every form of hallucination.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families. We do not assume that every detector is a surface classifier. [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1124]]; [[S_2025_emnlp_main_1124]].",
+    "score": 25.5
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "Cluster 0 also contains uncertainty and reasoning-process approaches, as well as multilingual and long-form approaches. Their existence blocks any claim that hallucination detection relies on one signal or that multilingual evaluation is absent. This proposal instead compares accessible representatives under the same controlled answer transformations.",
+    "score": 33.7
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "The Illusion of Progress provides the closest motivation for including answer length and overlap baselines. Wu et al. warn that consistency is not the same as correctness. That is the point. Fortifying Hallucination Detection evaluates out-of-distribution transfer, so this proposal cannot claim domain shift as its novelty. DECK shows that different detector signals have different blind spots, which motivates family-stratified reporting.",
+    "score": 24.9
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This is not ordinary paraphrase augmentation. The design controls evidence, factual label, item identity, and approximate length together.",
+    "score": 25.8
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "For this study, a response is **supported** when all material claims needed to answer the question are entailed by the supplied passage. It is **incorrect** when it contains a material contradiction or unsupported answer claim. This is a bounded operational definition. It does not cover fabrication in open-ended dialogue, citation correctness, long-form mixtures of supported and unsupported claims or epistemic uncertainty beyond the passage.",
+    "score": 21.5
+   },
+   {
+    "id": "P013",
+    "section": "methodology",
+    "text": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. The two domains will differ in style, but answers will stay short and evidence explicit. Dataset versions and licensing will be frozen before answer variants are constructed. Sampling rules will be fixed as well.",
+    "score": 29.4
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "Each item receives a reference evidence span. Items requiring external knowledge, multiple defensible answers or unresolved coreference will be removed before detector testing. A 20-item pilot per domain will test the construction and annotation rules; pilot items will not enter the frozen test set if rules change.",
+    "score": 33.7
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "For every item, annotators will create:",
+    "score": null
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "- one concise supported answer; and\n- one minimally incorrect answer that changes a single substantive entity, quantity, time, polarity or relation while keeping syntax and length similar.",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "The incorrect answer must remain fluent and responsive to the question. It cannot be made incorrect merely by adding nonsense or obvious formatting artifacts. The changed element and evidence contradiction will be logged.",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Each answer then receives three forms:",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "| Form | Constraint | Purpose |\n|---|---|---|\n| Concise | Minimal complete answer | Reference form |\n| Lengthened | Add discourse or explanation without adding a new factual claim | Test length sensitivity |\n| Paraphrased | Preserve meaning at approximately matched length | Test phrasing sensitivity |",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "This yields six variants per item. Lengthening cannot introduce new factual content. Paraphrases may change syntax and wording but must preserve the answer's supported or incorrect status.",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "Two annotators independently label every variant against the passage as Supported, Incorrect, or Ambiguous/Insufficient Evidence. They also mark added claims and failed paraphrases, along with unnatural wording. A third reviewer adjudicates disagreements. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+    "score": 25.4
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "Subject to reproducible implementations and licenses, the comparison will include representatives of:",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "- self-consistency or sampling-based detection;\n- uncertainty or likelihood scoring;\n- internal-representation or attention-based detection;\n- supervised cross-encoder/classifier detection.",
+    "score": null
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Exact versions, prompts, sampling counts and preprocessing will be frozen. Any threshold will be chosen on separate calibration data, never the test set.",
+    "score": null
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. These baselines are diagnostic. If a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+    "score": 16.9
+   },
+   {
+    "id": "P026",
+    "section": "experiments",
+    "text": "For each item and form, we will test whether the detector assigns the supported answer a more favorable score than its minimally incorrect counterpart. Primary measures are within-item ranking accuracy and the paired correct–incorrect score difference. AUROC and fixed-threshold class errors will be secondary summaries because they can conceal item-level reversals.",
+    "score": 28.4
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "Results will be reported separately by domain, detector family and form. Operational failures and unsupported input lengths remain in coverage tables.",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "For each underlying answer, within-label form sensitivity will be measured by:",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "- maximum score range across forms;\n- score standard deviation across forms;\n- binary decision-flip rate under the frozen threshold;\n- rank preservation between supported and incorrect answers across forms.",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "The main diagnostic compares the absolute within-label form change with the absolute correct–incorrect gap for the same item. A preregistered summary may use:",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "**form-sensitivity ratio = within-label score range / (absolute supported–incorrect gap + ε)**,",
+    "score": null
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "where ε is fixed from calibration-scale considerations rather than chosen after viewing test results. Raw numerator and denominator will always accompany the ratio because ratios can become unstable near a zero factual gap.",
+    "score": null
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "The underlying passage–question item is the resampling unit. Item-cluster bootstrap intervals will retain both labels and all forms together. Domain-level estimates precede any pooled average. Multiple detector comparisons will be treated as descriptive unless a smaller confirmatory set is preregistered.",
+    "score": 26.4
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "Lengthened and paraphrased variants will also be compared with their concise sources on length, semantic similarity and reviewer naturalness. If a transformation changes meaning or quality, the item will not be used to attribute score movement to form alone.",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Strong discrimination and low form variation | Desired behavior in this bounded setting |\n| Strong aggregate AUROC but frequent within-item reversals | Benchmark performance masks unstable item behavior |\n| Low form variation and low discrimination | Invariant but uninformative detector |\n| Form variation rivals or exceeds factual gap | Material sensitivity to answer realization |\n| Length/overlap baseline matches detector pattern | Surface shortcut is a plausible explanation requiring further study |\n| Effect appears in one domain only | Domain-bounded finding, not general robustness |",
+    "score": null
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "We will not use a nonsignificant difference to claim equivalence. If invariance is a confirmatory aim, an equivalence margin must be justified before testing.",
+    "score": null
+   },
+   {
+    "id": "P037",
+    "section": "experiments",
+    "text": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult, and human validation is imperfect. Minimal factual errors are often easier to detect than natural hallucinations. Some detector families require white-box access or repeated sampling, so comparisons are operationally unequal. Calibration data do not transfer across domains, and proprietary model drift can affect reproduction. A controlled form intervention diagnoses sensitivity, but it does not prove why a model uses a feature internally.",
+    "score": 55.0
+   },
+   {
+    "id": "P038",
+    "section": "conclusion",
+    "text": "The literature already documents label problems, length effects, domain shift and detector-family blind spots. The defensible next step is a narrower paired test: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. By requiring both discrimination and invariance—and by retaining simple baselines—the proposal avoids mistaking stability, aggregate accuracy or stylistic regularity for factual detection. Experimental results remain to be collected.",
+    "score": 48.7
+   }
+  ],
+  "mean": 32.4
+ },
+ "rewrite": {
+  "threshold": 35.0,
+  "totals": {
+   "selected": 14,
+   "revised": 10,
+   "kept_original": 4,
+   "attempts": 32,
+   "needs_human_edit": 4,
+   "held_for_research": 0,
+   "mean_score_before": 51.1,
+   "mean_score_after": 33.8
+  },
+  "paragraphs": [
+   {
+    "paragraph_id": "P037",
+    "section": "experiments",
+    "score_before": 88.1,
+    "score_after": 55.0,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences",
+     "sentence lengths are too uniform"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 55.0,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 55 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 55.0,
+      "accepted": false,
+      "verdict": "rejected by writer: the rewrite repeated an earlier version",
+      "checks": [
+       {
+        "check": "writer",
+        "status": "NO_CHANGE",
+        "reason": "the rewrite repeated an earlier version"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 47.6,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: too many very short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "too many very short sentences"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P008",
+    "section": "related_work",
+    "score_before": 71.0,
+    "score_after": 25.5,
+    "outcome": "revised",
+    "top_features": [
+     "stock phrases",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 25.5,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "The only unsupported issue in the rewrite is inherited from the original: the evidence provided for IRIS does not back \"truth-verification behavior.\"; No new unsupported or contradicted source claim was introduced by the rewrite relative to the original, so status remains PASS."
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P003",
+    "section": "introduction",
+    "score_before": 58.4,
+    "score_after": 58.4,
+    "outcome": "kept original",
+    "top_features": [
+     "hedge density",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 31.8,
+      "accepted": false,
+      "verdict": "rejected by evidence check: The rewrite is materially the same as the original on the source-backed claims.; However, the provided evidence is too thin to verify one key sentence about Janiak et al. in either version, because no quote supports \"lexical-overlap labels can exaggerate progress\" or \"simple length information is highly predictive.\"",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "CHECK_ERROR",
+        "reason": "The rewrite is materially the same as the original on the source-backed claims.; However, the provided evidence is too thin to verify one key sentence about Janiak et al. in either version, because no quote supports \"lexical-overlap labels can exaggerate progress\" or \"simple length information is highly predictive.\""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 25.4,
+      "accepted": false,
+      "verdict": "rejected by evidence check: Evidence is too thin to fully judge the Janiak sentence about lexical-overlap labels exaggerating progress and simple length information being highly predictive, because the provided excerpts do not address those claims one way or the other.; The same support gap already exists in the original paragraph for the corresponding Janiak sentence.",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "CHECK_ERROR",
+        "reason": "Evidence is too thin to fully judge the Janiak sentence about lexical-overlap labels exaggerating progress and simple length information being highly predictive, because the provided excerpts do not address those claims one way or the other.; The same support gap already exists in the original paragraph for the corresponding Janiak sentence."
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 48.8,
+      "accepted": false,
+      "verdict": "rejected by evidence check: The rewrite is very close to the original, but one sentence about Janiak et al. makes claims not backed by the supplied evidence excerpts.; The same unsupported issue already exists in the original sentence, so this is a pre-existing problem rather than a rewrite-introduced error.; Because evidence excerpts are fragmentary, there is some uncertainty; however, the unsupported portion is clear from the provided record, so I mark the overall status as CHECK_ERROR due to thin evidence around that sentence.",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "CHECK_ERROR",
+        "reason": "The rewrite is very close to the original, but one sentence about Janiak et al. makes claims not backed by the supplied evidence excerpts.; The same unsupported issue already exists in the original sentence, so this is a pre-existing problem rather than a rewrite-introduced error.; Because evidence excerpts are fragmentary, there is some uncertainty; however, the unsupported portion is clear from the provided record, so I mark the overall status as CHECK_ERROR due to thin evidence around that sentence."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P013",
+    "section": "methodology",
+    "score_before": 56.9,
+    "score_after": 29.4,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 47.5,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 48 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 42.3,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 42 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 29.4,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P011",
+    "section": "related_work",
+    "score_before": 55.8,
+    "score_after": 25.8,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 55.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 56 is not at least 5 points below 56",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 56 is not at least 5 points below 56"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 25.8,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P001",
+    "section": "abstract",
+    "score_before": 51.3,
+    "score_after": 35.4,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences",
+     "hedge density"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 40.9,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 41 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 41.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not below the best safe version (41)",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not below the best safe version (41)"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 35.4,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 35 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P038",
+    "section": "conclusion",
+    "score_before": 48.7,
+    "score_after": 48.7,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 50.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 51 is not at least 5 points below 49",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 51 is not at least 5 points below 49"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 50.6,
+      "accepted": false,
+      "verdict": "rejected by detector: score 51 is not at least 5 points below 49",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 51 is not at least 5 points below 49"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 50.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 51 is not at least 5 points below 49",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 51 is not at least 5 points below 49"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P006",
+    "section": "introduction",
+    "score_before": 47.7,
+    "score_after": 15.1,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 15.1,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P004",
+    "section": "introduction",
+    "score_before": 43.0,
+    "score_after": 43.0,
+    "outcome": "kept original",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 45.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 45 is not at least 5 points below 43",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 45 is not at least 5 points below 43"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 22.2,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: consecutive short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "consecutive short sentences"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 43.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 44 is not at least 5 points below 43",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 44 is not at least 5 points below 43"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P009",
+    "section": "related_work",
+    "score_before": 42.3,
+    "score_after": 33.7,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 33.7,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P025",
+    "section": "methodology",
+    "score_before": 42.0,
+    "score_after": 16.9,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 15.8,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: fragment sentence (<4 words)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "fragment sentence (<4 words)"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 16.9,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P010",
+    "section": "related_work",
+    "score_before": 37.3,
+    "score_after": 24.9,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 24.9,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "The only sentence in the rewrite tied to available source evidence is the Wu et al. claim, and the quoted excerpt supports the idea that consistency is distinct from correctness/accuracy.; The added sentence “That is the point.” does not assert a factual claim about a source paper; it is interpretive commentary.; No new unsupported or contradicted source-backed claim was introduced relative to the original."
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P021",
+    "section": "methodology",
+    "score_before": 36.5,
+    "score_after": 25.4,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 36.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 36 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 36 is not at least 5 points below 36"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 32.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 32 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 32 is not at least 5 points below 36"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 25.4,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P002",
+    "section": "introduction",
+    "score_before": 36.2,
+    "score_after": 36.2,
+    "outcome": "kept original",
+    "top_features": [
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 36.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 36 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 36 is not at least 5 points below 36"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 32.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 33 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 33 is not at least 5 points below 36"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 37.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 37 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 37 is not at least 5 points below 36"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "critic": {
+   "model": "gpt-5.6-luna",
+   "review_of_v0": "ok",
+   "review_of_final": "ok",
+   "actionable_before": 0,
+   "actionable_after": 2,
+   "needs_research": []
+  }
+ },
+ "manifest": {
+  "layout": [
+   "# Fact or Form? A Controlled Invariance Audit of Hallucination Detectors\n\n",
+   "## Abstract\n\n",
+   {
+    "paragraph_id": "P001"
+   },
+   "\n\n",
+   "## Introduction\n\n",
+   {
+    "paragraph_id": "P002"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P003"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P004"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P005"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P006"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P007"
+   },
+   "\n\n",
+   "## Related work\n\n",
+   {
+    "paragraph_id": "P008"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P009"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P010"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P011"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P012"
+   },
+   "\n\n",
+   "## Methodology\n\n",
+   {
+    "paragraph_id": "P013"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P014"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P015"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P016"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P017"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P018"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P019"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P020"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P021"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P022"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P023"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P024"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P025"
+   },
+   "\n\n",
+   "## Experiments: Evaluation plan\n\n",
+   {
+    "paragraph_id": "P026"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P027"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P028"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P029"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P030"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P031"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P032"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P033"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P034"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P035"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P036"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P037"
+   },
+   "\n\n",
+   "## Conclusion\n\n",
+   {
+    "paragraph_id": "P038"
+   },
+   "\n\n",
+   "## References\n\n",
+   "- [S_2025_emnlp_main_1761](https://aclanthology.org/2025.emnlp-main.1761/) The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s\n- [S_2025_emnlp_main_1554](https://aclanthology.org/2025.emnlp-main.1554/) Estimating LLM Consistency: A User Baseline vs Surrogate Metrics\n- [S_2026_findings_emnlp_113](https://aclanthology.org/2026.findings-emnlp.113/) Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA\n- [S_2026_acl_long_680](https://aclanthology.org/2026.acl-long.680/) Rethinking Evaluation for LLM Hallucination Detection\n- [S_2026_findings_aacl_164](https://aclanthology.org/2026.findings-aacl.164/) DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations\n- [S_2025_emnlp_main_1063](https://aclanthology.org/2025.emnlp-main.1063/) Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models\n- [S_2025_emnlp_main_1124](https://aclanthology.org/2025.emnlp-main.1124/) Unsupervised Hallucination Detection by Inspecting Reasoning Processes\n"
+  ],
+  "blocks": [
+   {
+    "paragraph_id": "P001",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P002",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P003",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1761",
+      "original_markdown": "[S_2025_emnlp_main_1761](https://aclanthology.org/2025.emnlp-main.1761/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1761",
+      "original_markdown": "[S_2025_emnlp_main_1761](https://aclanthology.org/2025.emnlp-main.1761/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1554",
+      "original_markdown": "[S_2025_emnlp_main_1554](https://aclanthology.org/2025.emnlp-main.1554/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1554",
+      "original_markdown": "[S_2025_emnlp_main_1554](https://aclanthology.org/2025.emnlp-main.1554/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P004",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_findings_emnlp_113",
+      "original_markdown": "[S_2026_findings_emnlp_113](https://aclanthology.org/2026.findings-emnlp.113/)"
+     },
+     {
+      "source_id": "S_2026_findings_emnlp_113",
+      "original_markdown": "[S_2026_findings_emnlp_113](https://aclanthology.org/2026.findings-emnlp.113/)"
+     },
+     {
+      "source_id": "S_2026_acl_long_680",
+      "original_markdown": "[S_2026_acl_long_680](https://aclanthology.org/2026.acl-long.680/)"
+     },
+     {
+      "source_id": "S_2026_acl_long_680",
+      "original_markdown": "[S_2026_acl_long_680](https://aclanthology.org/2026.acl-long.680/)"
+     },
+     {
+      "source_id": "S_2026_findings_aacl_164",
+      "original_markdown": "[S_2026_findings_aacl_164](https://aclanthology.org/2026.findings-aacl.164/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P005",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P006",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P007",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P008",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1063",
+      "original_markdown": "[S_2025_emnlp_main_1063](https://aclanthology.org/2025.emnlp-main.1063/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1063",
+      "original_markdown": "[S_2025_emnlp_main_1063](https://aclanthology.org/2025.emnlp-main.1063/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1124",
+      "original_markdown": "[S_2025_emnlp_main_1124](https://aclanthology.org/2025.emnlp-main.1124/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1124",
+      "original_markdown": "[S_2025_emnlp_main_1124](https://aclanthology.org/2025.emnlp-main.1124/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P009",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P010",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P011",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P012",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P013",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P014",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P015",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P016",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P017",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P018",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P019",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P020",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P021",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P022",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P023",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P024",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P025",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P026",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P027",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P028",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P029",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P030",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P031",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P032",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P033",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P034",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P035",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P036",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P037",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P038",
+    "citation_occurrences": []
+   }
+  ]
+ },
+ "source_run": "half2-final-cluster0"
+}

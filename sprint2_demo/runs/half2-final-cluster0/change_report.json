@@ -1,0 +1,1014 @@
+{
+  "topic": "cluster0",
+  "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
+  "threshold": 35.0,
+  "paragraphs": [
+    {
+      "paragraph_id": "P037",
+      "section": "experiments",
+      "score_before": 88.1,
+      "top_features": [
+        "hedge density",
+        "share of very long sentences",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult, and human validation is imperfect. Minimal factual errors are often easier to detect than natural hallucinations. Some detector families require white-box access or repeated sampling, so comparisons are operationally unequal. Calibration data do not transfer across domains, and proprietary model drift can affect reproduction. A controlled form intervention diagnoses sensitivity, but it does not prove why a model uses a feature internally.",
+          "score": 55.0,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 55 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult, and human validation is imperfect. Minimal factual errors are often easier to detect than natural hallucinations. Some detector families require white-box access or repeated sampling, so comparisons are operationally unequal. Calibration data do not transfer across domains, and proprietary model drift can affect reproduction. A controlled form intervention diagnoses sensitivity, but it does not prove why a model uses a feature internally.",
+          "score": 55.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "writer",
+              "status": "NO_CHANGE",
+              "reason": "the rewrite repeated an earlier version"
+            }
+          ],
+          "verdict": "rejected by writer: the rewrite repeated an earlier version"
+        },
+        {
+          "attempt": 3,
+          "text": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult, and human validation is imperfect. Minimal factual errors are often easier to detect than natural hallucinations. Some detector families require white-box access or repeated sampling, so comparisons are operationally unequal. Calibration data do not transfer across domains. Proprietary model drift can affect reproduction. A controlled form intervention diagnoses sensitivity, but it does not prove why a model uses a feature internally.",
+          "score": 47.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "too many very short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: too many very short sentences"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult and human validation remains imperfect. Minimal factual errors may be easier than natural hallucinations. Some detector families require white-box access or repeated sampling, making comparisons operationally unequal. Calibration data may not transfer across domains, and proprietary model drift may affect reproduction. A controlled form intervention diagnoses sensitivity but does not prove why a model uses a feature internally.",
+      "text_after": "The design covers short passage-grounded answers, not long-form generation with many claims. Meaning-preserving lengthening is difficult, and human validation is imperfect. Minimal factual errors are often easier to detect than natural hallucinations. Some detector families require white-box access or repeated sampling, so comparisons are operationally unequal. Calibration data do not transfer across domains, and proprietary model drift can affect reproduction. A controlled form intervention diagnoses sensitivity, but it does not prove why a model uses a feature internally.",
+      "score_after": 55.0
+    },
+    {
+      "paragraph_id": "P008",
+      "section": "related_work",
+      "score_before": 71.0,
+      "top_features": [
+        "stock phrases",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families. We do not assume that every detector is a surface classifier. [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1124]]; [[S_2025_emnlp_main_1124]].",
+          "score": 25.5,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "The only unsupported issue in the rewrite is inherited from the original: the evidence provided for IRIS does not back \"truth-verification behavior.\"; No new unsupported or contradicted source claim was introduced by the rewrite relative to the original, so status remains PASS."
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1124]]; [[S_2025_emnlp_main_1124]].",
+      "text_after": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families. We do not assume that every detector is a surface classifier. [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1063]]; [[S_2025_emnlp_main_1124]]; [[S_2025_emnlp_main_1124]].",
+      "score_after": 25.5
+    },
+    {
+      "paragraph_id": "P003",
+      "section": "introduction",
+      "score_before": 58.4,
+      "top_features": [
+        "hedge density",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress, and that simple length information is highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+          "score": 31.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "CHECK_ERROR",
+              "reason": "The rewrite is materially the same as the original on the source-backed claims.; However, the provided evidence is too thin to verify one key sentence about Janiak et al. in either version, because no quote supports \"lexical-overlap labels can exaggerate progress\" or \"simple length information is highly predictive.\""
+            }
+          ],
+          "verdict": "rejected by evidence check: The rewrite is materially the same as the original on the source-backed claims.; However, the provided evidence is too thin to verify one key sentence about Janiak et al. in either version, because no quote supports \"lexical-overlap labels can exaggerate progress\" or \"simple length information is highly predictive.\""
+        },
+        {
+          "attempt": 2,
+          "text": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. report that lexical-overlap labels can exaggerate progress, and simple length information is highly predictive. Their human validation is curated. Their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+          "score": 25.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "CHECK_ERROR",
+              "reason": "Evidence is too thin to fully judge the Janiak sentence about lexical-overlap labels exaggerating progress and simple length information being highly predictive, because the provided excerpts do not address those claims one way or the other.; The same support gap already exists in the original paragraph for the corresponding Janiak sentence."
+            }
+          ],
+          "verdict": "rejected by evidence check: Evidence is too thin to fully judge the Janiak sentence about lexical-overlap labels exaggerating progress and simple length information being highly predictive, because the provided excerpts do not address those claims one way or the other.; The same support gap already exists in the original paragraph for the corresponding Janiak sentence."
+        },
+        {
+          "attempt": 3,
+          "text": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress, and simple length information can be highly predictive. Their human validation is curated. Their analysis notes that length is associated with outcomes, but it does not establish it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+          "score": 48.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "CHECK_ERROR",
+              "reason": "The rewrite is very close to the original, but one sentence about Janiak et al. makes claims not backed by the supplied evidence excerpts.; The same unsupported issue already exists in the original sentence, so this is a pre-existing problem rather than a rewrite-introduced error.; Because evidence excerpts are fragmentary, there is some uncertainty; however, the unsupported portion is clear from the provided record, so I mark the overall status as CHECK_ERROR due to thin evidence around that sentence."
+            }
+          ],
+          "verdict": "rejected by evidence check: The rewrite is very close to the original, but one sentence about Janiak et al. makes claims not backed by the supplied evidence excerpts.; The same unsupported issue already exists in the original sentence, so this is a pre-existing problem rather than a rewrite-introduced error.; Because evidence excerpts are fragmentary, there is some uncertainty; however, the unsupported portion is clear from the provided record, so I mark the overall status as CHECK_ERROR due to thin evidence around that sentence."
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+      "text_after": "The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1761]]; [[S_2025_emnlp_main_1554]]; [[S_2025_emnlp_main_1554]].",
+      "score_after": 58.4,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P013",
+      "section": "methodology",
+      "score_before": 56.9,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. Candidate domains will differ in style while keeping answers short and evidence explicit. Before answer variants are constructed, dataset versions and licensing will be frozen, and the sampling rules will also be fixed.",
+          "score": 47.5,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 48 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. The two domains will differ in style, but answers will stay short and evidence explicit. Before answer variants are constructed, dataset versions and licensing will be frozen. The sampling rules will be fixed as well.",
+          "score": 42.3,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 42 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. The two domains will differ in style, but answers will stay short and evidence explicit. Dataset versions and licensing will be frozen before answer variants are constructed. Sampling rules will be fixed as well.",
+          "score": 29.4,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. Candidate domains will differ in style while keeping answers short and evidence explicit. Dataset versions, licensing and sampling rules will be frozen before answer variants are constructed.",
+      "text_after": "We plan 120 passage–question items from each of two redistributable domains, for 240 underlying items. The two domains will differ in style, but answers will stay short and evidence explicit. Dataset versions and licensing will be frozen before answer variants are constructed. Sampling rules will be fixed as well.",
+      "score_after": 29.4
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "score_before": 55.8,
+      "top_features": [
+        "lists of three",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This differs from ordinary paraphrase augmentation because the design jointly controls evidence, factual label, item identity, and approximate length.",
+          "score": 55.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 56 is not at least 5 points below 56"
+            }
+          ],
+          "verdict": "rejected by detector: score 56 is not at least 5 points below 56"
+        },
+        {
+          "attempt": 2,
+          "text": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This is not ordinary paraphrase augmentation. The design controls evidence, factual label, item identity, and approximate length together.",
+          "score": 25.8,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This differs from ordinary paraphrase augmentation because the design jointly controls evidence, factual label, item identity and approximate length.",
+      "text_after": "The remaining gap is an explicit **invariance ratio** within human-validated item pairs: score movement caused by form changes compared with score movement caused by a minimal factual change. This is not ordinary paraphrase augmentation. The design controls evidence, factual label, item identity, and approximate length together.",
+      "score_after": 25.8
+    },
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "score_before": 51.3,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences",
+        "hedge density"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores vary with answer length, lexical overlap, and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects, and detector-family blind spots. The defensible gap is not another broad robustness benchmark, but a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form, and a similar-length paraphrase. Representative consistency-, uncertainty-, representation-, and supervised detectors will be compared with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+          "score": 40.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 41 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores vary with answer length, lexical overlap, and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects, and blind spots across detector families. The defensible gap is not another broad robustness benchmark, but a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form, and a similar-length paraphrase. Representative consistency-, uncertainty-, representation-, and supervised detectors will be compared with simple baselines for length and overlap. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+          "score": 41.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 42 is not below the best safe version (41)"
+            }
+          ],
+          "verdict": "rejected by detector: score 42 is not below the best safe version (41)"
+        },
+        {
+          "attempt": 3,
+          "text": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores vary with answer length, lexical overlap, and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects, and detector-family blind spots. The gap is not another broad robustness benchmark. It is a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form, and a similar-length paraphrase. We will compare representative consistency-, uncertainty-, representation-, and supervised detectors with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+          "score": 35.4,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 35 (target 35), trying to lower it further"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores may also vary with answer length, lexical overlap and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects and detector-family blind spots. The defensible gap is therefore not another broad robustness benchmark but a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form and a similar-length paraphrase. Representative consistency-, uncertainty-, representation- and supervised detectors will be compared with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+      "text_after": "Hallucination detectors are intended to respond to factual error or lack of source support, yet their scores vary with answer length, lexical overlap, and phrasing. Existing research already identifies label misalignment, domain shift, response-length effects, and detector-family blind spots. The gap is not another broad robustness benchmark. It is a paired form-invariance audit that holds factual status and evidence fixed. We propose passage-grounded question answering in two domains. Each item will have one human-validated correct answer and one minimally incorrect answer; each answer will be realized as a concise form, a meaning-preserving lengthened form, and a similar-length paraphrase. We will compare representative consistency-, uncertainty-, representation-, and supervised detectors with simple length and overlap baselines. Evaluation will jointly measure correct–incorrect discrimination and within-label score stability using the underlying item as the paired unit. A detector that is stable but indiscriminate, or accurate in aggregate but form-sensitive, will not be treated as successful. The contribution is a controlled diagnostic protocol for separating factual sensitivity from answer-form sensitivity in a bounded short-answer setting.",
+      "score_after": 35.4
+    },
+    {
+      "paragraph_id": "P038",
+      "section": "conclusion",
+      "score_before": 48.7,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The literature already documents label problems, length effects, domain shift, and detector-family blind spots. The next step is narrower: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. The proposal requires both discrimination and invariance while retaining simple baselines, so it does not mistake stability, aggregate accuracy, or stylistic regularity for factual detection. Experimental results remain to be collected.",
+          "score": 50.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 51 is not at least 5 points below 49"
+            }
+          ],
+          "verdict": "rejected by detector: score 51 is not at least 5 points below 49"
+        },
+        {
+          "attempt": 2,
+          "text": "The literature already documents label problems, length effects, domain shift, and detector-family blind spots. The next step is narrower: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. The proposal requires both discrimination and invariance, and it retains simple baselines so that stability, aggregate accuracy, or stylistic regularity is not mistaken for factual detection. Experimental results remain to be collected.",
+          "score": 50.6,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 51 is not at least 5 points below 49"
+            }
+          ],
+          "verdict": "rejected by detector: score 51 is not at least 5 points below 49"
+        },
+        {
+          "attempt": 3,
+          "text": "The literature already documents label problems, length effects, domain shift, and detector-family blind spots. The next step is narrower: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. The proposal requires both discrimination and invariance while retaining simple baselines, so it does not mistake stability, aggregate accuracy, or stylistic regularity for factual detection. Experimental results remain to be collected.",
+          "score": 50.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 51 is not at least 5 points below 49"
+            }
+          ],
+          "verdict": "rejected by detector: score 51 is not at least 5 points below 49"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "The literature already documents label problems, length effects, domain shift and detector-family blind spots. The defensible next step is a narrower paired test: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. By requiring both discrimination and invariance—and by retaining simple baselines—the proposal avoids mistaking stability, aggregate accuracy or stylistic regularity for factual detection. Experimental results remain to be collected.",
+      "text_after": "The literature already documents label problems, length effects, domain shift and detector-family blind spots. The defensible next step is a narrower paired test: hold evidence and factual status fixed, vary answer form, and compare that movement with the score gap created by a minimal factual error. By requiring both discrimination and invariance—and by retaining simple baselines—the proposal avoids mistaking stability, aggregate accuracy or stylistic regularity for factual detection. Experimental results remain to be collected.",
+      "score_after": 48.7,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P006",
+      "section": "introduction",
+      "score_before": 47.7,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "1. **RQ1: Discrimination.** Within an item, does a detector rank a supported answer above a minimally incorrect answer? 2. **RQ2: Invariance.** How much does its score vary among meaning-equivalent forms with the same factual label? 3. **RQ3: Relative magnitude.** Is within-label form variation small relative to the correct–incorrect score gap? 4. **RQ4: Shortcuts.** Do simple length, overlap, or semantic-similarity baselines explain similar behavior?",
+          "score": 15.1,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "1. **RQ1—Discrimination:** Within an item, does a detector rank a supported answer above a minimally incorrect answer?\n2. **RQ2—Invariance:** How much does its score vary among meaning-equivalent forms with the same factual label?\n3. **RQ3—Relative magnitude:** Is within-label form variation small relative to the correct–incorrect score gap?\n4. **RQ4—Shortcuts:** Do simple length, overlap or semantic-similarity baselines explain similar behavior?",
+      "text_after": "1. **RQ1: Discrimination.** Within an item, does a detector rank a supported answer above a minimally incorrect answer? 2. **RQ2: Invariance.** How much does its score vary among meaning-equivalent forms with the same factual label? 3. **RQ3: Relative magnitude.** Is within-label form variation small relative to the correct–incorrect score gap? 4. **RQ4: Shortcuts.** Do simple length, overlap, or semantic-similarity baselines explain similar behavior?",
+      "score_after": 15.1
+    },
+    {
+      "paragraph_id": "P004",
+      "section": "introduction",
+      "score_before": 43.0,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The 2026 comparison set further covers distribution shift, strict aggregation, and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation. In one analysis, it optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+          "score": 45.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 45 is not at least 5 points below 43"
+            }
+          ],
+          "verdict": "rejected by detector: score 45 is not at least 5 points below 43"
+        },
+        {
+          "attempt": 2,
+          "text": "The 2026 comparison set covers distribution shift and strict aggregation, along with consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer. Operationally, it treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+          "score": 22.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "consecutive short sentences"
+            }
+          ],
+          "verdict": "rejected by fluency guard: consecutive short sentences"
+        },
+        {
+          "attempt": 3,
+          "text": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer, but it operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+          "score": 43.5,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 44 is not at least 5 points below 43"
+            }
+          ],
+          "verdict": "rejected by detector: score 44 is not at least 5 points below 43"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+      "text_after": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. [[S_2026_findings_emnlp_113]]; [[S_2026_findings_emnlp_113]]; [[S_2026_acl_long_680]]; [[S_2026_acl_long_680]]; [[S_2026_findings_aacl_164]].",
+      "score_after": 43.0,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P009",
+      "section": "related_work",
+      "score_before": 42.3,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Cluster 0 also contains uncertainty and reasoning-process approaches, as well as multilingual and long-form approaches. Their existence blocks any claim that hallucination detection relies on one signal or that multilingual evaluation is absent. This proposal instead compares accessible representatives under the same controlled answer transformations.",
+          "score": 33.7,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Cluster 0 also contains uncertainty, reasoning-process, multilingual and long-form approaches. Their existence blocks any claim that hallucination detection relies on one signal or that multilingual evaluation is absent. This proposal instead compares accessible representatives under the same controlled answer transformations.",
+      "text_after": "Cluster 0 also contains uncertainty and reasoning-process approaches, as well as multilingual and long-form approaches. Their existence blocks any claim that hallucination detection relies on one signal or that multilingual evaluation is absent. This proposal instead compares accessible representatives under the same controlled answer transformations.",
+      "score_after": 33.7
+    },
+    {
+      "paragraph_id": "P025",
+      "section": "methodology",
+      "score_before": 42.0,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. Baselines are diagnostic. If a complex detector behaves similarly, that does not prove identical internal mechanisms, but it does weaken a claim that the score isolates factual support.",
+          "score": 15.8,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "STYLE_GAMING",
+              "reason": "fragment sentence (<4 words)"
+            }
+          ],
+          "verdict": "rejected by fluency guard: fragment sentence (<4 words)"
+        },
+        {
+          "attempt": 2,
+          "text": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. These baselines are diagnostic. If a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+          "score": 16.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. Baselines are diagnostic: if a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+      "text_after": "Baselines will include response character/token length, lexical overlap with a reference answer or evidence span, semantic similarity to the reference, and a small combination of these features. These baselines are diagnostic. If a complex detector behaves similarly, that does not prove identical internal mechanisms, but it weakens a claim that the score isolates factual support.",
+      "score_after": 16.9
+    },
+    {
+      "paragraph_id": "P010",
+      "section": "related_work",
+      "score_before": 37.3,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The Illusion of Progress provides the closest motivation for including answer length and overlap baselines. Wu et al. warn that consistency is not the same as correctness. That is the point. Fortifying Hallucination Detection evaluates out-of-distribution transfer, so this proposal cannot claim domain shift as its novelty. DECK shows that different detector signals have different blind spots, which motivates family-stratified reporting.",
+          "score": 24.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "The only sentence in the rewrite tied to available source evidence is the Wu et al. claim, and the quoted excerpt supports the idea that consistency is distinct from correctness/accuracy.; The added sentence “That is the point.” does not assert a factual claim about a source paper; it is interpretive commentary.; No new unsupported or contradicted source-backed claim was introduced relative to the original."
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "The Illusion of Progress provides the closest motivation for including answer length and overlap baselines. Wu et al. warn that consistency is not the same as correctness. Fortifying Hallucination Detection evaluates out-of-distribution transfer, so this proposal cannot claim domain shift as its novelty. DECK shows that different detector signals have different blind spots, which motivates family-stratified reporting.",
+      "text_after": "The Illusion of Progress provides the closest motivation for including answer length and overlap baselines. Wu et al. warn that consistency is not the same as correctness. That is the point. Fortifying Hallucination Detection evaluates out-of-distribution transfer, so this proposal cannot claim domain shift as its novelty. DECK shows that different detector signals have different blind spots, which motivates family-stratified reporting.",
+      "score_after": 24.9
+    },
+    {
+      "paragraph_id": "P021",
+      "section": "methodology",
+      "score_before": 36.5,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Two annotators independently label every variant against the passage as Supported, Incorrect, or Ambiguous/Insufficient Evidence. They also flag added claims, unnatural wording, and failed paraphrases. Disagreements are adjudicated by a third reviewer. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+          "score": 36.5,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 36 is not at least 5 points below 36"
+            }
+          ],
+          "verdict": "rejected by detector: score 36 is not at least 5 points below 36"
+        },
+        {
+          "attempt": 2,
+          "text": "Two annotators independently label every variant against the passage as Supported, Incorrect, or Ambiguous/Insufficient Evidence, and they also flag added claims, unnatural wording, and failed paraphrases. Disagreements are adjudicated by a third reviewer. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; the counts and reasons remain visible.",
+          "score": 32.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 32 is not at least 5 points below 36"
+            }
+          ],
+          "verdict": "rejected by detector: score 32 is not at least 5 points below 36"
+        },
+        {
+          "attempt": 3,
+          "text": "Two annotators independently label every variant against the passage as Supported, Incorrect, or Ambiguous/Insufficient Evidence. They also mark added claims and failed paraphrases, along with unnatural wording. A third reviewer adjudicates disagreements. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+          "score": 25.4,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Two annotators independently label every variant against the passage as Supported, Incorrect or Ambiguous/Insufficient Evidence. They also flag added claims, unnatural wording and failed paraphrases. Disagreements are adjudicated by a third reviewer. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+      "text_after": "Two annotators independently label every variant against the passage as Supported, Incorrect, or Ambiguous/Insufficient Evidence. They also mark added claims and failed paraphrases, along with unnatural wording. A third reviewer adjudicates disagreements. If any required variant cannot preserve the intended label, all six variants for that item are excluded from the complete paired primary set; counts and reasons remain visible.",
+      "score_after": 25.4
+    },
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "score_before": 36.2,
+      "top_features": [
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, dataset style, or label construction. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+          "score": 36.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 36 is not at least 5 points below 36"
+            }
+          ],
+          "verdict": "rejected by detector: score 36 is not at least 5 points below 36"
+        },
+        {
+          "attempt": 2,
+          "text": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, or label construction; dataset style can also inflate the score. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+          "score": 32.9,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 33 is not at least 5 points below 36"
+            }
+          ],
+          "verdict": "rejected by detector: score 33 is not at least 5 points below 36"
+        },
+        {
+          "attempt": 3,
+          "text": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, or label construction. A detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+          "score": 37.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 37 is not at least 5 points below 36"
+            }
+          ],
+          "verdict": "rejected by detector: score 37 is not at least 5 points below 36"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, dataset style or label construction. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+      "text_after": "A hallucination detector should ideally change its judgment when factual support changes and preserve it when only wording changes. Aggregate benchmark accuracy does not reveal whether this happens. A detector can achieve a high score by exploiting answer length, reference overlap, dataset style or label construction. Conversely, a detector that gives every answer the same score is perfectly invariant but useless. Factual discrimination and form invariance must therefore be measured together.",
+      "score_after": 36.2,
+      "needs_human_edit": true
+    }
+  ],
+  "totals": {
+    "selected": 14,
+    "revised": 10,
+    "kept_original": 4,
+    "attempts": 32,
+    "needs_human_edit": 4,
+    "held_for_research": 0,
+    "mean_score_before": 51.1,
+    "mean_score_after": 33.8
+  },
+  "critic": {
+    "model": "gpt-5.6-luna",
+    "review_of_v0": "ok",
+    "review_of_final": "ok",
+    "actionable_before": 0,
+    "actionable_after": 2,
+    "needs_research": []
+  }
+}

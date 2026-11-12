@@ -44,8 +44,13 @@ def meaning_pass(payload, _):
 
 
 def evidence(status):
-    return lambda payload, _: {"status": status, "sentences": [], "reasons": [] if status == "PASS" else ["Scripted."],
-                               "pre_existing": []}
+    """A well-formed evidence reply: audits the rewrite's first sentence."""
+    def reply(payload, _):
+        first = checks.plain(payload["rewrite"]).split(". ")[0]
+        label = "SUPPORTED" if status == "PASS" else "UNSUPPORTED"
+        return {"status": status, "sentences": [{"sentence": first, "label": label, "evidence": "quote"}],
+                "reasons": [] if status == "PASS" else ["Scripted."], "pre_existing": []}
+    return reply
 
 
 class Critic:
@@ -73,14 +78,15 @@ class Half2Tests(unittest.TestCase):
         self.output = Path(directory.name) / "run"
         self.text = checks.paragraph(self.v0, TARGET).text
 
-    def run_pipeline(self, rewrites, evidence_status="PASS", only=(TARGET,), critic=None, evidence_provider=None):
+    def run_pipeline(self, rewrites, evidence_status="PASS", only=(TARGET,), critic=None, evidence_provider=None,
+                     require_critic=False):
         writer = Provider("writer", lambda payload, n: {"paragraph": rewrites[min(n, len(rewrites)) - 1]})
         checker = Provider("checker", meaning_pass)
         self.evidence_provider = evidence_provider or Provider("evidence", evidence(evidence_status))
         gate = checks.EvidenceGate(self.evidence_provider, checks.EvidenceIndex(self.package).learn_authors(self.v0))
         report, final = pipeline.run(self.package, self.v0, self.manifest, self.model, writer, RunStore(self.output),
                                      evidence_gate=gate, semantic_gate=SemanticGate(checker), critic=critic,
-                                     only=set(only))
+                                     only=set(only), require_critic=require_critic)
         return report, final, writer
 
     def test_safe_rewrite_is_kept_and_reported(self):
@@ -161,13 +167,16 @@ class Half2Tests(unittest.TestCase):
         critic = Critic([{"paragraph_id": TARGET, "findings": [
             {"criterion": "formulaic_language", "status": "ACTIONABLE", "quote": BEFORE,
              "explanation": "Stock contrast.", "safe_action": "State it directly."},
+            {"criterion": "argument_strength", "status": "ACTIONABLE", "quote": "",
+             "explanation": "Clause order.", "safe_action": "Lead with the finding."}]},
+            {"paragraph_id": "P002", "findings": [
             {"criterion": "argument_strength", "status": "NEEDS_RESEARCH", "quote": "",
              "explanation": "Interval method needs a citation.", "safe_action": ""}]}])
         report, _, writer = self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=critic)
         self.assertIn("Stock contrast.", writer.calls[0][1])
         c = report["critic"]
-        self.assertEqual((c["review_of_v0"], c["actionable_before"]), ("ok", 1))
-        self.assertEqual(c["needs_research"][0]["paragraph_id"], TARGET)
+        self.assertEqual((c["review_of_v0"], c["actionable_before"]), ("ok", 2))
+        self.assertEqual(c["needs_research"][0]["paragraph_id"], "P002")
         self.assertEqual(critic.labels, ["v0_review", "final_review"])
 
     def test_failed_critic_review_does_not_stop_the_run(self):
@@ -175,7 +184,64 @@ class Half2Tests(unittest.TestCase):
         report, final, _ = self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=critic)
         self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
         self.assertTrue(report["critic"]["review_of_v0"].startswith("unavailable"))
-        self.assertEqual(critic.labels.count("v0_review"), 2)  # asked again once
+        # asked again under a new name each time: the run store refuses to overwrite a file
+        self.assertEqual(critic.labels[:3], ["v0_review", "v0_review_retry1", "v0_review_retry2"])
+        self.assertIn("try 3", report["critic"]["review_of_v0"])
+
+    def test_live_runs_stop_before_rewriting_if_the_critic_cannot_review_v0(self):
+        with self.assertRaises(pipeline.CriticUnavailable):
+            self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=Critic(None, fail=True), require_critic=True)
+
+    def test_the_critic_cannot_be_switched_off_from_the_command_line(self):
+        with self.assertRaises(SystemExit):
+            pipeline.main(["--output", "x", "--writer-model", "a", "--checker-model", "b", "--no-critic"])
+
+    def test_paragraphs_needing_research_are_not_rewritten(self):
+        critic = Critic([{"paragraph_id": TARGET, "findings": [
+            {"criterion": "argument_strength", "status": "NEEDS_RESEARCH", "quote": "",
+             "explanation": "Needs a source.", "safe_action": ""}]}])
+        report, final, writer = self.run_pipeline([self.text.replace(BEFORE, GOOD)], critic=critic)
+        record = report["paragraphs"][0]
+        self.assertEqual(record["outcome"], "held for research")
+        self.assertEqual((record["attempts"], writer.calls), ([], []))
+        self.assertEqual(report["totals"]["held_for_research"], 1)
+        self.assertEqual(final, self.v0)
+
+    def test_evidence_reply_is_validated_in_full(self):
+        rewrite = "Smith et al. reported a gain. We then test it. [[S01]]"
+        original = "Smith et al. reported a small gain. We then test it. [[S01]]"
+        ok = lambda **kw: {"status": "PASS", "reasons": [], "pre_existing": [],
+                           "sentences": [{"sentence": "Smith et al. reported a gain.", "label": "SUPPORTED", "evidence": "q"}], **kw}
+        self.assertEqual(checks.validate_evidence_reply(ok(), original, rewrite).status, "PASS")
+        bad_replies = [
+            {"status": "PASS", "reasons": [], "pre_existing": []},                     # missing field
+            ok(sentences=[]),                                                         # empty audit
+            ok(sentences=[{"sentence": "Jones found nothing.", "label": "SUPPORTED", "evidence": "q"}]),  # not in rewrite
+            ok(sentences=[{"sentence": "Smith et al. reported a gain.", "label": "CONTRADICTED", "evidence": "q"}]),  # PASS + new problem
+        ]
+        for reply in bad_replies:
+            with self.assertRaises(ValueError):
+                checks.validate_evidence_reply(reply, original, rewrite)
+        # a problem already in the original may pass (it is not the rewrite's fault)
+        same = ok(sentences=[{"sentence": "We then test it.", "label": "UNSUPPORTED", "evidence": ""}])
+        self.assertEqual(checks.validate_evidence_reply(same, original, rewrite).status, "PASS")
+
+    def test_malformed_evidence_reply_is_retried_then_fails_closed(self):
+        broken = Provider("evidence", lambda payload, _: {"status": "PASS"})       # no sentences: used to crash
+        text = checks.paragraph(self.v0, TARGET).text.replace(BEFORE, GOOD)
+        rewrite = text.replace("A non-significant contrast", "As Yu et al. show, a non-significant contrast")
+        report, final, _ = self.run_pipeline([rewrite], evidence_provider=broken)
+        record = report["paragraphs"][0]
+        self.assertEqual(record["outcome"], "kept original")
+        self.assertEqual(record["attempts"][0]["checks"][-1]["status"], "CHECK_ERROR")
+        self.assertEqual(final, self.v0)
+        self.assertEqual(len(broken.calls), 2 * 3)  # asked twice per attempt, three attempts, never crashed
+
+    def test_too_small_a_change_pushes_the_writer_harder(self):
+        report, _, writer = self.run_pipeline([self.text, self.text.replace(BEFORE, GOOD)])
+        self.assertEqual(report["paragraphs"][0]["attempts"][0]["checks"][0]["status"], "NO_CHANGE")
+        self.assertIn("changed too little", writer.calls[1][1])
+        self.assertEqual(report["paragraphs"][0]["outcome"], "revised")
 
     def test_named_author_without_citation_triggers_the_evidence_check(self):
         provider = Provider("evidence", evidence("UNSUPPORTED_ADDITION"))
