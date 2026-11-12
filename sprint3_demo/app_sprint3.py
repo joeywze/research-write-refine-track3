@@ -216,7 +216,8 @@ def claims_step(s, b):
         s.review_mode = "skip"
         st.rerun()
     if s.review_mode == "skip":
-        st.info("Claims not reviewed: every selected paragraph can be rewritten. Continue with **Draft the paper**.")
+        st.info("Claims not reviewed: every selected paragraph can be rewritten, and paragraphs with unchecked claims "
+                "will be marked ⚠ in the draft and the rewrite. Continue with **Draft the paper**.")
         return
     if s.review_mode != "review":
         return
@@ -252,10 +253,37 @@ def approve_all(b):
 
 
 # ---------------------------------------------------------------- step 2
-def paper_view(paragraphs):
+def unreviewed(s, b):
+    """Claims per paragraph that the user skipped reviewing (provisional topics only)."""
+    if b["reviewed"] or s.review_mode != "skip":
+        return {}
+    out = {}
+    for c in b["claims"]:
+        out.setdefault(c["paragraph_id"], []).append(c)
+    return out
+
+
+def claim_flag(pid, flags):
+    """A 'claims not reviewed' tag with the claims and their sources, for one paragraph."""
+    claims = flags.get(pid)
+    if not claims:
+        return
+    st.html(f'<span class="rw-tag" style="color:{look.MID}">⚠ {len(claims)} claim{"s" if len(claims) > 1 else ""} '
+            f'not reviewed</span>')
+    with st.expander(f"Check the claims in {pid} against their sources"):
+        for c in claims:
+            st.markdown(f"**{c['claim']}**")
+            for e in c["evidence"][:2]:
+                link = f" · [open the paper]({e['url']})" if e["url"] else ""
+                st.caption(f"*{e['title']}*: “{e['quote']}” · {e['page']}{link}")
+
+
+def paper_view(paragraphs, flags=None):
+    flags = flags or {}
     for p in paragraphs:
         text = d.plain(p["text"])
         title = f"{p['id']} · {p['section'].replace('_', ' ')}"
+        claim_flag(p["id"], flags)
         if text.lstrip().startswith("|"):
             st.caption(title)
             st.markdown(text)
@@ -280,11 +308,16 @@ def step_draft(s):
               help=f"Average score of the abstracts of the {band['n']} cited EMNLP 2025 papers we have.")
     meter([("First draft", b["v0"]["mean"], "up"), ("Real papers it cites", band["mean"], "down"),
                 ("Raw GPT text", RAW_GPT, "down")], "Where this first draft sits on the detector's scale")
+    flags = unreviewed(s, b)
+    if flags:
+        st.warning(f"You skipped the claim review: {sum(len(v) for v in flags.values())} claims in "
+                   f"{len(flags)} paragraphs were matched to sources automatically and not checked by a person. "
+                   "They are marked ⚠ below; open one to check it against its source.")
     sections = list(dict.fromkeys(p["section"] for p in b["v0"]["paragraphs"]))
     pick = st.selectbox("Read a section", ["all", *sections],
                         format_func=lambda x: "Whole paper" if x == "all" else x.replace("_", " ").capitalize())
     with st.container(height=600, border=True):
-        paper_view([p for p in b["v0"]["paragraphs"] if pick in ("all", p["section"])])
+        paper_view([p for p in b["v0"]["paragraphs"] if pick in ("all", p["section"])], unreviewed(s, b))
     st.download_button("Download first draft", d.render_markdown(b, b["v0"]["paragraphs"]),
                        file_name=f"{b['id']}_first_draft.md", mime="text/markdown", icon=":material/download:")
 
@@ -334,10 +367,10 @@ def step_rewrite(s):
             continue
         if not s.focus and show not in (None, "All") and label != show:
             continue
-        record_card(b, r, label)
+        record_card(b, r, label, unreviewed(s, b))
 
 
-def record_card(b, r, label):
+def record_card(b, r, label, flags=None):
     v0 = {p["id"]: p["text"] for p in b["v0"]["paragraphs"]}
     final = {p["id"]: p["text"] for p in b["final"]["paragraphs"]}
     pid = r["paragraph_id"]
@@ -345,6 +378,7 @@ def record_card(b, r, label):
         colour = OUTCOME_COLOURS[label]
         st.html(f'<b>{pid}</b> · {r["section"].replace("_", " ")} &nbsp;<span class="rw-tag" style="color:{colour}">'
                 f'{label}</span> {look.chip(r["score_before"])} → {look.chip(r["score_after"])}')
+        claim_flag(pid, flags or {})
         if r["outcome"] == "revised":
             cols = st.columns(2, gap="large")
             cols[0].caption("First draft")
@@ -393,6 +427,11 @@ def step_compare(s):
                "Where this paper started and finished on the detector's scale")
     if held:
         st.caption(f"Includes your holds: {', '.join(sorted(held))} kept their first-draft text.")
+    flags = unreviewed(s, b)
+    if flags:
+        st.warning(f"This paper still has {sum(len(v) for v in flags.values())} claims that nobody has checked "
+                   f"against their sources (in {', '.join(sorted(flags))}). Review them before using the paper; "
+                   "the claim-decisions download lists them.")
     with st.container(border=True):
         st.markdown("**:material/help: How reliable is this score?**")
         st.markdown("On EMNLP papers it never saw, our detector ranks an AI-written passage above a real one 74% of "
