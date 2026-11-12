@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from project_io import read_input
 from src.writing.preservation import SemanticGate
@@ -191,6 +192,36 @@ class Half2Tests(unittest.TestCase):
         self.assertEqual(sorted(index.papers_of_author["Wang et al."]), ["2025.emnlp-main.103"])
         self.assertEqual(sorted(index.papers_of_author["Chung and Freienthal"]), ["2026.mme-main.8"])
         self.assertNotIn("Datta and Baitalik", index.papers_of_author)  # table row: ambiguous, not guessed
+
+    def test_default_topic_is_the_reviewed_example(self):
+        package, v0, manifest, facts, label = pipeline.load_topic()
+        self.assertEqual((label, v0), ("cluster7", self.v0))
+        self.assertEqual(facts, checks.FACTS_FILE)
+
+    def test_any_topic_folder_loads_like_an_upload_and_uses_its_own_facts(self):
+        folder = self.output.parent / "topic_x" / "handover"
+        folder.mkdir(parents=True)
+        for name in ("research_package.json", "v0.json"):
+            (folder / name).write_bytes((ROOT / "inputs/converted" / name).read_bytes())
+        package, v0, manifest, facts, label = pipeline.load_topic(str(folder))
+        self.assertEqual(label, "topic_x")
+        self.assertEqual(facts, checks.FACTS_FILE)  # no topic table -> shared table
+        self.assertTrue(pipeline.select(v0, manifest, self.model))
+        (folder / "master_facts.xlsx").write_bytes(checks.FACTS_FILE.read_bytes())
+        self.assertEqual(pipeline.load_topic(str(folder))[3], folder / "master_facts.xlsx")
+
+    def test_topic_ids_come_from_the_half1_topic_list(self):
+        folder = self.output.parent / "cluster99" / "handover"
+        folder.mkdir(parents=True)
+        for name in ("research_package.json", "v0.json"):
+            (folder / name).write_bytes((ROOT / "inputs/converted" / name).read_bytes())
+        index = self.output.parent / "index.json"
+        index.write_text(json.dumps({"topics": [
+            {"id": "cluster99", "package": str((folder / "research_package.json").relative_to(ROOT.parent))}]}))
+        with patch.object(pipeline, "TOPIC_INDEX", index):
+            self.assertEqual(pipeline.load_topic("cluster99")[4], "cluster99")
+            with self.assertRaisesRegex(ValueError, "choose from cluster99"):
+                pipeline.load_topic("cluster42")
 
     def test_evidence_index_maps_citations_to_the_evidence_table(self):
         found = checks.EvidenceIndex(self.package).for_text(checks.paragraph(self.v0, "P008").text)

@@ -104,8 +104,12 @@ HALF2_CRITIC = os.environ.get("HALF2_CRITIC_MODEL", "gpt-5.6-luna")
 HALF2_MAX_PARAGRAPHS = 5
 
 
-def start_half2(server_address, paragraph_ids):
-    """Run sprint2_demo/half2_pipeline.py on a few chosen paragraphs, in the background."""
+def start_half2(server_address, paragraph_ids, topic=None):
+    """Run sprint2_demo/half2_pipeline.py on a few chosen paragraphs, in the background.
+
+    topic: None for the reviewed example, or a topic id from drafts/track3_five_topic_index.json."""
+    if topic is not None and not (isinstance(topic, str) and topic.startswith("cluster") and topic[7:].isdigit()):
+        raise ValueError("Unknown topic")
     if not live_allowed(server_address):
         raise ValueError("Live revision requires the local launcher with a server-side API key")
     ids = [p for p in paragraph_ids if isinstance(p, str) and p[:1] == "P" and p[1:].isdigit()]
@@ -122,7 +126,7 @@ def start_half2(server_address, paragraph_ids):
     run_name = "half2-" + stamp
     log_path, record_path = JOB_DIR / (job_id + ".log"), JOB_DIR / (job_id + ".json")
     record = {"job_id": job_id, "run_name": run_name, "status": "RUNNING", "started_utc": stamp,
-              "kind": "half2", "paragraphs": ids}
+              "kind": "half2", "paragraphs": ids, "topic": topic or "cluster7"}
     env = os.environ.copy()
     env["PYTHONIOENCODING"] = "utf-8"
     try:
@@ -130,7 +134,7 @@ def start_half2(server_address, paragraph_ids):
             process = subprocess.Popen([sys.executable, "-u", str(ROOT / "half2_pipeline.py"),
                 "--output", str(ROOT / "runs" / run_name), "--writer-model", HALF2_WRITER,
                 "--checker-model", HALF2_CHECKER, "--critic-model", HALF2_CRITIC,
-                "--paragraphs", ",".join(ids)], cwd=ROOT, env=env,
+                "--paragraphs", ",".join(ids)] + (["--topic", topic] if topic else []), cwd=ROOT, env=env,
                 stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,
                 creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         record["pid"] = process.pid

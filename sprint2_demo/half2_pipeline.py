@@ -16,7 +16,7 @@ The detector chooses WHAT to rewrite and gives style feedback. It never decides
 whether a rewrite is safe: only the content checks can accept a rewrite.
 
 Usage (from sprint2_demo/):
-  python half2_pipeline.py --plan                                   # offline: which paragraphs would be revised
+  python half2_pipeline.py --plan [--topic cluster0]                # offline: which paragraphs would be revised
   python half2_pipeline.py --output runs/half2-<date> --writer-model <m1> --checker-model <m2> \
       [--critic-model <m3> | --no-critic] [--paragraphs P002,P027] [--max-paragraphs 4]
 """
@@ -28,7 +28,7 @@ from pathlib import Path
 from time import perf_counter
 
 from handover import render
-from project_io import read_input
+from project_io import read_input, validate_upload
 from src.writing.contracts import digest
 from src.writing.preservation import SemanticGate
 from src.writing.providers import OpenAIJSON, TokenBudget
@@ -48,6 +48,37 @@ MIN_WORDS = 40
 
 REWRITE_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["paragraph"],
                   "properties": {"paragraph": {"type": "string"}}}
+
+
+TOPIC_INDEX = HERE.parent / "drafts" / "track3_five_topic_index.json"
+
+
+def load_topic(topic=None):
+    """Load a topic as (package, v0, manifest, facts_file, label).
+
+    topic=None   -> the reviewed example in sprint2_demo/inputs/converted (cluster7)
+    topic="cluster0" -> looked up in drafts/track3_five_topic_index.json (Half 1's topic list)
+    topic=<folder>   -> any folder holding research_package.json and v0.json (+ master_facts.xlsx)
+    New topics are loaded like a website upload: the package and draft are validated and the page
+    layout is generated from the draft, so nothing about a topic is hard-coded here."""
+    if topic is None or str(topic) in ("cluster7", str(INPUTS)):
+        package, v0, manifest = read_input(INPUTS)
+        return package, v0, manifest, checks.FACTS_FILE, "cluster7"
+    folder = Path(topic)
+    if not folder.is_dir():
+        if not TOPIC_INDEX.exists():
+            raise ValueError(f"No folder {topic!r}, and no topic list at {TOPIC_INDEX}")
+        entries = {t["id"]: t for t in json.loads(TOPIC_INDEX.read_text(encoding="utf-8"))["topics"]}
+        if topic not in entries:
+            raise ValueError(f"Unknown topic {topic!r}; choose from {', '.join(entries)}")
+        entry = entries[topic]
+        if entry["package"].startswith("sprint2_demo/inputs/converted"):
+            return load_topic(None)
+        folder = HERE.parent / Path(entry["package"]).parent
+    package, v0, manifest = validate_upload((folder / "research_package.json").read_bytes(),
+                                            (folder / "v0.json").read_bytes())
+    facts = folder / "master_facts.xlsx"
+    return package, v0, manifest, (facts if facts.exists() else checks.FACTS_FILE), folder.name if folder.name != "handover" else folder.parent.name
 
 
 def score(text, model):
@@ -190,7 +221,7 @@ def revise_paragraph(package, v0, current, pid, result, model, writer, *, eviden
 
 
 def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, semantic_gate=None, critic=None,
-        threshold=THRESHOLD, only=None, limit=None, progress=None):
+        threshold=THRESHOLD, only=None, limit=None, progress=None, topic="cluster7"):
     start = perf_counter()
     targets = select(v0, manifest, model, threshold, only, limit)
     leads, before, critic_status = {}, None, "not run"
@@ -210,6 +241,7 @@ def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, sema
     store.write("final_draft.json", current)
     (store.directory / "final_paper.md").write_text(render(current, manifest), encoding="utf-8")
     report = {
+        "topic": topic,
         "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
         "threshold": threshold,
         "paragraphs": records,
@@ -229,6 +261,7 @@ def run(package, v0, manifest, model, writer, store, *, evidence_gate=None, sema
     store.write("change_report.json", report)
     (store.directory / "change_report.md").write_text(as_markdown(report), encoding="utf-8")
     store.write("run_summary.json", {
+        "topic": topic,
         "v0_hash": digest(v0), "final_hash": digest(current), "package_hash": digest(package),
         "detector_model_hash": digest(model), "writer_model": writer.model,
         "checker_model": getattr(semantic_gate, "model", None), "evidence_model": getattr(evidence_gate, "model", None),
@@ -244,7 +277,7 @@ def mean(values):
 
 def as_markdown(report):
     t = report["totals"]
-    lines = ["# Half 2 change report", "",
+    lines = ["# Half 2 change report", "", f"Topic: {report.get('topic', 'cluster7')}", "",
              f"{t['revised']} of {t['selected']} selected paragraphs revised; {t['kept_original']} kept as written. "
              f"Mean detector score on selected paragraphs: {t['mean_score_before']} -> {t['mean_score_after']}.", "",
              "| Paragraph | Score | Outcome | Attempts | Last verdict |", "|---|---|---|---|---|"]
@@ -274,7 +307,8 @@ def as_markdown(report):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--inputs", type=Path, default=INPUTS)
+    parser.add_argument("--topic", help="cluster7 (default), a topic id from drafts/track3_five_topic_index.json "
+                                        "such as cluster0, or a folder with research_package.json and v0.json")
     parser.add_argument("--detector-model", type=Path, default=MODEL_FILE)
     parser.add_argument("--plan", action="store_true", help="offline: list the paragraphs that would be revised")
     parser.add_argument("--output", type=Path, help="new run directory")
@@ -288,7 +322,7 @@ def main(argv=None):
     parser.add_argument("--threshold", type=float, default=THRESHOLD)
     parser.add_argument("--token-limit", type=int, default=1_500_000)
     args = parser.parse_args(argv)
-    package, v0, manifest = read_input(args.inputs)
+    package, v0, manifest, facts_file, label = load_topic(args.topic)
     model = json.loads(args.detector_model.read_text(encoding="utf-8"))
     only = set(args.paragraphs.split(",")) if args.paragraphs else None
     if args.plan:
@@ -307,7 +341,7 @@ def main(argv=None):
     budget = TokenBudget(args.token_limit)
     writer = OpenAIJSON(args.writer_model, budget, store, stage="writer")
     evidence_gate = checks.EvidenceGate(OpenAIJSON(args.checker_model, budget, store, stage="evidence"),
-                                        checks.EvidenceIndex(package).learn_authors(v0))
+                                        checks.EvidenceIndex(package, facts_file).learn_authors(v0))
     semantic_gate = SemanticGate(OpenAIJSON(args.checker_model, budget, store, stage="preservation"))
     critic = None
     if critic_model:
@@ -323,7 +357,7 @@ def main(argv=None):
 
     report, _ = run(package, v0, manifest, model, writer, store, evidence_gate=evidence_gate,
                     semantic_gate=semantic_gate, critic=critic, threshold=args.threshold, only=only,
-                    limit=args.max_paragraphs, progress=progress)
+                    limit=args.max_paragraphs, progress=progress, topic=label)
     print(json.dumps(report["totals"], indent=2))
     print(f"Saved final_paper.md and change_report.md to {store.directory}")
 
