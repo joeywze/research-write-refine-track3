@@ -1,0 +1,20 @@
+{
+  "package_id": "cluster0_hallucination_invariance_audit_v0",
+  "research_question": "Can hallucination detectors discriminate supported from minimally incorrect answers while remaining stable across meaning-equivalent answer forms?",
+  "gap": "Existing work documents label problems, response-length effects, domain shift and detector-family blind spots. The narrower unresolved question is whether factual discrimination survives controlled changes in answer form within the same human-validated items.",
+  "contribution": "A proposed paired form-invariance audit that evaluates factual discrimination and within-label score stability together under controlled answer transformations.",
+  "technical_terms": [
+    "invariance ratio",
+    "meaning-preserving lengthening"
+  ],
+  "limitations": [
+    "The design covers short passage-grounded answers rather than long-form generation with mixed claims.",
+    "Meaning-preserving lengthening and minimally incorrect answers require human validation.",
+    "A controlled form intervention diagnoses sensitivity but does not prove why a detector uses a feature internally."
+  ],
+  "unknowns": [
+    "The datasets, versions, licences, detectors and calibration procedure remain to be frozen.",
+    "No proposed experiment has been run and no performance result is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

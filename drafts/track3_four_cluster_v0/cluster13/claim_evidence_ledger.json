@@ -1,0 +1,734 @@
+{
+  "schema": "track3_claim_evidence_development_v1",
+  "prepared_date": "2026-11-05",
+  "cluster": 13,
+  "scientific_results_independently_reproduced": false,
+  "team_a_approval": "pending",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "paper_id": "2025.emnlp-main.1201",
+      "title": "Investigating How Pre-training Data Leakage Affects Models’ Reproduction and Detection Capabilities",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Synthetic non-member construction” and “Known-label requirement”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate training-data membership with AI authorship, or cite the reported detection rates as human-versus-AI classification accuracy.",
+      "text_sha256": "123944de0822536f1d83bec51a7ab5ad3d4cf7f4a6e8a24690b8bca5d39f74d8",
+      "pdf_sha256": "f0063aef228af4879dbdf47e87db52c6f685b4551bb345e69a2d551f03447436",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "2.3 Detection Rate",
+          "url": "https://aclanthology.org/2025.emnlp-main.1201.pdf#page=5",
+          "normalized_quote_sha256": "17f269033c817c981828b9c3a2e838bf15f7629337b11e884370d96a51aaf4ed"
+        },
+        {
+          "pdf_page": 7,
+          "section": "4.1 Mitigation of the Impact of Leakage Rate on Detection Rate",
+          "url": "https://aclanthology.org/2025.emnlp-main.1201.pdf#page=7",
+          "normalized_quote_sha256": "f40ffdb511826837b0ffda0729097a716ce83f358421bcbf39cc84326f81b21c"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C02",
+      "paper_id": "2025.emnlp-main.1227",
+      "title": "What’s in a prompt? Language models encode literary style in prompt embeddings",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Synthetic generator-attribution scope” and “Corpus-size limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty merely for probing final-token hidden representations to distinguish literary authors or GPT-4o from GPT-4.1; this paper already demonstrates those settings.",
+      "text_sha256": "d82de7284821f52f0d300729351aa6e3e9cb1b5c76ad052ed4263f9e8f1b4f84",
+      "pdf_sha256": "6253ea21770a45455e7e6b5536df41b1bf1a92583626bfb6af9c4d0839249c21",
+      "citations": [
+        {
+          "pdf_page": 10,
+          "section": "E.2 Confounding on topic",
+          "url": "https://aclanthology.org/2025.emnlp-main.1227.pdf#page=10",
+          "normalized_quote_sha256": "cbd9f448d7c30170d086e663fc22321c7defe103b9221017ebfe825f92f4206d"
+        },
+        {
+          "pdf_page": 5,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1227.pdf#page=5",
+          "normalized_quote_sha256": "b2c76afcce92cc26ac708d25bcea6e59465e937e9966eb141b4ddbc3bcd617c5"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C03",
+      "paper_id": "2025.emnlp-main.1265",
+      "title": "Profiler: Black-box AI -generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Origin-classification evaluation scope” and “Paraphrase robustness caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that context-aware black-box generator attribution or provenance testing after paraphrasing is new; distinguish any proposed contribution from PROFILER's loss-window features and self-paraphrase evaluation.",
+      "text_sha256": "e97d49c8c77258ead56a2c7373a92a333145dd794c88d4f9708da0c8698b8a3e",
+      "pdf_sha256": "58e4e68cf1f7bed84b3b4ee537e7a0380787bbfcc0f5d4f5aff19081274b78bb",
+      "citations": [
+        {
+          "pdf_page": 16,
+          "section": "C Additional Experimental Settings",
+          "url": "https://aclanthology.org/2025.emnlp-main.1265.pdf#page=16",
+          "normalized_quote_sha256": "88943424e07d6c9142246111511e8d1dd0be29fb5a31b4e133835d373ef013ca"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1265.pdf#page=9",
+          "normalized_quote_sha256": "c7e8ae2dd8df8c08a6831c3df7ee8d820dacee05828d665233b9ae781d8fd646"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C04",
+      "paper_id": "2025.emnlp-main.1327",
+      "title": "Speculating LLM s’ C hinese Training Data Pollution from Their Tokens",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Token-level detection scope” and “Unverifiable closed-corpus inference”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present POCDETECT as an AI-generated-text detector or treat its pollution labels as human/AI provenance labels.",
+      "text_sha256": "a3311bf17520f2f709276ee821b55dd5cbfc6745beeb9b489691bd385dfe6d22",
+      "pdf_sha256": "0e4ee69be3e7426b5a02343fee8aabd8b2844bd59afc463a24342be4fd5e28ee",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4 Detect PoC tokens in more vocabularies",
+          "url": "https://aclanthology.org/2025.emnlp-main.1327.pdf#page=5",
+          "normalized_quote_sha256": "87b9ff26245b6ff34a96616745175fa6ecd176a7fa2c138ad9c788549693641c"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1327.pdf#page=9",
+          "normalized_quote_sha256": "d11d478300e4e005fecec5a4830a8646bcb4c698a0867b4dffa50a405d30a981"
+        }
+      ],
+      "quoted_words": 12
+    },
+    {
+      "claim_id": "C05",
+      "paper_id": "2025.emnlp-main.1354",
+      "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Same-generator rewriting scope” and “Language limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that human–AI revision, continuation, same-generator rewriting, domain shift, or unseen-generator evaluation is novel merely by introducing these conditions; this paper already evaluates them.",
+      "text_sha256": "d1e0e959aff04036e5fff3ec2045c09927b29739ddf23c1857848d12a133a556",
+      "pdf_sha256": "7bcfd33239a6e966947c1f937ac4ea125145e4de1c33594a6ef9f4b1413b0159",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "2.4 Evaluation Tasks, E3",
+          "url": "https://aclanthology.org/2025.emnlp-main.1354.pdf#page=4",
+          "normalized_quote_sha256": "02df25384f3951852974a55ff1dd10cd46772b071bc0755141c36661c9c3f240"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations: Language usage",
+          "url": "https://aclanthology.org/2025.emnlp-main.1354.pdf#page=9",
+          "normalized_quote_sha256": "a71bef4d574630466412d7501ab88aa2428df9cd763d01cc415ac61fc2840715"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C06",
+      "paper_id": "2025.emnlp-main.1457",
+      "title": "Large Language Models Threaten Language’s Epistemic and Communicative Foundations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Conceptual scope” and “Empirical-grounding limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this paper as an empirical detector benchmark or treat its 70% accuracy statement as a general performance ceiling.",
+      "text_sha256": "c864ba950ca58b0fde849a7533f56f38b5959c892159699b567476b05efed6b2",
+      "pdf_sha256": "2a48b7f0987c28e88e7e50ab4654676743159ee9d92fde2a1e298697af85e1f3",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4 A Framework for Verifiable Provenance",
+          "url": "https://aclanthology.org/2025.emnlp-main.1457.pdf#page=4",
+          "normalized_quote_sha256": "3df4ba5abb2e2a6d7f76a365e8bd085b469207c1caa9df024f2491c49808e643"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1457.pdf#page=9",
+          "normalized_quote_sha256": "cf4ee592ecb947cec45eafa9cc4b23d7ff2007e84902b83b8de959429b82f468"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C07",
+      "paper_id": "2025.emnlp-main.1506",
+      "title": "Machine-generated text detection prevents language model collapse",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Unknown-provenance mixed-data scope” and “Detector transfer caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty solely for using machine-generated-text detection to curate mixed training data or mitigate recursive model degradation; this paper already implements and evaluates that approach.",
+      "text_sha256": "ae2febfd6b252a3d16c282f4bf1ebebf7daf4f721c77b989d050e0034bc55603",
+      "pdf_sha256": "31d94b120bfb1ea7356348911f9853cf4eb778427b49da10cb2dabb2943e9fcc",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "6 Preventing model collapse",
+          "url": "https://aclanthology.org/2025.emnlp-main.1506.pdf#page=6",
+          "normalized_quote_sha256": "c8f6ef8aed4ec95d9678b3696a7ac833dfa2ca12a67a9450786afc7f5d4ec971"
+        },
+        {
+          "pdf_page": 14,
+          "section": "B.3 Dataset",
+          "url": "https://aclanthology.org/2025.emnlp-main.1506.pdf#page=14",
+          "normalized_quote_sha256": "b1fa5b81501f1482e0debd8c092ff47dfd812a531f42ec739519ba05cfffede4"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C08",
+      "paper_id": "2025.emnlp-main.1567",
+      "title": "S im M ark: A Robust Sentence-Level Similarity-Based Watermarking Algorithm for Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detection scope” and “Mixed-content limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present watermark absence as evidence of human authorship; distinguish human text, unwatermarked AI text, and SimMark-watermarked text in labels and evaluation.",
+      "text_sha256": "e549daa1afe46cb96ae7dd29d5c637a90f4a6d0d2b8608494568d7315e08aa49",
+      "pdf_sha256": "8c8b138c516e822f77b2070b851938b9c8d1a51b625f2c629f224be541ffa049",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.2 Watermarked Text Detection, Algorithm 2",
+          "url": "https://aclanthology.org/2025.emnlp-main.1567.pdf#page=5",
+          "normalized_quote_sha256": "5fe0ece0fbbf4cfaa71b6d40aeb5510612e9d51537dc86907311e2baac13ac8a"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations: Resistance to More Advanced Attacks",
+          "url": "https://aclanthology.org/2025.emnlp-main.1567.pdf#page=10",
+          "normalized_quote_sha256": "5f2d9a2ae0fad4382e90c8113280fa3cad407f85c70f3bbaba246ed422d4bcdf"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C09",
+      "paper_id": "2025.emnlp-main.1595",
+      "title": "Same Question, Different Words: A Latent Adversarial Framework for Prompt Robustness",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Study scope” and “Fine-tuning limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe LAP's preference win-rates as detection accuracy, calibrated provenance probabilities, or evidence of low false-positive rates.",
+      "text_sha256": "b30a88f088e911e4274eaaad7dce439f96e2f84c6b19b918d5b45de04dc40756",
+      "pdf_sha256": "4a30b8efea57c1a6b2b4a558d53042644c196406f5c3a3749e112a1514dceaf7",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "2 Related Work",
+          "url": "https://aclanthology.org/2025.emnlp-main.1595.pdf#page=3",
+          "normalized_quote_sha256": "9d3435e6a2304ae99b9ce6117763efffcf56f8ff886bf890e2c81dc07f524774"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1595.pdf#page=9",
+          "normalized_quote_sha256": "7184c20e2560d9ba140820503ff936ad558a2f194232561faeb9ccfb371d4ed8"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C10",
+      "paper_id": "2025.emnlp-main.1607",
+      "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Interpretation of the headline detection metric” and “Sentence-level coherence limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that paraphrasing robustness, temperature sensitivity, or paraphrase-based detector augmentation is unexplored; distinguish the proposed contribution from these experiments.",
+      "text_sha256": "b6f2664dfe12d8cf895ad0f031b0ac3fb8004831ed1d8f10d6516102a75d4402",
+      "pdf_sha256": "7cd4e83e9a8545565d45cb2cf77245285837650566ec6f29617c9ded522abb42",
+      "citations": [
+        {
+          "pdf_page": 16,
+          "section": "E.1 Additional Metrics for Evaluating Attack Effectiveness",
+          "url": "https://aclanthology.org/2025.emnlp-main.1607.pdf#page=16",
+          "normalized_quote_sha256": "e8f88d41acb0a8db9426d28dba3fcf598a55b0b96050c17e77d6bdd2547c3a90"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1607.pdf#page=9",
+          "normalized_quote_sha256": "7d22a74d2e09092e0563dc08af8c6aa36020e6f5e812c2e42e7f377d2710eda4"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C11",
+      "paper_id": "2025.emnlp-main.166",
+      "title": "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Method scope” and “Weak-model limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this paper as demonstrating human-versus-AI detection or authorship attribution; quality labels and provenance labels require separate operational definitions.",
+      "text_sha256": "90878e133803546c8264b624518b1298e68b0d03dcb853a27e6b783bec87d864",
+      "pdf_sha256": "45dc8206939c0057576223b8aeb43abc968570d91494f151ed3c3892ca240079",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4 BOOSTED PROB",
+          "url": "https://aclanthology.org/2025.emnlp-main.166.pdf#page=4",
+          "normalized_quote_sha256": "cf08e99015c75146b28fa2d8decc600fd3ac39c7db01834a3bda6ed04207f055"
+        },
+        {
+          "pdf_page": 9,
+          "section": "8 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.166.pdf#page=9",
+          "normalized_quote_sha256": "2933ad18514bc0a50b5e2b1ea80b9a25ca7b9bfbea3648b705a26f0685d71da5"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C12",
+      "paper_id": "2025.emnlp-main.1665",
+      "title": "From Shortcuts to Balance: Attribution Analysis of Speech-Text Feature Utilization in Distinguishing Original from Machine-Translated Texts",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Attribution-analysis scope” and “Translation-system coverage limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate original-versus-machine-translated labels with general human-versus-AI authorship, or claim detection of mixed authorship, post-editing, or paraphrasing from these experiments.",
+      "text_sha256": "e9c5b51d365953de6c6dbaf5134a34b1610efb13f54882d59bb7f9e53ee2d412",
+      "pdf_sha256": "49266c7a6b6b39d7a8dc4fb4fe2d86fe8dc5bd748ad38e056a9275902d4fdafb",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3 Experimental Setup",
+          "url": "https://aclanthology.org/2025.emnlp-main.1665.pdf#page=3",
+          "normalized_quote_sha256": "16a8ee641c7cf9c15c74046e746f858ae3fbc8e7013bc908ed25a3acdefa3a60"
+        },
+        {
+          "pdf_page": 5,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1665.pdf#page=5",
+          "normalized_quote_sha256": "4ea7e2345b158a45751a92303765094740605c39f04a20855a0e072cdfac5530"
+        }
+      ],
+      "quoted_words": 13
+    },
+    {
+      "claim_id": "C13",
+      "paper_id": "2025.emnlp-main.1766",
+      "title": "Leveraging Multilingual Training for Authorship Representation: Enhancing Generalization across Languages and Domains",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detection label scope” and “Non-English domain limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that multilingual authorship representations have never been evaluated for AI-generated text detection; this paper evaluates that combination on MULTITuDE.",
+      "text_sha256": "c61fb269d46ed511565ff5b3d40675f3d7bbe2d492fbe3606cfdb1b3097ffb37",
+      "pdf_sha256": "7fdf0a40d73f8ba9379c75d82b219ffd4228ce6aa0a43b65bcee170ae5c2799d",
+      "citations": [
+        {
+          "pdf_page": 8,
+          "section": "6.5 Machine-Generated Text Detection",
+          "url": "https://aclanthology.org/2025.emnlp-main.1766.pdf#page=8",
+          "normalized_quote_sha256": "3a144f128ce577a4de4db4eda5258d1e9a050bb80f1f668b02c2e0d3ed18da2d"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1766.pdf#page=9",
+          "normalized_quote_sha256": "ae5aace327df14a9420c6eab5407a9f51d18659b8024284eeaf8572a0a5300c4"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C14",
+      "paper_id": "2025.emnlp-main.1783",
+      "title": "so much depends / upon / a whitespace: Why Whitespace Matters for Poets and LLM s",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Prompt-condition scope” and “Geographic representativeness limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present this study as demonstrating an effective AI-poetry detector or calibrated authorship probabilities; its benchmark measures extraction fidelity, not detection.",
+      "text_sha256": "102070a43ac7ee9df2f40808ae940388f94ed935a65a7ec785675a74378099b0",
+      "pdf_sha256": "4d7f6d497cc4700bbec634773c5d28905c9d34eeb930ef293fe316426ed1e044",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4.2 LLM-Generated Poems",
+          "url": "https://aclanthology.org/2025.emnlp-main.1783.pdf#page=4",
+          "normalized_quote_sha256": "c372491b7e0e089a0586cb41c97eac6b2688bd12338a76585102407c36e99d3d"
+        },
+        {
+          "pdf_page": 10,
+          "section": "9 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1783.pdf#page=10",
+          "normalized_quote_sha256": "1f35c6981624049aa1fec2896ea41ac44625a8f76d2f22ef63d5dabfff9955ac"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C15",
+      "paper_id": "2025.emnlp-main.1784",
+      "title": "Certified Mitigation of Worst-Case LLM Copyright Infringement",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Black-box inference-time scope” and “Limits of literal-copy mitigation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate corpus quotation detection with AI-authorship attribution; define source overlap, provenance, and human/AI authorship as distinct targets.",
+      "text_sha256": "9f1b2f4979a1b8ba9da0a45dd03d2ab1bf6b0c7fce3d44bda56a1d57feda1910",
+      "pdf_sha256": "0a853b68e7429e4245b93ca64d23aec3fc9b17d8e479eea7330ecd37d68ebb68",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 BLOOM SCRUB",
+          "url": "https://aclanthology.org/2025.emnlp-main.1784.pdf#page=4",
+          "normalized_quote_sha256": "9b8f1cbcf59c5ebffb45616ec0a3b4b48caa629995e89eb5e65dc4a634bb4bfd"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1784.pdf#page=9",
+          "normalized_quote_sha256": "eb99f96e3a0620ef660a7a698dfcbaf2e935c403877d46a7e752382ad47f0073"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C16",
+      "paper_id": "2025.emnlp-main.1789",
+      "title": "Retracing the Past: LLM s Emit Training Data When They Get Lost",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Attack scope” and “Entropy caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Define generation mechanism, original source authorship, and document editing history separately; corpus overlap alone must not be treated as an AI-authorship label.",
+      "text_sha256": "b3ea4c7866942392a7574347eaaca01171105413a485ab8fc85e7c9ea29496b4",
+      "pdf_sha256": "6435c5aab0916b5c7dd0702c78935942b99536328268ef49ff6a8dffab4a2fea",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "2 Related Work",
+          "url": "https://aclanthology.org/2025.emnlp-main.1789.pdf#page=3",
+          "normalized_quote_sha256": "b3ed6b12b8361717ca4235a92c5e9836746ef4c1d4b83e048b5ef1cb7741a4a1"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1789.pdf#page=9",
+          "normalized_quote_sha256": "57cd3027649e59042ce4c4c27a914c1a74e9fcc912c2a75ed371f9c52b456a98"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C17",
+      "paper_id": "2025.emnlp-main.183",
+      "title": "OBLIVIATE : Robust and Practical Machine Unlearning for Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Method: parameter-efficient unlearning” and “Caveat: degraded generation quality”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this paper as an AI-text detector or treat membership inference, DRMA, or TOFU fictional-author profiles as human/AI authorship labels.",
+      "text_sha256": "a9637e015e243d0debaf8cd9009ad8389154258108faf1ba134eb1d81249a1ba",
+      "pdf_sha256": "9b2860f9f97902bd2ea2694c37ac9b5e48ca3405c52129af4912c5c13a8906f0",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Tailored Unlearning Loss",
+          "url": "https://aclanthology.org/2025.emnlp-main.183.pdf#page=5",
+          "normalized_quote_sha256": "f2d17c810ac4c30abc69014ed2f8ff2c8f57b20c7bf905091fc252433857be14"
+        },
+        {
+          "pdf_page": 10,
+          "section": "6 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.183.pdf#page=10",
+          "normalized_quote_sha256": "c3aa8836a6c755b0ed18e1ced24e61de05c08c9f5bb488176603e7101861161b"
+        }
+      ],
+      "quoted_words": 20
+    },
+    {
+      "claim_id": "C18",
+      "paper_id": "2025.emnlp-main.268",
+      "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Binary provenance prediction” and “Context dependence”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that irregular sentence-level mixing or style–context fusion is unexplored; it should distinguish its contribution from this benchmark and framework.",
+      "text_sha256": "7dd9beaf443b72a60d80172e84fccad46af364cb750619d0d76f8472365cb923",
+      "pdf_sha256": "b0e106c894b9e91ce4e52544bdb8346af37551089e9d962eb1503bb530d9470e",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Information Fusion Module",
+          "url": "https://aclanthology.org/2025.emnlp-main.268.pdf#page=5",
+          "normalized_quote_sha256": "a25ab87fe8a4a6beba51235d7afc831a00cddd8e2dc95ea65e7c7f66919c8e69"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.268.pdf#page=9",
+          "normalized_quote_sha256": "079d80f700cb35dc1fa728b7e2f09f824c01f0ff4339de67a38801f327567843"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C19",
+      "paper_id": "2025.emnlp-main.294",
+      "title": "M o SE s: Uncertainty-Aware AI -Generated Text Detection via Mixture of Stylistics Experts with Conditional Thresholds",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Conditional decision threshold” and “Binary detection scope”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not equate binary corpus source labels with verified individual authorship, misconduct, or complete provenance; it should explicitly define how human-prompted continuations, mixed authorship, and edited documents are labeled.",
+      "text_sha256": "1ff890c8eb020d0b3defa4ce9ac8418994d686cc6caf52217507eb154972f672",
+      "pdf_sha256": "d3abbaec88d5d94dfb4745e566016808c41cb3b15037b0afc1a7f91926dcddd2",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.4 Conditional Threshold Estimator",
+          "url": "https://aclanthology.org/2025.emnlp-main.294.pdf#page=5",
+          "normalized_quote_sha256": "89daef1f85519cf041e1b425bb125aa11695ec1f532cc4d3049503242524d88c"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.294.pdf#page=9",
+          "normalized_quote_sha256": "51eaa5180fc7796efc261a667154ba5f6b7bf5f05e937e9fa87de88c024d0e6c"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C20",
+      "paper_id": "2025.emnlp-main.370",
+      "title": "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Membership rather than authorship scope” and “Calibration-data dependency”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate training-set membership with AI authorship; define these as separate provenance labels and evaluation tasks.",
+      "text_sha256": "7497c7ba540809bcccad059a712a773b08b58f42698fc56f4fea5fae2491cd49",
+      "pdf_sha256": "dca20b3dfb1ede38f585eaf0c7df6c3d1b15e534e8486a93c8cc6eeead7b563e",
+      "citations": [
+        {
+          "pdf_page": 9,
+          "section": "6 Additional related works",
+          "url": "https://aclanthology.org/2025.emnlp-main.370.pdf#page=9",
+          "normalized_quote_sha256": "289275c4fceb172f5b86f851f4d79ff52c8daa206baba4d512116d179cf272a0"
+        },
+        {
+          "pdf_page": 10,
+          "section": "9 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.370.pdf#page=10",
+          "normalized_quote_sha256": "07c076b6508df980253003cadc5a8dfb35190cd17af6e3b6129a82ca4439a8df"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C21",
+      "paper_id": "2025.emnlp-main.379",
+      "title": "Genre Matters: How Text Types Interact with Decoding Strategies and Lexical Predictors in Shaping Reading Behavior",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Method” and “Human baseline limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this study as evidence that eye movements, surprisal, or readability reliably distinguish human from AI authorship; it lacks a human-written comparison condition and an authorship detection task.",
+      "text_sha256": "2f8b9caf5b9ee160701d2a84138b92916f68eb2a3736406ac7ecfb5f86bb4ff6",
+      "pdf_sha256": "e9544f72c95092a27cba6e8ba9ab2491384ac69bea0a498f12c6531555908a5d",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.3 Methods",
+          "url": "https://aclanthology.org/2025.emnlp-main.379.pdf#page=4",
+          "normalized_quote_sha256": "29a715225bff8b6ae61584bebab1899ba1b96dafa7f2938145274c91e42ea8b9"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.379.pdf#page=10",
+          "normalized_quote_sha256": "b4e3e2185c93090b3b0debee0e43a855b10e031a827c4ae691285ed6f965f689"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C22",
+      "paper_id": "2025.emnlp-main.433",
+      "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Training-free paraphrase scope” and “Language limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A new proposal should not claim that training-free contrastive paraphrasing or surrogate-free whole-passage evasion is unexplored; CoPA supplies a direct prior baseline.",
+      "text_sha256": "e55b91cdd941db3fa6438819996500c0c4ec0307587cabf8d3b15b2aa801ffd3",
+      "pdf_sha256": "551cf5d58807053e220b5fb08693d548adc3857f7e890ed4a337df044edf7f79",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "1 Introduction",
+          "url": "https://aclanthology.org/2025.emnlp-main.433.pdf#page=2",
+          "normalized_quote_sha256": "3394b1d4063fae4172a978ac2a7c58ae09df1e88f289a51e28468764ec3c9378"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.433.pdf#page=9",
+          "normalized_quote_sha256": "39fe986c8c276a638127550e31a58c28cc1436bea86ac4e696955a6309a2e495"
+        }
+      ],
+      "quoted_words": 13
+    },
+    {
+      "claim_id": "C23",
+      "paper_id": "2025.emnlp-main.452",
+      "title": "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Joint input-output evaluation scope” and “Scalability limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this paper as an AI-text detector or as evidence that a detector distinguishes human, AI, and mixed-authorship text.",
+      "text_sha256": "b326d913656af0417021bd0a3f8c561e805994b86ecf1d8a69b90502e78a5a49",
+      "pdf_sha256": "f51679e36b9ee8c4dee4c562f68483e882523ff1b42b387f8230a71757c9291e",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4.2 Fully Probabilistic Evaluation Framework",
+          "url": "https://aclanthology.org/2025.emnlp-main.452.pdf#page=4",
+          "normalized_quote_sha256": "5c564a4de9b829367ae6382ce74550113e8b2c9b1cc528fa152362e54b9fed5e"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.452.pdf#page=9",
+          "normalized_quote_sha256": "7f0f12a5048a71265965af15c6a1cc086c56b4edb2cd5c844f94ca13d4d234dc"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C24",
+      "paper_id": "2025.emnlp-main.503",
+      "title": "Enhancing LLM Text Detection with Retrieved Contexts and Logits Distribution Consistency",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detection method” and “Generation-instruction limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim that using retrieved human-written and LLM-rewritten contexts, or their distribution consistency, is novel without distinguishing its contribution from HALO.",
+      "text_sha256": "7b7afff75a957e3fa162d3cd4af79e7fa3fd54cfaabe83184f30fd256d1de987",
+      "pdf_sha256": "e077925234d703ee8eefaa591b9c94b78a2df4a4a600edb7d5fd7268ef198b5b",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "2.1 LLM Text Detection",
+          "url": "https://aclanthology.org/2025.emnlp-main.503.pdf#page=3",
+          "normalized_quote_sha256": "9274c28be1e9005a99057a660152228bf22b8498fc3863841de4a919c00f77ed"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.503.pdf#page=9",
+          "normalized_quote_sha256": "e4050ae82cc7b4e7b68e3fcab9c2ce0cbe24e511d3091d9a688454a1716bb2f3"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C25",
+      "paper_id": "2025.emnlp-main.521",
+      "title": "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Single-author collection scope” and “Language-transfer limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe LIGHT as an evaluated human-versus-AI detector or treat same-author labels as equivalent to generation-provenance labels.",
+      "text_sha256": "32e921c8bf31da526e086ccfa6b8e8e9a20b730a1d854b9e4dda2014797eca27",
+      "pdf_sha256": "004b86419db332f949d4edf40fe83507cad44167428e039b5f861956340ecb5f",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "4 Experiment setup — Task",
+          "url": "https://aclanthology.org/2025.emnlp-main.521.pdf#page=3",
+          "normalized_quote_sha256": "e80531610812e660678c98909c6d2d825447a98b1b5b31c24953ec44c7449a3e"
+        },
+        {
+          "pdf_page": 9,
+          "section": "8 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.521.pdf#page=9",
+          "normalized_quote_sha256": "1f6778c92a79f6c5ce298a335dae9760df8382e60b370bade7042433c65d9c8d"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C26",
+      "paper_id": "2025.emnlp-main.527",
+      "title": "Primus: A Pioneering Collection of Open-Source Datasets for Cybersecurity LLM Training",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Classifier label scope” and “Cross-corpus classifier caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite PRIMUS as a human-versus-AI text detection benchmark or its relevance classifier as an authorship detector.",
+      "text_sha256": "35debbb01c4b4a1fbe71e4850af3d5da3dde080742ff4047dedd9c24ee7398bc",
+      "pdf_sha256": "fc8bfebc3591d83ad4fb46aeb8e7a79c55de2452bf034b38a4f8ca1ac94f293c",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "2.3.1 Cybersecurity Classifier",
+          "url": "https://aclanthology.org/2025.emnlp-main.527.pdf#page=4",
+          "normalized_quote_sha256": "7c3406577663ae829090c1d9fabc5d48a411301e133a0de9acbc840f407d9bfe"
+        },
+        {
+          "pdf_page": 16,
+          "section": "C PRIMUS-NEMOTRON-CC",
+          "url": "https://aclanthology.org/2025.emnlp-main.527.pdf#page=16",
+          "normalized_quote_sha256": "765f82e33b0222f6444e5956c3d6c756bb49ffdf9e9235230b2dc70eeff1c479"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C27",
+      "paper_id": "2025.emnlp-main.600",
+      "title": "Beyond Checkmate: Exploring the Creative Choke Points for AI Generated Texts",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Paired-selection task scope” and “Segmentation limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that segment-aware detection or cross-segment stylistic variation is unexplored; this paper directly evaluates both.",
+      "text_sha256": "cf1b3affdbbcc63762e1c84d1f54a67d57f4fac435af454984edece219282592",
+      "pdf_sha256": "49172421c95e554883a391b2695f7883c6ecd03a0dbf3318773ff6d56bee6139",
+      "citations": [
+        {
+          "pdf_page": 8,
+          "section": "4.2 Checkmating AI text: which segment reveals its origins?",
+          "url": "https://aclanthology.org/2025.emnlp-main.600.pdf#page=8",
+          "normalized_quote_sha256": "337dbbc6627f019137b2c79540583f4d84c420ebe21c3784fbd9c8fd985ef215"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.600.pdf#page=10",
+          "normalized_quote_sha256": "ad36bfed9149f2e41a7b6279fa3b91fecde379161ff20209ce1324c5409338ce"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C28",
+      "paper_id": "2025.emnlp-main.753",
+      "title": "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification",
+      "attributed_claim": "The verified passages provide explicit source anchors for “AI-text detection scope” and “Human-evaluation limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate target-author verification accuracy or its false positives with human-versus-AI detection accuracy or false accusations of human writers; define these labels separately.",
+      "text_sha256": "a5f955e4bb740863a05adf4759dcd70c91996c4b2a541365baea2f4d6d27c15e",
+      "pdf_sha256": "1cfbdf1b59b0e8868731e71ed69c598ee822607801762bf6509b0e73f4391b21",
+      "citations": [
+        {
+          "pdf_page": 8,
+          "section": "5.3 Triplet-wise Interdependency: Anthropomorphism Analysis",
+          "url": "https://aclanthology.org/2025.emnlp-main.753.pdf#page=8",
+          "normalized_quote_sha256": "a9e5cf01aec07bab40f49839ebea828e54cacc6d9aa036436888f2a48415c1d6"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitation",
+          "url": "https://aclanthology.org/2025.emnlp-main.753.pdf#page=10",
+          "normalized_quote_sha256": "b1b83b81a3bffb6f0128a368fef4e45bb5cc6477d51b9c9f8e86996a1d16ff6d"
+        }
+      ],
+      "quoted_words": 11
+    },
+    {
+      "claim_id": "C29",
+      "paper_id": "2025.emnlp-main.773",
+      "title": "Friend or Foe? A Computational Investigation of Semantic False F riends across R omance Languages",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Actual detection target” and “Synchronic scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not cite this paper's detection scores as evidence for AI-authorship or provenance detection; its prediction units and labels are lexical-semantic.",
+      "text_sha256": "c881b9a3ce9304d16bd9c48d3751b02e0d89bf11d63540d0fc91f2c1d504d563",
+      "pdf_sha256": "9f277405fd36a300289dcbc9b2f6719c3757e68522d08eb7f1b0ef54b2f527af",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 False Friends Detection",
+          "url": "https://aclanthology.org/2025.emnlp-main.773.pdf#page=4",
+          "normalized_quote_sha256": "dc0b4b9e72d0b1c8e1ff2f71691bf9e99dc6067a42dcbf9b04d5511651d017ff"
+        },
+        {
+          "pdf_page": 7,
+          "section": "6 Conclusions and Future Directions",
+          "url": "https://aclanthology.org/2025.emnlp-main.773.pdf#page=7",
+          "normalized_quote_sha256": "aae43a3b1d79d17d7afadc2ba49b6f7fff27c52bd116c59d3f2a89b5f9499149"
+        }
+      ],
+      "quoted_words": 21
+    }
+  ]
+}

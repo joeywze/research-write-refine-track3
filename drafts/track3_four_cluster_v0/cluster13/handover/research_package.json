@@ -1,0 +1,564 @@
+{
+  "schema_version": "0.1",
+  "package_id": "cluster13_revision_history_audit_v0",
+  "title": "Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors",
+  "research_question": "What do AI-text detector scores track when original drafter, latest editor and sentence provenance vary independently across matched revision histories?",
+  "gap": "Existing work covers hybrid sentences, paraphrase attacks, realistic rewrites and human editing of model drafts. The narrower unresolved question is how detector outputs relate to distinct process labels in matched bidirectional revision trajectories.",
+  "contribution": "A proposed process-aware, bidirectional revision-history audit that keeps original drafter, latest editor and sentence provenance as separate evaluation targets.",
+  "methodology": "We plan 40 non-sensitive source briefs across two domains, such as public-information explanations and product-neutral summaries. Each brief will contain the same factual source packet, target audience, required claims and length range. Two consenting human writers and two fixed model configurations will independently create base drafts for every assigned brief.\n\nAssignment will be balanced so that each brief yields at least one human-origin and one model-origin text. Human writers will not see model drafts during base drafting. Model prompts, model identifiers, dates and settings will be recorded. Source packets will permit later claim verification and reduce the chance that factual differences are mistaken for origin signals.\n\nEach base text enters four revision stages:\n\n| Stage | Instruction | Content constraint |\n|---|---|---|\n| S0 Original | No revision | Base draft |\n| S1 Copy-edit | Grammar, punctuation and local fluency | No claim changes |\n| S2 Structural | Reorder and improve transitions | Preserve all claims |\n| S3 Bounded substantive | Implement a fixed edit brief | Only listed additions/deletions |\n| S4 Mixed-sentence | Replace designated sentences using opposite contributor type | Preserve local meaning where specified |\n\nFor human-origin drafts, one route uses human edits and one uses AI edits. For model-origin drafts, one route uses model edits and one uses human edits. Same-type routes estimate the effect of revision without changing contributor type; cross-type routes provide the bidirectional comparison.\n\nAll versions will be stored with tracked diffs. Two reviewers, blinded to the intended detector label, will mark whether required claims are preserved, whether unauthorized claims were introduced and which spans changed. A stage that violates its constraint will be regenerated once under a frozen rule; persistent failures remain in an operational-failure table and are excluded from the paired semantic-preservation analysis.\n\nEach version will carry three noninterchangeable process labels:\n\n1. **Original drafter:** contributor type that produced S0.\n2. **Latest editor:** contributor type responsible for the current transition.\n3. **Sentence provenance:** contributor type responsible for the current sentence wording, based on the tracked history.\n\nAt document level, mixed sentence provenance will be represented as proportions rather than collapsed into a binary “AI-written” label. The analysis will ask how detector output relates to each label; it will not select whichever target makes the detector look best.\n\nAt least four reproducible detector families will be included where licenses permit:\n\n- likelihood or rank based;\n- supervised document classifier;\n- stylistic-feature based;\n- contextual sentence classifier.\n\nVersions, settings and preprocessing will be frozen. Thresholds will be chosen using separate calibration data that do not share briefs, writers or revision histories with the test set. Raw scores will remain the primary output; binary rates are threshold-dependent secondary summaries. Invalid, truncated and unsupported inputs will be reported as failures.",
+  "study_status": "proposed",
+  "sources": [
+    {
+      "source_id": "S_2025_emnlp_main_268",
+      "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+      "url": "https://aclanthology.org/2025.emnlp-main.268/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1354",
+      "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+      "url": "https://aclanthology.org/2025.emnlp-main.1354/"
+    },
+    {
+      "source_id": "S_2026_wac_1_25",
+      "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+      "url": "https://aclanthology.org/2026.wac-1.25/"
+    },
+    {
+      "source_id": "S_2026_emnlp_main_2177",
+      "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+      "url": "https://aclanthology.org/2026.emnlp-main.2177/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_433",
+      "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+      "url": "https://aclanthology.org/2025.emnlp-main.433/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1607",
+      "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+      "url": "https://aclanthology.org/2025.emnlp-main.1607/"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E_2025_emnlp_main_268_01",
+      "source_id": "S_2025_emnlp_main_268",
+      "excerpt": "predict the probability of being AI-generated",
+      "locator": "3.3 Information Fusion Module; PDF p. 5"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_268_02",
+      "source_id": "S_2025_emnlp_main_268",
+      "excerpt": "Its advantage will diminish in sparse or noisy context",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1354_01",
+      "source_id": "S_2025_emnlp_main_1354",
+      "excerpt": "with each model rewriting its own previously generated texts.",
+      "locator": "2.4 Evaluation Tasks, E3; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1354_02",
+      "source_id": "S_2025_emnlp_main_1354",
+      "excerpt": "Our benchmark currently refers only to English texts.",
+      "locator": "Limitations: Language usage; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_wac_1_25_01",
+      "source_id": "S_2026_wac_1_25",
+      "excerpt": "Every machine text is paired with the human score",
+      "locator": "8.1 Methods and Protocol; PDF p. 7"
+    },
+    {
+      "evidence_id": "E_2026_wac_1_25_02",
+      "source_id": "S_2026_wac_1_25",
+      "excerpt": "should not be treated as standalone proof of authorship",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_emnlp_main_2177_01",
+      "source_id": "S_2026_emnlp_main_2177",
+      "excerpt": "The key construction step is reference-matched generation.",
+      "locator": "5.1 Benchmark Construction; PDF p. 7"
+    },
+    {
+      "evidence_id": "E_2026_emnlp_main_2177_02",
+      "source_id": "S_2026_emnlp_main_2177",
+      "excerpt": "we do not claim to remove all possible shortcuts.",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_433_01",
+      "source_id": "S_2025_emnlp_main_433",
+      "excerpt": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+      "locator": "1 Introduction; PDF p. 2"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_433_02",
+      "source_id": "S_2025_emnlp_main_433",
+      "excerpt": "focuses exclusively on English text",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1607_01",
+      "source_id": "S_2025_emnlp_main_1607",
+      "excerpt": "used in the paper is equivalent to recall.",
+      "locator": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1607_02",
+      "source_id": "S_2025_emnlp_main_1607",
+      "excerpt": "which may result in a loss of long-range contextual coherence",
+      "locator": "Limitations; PDF p. 9"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C_P001_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P001.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P002_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P002.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P003.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_01",
+      "text": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_268_01",
+        "E_2025_emnlp_main_268_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_02",
+      "text": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1354_01",
+        "E_2025_emnlp_main_1354_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P004.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_01",
+      "text": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_wac_1_25_01",
+        "E_2026_wac_1_25_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_02",
+      "text": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_emnlp_main_2177_01",
+        "E_2026_emnlp_main_2177_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P005_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P005.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P006_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P006.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P007_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P007.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P008.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P009_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P009.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P009_SOURCE_01",
+      "text": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_433_01",
+        "E_2025_emnlp_main_433_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P009_SOURCE_02",
+      "text": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1607_01",
+        "E_2025_emnlp_main_1607_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P009_SOURCE_03",
+      "text": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1354_01",
+        "E_2025_emnlp_main_1354_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P010_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P010.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P011_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P011.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P012_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P012.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P013_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P013.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P014_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P014.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P015_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P015.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P016_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P016.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P017_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P017.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P018_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P018.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P019_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P019.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P020_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P020.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P021_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P021.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P022_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P022.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P023_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P023.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P024_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P024.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P025_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P025.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P026_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P026.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P027_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P027.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P028_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P028.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P029_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P029.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P030_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P030.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P031_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P031.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P032_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P032.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P033_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P033.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P034_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P034.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P035_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P035.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P036_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P036.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P037_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P037.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    }
+  ],
+  "technical_terms": [
+    "original drafter",
+    "latest editor",
+    "sentence provenance"
+  ],
+  "limitations": [
+    "The study is limited by its writers, domains and model versions.",
+    "Human and model editing effort cannot be perfectly matched, and controlled revision histories differ from natural writing.",
+    "Process labels do not settle legal, educational or philosophical definitions of authorship."
+  ],
+  "unknowns": [
+    "The source briefs, writers, model configurations and detector versions remain to be frozen.",
+    "No proposed experiment has been run and no authorship conclusion is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "package_id": "cluster6_faithfulness_audit_v0",
+  "research_question": "Do explanation-refinement gains transfer to a held-out faithfulness measure, exceed nonspecific intervention effects, and avoid degrading task performance?",
+  "gap": "Existing work covers iterative explanation refinement, intervention-guided optimization and faithfulness-metric audits. The narrower unresolved question is whether gains optimized under one measure transfer to an independent measure and exceed specificity controls.",
+  "contribution": "A proposed specificity-controlled, cross-metric audit that separates optimization from evaluation and reports accuracy, validity and human clarity as separate outcomes.",
+  "technical_terms": [
+    "neutral rewrite",
+    "answer re-injection"
+  ],
+  "limitations": [
+    "The proposed study is limited to selected classification tasks, model families and operational faithfulness metrics.",
+    "Behavioral intervention measures can be unstable and do not reveal a model's private reasoning.",
+    "The reviewed corpus does not establish field-wide novelty."
+  ],
+  "unknowns": [
+    "The exact datasets, versions, licences, models and reproducible metric implementations remain to be frozen.",
+    "No proposed experiment has been run and no performance result is established.",
+    "Each generated paragraph-to-source claim mapping requires Half 1 approval before production use."
+  ]
+}

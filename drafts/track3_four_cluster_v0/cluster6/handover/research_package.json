@@ -1,0 +1,614 @@
+{
+  "schema_version": "0.1",
+  "package_id": "cluster6_faithfulness_audit_v0",
+  "title": "Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement",
+  "research_question": "Do explanation-refinement gains transfer to a held-out faithfulness measure, exceed nonspecific intervention effects, and avoid degrading task performance?",
+  "gap": "Existing work covers iterative explanation refinement, intervention-guided optimization and faithfulness-metric audits. The narrower unresolved question is whether gains optimized under one measure transfer to an independent measure and exceed specificity controls.",
+  "contribution": "A proposed specificity-controlled, cross-metric audit that separates optimization from evaluation and reports accuracy, validity and human clarity as separate outcomes.",
+  "methodology": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions and licenses will be fixed before generation. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.\n\nFor each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness; the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction, but limits inference to initially correct decisions.\n\nEvery eligible item receives an initial answer and explanation. The answer label is then frozen during explanation-only revision; any output that changes it is retained and flagged rather than silently repaired.\n\n| Condition | Revision signal | Purpose |\n|---|---|---|\n| Initial | None | Baseline explanation |\n| Self-critique | Model critiques clarity, evidence use and decision support | Reproduce generic iterative refinement |\n| Metric-guided | Critique exposes feedback from optimization metric M | Test direct metric optimization |\n| External critique | A frozen separate critic proposes revisions | Separate self-reflection from critic source |\n| Neutral rewrite | Match format and approximate length without faithfulness feedback | Control for another generation pass |\n\nEach condition will be collected after one and three rounds. Prompts, metric outputs and full revision histories will be stored. The neutral rewrite will be instructed to preserve meaning and evidence rather than improve a faithfulness criterion.\n\nBefore test results are inspected, one metric will be designated as optimization metric M and at least two nonidentical measures as held-out outcomes. The intended families are:\n\n- prediction–explanation consistency or support;\n- a counterfactual or intervention-based behavioral measure;\n- a causal-diagnostic score where reproducible implementations permit it.\n\nFor intervention tests, each target explanation is paired with:\n\n1. a length-matched content-free filler;\n2. unrelated grammatical text matched approximately for length;\n3. the original answer re-injected without its explanation; and\n4. a no-intervention repeat.\n\nThe same model, item and repeat index remain linked. These controls estimate ordinary re-prompting and generic-context sensitivity. They do not reveal true internal reasoning.\n\nTwo blinded human raters will evaluate a stratified subset for clarity, relevance and usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. Inter-rater agreement, adjudication rules and all exclusions will be reported.\n\nExact model identifiers, dates, prompts, sampling controls, token limits, parsers and retry rules will be frozen. Invalid JSON, missing explanations, changed labels and technical failures will remain visible in coverage tables. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+  "study_status": "proposed",
+  "sources": [
+    {
+      "source_id": "S_2025_emnlp_main_427",
+      "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+      "url": "https://aclanthology.org/2025.emnlp-main.427/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_797",
+      "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+      "url": "https://aclanthology.org/2025.emnlp-main.797/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1496",
+      "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+      "url": "https://aclanthology.org/2025.emnlp-main.1496/"
+    },
+    {
+      "source_id": "S_2026_eacl_long_177",
+      "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+      "url": "https://aclanthology.org/2026.eacl-long.177/"
+    },
+    {
+      "source_id": "S_2026_groundlm_1_35",
+      "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+      "url": "https://aclanthology.org/2026.groundlm-1.35/"
+    },
+    {
+      "source_id": "S_2026_acl_long_202",
+      "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+      "url": "https://aclanthology.org/2026.acl-long.202/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1231",
+      "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+      "url": "https://aclanthology.org/2025.emnlp-main.1231/"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E_2025_emnlp_main_427_01",
+      "source_id": "S_2025_emnlp_main_427",
+      "excerpt": "do not contain the intervened word (de- termined by string matching).",
+      "locator": "4.3 Evaluation; PDF p. 6"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_427_02",
+      "source_id": "S_2025_emnlp_main_427",
+      "excerpt": "it reflects only one type of faithfulness criterion.",
+      "locator": "Limitations — Evaluation Method; PDF p. 10"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_797_01",
+      "source_id": "S_2025_emnlp_main_797",
+      "excerpt": "measures how well an explanation supports a given prediction compared to",
+      "locator": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_797_02",
+      "source_id": "S_2025_emnlp_main_797",
+      "excerpt": "We evaluate explanation faithfulness at the system level",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1496_01",
+      "source_id": "S_2025_emnlp_main_1496",
+      "excerpt": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+      "locator": "3.1 Diagnosticity; PDF p. 3"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1496_02",
+      "source_id": "S_2025_emnlp_main_1496",
+      "excerpt": "the metric must be capable of evaluating externally provided explanations.",
+      "locator": "Limitations; PDF p. 10"
+    },
+    {
+      "evidence_id": "E_2026_eacl_long_177_01",
+      "source_id": "S_2026_eacl_long_177",
+      "excerpt": "faithfulness is defined as prediction sensitivity",
+      "locator": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2026_eacl_long_177_02",
+      "source_id": "S_2026_eacl_long_177",
+      "excerpt": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+      "locator": "K.3 contrary hint; PDF p. 23"
+    },
+    {
+      "evidence_id": "E_2026_groundlm_1_35_01",
+      "source_id": "S_2026_groundlm_1_35",
+      "excerpt": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+      "locator": "3.2 Explanation Conditions; PDF p. 3"
+    },
+    {
+      "evidence_id": "E_2026_groundlm_1_35_02",
+      "source_id": "S_2026_groundlm_1_35",
+      "excerpt": "we apply no formal equivalence test",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_acl_long_202_01",
+      "source_id": "S_2026_acl_long_202",
+      "excerpt": "our notion of faithfulness is framed through the lens of",
+      "locator": "Appendix A: Concept Alignment; PDF p. 15"
+    },
+    {
+      "evidence_id": "E_2026_acl_long_202_02",
+      "source_id": "S_2026_acl_long_202",
+      "excerpt": "Although internal knowledge may become outdated",
+      "locator": "Limitations: Internal Design; PDF p. 10"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1231_01",
+      "source_id": "S_2025_emnlp_main_1231",
+      "excerpt": "Independent evaluation is essential to avoid bias",
+      "locator": "2 Self-generated counterfactual explanations; PDF p. 3"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1231_02",
+      "source_id": "S_2025_emnlp_main_1231",
+      "excerpt": "does not account for the properties of invalid SCEs.",
+      "locator": "7 Limitations; PDF p. 10"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C_P001_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P001.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P002_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P002.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P003.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_01",
+      "text": "Draft citation context: Wang and Atanasova, 2025, limitation on criterion scope, p. 10. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_427_01",
+        "E_2025_emnlp_main_427_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_02",
+      "text": "Draft citation context: Zhao and Daumé, 2025, system-level limitation, p. 9. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_797_01",
+        "E_2025_emnlp_main_797_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_03",
+      "text": "Draft citation context: Zaman and Srivastava, 2025, diagnosticity design, p. 3. Paragraph context: The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. Wang and Atanasova, 2025, limitation on criterion scope, p. 10; Zhao and Daumé, 2025, system-level limitation, p. 9; Zaman and Srivastava, 2025, diagnosticity design, p. 3.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1496_01",
+        "E_2025_emnlp_main_1496_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P004.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_01",
+      "text": "Draft citation context: FaithLM, 2026, method, p. 4. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_eacl_long_177_01",
+        "E_2026_eacl_long_177_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_02",
+      "text": "Draft citation context: Rao and Layek, 2026, filler-control design, p. 3. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_groundlm_1_35_01",
+        "E_2026_groundlm_1_35_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_03",
+      "text": "Draft citation context: REFLEX, 2026, scope limitation, p. 15. Paragraph context: The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. FaithLM, 2026, method, p. 4; Rao and Layek, 2026, filler-control design, p. 3; REFLEX, 2026, scope limitation, p. 15.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_acl_long_202_01",
+        "E_2026_acl_long_202_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P005_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P005.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P006_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P006.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P007_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P007.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P008.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P009_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P009.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P009_SOURCE_01",
+      "text": "Draft citation context: SR-NLE, operational design, p. 6. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_427_01",
+        "E_2025_emnlp_main_427_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P009_SOURCE_02",
+      "text": "Draft citation context: PEX, operational design, p. 4. Paragraph context: SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. SR-NLE, operational design, p. 6; PEX, operational design, p. 4.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_797_01",
+        "E_2025_emnlp_main_797_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P010_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P010.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P010_SOURCE_01",
+      "text": "Draft citation context: Mayne et al., 2025, evaluation detail, p. 10. Paragraph context: Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. Mayne et al., 2025, evaluation detail, p. 10.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1231_01",
+        "E_2025_emnlp_main_1231_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P011_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P011.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P011_SOURCE_01",
+      "text": "Draft citation context: Zaman and Srivastava, 2025, scope, p. 10. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1496_01",
+        "E_2025_emnlp_main_1496_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P011_SOURCE_02",
+      "text": "Draft citation context: FaithLM, 2026, failure analysis, p. 23. Paragraph context: Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. Zaman and Srivastava, 2025, scope, p. 10; FaithLM, 2026, failure analysis, p. 23.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_eacl_long_177_01",
+        "E_2026_eacl_long_177_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P012_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P012.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P012_SOURCE_01",
+      "text": "Draft citation context: Rao and Layek, 2026, statistical limitation, p. 9. Paragraph context: Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. Rao and Layek, 2026, statistical limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_groundlm_1_35_01",
+        "E_2026_groundlm_1_35_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P013_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P013.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P014_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P014.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P015_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P015.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P016_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P016.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P017_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P017.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P018_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P018.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P019_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P019.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P020_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P020.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P021_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P021.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P022_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P022.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P023_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P023.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P024_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P024.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P025_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P025.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P026_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P026.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P027_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P027.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P028_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P028.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P029_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P029.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P030_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P030.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P031_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P031.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P032_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P032.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P033_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P033.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    }
+  ],
+  "technical_terms": [
+    "neutral rewrite",
+    "answer re-injection"
+  ],
+  "limitations": [
+    "The proposed study is limited to selected classification tasks, model families and operational faithfulness metrics.",
+    "Behavioral intervention measures can be unstable and do not reveal a model's private reasoning.",
+    "The reviewed corpus does not establish field-wide novelty."
+  ],
+  "unknowns": [
+    "The exact datasets, versions, licences, models and reproducible metric implementations remain to be frozen.",
+    "No proposed experiment has been run and no performance result is established.",
+    "Each generated paragraph-to-source claim mapping requires Half 1 approval before production use."
+  ]
+}
