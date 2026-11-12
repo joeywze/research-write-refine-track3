@@ -1,0 +1,1195 @@
+{
+  "package_id": "cluster13_revision_history_audit_v0",
+  "judgment_origin": "automated",
+  "scope": "cited-literature",
+  "skipped_paragraph_ids": [
+    "P001",
+    "P002",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035",
+    "P036",
+    "P037"
+  ],
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use the top three passages from cited sources, not full papers.",
+    "Uncited paragraphs are outside this run's evaluation scope, not verified.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ],
+  "counts": {
+    "SUPPORTED": 8,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 15
+  },
+  "factual_claim_count": 23,
+  "results": [
+    {
+      "paragraph_id": "P003",
+      "claim": "hybrid and edited text are not a new setting",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354",
+        "S_2025_emnlp_main_268"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.307261318992519
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.30309071708714225
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "predict the probability of being AI-generated",
+          "page": "3.3 Information Fusion Module; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_01",
+          "similarity": 0.2780828428801629
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote about models rewriting their own generated texts shows one form of edited text was studied, but the supplied quotes do not establish that hybrid text was studied or support the broader claim that both are not new settings.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "SenDetEX explicitly detects sentence-level human–AI mixtures",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_268"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "predict the probability of being AI-generated",
+          "page": "3.3 Information Fusion Module; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_01",
+          "similarity": 0.3307779952471753
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Its advantage will diminish in sparse or noisy context",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_02",
+          "similarity": 0.3071808965682394
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes say the system predicts the probability of being AI-generated and discuss a context limitation, but they do not establish that it detects sentence-level human–AI mixtures.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "frames its label as sentence provenance",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_268"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Its advantage will diminish in sparse or noisy context",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_02",
+          "similarity": 0.23316150355384022
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "predict the probability of being AI-generated",
+          "page": "3.3 Information Fusion Module; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_01",
+          "similarity": 0.22072313147296396
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes say the model predicts the probability of AI generation and that its advantage diminishes with sparse or noisy context. They do not establish that it frames its label specifically as sentence provenance.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "notes limits on available context",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_268"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Its advantage will diminish in sparse or noisy context",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_02",
+          "similarity": 0.2775981825590993
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "predict the probability of being AI-generated",
+          "page": "3.3 Information Fusion Module; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_01",
+          "similarity": 0.26435348681737175
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says its advantage diminishes in sparse context, which supports the statement that it notes a limitation when context is limited.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_268_02"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "CoPA and TempParaphraser demonstrate evasion through paraphrasing",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_268"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "predict the probability of being AI-generated",
+          "page": "3.3 Information Fusion Module; PDF p. 5",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_01",
+          "similarity": 0.2707143341730824
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_268",
+          "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+          "factual_claim": "Draft citation context: SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Its advantage will diminish in sparse or noisy context",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.268/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_268_02",
+          "similarity": 0.26397217086394165
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes concern SenDetEX and do not address CoPA, TempParaphraser, or evasion through paraphrasing.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "OpenTuringBench includes manipulated text",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.2223785306771866
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.21952304656600677
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.05290462102342768
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source describes models rewriting their previously generated texts, which supports the claim that OpenTuringBench includes manipulated text.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1354_01"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "unseen generators",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.12985034959566516
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.12818298715302084
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.0
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes establish that models rewrite their own previously generated texts and that the benchmark is limited to English. Neither establishes evaluation on unseen generators.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "domain shift",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.11705988121034429
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.11555675665135544
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.020533178054972415
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes mention English-only coverage and models rewriting their own generated texts, but do not establish that OpenTuringBench includes domain shift.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "including rewriting by the same generator",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.27368286379669754
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.26177651443374744
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.025189456088869383
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The quote says each model rewrites texts it previously generated, supporting rewriting by the same generator.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1354_01"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "PAWN++ tests realistic web rewrites",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_wac_1_25"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "Every machine text is paired with the human score",
+          "page": "8.1 Methods and Protocol; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_01",
+          "similarity": 0.22819495358199215
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "should not be treated as standalone proof of authorship",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_02",
+          "similarity": 0.22628943715320926
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes do not establish that PAWN++ tests realistic web rewrites. Pairing machine text with a human score does not show that the texts are web rewrites.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "emphasizes that detector scores are not proof of authorship",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_wac_1_25"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "should not be treated as standalone proof of authorship",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_02",
+          "similarity": 0.3166341350715783
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "Every machine text is paired with the human score",
+          "page": "8.1 Methods and Protocol; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_01",
+          "similarity": 0.24266831728748384
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote says something should not be treated as standalone proof of authorship, but it does not identify that something as detector scores. It also does not support the statement’s unqualified claim that scores are not proof of authorship.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "AIGT-SignalBench evaluates human-edited AI drafts.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_wac_1_25"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "Every machine text is paired with the human score",
+          "page": "8.1 Methods and Protocol; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_01",
+          "similarity": 0.21908039803189283
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_wac_1_25",
+          "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+          "factual_claim": "Draft citation context: PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "should not be treated as standalone proof of authorship",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.wac-1.25/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_wac_1_25_02",
+          "similarity": 0.20276759223417054
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes concern PAWN++ and do not establish what AIGT-SignalBench evaluates.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_emnlp_main_2177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "The key construction step is reference-matched generation.",
+          "page": "5.1 Benchmark Construction; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_01",
+          "similarity": 0.46722263960565763
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "we do not claim to remove all possible shortcuts.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_02",
+          "similarity": 0.449890862907881
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes support that reference-matched generation is a key construction step, but do not establish that it reduces topic and source artifacts.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "still acknowledging incomplete shortcut removal",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_emnlp_main_2177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "we do not claim to remove all possible shortcuts.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_02",
+          "similarity": 0.23857848790569447
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "The key construction step is reference-matched generation.",
+          "page": "5.1 Benchmark Construction; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_01",
+          "similarity": 0.23699699110431907
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly says it does not claim to remove all possible shortcuts, supporting the statement that it acknowledges incomplete shortcut removal.",
+      "evidence_ids": [
+        "E_2026_emnlp_main_2177_02"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_emnlp_main_2177"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "we do not claim to remove all possible shortcuts.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_02",
+          "similarity": 0.2984823216736728
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_emnlp_main_2177",
+          "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+          "factual_claim": "Draft citation context: Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9. Paragraph context: The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. PAWN++, 2026, source-matched evaluation, p. 7; PAWN++, limitation on authorship inference, p. 9; Shortcut-Controlled Evaluation, 2026, construction, p. 7; Shortcut-Controlled Evaluation, limitation, p. 9.",
+          "evidence_quote": "The key construction step is reference-matched generation.",
+          "page": "5.1 Benchmark Construction; PDF p. 7",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.emnlp-main.2177/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_emnlp_main_2177_01",
+          "similarity": 0.2965037324004412
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes concern reference-matched generation and shortcut removal. Neither addresses Spotlights and Blindspots or its evaluation of cross-dataset failures and false-positive patterns.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "CoPA uses contrastive decoding to produce paraphrase attacks",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_433"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_01",
+          "similarity": 0.3698633699238302
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "focuses exclusively on English text",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_02",
+          "similarity": 0.3319545224949483
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes describe CoPA as a training-free paraphrase approach, but do not establish that it uses contrastive decoding to produce paraphrase attacks.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "without training a separate paraphraser",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_433"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_01",
+          "similarity": 0.1804748448448281
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "focuses exclusively on English text",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_02",
+          "similarity": 0.16197722135920775
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source describes CoPA as a “training-free paraphrase approach,” which supports the statement that it does not require training a separate paraphraser.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_433_01"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "its reported evaluation is English-only",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_433"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "focuses exclusively on English text",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_02",
+          "similarity": 0.27688526279138537
+        },
+        {
+          "claim_id": "C_P009_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_433",
+          "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+          "factual_claim": "Draft citation context: CoPA, 2025, method, p. 2; CoPA, limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.433/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_433_01",
+          "similarity": 0.25194596259850893
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The CoPA source says it “focuses exclusively on English text,” supporting the statement that its reported evaluation is English-only.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_433_02"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "TempParaphraser repeatedly paraphrases text to simulate high-temperature generation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1607"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "used in the paper is equivalent to recall.",
+          "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_01",
+          "similarity": 0.340229888375326
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "which may result in a loss of long-range contextual coherence",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_02",
+          "similarity": 0.322842341737762
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes discuss recall and a possible loss of long-range coherence. Neither establishes that TempParaphraser repeatedly paraphrases text to simulate high-temperature generation.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "its headline analysis emphasizes detector recall",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1607"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "used in the paper is equivalent to recall.",
+          "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_01",
+          "similarity": 0.24672739577245498
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "which may result in a loss of long-range contextual coherence",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_02",
+          "similarity": 0.22684756569396983
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "One quote says an unspecified metric used in the paper is equivalent to recall, but neither quote establishes that the headline analysis emphasizes detector recall.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "its authors identify coherence as a limitation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1607"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "which may result in a loss of long-range contextual coherence",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_02",
+          "similarity": 0.3489962549137997
+        },
+        {
+          "claim_id": "C_P009_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1607",
+          "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+          "factual_claim": "Draft citation context: TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "used in the paper is equivalent to recall.",
+          "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1607/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1607_01",
+          "similarity": 0.3348443228340461
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source’s limitations section says the method may cause a loss of long-range contextual coherence, supporting the statement that its authors identify coherence as a limitation.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1607_02"
+      ]
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "OpenTuringBench evaluates several manipulations and generator/domain transfer",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.2882746231400266
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.28517897704208933
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.08277524812778764
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes mention models rewriting their own texts and an English-only benchmark, but do not establish that OpenTuringBench evaluates several manipulations or generator/domain transfer.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P009",
+      "claim": "also being bounded to English",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1354"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.30521027176721416
+        },
+        {
+          "claim_id": "C_P009_SOURCE_03",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, language limitation, p. 9. Paragraph context: CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. CoPA, 2025, method, p. 2; CoPA, limitation, p. 9; TempParaphraser, primary metric, p. 16; TempParaphraser, coherence limitation, p. 9; OpenTuringBench, language limitation, p. 9.",
+          "evidence_quote": "with each model rewriting its own previously generated texts.",
+          "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_01",
+          "similarity": 0.25753983773743294
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1354",
+          "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+          "factual_claim": "Draft citation context: OpenTuringBench, rewrite design, p. 4. Paragraph context: The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. SenDetEX, 2025, task definition, p. 5; SenDetEX, context limitation, p. 9; OpenTuringBench, rewrite design, p. 4.",
+          "evidence_quote": "Our benchmark currently refers only to English texts.",
+          "page": "Limitations: Language usage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1354/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1354_02",
+          "similarity": 0.0522278186992783
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly states that OpenTuringBench currently refers only to English texts.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1354_02"
+      ]
+    }
+  ],
+  "skipped_uncited_claims": [
+    {
+      "paragraph_id": "P004",
+      "claim": "The 2026 comparison set narrows the contribution further."
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "schema": "track3_claim_evidence_development_v1",
+  "prepared_date": "2026-11-05",
+  "cluster": 0,
+  "scientific_results_independently_reproduced": false,
+  "team_a_approval": "pending",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "paper_id": "2025.emnlp-main.1063",
+      "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Training-free evaluation scope” and “Failure from query segmentation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim attention-guided, training-free query perturbation for hallucination detection as wholly new without distinguishing its contribution from AGSER.",
+      "text_sha256": "4610a5b59bd05cabb6a82876fd150593cb205d28bd14f06fd414b5742591acd9",
+      "pdf_sha256": "bf214793fa77aeada2c14f52834f6d704fc3e9cb0c6567ec1e4d9bf6853d3abe",
+      "citations": [
+        {
+          "pdf_page": 11,
+          "section": "Appendix A: Details of Datasets",
+          "url": "https://aclanthology.org/2025.emnlp-main.1063.pdf#page=11",
+          "normalized_quote_sha256": "dc1cbe66a1390377a63eab5e5269359000cb5a1155931f3d6396334dbc7344ea"
+        },
+        {
+          "pdf_page": 12,
+          "section": "Appendix I: Bad Cases",
+          "url": "https://aclanthology.org/2025.emnlp-main.1063.pdf#page=12",
+          "normalized_quote_sha256": "df69fbb10a60b9d5def0c08d8f33b1f9d6b2d1008d20b0612b0f59024aca9d55"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C02",
+      "paper_id": "2025.emnlp-main.1124",
+      "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Feature extraction” and “Statement-level scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim novelty merely for unsupervised confidence-pseudolabeled probing of verification-response activations; IRIS already evaluates this combination.",
+      "text_sha256": "5bf4e1ee6e1adff29aa6213c499b23b32d6284ef248715cbdfb604562061249e",
+      "pdf_sha256": "9ce6ea396da34a141d67c5fd70b955241fa00e51133805ab20ec163e43db3798",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "2.3 Classifier Training",
+          "url": "https://aclanthology.org/2025.emnlp-main.1124.pdf#page=4",
+          "normalized_quote_sha256": "ebcb75fd9b163332cdb7b3073cbe08ecef8dc8d81f91aea52c98982ea675e8d7"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations — Data Coverage",
+          "url": "https://aclanthology.org/2025.emnlp-main.1124.pdf#page=9",
+          "normalized_quote_sha256": "0ac0da37d1c761973ff34365bb31904ce9316061fa4750ee2cc64c6bccfc7e44"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C03",
+      "paper_id": "2025.emnlp-main.1228",
+      "title": "Identifying and Answering Questions with False Assumptions: An Interpretable Approach",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Atomic-assumption scope” and “Retrieval dependence”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim novelty for retrieving external evidence and generating/validating atomic question assumptions to detect false premises and explain corrections.",
+      "text_sha256": "2c5a131db257cb7b8f0846617e8192e2e2e5526d53e0b2b183560bb2c3d999b9",
+      "pdf_sha256": "04a8b19954e1a22d8c073e739c409ee31557fe60bd20c9f5a12811ca01a6c583",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Generating and Validating Atomic Assumptions",
+          "url": "https://aclanthology.org/2025.emnlp-main.1228.pdf#page=5",
+          "normalized_quote_sha256": "82c14768d3c5605efc86eb430e0ded35341b63ead748b22ac1380e6d2e526278"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1228.pdf#page=10",
+          "normalized_quote_sha256": "c4f1fd61a66437d3669160251380eaa6184e44a58ad7a08b5a61a53774fab6a7"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C04",
+      "paper_id": "2025.emnlp-main.1239",
+      "title": "Hallucination Detection in LLM s Using Spectral Features of Attention Maps",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational hallucination definition” and “Cross-architecture limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim to introduce the first supervised attention-map or Laplacian-spectral hallucination detector; LapEigvals is a relevant baseline.",
+      "text_sha256": "3c17e726ebdd86e1dec9bc10ac820240b58524bc9cd1b757734b938b5955c6ce",
+      "pdf_sha256": "1a63e7a63dc2c6bc05763e0ca74796ecd301bdfd2df45f0ff4a67b454103b164",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "4.1 Dataset construction",
+          "url": "https://aclanthology.org/2025.emnlp-main.1239.pdf#page=3",
+          "normalized_quote_sha256": "db4fcc50eb036c6eab20054512e9a3da6ee6cf82ba9ae6991ec90dbafaec11f1"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1239.pdf#page=9",
+          "normalized_quote_sha256": "24757d0284e89557239b23e51f331368ba6fc30abc00195f8e7527fa973db4a5"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C05",
+      "paper_id": "2025.emnlp-main.143",
+      "title": "M ed H allu: A Comprehensive Benchmark for Detecting Medical Hallucinations in Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Construction and retention criterion” and “Corpus coverage limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that medical hallucination detection benchmarks, difficulty stratification, length matching, source-context judging, or prompted abstention are new without positioning against MedHallu.",
+      "text_sha256": "ff9e33a1d6fef94bc989cce35e672a66f4363f951e2e138660ce020e037f1a8a",
+      "pdf_sha256": "2920b927937c68c661b5f822c9f2f4899630c13184c8f69dd6a2e954debb6148",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4 Implementation Details",
+          "url": "https://aclanthology.org/2025.emnlp-main.143.pdf#page=5",
+          "normalized_quote_sha256": "8bd2645ae96e01f90a1bca68594f1fd56bf20e51aeae4ab9998dec19bba8088a"
+        },
+        {
+          "pdf_page": 8,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.143.pdf#page=8",
+          "normalized_quote_sha256": "6feedff9f27a695d36fd75b90e8b548be7b45efc7dda53cef704fdddb8fac087"
+        }
+      ],
+      "quoted_words": 20
+    },
+    {
+      "claim_id": "C06",
+      "paper_id": "2025.emnlp-main.1446",
+      "title": "EGOILLUSION : Benchmarking Hallucinations in Egocentric Video Understanding",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational evaluation metric” and “Auditory scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim to introduce the first egocentric audiovisual hallucination benchmark; it should differentiate its detection target, supervision, modalities, or evaluation protocol from EGOILLUSION.",
+      "text_sha256": "27e53deee925f8326e1e93c55c8ac3987905d642b1900a58d7368140df272def",
+      "pdf_sha256": "2024539d4f9276fe09fbac0ae788a60f92be36b32591592289b23255ca45c955",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "4 Experimental Setup — Hallucination Evaluation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1446.pdf#page=6",
+          "normalized_quote_sha256": "e424fde3bc1ba41253674a398fcaa0b0cea854bddb342d732b8a814306ac3a0a"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitation and Future Work",
+          "url": "https://aclanthology.org/2025.emnlp-main.1446.pdf#page=9",
+          "normalized_quote_sha256": "77deefb51087bd204001ec53733d270d94f6457b990b9bafae648ba0d3833749"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C07",
+      "paper_id": "2025.emnlp-main.1452",
+      "title": "Multi-Frequency Contrastive Decoding: Alleviating Hallucinations for Large Vision-Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Training-free mitigation scope” and “Potential bias amplification”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim novelty merely for training-free frequency-based contrastive hallucination mitigation or adaptive use of distribution divergence and entropy; MFCD and MFCD-Plus already implement these ideas.",
+      "text_sha256": "1e457e2005d900a7df80e313c885f3f84417220a42638db988c4759fd14b62f4",
+      "pdf_sha256": "a28fe93b0fff27d088d87dbb6580287d032c07854ce47ffc02c11439eed87109",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "1 Introduction",
+          "url": "https://aclanthology.org/2025.emnlp-main.1452.pdf#page=2",
+          "normalized_quote_sha256": "ced358b53875f2cd9b71cd86c15720380818925547148d13cedef1f52f336d27"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1452.pdf#page=9",
+          "normalized_quote_sha256": "3b609d49f1942e57046b7d24894d9ae02a31e06822c5a4180d11272751b7a971"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C08",
+      "paper_id": "2025.emnlp-main.1481",
+      "title": "How Much Do LLM s Hallucinate across Languages? On Realistic Multilingual Estimation of LLM Hallucination",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detector input scope” and “Synthetic-to-natural error caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim multilingual span detection, translate-trained hallucination detection, or precision/recall-adjusted multilingual rate estimation as wholly new contributions without distinguishing this study.",
+      "text_sha256": "bd67488131afa5e5e7b8dbfa0b40b8ecea7f85d79fc340f127dd584d44c64f4f",
+      "pdf_sha256": "5872b455419bbb85afd76e504c1f24707c3146f58b61905d74e7784dc6be6162",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.2 Multilingual Hallucination Detection — Training",
+          "url": "https://aclanthology.org/2025.emnlp-main.1481.pdf#page=5",
+          "normalized_quote_sha256": "5ce9d0a9146115da7200e253ac612ce3aed875d8f6f9f87c24c37c00304b062b"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1481.pdf#page=9",
+          "normalized_quote_sha256": "ce39edb447dcb1a88382de3696f8b3246ada144436ddb859f524f25be9372002"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C09",
+      "paper_id": "2025.emnlp-main.150",
+      "title": "Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational hallucination-label definition” and “Residual hallucination limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty merely for using internal-layer signals, token-level LLM-derived hallucination labels, or learned adaptive intervention; ActLCD already combines these.",
+      "text_sha256": "c14f4c8a715dc5de2cae360c89f853bfc93398c0291054c59ef5e86ead0095f3",
+      "pdf_sha256": "9064569b7ca9121def54b12001b1e0e4a18ed8e0c49152c795c8f406875c50de",
+      "citations": [
+        {
+          "pdf_page": 12,
+          "section": "Appendix A, Step 2: Span-level hallucination annotation",
+          "url": "https://aclanthology.org/2025.emnlp-main.150.pdf#page=12",
+          "normalized_quote_sha256": "140073f0b25968495da766f2ca43dd2543cd10ba8b597b75c53d19a92e8d9cff"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitation",
+          "url": "https://aclanthology.org/2025.emnlp-main.150.pdf#page=9",
+          "normalized_quote_sha256": "162866abe23123eff94b73c41fa123bec757b8efa55d75df87f56c28042adf95"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C10",
+      "paper_id": "2025.emnlp-main.1515",
+      "title": "Where Confabulation Lives: Latent Feature Discovery in LLM s",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detector input location” and “Prompt and topic dependence”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not present pre-generation activation probing or sparse latent steering for unknown-entity confabulation as an unstudied idea.",
+      "text_sha256": "0ce2dc97ab8017dad499fb290de75b52377ba7303b9d26efb7e363abe4d0f843",
+      "pdf_sha256": "b5829c968369778e8f10d86217f6f695d213b47c898b6915ebfa33c47791172d",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "2.3 Protocol",
+          "url": "https://aclanthology.org/2025.emnlp-main.1515.pdf#page=4",
+          "normalized_quote_sha256": "339452994e5bde20008450d5b9b1967e165f63ce9bf46ce59113733a9b9ee17e"
+        },
+        {
+          "pdf_page": 8,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1515.pdf#page=8",
+          "normalized_quote_sha256": "8f3a7b68a09497bb6c2b078f7d9801e17f8036df77347ee9c7ba041866802f90"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C11",
+      "paper_id": "2025.emnlp-main.1554",
+      "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Consistency distinguished from accuracy” and “Length generalization limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe this study’s human labels as factuality or hallucination labels, or its consistency correlations as hallucination-detection performance.",
+      "text_sha256": "a57709abeb0b369380957a994ad310aa74a63c2b4726d37225398e0fa7350568",
+      "pdf_sha256": "b75a140c33a73a59d0c57b92edae513ce9aa5290dbf7e48447e47d23152da21c",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "section": "1 Introduction",
+          "url": "https://aclanthology.org/2025.emnlp-main.1554.pdf#page=2",
+          "normalized_quote_sha256": "ae018c779852dd0442ffcfda8b0e0e16f4e9741545599ddc7617bb1ce1f71935"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1554.pdf#page=9",
+          "normalized_quote_sha256": "03824beb9bd47c242b50f3aa281f6c96b6f58417a68af623dce5018400760205"
+        }
+      ],
+      "quoted_words": 22
+    },
+    {
+      "claim_id": "C12",
+      "paper_id": "2025.emnlp-main.1651",
+      "title": "P rune CD : Contrasting Pruned Self Model to Improve Decoding Factuality",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Benchmark-supervised layer selection” and “Memory caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe PruneCD as a trained hallucination detector or treat its factuality improvements as detection accuracy; a detection proposal needs explicit prediction units, label definitions, and discrimination/calibration metrics.",
+      "text_sha256": "4b89a39055eef788d871463fa5c20c138535c63bfc4ef740768bcf5018c32525",
+      "pdf_sha256": "12ca520b99091a3f1080fd57a9e082a963919764a8c7401c4aa3a28790028073",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4.2 Factual Layer Search via Ablation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1651.pdf#page=4",
+          "normalized_quote_sha256": "b6472e3584af3dda5e68807909470416b06e90e9735417f33dcaac41a6ab4fc4"
+        },
+        {
+          "pdf_page": 6,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1651.pdf#page=6",
+          "normalized_quote_sha256": "e690b42bfa830241935d11fb14b0bbbf19518c01e36914358ef976b3d30d266d"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C13",
+      "paper_id": "2025.emnlp-main.174",
+      "title": "Shallow Focus, Deep Fixes: Enhancing Shallow Layers Vision Attention Sinks to Alleviate Hallucination in LVLM s",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Method” and “Author-stated limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that shallow attention-sink features are new without distinguishing the proposed detector from this paper's head-count and skewness analyses.",
+      "text_sha256": "3774b383fcd22dfb5fbbb047c423342edb3f121b98fde3f42dd8728eb0c9c10c",
+      "pdf_sha256": "8ccb42d90c74b89ef9ecde26157b5f2d01b14cb9f3ce619febc54ef9b9aa15e1",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Enhancing Attention Vision Sink",
+          "url": "https://aclanthology.org/2025.emnlp-main.174.pdf#page=5",
+          "normalized_quote_sha256": "46bbe39a73df3a8bc5e478c4f5b7a7733191d150969870efecd1045cc54913ec"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.174.pdf#page=9",
+          "normalized_quote_sha256": "991a1abd69f9159538bc75cd65251436931e654ce1e7f4da976c69624ee4de15"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C14",
+      "paper_id": "2025.emnlp-main.1761",
+      "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Targeted human validation scope” and “Causal caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that length baselines or ROUGE-length confounding are novel discoveries; compare new detectors with Len, Mean-Len, and Std-Len under comparable sampling budgets.",
+      "text_sha256": "95a710ba61945dc39ca672d65e3bebd65423111ca5d0409cb904f5d08f68073c",
+      "pdf_sha256": "abdc9f833d8b33eab4c8cd7ccc0a0c4e8fcc72fc548bc9e598a50ef154b1f553",
+      "citations": [
+        {
+          "pdf_page": 13,
+          "section": "E Additional Analysis of Human Evaluation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1761.pdf#page=13",
+          "normalized_quote_sha256": "7e4e6aaf21d055943e16d398647adedd5c6b83918ee941abf078b6fe213676fe"
+        },
+        {
+          "pdf_page": 18,
+          "section": "N Causality Discussion",
+          "url": "https://aclanthology.org/2025.emnlp-main.1761.pdf#page=18",
+          "normalized_quote_sha256": "8959ab1523f5bf19f3b4b20331baed5141fc2f13e373f1f24d804728f3f2df56"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C15",
+      "paper_id": "2025.emnlp-main.1807",
+      "title": "Unconditional Truthfulness: Learning Unconditional Uncertainty of Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Supervised token-confidence learning” and “Cross-task generalization caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim novelty merely for supervised hallucination detection using attention, token probabilities, or recurrent confidence propagation; TAD already combines these components.",
+      "text_sha256": "379f5e6a0067937c9ecdc7b9f72d1229786f4d424ff4f8c76ac3d536a66d54fa",
+      "pdf_sha256": "4c8285e90b95c7b8d11fd693bc11320fe70bf10f92d659adf776b13a4efd820e",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "4 Trainable Attention-Based Conditional Dependency",
+          "url": "https://aclanthology.org/2025.emnlp-main.1807.pdf#page=4",
+          "normalized_quote_sha256": "7dc5c5f56b801d7cf5699c8585825a1d3a8ba0af22530d4839db53cd4b8f61c6"
+        },
+        {
+          "pdf_page": 17,
+          "section": "A.3 Generalization to Out-of-Domain Tasks",
+          "url": "https://aclanthology.org/2025.emnlp-main.1807.pdf#page=17",
+          "normalized_quote_sha256": "eea43f95d6b445bf4dd556e074af0d2b80f8a7729c4b6042d80dc704282e43e2"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C16",
+      "paper_id": "2025.emnlp-main.1809",
+      "title": "A Head to Predict and a Head to Question: Pre-trained Uncertainty Quantification Heads for Hallucination Detection in LLM Outputs",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Frozen-generator supervision” and “Limits under confident misinformation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim novelty merely for supervised claim-level detection from attention and probability features, transformer-based uncertainty heads, or English-to-other-language detector transfer.",
+      "text_sha256": "e7ccfec3c25a23aa3e994ccce5c156ed2fe69866ed5fc4f85bcd5b0edfb519ea",
+      "pdf_sha256": "d0951469cfd895672909d45aa79742df303dd3fea3b9c6c8334528ed243d25fd",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Architecture of UQ Heads",
+          "url": "https://aclanthology.org/2025.emnlp-main.1809.pdf#page=5",
+          "normalized_quote_sha256": "14c529c58c9c2427625e0efc7d644bf5826573ba516c4e95786340854a243d8a"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1809.pdf#page=9",
+          "normalized_quote_sha256": "386351e715de253137f92214c78ec01ac306fb417df30375ce97bd62060518d9"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C17",
+      "paper_id": "2025.emnlp-main.187",
+      "title": "Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detector inputs” and “Mitigation caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim novelty merely for combining semantic and verbal uncertainty in hallucination detection or for probing question-final hidden states before generation.",
+      "text_sha256": "636c2cb4cfbfeda76808dcf744e488c52c562061259adaec9d3e9c435b7bbf46",
+      "pdf_sha256": "f77307524813bbf5912b11fb5e47e640c8657e5b437aa6f88dd8e88f0e9031aa",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4.1 Hallucination Detection with Semantic and Verbal Uncertainty",
+          "url": "https://aclanthology.org/2025.emnlp-main.187.pdf#page=5",
+          "normalized_quote_sha256": "bc4df4876432f394dc6226b0fbbb4db3e9deb42ccac4b40208887e9e6c958546"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.187.pdf#page=9",
+          "normalized_quote_sha256": "2e22975659c998f447a0254da9b8da2aa29d17b4df2a82f4dd5dc15c47edcedd"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C18",
+      "paper_id": "2025.emnlp-main.631",
+      "title": "Mitigating Hallucinations in Vision-Language Models through Image-Guided Head Suppression",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Label definition” and “Deployment limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe SPIN as a supervised or calibrated hallucination detector; a detection proposal should evaluate explicit predictions against independently sourced labels.",
+      "text_sha256": "1242ee9f1035e030c35d54af819ea0d664fd77739fc1793f0ff85e0c3838263d",
+      "pdf_sha256": "b05f78ae0cd33762b8ffac0ae094348ba9c21a610d6ee85c7baa3e64368c88ca",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4.2 CHAIR Evaluation",
+          "url": "https://aclanthology.org/2025.emnlp-main.631.pdf#page=5",
+          "normalized_quote_sha256": "bd27cbeecc81074fde278093c011fd7abb644eb3fc9794586f9d9acbbf9c63d8"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.631.pdf#page=10",
+          "normalized_quote_sha256": "3b24b90549a857a6a670ba9e8b8e7874b18bee0b0bc99b26e8979e4f8b150004"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C19",
+      "paper_id": "2025.emnlp-main.645",
+      "title": "Expanding before Inferring: Enhancing Factuality in Large Language Models through Premature Layers Interpolation",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Method scope” and “Computational limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present training-free internal-layer manipulation for factuality improvement as wholly novel without distinguishing the proposed contribution from PLI.",
+      "text_sha256": "fdefba2cad2957bbeba1225a37ae9d72b0a674cd2dcae9a75275ad2d85d58cca",
+      "pdf_sha256": "4e851f7c0dba1119091e4c2d381e6623589057532c66932a7ddab41d8cf17886",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3 Method",
+          "url": "https://aclanthology.org/2025.emnlp-main.645.pdf#page=3",
+          "normalized_quote_sha256": "75d22ee7c0b64803e5760c51d730f0cad59083b30138a55f5a652d6cc7193929"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.645.pdf#page=9",
+          "normalized_quote_sha256": "cf03d08d33640b252c8dee1e685f197b4115d614298a50cb050641ea582966ce"
+        }
+      ],
+      "quoted_words": 10
+    },
+    {
+      "claim_id": "C20",
+      "paper_id": "2025.emnlp-main.684",
+      "title": "The Impact of Negated Text on Hallucination with Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Paired evaluation scope” and “Generator–judge dependence”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim novelty merely for evaluating negation robustness in hallucination detection; it should distinguish its contribution from NegHalu's paired label-flipping benchmark and intervention comparisons.",
+      "text_sha256": "b165337213bd0a8accbb26e3c1c53970e3db2c0f354aaa8bddfc91e9d0ad7f1f",
+      "pdf_sha256": "0c0f23a438584474b3c3c360b1ae3dee731659f73cf0a4c6c5280fe44f324dd3",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4 Experimental Setup",
+          "url": "https://aclanthology.org/2025.emnlp-main.684.pdf#page=5",
+          "normalized_quote_sha256": "6df757693cb291d7597d183a8a40902105430262b555d763bd4a7b1d337b6a1d"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.684.pdf#page=10",
+          "normalized_quote_sha256": "4873f64b1185991293129ff2540e3df107117d705c8d02760181f0460b1703cb"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C21",
+      "paper_id": "2025.emnlp-main.725",
+      "title": "SHARP : Steering Hallucination in LVLM s via Representation Engineering",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Detector input” and “Evaluation reproducibility caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that internal-representation probing or cause-specific activation steering for LVLM hallucination is unexplored.",
+      "text_sha256": "582aad5575c9f986140b01f291bcefab766d74ec8c5c5612407764b40fbcd317",
+      "pdf_sha256": "66bed25a0473e02a0986df4b9eb5c8b3d4cbce7ce34fe3586c17098af67fd3ce",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3 Analysis: Diagnosing Hallucination via Representation Separability",
+          "url": "https://aclanthology.org/2025.emnlp-main.725.pdf#page=3",
+          "normalized_quote_sha256": "6508b08b5e691403952dd22ef6ea120bec0ad7cbc852806d449267a1f2122431"
+        },
+        {
+          "pdf_page": 13,
+          "section": "B.3 Implementation Details",
+          "url": "https://aclanthology.org/2025.emnlp-main.725.pdf#page=13",
+          "normalized_quote_sha256": "37c1e6f7b4fb8b413b1a76d85c8a7d403b5392c4b03593ab3b094f6e804ff468"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C22",
+      "paper_id": "2025.emnlp-main.781",
+      "title": "Pierce the Mists, Greet the Sky: Decipher Knowledge Overshadowing via Knowledge Circuit Analysis",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Circuit attribution inputs” and “Generalization limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not treat the paper as establishing broad hallucination-detector superiority; a new detector proposal should report held-out classification metrics, calibration, and appropriate detection baselines.",
+      "text_sha256": "dcde398f9c2d487231647154cbbaa1f03d296e92a4f34cfb8e3d12856816a377",
+      "pdf_sha256": "a40a9009e95d7e7ff62e6bc036e44ef76a9a708fceaaaa8887036eb5767ba337",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2.2 Knowledge Circuit Construction",
+          "url": "https://aclanthology.org/2025.emnlp-main.781.pdf#page=4",
+          "normalized_quote_sha256": "ae2df4df293e3dddf9741ffdd0630ee5e5fb7c85fd11ab254bb959145e39fcf4"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.781.pdf#page=10",
+          "normalized_quote_sha256": "dd61886ddf6a661749a799f5dfa36dc4865fb10db319dbf343b678f0a0c062dd"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C23",
+      "paper_id": "2025.emnlp-main.993",
+      "title": "Humans Hallucinate Too: Language Models Identify and Correct Subjective Annotation Errors With Label-in-a-Haystack Prompts",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Candidate-label-conditioned detector input” and “No ground-truth guarantee”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not describe LiaHR as an established detector of factual hallucinations in generated answers; distinguish subjective reasonableness from factual correctness and source faithfulness.",
+      "text_sha256": "50624b0e6c6b5a56962ef525cffa958cfaee95bc41be61dd5471b68d314d4da6",
+      "pdf_sha256": "18fd872e0a4b716475ddbd2f2895e9290ba20ab0cef8b9680763403e05eee7a5",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3 Methodology — Label-in-a-Haystack",
+          "url": "https://aclanthology.org/2025.emnlp-main.993.pdf#page=3",
+          "normalized_quote_sha256": "d99932315b6e86801c8fb6e8d3f54e3e160dc7cefab1d2b6b23877404aa80f38"
+        },
+        {
+          "pdf_page": 9,
+          "section": "6 Limitations and Ethics",
+          "url": "https://aclanthology.org/2025.emnlp-main.993.pdf#page=9",
+          "normalized_quote_sha256": "9bde1010996f798ff587d453a4035c560ee9557969380887b194071a003c4dd0"
+        }
+      ],
+      "quoted_words": 21
+    }
+  ]
+}

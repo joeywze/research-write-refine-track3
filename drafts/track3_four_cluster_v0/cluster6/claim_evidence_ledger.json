@@ -1,0 +1,434 @@
+{
+  "schema": "track3_claim_evidence_development_v1",
+  "prepared_date": "2026-11-05",
+  "cluster": 6,
+  "scientific_results_independently_reproduced": false,
+  "team_a_approval": "pending",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "paper_id": "2025.emnlp-main.1152",
+      "title": "Transitive self-consistency evaluation of NLI models without gold labels",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Model-label-based evaluation scope” and “English-only limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not equate transitive label consistency with explanation faithfulness; it should define and independently test the relationship between explanations and model decisions.",
+      "text_sha256": "752b950ddb8c7dc711d4fac35f862a09717f0faeab3b1df6222e564cd753b9a0",
+      "pdf_sha256": "d265ad398e1f1f7c816c98ea25ab5943d310b41f967f20ff7c15e7996165baef",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 Evaluating Transitive Consistency",
+          "url": "https://aclanthology.org/2025.emnlp-main.1152.pdf#page=4",
+          "normalized_quote_sha256": "69bc09d4e51b6006f16fbfc1f712103dbc8bbdb7491e5080fd02a9b310ad4ec1"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1152.pdf#page=9",
+          "normalized_quote_sha256": "1b4822b5e9de6d7e6cab3d6b9417b9688b4b5937fb4eb54f97b2f4dd6e8c8066"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C02",
+      "paper_id": "2025.emnlp-main.1231",
+      "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Independent-context behavioural verification” and “Minimality metric excludes invalid outputs”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim that validity alone establishes informative or minimal counterfactual explanations; evaluate both and state the distance definition.",
+      "text_sha256": "618c3da2dd4a374144501446bbe52407c9d37a642762afa4af74d87565360861",
+      "pdf_sha256": "29e77878fe8478caf63ba6ef72269ad828b81976d03cc4ea3fe79a365403b581",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "2 Self-generated counterfactual explanations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1231.pdf#page=3",
+          "normalized_quote_sha256": "38657ab52838492100cced548f041df5684e6d29415cbab95ee5973258eaee49"
+        },
+        {
+          "pdf_page": 10,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1231.pdf#page=10",
+          "normalized_quote_sha256": "cc16f7d8383b0446f24e72d9ac04ae167aadad0e4e4a9ba79c7ea11ecabc2e2a"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C03",
+      "paper_id": "2025.emnlp-main.1319",
+      "title": "Rule Discovery for Natural Language Inference Data Generation Using Out-of-Distribution Detection",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational consistency check” and “Explanation reliability caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must distinguish causal explanation faithfulness from this paper's explanation usefulness, rule overlap, and semantic-consistency criteria; it should not present this study as direct validation of faithful CoT reasoning.",
+      "text_sha256": "b54ca812bf5d9a5d1a2cc4cc0763dedecce8a4b8a8af5b25f3236456b618f9e5",
+      "pdf_sha256": "f0eb1c6ed84bcd5de87a55acd1dc04bab20da4c52613560f114ccb34c44bd783",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.2.3 Automated Rule Generation and Verification",
+          "url": "https://aclanthology.org/2025.emnlp-main.1319.pdf#page=5",
+          "normalized_quote_sha256": "a8a8a5386ba3c9bedcc57659060ac350be771854b3ec7159708d7d2195ee71a5"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1319.pdf#page=9",
+          "normalized_quote_sha256": "8b3d75024c4f79505ccb17ff0be8bf35b4535701d3fef1e7dd05a51f07d80e75"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C04",
+      "paper_id": "2025.emnlp-main.1343",
+      "title": "Sentence Smith: Controllable Edits for Evaluating Text Embeddings",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational validation scope” and “Metric and ranking validity caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present this paper as demonstrating faithful explanations of embedding-model reasoning; it demonstrates transparent input transformations and targeted behavioral evaluation.",
+      "text_sha256": "a683614f4d763e51d88a34cab76e2c549464e2e1411677e84912a0c004672175",
+      "pdf_sha256": "cb220bf84e2fce464df0bd7594242df085e07d552fe3d3d3707620303e4646de",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 Parameterization — Validation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1343.pdf#page=4",
+          "normalized_quote_sha256": "b0d43026a9e0aa9dfbddd319473d72a2b50000bdeed3da405e4f65e183ee0dad"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations — On drawing conclusions about embedding model performance",
+          "url": "https://aclanthology.org/2025.emnlp-main.1343.pdf#page=9",
+          "normalized_quote_sha256": "11b5b5919cde6c1808e944092518ceb923807570c6381e3fb5cf9c20c754af01"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C05",
+      "paper_id": "2025.emnlp-main.1462",
+      "title": "Explaining Differences Between Model Pairs in Natural Language through Sample Learning",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Behavioral evaluation scope” and “Applicability limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate agreement/divergence prediction accuracy with causal or mechanistic faithfulness; add targeted feature interventions if making causal claims.",
+      "text_sha256": "392d7418b6d4d78e59952c7a2379a40cdba0eb3be578346b507b8bc6175cd07c",
+      "pdf_sha256": "f6ab79e8ead2e3890953f2fd56d9dbc630b6eeb2a9432cbc8b221fc160969d84",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.3 Evaluation Metrics",
+          "url": "https://aclanthology.org/2025.emnlp-main.1462.pdf#page=5",
+          "normalized_quote_sha256": "79cfb378f7c15e1ccddfccea5d7b6c47eebfd008c34802f346a9c7f891835933"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1462.pdf#page=9",
+          "normalized_quote_sha256": "661c31b54c7e7fb8157dd9947f991a066d5f4911b478d8d5403d5effbb62bb6f"
+        }
+      ],
+      "quoted_words": 17
+    },
+    {
+      "claim_id": "C06",
+      "paper_id": "2025.emnlp-main.1479",
+      "title": "Do LLM s Behave as Claimed? Investigating How LLM s Follow Their Own Claims using Counterfactual Questions",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Behavioral consistency scope” and “Interaction-scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty for checking prospective model claims against actual outputs after demonstration-removal interventions without distinguishing the proposal from BaC.",
+      "text_sha256": "89721fb73e736135ede2162095b7539b0a2249340cc37edf63626562b37634fb",
+      "pdf_sha256": "4fea49e1403e715717f85f18d962a986f687fd26e454a33b9231658a6ff374ad",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "3.2.2 Constructing the Verification Input from the Original Example",
+          "url": "https://aclanthology.org/2025.emnlp-main.1479.pdf#page=5",
+          "normalized_quote_sha256": "31a9ec3a315138c60a41ecbf7c89a44b35645d5b0ea19f4e23c7b4dbe99dbead"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1479.pdf#page=9",
+          "normalized_quote_sha256": "c68588b134597751c54fec1a62ee0b4ccd4817d7cfe74e4a87c637095c76b5da"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C07",
+      "paper_id": "2025.emnlp-main.1494",
+      "title": "Graph-Guided Textual Explanation Generation Framework",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational faithfulness criterion” and “Unexamined internal mechanism”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A new proposal must not claim that graph-guided use of token or interaction attributions for NLE generation is unexplored; G-TEx already implements and evaluates this approach.",
+      "text_sha256": "ce6317845924d56709e83901c1610ca02aeb903e404fe04b3bb9a95f75a0a3fc",
+      "pdf_sha256": "484e2b2d79d67926b3b74c715d0b658bd00991de50dd0b225e610bd84891b0c4",
+      "citations": [
+        {
+          "pdf_page": 7,
+          "section": "5.1 Faithfulness Evaluation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1494.pdf#page=7",
+          "normalized_quote_sha256": "1d8c0e0c1391f86870468e918661a938fa0716e43d0fc3a7e423374f1d16750d"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1494.pdf#page=9",
+          "normalized_quote_sha256": "a9fb2e7db19cbc2c4f68f56c9249dba63399d6c2864653592d7b3a101f0c592d"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C08",
+      "paper_id": "2025.emnlp-main.1496",
+      "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational definition of diagnosticity” and “Framework scope restriction”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not present metric meta-evaluation using answer-preserving knowledge edits as wholly novel without distinguishing its contribution from CAUSAL DIAGNOSTICITY.",
+      "text_sha256": "1cd7a14a29ecab305aa7e1a3576ede2a833ff06442e3abac137511a0c4098aba",
+      "pdf_sha256": "c30f00aa35b6e80e32a528c3da5c0c84b0b61f5d333ad1b23cdf8a06e2d4b78f",
+      "citations": [
+        {
+          "pdf_page": 3,
+          "section": "3.1 Diagnosticity",
+          "url": "https://aclanthology.org/2025.emnlp-main.1496.pdf#page=3",
+          "normalized_quote_sha256": "24aeb0070cdb9a44abc2d841b00dbed4f06d05805fdaa9a9aa782e8a7c71c5db"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1496.pdf#page=10",
+          "normalized_quote_sha256": "3899607886cbdc2842ba247181aedec233c3b32418fde4622a40ea9dbd71f7eb"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C09",
+      "paper_id": "2025.emnlp-main.1615",
+      "title": "Extractive Fact Decomposition for Interpretable Natural Language Inference in one Forward Pass",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational definition of faithful interpretability” and “Scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A new proposal should not claim novelty merely for encoder-only joint extractive fact decomposition, span-wise NLI, or requiring global–span label agreement.",
+      "text_sha256": "c72c223ac79068a96f5b01eeff23c9901e17e1c2cb52748f59bf889d5ddfcfab",
+      "pdf_sha256": "9b0ea5a845372cc3f816c862333b29157a962f056a4e87d5210864d86daf5fbc",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "5.5 Logical reasoning over spans",
+          "url": "https://aclanthology.org/2025.emnlp-main.1615.pdf#page=6",
+          "normalized_quote_sha256": "8562debc7b865eacf8c729f2a016a672008bd65fede6aff62d1fd346fa83a3a0"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1615.pdf#page=9",
+          "normalized_quote_sha256": "978e78a6532b849303b196495ae38bd77f5b00d5144a38d7e8e596d64cb6d96f"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C10",
+      "paper_id": "2025.emnlp-main.1728",
+      "title": "L i TE x: A Linguistic Taxonomy of Explanations for Understanding Within-Label Variation in Natural Language Inference",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational consistency test” and “Explicit-explanation scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not equate this paper's gold-label support judgments with evidence that generated explanations faithfully expose a model's internal decision process; a causal-faithfulness proposal should separately test prediction–explanation dependence.",
+      "text_sha256": "8e57d781096106989873377282d88a88e4ca733a631610bd35952093dddd11ed",
+      "pdf_sha256": "1fc54aa0bd73efc67ff1817e8f46eb5a7fd4618c9d2fa9cb29263c42d5ef3d34",
+      "citations": [
+        {
+          "pdf_page": 7,
+          "section": "4.3 Model Generation Validation",
+          "url": "https://aclanthology.org/2025.emnlp-main.1728.pdf#page=7",
+          "normalized_quote_sha256": "04f20dd6083b47e10d623e9d8b4aff381ee14e84298751dfbffa59c7814e3049"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.1728.pdf#page=9",
+          "normalized_quote_sha256": "cce7541ec2fe746aad161275a1a60105a83a8bc9df7649de48b92eb01eb13f7a"
+        }
+      ],
+      "quoted_words": 16
+    },
+    {
+      "claim_id": "C11",
+      "paper_id": "2025.emnlp-main.396",
+      "title": "Can LLM s Explain Themselves Counterfactually?",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Context-control design” and “Human-evaluation scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not claim novelty merely for generating self-counterfactual inputs, testing whether they induce target predictions, or comparing evaluation with and without conversation history; this paper already implements those comparisons.",
+      "text_sha256": "85d932367a3aa9b33001e6875574c12099f8ea03ad76f79f828d6939518daeea",
+      "pdf_sha256": "fc922c5ea1b36a3f29845210b284626842c15980badee504313695c73c34ea0a",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 Evaluating CEs",
+          "url": "https://aclanthology.org/2025.emnlp-main.396.pdf#page=4",
+          "normalized_quote_sha256": "c0b7bac44e730d027ce566fa36caba1afce3f1cce54c37d2e8e83f5729ca0479"
+        },
+        {
+          "pdf_page": 10,
+          "section": "9 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.396.pdf#page=10",
+          "normalized_quote_sha256": "c3e6ba45bfde63473e85ce99a2a4cc8de9ec9034f51056d885f8484e1d279b01"
+        }
+      ],
+      "quoted_words": 20
+    },
+    {
+      "claim_id": "C12",
+      "paper_id": "2025.emnlp-main.427",
+      "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational faithfulness criterion” and “Evaluation scope limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that self-critique or attribution-guided refinement for post-hoc explanation faithfulness is unexplored; SR-NLE already implements and evaluates these approaches.",
+      "text_sha256": "75e3251b6455a998d670d238fc6d801e25d3fd2e76ee1d918ae82aa180ba5df6",
+      "pdf_sha256": "2c313cbe5ee0797772892cf7113841d869b6b8bafca036ff0aa2d79c84fb64ae",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "4.3 Evaluation",
+          "url": "https://aclanthology.org/2025.emnlp-main.427.pdf#page=6",
+          "normalized_quote_sha256": "6a54f2c923d56be33ce5f98d443f3d43868d39c6031992382eaffe5728b9fc36"
+        },
+        {
+          "pdf_page": 10,
+          "section": "Limitations — Evaluation Method",
+          "url": "https://aclanthology.org/2025.emnlp-main.427.pdf#page=10",
+          "normalized_quote_sha256": "cb647f48c8b27b9e5acc38b323a7efd79e588e0a5963f62293d628c8edb84a7a"
+        }
+      ],
+      "quoted_words": 19
+    },
+    {
+      "claim_id": "C13",
+      "paper_id": "2025.emnlp-main.512",
+      "title": "F in T rust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Ownership-disclosure assessment” and “Untested targeted alignment”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal should not claim to introduce the first finance-specific ownership-intervention or conflict-disclosure evaluation; FINTRUST already implements these comparisons.",
+      "text_sha256": "5407d753696bac0abd259de0e6a16faca16ac1863991ed59ed4e69ebd2169f3d",
+      "pdf_sha256": "9fc816513b72b1c3695b5e628c781c53700bf2ea989359bda5c95a6f423c173c",
+      "citations": [
+        {
+          "pdf_page": 8,
+          "section": "3.7 Transparency Subset Performance",
+          "url": "https://aclanthology.org/2025.emnlp-main.512.pdf#page=8",
+          "normalized_quote_sha256": "28766d5d8228e2fbc1d5c05b1d1f0668e9c225291351564d392a7c1d2bdf4152"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations and Ethics",
+          "url": "https://aclanthology.org/2025.emnlp-main.512.pdf#page=9",
+          "normalized_quote_sha256": "777d8db8757a2b24543f174d2c0558ecc0a39c39f177a53a1e71014efbdf1ea3"
+        }
+      ],
+      "quoted_words": 15
+    },
+    {
+      "claim_id": "C14",
+      "paper_id": "2025.emnlp-main.529",
+      "title": "Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Explanation scope” and “Intervention coverage limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A new proposal must not claim novelty merely for comparing answer and explanation causal attributions, incorporating layer-wise alignment, or using activation patching to evaluate post-hoc explanation faithfulness.",
+      "text_sha256": "5bc92ffafc6eb7e0a10f5d9923c38bb7a352a2f007f9a617d1aad77bb64f26b7",
+      "pdf_sha256": "707d45f7cd9c65a1ff3110b87501997c176bc90a7069ed5ef4111be7c4d2caf4",
+      "citations": [
+        {
+          "pdf_page": 6,
+          "section": "5.1 Dataset and Model",
+          "url": "https://aclanthology.org/2025.emnlp-main.529.pdf#page=6",
+          "normalized_quote_sha256": "f4e6a35b181735ab1622ec7d586a078f1d6b004496c4990217a16b22d7ae2ebf"
+        },
+        {
+          "pdf_page": 9,
+          "section": "7 Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.529.pdf#page=9",
+          "normalized_quote_sha256": "487a763ebad715acde945b2bd0f4a0a5cba8a3f9176748751b234776a627f06a"
+        }
+      ],
+      "quoted_words": 21
+    },
+    {
+      "claim_id": "C15",
+      "paper_id": "2025.emnlp-main.575",
+      "title": "Deriving Strategic Market Insights with Large Language Models: A Benchmark for Forward Counterfactual Generation",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Evaluation scope” and “Explicit benchmark limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: Do not present this benchmark's counterfactual scenarios as faithful explanations of a financial predictor; a proposal making that claim needs a specified target decision and tests linking explanations to the predictor's behavior.",
+      "text_sha256": "029640149e61a07722db0b0a9dd23e9b9d5652992aee6c9aeed8a3c51b4d2ff2",
+      "pdf_sha256": "d0c2c54aee68056137361a77b999ca1afc885257e8905c31538b8e2798f03d3d",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.5 Metrics Design",
+          "url": "https://aclanthology.org/2025.emnlp-main.575.pdf#page=4",
+          "normalized_quote_sha256": "3b7d305ac665e629da3ed8d615bc897e81bed1b215b6ccbb5477cd8eec01b899"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.575.pdf#page=9",
+          "normalized_quote_sha256": "7e441d9f3f4abcd25ab7998f0b1a6e62d75fe1be76f0dc936222b1c7c0114d5b"
+        }
+      ],
+      "quoted_words": 18
+    },
+    {
+      "claim_id": "C16",
+      "paper_id": "2025.emnlp-main.736",
+      "title": "Multi-Domain Explainability of Preferences",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Operational evaluation scope” and “Causal faithfulness caveat”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A new proposal must not present automated concept discovery, shared/domain-specific preference surrogates, concept-guided generation, or explanation-guided tie resolution as unexplored solely on the basis of this paper.",
+      "text_sha256": "8d31d582e143ef13cc173255055e050fad96a45ea29f801fe71677111272a957",
+      "pdf_sha256": "adc537c48fac6f41da23028a1a4e4d02d69e46b70fff08019f230ae990d0ad0e",
+      "citations": [
+        {
+          "pdf_page": 5,
+          "section": "4.1 Evaluations",
+          "url": "https://aclanthology.org/2025.emnlp-main.736.pdf#page=5",
+          "normalized_quote_sha256": "0b5089d087473a18763ffc28fefa692b3df78289659d879d96c9a5d634eaff59"
+        },
+        {
+          "pdf_page": 10,
+          "section": "7 Limitations — Causality and Faithfulness",
+          "url": "https://aclanthology.org/2025.emnlp-main.736.pdf#page=10",
+          "normalized_quote_sha256": "88d497939b5148f338e35e741dffbce5b5f0194c47db2094502d7e2e0de066ae"
+        }
+      ],
+      "quoted_words": 14
+    },
+    {
+      "claim_id": "C17",
+      "paper_id": "2025.emnlp-main.797",
+      "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+      "attributed_claim": "The verified passages provide explicit source anchors for “Contrastive consistency operationalization” and “Evaluation granularity limitation”.",
+      "status": "supported_by_cited_passage",
+      "reviewer_boundary": "Reviewer interpretation: A proposal must not claim that contrastive consistency metrics or PEX-ranked DPO for free-text explanation refinement are new without distinguishing its contribution from this work.",
+      "text_sha256": "5dbc091724c35fb737c16ba5602edfd421069cce4868698e508b9c6744b71ed5",
+      "pdf_sha256": "0ae299ad61dc0295efc7338fa52c6d252726b0556fcc8f0669f9b32344423232",
+      "citations": [
+        {
+          "pdf_page": 4,
+          "section": "3.2 Measuring Prediction-Explanation (PEX) Consistency",
+          "url": "https://aclanthology.org/2025.emnlp-main.797.pdf#page=4",
+          "normalized_quote_sha256": "8e8d2cb4d0b76ae41c0540d5b572ee40892bfefd6b0d9fa53f047b81c69658bb"
+        },
+        {
+          "pdf_page": 9,
+          "section": "Limitations",
+          "url": "https://aclanthology.org/2025.emnlp-main.797.pdf#page=9",
+          "normalized_quote_sha256": "8b2c53b376e097329b3eb103914a0b67abb819c39cce3f1a5bf077edbc684f55"
+        }
+      ],
+      "quoted_words": 19
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "topics": [
+    {
+      "id": "cluster7",
+      "title": "Agreement, Stability, and Instruction-Language Sensitivity in Bilingual LLM-as-a-Judge Evaluation",
+      "status": "REVIEWED_HANDOVER",
+      "production_ready": true,
+      "fact_check_status": "HISTORICAL_REVIEWED_HANDOVER",
+      "package": "sprint2_demo/inputs/converted/research_package.json",
+      "draft": "sprint2_demo/inputs/converted/v0.json",
+      "manifest": "sprint2_demo/inputs/converted/handover_manifest.json",
+      "facts": null
+    },
+    {
+      "id": "cluster0",
+      "title": "Fact or Form? A Controlled Invariance Audit of Hallucination Detectors",
+      "status": "PROVISIONAL_AUTOMATED_MAPPING",
+      "production_ready": false,
+      "fact_check_status": "COMPLETED",
+      "fact_check_scope": "cited-literature",
+      "fact_check_summary": "drafts/track3_four_cluster_v0/cluster0/handover/fact_check_gpt6_sol_cited/summary.json",
+      "fact_check_results": "drafts/track3_four_cluster_v0/cluster0/handover/fact_check_gpt6_sol_cited/fact_check_results.json",
+      "package": "drafts/track3_four_cluster_v0/cluster0/handover/research_package.json",
+      "draft": "drafts/track3_four_cluster_v0/cluster0/handover/v0.json",
+      "manifest": "drafts/track3_four_cluster_v0/cluster0/handover/export_manifest.json",
+      "facts": "drafts/track3_four_cluster_v0/cluster0/handover/master_facts.xlsx"
+    },
+    {
+      "id": "cluster6",
+      "title": "Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement",
+      "status": "PROVISIONAL_AUTOMATED_MAPPING",
+      "production_ready": false,
+      "fact_check_status": "COMPLETED",
+      "fact_check_scope": "cited-literature",
+      "fact_check_summary": "drafts/track3_four_cluster_v0/cluster6/handover/fact_check_gpt6_sol_cited/summary.json",
+      "fact_check_results": "drafts/track3_four_cluster_v0/cluster6/handover/fact_check_gpt6_sol_cited/fact_check_results.json",
+      "package": "drafts/track3_four_cluster_v0/cluster6/handover/research_package.json",
+      "draft": "drafts/track3_four_cluster_v0/cluster6/handover/v0.json",
+      "manifest": "drafts/track3_four_cluster_v0/cluster6/handover/export_manifest.json",
+      "facts": "drafts/track3_four_cluster_v0/cluster6/handover/master_facts.xlsx"
+    },
+    {
+      "id": "cluster13",
+      "title": "Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors",
+      "status": "PROVISIONAL_AUTOMATED_MAPPING",
+      "production_ready": false,
+      "fact_check_status": "COMPLETED",
+      "fact_check_scope": "cited-literature",
+      "fact_check_summary": "drafts/track3_four_cluster_v0/cluster13/handover/fact_check_gpt6_sol_cited/summary.json",
+      "fact_check_results": "drafts/track3_four_cluster_v0/cluster13/handover/fact_check_gpt6_sol_cited/fact_check_results.json",
+      "package": "drafts/track3_four_cluster_v0/cluster13/handover/research_package.json",
+      "draft": "drafts/track3_four_cluster_v0/cluster13/handover/v0.json",
+      "manifest": "drafts/track3_four_cluster_v0/cluster13/handover/export_manifest.json",
+      "facts": "drafts/track3_four_cluster_v0/cluster13/handover/master_facts.xlsx"
+    },
+    {
+      "id": "cluster18",
+      "title": "Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal",
+      "status": "PROVISIONAL_AUTOMATED_MAPPING",
+      "production_ready": false,
+      "fact_check_status": "COMPLETED",
+      "fact_check_scope": "cited-literature",
+      "fact_check_summary": "drafts/track3_four_cluster_v0/cluster18/handover/fact_check_gpt6_sol_cited/summary.json",
+      "fact_check_results": "drafts/track3_four_cluster_v0/cluster18/handover/fact_check_gpt6_sol_cited/fact_check_results.json",
+      "package": "drafts/track3_four_cluster_v0/cluster18/handover/research_package.json",
+      "draft": "drafts/track3_four_cluster_v0/cluster18/handover/v0.json",
+      "manifest": "drafts/track3_four_cluster_v0/cluster18/handover/export_manifest.json",
+      "facts": "drafts/track3_four_cluster_v0/cluster18/handover/master_facts.xlsx"
+    }
+  ]
+}
