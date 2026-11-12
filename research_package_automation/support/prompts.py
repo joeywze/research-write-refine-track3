@@ -36,4 +36,3 @@ in experiments and describe the proposal and limitations in the conclusion.
 The supplied excerpts support only what they state; do not invent further details
 about their sources. Include the protected technical terms.
 """
-
