@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED",
+  "judgment_origin": "automated",
+  "model": "gpt-6-sol",
+  "scope": "cited-literature",
+  "factual_claim_count": 28,
+  "proposal_count": 3,
+  "total_results": 31,
+  "skipped_uncited_paragraph_count": 27,
+  "skipped_uncited_claim_count": 0,
+  "counts": {
+    "SUPPORTED": 4,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 24
+  },
+  "model_calls": 34,
+  "input_tokens": 36063,
+  "output_tokens": 6440,
+  "previous_baseline": {
+    "scope": "all-draft",
+    "factual_claim_count": 101,
+    "counts": {
+      "SUPPORTED": 3,
+      "CONTRADICTED": 0,
+      "INSUFFICIENT_EVIDENCE": 98
+    },
+    "note": "The baseline and cited-literature run are not directly score-comparable because the latter excludes uncited paragraphs and separates prospective statements."
+  },
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use up to three passages selected from the sources attached to each exact claim, not full papers.",
+    "Uncited paragraphs are outside this run's evaluation scope, not verified.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ]
+}

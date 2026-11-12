@@ -1,0 +1,21 @@
+{
+  "package_id": "cluster18_singapore_safety_audit_v0",
+  "research_question": "Do selected systems preserve the safety-usefulness boundary across English and two Singapore language settings when harmful and benign near-boundary scenarios are matched?",
+  "gap": "Singapore-focused toxicity data, multilingual guardrails and native-reviewed refusal benchmarks already exist. The narrower unresolved question combines matched harmful and benign boundaries, independent equivalence review and joint guardrail-response analysis in selected Singapore settings.",
+  "contribution": "A proposed paired protocol that measures unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes.",
+  "technical_terms": [
+    "unsafe compliance",
+    "false refusal",
+    "language-equivalence"
+  ],
+  "limitations": [
+    "The study is small and cannot estimate safety for an entire language community.",
+    "Human labels are fallible, provider policies differ, and model and guardrail versions can drift.",
+    "Matched prompts may be less natural than organically occurring misuse."
+  ],
+  "unknowns": [
+    "The two non-English settings depend on reviewer competence and ethical oversight and are not yet selected.",
+    "No proposed experiment has been run and no safety difference is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

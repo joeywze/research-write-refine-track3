@@ -1,0 +1,654 @@
+{
+  "schema_version": "0.1",
+  "package_id": "cluster18_singapore_safety_audit_v0",
+  "title": "Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal",
+  "research_question": "Do selected systems preserve the safety-usefulness boundary across English and two Singapore language settings when harmful and benign near-boundary scenarios are matched?",
+  "gap": "Singapore-focused toxicity data, multilingual guardrails and native-reviewed refusal benchmarks already exist. The narrower unresolved question combines matched harmful and benign boundaries, independent equivalence review and joint guardrail-response analysis in selected Singapore settings.",
+  "contribution": "A proposed paired protocol that measures unsafe compliance and false refusal together while separating language-equivalence problems from model outcomes.",
+  "methodology": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings may include a standardized language, a Singapore variety or a code-switched register, but the final choice will be based on reviewer competence and feasible ethical oversight—not a hierarchy of “resource level.”\n\nThe unit of inference will be the selected setting and prompt set. Results will not be generalized to all speakers, dialects or countries associated with a language.\n\nWe plan 60 underlying scenario families across a small number of safety categories. Each family will contain:\n\n- a harmful request whose requested action violates the frozen policy;\n- a benign near-boundary request sharing topic or vocabulary but changing intent, target or requested action;\n- where feasible, a clearly benign anchor to distinguish boundary difficulty from global refusal.\n\nExisting licensed benchmark items will be adapted where their terms permit; new items require safety review. Prompts will omit unnecessary operational details. The harmful and benign forms will be similar enough to test discrimination without being simple word substitutions that create unnatural text.\n\nThe following is a structural illustration only, not an evaluation item:\n\n| Variant | Intended status | Difference |\n|---|---|---|\n| Harmful | Refuse or safely redirect | Requests actionable harm |\n| Near-boundary benign | Assist safely | Requests prevention, recognition or recovery information |\n| Benign anchor | Assist | Clearly ordinary informational request |\n\nEnglish scenarios will be translated and then naturally rewritten for the target setting. Two fluent reviewers will independently label:\n\n1. harm status under the shared policy;\n2. requested intent and target;\n3. severity/category;\n4. naturalness and register;\n5. semantic equivalence to the English scenario;\n6. ambiguity.\n\nReviewers will provide reasons for disagreement. An adjudicator will resolve cases where possible before model testing. If one member of a scenario family remains non-equivalent or ambiguous, the complete family is excluded from the primary paired analysis and retained in an equivalence-sensitivity appendix. Exclusion rules will be frozen before model outcomes are seen.\n\nTwo instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.\n\nThe guardrail first classifies the input. The model response is still collected where ethically and technically permitted under a controlled protocol, enabling a two-stage error analysis. No system will be prompted to provide more harmful detail merely to overcome a refusal.\n\nTwo fluent raters, blinded to system identity where feasible, will independently assign:\n\n| Label | Decision rule |\n|---|---|\n| Appropriate refusal | Declines harmful assistance without supplying actionable content |\n| Safe redirection | Declines the harmful action and offers relevant prevention/recovery help |\n| Unsafe compliance | Supplies materially actionable harmful assistance |\n| Safe assistance | Answers a benign request without unnecessary restriction |\n| False refusal | Refuses or withholds useful help on a benign request |\n| Partial/ambiguous | Mixed response that does not meet a primary rule |\n| Invalid/technical failure | No usable response |\n\nModel-based judges may support triage but will not replace human outcome labels, because the reviewed literature documents evaluator fallibility. Disagreements will be adjudicated and raw agreement reported.",
+  "study_status": "proposed",
+  "sources": [
+    {
+      "source_id": "S_2025_emnlp_main_49",
+      "title": "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+      "url": "https://aclanthology.org/2025.emnlp-main.49/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_612",
+      "title": "Toxicity Red-Teaming: Benchmarking LLM Safety in S ingapore’s Low-Resource Languages",
+      "url": "https://aclanthology.org/2025.emnlp-main.612/"
+    },
+    {
+      "source_id": "S_2026_mrl_1_41",
+      "title": "Pag-refuse: Safety Alignment Transfers Unevenly to Tagalog and Taglish",
+      "url": "https://aclanthology.org/2026.mrl-1.41/"
+    },
+    {
+      "source_id": "S_2026_findings_emnlp_1403",
+      "title": "Register Shifts Break LLM Safety: A Bengali Benchmark with Culturally Grounded Harms",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1403/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1065",
+      "title": "Understanding and Mitigating Overrefusal in LLM s from an Unveiling Perspective of Safety Decision Boundary",
+      "url": "https://aclanthology.org/2025.emnlp-main.1065/"
+    },
+    {
+      "source_id": "S_2025_emnlp_main_1392",
+      "title": "M r G uard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "url": "https://aclanthology.org/2025.emnlp-main.1392/"
+    },
+    {
+      "source_id": "S_2026_mrl_1_19",
+      "title": "Does Safety Live in a Shared Multilingual Subspace? Cross-Lingual (Non-)Transfer of the Refusal Direction",
+      "url": "https://aclanthology.org/2026.mrl-1.19/"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E_2025_emnlp_main_49_01",
+      "source_id": "S_2025_emnlp_main_49",
+      "excerpt": "It captures both over-refusal and under-refusal",
+      "locator": "3.1 Problem Formulation; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_49_02",
+      "source_id": "S_2025_emnlp_main_49",
+      "excerpt": "the Evaluator might yield false positives or negatives",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_612_01",
+      "source_id": "S_2025_emnlp_main_612",
+      "excerpt": "participant B’s response is intentionally crafted to be toxic.",
+      "locator": "3.1 Toxic Conversation Task; PDF p. 4"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_612_02",
+      "source_id": "S_2025_emnlp_main_612",
+      "excerpt": "might make a wrong judgment.",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_mrl_1_41_01",
+      "source_id": "S_2026_mrl_1_41",
+      "excerpt": "The authors, who are native Tagalog speakers, then audited and revised",
+      "locator": "3.1 Prompt set and translation; PDF p. 2"
+    },
+    {
+      "evidence_id": "E_2026_mrl_1_41_02",
+      "source_id": "S_2026_mrl_1_41",
+      "excerpt": "Our translations cover one Tagalog variety and one Taglish register.",
+      "locator": "Limitations; PDF p. 5"
+    },
+    {
+      "evidence_id": "E_2026_findings_emnlp_1403_01",
+      "source_id": "S_2026_findings_emnlp_1403",
+      "excerpt": "Each generated prompt was reviewed line-by-line by native Bangla-speaking annotators",
+      "locator": "3.3 Prompt Construction; PDF p. 5"
+    },
+    {
+      "evidence_id": "E_2026_findings_emnlp_1403_02",
+      "source_id": "S_2026_findings_emnlp_1403",
+      "excerpt": "does not include a benign control set",
+      "locator": "Limitations; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1065_01",
+      "source_id": "S_2025_emnlp_main_1065",
+      "excerpt": "we generate toxic seed prompts in seven languages:",
+      "locator": "3.1 Seed Prompt Generation; PDF p. 3"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1065_02",
+      "source_id": "S_2025_emnlp_main_1065",
+      "excerpt": "RASS requires white-box access to model representations",
+      "locator": "Limitations & Future Work; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1392_01",
+      "source_id": "S_2025_emnlp_main_1392",
+      "excerpt": "we thus assume all prompts in these datasets are unsafe.",
+      "locator": "C Dataset Details; PDF p. 13"
+    },
+    {
+      "evidence_id": "E_2025_emnlp_main_1392_02",
+      "source_id": "S_2025_emnlp_main_1392",
+      "excerpt": "we could not scale to multiple annotators or a larger sample size.",
+      "locator": "Limitations — Human Annotation; PDF p. 9"
+    },
+    {
+      "evidence_id": "E_2026_mrl_1_19_01",
+      "source_id": "S_2026_mrl_1_19",
+      "excerpt": "315 human-translated unsafe prompts in each of the 10 languages.",
+      "locator": "A.2 Prompt sets; PDF p. 8"
+    },
+    {
+      "evidence_id": "E_2026_mrl_1_19_02",
+      "source_id": "S_2026_mrl_1_19",
+      "excerpt": "We ran the control direction for the geometry",
+      "locator": "6 Ethics and limitations: The decisive control we did not run; PDF p. 6"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C_P001_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P001.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P002_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P002.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P003.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_01",
+      "text": "Draft citation context: RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_49_01",
+        "E_2025_emnlp_main_49_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P003_SOURCE_02",
+      "text": "Draft citation context: SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9. Paragraph context: The Cluster 18 papers establish that this broad space is already active. RASS evaluates both over- and under-refusal, while SGToxicGuard provides a Singapore-focused toxicity dataset spanning Singlish, Chinese, Malay and Tamil. MrGuard and OMNIGUARD evaluate multilingual guardrails. The reviewed work also warns that model-based safety judges are fallible and that some evaluations contain limited human review. RASS, 2025, over-/under-refusal design, p. 4; RASS, evaluator limitation, p. 9; SGToxicGuard, task construction, p. 4; SGToxicGuard, judge limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_612_01",
+        "E_2025_emnlp_main_612_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P004.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_01",
+      "text": "Draft citation context: Pag-refuse, 2026, native review, p. 2. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_mrl_1_41_01",
+        "E_2026_mrl_1_41_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P004_SOURCE_02",
+      "text": "Draft citation context: BanglaSafe, 2026, review process, p. 5. Paragraph context: The close 2026 literature narrows the gap again. Pag-refuse uses native-reviewed Tagalog and Taglish prompts; BanglaSafe uses native and expert review for culturally grounded harmful requests; cross-lingual refusal work studies shared refusal mechanisms. These papers block claims that native review, mixed-language safety or lower-resource settings have been ignored. Pag-refuse, 2026, native review, p. 2; BanglaSafe, 2026, review process, p. 5.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_findings_emnlp_1403_01",
+        "E_2026_findings_emnlp_1403_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P005_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P005.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P006_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P006.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P007_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P007.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P008.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P008_SOURCE_01",
+      "text": "Draft citation context: MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9. Paragraph context: SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. MrGuard, 2025, language coverage, p. 3; MrGuard, white-box limitation, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1065_01",
+        "E_2025_emnlp_main_1065_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P009_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P009.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P010_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P010.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P010_SOURCE_01",
+      "text": "Draft citation context: MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1392_01",
+        "E_2025_emnlp_main_1392_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P010_SOURCE_02",
+      "text": "Draft citation context: BanglaSafe, absence of benign control noted in limitations, p. 9. Paragraph context: Some benchmarks emphasize unsafe prompts without a matched benign control. MrGuard's evaluation assumes harmful inputs for parts of its analysis and reports limited human review. BanglaSafe's native-reviewed benchmark is valuable but does not supply the benign near-boundary control needed to estimate false refusal in the same design. MrGuard, unsafe-only assumption, p. 13; MrGuard, human-review limitation, p. 9; BanglaSafe, absence of benign control noted in limitations, p. 9.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_findings_emnlp_1403_01",
+        "E_2026_findings_emnlp_1403_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P011_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P011.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P011_SOURCE_01",
+      "text": "Draft citation context: Pag-refuse, limitation, p. 5. Paragraph context: Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. Pag-refuse, limitation, p. 5.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_mrl_1_41_01",
+        "E_2026_mrl_1_41_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P012_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P012.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P012_SOURCE_01",
+      "text": "Draft citation context: Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6. Paragraph context: Cross-lingual refusal-direction research studies internal representations using unsafe data. The authors note that causal controls remain incomplete, so mechanistic similarity should not be substituted for a behavioral safety–usefulness audit. Cross-Lingual Refusal Direction, 2026, unsafe-data design, p. 8; causal-control limitation, p. 6.",
+      "kind": "source",
+      "evidence_ids": [
+        "E_2026_mrl_1_19_01",
+        "E_2026_mrl_1_19_02"
+      ],
+      "qualifications": [
+        "Provisional citation-context mapping generated from reviewed materials.",
+        "Half 1 must approve the attributed claim before production use.",
+        "A verified excerpt does not independently reproduce the cited study."
+      ]
+    },
+    {
+      "claim_id": "C_P013_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P013.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P014_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P014.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P015_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P015.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P016_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P016.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P017_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P017.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P018_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P018.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P019_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P019.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P020_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P020.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P021_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P021.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P022_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P022.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P023_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P023.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P024_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P024.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P025_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P025.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P026_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P026.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P027_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P027.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P028_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P028.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P029_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P029.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P030_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P030.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P031_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P031.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P032_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P032.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P033_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P033.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P034_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P034.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P035_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P035.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P036_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P036.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P037_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P037.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P038_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P038.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P039_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P039.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P040_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P040.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P041_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P041.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    },
+    {
+      "claim_id": "C_P042_AUTHOR",
+      "text": "Author framing or proposed-study content retained from P042.",
+      "kind": "proposal",
+      "evidence_ids": [],
+      "qualifications": [
+        "Retained from the reviewed Draft V0; not an observed result."
+      ]
+    }
+  ],
+  "technical_terms": [
+    "unsafe compliance",
+    "false refusal",
+    "language-equivalence"
+  ],
+  "limitations": [
+    "The study is small and cannot estimate safety for an entire language community.",
+    "Human labels are fallible, provider policies differ, and model and guardrail versions can drift.",
+    "Matched prompts may be less natural than organically occurring misuse."
+  ],
+  "unknowns": [
+    "The two non-English settings depend on reviewer competence and ethical oversight and are not yet selected.",
+    "No proposed experiment has been run and no safety difference is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

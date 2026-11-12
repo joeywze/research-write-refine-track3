@@ -1,0 +1,21 @@
+{
+  "package_id": "cluster13_revision_history_audit_v0",
+  "research_question": "What do AI-text detector scores track when original drafter, latest editor and sentence provenance vary independently across matched revision histories?",
+  "gap": "Existing work covers hybrid sentences, paraphrase attacks, realistic rewrites and human editing of model drafts. The narrower unresolved question is how detector outputs relate to distinct process labels in matched bidirectional revision trajectories.",
+  "contribution": "A proposed process-aware, bidirectional revision-history audit that keeps original drafter, latest editor and sentence provenance as separate evaluation targets.",
+  "technical_terms": [
+    "original drafter",
+    "latest editor",
+    "sentence provenance"
+  ],
+  "limitations": [
+    "The study is limited by its writers, domains and model versions.",
+    "Human and model editing effort cannot be perfectly matched, and controlled revision histories differ from natural writing.",
+    "Process labels do not settle legal, educational or philosophical definitions of authorship."
+  ],
+  "unknowns": [
+    "The source briefs, writers, model configurations and detector versions remain to be frozen.",
+    "No proposed experiment has been run and no authorship conclusion is established.",
+    "The automated paragraph-to-source mappings have not received human approval."
+  ]
+}

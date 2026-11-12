@@ -1,0 +1,958 @@
+{
+  "package_id": "cluster0_hallucination_invariance_audit_v0",
+  "judgment_origin": "automated",
+  "scope": "cited-literature",
+  "skipped_paragraph_ids": [
+    "P001",
+    "P002",
+    "P005",
+    "P006",
+    "P007",
+    "P009",
+    "P010",
+    "P011",
+    "P012",
+    "P013",
+    "P014",
+    "P015",
+    "P016",
+    "P017",
+    "P018",
+    "P019",
+    "P020",
+    "P021",
+    "P022",
+    "P023",
+    "P024",
+    "P025",
+    "P026",
+    "P027",
+    "P028",
+    "P029",
+    "P030",
+    "P031",
+    "P032",
+    "P033",
+    "P034",
+    "P035",
+    "P036",
+    "P037",
+    "P038"
+  ],
+  "limitations": [
+    "LLM claim extraction may miss or misclassify assertions.",
+    "Judgments use the top three passages from cited sources, not full papers.",
+    "Uncited paragraphs are outside this run's evaluation scope, not verified.",
+    "Automated verdicts require human evaluation against reviewed labels."
+  ],
+  "counts": {
+    "SUPPORTED": 8,
+    "CONTRADICTED": 0,
+    "INSUFFICIENT_EVIDENCE": 11
+  },
+  "factual_claim_count": 19,
+  "results": [
+    {
+      "paragraph_id": "P003",
+      "claim": "broad claims about unexamined robustness are untenable",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1554",
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.14724885142112382
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "consistency might be able to predict accuracy but is fundamentally",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_01",
+          "similarity": 0.14563512010577273
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "our findings may not generalize to prompts and responses of all lengths.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_02",
+          "similarity": 0.1447025232456364
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes mention a curated dataset and a limitation on generalizing across response lengths, but they do not establish the broader conclusion that claims about unexamined robustness are untenable.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "lexical-overlap labels can exaggerate progress",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.15027008090160895
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "response length itself is not a direct causal factor",
+          "page": "N Causality Discussion; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_02",
+          "similarity": 0.1472529517474004
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes address dataset curation and response length, but neither establishes that lexical-overlap labels can exaggerate progress.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "simple length information can be highly predictive",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "response length itself is not a direct causal factor",
+          "page": "N Causality Discussion; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_02",
+          "similarity": 0.2144672734073596
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.2073425549201978
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes say that response length is not a direct causal factor and that the human-validation dataset was curated. Neither establishes that simple length information is highly predictive.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "Their human validation is curated",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.24919473778349385
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "response length itself is not a direct causal factor",
+          "page": "N Causality Discussion; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_02",
+          "similarity": 0.24419139510921783
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says the authors intentionally curated a dataset of instances in the context of their human evaluation, supporting the statement that their human validation was curated.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1761_01"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "length is associated with outcomes",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "response length itself is not a direct causal factor",
+          "page": "N Causality Discussion; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_02",
+          "similarity": 0.2170590178748603
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.1938181293871619
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes say that response length is not a direct causal factor and that a dataset was curated. Neither establishes that length is associated with outcomes.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "without establishing it as a direct cause",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1761"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "response length itself is not a direct causal factor",
+          "page": "N Causality Discussion; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_02",
+          "similarity": 0.15952403105968377
+        },
+        {
+          "claim_id": "C_P003_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1761",
+          "title": "The Illusion of Progress: Re-evaluating Hallucination Detection in LLM s",
+          "factual_claim": "Draft citation context: Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "we intentionally curated a dataset of instances",
+          "page": "E Additional Analysis of Human Evaluation; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1761/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1761_01",
+          "similarity": 0.15027008090160895
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly says response length is not a direct causal factor, supporting the statement that the analysis does not establish it as a direct cause.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1761_02"
+      ]
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "Wu et al. explicitly distinguish response consistency from factual accuracy",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1554"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "consistency might be able to predict accuracy but is fundamentally",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_01",
+          "similarity": 0.5222964713205106
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "our findings may not generalize to prompts and responses of all lengths.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_02",
+          "similarity": 0.5038102742846937
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quote suggests that consistency and accuracy are related but does not show Wu et al. explicitly distinguishing response consistency from factual accuracy. The other quote addresses a length limitation.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P003",
+      "claim": "identify response length as a limitation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1554"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "our findings may not generalize to prompts and responses of all lengths.",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_02",
+          "similarity": 0.22098697583139498
+        },
+        {
+          "claim_id": "C_P003_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1554",
+          "title": "Estimating LLM Consistency: A User Baseline vs Surrogate Metrics",
+          "factual_claim": "Draft citation context: Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9. Paragraph context: The full-paper review shows that broad claims about unexamined robustness are untenable. Janiak et al. demonstrate that lexical-overlap labels can exaggerate progress and that simple length information can be highly predictive. Their human validation is curated, and their analysis notes that length is associated with outcomes without establishing it as a direct cause. Wu et al. explicitly distinguish response consistency from factual accuracy and identify response length as a limitation. Janiak et al., 2025, human-validation design, p. 13; Janiak et al., length caveat, p. 18; Wu et al., 2025, consistency versus accuracy, p. 2; Wu et al., limitation, p. 9.",
+          "evidence_quote": "consistency might be able to predict accuracy but is fundamentally",
+          "page": "1 Introduction; PDF p. 2",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1554/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1554_01",
+          "similarity": 0.22076485207796312
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "Wu et al. state that their findings may not generalize to responses of all lengths, identifying response length as a limitation.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1554_02"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies.",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_680",
+        "S_2026_findings_aacl_164",
+        "S_2026_findings_emnlp_113"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "keeping the strictest label during aggregation",
+          "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_01",
+          "similarity": 0.4420209765678419
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The threshold is optimized to maximize F1 score on the test set.",
+          "page": "A.2 Model Configuration Details; PDF p. 14",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_02",
+          "similarity": 0.425217658873452
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_findings_aacl_164",
+          "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+          "factual_claim": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The test does not control for response correctness",
+          "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-aacl.164/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_aacl_164_02",
+          "similarity": 0.42446144861061547
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quotes support strict aggregation and mention a correctness-control caveat, but they do not establish that the comparison set covers distribution shift or consistency–confidence taxonomies. The full statement therefore does not follow from the supplied evidence.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "Fortifying Hallucination Detection studies cross-domain transfer",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_113"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_findings_emnlp_113",
+          "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+          "factual_claim": "Draft citation context: Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "incorrect responses are treated as hallucinations.",
+          "page": "3 Approach & Experimental Setup — Hallucination in QA setting; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.113/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_113_01",
+          "similarity": 0.38592221778420005
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_findings_emnlp_113",
+          "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+          "factual_claim": "Draft citation context: Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "our evaluation is restricted to short form question answering",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.113/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_113_02",
+          "similarity": 0.37847566204775196
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes define how incorrect responses are labeled and limit the evaluation to short-form question answering. Neither establishes that the paper studies cross-domain transfer.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "operationally treats incorrect short answers as hallucinations",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_emnlp_113"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_findings_emnlp_113",
+          "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+          "factual_claim": "Draft citation context: Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "incorrect responses are treated as hallucinations.",
+          "page": "3 Approach & Experimental Setup — Hallucination in QA setting; PDF p. 3",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.113/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_113_01",
+          "similarity": 0.26242710809325603
+        },
+        {
+          "claim_id": "C_P004_SOURCE_01",
+          "paper_id": "S_2026_findings_emnlp_113",
+          "title": "Fortifying Hallucination Detection Under Distribution Shift in Short-Form QA",
+          "factual_claim": "Draft citation context: Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "our evaluation is restricted to short form question answering",
+          "page": "Limitations; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.113/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_emnlp_113_02",
+          "similarity": 0.21194637074674108
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source says incorrect responses are treated as hallucinations and limits the evaluation to short-form question answering, supporting the statement about incorrect short answers.",
+      "evidence_ids": [
+        "E_2026_findings_emnlp_113_01",
+        "E_2026_findings_emnlp_113_02"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "A large evaluation of hallucination metrics uses strict response aggregation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_680"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "keeping the strictest label during aggregation",
+          "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_01",
+          "similarity": 0.3673477608157961
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The threshold is optimized to maximize F1 score on the test set.",
+          "page": "A.2 Model Configuration Details; PDF p. 14",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_02",
+          "similarity": 0.3357948875068616
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The source quote says the study keeps the strictest label during aggregation, but it does not establish that this is response-level aggregation or that the study is a large evaluation of hallucination metrics.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "in one analysis, optimizes a threshold on the test set",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_acl_long_680"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The threshold is optimized to maximize F1 score on the test set.",
+          "page": "A.2 Model Configuration Details; PDF p. 14",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_02",
+          "similarity": 0.3874556394309942
+        },
+        {
+          "claim_id": "C_P004_SOURCE_02",
+          "paper_id": "S_2026_acl_long_680",
+          "title": "Rethinking Evaluation for LLM Hallucination Detection",
+          "factual_claim": "Draft citation context: 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "keeping the strictest label during aggregation",
+          "page": "4.2.1 Multi-Vote Annotation for Evaluation Test Labels; PDF p. 6",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.acl-long.680/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_acl_long_680_01",
+          "similarity": 0.2993203977017599
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly says the threshold is optimized to maximize F1 score on the test set.",
+      "evidence_ids": [
+        "E_2026_acl_long_680_02"
+      ]
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "DECK maps different hallucination types to consistency and confidence signals",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_aacl_164"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_findings_aacl_164",
+          "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+          "factual_claim": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "All grading is deterministic and requires no additional model calls.",
+          "page": "Appendix B: Response Grading Procedures; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-aacl.164/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_aacl_164_01",
+          "similarity": 0.3824884519517604
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_findings_aacl_164",
+          "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+          "factual_claim": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The test does not control for response correctness",
+          "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-aacl.164/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_aacl_164_02",
+          "similarity": 0.37415527876756016
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The supplied quotes describe deterministic grading and a lack of control for response correctness. Neither establishes that DECK maps different hallucination types to consistency and confidence signals.",
+      "evidence_ids": []
+    },
+    {
+      "paragraph_id": "P004",
+      "claim": "noting correctness-control caveats",
+      "kind": "factual",
+      "source_ids": [
+        "S_2026_findings_aacl_164"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_findings_aacl_164",
+          "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+          "factual_claim": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "The test does not control for response correctness",
+          "page": "Appendix E: External-Signal Validation Protocol; PDF p. 18",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-aacl.164/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_aacl_164_02",
+          "similarity": 0.19813633955418633
+        },
+        {
+          "claim_id": "C_P004_SOURCE_03",
+          "paper_id": "S_2026_findings_aacl_164",
+          "title": "DECK: A Consistency × Confidence Taxonomy of LLM Hallucinations",
+          "factual_claim": "Draft citation context: DECK, grading design, p. 13. Paragraph context: The 2026 comparison set further covers distribution shift, strict aggregation and consistency–confidence taxonomies. Fortifying Hallucination Detection studies cross-domain transfer but operationally treats incorrect short answers as hallucinations. A large evaluation of hallucination metrics uses strict response aggregation and, in one analysis, optimizes a threshold on the test set. DECK maps different hallucination types to consistency and confidence signals while noting correctness-control caveats. Fortifying Hallucination Detection, 2026, label definition, p. 3; scope limitation, p. 9; 2026 evaluation study, aggregation, p. 6; threshold choice, p. 14; DECK, grading design, p. 13.",
+          "evidence_quote": "All grading is deterministic and requires no additional model calls.",
+          "page": "Appendix B: Response Grading Procedures; PDF p. 13",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2026.findings-aacl.164/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2026_findings_aacl_164_01",
+          "similarity": 0.15210593151284166
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source explicitly states that the test does not control for response correctness, supporting the stated correctness-control caveat.",
+      "evidence_ids": [
+        "E_2026_findings_aacl_164_02"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "AGSER uses attention-guided self-reflection and response consistency without task-specific training samples",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1063"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1063",
+          "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+          "factual_claim": "Draft citation context: AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "there are no training samples.",
+          "page": "Appendix A: Details of Datasets; PDF p. 11",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1063/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1063_01",
+          "similarity": 0.4345088208466085
+        },
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1063",
+          "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+          "factual_claim": "Draft citation context: AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "incorrect segmentation of attentive queries (leading to omission of key information)",
+          "page": "Appendix I: Bad Cases; PDF p. 12",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1063/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1063_02",
+          "similarity": 0.38935835395344887
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The source title identifies attention-guided self-reflection, and a quote says there are no training samples. Neither supplied quote establishes that AGSER uses response consistency, so the full statement is not supported.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1063_01"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "its failure analysis includes difficulty with query segmentation",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1063"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1063",
+          "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+          "factual_claim": "Draft citation context: AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "incorrect segmentation of attentive queries (leading to omission of key information)",
+          "page": "Appendix I: Bad Cases; PDF p. 12",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1063/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1063_02",
+          "similarity": 0.2964854057512549
+        },
+        {
+          "claim_id": "C_P008_SOURCE_01",
+          "paper_id": "S_2025_emnlp_main_1063",
+          "title": "Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models",
+          "factual_claim": "Draft citation context: AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "there are no training samples.",
+          "page": "Appendix A: Details of Datasets; PDF p. 11",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1063/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1063_01",
+          "similarity": 0.29147737807088836
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source’s bad-cases section identifies incorrect segmentation of attentive queries as a failure, supporting the statement about difficulty with query segmentation.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1063_02"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "IRIS derives features from truth-verification behavior and internal representations",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1124"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P008_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1124",
+          "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+          "factual_claim": "Draft citation context: IRIS, feature design, p. 4; IRIS, scope limitation, p. 9. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "single statements with clear-cut truth values",
+          "page": "Limitations — Data Coverage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1124/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1124_02",
+          "similarity": 0.3578884084268696
+        },
+        {
+          "claim_id": "C_P008_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1124",
+          "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+          "factual_claim": "Draft citation context: IRIS, feature design, p. 4; IRIS, scope limitation, p. 9. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "we utilize the last token’s embeddings at the last layer.",
+          "page": "2.3 Classifier Training; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1124/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1124_01",
+          "similarity": 0.33316119737015343
+        }
+      ],
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "The quote about last-layer token embeddings supports the use of internal representations, but neither supplied quote establishes that IRIS derives features from truth-verification behavior.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1124_01"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "its reported scope is bounded to single statements",
+      "kind": "factual",
+      "source_ids": [
+        "S_2025_emnlp_main_1124"
+      ],
+      "judgment_origin": "automated",
+      "matches": [
+        {
+          "claim_id": "C_P008_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1124",
+          "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+          "factual_claim": "Draft citation context: IRIS, feature design, p. 4; IRIS, scope limitation, p. 9. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "single statements with clear-cut truth values",
+          "page": "Limitations — Data Coverage; PDF p. 9",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1124/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1124_02",
+          "similarity": 0.34082240455985063
+        },
+        {
+          "claim_id": "C_P008_SOURCE_02",
+          "paper_id": "S_2025_emnlp_main_1124",
+          "title": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+          "factual_claim": "Draft citation context: IRIS, feature design, p. 4; IRIS, scope limitation, p. 9. Paragraph context: AGSER uses attention-guided self-reflection and response consistency without task-specific training samples, but its failure analysis includes difficulty with query segmentation. IRIS derives features from truth-verification behavior and internal representations; its reported scope is bounded to single statements. These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier. AGSER, 2025, no-training-sample design, p. 11; AGSER, segmentation failure, p. 12; IRIS, feature design, p. 4; IRIS, scope limitation, p. 9.",
+          "evidence_quote": "we utilize the last token’s embeddings at the last layer.",
+          "page": "2.3 Classifier Training; PDF p. 4",
+          "verification": "UNREVIEWED",
+          "source_url": "https://aclanthology.org/2025.emnlp-main.1124/",
+          "contributor": "reviewed_topic_export",
+          "language_evidence": "",
+          "review_boundary": "Citation-context mapping requires Half 1 approval.",
+          "evidence_id": "E_2025_emnlp_main_1124_01",
+          "similarity": 0.2849700230256239
+        }
+      ],
+      "status": "SUPPORTED",
+      "reason": "The source’s data-coverage limitation describes the statements as “single statements with clear-cut truth values,” supporting the stated scope boundary.",
+      "evidence_ids": [
+        "E_2025_emnlp_main_1124_02"
+      ]
+    },
+    {
+      "paragraph_id": "P008",
+      "claim": "These methods motivate including reflection and representation families rather than assuming that every detector is a surface classifier",
+      "kind": "proposal",
+      "source_ids": [],
+      "judgment_origin": "automated",
+      "matches": [],
+      "status": "PROPOSAL",
+      "reason": "Prospective work; requires design review.",
+      "evidence_ids": []
+    }
+  ],
+  "skipped_uncited_claims": []
+}
