@@ -1,0 +1,85 @@
+{
+  "checks_used": "rules + evidence check + meaning check",
+  "fault_catch_rate": "34 of 39",
+  "false_alarms_on_clean_rewrites": "2 of 30",
+  "false_alarm_reasons": [
+    "Paragraph P030 changes the stated aggregation procedure for the primary RQ1 measure relative to the ResearchPackage claim C_P030 and the last accepted draft. The package says agreement indicators will be averaged across calls for each response first and then across responses within a condition, whereas the candidate defines the measure as 'the proportion of scheduled calls' that match the reference. Those are not equivalent in general and change the analysis specification.; P030: The candidate states that unconditional operational agreement is 'the proportion of scheduled calls' matching the adjudicated reference label, but C_P030 in the ResearchPackage specifies a two-stage aggregation: average agreement across calls for each response first, then across responses within a condition. This alters the analysis definition and weighting scheme.; P030: Reference comparison metadata shows P030 is the only changed paragraph relative to the last accepted draft, and this change affects substantive meaning rather than style.",
+    "Semantic check failed: ValueError: Incomplete claim audit"
+  ],
+  "by_fault_type": {
+    "number changed": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "length and tokens": 3,
+        "meaning check": 1,
+        "evidence check": 1
+      }
+    },
+    "citation changed": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "length and tokens": 4,
+        "meaning check": 1
+      }
+    },
+    "claim strengthened": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "meaning check": 3,
+        "no new facts": 2
+      }
+    },
+    "made-up result": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "no new facts": 3,
+        "meaning check": 2
+      }
+    },
+    "source misstated": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "evidence check": 3,
+        "meaning check": 2
+      }
+    },
+    "protected term changed": {
+      "caught": 3,
+      "planted": 3,
+      "by_check": {
+        "preservation rules": 3
+      }
+    },
+    "fresh fault": {
+      "caught": 5,
+      "planted": 5,
+      "by_check": {
+        "meaning check": 3,
+        "length and tokens": 1,
+        "evidence check": 1
+      }
+    },
+    "clean rewrite": {
+      "caught": 0,
+      "planted": 1,
+      "by_check": {}
+    },
+    "real V3 rewrite": {
+      "caught": 1,
+      "planted": 5,
+      "by_check": {
+        "meaning check": 1
+      }
+    }
+  },
+  "real_v3_rewrites_awaiting_labels": {
+    "rejected": 0,
+    "accepted": 0
+  },
+  "labels_verified_by_a_person": "69 of 69"
+}

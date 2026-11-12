@@ -1,0 +1,359 @@
+"""Every check a rewritten paragraph must pass before Half 2 accepts it.
+
+This module joins the two halves of the team's Half 2 work:
+
+  * Wan Yun's checks (from src/detection/rewrite_loop.py): length, citations,
+    numbers and the fluency guard that stops the rewriter "beating" the detector
+    by chopping sentences into fragments.
+  * Guan Hong's checks (backend/src/writing/preservation.py): the deterministic
+    preservation rules against V0 and the last accepted draft, and the LLM
+    meaning check (SemanticGate).
+  * New for Sprint 3: a "no new facts" rule and an LLM evidence check that
+    compares changed sentences with the team's evidence table, so rewrites are
+    checked against the sources and not only against V0.
+
+Checks run cheapest first and stop at the first failure, so a rewrite that
+breaks a simple rule never costs a model call.
+"""
+
+from collections import Counter
+from dataclasses import dataclass, replace
+import json
+from pathlib import Path
+import re
+import sys
+
+import pandas as pd
+
+from handover import Draft  # noqa: F401  (also puts the pinned backend on sys.path)
+from src.writing.contracts import CITATION
+from src.writing.preservation import NUMBERS, PreservationResult, deterministic
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src" / "detection"))
+import rewrite_loop as rl  # noqa: E402  (fluency guard, prompts, detector feedback)
+
+CHECK_RETRIES = 1   # a malformed checker answer is asked again once before it counts as a failure
+FACTS_FILE = ROOT / "data" / "facts" / "master_facts.xlsx"
+# "Wang et al." or "Fu and Liu": how this draft names cited papers in prose.
+AUTHOR = re.compile(r"\b[A-Z][a-z]+(?: et al\.| and [A-Z][a-z]+)(?=[\s,;:)'’]|$)")
+ACL_ID = re.compile(r"aclanthology\.org/([^/#\s]+?)(?:\.pdf)?(?:[/#]|$)")
+
+# Wording that reports a finding. A proposal paragraph (a study not yet run)
+# must not gain these, or the rewrite has invented a result.
+RESULT_WORDS = re.compile(
+    r"\b(improv(?:e|es|ed|ement)|outperform\w*|achiev(?:e|es|ed)|significant(?:ly)?|"
+    r"we (?:found|find|observed?|show(?:ed)?)|results? (?:show|showed|indicate|indicated|demonstrate|demonstrated)|"
+    r"demonstrat(?:e|es|ed)|confirm(?:s|ed)?|reveal(?:s|ed)?)\b", re.I)
+# Words that turn a cautious claim into a certain one.
+CERTAINTY_WORDS = re.compile(
+    r"\b(prove[sd]?|proven|clearly|certainly|definitely|undoubtedly|always|never|guarantee[sd]?|"
+    r"conclusively|establish(?:es|ed)?)\b", re.I)
+NEGATION = re.compile(r"\b(not|cannot|can't|doesn't|does not|won't|no)\s+(\w+\s+)?$", re.I)
+
+
+def certainty_words(text):
+    """Certainty words that are not negated ("cannot establish" is cautious, not certain)."""
+    return Counter(m.group(1).lower() for m in CERTAINTY_WORDS.finditer(text)
+                   if not NEGATION.search(text[max(0, m.start() - 25):m.start()]))
+
+
+@dataclass(frozen=True)
+class CheckResult:
+    check: str           # which check produced the verdict
+    status: str          # PASS or a failure status
+    reason: str = ""
+
+    @property
+    def passed(self):
+        return self.status == "PASS"
+
+
+def with_paragraph(draft, paragraph_id, text):
+    """A copy of the draft with one paragraph's text replaced."""
+    return replace(draft, paragraphs=tuple(replace(p, text=text) if p.paragraph_id == paragraph_id else p
+                                           for p in draft.paragraphs))
+
+
+def paragraph(draft, paragraph_id):
+    return next(p for p in draft.paragraphs if p.paragraph_id == paragraph_id)
+
+
+def plain(text):
+    """Paragraph text without [[S01]] citation tokens, for scoring and sentence checks."""
+    text = re.sub(r"\s*(?:\[\[[^\]]+\]\]\s*;?\s*)+", " ", text)   # citation groups and their separators
+    text = re.sub(r"\s+([.,;:])", r"\1", text)
+    return re.sub(r"([.!?])\.", r"\1", text).strip()   # "overlooked. [[S01]]." leaves no double full stop
+
+
+# ---------------------------------------------------------------- cheap checks
+def fluency_check(before, after):
+    ok, why = rl.content_ok(before, after)          # length within +/-35%, same citations, same numbers
+    if not ok:
+        return CheckResult("length and tokens", "MAJOR_DRIFT", why)
+    ok, why = rl.fluency_ok(plain(after))           # no fragments, few very short sentences
+    if not ok:
+        return CheckResult("fluency guard", "STYLE_GAMING", why)
+    return CheckResult("fluency guard", "PASS")
+
+
+def preservation_check(package, v0, current, paragraph_id, text):
+    """Guan Hong's deterministic rules: structure, citations, numbers, maths and protected terms."""
+    candidate = with_paragraph(current, paragraph_id, text)
+    references = (v0,) if current == v0 else (v0, current)
+    verdict = deterministic(package, candidate, references)
+    return CheckResult("preservation rules", verdict.status, "; ".join(verdict.reasons))
+
+
+def is_proposal_only(package, paragraph_obj):
+    kinds = {c.claim_id: c.kind for c in package.claims}
+    return all(kinds.get(cid) == "proposal" for cid in paragraph_obj.claim_ids)
+
+
+def no_new_facts_check(package, v0, paragraph_id, text):
+    """Rules that need no model: no new numbers, no invented results, no added certainty."""
+    original = paragraph(v0, paragraph_id)
+    before, after = plain(original.text), plain(text)
+    new_numbers = Counter(NUMBERS.findall(after)) - Counter(NUMBERS.findall(before))
+    if new_numbers:
+        return CheckResult("no new facts", "UNSUPPORTED_ADDITION", f"new number(s): {', '.join(new_numbers)}")
+    if is_proposal_only(package, original):
+        added = len(RESULT_WORDS.findall(after)) - len(RESULT_WORDS.findall(before))
+        if added > 0:
+            return CheckResult("no new facts", "UNSUPPORTED_ADDITION",
+                               "a proposed study now reads as if it reports a result")
+    gained = certainty_words(after) - certainty_words(before)
+    if gained:
+        return CheckResult("no new facts", "MAJOR_DRIFT", f"claim made more certain: {', '.join(gained)}")
+    return CheckResult("no new facts", "PASS")
+
+
+# ---------------------------------------------------------------- evidence check
+class EvidenceIndex:
+    """Quotes the team collected for each cited or named paper (package excerpts + evidence table).
+
+    Call learn_authors(v0) once so paragraphs that name a paper ("Yu et al.") without a citation
+    token, or rewrites that add or swap a name, are checked too."""
+
+    def __init__(self, package, facts_file=FACTS_FILE):
+        self.paper_of = {}
+        for source in package.sources:
+            match = ACL_ID.search(source.url)
+            self.paper_of[source.source_id] = match.group(1) if match else source.source_id
+        self.excerpts = {}
+        for e in package.evidence:
+            self.excerpts.setdefault(e.source_id, []).append(e.excerpt)
+        self.papers_of_author = {}
+        self.facts = {}
+        if Path(facts_file).exists():
+            table = pd.read_excel(facts_file, sheet_name="Master")
+            for row in table.itertuples():
+                self.facts.setdefault(str(row.paper_id), []).append(
+                    {"fact": str(row.factual_claim), "quote": str(row.evidence_quote)})
+
+    def learn_authors(self, draft):
+        """Learn which author names refer to which cited paper, from paragraphs where they sit together.
+
+        The package has no author field, so names are paired with citation tokens in order of first
+        appearance ("Fu and Liu ... Chung and Freienthal ... [[S01]]; [[S02]]"). Paragraphs where the
+        counts differ (e.g. tables) are skipped rather than guessed."""
+        for p in draft.paragraphs:
+            names = list(dict.fromkeys(AUTHOR.findall(p.text)))
+            tokens = list(dict.fromkeys(CITATION.findall(p.text)))
+            if names and len(names) == len(tokens):
+                for name, source_id in zip(names, tokens):
+                    self.papers_of_author.setdefault(name, set()).add(self.paper_of.get(source_id, source_id))
+        return self
+
+    def mentions(self, text):
+        """Known author names mentioned in the text, e.g. ["Yu et al."]."""
+        return [n for n in dict.fromkeys(AUTHOR.findall(text)) if n in self.papers_of_author]
+
+    def for_texts(self, *texts):
+        """Evidence for every paper that the texts cite with a token or name by its authors."""
+        papers = {}
+        for text in texts:
+            for source_id in dict.fromkeys(CITATION.findall(text)):
+                paper = self.paper_of.get(source_id, source_id)
+                entry = papers.setdefault(paper, {"paper_id": paper, "cited_as": [], "named_as": [],
+                                                  "package_excerpts": [], "evidence_table": self.facts.get(paper, [])})
+                if source_id not in entry["cited_as"]:
+                    entry["cited_as"].append(source_id)
+                    entry["package_excerpts"] += self.excerpts.get(source_id, [])
+            for name in self.mentions(text):
+                for paper in sorted(self.papers_of_author[name]):
+                    entry = papers.setdefault(paper, {"paper_id": paper, "cited_as": [], "named_as": [],
+                                                      "package_excerpts": [], "evidence_table": self.facts.get(paper, [])})
+                    if name not in entry["named_as"]:
+                        entry["named_as"].append(name)
+                    for sid, pid in self.paper_of.items():
+                        if pid == paper and not entry["package_excerpts"]:
+                            entry["package_excerpts"] = list(self.excerpts.get(sid, []))
+        return list(papers.values())
+
+    def for_text(self, text):
+        return self.for_texts(text)
+
+
+EVIDENCE_INSTRUCTIONS = """You check one rewritten paragraph of a research proposal against evidence.
+You get the original paragraph, the rewrite, and for each paper that either text cites
+(cited_as) or names by its authors (named_as), the quotes the team collected. Judge only
+the factual content of the rewrite, not its style. A sentence that attributes something to
+named authors must be backed by THAT paper's quotes, even if the paragraph has no citation.
+For every sentence of the rewrite that describes what a cited paper did or found, decide
+SUPPORTED (the quotes back it), UNSUPPORTED (no quote backs it, or it goes beyond them) or
+CONTRADICTED (a quote says otherwise). Sentences about the authors' own proposed study are
+NOT_A_SOURCE_CLAIM. Quote the evidence you relied on.
+Set status to PASS unless the rewrite has a sentence that is UNSUPPORTED or CONTRADICTED
+while the matching sentence in the original was supported. Problems already present in the
+original are not the rewrite's fault: list them in pre_existing instead. If the evidence is
+too thin to decide, use CHECK_ERROR."""
+
+EVIDENCE_SCHEMA = {
+    "type": "object", "additionalProperties": False,
+    "required": ["status", "sentences", "reasons", "pre_existing"],
+    "properties": {
+        "status": {"type": "string", "enum": ["PASS", "UNSUPPORTED_ADDITION", "MAJOR_DRIFT", "CHECK_ERROR"]},
+        "sentences": {"type": "array", "items": {
+            "type": "object", "additionalProperties": False,
+            "required": ["sentence", "label", "evidence"],
+            "properties": {"sentence": {"type": "string"},
+                           "label": {"type": "string",
+                                     "enum": ["SUPPORTED", "UNSUPPORTED", "CONTRADICTED", "NOT_A_SOURCE_CLAIM"]},
+                           "evidence": {"type": "string"}}}},
+        "reasons": {"type": "array", "items": {"type": "string"}},
+        "pre_existing": {"type": "array", "items": {"type": "string"}},
+    },
+}
+
+
+class EvidenceGate:
+    """LLM check of cited claims against the evidence table. Only runs where a paragraph cites sources."""
+
+    def __init__(self, provider, index, max_output_tokens=4000):
+        self.provider, self.index, self.max_output_tokens = provider, index, max_output_tokens
+        self.model = provider.model
+
+    def check(self, original_text, text, retries=CHECK_RETRIES):
+        for attempt in range(retries + 1):
+            result = self._check_once(original_text, text)
+            if result.status != "CHECK_ERROR":
+                return result
+        return result
+
+    def _check_once(self, original_text, text):
+        evidence = self.index.for_texts(original_text, text)
+        if not evidence:
+            return CheckResult("evidence check", "PASS", "no cited or named sources in this paragraph")
+        payload = {"original": original_text, "rewrite": text, "evidence": evidence}
+        try:
+            result = self.provider.generate("evidence", EVIDENCE_INSTRUCTIONS, payload, EVIDENCE_SCHEMA,
+                                            self.max_output_tokens)
+            return validate_evidence_reply(result, original_text, text)
+        except Exception as error:  # a malformed or inconsistent reply must never count as a pass
+            return CheckResult("evidence check", "CHECK_ERROR", f"{type(error).__name__}: {error}")
+
+
+def _words(text):
+    return re.findall(r"[a-z0-9]+", plain(text).casefold())
+
+
+def _contains(text, sentence):
+    """True if `sentence` is in `text`, ignoring case, punctuation and citation tokens (or 80% of its words are)."""
+    words, pool = _words(sentence), _words(text)
+    if not words:
+        return False
+    if " ".join(words) in " ".join(pool):
+        return True
+    return sum(w in set(pool) for w in words) / len(words) >= 0.8
+
+
+def validate_evidence_reply(result, original_text, text):
+    """Check the evidence checker's whole reply before trusting its verdict.
+
+    Rejected (CHECK_ERROR, so asked again once, then fail closed): a missing or mistyped field, an
+    empty audit, an audited sentence that is not in the rewrite, or an overall PASS while a sentence
+    that is NEW in the rewrite is marked unsupported or contradicted."""
+    if not isinstance(result, dict):
+        raise ValueError("reply is not a JSON object")
+    missing = [k for k in EVIDENCE_SCHEMA["required"] if k not in result]
+    if missing:
+        raise ValueError(f"reply is missing {', '.join(missing)}")
+    status, sentences = result["status"], result["sentences"]
+    if status not in EVIDENCE_SCHEMA["properties"]["status"]["enum"]:
+        raise ValueError(f"unknown status {status!r}")
+    if not isinstance(sentences, list) or not all(isinstance(r, str) for r in result["reasons"]):
+        raise ValueError("sentences must be a list and reasons a list of strings")
+    labels = EVIDENCE_SCHEMA["properties"]["sentences"]["items"]["properties"]["label"]["enum"]
+    for row in sentences:
+        if not (isinstance(row, dict) and isinstance(row.get("sentence"), str) and row.get("label") in labels):
+            raise ValueError("every audited sentence needs a sentence and a valid label")
+    if status == "CHECK_ERROR":
+        return CheckResult("evidence check", "CHECK_ERROR", "; ".join(result["reasons"]) or "checker could not decide")
+    if not sentences:
+        raise ValueError("empty audit: no sentence of the rewrite was checked")
+    stray = [r["sentence"] for r in sentences if not _contains(text, r["sentence"])]
+    if stray:
+        raise ValueError(f'audited a sentence that is not in the rewrite: "{stray[0][:80]}"')
+    bad = [r for r in sentences if r["label"] in ("UNSUPPORTED", "CONTRADICTED")]
+    in_original = " ".join(_words(original_text))
+    new_bad = [r for r in bad if " ".join(_words(r["sentence"])) not in in_original]   # exact: any edit makes it new
+    if status == "PASS" and new_bad:
+        raise ValueError(f'PASS overall but a new sentence is {new_bad[0]["label"].lower()}: '
+                         f'"{new_bad[0]["sentence"][:80]}"')
+    reason = "; ".join(result["reasons"]) or "; ".join(f'{r["label"].lower()}: "{r["sentence"][:90]}"' for r in bad)
+    return CheckResult("evidence check", status, reason)
+
+
+def semantic_check(gate, package, v0, current, paragraph_id, text, retries=CHECK_RETRIES):
+    """Guan Hong's LLM meaning check over the whole draft (catches context changes).
+
+    CHECK_ERROR means the checker's answer was malformed (e.g. a claim listed twice), not that the
+    rewrite is bad, so it is asked once more. A second malformed answer still fails closed."""
+    candidate = with_paragraph(current, paragraph_id, text)
+    references = (v0,) if current == v0 else (v0, current)
+    for attempt in range(retries + 1):
+        verdict = gate.check(package, candidate, references)
+        if verdict.status != "CHECK_ERROR":
+            break
+    reason = "; ".join(verdict.reasons)
+    if attempt:
+        reason = (reason + "; " if reason else "") + f"(checker answer was malformed {attempt}x and asked again)"
+    return CheckResult("meaning check", verdict.status, reason)
+
+
+# ---------------------------------------------------------------- all checks in order
+def check_rewrite(package, v0, current, paragraph_id, text, *, evidence_gate=None, semantic_gate=None):
+    """Run every check in order and return the list of results up to the first failure."""
+    before = paragraph(current, paragraph_id).text
+    results = []
+    for run in (lambda: fluency_check(before, text),
+                lambda: preservation_check(package, v0, current, paragraph_id, text),
+                lambda: no_new_facts_check(package, v0, paragraph_id, text),
+                (lambda: evidence_gate.check(paragraph(v0, paragraph_id).text, text)) if evidence_gate else None,
+                (lambda: semantic_check(semantic_gate, package, v0, current, paragraph_id, text))
+                if semantic_gate else None):
+        if run is None:
+            continue
+        result = run()
+        results.append(result)
+        if not result.passed:
+            break
+    return results
+
+
+def summary(results):
+    """One line for reports: the check that rejected a rewrite, or 'passed all checks'."""
+    failed = [r for r in results if not r.passed]
+    if failed:
+        return f"rejected by {failed[0].check}: {failed[0].reason or failed[0].status}"
+    return "passed all checks (" + ", ".join(r.check for r in results) + ")"
+
+
+def as_dicts(results):
+    return [{"check": r.check, "status": r.status, "reason": r.reason} for r in results]
+
+
+if __name__ == "__main__":
+    print(json.dumps({"checks": ["length and tokens", "fluency guard", "preservation rules", "no new facts",
+                                 "evidence check (LLM, optional)", "meaning check (LLM, optional)"]}, indent=2))

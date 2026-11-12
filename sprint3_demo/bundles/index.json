@@ -1,0 +1,40 @@
+{
+ "schema_version": 1,
+ "topics": [
+  {
+   "id": "cluster7",
+   "title": "Human–Judge Agreement and Decision Stability in Bilingual Question Answering: A Controlled Evaluation Proposal",
+   "gap": "These precedents support a narrowly scoped study, not the assertion that multilingual human-reference evaluation is missing. We propose to examine the selected QA setting through an integrated protocol that makes human agreement, language-related decision changes and repeated-call behavior independently observable. The novelty of the combined protocol remains unconfirmed.",
+   "status_label": "Reviewed by the team",
+   "reviewed": true
+  },
+  {
+   "id": "cluster0",
+   "title": "Fact or Form? A Controlled Invariance Audit of Hallucination Detectors",
+   "gap": "Existing work documents label problems, response-length effects, domain shift and detector-family blind spots. The narrower unresolved question is whether factual discrimination survives controlled changes in answer form within the same human-validated items.",
+   "status_label": "Claims not yet reviewed",
+   "reviewed": false
+  },
+  {
+   "id": "cluster6",
+   "title": "Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement",
+   "gap": "Existing work covers iterative explanation refinement, intervention-guided optimization and faithfulness-metric audits. The narrower unresolved question is whether gains optimized under one measure transfer to an independent measure and exceed specificity controls.",
+   "status_label": "Claims not yet reviewed",
+   "reviewed": false
+  },
+  {
+   "id": "cluster13",
+   "title": "Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors",
+   "gap": "Existing work covers hybrid sentences, paraphrase attacks, realistic rewrites and human editing of model drafts. The narrower unresolved question is how detector outputs relate to distinct process labels in matched bidirectional revision trajectories.",
+   "status_label": "Claims not yet reviewed",
+   "reviewed": false
+  },
+  {
+   "id": "cluster18",
+   "title": "Safe and Useful Across Singapore Language Settings: A Matched Evaluation of Unsafe Compliance and False Refusal",
+   "gap": "Singapore-focused toxicity data, multilingual guardrails and native-reviewed refusal benchmarks already exist. The narrower unresolved question combines matched harmful and benign boundaries, independent equivalence review and joint guardrail-response analysis in selected Singapore settings.",
+   "status_label": "Claims not yet reviewed",
+   "reviewed": false
+  }
+ ]
+}

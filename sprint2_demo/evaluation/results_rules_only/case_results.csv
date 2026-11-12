@@ -1,0 +1,70 @@
+case_id,fault_type,expected,verdict,caught_by,reason,verified,correct
+N1,number changed,REJECT,REJECT,length and tokens,numbers changed,yes,True
+N2,number changed,REJECT,REJECT,length and tokens,numbers changed,yes,True
+N3,number changed,REJECT,REJECT,length and tokens,numbers changed,yes,True
+N4,number changed,REJECT,ACCEPT,,,yes,False
+N5,number changed,REJECT,ACCEPT,,,yes,False
+C1,citation changed,REJECT,REJECT,length and tokens,citations changed,yes,True
+C2,citation changed,REJECT,REJECT,length and tokens,citations changed,yes,True
+C3,citation changed,REJECT,REJECT,length and tokens,citations changed,yes,True
+C4,citation changed,REJECT,REJECT,length and tokens,citations changed,yes,True
+C5,citation changed,REJECT,ACCEPT,,,yes,False
+S1,claim strengthened,REJECT,REJECT,no new facts,claim made more certain: clearly,yes,True
+S2,claim strengthened,REJECT,REJECT,no new facts,claim made more certain: guarantees,yes,True
+S3,claim strengthened,REJECT,ACCEPT,,,yes,False
+S4,claim strengthened,REJECT,ACCEPT,,,yes,False
+S5,claim strengthened,REJECT,ACCEPT,,,yes,False
+R1,made-up result,REJECT,REJECT,no new facts,a proposed study now reads as if it reports a result,yes,True
+R2,made-up result,REJECT,REJECT,no new facts,a proposed study now reads as if it reports a result,yes,True
+R3,made-up result,REJECT,REJECT,no new facts,a proposed study now reads as if it reports a result,yes,True
+R4,made-up result,REJECT,ACCEPT,,,yes,False
+R5,made-up result,REJECT,ACCEPT,,,yes,False
+E1,source misstated,REJECT,ACCEPT,,,yes,False
+E2,source misstated,REJECT,ACCEPT,,,yes,False
+E3,source misstated,REJECT,ACCEPT,,,yes,False
+E4,source misstated,REJECT,ACCEPT,,,yes,False
+E5,source misstated,REJECT,ACCEPT,,,yes,False
+T1,protected term changed,REJECT,REJECT,preservation rules,P031: protected term changed: Cohen's kappa,yes,True
+T2,protected term changed,REJECT,REJECT,preservation rules,P030: protected term changed: unconditional operational agreement,yes,True
+T3,protected term changed,REJECT,REJECT,preservation rules,P031: protected term changed: Cohen's kappa,yes,True
+F1,fresh fault,REJECT,ACCEPT,,,yes,False
+F2,fresh fault,REJECT,REJECT,length and tokens,numbers changed,yes,True
+F3,fresh fault,REJECT,ACCEPT,,,yes,False
+F4,fresh fault,REJECT,ACCEPT,,,yes,False
+F5,fresh fault,REJECT,ACCEPT,,,yes,False
+K1,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K2,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K3,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K4,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K5,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K6,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K7,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K8,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K9,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K10,clean rewrite,REJECT,ACCEPT,,,yes,False
+K11,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K12,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K13,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+K14,clean rewrite,ACCEPT,ACCEPT,,,yes,True
+V1,real V3 rewrite,REJECT,ACCEPT,,,yes,False
+V2,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V3,real V3 rewrite,REJECT,ACCEPT,,,yes,False
+V4,real V3 rewrite,REJECT,ACCEPT,,,yes,False
+V5,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V6,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V7,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V8,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V9,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V10,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V11,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V12,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V13,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V14,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V15,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V16,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V17,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V18,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V19,real V3 rewrite,REJECT,ACCEPT,,,yes,False
+V20,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V21,real V3 rewrite,ACCEPT,ACCEPT,,,yes,True
+V22,real V3 rewrite,REJECT,ACCEPT,,,yes,False

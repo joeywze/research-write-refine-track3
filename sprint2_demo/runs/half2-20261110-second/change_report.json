@@ -1,0 +1,264 @@
+{
+  "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
+  "threshold": 35.0,
+  "paragraphs": [
+    {
+      "paragraph_id": "P035",
+      "section": "experiments",
+      "score_before": 92.4,
+      "top_features": [
+        "stock phrases",
+        "hedge density",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Exploratory 95% bootstrap intervals will resample whole underlying items, keeping each item’s translations, answer variants, and repeated calls together. With a small sample, intervals can be wide or degenerate; such outcomes and undefined statistics will be reported instead of replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+          "score": 72.2,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 72 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "Exploratory 95% bootstrap intervals will resample whole underlying items so that each item’s translations stay with its answer variants and repeated calls. With a small sample, intervals can be wide or degenerate. Those outcomes, and undefined statistics, will be reported instead of replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+          "score": 55.5,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 56 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "Exploratory 95% bootstrap intervals resample whole underlying items so that each item’s translations stay with its answer variants and repeated calls. With a small sample, intervals can be wide or degenerate. Those outcomes, and undefined statistics, will be reported instead of replaced by favorable summaries. A non-significant contrast does not establish cross-language equivalence.",
+          "score": 57.5,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 58 is not below the best safe version (56)"
+            }
+          ],
+          "verdict": "rejected by detector: score 58 is not below the best safe version (56)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Exploratory 95% bootstrap intervals will resample whole underlying items, retaining their translations, answer variants and repeated calls together. With a small sample, intervals may be wide or degenerate; such outcomes and undefined statistics will be reported rather than replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+      "text_after": "Exploratory 95% bootstrap intervals will resample whole underlying items so that each item’s translations stay with its answer variants and repeated calls. With a small sample, intervals can be wide or degenerate. Those outcomes, and undefined statistics, will be reported instead of replaced by favorable summaries. A non-significant contrast will not establish cross-language equivalence.",
+      "score_after": 55.5
+    },
+    {
+      "paragraph_id": "P037",
+      "section": "experiments",
+      "score_before": 87.4,
+      "top_features": [
+        "hedge density",
+        "lists of three",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "The design is limited to one selected language pair, one primary judge, a small sample, and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety, or performance across model families. That is a pilot limitation. Minimal errors may be too easy or unrepresentative of naturally generated answers, which would create ceiling effects that this pilot would need to identify.",
+          "score": 70.2,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 70 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "The design is limited to one selected language pair, one primary judge, and a small sample, with constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety, or performance across model families. That is a pilot limitation. Minimal errors may be too easy or unrepresentative of naturally generated answers, which would create ceiling effects that this pilot would need to identify.",
+          "score": 69.7,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "CHECK_ERROR",
+              "reason": "Semantic check failed: ValueError: checked_claim_ids: duplicate entries"
+            }
+          ],
+          "verdict": "rejected by meaning check: Semantic check failed: ValueError: checked_claim_ids: duplicate entries"
+        },
+        {
+          "attempt": 3,
+          "text": "The design is limited to one selected language pair, one primary judge, a small sample, and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety, or performance across model families. This is a pilot limitation. Minimal errors may be too easy or unrepresentative of naturally generated answers, which would create ceiling effects that this pilot would need to identify.",
+          "score": 70.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 70 is not below the best safe version (70)"
+            }
+          ],
+          "verdict": "rejected by detector: score 70 is not below the best safe version (70)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "The design is limited to one selected language pair, one primary judge, a small sample and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety or performance across model families. Minimal errors may be too easy or unrepresentative of naturally generated answers, creating ceiling effects that this pilot would need to identify.",
+      "text_after": "The design is limited to one selected language pair, one primary judge, a small sample, and constructed short-answer errors. It cannot establish broad multilingual fairness, deployment safety, or performance across model families. That is a pilot limitation. Minimal errors may be too easy or unrepresentative of naturally generated answers, which would create ceiling effects that this pilot would need to identify.",
+      "score_after": 70.2
+    },
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "score_before": 75.1,
+      "top_features": [
+        "stock phrases",
+        "lists of three",
+        "sentence lengths are too uniform"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem. Fu and Liu evaluate judgments on parallel language versions, and Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work gives direct precedents for studying language-dependent evaluation; it does not support a claim that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+          "score": 33.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem: Fu and Liu evaluate judgments on parallel language versions, while Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work provides direct precedents for studying language-dependent evaluation, rather than a basis for claiming that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+      "text_after": "When a language model is used to evaluate answers, the evaluator itself becomes an object of assessment. Multilingual studies already examine this problem. Fu and Liu evaluate judgments on parallel language versions, and Chung and Freienthal investigate cross-language stability in controlled customer-support dialogues. Their work gives direct precedents for studying language-dependent evaluation; it does not support a claim that multilingual judging has been overlooked. [[S01]]; [[S02]].",
+      "score_after": 33.9
+    }
+  ],
+  "totals": {
+    "selected": 3,
+    "revised": 3,
+    "kept_original": 0,
+    "attempts": 7,
+    "mean_score_before": 85.0,
+    "mean_score_after": 53.2
+  },
+  "critic": null
+}

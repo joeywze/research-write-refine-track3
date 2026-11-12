@@ -1,0 +1,33 @@
+{
+  "texts": {
+    "real": 10,
+    "generated": 10
+  },
+  "our_detector_mean": {
+    "real": 61.4,
+    "generated": 54.6
+  },
+  "gptzero_ai_mean": {
+    "real": 30.6,
+    "generated": 100.0
+  },
+  "gptzero_labels": {
+    "real": {
+      "mixed": 4,
+      "human": 3,
+      "ai": 3
+    },
+    "generated": {
+      "ai": 10
+    }
+  },
+  "auc_real_vs_generated": {
+    "our_detector": 0.43,
+    "gptzero": 0.85
+  },
+  "accuracy_at_50": {
+    "our_detector": 0.5,
+    "gptzero": 0.85
+  },
+  "note": "Human-study v3 texts: 10 real EMNLP 2025 + 10 AI (v2: gpt-5.6-luna; v3: our pipeline), 50-80 words, matched genre. GPTZero = free website. Our score = recorded detector (papers may be in training: best case). n=20, so treat as indicative."
+}

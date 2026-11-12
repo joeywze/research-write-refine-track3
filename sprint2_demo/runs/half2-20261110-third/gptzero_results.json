@@ -1,0 +1,38 @@
+{
+  "source": "GPTZero website (manual)",
+  "paragraphs": 3,
+  "gptzero_mean_ai_percent": {
+    "before": 100.0,
+    "after": 100.0
+  },
+  "paragraphs_gptzero_lower_after": "0 of 3",
+  "our_detector_mean": {
+    "before": 56.3,
+    "after": 35.1
+  },
+  "joined_section_ai_percent": {
+    "after": 100.0,
+    "before": 100.0
+  },
+  "per_paragraph": {
+    "P001": {
+      "gptzero_before": 100.0,
+      "gptzero_after": 100.0,
+      "ours_before": 61.4,
+      "ours_after": 35.0
+    },
+    "P014": {
+      "gptzero_before": 100.0,
+      "gptzero_after": 100.0,
+      "ours_before": 65.1,
+      "ours_after": 36.9
+    },
+    "P027": {
+      "gptzero_before": 100.0,
+      "gptzero_after": 100.0,
+      "ours_before": 42.4,
+      "ours_after": 33.4
+    }
+  },
+  "note": "GPTZero is less reliable on short texts; the joined section is the steadier number. Both detectors are imperfect, so agreement in direction matters more than exact values."
+}

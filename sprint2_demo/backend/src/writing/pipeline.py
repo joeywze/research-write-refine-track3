@@ -46,10 +46,10 @@ def create_v0(package: ResearchPackage, writer, store, config: RunConfig) -> Dra
 
 
 def run_arm(package, v0, writer, gate, store, arm, config, initial_targets,
-            initial_report=None, critic=None):
-    accepted = v0
+            initial_report=None, critic=None, *, starting_draft=None):
+    accepted = v0 if starting_draft is None else starting_draft
     report = initial_report if initial_report is not None else diagnose(accepted, config.diagnostics)
-    previous_candidates = {digest(v0)}
+    previous_candidates = {digest(v0), digest(accepted)}
     attempts = []
     stop = "MAX_ATTEMPTS"
     maximum = 1 if arm == "generic" else config.max_attempts
@@ -81,6 +81,8 @@ def run_arm(package, v0, writer, gate, store, arm, config, initial_targets,
                         for p in report["qualitative_critic"]["paragraphs"] if p["paragraph_id"] in allowed]}
             if accountable:
                 payload["review_points"] = review_points(report, allowed)
+                if starting_draft is not None:
+                    store.write(prefix + "_review_points.json", payload["review_points"])
         try:
             raw = writer.generate("revision_" + arm,
                                   GUIDED_INSTRUCTIONS if arm == "guided" else GENERIC_INSTRUCTIONS,

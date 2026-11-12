@@ -1,0 +1,550 @@
+{
+  "topic": "cluster18",
+  "interpretation": "The detector chose paragraphs and gave feedback; only the content checks could accept a rewrite.",
+  "threshold": 35.0,
+  "paragraphs": [
+    {
+      "paragraph_id": "P002",
+      "section": "introduction",
+      "score_before": 83.1,
+      "top_features": [
+        "hedge density",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "A model can appear safe by refusing nearly everything. It can also appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a translated or code-switched prompt can alter intent, severity, politeness, or local meaning. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+          "score": 66.9,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 67 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "A model can appear safe by refusing nearly everything. It can also appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a translated or code-switched prompt can alter intent, severity, or local meaning. It can also change politeness. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+          "score": 57.3,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 57 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "A model can appear safe by refusing nearly everything. It can also appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a translated or code-switched prompt can alter intent, severity, or local meaning, and it can change politeness. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+          "score": 63.0,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 63 is not below the best safe version (57)"
+            }
+          ],
+          "verdict": "rejected by detector: score 63 is not below the best safe version (57)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "A model can appear safe by refusing nearly everything. It can appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a third problem intervenes: a translated or code-switched prompt may alter intent, severity, politeness or local meaning. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+      "text_after": "A model can appear safe by refusing nearly everything. It can also appear helpful by answering requests that should have been refused. A valid safety evaluation must therefore measure unsafe compliance on harmful inputs and false refusal on benign inputs. In multilingual settings, a translated or code-switched prompt can alter intent, severity, or local meaning. It can also change politeness. Without independent equivalence review, a changed model outcome can be misattributed to language.",
+      "score_after": 57.3
+    },
+    {
+      "paragraph_id": "P014",
+      "section": "methodology",
+      "score_before": 81.3,
+      "top_features": [
+        "hedge density",
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings include a standardized language, a Singapore variety, or a code-switched register; the final choice will be based on reviewer competence and feasible ethical oversight, not a hierarchy of “resource level.”",
+          "score": 52.1,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 52 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 2,
+          "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings include a standardized language and a Singapore variety; a code-switched register is also under consideration. The final choice will be based on reviewer competence and feasible ethical oversight, not a hierarchy of “resource level.”",
+          "score": 40.2,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 40 (target 35), trying to lower it further"
+        },
+        {
+          "attempt": 3,
+          "text": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings include a standardized language and a Singapore variety. A code-switched register is also under consideration. The final choice will be based on reviewer competence and feasible ethical oversight, not a hierarchy of “resource level.”",
+          "score": 23.4,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings may include a standardized language, a Singapore variety or a code-switched register, but the final choice will be based on reviewer competence and feasible ethical oversight—not a hierarchy of “resource level.”",
+      "text_after": "English and two additional settings will be selected only after confirming two fluent reviewers and one adjudicator for each. Candidate settings include a standardized language and a Singapore variety. A code-switched register is also under consideration. The final choice will be based on reviewer competence and feasible ethical oversight, not a hierarchy of “resource level.”",
+      "score_after": 23.4
+    },
+    {
+      "paragraph_id": "P011",
+      "section": "related_work",
+      "score_before": 71.6,
+      "top_features": [
+        "stock phrases",
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings. It does not claim broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+          "score": 25.8,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "All source-related claims in the rewrite are supported by the provided evidence.; The added final sentence is a statement about the authors' proposed study, not about the cited source."
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings rather than claiming broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+      "text_after": "Pag-refuse provides an especially close precedent for matched refusal evaluation in one language and a mixed-language variety. Its authors appropriately limit inference to a particular variety/register. Our study extends the control principle to selected Singapore settings. It does not claim broad cross-lingual coverage. [[S_2026_mrl_1_41]].",
+      "score_after": 25.8
+    },
+    {
+      "paragraph_id": "P001",
+      "section": "abstract",
+      "score_before": 48.4,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets, and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten, and reviewed for intent, harm status, and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection, and technical failure. The scenario, not the individual prompt variant, will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness, and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+          "score": 48.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 48 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 48 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 2,
+          "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets, and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios will be evaluated in selected Singapore language settings, and translation and register quality will be adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten, and reviewed for intent, harm status, and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection, and technical failure. The comparison unit will be the scenario, not the individual prompt variant. The contribution is a transparent paired protocol that keeps safety, usefulness, and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+          "score": 46.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 46 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 46 is not at least 5 points below 48"
+        },
+        {
+          "attempt": 3,
+          "text": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets, and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, rewritten in natural language, and reviewed for intent, harm status, and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection, and technical failure. Comparison will use the scenario rather than the individual prompt variant. The contribution is a transparent paired protocol that keeps safety, usefulness, and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+          "score": 59.1,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 59 is not at least 5 points below 48"
+            }
+          ],
+          "verdict": "rejected by detector: score 59 is not at least 5 points below 48"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten and reviewed for intent, harm status and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection and technical failure. The scenario—not the individual prompt variant—will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+      "text_after": "Multilingual safety evaluation must distinguish two opposing failures: complying with harmful requests and refusing benign requests that resemble them. Existing research already provides Singapore-focused toxicity data, multilingual guardrails, over-refusal benchmarks, native-reviewed harmful-prompt sets and mechanistic analyses of refusal. The defensible gap is therefore a bounded replication-and-extension: matched harmful and benign near-boundary scenarios evaluated in selected Singapore language settings, with translation and register quality adjudicated independently of model safety. We propose English plus two settings chosen only after recruiting fluent reviewers. Sixty scenario families will be translated, naturally rewritten and reviewed for intent, harm status and equivalence. Two language models and one external guardrail will be tested over repeated calls. Response labels will separate unsafe compliance, safe assistance, appropriate refusal, false refusal, redirection and technical failure. The scenario—not the individual prompt variant—will be the comparison unit. The contribution is a transparent paired protocol that keeps safety, usefulness and language-equivalence errors separate; it is not the first multilingual safety benchmark and does not generalize to entire language communities.",
+      "score_after": 48.4,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P006",
+      "section": "introduction",
+      "score_before": 43.6,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences",
+        "lists of three"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "1. **RQ1: Safety.** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2: Usefulness.** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3: Equivalence.** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent, or register?\n4. **RQ4: Guardrail interaction.** Where do an external prompt guardrail and the final model response fail independently or together?",
+          "score": 14.1,
+          "accepted": true,
+          "checks": [
+            {
+              "check": "fluency guard",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "preservation rules",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "no new facts",
+              "status": "PASS",
+              "reason": ""
+            },
+            {
+              "check": "evidence check",
+              "status": "PASS",
+              "reason": "no cited or named sources in this paragraph"
+            },
+            {
+              "check": "meaning check",
+              "status": "PASS",
+              "reason": ""
+            }
+          ],
+          "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)"
+        }
+      ],
+      "outcome": "revised",
+      "text_before": "1. **RQ1—Safety:** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2—Usefulness:** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3—Equivalence:** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent or register?\n4. **RQ4—Guardrail interaction:** Where do an external prompt guardrail and the final model response fail independently or together?",
+      "text_after": "1. **RQ1: Safety.** How does unsafe-compliance rate on harmful scenarios differ across settings?\n2. **RQ2: Usefulness.** How does false-refusal rate on benign near-boundary scenarios differ across settings?\n3. **RQ3: Equivalence.** How much apparent cross-language change is concentrated in items with reviewer disagreement about meaning, intent, or register?\n4. **RQ4: Guardrail interaction.** Where do an external prompt guardrail and the final model response fail independently or together?",
+      "score_after": 14.1
+    },
+    {
+      "paragraph_id": "P024",
+      "section": "methodology",
+      "score_before": 42.4,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. We will record the model and guardrail versions, dates, system policies, prompts, sampling controls, and token limits. Each model–prompt condition will receive three independent calls.",
+          "score": 42.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 42 is not at least 5 points below 42"
+            }
+          ],
+          "verdict": "rejected by detector: score 42 is not at least 5 points below 42"
+        },
+        {
+          "attempt": 2,
+          "text": "We will select two instruction-tuned model families and one external input guardrail based on reproducible access and multilingual support. For each run, record model and guardrail versions, dates, system policies, prompts, sampling controls, and token limits. Each model–prompt condition will receive three independent calls.",
+          "score": 42.2,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 42 is not at least 5 points below 42"
+            }
+          ],
+          "verdict": "rejected by detector: score 42 is not at least 5 points below 42"
+        },
+        {
+          "attempt": 3,
+          "text": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. We will record model and guardrail versions, dates, system policies, prompts, sampling controls, and token limits. Each model–prompt condition will receive three independent calls.",
+          "score": 42.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 42 is not at least 5 points below 42"
+            }
+          ],
+          "verdict": "rejected by detector: score 42 is not at least 5 points below 42"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.",
+      "text_after": "Two instruction-tuned model families and one external input guardrail will be selected based on reproducible access and multilingual support. Model and guardrail versions, dates, system policies, prompts, sampling controls and token limits will be recorded. Each model–prompt condition will receive three independent calls.",
+      "score_after": 42.4,
+      "needs_human_edit": true
+    },
+    {
+      "paragraph_id": "P008",
+      "section": "related_work",
+      "score_before": 38.1,
+      "top_features": [
+        "lists of three",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [],
+      "outcome": "held for research",
+      "held_reason": "specificity: The citation token is attached to the paragraph, while the supplied evidence mapping clearly supports the MrGuard claims but does not clearly support the opening SGToxicGuard and OMNIGUARD claims.",
+      "text_before": "SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. [[S_2025_emnlp_main_1065]]; [[S_2025_emnlp_main_1065]].",
+      "text_after": "SGToxicGuard directly establishes Singapore relevance by evaluating multilingual and local-language toxicity across conversation, question answering and content composition. MrGuard evaluates multilingual harmful-input detection and reports a seven-language setting, although its white-box dependence limits some deployment comparisons. OMNIGUARD/MULTIGUARD covers multilingual and perturbed inputs. [[S_2025_emnlp_main_1065]]; [[S_2025_emnlp_main_1065]].",
+      "score_after": 38.1,
+      "needs_human_edit": false
+    },
+    {
+      "paragraph_id": "P033",
+      "section": "experiments",
+      "score_before": 37.4,
+      "top_features": [
+        "sentence lengths are too uniform",
+        "share of very long sentences"
+      ],
+      "critic_leads": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+          "score": 37.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "writer",
+              "status": "NO_CHANGE",
+              "reason": "the rewrite repeated an earlier version"
+            }
+          ],
+          "verdict": "rejected by writer: the rewrite repeated an earlier version"
+        },
+        {
+          "attempt": 2,
+          "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check, not a precise estimate of production probability. Technical failures count in operational coverage, and they are not silently retried beyond the frozen rule.",
+          "score": 37.4,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 37 is not at least 5 points below 37"
+            }
+          ],
+          "verdict": "rejected by detector: score 37 is not at least 5 points below 37"
+        },
+        {
+          "attempt": 3,
+          "text": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls give only a coarse instability check, not a precise production probability estimate. Technical failures count in operational coverage, and they are not silently retried beyond the frozen rule.",
+          "score": 36.1,
+          "accepted": false,
+          "checks": [
+            {
+              "check": "detector",
+              "status": "NO_IMPROVEMENT",
+              "reason": "score 36 is not at least 5 points below 37"
+            }
+          ],
+          "verdict": "rejected by detector: score 36 is not at least 5 points below 37"
+        }
+      ],
+      "outcome": "kept original",
+      "text_before": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+      "text_after": "For each prompt–model cell, we will report whether all three outcomes agree and whether any unsafe compliance occurred. Three calls offer only a coarse instability check; they do not estimate a production probability precisely. Technical failures count in operational coverage and are not silently retried beyond the frozen rule.",
+      "score_after": 37.4,
+      "needs_human_edit": true
+    }
+  ],
+  "totals": {
+    "selected": 8,
+    "revised": 4,
+    "kept_original": 4,
+    "attempts": 17,
+    "needs_human_edit": 3,
+    "held_for_research": 1,
+    "mean_score_before": 55.7,
+    "mean_score_after": 35.9
+  },
+  "critic": {
+    "model": "gpt-5.6-luna",
+    "review_of_v0": "ok",
+    "review_of_final": "ok",
+    "actionable_before": 0,
+    "actionable_after": 0,
+    "needs_research": [
+      {
+        "paragraph_id": "P003",
+        "criterion": "specificity",
+        "explanation": "The paragraph attributes several claims to citation tokens at paragraph level, but the supplied mapping does not clearly establish which source supports the MrGuard and OMNIGUARD statements or the combined warning about limited human review."
+      },
+      {
+        "paragraph_id": "P008",
+        "criterion": "specificity",
+        "explanation": "The citation token is attached to the paragraph, while the supplied evidence mapping clearly supports the MrGuard claims but does not clearly support the opening SGToxicGuard and OMNIGUARD claims."
+      }
+    ]
+  }
+}

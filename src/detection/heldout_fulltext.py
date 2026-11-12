@@ -1,11 +1,12 @@
 """
-Held-out check on real *body* text (not abstracts).
+Historical comparison on real body text.
 
 The detector is fit on human abstracts vs AI paragraphs from all sections, so
 part of what it learns could be "abstract vs body section". This script tests
-it on passages from the full PDFs of 18 real EMNLP 2025 papers (Cluster 7,
-extracted on the research-idea branch) that it never saw during training,
-against the AI body paragraphs (out-of-fold predictions).
+it on passages from the full PDFs of 18 real EMNLP 2025 papers (Cluster 7).
+Their abstracts appear in the training corpus. Human passages use the final
+model, while generated body paragraphs use out-of-fold predictions. The
+comparison is descriptive rather than an evaluation on unseen papers.
 
 Input : data/processed/cluster7_fulltext_evidence.csv (from research-idea branch)
 Output: results/detection/heldout_fulltext.json, heldout_fulltext_passages.csv
@@ -86,7 +87,8 @@ def main():
         "mean_score_ai_body": round(ai.score.mean(), 1),
         "share_human_body_flagged_ai_at_50": round((human.score > 50).mean(), 3),
         "share_ai_body_flagged_ai_at_50": round((ai.score > 50).mean(), 3),
-        "note": "PDF text extraction is noisy (two-column layout); passages may mix columns.",
+        "note": ("Historical body-text comparison. The source abstracts appear in training. "
+                 "Human and generated scores use different fitted models, and PDF extraction may mix columns."),
     }
     human.to_csv(OUT / "heldout_fulltext_passages.csv", index=False)
     (OUT / "heldout_fulltext.json").write_text(json.dumps(res, indent=2))

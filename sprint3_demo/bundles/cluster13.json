@@ -1,0 +1,2439 @@
+{
+ "schema_version": 1,
+ "id": "cluster13",
+ "title": "Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors",
+ "reviewed": false,
+ "status_label": "Claims not yet reviewed",
+ "research_question": "What do AI-text detector scores track when original drafter, latest editor and sentence provenance vary independently across matched revision histories?",
+ "gap": "Existing work covers hybrid sentences, paraphrase attacks, realistic rewrites and human editing of model drafts. The narrower unresolved question is how detector outputs relate to distinct process labels in matched bidirectional revision trajectories.",
+ "contribution": "A proposed process-aware, bidirectional revision-history audit that keeps original drafter, latest editor and sentence provenance as separate evaluation targets.",
+ "claims": [
+  {
+   "claim_id": "P003-1",
+   "paragraph_id": "P003",
+   "claim": "hybrid and edited text are not a new setting",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "predict the probability of being AI-generated",
+     "page": "3.3 Information Fusion Module; PDF p. 5",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-2",
+   "paragraph_id": "P003",
+   "claim": "SenDetEX explicitly detects sentence-level human–AI mixtures",
+   "evidence": [
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "predict the probability of being AI-generated",
+     "page": "3.3 Information Fusion Module; PDF p. 5",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "Its advantage will diminish in sparse or noisy context",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-3",
+   "paragraph_id": "P003",
+   "claim": "frames its label as sentence provenance",
+   "evidence": [
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "Its advantage will diminish in sparse or noisy context",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "predict the probability of being AI-generated",
+     "page": "3.3 Information Fusion Module; PDF p. 5",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-4",
+   "paragraph_id": "P003",
+   "claim": "notes limits on available context",
+   "evidence": [
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "Its advantage will diminish in sparse or noisy context",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "predict the probability of being AI-generated",
+     "page": "3.3 Information Fusion Module; PDF p. 5",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-5",
+   "paragraph_id": "P003",
+   "claim": "CoPA and TempParaphraser demonstrate evasion through paraphrasing",
+   "evidence": [
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "predict the probability of being AI-generated",
+     "page": "3.3 Information Fusion Module; PDF p. 5",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+     "quote": "Its advantage will diminish in sparse or noisy context",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.268/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-6",
+   "paragraph_id": "P003",
+   "claim": "OpenTuringBench includes manipulated text",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-7",
+   "paragraph_id": "P003",
+   "claim": "unseen generators",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-8",
+   "paragraph_id": "P003",
+   "claim": "domain shift",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-9",
+   "paragraph_id": "P003",
+   "claim": "including rewriting by the same generator",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-10",
+   "paragraph_id": "P004",
+   "claim": "PAWN++ tests realistic web rewrites",
+   "evidence": [
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "Every machine text is paired with the human score",
+     "page": "8.1 Methods and Protocol; PDF p. 7",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "should not be treated as standalone proof of authorship",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-11",
+   "paragraph_id": "P004",
+   "claim": "emphasizes that detector scores are not proof of authorship",
+   "evidence": [
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "should not be treated as standalone proof of authorship",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "Every machine text is paired with the human score",
+     "page": "8.1 Methods and Protocol; PDF p. 7",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-12",
+   "paragraph_id": "P004",
+   "claim": "AIGT-SignalBench evaluates human-edited AI drafts.",
+   "evidence": [
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "Every machine text is paired with the human score",
+     "page": "8.1 Methods and Protocol; PDF p. 7",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web",
+     "quote": "should not be treated as standalone proof of authorship",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.wac-1.25/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-13",
+   "paragraph_id": "P004",
+   "claim": "Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts",
+   "evidence": [
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "The key construction step is reference-matched generation.",
+     "page": "5.1 Benchmark Construction; PDF p. 7",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "we do not claim to remove all possible shortcuts.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-14",
+   "paragraph_id": "P004",
+   "claim": "still acknowledging incomplete shortcut removal",
+   "evidence": [
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "we do not claim to remove all possible shortcuts.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "The key construction step is reference-matched generation.",
+     "page": "5.1 Benchmark Construction; PDF p. 7",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-15",
+   "paragraph_id": "P004",
+   "claim": "Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns.",
+   "evidence": [
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "we do not claim to remove all possible shortcuts.",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Shortcut-Controlled Evaluation for AI-Generated Text Detection",
+     "quote": "The key construction step is reference-matched generation.",
+     "page": "5.1 Benchmark Construction; PDF p. 7",
+     "url": "https://aclanthology.org/2026.emnlp-main.2177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-16",
+   "paragraph_id": "P009",
+   "claim": "CoPA uses contrastive decoding to produce paraphrase attacks",
+   "evidence": [
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "focuses exclusively on English text",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-17",
+   "paragraph_id": "P009",
+   "claim": "without training a separate paraphraser",
+   "evidence": [
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "focuses exclusively on English text",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-18",
+   "paragraph_id": "P009",
+   "claim": "its reported evaluation is English-only",
+   "evidence": [
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "focuses exclusively on English text",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+     "quote": "a training-free paraphrase approach named Contrastive Paraphrase Attack",
+     "page": "1 Introduction; PDF p. 2",
+     "url": "https://aclanthology.org/2025.emnlp-main.433/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-19",
+   "paragraph_id": "P009",
+   "claim": "TempParaphraser repeatedly paraphrases text to simulate high-temperature generation",
+   "evidence": [
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "used in the paper is equivalent to recall.",
+     "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "which may result in a loss of long-range contextual coherence",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-20",
+   "paragraph_id": "P009",
+   "claim": "its headline analysis emphasizes detector recall",
+   "evidence": [
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "used in the paper is equivalent to recall.",
+     "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "which may result in a loss of long-range contextual coherence",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-21",
+   "paragraph_id": "P009",
+   "claim": "its authors identify coherence as a limitation",
+   "evidence": [
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "which may result in a loss of long-range contextual coherence",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+     "quote": "used in the paper is equivalent to recall.",
+     "page": "E.1 Additional Metrics for Evaluating Attack Effectiveness; PDF p. 16",
+     "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-22",
+   "paragraph_id": "P009",
+   "claim": "OpenTuringBench evaluates several manipulations and generator/domain transfer",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-23",
+   "paragraph_id": "P009",
+   "claim": "also being bounded to English",
+   "evidence": [
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "with each model rewriting its own previously generated texts.",
+     "page": "2.4 Evaluation Tasks, E3; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+     "quote": "Our benchmark currently refers only to English texts.",
+     "page": "Limitations: Language usage; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  }
+ ],
+ "real_papers": [
+  {
+   "source_id": "S_2025_emnlp_main_268",
+   "paper_id": "2025.emnlp-main.268",
+   "title": "S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion",
+   "url": "https://aclanthology.org/2025.emnlp-main.268/",
+   "score": 19.9,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1354",
+   "paper_id": "2025.emnlp-main.1354",
+   "title": "O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+   "url": "https://aclanthology.org/2025.emnlp-main.1354/",
+   "score": 53.1,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_433",
+   "paper_id": "2025.emnlp-main.433",
+   "title": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors",
+   "url": "https://aclanthology.org/2025.emnlp-main.433/",
+   "score": 46.2,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1607",
+   "paper_id": "2025.emnlp-main.1607",
+   "title": "T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing",
+   "url": "https://aclanthology.org/2025.emnlp-main.1607/",
+   "score": 26.6,
+   "basis": "unseen-paper model"
+  }
+ ],
+ "real_band": {
+  "n": 4,
+  "min": 19.9,
+  "max": 53.1,
+  "mean": 36.5
+ },
+ "v0": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Binary AI-text detection becomes conceptually unstable when a document has both human and model contributors. Existing studies already evaluate sentence-level hybrid text, paraphrase attacks, same-generator rewriting, human-edited AI drafts, realistic web rewrites and cross-dataset failures. The unresolved question is therefore not whether detectors fail on edited text, but what their scores track when origin and latest editor vary independently. We propose a bidirectional revision-history audit built from identical briefs and fully logged trajectories: human-origin texts edited by a model and model-origin texts edited by a human, alongside same-origin editing controls. Copy-editing, structural revision, bounded substantive revision and controlled sentence replacement will be matched across routes. Human reviewers will verify claim preservation and mark changed spans. Document and sentence detectors will be evaluated against three labels kept separate: original drafter, latest editor and sentence provenance. Primary analysis will measure within-lineage score movement, false positives on human-origin material and the extent to which detector outputs correspond to each possible target. The contribution is a process-aware evaluation protocol, not a forensic authorship system or proof of misconduct.",
+    "score": 41.2
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "“Human-written” and “AI-written” are often treated as mutually exclusive properties of a final document. Real revision workflows violate that assumption. A human may draft a text and ask a model to reorganize it; a model may produce a first draft that a person rewrites; individual sentences may have different origins. Without a declared target, a detector score could be interpreted as evidence about the initial drafter, the latest editor, the current wording or merely a stylistic resemblance to its training data.",
+    "score": 85.7
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. [[S_2025_emnlp_main_268]]; [[S_2025_emnlp_main_268]]; [[S_2025_emnlp_main_1354]].",
+    "score": 36.0
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. [[S_2026_wac_1_25]]; [[S_2026_wac_1_25]]; [[S_2026_emnlp_main_2177]]; [[S_2026_emnlp_main_2177]].",
+    "score": 21.4
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "What remains insufficiently isolated is a matched, bidirectional trajectory where original drafter and latest editor can be varied independently under the same brief and revision instructions. We ask:",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1—Trajectory:** How do detector scores move across successive revision stages within the same document lineage?\n2. **RQ2—Target:** Do outputs align more closely with original drafter, latest editor or sentence-level provenance?\n3. **RQ3—Direction:** Are score changes symmetric between human-origin→AI-edit and AI-origin→human-edit routes under matched operations?\n4. **RQ4—False positives:** Which human-origin or human-only revision conditions are incorrectly flagged, and what surface features accompany those errors?",
+    "score": 49.7
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "The study does not decide who morally or legally “authored” a collaborative text. It tests the empirical behavior of detectors under known process labels.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "SenDetEX constructs hybrid documents and performs contextual sentence-level classification. It directly blocks any claim that sentence-level human–AI mixture is absent from the literature. Its target is nevertheless a binary sentence-origin label, not a comparison among original drafter, latest editor and local provenance over a full revision history.",
+    "score": 36.8
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. [[S_2025_emnlp_main_433]]; [[S_2025_emnlp_main_433]]; [[S_2025_emnlp_main_1607]]; [[S_2025_emnlp_main_1607]]; [[S_2025_emnlp_main_1354]].",
+    "score": 33.2
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "These studies establish fragility under manipulation. Repeating another generic rewrite attack would add little.",
+    "score": null
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "The 2026 papers improve realism. PAWN++ evaluates detector behavior on human and model editing of web text, while AIGT-SignalBench directly studies human-edited AI drafts. Shortcut-Controlled Evaluation matches generations to references to reduce source and topic differences, though its authors do not claim that every shortcut has been removed. Spotlights and Blindspots demonstrates that cross-dataset results and false positives depend on domain and detector.",
+    "score": 20.0
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "The proposed design therefore does not claim “the first realistic edited-text benchmark.” Its narrower contribution is a factorial process record:",
+    "score": null
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "| Factor | Levels |\n|---|---|\n| Original drafter | Human; model |\n| Latest editor | Same human/model type; opposite type |\n| Revision operation | Copy-edit; structure; bounded substance; sentence replacement |\n| Evaluation target | Original drafter; latest editor; sentence provenance |",
+    "score": null
+   },
+   {
+    "id": "P014",
+    "section": "related_work",
+    "text": "Holding the brief and revision specification constant is intended to make these labels separable. It will not eliminate every stylistic difference between human and model labor.",
+    "score": null
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "We plan 40 non-sensitive source briefs across two domains, such as public-information explanations and product-neutral summaries. Each brief will contain the same factual source packet, target audience, required claims and length range. Two consenting human writers and two fixed model configurations will independently create base drafts for every assigned brief.",
+    "score": 54.5
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "Assignment will be balanced so that each brief yields at least one human-origin and one model-origin text. Human writers will not see model drafts during base drafting. Model prompts, model identifiers, dates and settings will be recorded. Source packets will permit later claim verification and reduce the chance that factual differences are mistaken for origin signals.",
+    "score": 38.3
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "Each base text enters four revision stages:",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "| Stage | Instruction | Content constraint |\n|---|---|---|\n| S0 Original | No revision | Base draft |\n| S1 Copy-edit | Grammar, punctuation and local fluency | No claim changes |\n| S2 Structural | Reorder and improve transitions | Preserve all claims |\n| S3 Bounded substantive | Implement a fixed edit brief | Only listed additions/deletions |\n| S4 Mixed-sentence | Replace designated sentences using opposite contributor type | Preserve local meaning where specified |",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "For human-origin drafts, one route uses human edits and one uses AI edits. For model-origin drafts, one route uses model edits and one uses human edits. Same-type routes estimate the effect of revision without changing contributor type; cross-type routes provide the bidirectional comparison.",
+    "score": 35.8
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "All versions will be stored with tracked diffs. Two reviewers, blinded to the intended detector label, will mark whether required claims are preserved, whether unauthorized claims were introduced and which spans changed. A stage that violates its constraint will be regenerated once under a frozen rule; persistent failures remain in an operational-failure table and are excluded from the paired semantic-preservation analysis.",
+    "score": 21.3
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "Each version will carry three noninterchangeable process labels:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. **Original drafter:** contributor type that produced S0.\n2. **Latest editor:** contributor type responsible for the current transition.\n3. **Sentence provenance:** contributor type responsible for the current sentence wording, based on the tracked history.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "At document level, mixed sentence provenance will be represented as proportions rather than collapsed into a binary “AI-written” label. The analysis will ask how detector output relates to each label; it will not select whichever target makes the detector look best.",
+    "score": 79.2
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "At least four reproducible detector families will be included where licenses permit:",
+    "score": null
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "- likelihood or rank based;\n- supervised document classifier;\n- stylistic-feature based;\n- contextual sentence classifier.",
+    "score": null
+   },
+   {
+    "id": "P026",
+    "section": "methodology",
+    "text": "Versions, settings and preprocessing will be frozen. Thresholds will be chosen using separate calibration data that do not share briefs, writers or revision histories with the test set. Raw scores will remain the primary output; binary rates are threshold-dependent secondary summaries. Invalid, truncated and unsupported inputs will be reported as failures.",
+    "score": 55.0
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "The source brief and base draft define the dependency structure. Primary plots will show score trajectories from S0 to S4 for each route. Paired contrasts will compare:",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "- human-origin→AI-edit versus human-origin→human-edit;\n- model-origin→human-edit versus model-origin→model-edit;\n- the two cross-type directions under the same revision operation.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "Brief-cluster bootstrap intervals will retain all versions and routes derived from a brief. Domain and detector-family results will appear before pooled summaries.",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "For each detector, we will evaluate association with original drafter, latest editor and sentence-provenance proportion separately. Document AUROC, calibration and fixed-threshold error rates will be reported only for targets for which a binary comparison is meaningful. Sentence models will receive macro-F1 and class-specific recall against known sentence provenance.",
+    "score": 62.7
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "The key outcome is not a single leaderboard. It is whether a detector that appears successful under one target fails under another. For example, retaining an “AI” score after extensive human editing might correlate with original origin while being misleading if a user interprets it as the contributor responsible for the final wording.",
+    "score": 47.2
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "False positives on original human drafts and human-only revisions are a primary safety outcome. We will report them by writer, domain and stage without making individual-level forensic claims. Exploratory models will test associations with length, sentence length variance, lexical diversity, punctuation, formatting and source overlap. These checks can identify possible shortcuts but cannot prove the internal basis of a detector.",
+    "score": 62.0
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "A detector score will never be used to accuse a writer or adjudicate misconduct. Texts and writer identities will be separated; reported examples will require consent and redaction.",
+    "score": null
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Scores follow original drafter across later edits | Evidence of origin association in this sample, not proof of authorship |\n| Scores follow latest editor in both directions | Evidence of edit-style sensitivity |\n| Scores move only for human→AI editing | Directional asymmetry or unmatched effort must be examined |\n| Sentence detector succeeds while document target is unstable | Local provenance may be more defensible than binary document labels |\n| Surface baselines explain similar variance | Detector may rely substantially on form shortcuts |",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "Forty briefs with multiple drafts, routes and stages create a sizeable human-writing and review burden. A four-brief pilot will test instruction matching, diff capture and reviewer workload before the test protocol is frozen. Pilot texts will be excluded if the instructions change.",
+    "score": 59.2
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "The study is limited by the number of writers, domains and model versions. Human and model editing effort cannot be perfectly matched. Logged laboratory revision is more controlled than natural writing, and process histories are rarely available in deployment. Reviewers may miss subtle meaning changes. Model updates and detector API changes may reduce reproducibility. Most importantly, process labels do not settle legal, educational or philosophical definitions of authorship.",
+    "score": 86.6
+   },
+   {
+    "id": "P037",
+    "section": "conclusion",
+    "text": "The reviewed literature already covers paraphrase attacks, hybrid sentences, realistic rewrites and human editing of model drafts. The defensible gap is a matched bidirectional history in which original drafter, latest editor and sentence provenance are recorded separately. This proposal uses that structure to test what detector outputs actually follow and where false positives arise. It is an evaluation of detector interpretation, not a mechanism for proving who wrote a final text. Experimental results remain to be collected.",
+    "score": 43.9
+   }
+  ],
+  "mean": 48.5
+ },
+ "final": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Binary AI-text detection becomes conceptually unstable when a document has both human and model contributors. Existing studies already evaluate sentence-level hybrid text, paraphrase attacks, same-generator rewriting, human-edited AI drafts, realistic web rewrites and cross-dataset failures. The unresolved question is therefore not whether detectors fail on edited text, but what their scores track when origin and latest editor vary independently. We propose a bidirectional revision-history audit built from identical briefs and fully logged trajectories: human-origin texts edited by a model and model-origin texts edited by a human, alongside same-origin editing controls. Copy-editing, structural revision, bounded substantive revision and controlled sentence replacement will be matched across routes. Human reviewers will verify claim preservation and mark changed spans. Document and sentence detectors will be evaluated against three labels kept separate: original drafter, latest editor and sentence provenance. Primary analysis will measure within-lineage score movement, false positives on human-origin material and the extent to which detector outputs correspond to each possible target. The contribution is a process-aware evaluation protocol, not a forensic authorship system or proof of misconduct.",
+    "score": 41.2
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "“Human-written” and “AI-written” are often treated as mutually exclusive properties of a final document. Real revision workflows violate that assumption. A human drafts a text and asks a model to reorganize it; a model produces a first draft that a person rewrites; different sentences can have different origins. Without a declared target, a detector score could be interpreted as evidence about the initial drafter, the latest editor, the current wording, or simply a stylistic resemblance to its training data.",
+    "score": 72.0
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The full-paper review shows that hybrid and edited text are not a new setting. SenDetEX explicitly detects sentence-level human–AI mixtures, but frames its label as sentence provenance and notes limits on available context. CoPA and TempParaphraser demonstrate evasion through paraphrasing. OpenTuringBench includes manipulated text, unseen generators and domain shift, including rewriting by the same generator. [[S_2025_emnlp_main_268]]; [[S_2025_emnlp_main_268]]; [[S_2025_emnlp_main_1354]].",
+    "score": 36.0
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The 2026 comparison set narrows the contribution further. PAWN++ tests realistic web rewrites and emphasizes that detector scores are not proof of authorship. AIGT-SignalBench evaluates human-edited AI drafts. Shortcut-controlled work constructs reference-matched generations to reduce topic and source artifacts, while still acknowledging incomplete shortcut removal. Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns. [[S_2026_wac_1_25]]; [[S_2026_wac_1_25]]; [[S_2026_emnlp_main_2177]]; [[S_2026_emnlp_main_2177]].",
+    "score": 21.4
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "What remains insufficiently isolated is a matched, bidirectional trajectory where original drafter and latest editor can be varied independently under the same brief and revision instructions. We ask:",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "1. **RQ1: Trajectory.** How do detector scores move across successive revision stages within the same document lineage?\n2. **RQ2: Target.** Do outputs align more closely with the original drafter, the latest editor, or sentence-level provenance?\n3. **RQ3: Direction.** Under matched operations, are score changes symmetric between human-origin→AI-edit and AI-origin→human-edit routes?\n4. **RQ4: False positives.** Which human-origin or human-only revision conditions are incorrectly flagged, and what surface features accompany those errors?",
+    "score": 14.6
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "The study does not decide who morally or legally “authored” a collaborative text. It tests the empirical behavior of detectors under known process labels.",
+    "score": null
+   },
+   {
+    "id": "P008",
+    "section": "related_work",
+    "text": "SenDetEX constructs hybrid documents and performs contextual sentence-level classification. It directly blocks any claim that sentence-level human–AI mixture is absent from the literature. Its target is nevertheless a binary sentence-origin label, not a comparison among original drafter, latest editor and local provenance over a full revision history.",
+    "score": 36.8
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "CoPA uses contrastive decoding to produce paraphrase attacks without training a separate paraphraser, but its reported evaluation is English-only. TempParaphraser repeatedly paraphrases text to simulate high-temperature generation; its headline analysis emphasizes detector recall and its authors identify coherence as a limitation. OpenTuringBench evaluates several manipulations and generator/domain transfer, while also being bounded to English. [[S_2025_emnlp_main_433]]; [[S_2025_emnlp_main_433]]; [[S_2025_emnlp_main_1607]]; [[S_2025_emnlp_main_1607]]; [[S_2025_emnlp_main_1354]].",
+    "score": 33.2
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "These studies establish fragility under manipulation. Repeating another generic rewrite attack would add little.",
+    "score": null
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "The 2026 papers improve realism. PAWN++ evaluates detector behavior on human and model editing of web text, while AIGT-SignalBench directly studies human-edited AI drafts. Shortcut-Controlled Evaluation matches generations to references to reduce source and topic differences, though its authors do not claim that every shortcut has been removed. Spotlights and Blindspots demonstrates that cross-dataset results and false positives depend on domain and detector.",
+    "score": 20.0
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "The proposed design therefore does not claim “the first realistic edited-text benchmark.” Its narrower contribution is a factorial process record:",
+    "score": null
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "| Factor | Levels |\n|---|---|\n| Original drafter | Human; model |\n| Latest editor | Same human/model type; opposite type |\n| Revision operation | Copy-edit; structure; bounded substance; sentence replacement |\n| Evaluation target | Original drafter; latest editor; sentence provenance |",
+    "score": null
+   },
+   {
+    "id": "P014",
+    "section": "related_work",
+    "text": "Holding the brief and revision specification constant is intended to make these labels separable. It will not eliminate every stylistic difference between human and model labor.",
+    "score": null
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "We plan 40 non-sensitive source briefs across two domains, such as public-information explanations and product-neutral summaries. Each brief will contain the same factual source packet, target audience, required claims and length range. Two consenting human writers and two fixed model configurations will independently create base drafts for every assigned brief.",
+    "score": 54.5
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "Assignment will be balanced so that each brief yields at least one human-origin and one model-origin text. Human writers will not see model drafts during base drafting. Model prompts, model identifiers, dates and settings will be recorded. Source packets will permit later claim verification and reduce the chance that factual differences are mistaken for origin signals.",
+    "score": 38.3
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "Each base text enters four revision stages:",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "| Stage | Instruction | Content constraint |\n|---|---|---|\n| S0 Original | No revision | Base draft |\n| S1 Copy-edit | Grammar, punctuation and local fluency | No claim changes |\n| S2 Structural | Reorder and improve transitions | Preserve all claims |\n| S3 Bounded substantive | Implement a fixed edit brief | Only listed additions/deletions |\n| S4 Mixed-sentence | Replace designated sentences using opposite contributor type | Preserve local meaning where specified |",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "For human-origin drafts, one route uses human edits and one uses AI edits. For model-origin drafts, one route uses model edits and one uses human edits. Same-type routes estimate the effect of revision without changing contributor type. Cross-type routes provide the bidirectional comparison.",
+    "score": 28.9
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "All versions will be stored with tracked diffs. Two reviewers, blinded to the intended detector label, will mark whether required claims are preserved, whether unauthorized claims were introduced and which spans changed. A stage that violates its constraint will be regenerated once under a frozen rule; persistent failures remain in an operational-failure table and are excluded from the paired semantic-preservation analysis.",
+    "score": 21.3
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "Each version will carry three noninterchangeable process labels:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. **Original drafter:** contributor type that produced S0.\n2. **Latest editor:** contributor type responsible for the current transition.\n3. **Sentence provenance:** contributor type responsible for the current sentence wording, based on the tracked history.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "At document level, mixed sentence provenance will be represented as proportions, not as a binary “AI-written” label. The analysis will ask how detector output relates to each label. It will not pick whichever target makes the detector look best.",
+    "score": null
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "At least four reproducible detector families will be included where licenses permit:",
+    "score": null
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "- likelihood or rank based;\n- supervised document classifier;\n- stylistic-feature based;\n- contextual sentence classifier.",
+    "score": null
+   },
+   {
+    "id": "P026",
+    "section": "methodology",
+    "text": "Versions, settings, and preprocessing will be frozen together. Thresholds will be chosen using separate calibration data that do not share briefs or revision histories with the test set. Raw scores will remain the primary output, and binary rates will be threshold-dependent secondary summaries. Invalid, truncated, and unsupported inputs will be reported as failures.",
+    "score": 46.5
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "The source brief and base draft define the dependency structure. Primary plots will show score trajectories from S0 to S4 for each route. Paired contrasts will compare:",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "- human-origin→AI-edit versus human-origin→human-edit;\n- model-origin→human-edit versus model-origin→model-edit;\n- the two cross-type directions under the same revision operation.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "Brief-cluster bootstrap intervals will retain all versions and routes derived from a brief. Domain and detector-family results will appear before pooled summaries.",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "For each detector, we will evaluate association with original drafter, latest editor and sentence-provenance proportion separately. Document AUROC, calibration and fixed-threshold error rates will be reported only for targets for which a binary comparison is meaningful. Sentence models will receive macro-F1 and class-specific recall against known sentence provenance.",
+    "score": 62.7
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "The key outcome is not a single leaderboard. It is whether a detector that looks successful under one target fails under another. For example, retaining an “AI” score after extensive human editing might correlate with original origin, but that same score is misleading if a user takes it to mean the contributor responsible for the final wording.",
+    "score": 41.4
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "False positives on original human drafts and human-only revisions are a primary safety outcome. We will report them by writer, domain and stage without making individual-level forensic claims. Exploratory models will test associations with length, sentence length variance, lexical diversity, punctuation, formatting and source overlap. These checks can identify possible shortcuts but cannot prove the internal basis of a detector.",
+    "score": 62.0
+   },
+   {
+    "id": "P033",
+    "section": "experiments",
+    "text": "A detector score will never be used to accuse a writer or adjudicate misconduct. Texts and writer identities will be separated; reported examples will require consent and redaction.",
+    "score": null
+   },
+   {
+    "id": "P034",
+    "section": "experiments",
+    "text": "| Pattern | Interpretation |\n|---|---|\n| Scores follow original drafter across later edits | Evidence of origin association in this sample, not proof of authorship |\n| Scores follow latest editor in both directions | Evidence of edit-style sensitivity |\n| Scores move only for human→AI editing | Directional asymmetry or unmatched effort must be examined |\n| Sentence detector succeeds while document target is unstable | Local provenance may be more defensible than binary document labels |\n| Surface baselines explain similar variance | Detector may rely substantially on form shortcuts |",
+    "score": null
+   },
+   {
+    "id": "P035",
+    "section": "experiments",
+    "text": "Forty briefs with multiple drafts, routes and stages create a sizeable human-writing and review burden. A four-brief pilot will test instruction matching, diff capture and reviewer workload before the test protocol is frozen. Pilot texts will be excluded if the instructions change.",
+    "score": 59.2
+   },
+   {
+    "id": "P036",
+    "section": "experiments",
+    "text": "The study is limited by the number of writers, domains and model versions. Human and model editing effort cannot be perfectly matched. Logged laboratory revision is more controlled than natural writing, and process histories are rarely available in deployment. Reviewers may miss subtle meaning changes. Model updates and detector API changes may reduce reproducibility. Most importantly, process labels do not settle legal, educational or philosophical definitions of authorship.",
+    "score": 86.6
+   },
+   {
+    "id": "P037",
+    "section": "conclusion",
+    "text": "The reviewed literature already covers paraphrase attacks, hybrid sentences, realistic rewrites and human editing of model drafts. The defensible gap is a matched bidirectional history in which original drafter, latest editor and sentence provenance are recorded separately. This proposal uses that structure to test what detector outputs actually follow and where false positives arise. It is an evaluation of detector interpretation, not a mechanism for proving who wrote a final text. Experimental results remain to be collected.",
+    "score": 43.9
+   }
+  ],
+  "mean": 43.2
+ },
+ "rewrite": {
+  "threshold": 35.0,
+  "totals": {
+   "selected": 16,
+   "revised": 6,
+   "kept_original": 10,
+   "attempts": 44,
+   "needs_human_edit": 10,
+   "held_for_research": 0,
+   "mean_score_before": 54.6,
+   "mean_score_after": 47.2
+  },
+  "paragraphs": [
+   {
+    "paragraph_id": "P036",
+    "section": "experiments",
+    "score_before": 86.6,
+    "score_after": 86.6,
+    "outcome": "kept original",
+    "top_features": [
+     "hedge density",
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [
+     "formulaic_language: “Most importantly” imposes an unsupported ranking on the limitations and adds promotional emphasis rather than clarifying the specific boundary of process labels. Suggested: Replace “Most importantly,” with “Finally,” so the legal, educational and philosophical limitation remains without ranking it over the preceding limitations."
+    ],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 87.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 87 is not at least 5 points below 87",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 87 is not at least 5 points below 87"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 87.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 87 is not at least 5 points below 87",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 87 is not at least 5 points below 87"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 93.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 93 is not at least 5 points below 87",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 93 is not at least 5 points below 87"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P002",
+    "section": "introduction",
+    "score_before": 85.7,
+    "score_after": 72.0,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 72.0,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 72 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 72.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 73 is not below the best safe version (72)",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 73 is not below the best safe version (72)"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 72.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 72 is not below the best safe version (72)",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 72 is not below the best safe version (72)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P023",
+    "section": "methodology",
+    "score_before": 79.2,
+    "score_after": 31.3,
+    "outcome": "revised",
+    "top_features": [
+     "stock phrases",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 34.4,
+      "accepted": false,
+      "verdict": "rejected by meaning check: The package does not supply evidence excerpts for several source-attributed claims in P003, P004 and P011, specifically the claims about CoPA and TempParaphraser in P003, AIGT-SignalBench and Spotlights and Blindspots in P004 and all uncited literature-summary claims in P011. Because the instruction requires checking the whole candidate against supplied evidence only, these paragraphs cannot be fully verified from the package.; P003: SenDetEX-related claims are supported by supplied excerpts and the citation count for [[S_2025_emnlp_main_268]] is preserved, and the OpenTuringBench same-generator rewriting claim is supported by [[S_2025_emnlp_main_1354]].; P003: However, the sentence 'CoPA and TempParaphraser demonstrate evasion through paraphrasing.' is a source-attributed literature claim with no supplied evidence excerpt for either CoPA or TempParaphraser in this paragraph, so the full paragraph cannot be verified from the package alone.; P004: PAWN++ claims about source-matched evaluation and the warning that scores are not proof of authorship are supported by the supplied excerpts for [[S_2026_wac_1_25]], and the shortcut-controlled claims are supported by the supplied excerpts for [[S_2026_emnlp_main_2177]].; P004: The paragraph also asserts that AIGT-SignalBench evaluates human-edited AI drafts and that Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns, but no source IDs or evidence excerpts are supplied for those claims here, so they cannot be checked against the package evidence.; P011: This paragraph contains literature-summary factual claims about PAWN++, AIGT-SignalBench, Shortcut-Controlled Evaluation, and Spotlights and Blindspots, but it includes no citations and only PAWN++ and Shortcut-Controlled evidence exists elsewhere in the package. The AIGT-SignalBench and Spotlights and Blindspots claims are not checkable from supplied evidence.; (checker answer was malformed 1x and asked again)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "CHECK_ERROR",
+        "reason": "The package does not supply evidence excerpts for several source-attributed claims in P003, P004 and P011, specifically the claims about CoPA and TempParaphraser in P003, AIGT-SignalBench and Spotlights and Blindspots in P004 and all uncited literature-summary claims in P011. Because the instruction requires checking the whole candidate against supplied evidence only, these paragraphs cannot be fully verified from the package.; P003: SenDetEX-related claims are supported by supplied excerpts and the citation count for [[S_2025_emnlp_main_268]] is preserved, and the OpenTuringBench same-generator rewriting claim is supported by [[S_2025_emnlp_main_1354]].; P003: However, the sentence 'CoPA and TempParaphraser demonstrate evasion through paraphrasing.' is a source-attributed literature claim with no supplied evidence excerpt for either CoPA or TempParaphraser in this paragraph, so the full paragraph cannot be verified from the package alone.; P004: PAWN++ claims about source-matched evaluation and the warning that scores are not proof of authorship are supported by the supplied excerpts for [[S_2026_wac_1_25]], and the shortcut-controlled claims are supported by the supplied excerpts for [[S_2026_emnlp_main_2177]].; P004: The paragraph also asserts that AIGT-SignalBench evaluates human-edited AI drafts and that Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns, but no source IDs or evidence excerpts are supplied for those claims here, so they cannot be checked against the package evidence.; P011: This paragraph contains literature-summary factual claims about PAWN++, AIGT-SignalBench, Shortcut-Controlled Evaluation, and Spotlights and Blindspots, but it includes no citations and only PAWN++ and Shortcut-Controlled evidence exists elsewhere in the package. The AIGT-SignalBench and Spotlights and Blindspots claims are not checkable from supplied evidence.; (checker answer was malformed 1x and asked again)"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 31.3,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P030",
+    "section": "experiments",
+    "score_before": 62.7,
+    "score_after": 62.7,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [
+     "specificity: The phrase “for targets for which a binary comparison is meaningful” leaves the relevant binary targets implicit, although the package identifies original drafter and latest editor as separate contributor-type labels and sentence provenance as a proportion for document-level analysis. Suggested: Replace the vague phrase with “for the binary original-drafter and latest-editor targets”, provided this retains the intended distinction from sentence-provenance proportion."
+    ],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 65.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 65 is not at least 5 points below 63",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 65 is not at least 5 points below 63"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 61.6,
+      "accepted": false,
+      "verdict": "rejected by detector: score 62 is not at least 5 points below 63",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 62 is not at least 5 points below 63"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 65.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 65 is not at least 5 points below 63",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 65 is not at least 5 points below 63"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P032",
+    "section": "experiments",
+    "score_before": 62.0,
+    "score_after": 62.0,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 62.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 62 is not at least 5 points below 62",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 62 is not at least 5 points below 62"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 62.6,
+      "accepted": false,
+      "verdict": "rejected by detector: score 63 is not at least 5 points below 62",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 63 is not at least 5 points below 62"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 59.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 62",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 62"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P035",
+    "section": "experiments",
+    "score_before": 59.2,
+    "score_after": 59.2,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences",
+     "sentence lengths are too uniform"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 59.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 59",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 59"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 58.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 59",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 59"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 37.4,
+      "accepted": false,
+      "verdict": "rejected by meaning check: P004 includes unsupported source-backed claims: the candidate states that AIGT-SignalBench evaluates human-edited AI drafts and that Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns, but the supplied package provides no source IDs or evidence excerpts for those two studies in this paragraph.; P011 repeats unsupported literature claims without citations or package evidence: claims about AIGT-SignalBench and Spotlights and Blindspots are not supported by the supplied ResearchPackage.; All other paragraphs are consistent with the package or acceptable reference revisions, and citation counts/source links are preserved where provided.; P004: The claims about PAWN++ and shortcut-controlled evaluation match the supplied evidence and keep the two [[S_2026_wac_1_25]] and two [[S_2026_emnlp_main_2177]] tokens in the same paragraph with the same occurrence counts.; P004: However, the sentence 'AIGT-SignalBench evaluates human-edited AI drafts' has no supporting evidence or source mapping in the package.; P004: The sentence 'Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns' likewise has no supporting evidence or source mapping in the package.; P011: The package supports the general framing that 2026 papers improve realism, but this paragraph introduces specific factual claims about named studies without supporting evidence in the supplied package.; P011: 'AIGT-SignalBench directly studies human-edited AI drafts' is unsupported by the supplied evidence.; P011: 'Spotlights and Blindspots demonstrates that cross-dataset results and false positives depend on domain and detector' is unsupported by the supplied evidence.",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "UNSUPPORTED_ADDITION",
+        "reason": "P004 includes unsupported source-backed claims: the candidate states that AIGT-SignalBench evaluates human-edited AI drafts and that Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns, but the supplied package provides no source IDs or evidence excerpts for those two studies in this paragraph.; P011 repeats unsupported literature claims without citations or package evidence: claims about AIGT-SignalBench and Spotlights and Blindspots are not supported by the supplied ResearchPackage.; All other paragraphs are consistent with the package or acceptable reference revisions, and citation counts/source links are preserved where provided.; P004: The claims about PAWN++ and shortcut-controlled evaluation match the supplied evidence and keep the two [[S_2026_wac_1_25]] and two [[S_2026_emnlp_main_2177]] tokens in the same paragraph with the same occurrence counts.; P004: However, the sentence 'AIGT-SignalBench evaluates human-edited AI drafts' has no supporting evidence or source mapping in the package.; P004: The sentence 'Spotlights and Blindspots evaluates cross-dataset failure and false-positive patterns' likewise has no supporting evidence or source mapping in the package.; P011: The package supports the general framing that 2026 papers improve realism, but this paragraph introduces specific factual claims about named studies without supporting evidence in the supplied package.; P011: 'AIGT-SignalBench directly studies human-edited AI drafts' is unsupported by the supplied evidence.; P011: 'Spotlights and Blindspots demonstrates that cross-dataset results and false positives depend on domain and detector' is unsupported by the supplied evidence."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P026",
+    "section": "methodology",
+    "score_before": 55.0,
+    "score_after": 46.5,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 55.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 55 is not at least 5 points below 55",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 55 is not at least 5 points below 55"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 55.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 56 is not at least 5 points below 55",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 56 is not at least 5 points below 55"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 46.5,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 46 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": "(checker answer was malformed 1x and asked again)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P015",
+    "section": "methodology",
+    "score_before": 54.5,
+    "score_after": 54.5,
+    "outcome": "kept original",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 54.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 54 is not at least 5 points below 54",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 54 is not at least 5 points below 54"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 53.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 53 is not at least 5 points below 54",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 53 is not at least 5 points below 54"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 54.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 54 is not at least 5 points below 54",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 54 is not at least 5 points below 54"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P006",
+    "section": "introduction",
+    "score_before": 49.7,
+    "score_after": 14.6,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 50.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 51 is not at least 5 points below 50",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 51 is not at least 5 points below 50"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 14.6,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P031",
+    "section": "experiments",
+    "score_before": 47.2,
+    "score_after": 41.4,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 45.7,
+      "accepted": false,
+      "verdict": "rejected by detector: score 46 is not at least 5 points below 47",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 46 is not at least 5 points below 47"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 44.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 44 is not at least 5 points below 47",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 44 is not at least 5 points below 47"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 41.4,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 41 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": "(checker answer was malformed 1x and asked again)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P037",
+    "section": "conclusion",
+    "score_before": 43.9,
+    "score_after": 43.9,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 43.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 43 is not at least 5 points below 44",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 43 is not at least 5 points below 44"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 42.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 43 is not at least 5 points below 44",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 43 is not at least 5 points below 44"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 42.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not at least 5 points below 44",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not at least 5 points below 44"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P001",
+    "section": "abstract",
+    "score_before": 41.2,
+    "score_after": 41.2,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 36.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 37 is not at least 5 points below 41",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 37 is not at least 5 points below 41"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 41.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 41 is not at least 5 points below 41",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 41 is not at least 5 points below 41"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 41.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 41 is not at least 5 points below 41",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 41 is not at least 5 points below 41"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P016",
+    "section": "methodology",
+    "score_before": 38.3,
+    "score_after": 38.3,
+    "outcome": "kept original",
+    "top_features": [
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 38.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 38 is not at least 5 points below 38",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 38 is not at least 5 points below 38"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 41.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 42 is not at least 5 points below 38",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 42 is not at least 5 points below 38"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 38.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 38 is not at least 5 points below 38",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 38 is not at least 5 points below 38"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P008",
+    "section": "related_work",
+    "score_before": 36.8,
+    "score_after": 36.8,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 40.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 40 is not at least 5 points below 37",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 40 is not at least 5 points below 37"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 37.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 38 is not at least 5 points below 37",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 38 is not at least 5 points below 37"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 40.6,
+      "accepted": false,
+      "verdict": "rejected by detector: score 41 is not at least 5 points below 37",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 41 is not at least 5 points below 37"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P003",
+    "section": "introduction",
+    "score_before": 36.0,
+    "score_after": 36.0,
+    "outcome": "kept original",
+    "top_features": [
+     "share of very long sentences",
+     "lists of three"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 29.5,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: consecutive short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "consecutive short sentences"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 35.7,
+      "accepted": false,
+      "verdict": "rejected by detector: score 36 is not at least 5 points below 36",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 36 is not at least 5 points below 36"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 25.4,
+      "accepted": false,
+      "verdict": "rejected by evidence check: The available evidence is too thin to verify several paper-specific claims in both the original and the rewrite.; All unsupported issues in the rewrite appear already present in the original, so they are pre-existing rather than introduced by the rewrite.",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "CHECK_ERROR",
+        "reason": "The available evidence is too thin to verify several paper-specific claims in both the original and the rewrite.; All unsupported issues in the rewrite appear already present in the original, so they are pre-existing rather than introduced by the rewrite."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P019",
+    "section": "methodology",
+    "score_before": 35.8,
+    "score_after": 28.9,
+    "outcome": "revised",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 28.9,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "critic": {
+   "model": "gpt-5.6-luna",
+   "review_of_v0": "ok on retry 1",
+   "review_of_final": "ok",
+   "actionable_before": 2,
+   "actionable_after": 0,
+   "needs_research": []
+  }
+ },
+ "manifest": {
+  "layout": [
+   "# Origin, Editor, or Mixture? A Bidirectional Revision-History Audit of AI-Text Detectors\n\n",
+   "## Abstract\n\n",
+   {
+    "paragraph_id": "P001"
+   },
+   "\n\n",
+   "## Introduction\n\n",
+   {
+    "paragraph_id": "P002"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P003"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P004"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P005"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P006"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P007"
+   },
+   "\n\n",
+   "## Related work\n\n",
+   {
+    "paragraph_id": "P008"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P009"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P010"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P011"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P012"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P013"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P014"
+   },
+   "\n\n",
+   "## Methodology\n\n",
+   {
+    "paragraph_id": "P015"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P016"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P017"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P018"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P019"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P020"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P021"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P022"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P023"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P024"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P025"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P026"
+   },
+   "\n\n",
+   "## Experiments: Evaluation plan\n\n",
+   {
+    "paragraph_id": "P027"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P028"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P029"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P030"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P031"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P032"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P033"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P034"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P035"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P036"
+   },
+   "\n\n",
+   "## Conclusion\n\n",
+   {
+    "paragraph_id": "P037"
+   },
+   "\n\n",
+   "## References\n\n",
+   "- [S_2025_emnlp_main_268](https://aclanthology.org/2025.emnlp-main.268/) S en D et EX : Sentence-Level AI -Generated Text Detection for Human- AI Hybrid Content via Style and Context Fusion\n- [S_2025_emnlp_main_1354](https://aclanthology.org/2025.emnlp-main.1354/) O pen T uring B ench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution\n- [S_2026_wac_1_25](https://aclanthology.org/2026.wac-1.25/) PAWN++ in the Wild: Evaluating AI-Generated Text Detection on the Web\n- [S_2026_emnlp_main_2177](https://aclanthology.org/2026.emnlp-main.2177/) Shortcut-Controlled Evaluation for AI-Generated Text Detection\n- [S_2025_emnlp_main_433](https://aclanthology.org/2025.emnlp-main.433/) Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM -Generated Text Detectors\n- [S_2025_emnlp_main_1607](https://aclanthology.org/2025.emnlp-main.1607/) T emp P araphraser: “Heating Up” Text to Evade AI -Text Detection through Paraphrasing\n"
+  ],
+  "blocks": [
+   {
+    "paragraph_id": "P001",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P002",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P003",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_268",
+      "original_markdown": "[S_2025_emnlp_main_268](https://aclanthology.org/2025.emnlp-main.268/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_268",
+      "original_markdown": "[S_2025_emnlp_main_268](https://aclanthology.org/2025.emnlp-main.268/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1354",
+      "original_markdown": "[S_2025_emnlp_main_1354](https://aclanthology.org/2025.emnlp-main.1354/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P004",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_wac_1_25",
+      "original_markdown": "[S_2026_wac_1_25](https://aclanthology.org/2026.wac-1.25/)"
+     },
+     {
+      "source_id": "S_2026_wac_1_25",
+      "original_markdown": "[S_2026_wac_1_25](https://aclanthology.org/2026.wac-1.25/)"
+     },
+     {
+      "source_id": "S_2026_emnlp_main_2177",
+      "original_markdown": "[S_2026_emnlp_main_2177](https://aclanthology.org/2026.emnlp-main.2177/)"
+     },
+     {
+      "source_id": "S_2026_emnlp_main_2177",
+      "original_markdown": "[S_2026_emnlp_main_2177](https://aclanthology.org/2026.emnlp-main.2177/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P005",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P006",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P007",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P008",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P009",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_433",
+      "original_markdown": "[S_2025_emnlp_main_433](https://aclanthology.org/2025.emnlp-main.433/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_433",
+      "original_markdown": "[S_2025_emnlp_main_433](https://aclanthology.org/2025.emnlp-main.433/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1607",
+      "original_markdown": "[S_2025_emnlp_main_1607](https://aclanthology.org/2025.emnlp-main.1607/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1607",
+      "original_markdown": "[S_2025_emnlp_main_1607](https://aclanthology.org/2025.emnlp-main.1607/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1354",
+      "original_markdown": "[S_2025_emnlp_main_1354](https://aclanthology.org/2025.emnlp-main.1354/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P010",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P011",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P012",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P013",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P014",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P015",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P016",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P017",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P018",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P019",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P020",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P021",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P022",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P023",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P024",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P025",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P026",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P027",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P028",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P029",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P030",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P031",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P032",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P033",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P034",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P035",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P036",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P037",
+    "citation_occurrences": []
+   }
+  ]
+ },
+ "source_run": "half2-final-cluster13"
+}

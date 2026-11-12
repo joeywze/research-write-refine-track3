@@ -1,0 +1,70 @@
+{
+  "checks_used": "rules only (no model calls)",
+  "fault_catch_rate": "16 of 39",
+  "false_alarms_on_clean_rewrites": "0 of 30",
+  "false_alarm_reasons": [],
+  "by_fault_type": {
+    "number changed": {
+      "caught": 3,
+      "planted": 5,
+      "by_check": {
+        "length and tokens": 3
+      }
+    },
+    "citation changed": {
+      "caught": 4,
+      "planted": 5,
+      "by_check": {
+        "length and tokens": 4
+      }
+    },
+    "claim strengthened": {
+      "caught": 2,
+      "planted": 5,
+      "by_check": {
+        "no new facts": 2
+      }
+    },
+    "made-up result": {
+      "caught": 3,
+      "planted": 5,
+      "by_check": {
+        "no new facts": 3
+      }
+    },
+    "source misstated": {
+      "caught": 0,
+      "planted": 5,
+      "by_check": {}
+    },
+    "protected term changed": {
+      "caught": 3,
+      "planted": 3,
+      "by_check": {
+        "preservation rules": 3
+      }
+    },
+    "fresh fault": {
+      "caught": 1,
+      "planted": 5,
+      "by_check": {
+        "length and tokens": 1
+      }
+    },
+    "clean rewrite": {
+      "caught": 0,
+      "planted": 1,
+      "by_check": {}
+    },
+    "real V3 rewrite": {
+      "caught": 0,
+      "planted": 5,
+      "by_check": {}
+    }
+  },
+  "real_v3_rewrites_awaiting_labels": {
+    "rejected": 0,
+    "accepted": 0
+  },
+  "labels_verified_by_a_person": "69 of 69"
+}

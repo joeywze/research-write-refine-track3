@@ -1,4 +1,8 @@
 """
+SPRINT 2 EXPERIMENT for its command-line loop (kept to reproduce results/detection/loop_log*.csv).
+Its helpers (fluency guard, guided prompt, detector feedback) are reused by
+sprint2_demo/half2_checks.py and half2_pipeline.py, so do not delete this file.
+
 Generator -> detector -> reviser loop, with the "just ask nicely" baseline.
 
 Two conditions, run on the same paragraphs for N iterations each:

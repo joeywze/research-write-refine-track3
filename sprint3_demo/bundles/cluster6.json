@@ -1,0 +1,2400 @@
+{
+ "schema_version": 1,
+ "id": "cluster6",
+ "title": "Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement",
+ "reviewed": false,
+ "status_label": "Claims not yet reviewed",
+ "research_question": "Do explanation-refinement gains transfer to a held-out faithfulness measure, exceed nonspecific intervention effects, and avoid degrading task performance?",
+ "gap": "Existing work covers iterative explanation refinement, intervention-guided optimization and faithfulness-metric audits. The narrower unresolved question is whether gains optimized under one measure transfer to an independent measure and exceed specificity controls.",
+ "contribution": "A proposed specificity-controlled, cross-metric audit that separates optimization from evaluation and reports accuracy, validity and human clarity as separate outcomes.",
+ "claims": [
+  {
+   "claim_id": "P003-1",
+   "paragraph_id": "P003",
+   "claim": "The reviewed literature rules out a broad novelty claim.",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-2",
+   "paragraph_id": "P003",
+   "claim": "Wang and Atanasova already use self-critique to refine natural-language explanations",
+   "evidence": [
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "do not contain the intervened word (de- termined by string matching).",
+     "page": "4.3 Evaluation; PDF p. 6",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-3",
+   "paragraph_id": "P003",
+   "claim": "Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property",
+   "evidence": [
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "measures how well an explanation supports a given prediction compared to",
+     "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-4",
+   "paragraph_id": "P003",
+   "claim": "Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P003-5",
+   "paragraph_id": "P003",
+   "claim": "making single-score conclusions unsafe",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-6",
+   "paragraph_id": "P004",
+   "claim": "The closest 2026 work further narrows the opening.",
+   "evidence": [
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "faithfulness is defined as prediction sensitivity",
+     "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+     "quote": "our notion of faithfulness is framed through the lens of",
+     "page": "Appendix A: Concept Alignment; PDF p. 15",
+     "url": "https://aclanthology.org/2026.acl-long.202/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-7",
+   "paragraph_id": "P004",
+   "claim": "FaithLM already combines intervention-based evaluation with iterative explanation optimization.",
+   "evidence": [
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "faithfulness is defined as prediction sensitivity",
+     "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-8",
+   "paragraph_id": "P004",
+   "claim": "Rao and Layek then show why an answer-change effect needs specificity controls",
+   "evidence": [
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-9",
+   "paragraph_id": "P004",
+   "claim": "unrelated filler or simply presenting the answer again can also change a later answer",
+   "evidence": [
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-10",
+   "paragraph_id": "P004",
+   "claim": "REFLEX broadens refinement across tasks",
+   "evidence": [
+    {
+     "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+     "quote": "Although internal knowledge may become outdated",
+     "page": "Limitations: Internal Design; PDF p. 10",
+     "url": "https://aclanthology.org/2026.acl-long.202/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+     "quote": "our notion of faithfulness is framed through the lens of",
+     "page": "Appendix A: Concept Alignment; PDF p. 15",
+     "url": "https://aclanthology.org/2026.acl-long.202/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P004-11",
+   "paragraph_id": "P004",
+   "claim": "explicitly leaves parts of the setting bounded",
+   "evidence": [
+    {
+     "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+     "quote": "our notion of faithfulness is framed through the lens of",
+     "page": "Appendix A: Concept Alignment; PDF p. 15",
+     "url": "https://aclanthology.org/2026.acl-long.202/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control",
+     "quote": "Although internal knowledge may become outdated",
+     "page": "Limitations: Internal Design; PDF p. 10",
+     "url": "https://aclanthology.org/2026.acl-long.202/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-12",
+   "paragraph_id": "P009",
+   "claim": "SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback.",
+   "evidence": [
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "do not contain the intervened word (de- termined by string matching).",
+     "page": "4.3 Evaluation; PDF p. 6",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-13",
+   "paragraph_id": "P009",
+   "claim": "Its authors caution that the selected criteria do not exhaust faithfulness.",
+   "evidence": [
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "do not contain the intervened word (de- termined by string matching).",
+     "page": "4.3 Evaluation; PDF p. 6",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "do not contain the intervened word (de- termined by string matching).",
+     "page": "4.3 Evaluation; PDF p. 6",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-14",
+   "paragraph_id": "P009",
+   "claim": "PEX measures whether an explanation supports the associated prediction",
+   "evidence": [
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "measures how well an explanation supports a given prediction compared to",
+     "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "measures how well an explanation supports a given prediction compared to",
+     "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-15",
+   "paragraph_id": "P009",
+   "claim": "its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation.",
+   "evidence": [
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "measures how well an explanation supports a given prediction compared to",
+     "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P009-16",
+   "paragraph_id": "P009",
+   "claim": "These papers motivate refinement and evaluation while also bounding what their metrics warrant.",
+   "evidence": [
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "We evaluate explanation faithfulness at the system level",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+     "quote": "measures how well an explanation supports a given prediction compared to",
+     "page": "3.2 Measuring Prediction-Explanation (PEX) Consistency; PDF p. 4",
+     "url": "https://aclanthology.org/2025.emnlp-main.797/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+     "quote": "it reflects only one type of faithfulness criterion.",
+     "page": "Limitations — Evaluation Method; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.427/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-17",
+   "paragraph_id": "P010",
+   "claim": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction.",
+   "evidence": [
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "does not account for the properties of invalid SCEs.",
+     "page": "7 Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "Independent evaluation is essential to avoid bias",
+     "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-18",
+   "paragraph_id": "P010",
+   "claim": "Mayne et al. separate validity from minimality",
+   "evidence": [
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "Independent evaluation is essential to avoid bias",
+     "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "does not account for the properties of invalid SCEs.",
+     "page": "7 Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-19",
+   "paragraph_id": "P010",
+   "claim": "invalid generations can be omitted from some minimality calculations",
+   "evidence": [
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "does not account for the properties of invalid SCEs.",
+     "page": "7 Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "Independent evaluation is essential to avoid bias",
+     "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-20",
+   "paragraph_id": "P010",
+   "claim": "this proposal keeps output validity visible",
+   "evidence": []
+  },
+  {
+   "claim_id": "P010-21",
+   "paragraph_id": "P010",
+   "claim": "Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior.",
+   "evidence": [
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "Independent evaluation is essential to avoid bias",
+     "page": "2 Self-generated counterfactual explanations; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+     "quote": "does not account for the properties of invalid SCEs.",
+     "page": "7 Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P010-22",
+   "paragraph_id": "P010",
+   "claim": "These precedents prevent us from treating “counterfactual” as a single gold standard.",
+   "evidence": []
+  },
+  {
+   "claim_id": "P011-23",
+   "paragraph_id": "P011",
+   "claim": "Causal Lens constructs faithful–unfaithful pairs",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-24",
+   "paragraph_id": "P011",
+   "claim": "to test whether a metric reacts in the intended direction",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-25",
+   "paragraph_id": "P011",
+   "claim": "its intervention concerns externally stated explanations rather than unrestricted access to internal computation",
+   "evidence": [
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "measures how often a faithfulness metric prefers faithful over unfaithful explanations.",
+     "page": "3.1 Diagnosticity; PDF p. 3",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+     "quote": "the metric must be capable of evaluating externally provided explanations.",
+     "page": "Limitations; PDF p. 10",
+     "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-26",
+   "paragraph_id": "P011",
+   "claim": "FaithLM shows that intervention feedback can drive explanation optimization",
+   "evidence": [
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "faithfulness is defined as prediction sensitivity",
+     "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P011-27",
+   "paragraph_id": "P011",
+   "claim": "its reported failure analysis includes cases where semantic opposition did not behave as expected",
+   "evidence": [
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "faithfulness is defined as prediction sensitivity",
+     "page": "3.1 Fidelity via Contrary Hint Interventions; PDF p. 4",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "FaithLM: Towards Faithful Explanations for Large Language Models",
+     "quote": "when the intervention lacks semantic opposition, fidelity optimization stalls",
+     "page": "K.3 contrary hint; PDF p. 23",
+     "url": "https://aclanthology.org/2026.eacl-long.177/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P012-28",
+   "paragraph_id": "P012",
+   "claim": "Rao and Layek's 2026 audit is the closest methodological constraint.",
+   "evidence": [
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P012-29",
+   "paragraph_id": "P012",
+   "claim": "Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content.",
+   "evidence": [
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P012-30",
+   "paragraph_id": "P012",
+   "claim": "They do not claim or test statistical equivalence between controls",
+   "evidence": [
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "fluent, topic-unrelated filler text of matched length replaces the explanation",
+     "page": "3.2 Explanation Conditions; PDF p. 3",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    },
+    {
+     "title": "What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness",
+     "quote": "we apply no formal equivalence test",
+     "page": "Limitations; PDF p. 9",
+     "url": "https://aclanthology.org/2026.groundlm-1.35/",
+     "status": "UNREVIEWED"
+    }
+   ]
+  },
+  {
+   "claim_id": "P012-31",
+   "paragraph_id": "P012",
+   "claim": "our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test",
+   "evidence": []
+  }
+ ],
+ "real_papers": [
+  {
+   "source_id": "S_2025_emnlp_main_427",
+   "paper_id": "2025.emnlp-main.427",
+   "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+   "url": "https://aclanthology.org/2025.emnlp-main.427/",
+   "score": 41.9,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_797",
+   "paper_id": "2025.emnlp-main.797",
+   "title": "A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations",
+   "url": "https://aclanthology.org/2025.emnlp-main.797/",
+   "score": 32.4,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1496",
+   "paper_id": "2025.emnlp-main.1496",
+   "title": "A Causal Lens for Evaluating Faithfulness Metrics",
+   "url": "https://aclanthology.org/2025.emnlp-main.1496/",
+   "score": 86.4,
+   "basis": "unseen-paper model"
+  },
+  {
+   "source_id": "S_2025_emnlp_main_1231",
+   "paper_id": "2025.emnlp-main.1231",
+   "title": "LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+   "url": "https://aclanthology.org/2025.emnlp-main.1231/",
+   "score": 64.5,
+   "basis": "unseen-paper model"
+  }
+ ],
+ "real_band": {
+  "n": 4,
+  "min": 32.4,
+  "max": 86.4,
+  "mean": 56.3
+ },
+ "v0": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to any added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics and causal tests of faithfulness measures. The defensible gap is therefore narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+    "score": 59.0
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can be plausible to a reader while remaining post-hoc, incomplete or behaviorally irrelevant. Iterative refinement appears to offer a remedy: generate an explanation, critique it and revise it until a faithfulness score improves. Yet the score being optimized is itself an imperfect measurement instrument.",
+    "score": 93.2
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+    "score": 38.9
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. [[S_2026_eacl_long_177]]; [[S_2026_groundlm_1_35]]; [[S_2026_acl_long_202]].",
+    "score": 17.7
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "The remaining question is not whether explanations can be refined. It is whether a gain optimized under one measure transfers to an independent measure and exceeds nonspecific intervention effects without degrading task performance.",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "We ask:",
+    "score": null
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "1. **RQ1—Cross-metric transfer:** Does refinement optimized with metric M improve a preregistered held-out faithfulness measure H relative to the original explanation and a neutral rewrite?\n2. **RQ2—Specificity:** Does the behavioral effect of the refined explanation exceed effects caused by content-free filler, unrelated text and answer re-injection?\n3. **RQ3—Trade-offs:** How do any measured gains relate to answer accuracy, explanation validity, length and human-rated clarity?",
+    "score": 65.3
+   },
+   {
+    "id": "P008",
+    "section": "introduction",
+    "text": "The study is diagnostic. A null result, a gain confined to M or an accuracy–faithfulness trade-off would all be informative. We do not claim access to a model's private reasoning.",
+    "score": null
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]].",
+    "score": 23.2
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]].",
+    "score": 48.3
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction; it also notes that its intervention concerns externally stated explanations rather than unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its reported failure analysis includes cases where semantic opposition did not behave as expected. [[S_2025_emnlp_main_1496]]; [[S_2026_eacl_long_177]].",
+    "score": 65.5
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty rather than declaring controls equivalent after a nonsignificant test. [[S_2026_groundlm_1_35]].",
+    "score": 50.2
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "Accordingly, the proposed contribution is the combination of: (a) optimization and evaluation metrics kept separate; (b) matched nonspecific controls; (c) item-paired analysis across refinement rounds; and (d) accuracy, validity and human clarity reported as separate outcomes. Each component has precedent; their use in this bounded cross-metric audit is the contribution to be tested, not assumed.",
+    "score": 20.8
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions and licenses will be fixed before generation. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.",
+    "score": 48.0
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness; the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction, but limits inference to initially correct decisions.",
+    "score": 35.3
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "Every eligible item receives an initial answer and explanation. The answer label is then frozen during explanation-only revision; any output that changes it is retained and flagged rather than silently repaired.",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "| Condition | Revision signal | Purpose |\n|---|---|---|\n| Initial | None | Baseline explanation |\n| Self-critique | Model critiques clarity, evidence use and decision support | Reproduce generic iterative refinement |\n| Metric-guided | Critique exposes feedback from optimization metric M | Test direct metric optimization |\n| External critique | A frozen separate critic proposes revisions | Separate self-reflection from critic source |\n| Neutral rewrite | Match format and approximate length without faithfulness feedback | Control for another generation pass |",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Each condition will be collected after one and three rounds. Prompts, metric outputs and full revision histories will be stored. The neutral rewrite will be instructed to preserve meaning and evidence rather than improve a faithfulness criterion.",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "Before test results are inspected, one metric will be designated as optimization metric M and at least two nonidentical measures as held-out outcomes. The intended families are:",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "- prediction–explanation consistency or support;\n- a counterfactual or intervention-based behavioral measure;\n- a causal-diagnostic score where reproducible implementations permit it.",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "For intervention tests, each target explanation is paired with:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. a length-matched content-free filler;\n2. unrelated grammatical text matched approximately for length;\n3. the original answer re-injected without its explanation; and\n4. a no-intervention repeat.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "The same model, item and repeat index remain linked. These controls estimate ordinary re-prompting and generic-context sensitivity. They do not reveal true internal reasoning.",
+    "score": null
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Two blinded human raters will evaluate a stratified subset for clarity, relevance and usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. Inter-rater agreement, adjudication rules and all exclusions will be reported.",
+    "score": 62.4
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "Exact model identifiers, dates, prompts, sampling controls, token limits, parsers and retry rules will be frozen. Invalid JSON, missing explanations, changed labels and technical failures will remain visible in coverage tables. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+    "score": 60.7
+   },
+   {
+    "id": "P026",
+    "section": "experiments",
+    "text": "The underlying task item is the resampling unit. The primary RQ1 contrast is the change in held-out measure H from Initial to Metric-guided minus the corresponding change from Initial to Neutral rewrite. A second contrast compares Self-critique with Neutral rewrite. Results will be reported separately by task, model and refinement depth before any pooled summary.",
+    "score": 28.6
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "For RQ2, target-intervention answer-change rates will be compared with each control on the same item and repeat index. Paired differences and item-cluster bootstrap intervals will be reported. We will not infer equivalence merely because a difference is nonsignificant.",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "RQ3 will report task accuracy, changed-answer rate, valid-output coverage, explanation length and human ratings alongside every faithfulness result. These are not combined into a single favorable score.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "| Observed pattern | Intended interpretation |\n|---|---|\n| M improves; held-out H does not | Metric alignment, not transferable evidence |\n| M and H improve; target effect does not exceed controls | Improvement remains nonspecific |\n| M and H improve; target exceeds controls; accuracy retained | Stronger operational evidence, still not proof of private reasoning |\n| Faithfulness score improves while accuracy or validity worsens | Trade-off; not an unqualified gain |\n| Neutral rewrite matches targeted refinement | Additional generation or formatting may explain the result |",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "Multiple primary comparisons will be listed and adjusted using a prespecified false-discovery procedure or a smaller confirmatory contrast set. Effect sizes and uncertainty will be emphasized over binary significance.",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "With two tasks, two models and 120 eligible items per task–model pair, the core sample contains 480 item–model cells. Five explanation conditions at two revision depths, plus intervention controls and repeats, create a substantial inference workload. A 20-item-per-cell pilot will first validate parsing, metric execution and cost. Pilot items will not be reused in the frozen test set if prompts or rules change.",
+    "score": 67.3
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "The study is limited to selected classification tasks, model families and operational metrics. Refinement may learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+    "score": 87.2
+   },
+   {
+    "id": "P033",
+    "section": "conclusion",
+    "text": "The reviewed literature already contains iterative explanation refinement, intervention-guided optimization and audits of faithfulness metrics. The defensible next step is not another report that a refinement score rises. This proposal asks whether the gain transfers to a held-out measure, exceeds nonspecific disturbance controls and avoids damage to answer accuracy and output validity. The resulting audit is deliberately capable of rejecting the proposed benefit. Experimental results remain to be collected.",
+    "score": 29.0
+   }
+  ],
+  "mean": 50.0
+ },
+ "final": {
+  "paragraphs": [
+   {
+    "id": "P001",
+    "section": "abstract",
+    "text": "Iterative critique can improve the score used to refine a model explanation, but that improvement need not transfer to another operationalization of faithfulness. It may instead reflect metric-specific optimization, ordinary re-prompting instability, or sensitivity to any added text. Existing work already introduces self-refinement, intervention-guided optimization, prediction–explanation consistency metrics and causal tests of faithfulness measures. The defensible gap is therefore narrower: whether refinement gains survive a held-out metric and exceed specificity controls. We propose a paired audit on natural-language inference and fact verification using two model families. For each initially correct prediction, we will compare the original explanation with self-critique, metric-guided critique, external critique and a neutral rewrite at one and three rounds. The refinement metric will be separated from held-out intervention and consistency measures. Content-free filler, unrelated-text and answer re-injection controls will estimate nonspecific answer-change floors. Prediction accuracy, valid-output coverage, explanation length and blinded human ratings of clarity—not faithfulness—will remain separate outcomes. The proposed contribution is a falsifiable replication-and-extension protocol for distinguishing transferable faithfulness improvement from metric alignment.",
+    "score": 59.0
+   },
+   {
+    "id": "P002",
+    "section": "introduction",
+    "text": "Natural-language explanations are useful only if their apparent reasons bear a defensible relationship to the model decision. A fluent explanation can look plausible to a reader and still be post-hoc, incomplete, or behaviorally irrelevant. One remedy is iterative refinement: generate an explanation, critique it, then revise it until a faithfulness score improves. That score is an imperfect measurement instrument.",
+    "score": 37.5
+   },
+   {
+    "id": "P003",
+    "section": "introduction",
+    "text": "The reviewed literature rules out a broad novelty claim. Wang and Atanasova already use self-critique to refine natural-language explanations, while Zhao and Daumé define prediction–explanation consistency as a necessary faithfulness property. Zaman and Srivastava show that faithfulness metrics can behave differently across models and tasks, making single-score conclusions unsafe. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]]; [[S_2025_emnlp_main_1496]].",
+    "score": 38.9
+   },
+   {
+    "id": "P004",
+    "section": "introduction",
+    "text": "The closest 2026 work further narrows the opening. FaithLM already combines intervention-based evaluation with iterative explanation optimization. Rao and Layek then show why an answer-change effect needs specificity controls: unrelated filler or simply presenting the answer again can also change a later answer. REFLEX broadens refinement across tasks but explicitly leaves parts of the setting bounded. [[S_2026_eacl_long_177]]; [[S_2026_groundlm_1_35]]; [[S_2026_acl_long_202]].",
+    "score": 17.7
+   },
+   {
+    "id": "P005",
+    "section": "introduction",
+    "text": "The remaining question is not whether explanations can be refined. It is whether a gain optimized under one measure transfers to an independent measure and exceeds nonspecific intervention effects without degrading task performance.",
+    "score": null
+   },
+   {
+    "id": "P006",
+    "section": "introduction",
+    "text": "We ask:",
+    "score": null
+   },
+   {
+    "id": "P007",
+    "section": "introduction",
+    "text": "1. **RQ1: Cross-metric transfer.** Does refinement optimized with metric M improve a preregistered held-out faithfulness measure H relative to the original explanation and a neutral rewrite?\n2. **RQ2: Specificity.** Does the behavioral effect of the refined explanation exceed effects caused by content-free filler, unrelated text, and answer re-injection?\n3. **RQ3: Trade-offs.** How do any measured gains relate to answer accuracy, explanation validity, length, and human-rated clarity?",
+    "score": 18.1
+   },
+   {
+    "id": "P008",
+    "section": "introduction",
+    "text": "The study is diagnostic. A null result, a gain confined to M or an accuracy–faithfulness trade-off would all be informative. We do not claim access to a model's private reasoning.",
+    "score": null
+   },
+   {
+    "id": "P009",
+    "section": "related_work",
+    "text": "SR-NLE iteratively critiques and revises post-hoc explanations using natural-language and attribution feedback. Its authors caution that the selected criteria do not exhaust faithfulness. PEX measures whether an explanation supports the associated prediction, but its reported limitation is that a system-level consistency score cannot establish faithfulness for every individual explanation. These papers motivate refinement and evaluation while also bounding what their metrics warrant. [[S_2025_emnlp_main_427]]; [[S_2025_emnlp_main_797]].",
+    "score": 23.2
+   },
+   {
+    "id": "P010",
+    "section": "related_work",
+    "text": "Counterfactual-explanation work asks whether a proposed minimal input change actually changes the prediction. Mayne et al. separate validity from minimality and note that invalid generations can be omitted from some minimality calculations, which is why this proposal keeps output validity visible. Dehghanighobadi et al. similarly investigate whether counterfactual explanations align with model behavior. These precedents prevent us from treating “counterfactual” as a single gold standard. [[S_2025_emnlp_main_1231]].",
+    "score": 48.3
+   },
+   {
+    "id": "P011",
+    "section": "related_work",
+    "text": "Causal Lens constructs faithful–unfaithful pairs to test whether a metric reacts in the intended direction. It also notes that its intervention concerns externally stated explanations, not unrestricted access to internal computation. FaithLM shows that intervention feedback can drive explanation optimization, but its failure analysis includes cases where semantic opposition did not behave as expected. [[S_2025_emnlp_main_1496]]; [[S_2026_eacl_long_177]].",
+    "score": 33.2
+   },
+   {
+    "id": "P012",
+    "section": "related_work",
+    "text": "Rao and Layek's 2026 audit is the closest methodological constraint. Their filler and re-injection controls show that an observed answer change is not automatically specific to explanation content. They do not claim or test statistical equivalence between controls, so our study will compare paired effect sizes with uncertainty, not declare controls equivalent after a nonsignificant test. [[S_2026_groundlm_1_35]].",
+    "score": 22.0
+   },
+   {
+    "id": "P013",
+    "section": "related_work",
+    "text": "Accordingly, the proposed contribution is the combination of: (a) optimization and evaluation metrics kept separate; (b) matched nonspecific controls; (c) item-paired analysis across refinement rounds; and (d) accuracy, validity and human clarity reported as separate outcomes. Each component has precedent; their use in this bounded cross-metric audit is the contribution to be tested, not assumed.",
+    "score": 20.8
+   },
+   {
+    "id": "P014",
+    "section": "methodology",
+    "text": "We will use one public natural-language-inference dataset and one public fact-verification dataset with redistributable text and labels. The exact datasets, versions and licenses will be fixed before generation. Two instruction-tuned model families will be selected based on reproducible access and support for recorded inference settings.",
+    "score": 48.0
+   },
+   {
+    "id": "P015",
+    "section": "methodology",
+    "text": "For each task–model pair, we plan to sample 120 items that the model answers correctly under the frozen base prompt. Eligibility is therefore conditional on initial correctness; the number screened and the initial accuracy over the screened pool will be reported. This design isolates explanation refinement from answer correction, but limits inference to initially correct decisions.",
+    "score": 35.3
+   },
+   {
+    "id": "P016",
+    "section": "methodology",
+    "text": "Every eligible item receives an initial answer and explanation. The answer label is then frozen during explanation-only revision; any output that changes it is retained and flagged rather than silently repaired.",
+    "score": null
+   },
+   {
+    "id": "P017",
+    "section": "methodology",
+    "text": "| Condition | Revision signal | Purpose |\n|---|---|---|\n| Initial | None | Baseline explanation |\n| Self-critique | Model critiques clarity, evidence use and decision support | Reproduce generic iterative refinement |\n| Metric-guided | Critique exposes feedback from optimization metric M | Test direct metric optimization |\n| External critique | A frozen separate critic proposes revisions | Separate self-reflection from critic source |\n| Neutral rewrite | Match format and approximate length without faithfulness feedback | Control for another generation pass |",
+    "score": null
+   },
+   {
+    "id": "P018",
+    "section": "methodology",
+    "text": "Each condition will be collected after one and three rounds. Prompts, metric outputs and full revision histories will be stored. The neutral rewrite will be instructed to preserve meaning and evidence rather than improve a faithfulness criterion.",
+    "score": null
+   },
+   {
+    "id": "P019",
+    "section": "methodology",
+    "text": "Before test results are inspected, one metric will be designated as optimization metric M and at least two nonidentical measures as held-out outcomes. The intended families are:",
+    "score": null
+   },
+   {
+    "id": "P020",
+    "section": "methodology",
+    "text": "- prediction–explanation consistency or support;\n- a counterfactual or intervention-based behavioral measure;\n- a causal-diagnostic score where reproducible implementations permit it.",
+    "score": null
+   },
+   {
+    "id": "P021",
+    "section": "methodology",
+    "text": "For intervention tests, each target explanation is paired with:",
+    "score": null
+   },
+   {
+    "id": "P022",
+    "section": "methodology",
+    "text": "1. a length-matched content-free filler;\n2. unrelated grammatical text matched approximately for length;\n3. the original answer re-injected without its explanation; and\n4. a no-intervention repeat.",
+    "score": null
+   },
+   {
+    "id": "P023",
+    "section": "methodology",
+    "text": "The same model, item and repeat index remain linked. These controls estimate ordinary re-prompting and generic-context sensitivity. They do not reveal true internal reasoning.",
+    "score": null
+   },
+   {
+    "id": "P024",
+    "section": "methodology",
+    "text": "Two blinded human raters will evaluate a stratified subset for clarity and relevance, and they will also judge usefulness. They will not label faithfulness, because readability judgments do not provide privileged access to the decision process. We will report inter-rater agreement and adjudication rules, along with all exclusions.",
+    "score": 33.0
+   },
+   {
+    "id": "P025",
+    "section": "methodology",
+    "text": "Exact model identifiers, dates, prompts, sampling controls, token limits, parsers and retry rules will be frozen. Invalid JSON, missing explanations, changed labels and technical failures will remain visible in coverage tables. The primary paired set requires a valid initial explanation and all preregistered conditions; an all-available sensitivity analysis will show whether complete-case filtering changes the conclusion.",
+    "score": 60.7
+   },
+   {
+    "id": "P026",
+    "section": "experiments",
+    "text": "The underlying task item is the resampling unit. The primary RQ1 contrast is the change in held-out measure H from Initial to Metric-guided minus the corresponding change from Initial to Neutral rewrite. A second contrast compares Self-critique with Neutral rewrite. Results will be reported separately by task, model and refinement depth before any pooled summary.",
+    "score": 28.6
+   },
+   {
+    "id": "P027",
+    "section": "experiments",
+    "text": "For RQ2, target-intervention answer-change rates will be compared with each control on the same item and repeat index. Paired differences and item-cluster bootstrap intervals will be reported. We will not infer equivalence merely because a difference is nonsignificant.",
+    "score": null
+   },
+   {
+    "id": "P028",
+    "section": "experiments",
+    "text": "RQ3 will report task accuracy, changed-answer rate, valid-output coverage, explanation length and human ratings alongside every faithfulness result. These are not combined into a single favorable score.",
+    "score": null
+   },
+   {
+    "id": "P029",
+    "section": "experiments",
+    "text": "| Observed pattern | Intended interpretation |\n|---|---|\n| M improves; held-out H does not | Metric alignment, not transferable evidence |\n| M and H improve; target effect does not exceed controls | Improvement remains nonspecific |\n| M and H improve; target exceeds controls; accuracy retained | Stronger operational evidence, still not proof of private reasoning |\n| Faithfulness score improves while accuracy or validity worsens | Trade-off; not an unqualified gain |\n| Neutral rewrite matches targeted refinement | Additional generation or formatting may explain the result |",
+    "score": null
+   },
+   {
+    "id": "P030",
+    "section": "experiments",
+    "text": "Multiple primary comparisons will be listed and adjusted using a prespecified false-discovery procedure or a smaller confirmatory contrast set. Effect sizes and uncertainty will be emphasized over binary significance.",
+    "score": null
+   },
+   {
+    "id": "P031",
+    "section": "experiments",
+    "text": "The core sample contains 480 item–model cells, drawn from two tasks, two models, and 120 eligible items for each task–model pair. Five explanation conditions span two revision depths; intervention controls and repeats add to the inference workload. Before the frozen test set is fixed, a 20-item-per-cell pilot will validate parsing, metric execution, and cost. Pilot items will not be reused if prompts or rules change.",
+    "score": 54.2
+   },
+   {
+    "id": "P032",
+    "section": "experiments",
+    "text": "The study is limited to selected classification tasks, model families and operational metrics. Refinement may learn to exploit evaluators. The neutral rewrite may not perfectly match semantic or stylistic change. Initial-correctness filtering changes the target population, and behavioral intervention measures can be unstable. Closed-model updates may reduce reproducibility. Human clarity ratings are not faithfulness labels. The study therefore cannot establish a universal explanation metric or identify a model's true reasoning process.",
+    "score": 87.2
+   },
+   {
+    "id": "P033",
+    "section": "conclusion",
+    "text": "The reviewed literature already contains iterative explanation refinement, intervention-guided optimization and audits of faithfulness metrics. The defensible next step is not another report that a refinement score rises. This proposal asks whether the gain transfers to a held-out measure, exceeds nonspecific disturbance controls and avoids damage to answer accuracy and output validity. The resulting audit is deliberately capable of rejecting the proposed benefit. Experimental results remain to be collected.",
+    "score": 29.0
+   }
+  ],
+  "mean": 38.6
+ },
+ "rewrite": {
+  "threshold": 35.0,
+  "totals": {
+   "selected": 13,
+   "revised": 6,
+   "kept_original": 7,
+   "attempts": 33,
+   "needs_human_edit": 7,
+   "held_for_research": 0,
+   "mean_score_before": 60.1,
+   "mean_score_after": 44.3
+  },
+  "paragraphs": [
+   {
+    "paragraph_id": "P002",
+    "section": "introduction",
+    "score_before": 93.2,
+    "score_after": 37.5,
+    "outcome": "revised",
+    "top_features": [
+     "hedge density",
+     "lists of three",
+     "sentence lengths are too uniform"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 43.0,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 43 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 37.5,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 38 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 37.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 38 is not below the best safe version (38)",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 38 is not below the best safe version (38)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P032",
+    "section": "experiments",
+    "score_before": 87.2,
+    "score_after": 87.2,
+    "outcome": "kept original",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 87.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 87 is not at least 5 points below 87",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 87 is not at least 5 points below 87"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 87.2,
+      "accepted": false,
+      "verdict": "rejected by detector: score 87 is not at least 5 points below 87",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 87 is not at least 5 points below 87"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 82.2,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: too many very short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "too many very short sentences"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P031",
+    "section": "experiments",
+    "score_before": 67.3,
+    "score_after": 54.2,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 68.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 68 is not at least 5 points below 67",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 68 is not at least 5 points below 67"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 55.1,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 55 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 54.2,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 54 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P011",
+    "section": "related_work",
+    "score_before": 65.5,
+    "score_after": 33.2,
+    "outcome": "revised",
+    "top_features": [
+     "stock phrases",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 33.2,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P007",
+    "section": "introduction",
+    "score_before": 65.3,
+    "score_after": 18.1,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 18.1,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P024",
+    "section": "methodology",
+    "score_before": 62.4,
+    "score_after": 33.0,
+    "outcome": "revised",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 44.3,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check); still scores 44 (target 35), trying to lower it further",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 20.6,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: consecutive short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "consecutive short sentences"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 33.0,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": "no cited or named sources in this paragraph"
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P025",
+    "section": "methodology",
+    "score_before": 60.7,
+    "score_after": 60.7,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences",
+     "sentence lengths are too uniform"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 59.6,
+      "accepted": false,
+      "verdict": "rejected by detector: score 60 is not at least 5 points below 61",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 60 is not at least 5 points below 61"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 58.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 58 is not at least 5 points below 61",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 58 is not at least 5 points below 61"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 58.4,
+      "accepted": false,
+      "verdict": "rejected by detector: score 58 is not at least 5 points below 61",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 58 is not at least 5 points below 61"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P001",
+    "section": "abstract",
+    "score_before": 59.0,
+    "score_after": 59.0,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences",
+     "sentence lengths are too uniform"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 58.7,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 59",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 59"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 59.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 60 is not at least 5 points below 59",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 60 is not at least 5 points below 59"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 58.8,
+      "accepted": false,
+      "verdict": "rejected by detector: score 59 is not at least 5 points below 59",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 59 is not at least 5 points below 59"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P012",
+    "section": "related_work",
+    "score_before": 50.2,
+    "score_after": 22.0,
+    "outcome": "revised",
+    "top_features": [
+     "stock phrases",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": null,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 22.0,
+      "accepted": true,
+      "verdict": "passed all checks (fluency guard, preservation rules, no new facts, evidence check, meaning check)",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "preservation rules",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "no new facts",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "evidence check",
+        "status": "PASS",
+        "reason": ""
+       },
+       {
+        "check": "meaning check",
+        "status": "PASS",
+        "reason": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P010",
+    "section": "related_work",
+    "score_before": 48.3,
+    "score_after": 48.3,
+    "outcome": "kept original",
+    "top_features": [
+     "hedge density",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 48.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 48 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 48 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 51.1,
+      "accepted": false,
+      "verdict": "rejected by detector: score 51 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 51 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 51.5,
+      "accepted": false,
+      "verdict": "rejected by detector: score 52 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 52 is not at least 5 points below 48"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P014",
+    "section": "methodology",
+    "score_before": 48.0,
+    "score_after": 48.0,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 48.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 48 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 48 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 48.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 48 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 48 is not at least 5 points below 48"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 46.3,
+      "accepted": false,
+      "verdict": "rejected by detector: score 46 is not at least 5 points below 48",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 46 is not at least 5 points below 48"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P003",
+    "section": "introduction",
+    "score_before": 38.9,
+    "score_after": 38.9,
+    "outcome": "kept original",
+    "top_features": [
+     "lists of three",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 39.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 39 is not at least 5 points below 39",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 39 is not at least 5 points below 39"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 39.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 39 is not at least 5 points below 39",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 39 is not at least 5 points below 39"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 39.0,
+      "accepted": false,
+      "verdict": "rejected by detector: score 39 is not at least 5 points below 39",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 39 is not at least 5 points below 39"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P015",
+    "section": "methodology",
+    "score_before": 35.3,
+    "score_after": 35.3,
+    "outcome": "kept original",
+    "top_features": [
+     "sentence lengths are too uniform",
+     "share of very long sentences"
+    ],
+    "critic_leads": [],
+    "needs_human_edit": true,
+    "held_reason": null,
+    "attempts": [
+     {
+      "attempt": 1,
+      "score": 21.3,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: consecutive short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "consecutive short sentences"
+       }
+      ]
+     },
+     {
+      "attempt": 2,
+      "score": 20.4,
+      "accepted": false,
+      "verdict": "rejected by fluency guard: consecutive short sentences",
+      "checks": [
+       {
+        "check": "fluency guard",
+        "status": "STYLE_GAMING",
+        "reason": "consecutive short sentences"
+       }
+      ]
+     },
+     {
+      "attempt": 3,
+      "score": 35.9,
+      "accepted": false,
+      "verdict": "rejected by detector: score 36 is not at least 5 points below 35",
+      "checks": [
+       {
+        "check": "detector",
+        "status": "NO_IMPROVEMENT",
+        "reason": "score 36 is not at least 5 points below 35"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "critic": {
+   "model": "gpt-5.6-luna",
+   "review_of_v0": "ok",
+   "review_of_final": "ok",
+   "actionable_before": 0,
+   "actionable_after": 1,
+   "needs_research": []
+  }
+ },
+ "manifest": {
+  "layout": [
+   "# Do Faithfulness Gains Survive the Metric? A Specificity-Controlled Audit of Iterative Explanation Refinement\n\n",
+   "## Abstract\n\n",
+   {
+    "paragraph_id": "P001"
+   },
+   "\n\n",
+   "## Introduction\n\n",
+   {
+    "paragraph_id": "P002"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P003"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P004"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P005"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P006"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P007"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P008"
+   },
+   "\n\n",
+   "## Related work\n\n",
+   {
+    "paragraph_id": "P009"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P010"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P011"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P012"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P013"
+   },
+   "\n\n",
+   "## Methodology\n\n",
+   {
+    "paragraph_id": "P014"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P015"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P016"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P017"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P018"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P019"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P020"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P021"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P022"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P023"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P024"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P025"
+   },
+   "\n\n",
+   "## Experiments: Evaluation plan\n\n",
+   {
+    "paragraph_id": "P026"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P027"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P028"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P029"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P030"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P031"
+   },
+   "\n\n",
+   {
+    "paragraph_id": "P032"
+   },
+   "\n\n",
+   "## Conclusion\n\n",
+   {
+    "paragraph_id": "P033"
+   },
+   "\n\n",
+   "## References\n\n",
+   "- [S_2025_emnlp_main_427](https://aclanthology.org/2025.emnlp-main.427/) Self-Critique and Refinement for Faithful Natural Language Explanations\n- [S_2025_emnlp_main_797](https://aclanthology.org/2025.emnlp-main.797/) A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations\n- [S_2025_emnlp_main_1496](https://aclanthology.org/2025.emnlp-main.1496/) A Causal Lens for Evaluating Faithfulness Metrics\n- [S_2026_eacl_long_177](https://aclanthology.org/2026.eacl-long.177/) FaithLM: Towards Faithful Explanations for Large Language Models\n- [S_2026_groundlm_1_35](https://aclanthology.org/2026.groundlm-1.35/) What Does Answer Change Rate Actually Measure? A Specificity Audit of Causal Intervention Tests for Explanation Faithfulness\n- [S_2026_acl_long_202](https://aclanthology.org/2026.acl-long.202/) REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control\n- [S_2025_emnlp_main_1231](https://aclanthology.org/2025.emnlp-main.1231/) LLM s Don’t Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations\n"
+  ],
+  "blocks": [
+   {
+    "paragraph_id": "P001",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P002",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P003",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_427",
+      "original_markdown": "[S_2025_emnlp_main_427](https://aclanthology.org/2025.emnlp-main.427/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_797",
+      "original_markdown": "[S_2025_emnlp_main_797](https://aclanthology.org/2025.emnlp-main.797/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_1496",
+      "original_markdown": "[S_2025_emnlp_main_1496](https://aclanthology.org/2025.emnlp-main.1496/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P004",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_eacl_long_177",
+      "original_markdown": "[S_2026_eacl_long_177](https://aclanthology.org/2026.eacl-long.177/)"
+     },
+     {
+      "source_id": "S_2026_groundlm_1_35",
+      "original_markdown": "[S_2026_groundlm_1_35](https://aclanthology.org/2026.groundlm-1.35/)"
+     },
+     {
+      "source_id": "S_2026_acl_long_202",
+      "original_markdown": "[S_2026_acl_long_202](https://aclanthology.org/2026.acl-long.202/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P005",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P006",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P007",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P008",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P009",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_427",
+      "original_markdown": "[S_2025_emnlp_main_427](https://aclanthology.org/2025.emnlp-main.427/)"
+     },
+     {
+      "source_id": "S_2025_emnlp_main_797",
+      "original_markdown": "[S_2025_emnlp_main_797](https://aclanthology.org/2025.emnlp-main.797/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P010",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1231",
+      "original_markdown": "[S_2025_emnlp_main_1231](https://aclanthology.org/2025.emnlp-main.1231/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P011",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2025_emnlp_main_1496",
+      "original_markdown": "[S_2025_emnlp_main_1496](https://aclanthology.org/2025.emnlp-main.1496/)"
+     },
+     {
+      "source_id": "S_2026_eacl_long_177",
+      "original_markdown": "[S_2026_eacl_long_177](https://aclanthology.org/2026.eacl-long.177/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P012",
+    "citation_occurrences": [
+     {
+      "source_id": "S_2026_groundlm_1_35",
+      "original_markdown": "[S_2026_groundlm_1_35](https://aclanthology.org/2026.groundlm-1.35/)"
+     }
+    ]
+   },
+   {
+    "paragraph_id": "P013",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P014",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P015",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P016",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P017",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P018",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P019",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P020",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P021",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P022",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P023",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P024",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P025",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P026",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P027",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P028",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P029",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P030",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P031",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P032",
+    "citation_occurrences": []
+   },
+   {
+    "paragraph_id": "P033",
+    "citation_occurrences": []
+   }
+  ]
+ },
+ "source_run": "half2-final-cluster6"
+}
