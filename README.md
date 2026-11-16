@@ -14,7 +14,7 @@ The generated paper structure is Abstract, Introduction, Related Work, Methodolo
 
 | Application | Purpose | How to open |
 |---|---|---|
-| Hosted Sprint 3 demo | Browse the saved end-to-end walkthrough without an API key | [Open the live demo](https://research-write-refine-track3-grp17.streamlit.app/) |
+| Hosted Sprint 3 demo | Browse the saved end-to-end walkthrough without an API key | [Open the live demo](https://research-write-refine-track3-grp17-sprint3.streamlit.app/) |
 | Sprint 3 local app | Choose a topic, review claims, inspect a first draft, follow the rewrite, compare results, and use the detector tools | `streamlit run sprint3_demo/app_sprint3.py` |
 | Sprint 2 local app | Review the prepared research handover and saved writing-refinement results; an explicit live mode also supports paid refinement | `python sprint2_demo/ui/launch.py` |
 

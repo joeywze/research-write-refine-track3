@@ -1,6 +1,6 @@
 # Deployment and local setup
 
-[Open the current demo](https://research-write-refine-track3-grp17.streamlit.app/)
+[Open the current demo](https://research-write-refine-track3-grp17-sprint3.streamlit.app/)
 
 The team supplied this URL as the current demo. Hosting is managed from a team member's separate repository. The owner should confirm its current repository, branch, commit and Python version; the URL alone does not establish those settings. A change in this integration branch does not update the hosted app.
 
